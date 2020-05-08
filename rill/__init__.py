@@ -8,9 +8,7 @@ if not (
     raise ImportError("Requires Python 3.7.")
 del distutils
 del platform
-from ins_wasser.tools import *
-from ins_wasser.tools import MarkupLibrary as markup
-from ins_wasser.materials.instruments.definition import instruments
-from ins_wasser.materials.margin_markups.definition import margin_markups
-from ins_wasser.materials.metronome_marks.definition import metronome_marks
-from ins_wasser import segments
+from rill.tools import *
+from rill.tools import MarkupLibrary as markup
+from rill.materials.instruments.definition import instruments
+from rill import segments

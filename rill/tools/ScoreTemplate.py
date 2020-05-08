@@ -1,9 +1,9 @@
 import abjad
-import baca
+import mccartney 
 import ins_wasser
 
 
-class ScoreTemplate(baca.ScoreTemplate):
+class ScoreTemplate(abjad.ScoreTemplate):
     r"""
     Score template.
 

@@ -1,21 +1,35 @@
 import abjad
-import baca
+import mccartney
 
 
 instruments = abjad.OrderedDict(
     [
         (
-            "ViolaI",
-            abjad.Viola(
-                markup=baca.markups.instrument("Viola I"),
-                short_markup=baca.markups.short_instrument("Va. I"),
+            "Flute",
+            abjad.Flute(
+                markup=mccartney.markups.instrument("Flute"),
+                short_markup=mccartney.markups.short_instrument("Fl."),
             ),
         ),
         (
-            "ViolaII",
+            "Bb_Clarinet",
+            abjad.ClarinetInBFlat(
+                markup=mccartney.markups.instrument("Bb_Clarinet"),
+                short_markup=mccartney.markups.short_instrument("BbCl."),
+            ),
+        ),
+        (
+            "Guitar",
+            abjad.Guitar(
+                markup=mccartney.markups.instrument("Guitar"),
+                short_markup=mccartney.markups.short_instrument("Guit."),
+            ),
+        ),
+        (
+            "Viola",
             abjad.Viola(
-                markup=baca.markups.instrument("Viola II"),
-                short_markup=baca.markups.short_instrument("Va. II"),
+                markup=baca.markups.instrument("Viola"),
+                short_markup=mccartney.markups.short_instrument("Vla."),
             ),
         ),
     ]
