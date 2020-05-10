@@ -4,8 +4,6 @@ import abjad
 Defines scoretemplate, subclass of abjad.ScoreTemplate. Segments appended later. 
 """
 
-
-
 class ScoreTemplate(abjad.ScoreTemplate):
     """
     Score template.

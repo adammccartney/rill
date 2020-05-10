@@ -1,7 +1,5 @@
 import abjad
-import baca
 import copy
-from .RhythmDefinition import RhythmDefinition
 from .ScoreTemplate import ScoreTemplate
 
 
@@ -9,32 +7,33 @@ class SegmentMaker(abjad.SegmentMaker):
     """
     Segment-maker.
 
-    >>> import ins_wasser
+    >>> import rill
 
-    ..  container:: example
+    .. container:: example
 
-        >>> maker = ins_wasser.SegmentMaker()
+        >>> maker = rill.SegmentMaker()
         >>> abjad.f(maker)
-        ins_wasser.SegmentMaker(
-            metronome_marks=[],
-            time_signatures=[],
-            )
+        rill.SegmentMaker(
+                metronome_marks=[],
+                time_signatures=[],
+                )
 
     """
 
-    ### CLASS ATTRIBUTES ###
+    ### CLASS VARIABLES ###
 
     __documentation_section__ = None
 
     __slots__ = (
+        "_container_to_part_assignment",
+        "_environment",
         "_lilypond_file",
         "_metadata",
-        "_rhythm_definitions",
+        "_persist",
+        "_previous_metadata",
+        "_previous_persist",
         "_score",
-        "markup_leaves",
-        "metronome_marks",
-        "name",
-        "time_signatures",
+        "_segment_directory",
     )
 
     ### INITIALIZER ###
@@ -48,7 +47,6 @@ class SegmentMaker(abjad.SegmentMaker):
     ):
         super(SegmentMaker, self).__init__()
         self._lilypond_file = None
-        self._rhythm_definitions = []
         self._segment_directory = None
         self._score = None
         self.markup_leaves = markup_leaves
@@ -56,29 +54,19 @@ class SegmentMaker(abjad.SegmentMaker):
         self.metronome_marks = metronome_marks or []
         self.time_signatures = time_signatures or []
 
-    ### PRIVATE PROPERTIES ###
 
+    ### PRIVATE PROPERTIES ###
+    
     @property
     def _music_voices(self):
         return (
-            self._score["Viola_I_Music_Voice"],
-            self._score["Viola_II_Music_Voice"],
+            self._score["Flute_Music_Voice"],
+            self._score["Bb_Clarinet_Music_Voice"],
+            self._score["Guitar_Music_Voice"],
+            self._score["Viola_Music_Voice"],
         )
 
     ### PRIVATE METHODS ###
-
-    def _attach_leaf_index_markup(self):
-        if not self.markup_leaves:
-            return
-        for voice in self._music_voices:
-            logical_ties = abjad.iterate(voice).logical_ties()
-            for i, logical_tie in enumerate(logical_ties):
-                markup = abjad.Markup(i)
-                abjad.attach(markup, logical_tie.head)
-
-    def _call_rhythm_definitions(self):
-        for rhythm_definition in self._rhythm_definitions:
-            rhythm_definition(self._score)
 
     def _configure_lilypond_file(self):
         lilypond_file = self._lilypond_file
@@ -91,97 +79,9 @@ class SegmentMaker(abjad.SegmentMaker):
             abjad.attach(abjad.Clef("alto"), leaf)
 
     def _get_staves(self):
-        return (self._score["Viola_I"], self._score["Viola_II"])
+        return (self._score["Flute"], self._score["Bb_Clarinet"], 
+                self._score["Guitar"], self._score["Viola"])
 
-    def _handle_metronome_marks(self):
-        if not self.metronome_marks:
-            return
-        context = self._score["Global_Skips"]
-        skips = baca.select(context).skips()
-        skip_count = len(skips)
-        prototype = (
-            baca.Accelerando,
-            abjad.Fermata,
-            abjad.MetronomeMark,
-            baca.Ritardando,
-        )
-        for i, expression in enumerate(self.metronome_marks):
-            index = expression[0]
-            if index < 0:
-                index = skip_count + index
-            skip = skips[index]
-            indicator = expression[1]
-            trend = None
-            if isinstance(indicator, list):
-                assert len(indicator) == 2, repr(indicator)
-                indicator, trend = indicator
-                trend = copy.copy(trend)
-            indicator = copy.copy(indicator)
-            assert isinstance(indicator, prototype), repr(indicator)
-            if isinstance(indicator, abjad.Fermata):
-                abjad.attach(indicator, skip)
-            elif isinstance(indicator, abjad.MetronomeMark):
-                left_text = indicator._get_markup()
-                if trend:
-                    style = "dashed-line-with-arrow"
-                else:
-                    style = "invisible-line"
-                start_text_span = abjad.StartTextSpan(
-                    left_text=left_text, style=style
-                )
-                abjad.attach(start_text_span, skip)
-                indicator._hide = True
-                abjad.attach(indicator, skip)
-                if trend:
-                    trend._hide = True
-                    abjad.attach(trend, skip)
-            else:
-                trend_prototype = (baca.Accelerando, baca.Ritardando)
-                assert isinstance(indicator, trend_prototype)
-                left_text = indicator._get_markup()
-                start_text_span = abjad.StartTextSpan(
-                    left_text=left_text, style="dashed-line-with-arrow"
-                )
-                abjad.attach(start_text_span, skip)
-                indicator._hide = True
-                abjad.attach(indicator, skip)
-            if 0 < i and not isinstance(indicator, abjad.Fermata):
-                stop_text_span = abjad.StopTextSpan()
-                abjad.attach(stop_text_span, skip)
-            if len(expression) == 3:
-                staff_padding = expression[2]
-                string = f"\override Script.staff-padding = {staff_padding}"
-                command = abjad.LilyPondLiteral(string)
-                abjad.attach(command, skip)
-                string = (
-                    f"\override TextScript.staff-padding = {staff_padding}"
-                )
-                command = abjad.LilyPondLiteral(string)
-                abjad.attach(command, skip)
-                value = staff_padding + 0.75
-                string = f"\override TextSpanner.staff-padding = {value}"
-                command = abjad.LilyPondLiteral(string)
-                abjad.attach(command, skip)
-        stop_text_span = abjad.StopTextSpan()
-        abjad.attach(stop_text_span, skips[-1])
-
-    def _handle_time_signatures(self):
-        if not self.metronome_marks:
-            return
-        context = self._score["Global_Skips"]
-        skips = []
-        for item in self.time_signatures:
-            skip = abjad.Skip(1, multiplier=item)
-            time_signature = abjad.TimeSignature(item)
-            abjad.attach(time_signature, skip, context="Score")
-            skips.append(skip)
-        context.extend(skips)
-        context = self._score["Global_Rests"]
-        rests = []
-        for item in self.time_signatures:
-            rest = abjad.MultimeasureRest(1, multiplier=item)
-            rests.append(rest)
-        context.extend(rests)
 
     def _make_lilypond_file(self):
         path = "../../stylesheets/stylesheet.ily"
@@ -200,7 +100,6 @@ class SegmentMaker(abjad.SegmentMaker):
         self._score = score
 
     ### PUBLIC PROPERTIES ###
-
     @property
     def metadata(self):
         """
@@ -209,16 +108,6 @@ class SegmentMaker(abjad.SegmentMaker):
         return self._metadata
 
     ### PUBLIC METHODS ###
-
-    def define_rhythm(self):
-        """
-        Makes rhythm definition.
-
-        Returns rhythm definition.
-        """
-        rhythm_definition = RhythmDefinition()
-        self._rhythm_definitions.append(rhythm_definition)
-        return rhythm_definition
 
     def run(
         self,
@@ -230,26 +119,17 @@ class SegmentMaker(abjad.SegmentMaker):
     ):
         """
         Runs segment-maker.
-
-        Returns LilyPond file.
+        Returns Lilypond file
         """
-        self._metadata = abjad.OrderedDict(metadata)
-        self._persist = abjad.OrderedDict(persist)
-        self._previous_metadata = abjad.OrderedDict(previous_metadata)
-        self._previous_persist = abjad.OrderedDict(previous_persist)
+        self._metadata = OrderedDict(metadata)
+        self._persist = OrderedDict(persist)
+        self._previous_metadata = OrderedDict(previous_metadata)
+        self._previous_persist = OrderedDict(previous_persist)
         self._segment_directory = segment_directory
         self._make_score()
         self._make_lilypond_file()
-        self._configure_lilypond_file()
-        self._handle_time_signatures()
-        self._handle_metronome_marks()
-        self._call_rhythm_definitions()
         self._configure_score()
-        self._attach_leaf_index_markup()
         self._add_container_identifiers()
         score_block = self._lilypond_file["score"]
         score = score_block["Score"]
-        #        if not abjad.inspect(score).wellformed():
-        #            string = abjad.inspect(score).tabulate_wellformedness()
-        #            raise Exception(string)
         return self._lilypond_file
