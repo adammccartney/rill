@@ -1,6 +1,6 @@
 import abjad
 import copy
-from .ScoreTemplate import ScoreTemplate
+from rill.tools.ScoreTemplate import ScoreTemplate
 
 
 class SegmentMaker(abjad.SegmentMaker):
@@ -19,42 +19,41 @@ class SegmentMaker(abjad.SegmentMaker):
                 )
 
     """
-
     ### CLASS VARIABLES ###
 
     __documentation_section__ = None
 
     __slots__ = (
-        "_container_to_part_assignment",
-        "_environment",
         "_lilypond_file",
         "_metadata",
-        "_persist",
-        "_previous_metadata",
-        "_previous_persist",
+        "_rhythm_definitions",
         "_score",
-        "_segment_directory",
+        "markup_leaves",
+        "metronome_marks",
+        "name",
+        "time_signatures",
     )
 
     ### INITIALIZER ###
 
     def __init__(
-        self,
-        name=None,
-        metronome_marks=None,
-        time_signatures=None,
+            self,
+            name=None,
+            metronome_marks=None,
+            time_signatures=None,
     ):
         super(SegmentMaker, self).__init__()
         self._lilypond_file = None
+        self._rhythm_definitions = []
         self._segment_directory = None
         self._score = None
+        self.markup_leaves = markup_leaves
         self.name = name
         self.metronome_marks = metronome_marks or []
         self.time_signatures = time_signatures or []
 
-
     ### PRIVATE PROPERTIES ###
-    
+
     @property
     def _music_voices(self):
         return (
@@ -65,6 +64,19 @@ class SegmentMaker(abjad.SegmentMaker):
         )
 
     ### PRIVATE METHODS ###
+    
+    def _attach_leaf_index_markup(self):
+        if not self.markup_leaves:
+            return
+        for voice in self._music_voices:
+            logical_ties = abjad.iterate(voice).logical_ties()
+            for i, logical_tie in enumerate(logical_ties):
+                markup = abjad.Markup(i)
+                abjad.attach(markup, logical_tie.head)
+
+    def _call_rhythm_definitions(self):
+        for rhythm_definition in self._rhythm_definitions:
+            rhythm_definition(self._score)
 
     def _configure_lilypond_file(self):
         lilypond_file = self._lilypond_file
@@ -77,9 +89,7 @@ class SegmentMaker(abjad.SegmentMaker):
             abjad.attach(abjad.Clef("alto"), leaf)
 
     def _get_staves(self):
-        return (self._score["Flute"], self._score["Bb_Clarinet"], 
-                self._score["Guitar"], self._score["Viola"])
-
+        return (self._score["Viola_I"], self._score["Viola_II"])
 
     def _make_lilypond_file(self):
         path = "../../stylesheets/stylesheet.ily"
@@ -98,6 +108,7 @@ class SegmentMaker(abjad.SegmentMaker):
         self._score = score
 
     ### PUBLIC PROPERTIES ###
+
     @property
     def metadata(self):
         """
@@ -106,6 +117,16 @@ class SegmentMaker(abjad.SegmentMaker):
         return self._metadata
 
     ### PUBLIC METHODS ###
+
+    def define_rhythm(self):
+        """
+        Makes rhythm definition.
+
+        Returns rhythm definition.
+        """
+        rhythm_definition = RhythmDefinition()
+        self._rhythm_definitions.append(rhythm_definition)
+        return rhythm_definition
 
     def run(
         self,
@@ -117,17 +138,26 @@ class SegmentMaker(abjad.SegmentMaker):
     ):
         """
         Runs segment-maker.
-        Returns Lilypond file
+
+        Returns LilyPond file.
         """
-        self._metadata = OrderedDict(metadata)
-        self._persist = OrderedDict(persist)
-        self._previous_metadata = OrderedDict(previous_metadata)
-        self._previous_persist = OrderedDict(previous_persist)
+        self._metadata = abjad.OrderedDict(metadata)
+        self._persist = abjad.OrderedDict(persist)
+        self._previous_metadata = abjad.OrderedDict(previous_metadata)
+        self._previous_persist = abjad.OrderedDict(previous_persist)
         self._segment_directory = segment_directory
         self._make_score()
         self._make_lilypond_file()
+        self._configure_lilypond_file()
+        self._handle_time_signatures()
+        self._handle_metronome_marks()
+        self._call_rhythm_definitions()
         self._configure_score()
+        self._attach_leaf_index_markup()
         self._add_container_identifiers()
         score_block = self._lilypond_file["score"]
         score = score_block["Score"]
+        #        if not abjad.inspect(score).wellformed():
+        #            string = abjad.inspect(score).tabulate_wellformedness()
+        #            raise Exception(string)
         return self._lilypond_file
