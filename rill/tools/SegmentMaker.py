@@ -40,7 +40,6 @@ class SegmentMaker(abjad.SegmentMaker):
 
     def __init__(
         self,
-        markup_leaves=None,
         name=None,
         metronome_marks=None,
         time_signatures=None,
@@ -49,7 +48,6 @@ class SegmentMaker(abjad.SegmentMaker):
         self._lilypond_file = None
         self._segment_directory = None
         self._score = None
-        self.markup_leaves = markup_leaves
         self.name = name
         self.metronome_marks = metronome_marks or []
         self.time_signatures = time_signatures or []

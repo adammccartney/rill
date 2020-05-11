@@ -1,12 +1,89 @@
 import abjad
+import rill 
 
 """
 Defines scoretemplate, subclass of abjad.ScoreTemplate. Segments appended later. 
 """
 
+
+
 class ScoreTemplate(abjad.ScoreTemplate):
-    """
-    Score template.
+    r"""rill Score template.
+    
+    ::
+
+        >>> import rill
+        >>> template = rill.tools.ScoreTemplate()
+        >>> score = template()
+        >>> print(format(score))
+
+        \context Score = "Score"                              %! rill.ScoreTemplate.__call__()
+<<                                                            %! rill.ScoreTemplate.__call__()
+    \context GlobalContext = "Global_Context"                 %! abjad.ScoreTemplate._make_global_context()
+    <<                                                        %! abjad.ScoreTemplate._make_global_context()
+        \context GlobalRests = "Global_Rests"                 %! abjad.ScoreTemplate._make_global_context()
+        {                                                     %! abjad.ScoreTemplate._make_global_context()
+        }                                                     %! abjad.ScoreTemplate._make_global_context()
+        \context GlobalSkips = "Global_Skips"                 %! abjad.ScoreTemplate._make_global_context()
+        {                                                     %! abjad.ScoreTemplate._make_global_context()
+        }                                                     %! abjad.ScoreTemplate._make_global_context()
+    >>                                                        %! abjad.ScoreTemplate._make_global_context()
+    \context MusicContext = "Music_Context"                   %! rill.ScoreTemplate.__call__()
+    {                                                         %! rill.ScoreTemplate.__call__()
+        \context Quartet_Staff = "Quartet_Staff"              %! rill.ScoreTemplate.__call__()
+        <<                                                    %! rill.ScoreTemplate.__call__()
+            \context Staff = "Flute"                          %! rill.ScoreTemplate.__call__()
+            <<                                                %! rill.ScoreTemplate.__call__()
+                \context Voice = "Flute_Markup_Voice"         %! rill.ScoreTemplate.__call__()
+                {                                             %! rill.ScoreTemplate.__call__()
+                }                                             %! rill.ScoreTemplate.__call__()
+                \context Voice = "Flute_Music_Voice"          %! rill.ScoreTemplate.__call__()
+                {                                             %! rill.ScoreTemplate.__call__()
+                }                                             %! rill.ScoreTemplate.__call__()
+                \context Voice = "Flute_Dynamics_Voice"       %! rill.ScoreTemplate.__call__()
+                {                                             %! rill.ScoreTemplate.__call__()
+                }                                             %! rill.ScoreTemplate.__call__()
+            >>                                                %! rill.ScoreTemplate.__call__()
+            \context Staff = "Bb_Clarinet"                    %! rill.ScoreTemplate.__call__()
+            <<                                                %! rill.ScoreTemplate.__call__()
+                \context Voice = "Bb_Clarinet_Markup_Voice"   %! rill.ScoreTemplate.__call__()
+                {                                             %! rill.ScoreTemplate.__call__()
+                }                                             %! rill.ScoreTemplate.__call__()
+                \context Voice = "Bb_Clarinet_Music_Voice"    %! rill.ScoreTemplate.__call__()
+                {                                             %! rill.ScoreTemplate.__call__()
+                }                                             %! rill.ScoreTemplate.__call__()
+                \context Voice = "Bb_Clarinet_Dynamics_Voice" %! rill.ScoreTemplate.__call__()
+                {                                             %! rill.ScoreTemplate.__call__()
+                }                                             %! rill.ScoreTemplate.__call__()
+            >>                                                %! rill.ScoreTemplate.__call__()
+            \context Staff = "Guitar"                         %! rill.ScoreTemplate.__call__()
+            <<                                                %! rill.ScoreTemplate.__call__()
+                \context Voice = "Guitar_Markup_Voice"        %! rill.ScoreTemplate.__call__()
+                {                                             %! rill.ScoreTemplate.__call__()
+                }                                             %! rill.ScoreTemplate.__call__()
+                \context Voice = "Guitar_Music_Voice"         %! rill.ScoreTemplate.__call__()
+                {                                             %! rill.ScoreTemplate.__call__()
+                }                                             %! rill.ScoreTemplate.__call__()
+                \context Voice = "Guitar_Dynamics_Voice"      %! rill.ScoreTemplate.__call__()
+                {                                             %! rill.ScoreTemplate.__call__()
+                }                                             %! rill.ScoreTemplate.__call__()
+            >>                                                %! rill.ScoreTemplate.__call__()
+            \context Staff = "Viola"                          %! rill.ScoreTemplate.__call__()
+            <<                                                %! rill.ScoreTemplate.__call__()
+                \context Voice = "Viola_Markup_Voice"         %! rill.ScoreTemplate.__call__()
+                {                                             %! rill.ScoreTemplate.__call__()
+                }                                             %! rill.ScoreTemplate.__call__()
+                \context Voice = "Viola_Music_Voice"          %! rill.ScoreTemplate.__call__()
+                {                                             %! rill.ScoreTemplate.__call__()
+                }                                             %! rill.ScoreTemplate.__call__()
+                \context Voice = "Viola_Dynamics_Voice"       %! rill.ScoreTemplate.__call__()
+                {                                             %! rill.ScoreTemplate.__call__()
+                }                                             %! rill.ScoreTemplate.__call__()
+            >>                                                %! rill.ScoreTemplate.__call__()
+        >>                                                    %! rill.ScoreTemplate.__call__()
+    }                                                         %! rill.ScoreTemplate.__call__()
+>>                                                            %! rill.ScoreTemplate.__call__()
+
     """
     ### CLASS VARIABLES ###
 
@@ -102,7 +179,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
             "default_instrument",
             rill.instruments["Viola"],
         )
-        abjad.annotate(viola_2_staff, "default_clef", abjad.Clef("alto"))
+        abjad.annotate(viola_staff, "default_clef", abjad.Clef("alto"))
 
         # SCORE
         quartet_staff = abjad.StaffGroup(
@@ -120,9 +197,6 @@ class ScoreTemplate(abjad.ScoreTemplate):
         score = abjad.Score(
             [global_context, music_context], name="Score", tag=tag
         )
-        self._assert_lilypond_identifiers(score)
-        self._assert_unique_context_names(score)
-        self._assert_matching_custom_context_names(score)
         return score
 
     ### PUBLIC PROPERTIES ###
