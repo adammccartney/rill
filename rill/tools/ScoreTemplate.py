@@ -96,8 +96,8 @@ class ScoreTemplate(abjad.ScoreTemplate):
     def __init__(self):
         super(ScoreTemplate, self).__init__()
         self.voice_abbreviations.update(
-            {"Fl.": "Flute_Music_Voice", "ClBb." : "ClarinetBb_Music_Voice",
-                "Guit.": "Guitar", "Vla.": "Viola"
+            {"Fl.": "Flute_Music_Voice", "BbCl." : "Bb_Clarinet_Music_Voice",
+                "Guit.": "Guitar_Voice", "Vla.": "Viola_Voice"
                 }
         )
 
