@@ -29,6 +29,7 @@ class SegmentMaker(abjad.SegmentMaker):
             "_metadata",
             "_score",
             "name",
+            "time_signatures"
             )
 
     ### INITIALIZER ###
@@ -36,9 +37,15 @@ class SegmentMaker(abjad.SegmentMaker):
     def __init__(
             self, 
             name=None,
+            time_signatures=None
         ):
             super(SegmentMaker, self).__init__()
-            self.__lilypond_file = None
+            self._lilypond_file = None
+            self._rhythm_definitions = []
+            self._segment_directory = None
+            self._score = None
+            self.name = name
+            self.time_signatures = time_signatures or []
 
 
     ### PRIVATE PROPERTIES ###
@@ -53,12 +60,31 @@ class SegmentMaker(abjad.SegmentMaker):
                 )
 
     ### PRIVATE METHODS ###
-    
+    def _handle_time_signatures(self):
+        if not self.metronome_marks:
+            return
+        context = self._score["Global_Skips"]
+        skips = []
+        for item in self.time_signatures:
+            skip = abjad.Skip(1, multiplier=item)
+            time_signature = abjad.TimeSignature(item)
+            abjad.attach(time_signature, skip, context="Score")
+            skips.append(skip)
+        context.extend(skips)
+        context = self._score["Global_Rests"]
+        rests = []
+        for item in self.time_signatures:
+            rest = abjad.MultimeasureRest(1, multiplier=item)
+            rests.append(rest)
+        context.extend(rests)
+
+
+
     def _make_lilypond_file(self, midi=False):
         return abjad.Staff("c'4 d'4 e'4 f'4").__illustrate__()
 
     def _make_score(self):
-        template = Score.Template()
+        template = ScoreTemplate()
         score = template()
         self._score = score
 
@@ -83,4 +109,5 @@ class SegmentMaker(abjad.SegmentMaker):
         self._segment_directory = segment_directory
         self._make_score()
         self._make_lilypond_file()
+        self._handle_time_signatures()
         return self._lilypond_file
