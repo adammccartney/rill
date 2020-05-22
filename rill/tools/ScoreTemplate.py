@@ -211,7 +211,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
             abjad.OrderedDict(
                 [
                     ('fl', 'Flute_Music_Voice'),
-                    ('bcl', 'Bb_Clarinet_Music_Voice'),
+                    ('clb', 'Bb_Clarinet_Music_Voice'),
                     ('guit', 'Guitar_Music_Voice'),
                     ('vla', 'Viola_Music_Voice'),
                     ]

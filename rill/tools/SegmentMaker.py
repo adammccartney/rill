@@ -60,6 +60,7 @@ class SegmentMaker(abjad.SegmentMaker):
                 )
 
     ### PRIVATE METHODS ###
+
     def _handle_time_signatures(self):
         if not self.metronome_marks:
             return
@@ -78,10 +79,16 @@ class SegmentMaker(abjad.SegmentMaker):
             rests.append(rest)
         context.extend(rests)
 
-
-
     def _make_lilypond_file(self, midi=False):
-        return abjad.Staff("c'4 d'4 e'4 f'4").__illustrate__()
+        path = "../../stylesheets/stylesheet.ily"
+        lilypond_file = abjad.LilyPondFile.new(
+            music=self._score, includes=[path], use_relative_includes=True
+        )
+        delattr(lilypond_file.header_block, "tagline")
+        for item in lilypond_file.items[:]:
+            if getattr(item, "name", None) in ("layout", "paper"):
+                lilypond_file.items.remove(item)
+        self._lilypond_file = lilypond_file
 
     def _make_score(self):
         template = ScoreTemplate()
