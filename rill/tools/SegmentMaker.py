@@ -29,7 +29,10 @@ class SegmentMaker(abjad.SegmentMaker):
             "_metadata",
             "_score",
             "name",
+<<<<<<< HEAD
             "time_signatures"
+=======
+>>>>>>> e80f6ac349904029993ef76d044eac87f8ee41d3
             )
 
     ### INITIALIZER ###
@@ -37,6 +40,7 @@ class SegmentMaker(abjad.SegmentMaker):
     def __init__(
             self, 
             name=None,
+<<<<<<< HEAD
             time_signatures=None
         ):
             super(SegmentMaker, self).__init__()
@@ -46,6 +50,11 @@ class SegmentMaker(abjad.SegmentMaker):
             self._score = None
             self.name = name
             self.time_signatures = time_signatures or []
+=======
+        ):
+            super(SegmentMaker, self).__init__()
+            self.__lilypond_file = None
+>>>>>>> e80f6ac349904029993ef76d044eac87f8ee41d3
 
 
     ### PRIVATE PROPERTIES ###
@@ -60,6 +69,7 @@ class SegmentMaker(abjad.SegmentMaker):
                 )
 
     ### PRIVATE METHODS ###
+<<<<<<< HEAD
 
     def _handle_time_signatures(self):
         if not self.metronome_marks:
@@ -79,6 +89,9 @@ class SegmentMaker(abjad.SegmentMaker):
             rests.append(rest)
         context.extend(rests)
 
+=======
+    
+>>>>>>> e80f6ac349904029993ef76d044eac87f8ee41d3
     def _make_lilypond_file(self, midi=False):
         path = "../../stylesheets/stylesheet.ily"
         lilypond_file = abjad.LilyPondFile.new(
@@ -109,6 +122,28 @@ class SegmentMaker(abjad.SegmentMaker):
         """
         Runs segment-maker
 
+<<<<<<< HEAD
+=======
+    def _make_score(self):
+        template = Score.Template()
+        score = template()
+        self._score = score
+
+
+    ### PUBLIC METHODS ###
+
+    def run(
+        self,
+        metadata=None,
+        persist=None,
+        previous_metadata=None,
+        previous_persist=None,
+        segment_directory=None,
+    ):
+        """
+        Runs segment-maker
+
+>>>>>>> e80f6ac349904029993ef76d044eac87f8ee41d3
         Returns LilyPond file.
         """
         self._metadata = abjad.OrderedDict(metadata)
@@ -116,5 +151,8 @@ class SegmentMaker(abjad.SegmentMaker):
         self._segment_directory = segment_directory
         self._make_score()
         self._make_lilypond_file()
+<<<<<<< HEAD
         self._handle_time_signatures()
+=======
+>>>>>>> e80f6ac349904029993ef76d044eac87f8ee41d3
         return self._lilypond_file
