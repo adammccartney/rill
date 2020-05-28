@@ -1,3 +1,17 @@
+# 28-5-20
+
+ + Read abjad.Chord to see if method exists to create invertion
+ + Create method to invert guitar chords stored in abjad.OrdinaryDict
+ + Iteratively invert all chords 
+ + Make datastructure to store chords + inverstions
+
+ + Make quick notational sketch of all possible guitar chord inversions
+ + Make do-ability survey (impossible, hard, easy)
+ + Send notes + survey to guitarists
+ 
+
+
+
 ## 20-5-2020 Next Steps 
 
 
