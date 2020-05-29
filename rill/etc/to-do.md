@@ -6,7 +6,13 @@
  + Make datastructure to store chords + inverstions
 
  + Make quick notational sketch of all possible guitar chord inversions
- + Make do-ability survey (impossible, hard, easy)
+  - review abjad music maker def by Trevor and sim thread by Josiah 
+  - build verbatim example to see how iterators are making leaves
+
+ + Make do-ability survey (impossible, hard, easy) 
+   
+
+ 
  + Send notes + survey to guitarists
  
 
