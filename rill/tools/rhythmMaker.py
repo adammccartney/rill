@@ -1,20 +1,20 @@
 import abjad 
-from abjadext import *
+from abjadext import rmakers
 
 # Talea rhythmMaker test
-#
-#stack = rmakers.stack(
-#        rmakers.talea([1, 2, 3, -4], 16),
-#        rmakers.beam(),
-#        rmakers.extract_trivial(),
-#        )
-#divisions = [(3, 8), (4, 8), (3, 8), (4, 8)]
-#selection = stack(divisions)
-#lilypond_file = abjad.LilyPondFile.rhythm(
-#        selection, divisions
-#        )
-#abjad.show(lilypond_file) # doctest: +SKIP
-#
+
+stack = rmakers.stack(
+        rmakers.talea([1, 2, 3, -4], 16),
+        rmakers.beam(),
+        rmakers.extract_trivial(),
+        )
+divisions = [(3, 8), (4, 8), (3, 8), (4, 8)]
+selection = stack(divisions)
+lilypond_file = abjad.LilyPondFile.rhythm(
+        selection, divisions
+        )
+abjad.show(lilypond_file) # doctest: +SKIP
+
 ## Note RhythmMaker test
 #
 #
@@ -68,52 +68,52 @@ from abjadext import *
 
 
 # Construct rmakers and use with measures in a voice
-
-
-maker1 = abjadext.rmakers.TaleaRhythmMaker(
-  extra_counts_per_division=[0],
-    talea=abjadext.rmakers.Talea(
-        counts=[3, 3, 4, 3, 3],
-        denominator=16,
-        ),
-    tuplet_specifier= abjadext.rmakers.TupletSpecifier(
-        extract_trivial=True
-    )
-)
-divisions=[4 * (4, 4)]
-
-
-stack = rmakers.stack(
-        rmakers.talea([3, 3, 4, 3, 3], 16),
-        rmakers.beam(),
-        rmakers.extract_trivial(),
-        )
-divisions = [4 * (4, 4)]
-selection = stack(divisions)
-
-
-
-measures = abjad.Voice()
-
-# Fill measures with Rests and attach TimeSignatures
-for pair in divisions:
-    multimeasure_rest = abjad.MultimeasureRest(1, multiplier=pair)
-    measures.append(abjad.Container([multimeasure_rest]))
-shards = abjad.mutate(measures[:]).split(divisions)
-for i, shard in enumerate(shards):
-    abjad.attach(abjad.TimeSignature(divisions[i]), shard[0][0])
-   
-
-selections = maker1(divisions)
-
-# # Replace contents of measures with the RhythmMaker's contents
-
-for i, measure in enumerate(measures):
-    assert isinstance(selections[i], abjad.Selection), repr(selection)
-    assert isinstance(measure, abjad.Container), repr(measure)
-    abjad.mutate(measure[:]).replace(selections[i]) ## <-- here was the problem
-    abjad.attach(abjad.TimeSignature(divisions[i]), measure[0])
-
-   
-staff = abjad.Staff([measures])
-abjad.f(staff)
+#
+#
+#maker1 = rmakers.TaleaRhythmMaker(
+#  extra_counts_per_division=[0],
+#    talea=rmakers.Talea(
+#        counts=[3, 3, 4, 3, 3],
+#        denominator=16,
+#        ),
+#    tuplet_specifier= rmakers.TupletSpecifier(
+#        extract_trivial=True
+#    )
+#)
+#divisions=[4 * (4, 4)]
+#
+#
+#stack = rmakers.stack(
+#        rmakers.talea([3, 3, 4, 3, 3], 16),
+#        rmakers.beam(),
+#        rmakers.extract_trivial(),
+#        )
+#divisions = [4 * (4, 4)]
+#selection = stack(divisions)
+#
+#
+#
+#measures = abjad.Voice()
+#
+## Fill measures with Rests and attach TimeSignatures
+#for pair in divisions:
+#    multimeasure_rest = abjad.MultimeasureRest(1, multiplier=pair)
+#    measures.append(abjad.Container([multimeasure_rest]))
+#shards = abjad.mutate(measures[:]).split(divisions)
+#for i, shard in enumerate(shards):
+#    abjad.attach(abjad.TimeSignature(divisions[i]), shard[0][0])
+#   
+#
+#selections = maker1(divisions)
+#
+## # Replace contents of measures with the RhythmMaker's contents
+#
+#for i, measure in enumerate(measures):
+#    assert isinstance(selections[i], abjad.Selection), repr(selection)
+#    assert isinstance(measure, abjad.Container), repr(measure)
+#    abjad.mutate(measure[:]).replace(selections[i]) ## <-- here was the problem
+#    abjad.attach(abjad.TimeSignature(divisions[i]), measure[0])
+#
+#   
+#staff = abjad.Staff([measures])
+#abjad.f(staff)
