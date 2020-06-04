@@ -19,15 +19,32 @@ def invertChord(chord, inv):
             # print(_chord)
         return _chord                                 # return target inversion
 
-# method for inverting PitchSegments
-# arguments = PitchSegment, rotation
-# copy pitch segment
-# check that rotation is not greated than PitchSegment length
-# rotate to desired position
+import rill
+
+pitch_segments = rill.pitch_segments
+seg_bf_ii = pitch_segments['bf_ii'].value()
+
+def invert(pitch_segment, shift=0): # arguments = PitchSegment, rotation
+    """invert PitchSegments as if they were chords"""
+
+    segment = pitch_segment.copy() # copy pitch segment
+    if rotation > len(self): # check rotation !> PitchSegment length
+        message = "Rotation argument too large: retry with transposed segment"
+        raise ValueError(message)
+    segment.rotate(shift)    # rotate to desired position
+    pitch_set = PitchSet(str(segment)) # make PitchSet for easy rotation + transposition
 # if rotation == bottom_to_top
 ## transpose rotated pitches 8ve
+## modify copied pitch segment
 # if rotation == top_to_bottom
 ## transpose rotated pitches 8vb
+## modify copied pitch segment
+# return modfieif copied pitch segment
+
+
+if __name__ == '__main__':
+    print(seg_bf_ii)
+
 
 class Progression(object):
     """
