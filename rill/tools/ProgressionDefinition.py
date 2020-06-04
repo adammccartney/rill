@@ -1,55 +1,6 @@
 import abjad
 import rill
 
-## method for inverting chords
-#def invertChord(chord, inv):
-#    if 0 > inv > 4:
-#        print("can't invert beyond tetrads")
-#    invertedChord = abjad.Chord()
-#    _chord = chord.__copy__()
-#    if isinstance(chord, abjad.Chord):
-#        for i in range(inv):
-#            noteList = _chord.note_heads               # copy noteheads to new list 
-#            lowestNoteHead = noteList.pop(0)          # get lowest note_head
-#            lowestPitch = lowestNoteHead.named_pitch  # note_head to pitch
-#            highestPitch = lowestPitch.transpose(12)  # transpose up an octave
-#            highestNoteHead = abjad.NoteHead(highestPitch.name) # Pitch to NoteHead
-#            newNoteList = noteList[0::]               # make new list of upper tones
-#            newNoteList.append(highestNoteHead)       # append notehead to list
-#            _chord.note_heads = newNoteList           # reset _chord with permuted list
-#            # print(_chord)
-#        return _chord                                 # return target inversion
-#
-
-
-#def invert(old_segment, shift): # arguments = PitchSegment, rotation
-#    """invert PitchSegments as if they were chords"""
-#    print(old_segment.to_pitches())
-#    if shift > len(old_segment): # check rotation !> PitchSegment length
-#        message = "Rotation argument too large: retry with transposed segment"
-#        raise ValueError(message)
-#    new_segment = old_segment.rotate(n=shift)    # rotate to desired position
-#    print(new_segment.to_pitches())
-#    pitches = new_segment.to_pitches()
-#    print("new_segment as pitches :", pitches)
-#    plist = []
-#    for pitch in pitches:
-#        plist.append(pitch)
-#    print(plist)
-#    pitch_set = abjad.PitchSet(
-#            plist,
-#            item_class=abjad.NamedPitch,
-#            ) # make PitchSet for easy rotation + transposition
-#    print(pitch_set)
-#   # if 0 < rotation: # bottom_to_top
-#        ## transpose rotated pitches 8ve
-#
-### modify copied pitch segment
-## if rotation == top_to_bottom
-### transpose rotated pitches 8vb
-### modify copied pitch segment
-## return modfieif copied pitch segment
-
 def make_iterable_pitch_set(segment):
     """returns list of pitches"""
     set_ = abjad.PitchSet(
@@ -99,19 +50,7 @@ def global_minima(pitch_segment):
 
 def invert(segment, shift):
     """
-    inverts PitchSegments as if they were chords
-    
-    returns new pitch segment
-    """
-
-    # check that we can get local max & min
-    print(segment)
-    print(segment.local_maxima)
-
-
-def invert(segment, shift):
-    """
-    invert PitchSegments as if they were chords
+    invert PitchSegments in the style of chord inversions
     
     returns a new segment
     """
@@ -251,7 +190,6 @@ if __name__ == '__main__':
     #    print("bottom_trim", bottom_trim)
     #
     segment = abjad.PitchSegment("c' e' g' bf'")
-    segment = abjad.PitchSegment([1, 3, 5, 7, -9])
     top_list = segment.local_maxima
     print("top_list: ", top_list)
     first_inv = invert(segment, 1)
