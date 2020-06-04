@@ -1,6 +1,48 @@
 import abjad
 import rill
 
+from collections import deque 
+
+class PitchDeque(object):
+    """
+    Initialised with a pitch set
+    made to contain some easy ways
+    to append to front or back
+    """
+
+    def __init__(self, iterable_pitch_set):
+        self.pitch_deque = deque(iterable_pitch_set)
+        self.modified = deque()
+
+    def get_pitch_deque(self):
+        return deque(self.pitch_deque)
+
+    def set_modified(self, last=True):
+        """
+        trims item from list
+        will trim last item if last is true 
+        returns modified pitch deque
+        """ 
+        trimmed_pitch_deque = self.pitch_deque
+        if last:      # if last is true, trim last element
+            trimmed_pitch_deque.pop()
+        if not last:  # if not, trim first
+            trimmed_pitch_deque.popleft()
+        self.modified = trimmed_pitch_deque
+
+    def get_modified(self):
+        return self.modified 
+
+
+def extend_deque(pitch_deque, pitch, beginning=True):
+    """adds a pitch at beggining or end based on check"""
+    new_deque = deque(pitch_deque)
+    if beginning:
+        new_deque.appendleft(pitch)
+    if not beginning:
+        new_deque.append(pitch)
+    return new_deque
+
 def make_iterable_pitch_set(segment):
     """returns list of pitches"""
     set_ = abjad.PitchSet(
@@ -13,18 +55,6 @@ def make_iterable_pitch_set(segment):
         set_full.append(i)
     return set_full
     
-def trim_pitch(iterable_pitch_set, last=True):
-    """trims item from list""" 
-    set_trim = []
-    pitch_set = iterable_pitch_set
-    if last:      # if last is true, trim last element
-        for item in pitch_set[:-1]:
-            set_trim.append(item) 
-    if not last:  # if not, trim first
-        for item in pitch_set[1:]:
-            set_trim.append(item)
-    return set_trim
-
 def global_maxima(pitch_segment):
     result = []
     maxima = pitch_segment[0]
@@ -47,50 +77,49 @@ def global_minima(pitch_segment):
         result.append(minima)
         return result  
  
-
-def invert(segment, shift):
-    """
-    invert PitchSegments in the style of chord inversions
-    
-    returns a new segment
-    """
-    new_segment = segment
-    for i in range(shift):
-        if 0 > shift:          # if shift is negative, transpose top to bottom
-            # run this loop shift times
-            segment = new_segment
-            top_list = global_maxima(segment)
-            for top_pitch in top_list:
-                new_bottom = top_pitch
-                transposed = abjad.NamedInterval("-P8").transpose(top_pitch)
-            print("transposed: ", transposed)
-            set_full = make_iterable_pitch_set(segment) # convert to iterable
-            print("full set: ", set_full)
-            set_trim = trim_pitch(set_full, True) # trim top pitch 
-            set_trim.insert(0, new_bottom)    
-            new_set = set_trim
-            print("after transpose", new_set)
-            new_segment = abjad.PitchSegment(new_set)
-            print("before looping :", new_segment)
-
-        if 0 < shift:
-            # run this loop shift times
-            bottom_list = global_minima(segment)
-            segment = new_segment
-            new_top = abjad.NamedPitch()
-            for bottom_pitch in bottom_list:
-                new_top = abjad.NamedInterval("+P8").transpose(bottom_pitch)
-            print(new_top)
-            set_full = make_iterable_pitch_set(segment)
-            print("full set: ", set_full)
-            set_trim = trim_pitch(set_full, False) # trim bottom pitch
-            set_trim.append(new_top)
-            new_set = set_trim
-            print("after transpose", new_set)
-            new_segment = abjad.PitchSegment(new_set)
-            print("before looping :", new_segment)
-    return new_segment # returns the inverted segment
-
+#def invert(segment, shift):
+#    """
+#    invert PitchSegments in the style of chord inversions
+#    
+#    returns a new segment
+#    """
+#    from collections import deque
+#    new_segment = segment
+#    transposed = abjad.NamedPitch()
+#    print("got this far")
+#    print("shift:",shift)
+#    for i in range(abs(shift)):
+#        print("i = ", i)
+#        print("in for loop")
+#        segment = new_segment
+#        print("segment:", segment)
+#        t_interval = "+P8" # set to transpose up octave
+#        trim_last = False  # trim the first item from pitch set 
+#        select_outer = global_maxima  # function to select top pitch
+#        position = True               # will append to beginning
+#        if 0 > shift:          # if shift is negative, transpose top to bottom
+#            # run this loop shift times
+#            t_interval = "-P8"
+#            trim_last = True
+#            select_outer = global_minima
+#            position = False
+#        print("got this far")
+#        outer_pitch_list = select_outer(segment)
+#        print("top list:", top_list)
+#        for pitch in outer_pitch_list:
+#            transposed = abjad.NamedInterval(t_interval).transpose(pitch)
+#        print("transposed: ", transposed)
+#        set_full = make_iterable_pitch_set(segment) # convert to iterable
+#        print("full set: ", set_full)
+#        pitch_deque = PitchDeque(set_full)
+#        pitch_deque.set_modified(trim_last) # trim outer
+#        pitch_deque.extend_modified(position,transposed)    
+#        new_set = pitch_deque.get_modified()
+#        new_segment = abjad.PitchSegment(new_set)
+#        print("before looping :", new_segment)
+#
+#    return new_segment
+#
 # convert segment to pitch set
 # check shift to see direction of transposition
 # if positive modify local minima up
@@ -156,18 +185,22 @@ class Progression(object):
 if __name__ == '__main__':
 
     a = abjad.PitchSegment("c' d' e' f' g'")
-    b = abjad.PitchSegment("f c' c'' e' g'")
-    print("a min: ",global_minima(a))
-    print("a max: ", global_maxima(a))
-    print("b min: ",global_minima(b))
-    print("b max: ", global_maxima(b))
+    it_set = make_iterable_pitch_set(a)
+    d = PitchDeque(it_set)
+    print(d.pitch_deque)
+    d.set_modified(last=True)
+    d_ = d.get_modified()
+    print(d_)
+    c = extend_deque(d_, abjad.NamedPitch("a'''"), beginning=True)
+    print(c)
     
-    
-    
-    
-    
-    
-    
+    #a = abjad.PitchSegment("c' d' e' f' g'")
+    #b = abjad.PitchSegment("f c' c'' e' g'")
+    #print("a min: ",global_minima(a))
+    #print("a max: ", global_maxima(a))
+    #print("b min: ",global_minima(b))
+    #print("b max: ", global_maxima(b))
+    # 
     
     #    pitch_segments = rill.pitch_segments
     #    seg_bf_ii = pitch_segments['bf_ii']
@@ -190,28 +223,24 @@ if __name__ == '__main__':
     #    print("bottom_trim", bottom_trim)
     #
     segment = abjad.PitchSegment("c' e' g' bf'")
-    top_list = segment.local_maxima
-    print("top_list: ", top_list)
-    first_inv = invert(segment, 1)
-    second_inv = invert(segment, 2)
-    third_inv = invert(segment, 3)
-    fourth_inv = invert(segment, 4)
-    nfirst_inv = invert(segment, -1)
-    nsecond_inv = invert(segment, -2)
-    nthird_inv = invert(segment, -3)
-    nfourth_inv = invert(segment, -4) 
-    print(
-            "first_inv: ", first_inv,
-            "second_inv: ", second_inv,
-            "third_inv: ", third_inv,
-            "fourth_inv: ", fourth_inv,
-            "n-first_inv: ", nfirst_inv,
-            "n-second_inv: ", nsecond_inv,
-            "n-third_inv: ", nthird_inv,
-            "n-fourth_inv: ", nfourth_inv,
-           )
+    #top_list = global_maxima(segment)
+    #print("top_list: ", top_list)
+    ##first_inv = invert(segment, 1)
+    ##second_inv = invert(segment, 2)
+    ##third_inv = invert(segment, 3)
+    ##fourth_inv = invert(segment, 4)
+    #nfirst_inv = invert(segment, -1)
+    #nsecond_inv = invert(segment, -2)
+    #print(
+    #        #       "first_inv: ", first_inv,
+    #        #"second_inv: ", second_inv,
+    #        #"third_inv: ", third_inv,
+    #        #"fourth_inv: ", fourth_inv,
+    #        "n-first_inv: ", nfirst_inv,
+    #        "n-second_inv: ", nsecond_inv,
+    #        )
 
-#     a = abjad.NamedPitch("a'")
+#   #  a = abjad.NamedPitch("a'")
 #     a_t = abjad.NamedInterval("+P8").transpose(a)
 #     print(a_t)
 
