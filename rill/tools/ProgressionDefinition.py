@@ -115,14 +115,12 @@ def invert(segment, shift):
     
     returns a new segment
     """
-
-    octave = 12            # octave equivalence
     new_segment = segment
     for i in range(shift):
         if 0 > shift:          # if shift is negative, transpose top to bottom
             # run this loop shift times
             segment = new_segment
-            top_list = segment.local_maxima
+            top_list = global_maxima(segment)
             for top_pitch in top_list:
                 new_bottom = top_pitch
                 transposed = abjad.NamedInterval("-P8").transpose(top_pitch)
@@ -138,7 +136,7 @@ def invert(segment, shift):
 
         if 0 < shift:
             # run this loop shift times
-            bottom_list = segment.local_minima
+            bottom_list = global_minima(segment)
             segment = new_segment
             new_top = abjad.NamedPitch()
             for bottom_pitch in bottom_list:
@@ -252,28 +250,28 @@ if __name__ == '__main__':
     #    print("top_trim: ",top_trim)
     #    print("bottom_trim", bottom_trim)
     #
-    #segment = abjad.PitchSegment("c' e' g' bf'")
-    #segment = abjad.PitchSegment([1, 3, 5, 7, -9])
-    #top_list = segment.local_maxima
-    #print("top_list: ", top_list)
-    #first_inv = invert(segment, 1)
-    #second_inv = invert(segment, 2)
-    #third_inv = invert(segment, 3)
-    #fourth_inv = invert(segment, 4)
-    #nfirst_inv = invert(segment, -1)
-    #nsecond_inv = invert(segment, -2)
-    #nthird_inv = invert(segment, -3)
-    #nfourth_inv = invert(segment, -4) 
-    #print(
-     #       "first_inv: ", first_inv,
-            #        "second_inv: ", second_inv,
-            #        "third_inv: ", third_inv,
-            #        "fourth_inv: ", fourth_inv,
-            #        "n-first_inv: ", nfirst_inv,
-            #        "n-second_inv: ", nsecond_inv,
-            #        "n-third_inv: ", nthird_inv,
-            #        "n-fourth_inv: ", nfourth_inv,
-             #       )
+    segment = abjad.PitchSegment("c' e' g' bf'")
+    segment = abjad.PitchSegment([1, 3, 5, 7, -9])
+    top_list = segment.local_maxima
+    print("top_list: ", top_list)
+    first_inv = invert(segment, 1)
+    second_inv = invert(segment, 2)
+    third_inv = invert(segment, 3)
+    fourth_inv = invert(segment, 4)
+    nfirst_inv = invert(segment, -1)
+    nsecond_inv = invert(segment, -2)
+    nthird_inv = invert(segment, -3)
+    nfourth_inv = invert(segment, -4) 
+    print(
+            "first_inv: ", first_inv,
+            "second_inv: ", second_inv,
+            "third_inv: ", third_inv,
+            "fourth_inv: ", fourth_inv,
+            "n-first_inv: ", nfirst_inv,
+            "n-second_inv: ", nsecond_inv,
+            "n-third_inv: ", nthird_inv,
+            "n-fourth_inv: ", nfourth_inv,
+           )
 
 #     a = abjad.NamedPitch("a'")
 #     a_t = abjad.NamedInterval("+P8").transpose(a)
