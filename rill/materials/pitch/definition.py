@@ -30,7 +30,7 @@ from enum import Enum
 
 
 #A container holding all harmonies used in the piece 
-rill_segments = abjad.OrderedDict([
+pitch_segments = abjad.OrderedDict([
             ('bf_ii', abjad.PitchSegment("c ef' g' bf' c''")),       # cmin7 
             ('g_v', abjad.PitchSegment("d ef' fs' a' d''")),     # D7(b9,13)
             ('e_i', abjad.PitchSegment("e e' g' b' d''")),           # emin9
@@ -66,5 +66,5 @@ if __name__ == '__main__':
     #inversion = mccartney.invertChord
     #aChordInv = inversion(aChord, 2)
     #make_iib_chord_dict(root_guitar_chords)
-    for key, item in rill_segments.items():
+    for key, item in pitch_segments.items():
         print(key, item)

@@ -19,6 +19,16 @@ def invertChord(chord, inv):
             # print(_chord)
         return _chord                                 # return target inversion
 
+# method for inverting PitchSegments
+# arguments = PitchSegment, rotation
+# copy pitch segment
+# check that rotation is not greated than PitchSegment length
+# rotate to desired position
+# if rotation == bottom_to_top
+## transpose rotated pitches 8ve
+# if rotation == top_to_bottom
+## transpose rotated pitches 8vb
+
 class Progression(object):
     """
     Progression
@@ -47,7 +57,7 @@ class Progression(object):
         for name, chord in self._chord_dict.items(): # for chord in chord_dict
             print("appending :", name)
             names.append(name)
-            print("appen?!?jedi=1, ding :", chord)?!? (*_*object: _T*_*) ?!?jedi?!?"
+            print("appending :", chord)
             chords.append(chord)       # append to chords
         self._names = names
         self._chords = chords 
