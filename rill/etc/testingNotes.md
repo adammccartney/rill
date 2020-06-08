@@ -9,12 +9,20 @@ A brief overview of testing for rill
 Tools for generating materials
 ------------------------------------------------------------------------------
 # Progression generator
+ Spiral routine for generating variations of a harmonic progression
+
+ make_progression | class Progression.get_harmony | invert_harmony |  
 
 
 ## spec for routine that creates Variations of a HarmonicProgression
 
  + copy Progression
  + modify copy
+
+## spec for class Harmony
+ Public Members
+ + shortname
+ + PitchSegment
 
 ## spec for routine make_progression(names, harmonies)
  + names are strings
