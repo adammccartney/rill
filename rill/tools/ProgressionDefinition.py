@@ -77,13 +77,12 @@ def global_minima(pitch_segment):
         result.append(minima)
         return result  
  
-#def invert(segment, shift):
-#    """
-#    invert PitchSegments in the style of chord inversions
-#    
-#    returns a new segment
-#    """
-#    from collections import deque
+def invert(segment, shift):
+    """
+    invert PitchSegments in the style of chord inversions
+    
+    returns a new segment
+    """
 #    new_segment = segment
 #    transposed = abjad.NamedPitch()
 #    print("got this far")
@@ -178,21 +177,20 @@ class Progression(object):
         """
         self._chord_dict.__setitem__(key, chord)
         self._make_progression()
-
-
-
    
 if __name__ == '__main__':
 
     a = abjad.PitchSegment("c' d' e' f' g'")
-    it_set = make_iterable_pitch_set(a)
-    d = PitchDeque(it_set)
-    print(d.pitch_deque)
+    iterable_set = make_iterable_pitch_set(a)
+    d = PitchDeque(iterable_set)
+    print("d.pitch_deque: ", d.pitch_deque)
     d.set_modified(last=True)
     d_ = d.get_modified()
-    print(d_)
+    print("d_: ", d_)
     c = extend_deque(d_, abjad.NamedPitch("a'''"), beginning=True)
-    print(c)
+    print("c: ", c)
+    d = extend_deque(d_, abjad.NamedPitch("b,"), beginning=False)
+    print("d: ", d)
     
     #a = abjad.PitchSegment("c' d' e' f' g'")
     #b = abjad.PitchSegment("f c' c'' e' g'")
