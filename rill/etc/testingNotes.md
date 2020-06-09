@@ -11,43 +11,47 @@ Tools for generating materials
 # Progression generator
  Spiral routine for generating variations of a harmonic progression
 
- make_progression | class Progression.get_harmony | invert_harmony |  
+ make_progression | class Progression.get_harmony | invert_harmony | 
+ make_new_progression | 
 
 
 ## spec for routine that creates Variations of a HarmonicProgression
 
  + copy Progression
- + modify copy
+ + modify selected harmony
+ + make new progression
 
-## spec for class Harmony
+## spec for class FuzzyHarmony
  Public Members
- + shortname
+ + shortname (string constant)
+ + inversion (variable int)
  + PitchSegment
-
-## spec for routine make_progression(names, harmonies)
- + names are strings
- + harmonies are pitch segments 
+ 
+ Non-mofiying members
+ + get pitch_segment
 
 ## Spec for class Progression
 
- + stores a dict { harmonyShortname: PitchSegment } 
+ + stores a tuple of FuzzyHarmonies 
   
   Members
-  - progression dictionary  
+  - FuzzyHarmonies
  
   None Modifying Member Functions
-  - get progression
-  - get harmony 
+  - get FuzzyHarmony 
  
-  Modifying Member Functions
-  - set progression
-  - set harmony 
-  - invert harmony 
+  Modifying Member Functions // trying to write a modifying operation
+  - set harmony              // for essentially a tuple not cosher  
   
-## Spec for routine invert
+## spec  make new progression (Progression, replace_index, replacement)
 
- + takes arguments of pitchSegment and shift (1=first inversion, 2=second
+ + makes new tuple like object (progression) based on arguments
+
+## Spec for invert routines
+
+ + takes arguments of PitchSegment and shift (1=first inversion, 2=second
    inversion...limit is obviously 12)
+ + returns new FuzzyHarmony 
 
  + do invert_up and invert_down to limit complexity of routines
 
@@ -55,14 +59,21 @@ Tools for generating materials
   - call global_minima to find lowest note
   - transposed note is lowest note.tranpose("+P8")
   - trim lowest note
+  - pitch_segment to pitch_set
   - append transposed
-  - return inversion
+  - pitch_set to pitch_segment
+  - make new fuzzy harmony
+  - return new fuzzy harmony
 
  + invert_down
   - call global_maxima to find highest note
   - transposed is higehst note.transpose("+P8")
   - trim highest note
+  - pitch_segment to pitch_set
   - prepend tranposed            // needs subroutine for prepend
+  - pitch_set to pitch_segment
+  - make new FuzzyHarmony
+  - return new fuzzy harmony 
 
 ## Spec for make_iterable_pitch_set routine
 
@@ -83,4 +94,5 @@ Tools for generating materials
   
  + non-modifying member functions:
   - get_pitch_deque
+
 

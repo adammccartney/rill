@@ -10,6 +10,7 @@ B = 'B'
 C = 'C'
 
 def replace(tup, index, item):
+    """index 0"""
     l = []
     for i in range(len(tup)):
         l.append(tup[i])
@@ -18,5 +19,5 @@ def replace(tup, index, item):
     return new_tuple
 
 if __name__ == '__main__':
-    new_list = replace(a, 1, A)
+    new_list = replace(a, 0, 'X')
     print(new_list)

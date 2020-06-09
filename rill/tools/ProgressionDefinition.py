@@ -3,6 +3,21 @@ import rill
 
 from collections import deque 
 
+class FuzzyHarmony(object):
+    """
+    Stores a collection of notes in a PitchSegment
+    Fuzzy because the names are used to roughly track
+    the position in a given harmonic sequence and not
+    to store precise information on the harmony.
+    e.g.:
+    bf_ii = key of bfat, minor harmony on ii degree 
+
+    """
+    def __init__(self, shortname, segment, inversion):
+        self.shortname = shortname
+        self.segment = abjad.PitchSegment(segment)
+        self.inversion = inversion
+
 class PitchDeque(object):
     """
     Initialised with a pitch set
@@ -177,7 +192,9 @@ class Progression(object):
         """
         self._chord_dict.__setitem__(key, chord)
         self._make_progression()
-   
+
+
+
 if __name__ == '__main__':
 
     a = abjad.PitchSegment("c' d' e' f' g'")
