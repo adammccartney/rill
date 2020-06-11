@@ -1,8 +1,8 @@
 # rill (erosion)  #
 ===============================================================================
 
-A rill is the soft impression left in the soil in the wake of a soft, lightly 
-flowing stream of water. In nature, a rill will form part of a network. 
+a rill is the soft impression left in the soil in the wake of a soft, lightly 
+flowing stream of water. in nature, a rill will form part of a network. 
 
 In musical terms, the basic idea will be to map the two elements acoustically: 
  
