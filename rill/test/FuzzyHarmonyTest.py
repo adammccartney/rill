@@ -44,7 +44,7 @@ class Progression(object):
     def get_harmony(self, index):
         """returns a specific harmony"""
         progression = self.get_progression()
-        for chord in progression:
+        for harmony in progression:
             return progression[index]
 
 def replace_and_make_new_progression(progression, index, fuzzy_harmony):
