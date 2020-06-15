@@ -46,7 +46,7 @@ class RhythmDefinition(object):
         self._score = score
         self._handle_notes()
         self._handle_dynamics()
-        self._handle_markup()
+        #self._handle_markup()
 
     def __format__(self, format_specification="") -> str:
         """
@@ -58,18 +58,19 @@ class RhythmDefinition(object):
 
     def _get_music_voices(self):
         return (
-            self._score["Flute_Music_Voice"],
-            self._score["Bb_Clarinet_Music_Voice"],
-            self._score["Guitar_Music_Voice"],
-            self._score["Viola_Music_Voice"],
+            self._score["Violin_Music_Voice"],
+            self._score["MonoSynth_Music_Voice"],
+            self._score["RH_Voice_I"],
+            self._score["RH_Voice_II"],
+            self._score["LH_Voice_I"],
+            self._score["LH_Voice_II"],
         )
 
     def _get_staves(self):
         return (
-            self._score["Flute"], 
-            self._score["Bb_Clarinet"],
-            self._score["Guitar"], 
-            self._score["Viola"],
+            self._score["Violin"], 
+            self._score["MonoSynth"],
+            self._score["PolySynth"], 
         )
 
     def _handle_dynamics(self):

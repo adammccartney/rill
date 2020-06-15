@@ -24,7 +24,7 @@ instruments = abjad.OrderedDict(
                 short_markup=mccartney.markups.short_instrument("psy"),
             ),
         ),
-    ]
+        ]
 )
 
 if __name__ == '__main__':

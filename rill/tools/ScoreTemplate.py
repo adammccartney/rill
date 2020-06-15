@@ -7,7 +7,7 @@ Defines scoretemplate, subclass of abjad.ScoreTemplate. Segments appended later.
 
 
 
-class ScoreTemplate(abjad.ScoreTemplate)::
+class ScoreTemplate(abjad.ScoreTemplate):
     r"""rill Score template.
     
     ::
