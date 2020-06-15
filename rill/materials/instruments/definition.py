@@ -1,36 +1,34 @@
 import abjad
 import mccartney
 
-
 instruments = abjad.OrderedDict(
     [
         (
-            "Flute",
-            abjad.Flute(
-                markup=mccartney.markups.instrument("Flute"),
-                short_markup=mccartney.markups.short_instrument("Fl."),
+            "Violin",
+            abjad.Violin(
+                markup=mccartney.markups.instrument("Violin"),
+                short_markup=mccartney.markups.short_instrument("vln"),
             ),
         ),
         (
-            "Bb_Clarinet",
+            "MonoSynth",
             abjad.ClarinetInBFlat(
-                markup=mccartney.markups.instrument("Bb_Clarinet"),
-                short_markup=mccartney.markups.short_instrument("BbCl."),
+                markup=mccartney.markups.instrument("MonoSynth"),
+                short_markup=mccartney.markups.short_instrument("msy"),
             ),
         ),
         (
-            "Guitar",
-            abjad.Guitar(
-                markup=mccartney.markups.instrument("Guitar"),
-                short_markup=mccartney.markups.short_instrument("Guit."),
-            ),
-        ),
-        (
-            "Viola",
-            abjad.Viola(
-                markup=mccartney.markups.instrument("Viola"),
-                short_markup=mccartney.markups.short_instrument("Vla."),
+            "PolySynth",
+            abjad.Piano(
+                markup=mccartney.markups.instrument("PolySynth"),
+                short_markup=mccartney.markups.short_instrument("psy"),
             ),
         ),
     ]
 )
+
+if __name__ == '__main__':
+    for key, item in instruments.items():
+        print(key, item)
+
+

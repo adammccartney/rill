@@ -1,3 +1,11 @@
+# 15-6-20
+
+ + Clean up tested code
+ + Make a working segment
+  - first build a score example using existing code
+  - figure out how to handle overlapping rmakers
+
+
 # 28-5-20
 
  + Read abjad.Chord to see if method exists to create invertion
