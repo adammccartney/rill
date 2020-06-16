@@ -31,16 +31,31 @@
                 } %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Music_Voice" %! rill.ScoreTemplate.__call__()
                 {                                     %! rill.ScoreTemplate.__call__()
-                    c'1
-                    e'1
-                    c'1
-                    e'1
+                    ef'1
+                    ef'1
+                    g'1
+                    c''1
+                    bf'1
+                    ef'1
+                    ef'1
+                    g'1
+                    c''1
+                    bf'1
                 } %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Dynamics_Voice" %! rill.ScoreTemplate.__call__()
                 {                                        %! rill.ScoreTemplate.__call__()
                     s1 * 1/1
                     s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
                     \!
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
@@ -55,9 +70,36 @@
                 } %! rill.ScoreTemplate.__call__()
                 \context Voice = "MonoSynth_Music_Voice" %! rill.ScoreTemplate.__call__()
                 {                                        %! rill.ScoreTemplate.__call__()
+                    ef'1
+                    ef'1
+                    g'1
+                    c''1
+                    bf'1
+                    ef'1
+                    ef'1
+                    g'1
+                    c''1
+                    bf'1
                 } %! rill.ScoreTemplate.__call__()
                 \context Voice = "MonoSynth_Dynamics_Voice" %! rill.ScoreTemplate.__call__()
                 {                                           %! rill.ScoreTemplate.__call__()
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    \!
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    \!
                 } %! rill.ScoreTemplate.__call__()
             >> %! rill.ScoreTemplate.__call__()
             \context MusicContext = "PolySynth_Music_Context" %! rill.ScoreTemplate.__call__()
@@ -66,20 +108,80 @@
                 <<                                                                %! rill.ScoreTemplate.__call__()
                     \context PolySynthRHStaff = "PolySynth_Music_RH_Staff" %! rill.ScoreTemplate.__call__()
                     <<                                                     %! rill.ScoreTemplate.__call__()
-                        \context RHVoiceI = "RH_Voice_I" %! rill.ScoreTemplate.__call__()
-                        {                                %! rill.ScoreTemplate.__call__()
+                        \context Voice = "RH_I_Markup_Voice" %! rill.ScoreTemplate.__call__()
+                        {                                    %! rill.ScoreTemplate.__call__()
                         } %! rill.ScoreTemplate.__call__()
-                        \context RHVoiceII = "RH_Voice_II" %! rill.ScoreTemplate.__call__()
-                        {                                  %! rill.ScoreTemplate.__call__()
+                        \context Voice = "RH_I_Music_Voice" %! rill.ScoreTemplate.__call__()
+                        {                                   %! rill.ScoreTemplate.__call__()
+                            ef'1
+                            ef'1
+                            g'1
+                            c''1
+                            bf'1
+                            ef'1
+                            ef'1
+                            g'1
+                            c''1
+                            bf'1
+                        } %! rill.ScoreTemplate.__call__()
+                        \context Voice = "RH_I_Dynamics_Voice" %! rill.ScoreTemplate.__call__()
+                        {                                      %! rill.ScoreTemplate.__call__()
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            \!
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            \!
                         } %! rill.ScoreTemplate.__call__()
                     >> %! rill.ScoreTemplate.__call__()
                     \context PolySynthLHStaff = "PolySynth_Music_LH_Staff" %! rill.ScoreTemplate.__call__()
                     <<                                                     %! rill.ScoreTemplate.__call__()
-                        \context LHVoiceI = "LH_Voice_I" %! rill.ScoreTemplate.__call__()
-                        {                                %! rill.ScoreTemplate.__call__()
+                        \context Voice = "LH_I_Markup_Voice" %! rill.ScoreTemplate.__call__()
+                        {                                    %! rill.ScoreTemplate.__call__()
                         } %! rill.ScoreTemplate.__call__()
-                        \context LHVoiceII = "LH_Voice_II" %! rill.ScoreTemplate.__call__()
-                        {                                  %! rill.ScoreTemplate.__call__()
+                        \context Voice = "LH_I_Music_Voice" %! rill.ScoreTemplate.__call__()
+                        {                                   %! rill.ScoreTemplate.__call__()
+                            ef'1
+                            ef'1
+                            g'1
+                            c''1
+                            bf'1
+                            ef'1
+                            ef'1
+                            g'1
+                            c''1
+                            bf'1
+                        } %! rill.ScoreTemplate.__call__()
+                        \context Voice = "LH_I_Dynamics_Voice" %! rill.ScoreTemplate.__call__()
+                        {                                      %! rill.ScoreTemplate.__call__()
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            \!
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            \!
                         } %! rill.ScoreTemplate.__call__()
                     >> %! rill.ScoreTemplate.__call__()
                 >> %! rill.ScoreTemplate.__call__()

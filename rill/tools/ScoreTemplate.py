@@ -96,10 +96,10 @@ class ScoreTemplate(abjad.ScoreTemplate):
             {
                 "vn": "Violin_Music_Voice", 
                 "msy" : "MonoSynth_Music_Voice",
-                "rh_v1": "RH_Voice_I",
-                "rh_v2": "RH_Voice_II",
-                "lh_v1": "LH_Voice_I",
-                "lh_v2": "LH_Voice_II",
+                "rh_v1": "RH_I_Music_Voice",
+                #"rh_v2": "RH_II_Music_Voice",
+                "lh_v1": "LH_I_Music_Voice",
+                #"lh_v2": "LH_II_Music_Voice",
                 }
         )
 
@@ -151,25 +151,17 @@ class ScoreTemplate(abjad.ScoreTemplate):
 
 
         ### RH PolySynth Voices ###
-        rh_voice_1 = abjad.Voice(
-            lilypond_type="RHVoiceI", name="RH_Voice_I", tag=tag
-            )
+        markup_voice = abjad.Voice(name="RH_I_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="RH_I_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="RH_I_Dynamics_Voice", tag=tag)
 
-        rh_voice_2 = abjad.Voice(
-            lilypond_type="RHVoiceII", name="RH_Voice_II", tag=tag
-            )
-
-        ### LH PolySynth Voices ###
-        lh_voice_1 = abjad.Voice(
-            lilypond_type="LHVoiceI", name="LH_Voice_I", tag=tag
-        )
-        lh_voice_2 = abjad.Voice(
-            lilypond_type="LHVoiceII", name="LH_Voice_II", tag=tag
-        )
-
+        #        rh_voice_2 = abjad.Voice(
+        #            lilypond_type="RHVoiceII", name="RH_II_Music_Voice", tag=tag
+        #            )
+       
         # RH PolySynth Staff 
         polysynth_music_rh_staff = abjad.Staff(
-                [rh_voice_1, rh_voice_2],
+                [markup_voice, music_voice, dynamics_voice],
                 lilypond_type="PolySynthRHStaff",
                 simultaneous=True,
                 name="PolySynth_Music_RH_Staff",
@@ -179,9 +171,18 @@ class ScoreTemplate(abjad.ScoreTemplate):
                 polysynth_music_rh_staff, "default_clef", abjad.Clef("treble")
                 )
         
+        ### LH PolySynth Voices ###
+        markup_voice = abjad.Voice(name="LH_I_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="LH_I_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="LH_I_Dynamics_Voice", tag=tag)
+        #        lh_voice_2 = abjad.Voice(
+        #            lilypond_type="LHVoiceII", name="LH_II_Music_Voice", tag=tag
+        #        )
+        #
+       
         # LH PolySynth Staff
         polysynth_music_lh_staff = abjad.Staff(
-                [lh_voice_1, lh_voice_2],
+                [markup_voice, music_voice, dynamics_voice],
                 lilypond_type="PolySynthLHStaff",
                 simultaneous=True,
                 name="PolySynth_Music_LH_Staff",
@@ -241,10 +242,10 @@ class ScoreTemplate(abjad.ScoreTemplate):
                 [
                     ('vl', 'Violin_Music_Voice'),
                     ('msy', 'MonoSynth_Music_Voice'),
-                    ('rh_v1', 'RH_Voice_I'),
-                    ('rh_v2', 'RH_Voice_II'),
-                    ('lh_v1', 'LH_Voice_I'),
-                    ('lh_v2', 'LH_Voice_II'),
+                    ('rh_v1', 'RH_I_Music_Voice'),
+                    # ('rh_v2', 'RH_II_Music_Voice'),
+                    ('lh_v1', 'LH_I_Music_Voice'),
+                    #('lh_v2', 'LH_II_Music_Voice'),
                     ]
                 )
         """

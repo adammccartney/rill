@@ -1,8 +1,14 @@
 # 16-6-20
+ 
+ + Research a way to use RhythmDefinition.py effectively
+  - refine the routine used to produce an rmaker
+  - define a pitches property in FuzzyHarmony
+  - this can be used in making rmakers
+  - check viability with Trevor's RhythmDefinition
+
+
  + Fix linkage to stylesheets 
   - run same segment A test and fix errors on build
-
-
 
 # 15-6-20
 

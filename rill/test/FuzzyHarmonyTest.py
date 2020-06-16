@@ -13,10 +13,21 @@ class FuzzyHarmony(object):
     bf_ii = key of bflat, minor harmony on ii degree 
 
     """
+
+    ### CLASS ATTRIBUTES ###
+
+    __slots__ = (
+        "_pitches",
+        "inversion",
+        "segment",
+        "shortname",
+    )
+
     def __init__(self, shortname, segment, inversion):
         self.shortname = shortname
         self.segment = abjad.PitchSegment(segment)
         self.inversion = inversion
+        self._set_pitches()
 
     def __repr__(self):
         """
@@ -26,6 +37,22 @@ class FuzzyHarmony(object):
         segment_str = str(self.segment)
         shortname_str = str(self.shortname)
         return '{}: {}'.format(shortname_str, segment_str)
+
+    ### PRIVATE METHODS ###
+
+    def _set_pitches(self):
+        pitches = self.segment.to_pitches()
+        self._pitches = tuple(pitches)
+
+    ### PUBLIC PROPERTIES ###
+
+    @property
+    def pitches(self):
+        """
+        Gets pitches
+        """
+        return self._pitches
+
 
 class Progression(object):
     """
@@ -190,10 +217,10 @@ def invert_down(segment, inversion):
 
 
 if __name__ == '__main__':
-    segment = abjad.PitchSegment("ef' g' bf' c''")       # cmin7 
-    name = 'bf_ii'
-    inversion = 1
-    bf_ii = FuzzyHarmony(name, segment, inversion)
+    #Segment = abjad.PitchSegment("ef' g' bf' c''")       # cmin7 
+    #Name = 'bf_ii'
+    #Inversion = 1
+    #Bf_ii = FuzzyHarmony(name, segment, inversion)
     #    #print(bf_ii.shortname, bf_ii.segment, bf_ii.inversion)
     #    g_v = FuzzyHarmony('g_v', abjad.PitchSegment("d ef' fs' a' d''"), 2)     # D7(b9,13)
     #    e_i = FuzzyHarmony('e_i', abjad.PitchSegment("e e' g' b' d''"), 0)          # emin9
@@ -220,30 +247,44 @@ if __name__ == '__main__':
     #    new_note = invert_down(segment, -4)
     #    print("new note: ", new_note)
     #
-    set_ = abjad.PitchSet(["bf'"])
-    transposed = set_.transpose(12)
-    print(transposed)
-    transposed = invert_up(bf_ii.segment, 1)
-    print("transposed up 1: ", transposed)
-    transposed = invert_up(bf_ii.segment, 2)
-    print("transposed up 2: ", transposed)
-    transposed = invert_up(bf_ii.segment, 3)
-    print("transposed up 3: ", transposed)
-    transposed = invert_down(bf_ii.segment, -1)
-    print("transposed down 1: ", transposed)
+    #set_ = abjad.PitchSet(["bf'"])
+    #transposed = set_.transpose(12)
+    #print(transposed)
+    #transposed = invert_up(bf_ii.segment, 1)
+    #print("transposed up 1: ", transposed)
+    #transposed = invert_up(bf_ii.segment, 2)
+    #print("transposed up 2: ", transposed)
+    #transposed = invert_up(bf_ii.segment, 3)
+    #print("transposed up 3: ", transposed)
+    #transposed = invert_down(bf_ii.segment, -1)
+    #print("transposed down 1: ", transposed)
 
-    transposed = invert_down(bf_ii.segment, -2)
-    print("transposed down 2: ", transposed)
+    #transposed = invert_down(bf_ii.segment, -2)
+    #print("transposed down 2: ", transposed)
 
-    transposed = invert_down(bf_ii.segment, -3)
-    print("transposed down 3: ", transposed)
+    #transposed = invert_down(bf_ii.segment, -3)
+    #print("transposed down 3: ", transposed)
 
-    transposed = invert_down(bf_ii.segment, -4)
-    print("transposed down 4: ", transposed)
+    #transposed = invert_down(bf_ii.segment, -4)
+    #print("transposed down 4: ", transposed)
 
 
-    transposed = invert_down(bf_ii.segment, 2) 
-    print("transposed down: ", transposed)
+    #transposed = invert_down(bf_ii.segment, 2) 
+    #print("transposed down: ", transposed)
 
-    transposed = invert_down(bf_ii.segment, -202) 
-    print("transposed down: ", transposed)
+    #transposed = invert_down(bf_ii.segment, -202) 
+    #print("transposed down: ", transposed)
+
+
+    # testing new fuzzy harmony @property 
+    # Create Pitch Material
+    bf_ii = FuzzyHarmony('bf_ii', abjad.PitchSegment("ef' g' bf' c''"), 1) # cmin7
+    g_v = FuzzyHarmony('g_v', abjad.PitchSegment("ef' fs' a' d''"), 2)     # D7(b9,13)
+    e_i = FuzzyHarmony('e_i', abjad.PitchSegment("e' g' b' d''"), 0)          # emin9
+
+    # make progression 
+    harmonies = (bf_ii, g_v, e_i)
+    progression = Progression(harmonies)
+
+    
+

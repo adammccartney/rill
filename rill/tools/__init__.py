@@ -1,6 +1,16 @@
+from .FuzzyHarmony import (
+        FuzzyHarmony,
+        Progression,
+        replace_and_make_new_progression,
+        get_global_minima,
+        invert_up,
+        get_global_maxima,
+        invert_down,
+        )
 from .MusicMaker import MusicMaker 
-from .ProgressionDefinition import Progression, invert   
 from .MarkupLibrary import MarkupLibrary
 from .ScoreTemplate import ScoreTemplate
 from .SegmentMaker import SegmentMaker
 from .RhythmDefinition import RhythmDefinition
+
+
