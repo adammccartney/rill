@@ -1,7 +1,7 @@
 % #(set-default-paper-size "a3portrait")
 #(set-global-staff-size 14)
 
-\include "/home/adam/mccartney/lilypond/mccartney.ily"
+\include "/home/adam/mccartney/mccartney/lilypond/mccartney.ily"
 \include "contexts.ily"
 \include "markups.ily"
 

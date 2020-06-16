@@ -1,3 +1,9 @@
+# 16-6-20
+ + Fix linkage to stylesheets 
+  - run same segment A test and fix errors on build
+
+
+
 # 15-6-20
 
  + Clean up tested code
