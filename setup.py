@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 import setuptools
 
-
 install_requires = ["abjad", "mypy", "roman"]
+
 
 keywords = [
     "abjad",
@@ -14,12 +14,13 @@ keywords = [
 
 if __name__ == "__main__":
     setuptools.setup(
+        name="rill",
+        version = "0.0",
         author="Adam McCartney",
         author_email="adam@mur.at",
         install_requires=install_requires,
         keywords=", ".join(keywords),
-        name="rill (erosion)",
-        packages=["rill"],
+        packages=setuptools.find_packages(),
         platforms="Any",
         url="https://github.com/adammccartney/rill",
-    )
+)
