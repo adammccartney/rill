@@ -155,7 +155,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
         music_voice = abjad.Voice(name="RH_I_Music_Voice", tag=tag)
         dynamics_voice = abjad.Voice(name="RH_I_Dynamics_Voice", tag=tag)
 
-        #        rh_voice_2 = abjad.Voice(
+        #rh_voice_2 = abjad.Voice(
         #            lilypond_type="RHVoiceII", name="RH_II_Music_Voice", tag=tag
         #            )
        

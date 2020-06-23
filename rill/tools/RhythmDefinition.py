@@ -187,12 +187,14 @@ class RhythmDefinition(object):
                 raise ValueError(f"what is {argument!r}?")
 
     def _make_leaf(self, pitch, duration_string):
+        print("calling _make_leaf")
         duration = abjad.Duration(duration_string)
         maker = abjad.LeafMaker()
         leaves = maker([pitch], [duration])
         return leaves
 
     def _tuple_to_component(self, argument):
+        print("calling _tuple_to_component")
         pitch_string = argument[0]
         duration = argument[1]
         if isinstance(argument[0], abjad.Component):

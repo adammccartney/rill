@@ -20,7 +20,7 @@ class FuzzyHarmony(object):
         "shortname",
     )
 
-    def __init__(self, shortname, segment, inversion):
+    def __init__(self, shortname=str(), segment=None, inversion=0):
         self.shortname = shortname
         self.segment = abjad.PitchSegment(segment)
         self.inversion = inversion
