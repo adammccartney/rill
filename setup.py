@@ -2,7 +2,7 @@
 import setuptools
 
 
-install_requires = ["abjad", "mypy", "roman"]
+install_requires = ["abjad", "abjad-ext-rmakers", "mypy", "roman"]
 
 keywords = [
     "abjad",

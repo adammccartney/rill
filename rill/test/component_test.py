@@ -35,4 +35,8 @@ def make_four_bar_phrase(harmony):
 phrase = make_four_bar_phrase(harmony)
 abjad.f(phrase)
 
+new_segment = invert(harmony.pitches, 1)
+harmony_fifth_bass = FuzzyHarmony('bf_ii', new_segment, 2)
+phrase_two = 
+
 harmony_two = FuzzyHarmony()
