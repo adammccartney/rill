@@ -31,35 +31,154 @@
                 } %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Music_Voice" %! rill.ScoreTemplate.__call__()
                 {                                     %! rill.ScoreTemplate.__call__()
-                    ef'1
-                    ef'1
-                    g'1
-                    c''1
-                    bf'1
-                    ef'1
-                    ef'1
-                    g'1
-                    c''1
-                    bf'1
+                    {
+                        ef'2
+                        g'2
+                        ~
+                        g'4
+                        bf'2.
+                        c''1.
+                        r2
+                    }
+                    {
+                        g'2
+                        bf'2
+                        ~
+                        bf'4
+                        c''2.
+                        ef''1.
+                        r2
+                    }
+                    {
+                        bf'2
+                        c''2
+                        ~
+                        c''4
+                        ef''2.
+                        g''1.
+                        r2
+                    }
+                    {
+                        c''2
+                        ef''2
+                        ~
+                        ef''4
+                        g''2.
+                        bf''1.
+                        r2
+                    }
+                    {
+                        ef'2
+                        g'2
+                        ~
+                        g'4
+                        bf'2.
+                        c''1.
+                        r2
+                    }
+                    {
+                        g'2
+                        bf'2
+                        ~
+                        bf'4
+                        c''2.
+                        ef''1.
+                        r2
+                    }
+                    {
+                        bf'2
+                        c''2
+                        ~
+                        c''4
+                        ef''2.
+                        g''1.
+                        r2
+                    }
+                    {
+                        c''2
+                        ef''2
+                        ~
+                        ef''4
+                        g''2.
+                        bf''1.
+                        r2
+                    }
                 } %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Dynamics_Voice" %! rill.ScoreTemplate.__call__()
                 {                                        %! rill.ScoreTemplate.__call__()
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 3/4
+                    s1 * 3/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 3/4
+                    s1 * 3/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 3/4
+                    s1 * 3/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 3/4
+                    s1 * 3/2
+                    s1 * 1/2
                     \!
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 3/4
+                    s1 * 3/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 3/4
+                    s1 * 3/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 3/4
+                    s1 * 3/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 3/4
+                    s1 * 3/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 3/4
+                    s1 * 3/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 3/4
+                    s1 * 3/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 3/4
+                    s1 * 3/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 3/4
+                    s1 * 3/2
+                    s1 * 1/2
                     \!
                 } %! rill.ScoreTemplate.__call__()
             >> %! rill.ScoreTemplate.__call__()
@@ -70,35 +189,46 @@
                 } %! rill.ScoreTemplate.__call__()
                 \context Voice = "MonoSynth_Music_Voice" %! rill.ScoreTemplate.__call__()
                 {                                        %! rill.ScoreTemplate.__call__()
-                    ef'1
-                    ef'1
-                    g'1
-                    c''1
-                    bf'1
-                    ef'1
-                    ef'1
-                    g'1
-                    c''1
-                    bf'1
+                    {
+                        ef'2
+                        g'2
+                        ~
+                        g'4
+                        bf'2.
+                        c''1.
+                        r2
+                    }
+                    {
+                        ef'2
+                        g'2
+                        ~
+                        g'4
+                        bf'2.
+                        c''1.
+                        r2
+                    }
                 } %! rill.ScoreTemplate.__call__()
                 \context Voice = "MonoSynth_Dynamics_Voice" %! rill.ScoreTemplate.__call__()
                 {                                           %! rill.ScoreTemplate.__call__()
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 3/4
+                    s1 * 3/2
+                    s1 * 1/2
                     \!
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 3/4
+                    s1 * 3/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 3/4
+                    s1 * 3/2
+                    s1 * 1/2
                     \!
                 } %! rill.ScoreTemplate.__call__()
             >> %! rill.ScoreTemplate.__call__()
@@ -113,35 +243,46 @@
                         } %! rill.ScoreTemplate.__call__()
                         \context Voice = "RH_I_Music_Voice" %! rill.ScoreTemplate.__call__()
                         {                                   %! rill.ScoreTemplate.__call__()
-                            ef'1
-                            ef'1
-                            g'1
-                            c''1
-                            bf'1
-                            ef'1
-                            ef'1
-                            g'1
-                            c''1
-                            bf'1
+                            {
+                                ef'2
+                                g'2
+                                ~
+                                g'4
+                                bf'2.
+                                c''1.
+                                r2
+                            }
+                            {
+                                ef'2
+                                g'2
+                                ~
+                                g'4
+                                bf'2.
+                                c''1.
+                                r2
+                            }
                         } %! rill.ScoreTemplate.__call__()
                         \context Voice = "RH_I_Dynamics_Voice" %! rill.ScoreTemplate.__call__()
                         {                                      %! rill.ScoreTemplate.__call__()
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/4
+                            s1 * 3/4
+                            s1 * 3/2
+                            s1 * 1/2
                             \!
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/4
+                            s1 * 3/4
+                            s1 * 3/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/4
+                            s1 * 3/4
+                            s1 * 3/2
+                            s1 * 1/2
                             \!
                         } %! rill.ScoreTemplate.__call__()
                     >> %! rill.ScoreTemplate.__call__()
@@ -152,35 +293,154 @@
                         } %! rill.ScoreTemplate.__call__()
                         \context Voice = "LH_I_Music_Voice" %! rill.ScoreTemplate.__call__()
                         {                                   %! rill.ScoreTemplate.__call__()
-                            ef'1
-                            ef'1
-                            g'1
-                            c''1
-                            bf'1
-                            ef'1
-                            ef'1
-                            g'1
-                            c''1
-                            bf'1
+                            {
+                                ef'2
+                                g'2
+                                ~
+                                g'4
+                                bf'2.
+                                c''1.
+                                r2
+                            }
+                            {
+                                g'2
+                                bf'2
+                                ~
+                                bf'4
+                                c''2.
+                                ef''1.
+                                r2
+                            }
+                            {
+                                bf'2
+                                c''2
+                                ~
+                                c''4
+                                ef''2.
+                                g''1.
+                                r2
+                            }
+                            {
+                                c''2
+                                ef''2
+                                ~
+                                ef''4
+                                g''2.
+                                bf''1.
+                                r2
+                            }
+                            {
+                                ef'2
+                                g'2
+                                ~
+                                g'4
+                                bf'2.
+                                c''1.
+                                r2
+                            }
+                            {
+                                g'2
+                                bf'2
+                                ~
+                                bf'4
+                                c''2.
+                                ef''1.
+                                r2
+                            }
+                            {
+                                bf'2
+                                c''2
+                                ~
+                                c''4
+                                ef''2.
+                                g''1.
+                                r2
+                            }
+                            {
+                                c''2
+                                ef''2
+                                ~
+                                ef''4
+                                g''2.
+                                bf''1.
+                                r2
+                            }
                         } %! rill.ScoreTemplate.__call__()
                         \context Voice = "LH_I_Dynamics_Voice" %! rill.ScoreTemplate.__call__()
                         {                                      %! rill.ScoreTemplate.__call__()
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/4
+                            s1 * 3/4
+                            s1 * 3/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/4
+                            s1 * 3/4
+                            s1 * 3/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/4
+                            s1 * 3/4
+                            s1 * 3/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/4
+                            s1 * 3/4
+                            s1 * 3/2
+                            s1 * 1/2
                             \!
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/4
+                            s1 * 3/4
+                            s1 * 3/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/4
+                            s1 * 3/4
+                            s1 * 3/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/4
+                            s1 * 3/4
+                            s1 * 3/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/4
+                            s1 * 3/4
+                            s1 * 3/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/4
+                            s1 * 3/4
+                            s1 * 3/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/4
+                            s1 * 3/4
+                            s1 * 3/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/4
+                            s1 * 3/4
+                            s1 * 3/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/4
+                            s1 * 3/4
+                            s1 * 3/2
+                            s1 * 1/2
                             \!
                         } %! rill.ScoreTemplate.__call__()
                     >> %! rill.ScoreTemplate.__call__()

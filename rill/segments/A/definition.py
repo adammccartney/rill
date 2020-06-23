@@ -111,6 +111,9 @@ rhythm_definition.notes = [
                           phrase_four,
                           ]
 
+rhythm_definition_dynamics = [
+        (0, abjad.Dynamic('pp')),
+        ]
 
 #---------------/
 # LH_II  /
