@@ -170,4 +170,5 @@ if __name__ == '__main__':
     score = template()
     #print(format(score))
     #abjad.show(lilypond_file) # doctest: +SKIP
+    print(template.voice_abbreviations)
     abjad.f(lilypond_file[abjad.Score], strict=89)
