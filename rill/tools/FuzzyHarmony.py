@@ -13,18 +13,14 @@ class FuzzyHarmony(object):
 
     ### CLASS ATTRIBUTES ###
 
-    __slots__ = (
-        "_pitches",
-        "inversion",
-        "segment",
-        "shortname",
-    )
+    __slots__ = ("_pitches", "_pitch_list",  "inversion", "segment", "shortname")
 
     def __init__(self, shortname=str(), segment=None, inversion=0):
         self.shortname = shortname
         self.segment = abjad.PitchSegment(segment)
         self.inversion = inversion
         self._set_pitches()
+        self._make_list_pitches()
 
     def __repr__(self):
         """
@@ -41,6 +37,12 @@ class FuzzyHarmony(object):
         pitches = self.segment.to_pitches()
         self._pitches = tuple(pitches)
 
+    def _make_list_pitches(self):
+        """aliasing warning"""
+        self._pitch_list = []
+        for pitch in self.pitches:
+            self._pitch_list.append(pitch.name)
+
     ### PUBLIC PROPERTIES ###
 
     @property
@@ -49,6 +51,10 @@ class FuzzyHarmony(object):
         Gets pitches
         """
         return self._pitches
+
+    @property 
+    def pitch_list(self):
+        return self._pitch_list
 
 
 class Progression(object):

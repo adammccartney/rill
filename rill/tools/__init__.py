@@ -7,7 +7,7 @@ from .FuzzyHarmony import (
         get_global_maxima,
         invert_down,
         )
-from .PhraseMaker import make_four_bar_phrase
+from .PhraseMaker import PhraseMaker
 from .MusicMaker import MusicMaker 
 from .MarkupLibrary import MarkupLibrary
 from .ScoreTemplate import ScoreTemplate

@@ -46,7 +46,7 @@ class RhythmDefinition(object):
         self._score = score
         self._handle_notes()
         self._handle_dynamics()
-        #self._handle_markup()
+        self._handle_markup()
 
     def __format__(self, format_specification="") -> str:
         """

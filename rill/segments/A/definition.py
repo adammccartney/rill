@@ -1,3 +1,4 @@
+import os
 import abjad
 import rill
 
@@ -11,6 +12,7 @@ from rill.tools.PhraseMaker import make_four_bar_phrase as make_four_bar_phrase
 ###########
 
 segment_maker = rill.SegmentMaker(
+        #markup_leaves=False,
         name='A'
         )
 
@@ -51,6 +53,7 @@ phrase_four = make_four_bar_phrase(harmony_root, durations)
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'Violin'
 
+print(phrase_one)
 rhythm_definition.notes = [
                           phrase_one, 
                           phrase_two, 
@@ -131,3 +134,5 @@ rhythm_definition_dynamics = [
 #        ]
 #
 #--------------------------------------------#
+
+    
