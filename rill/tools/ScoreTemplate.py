@@ -8,109 +8,12 @@ Defines scoretemplate, subclass of abjad.ScoreTemplate. Segments appended later.
 
 
 class ScoreTemplate(abjad.ScoreTemplate):
-    r"""rill Score template.
+    """
+    Makes a simple score template for trio 
+    Violin, Monosynth and Polysynth
+    """
     
-    ::
-
-        >>> import rill
-        >>> template = rill.tools.ScoreTemplate()
-        path = abjad.Path('rill', 'stylesheets', 'contexts.ily')
-        lilypond_file = template.__illustrate__(
-        ...:     global_staff_size=14,
-        ...:     includes=[path],
-        ...:     )
-        >>> score = template()
-        >>> print(format(score))
-        >>> abjad.show(lilypond_file) # doctest: +SKIP
-
-        >>> abjad.f(lilypond_file[abjad.Score], strict=89)
-        \context score = "score"                                                                 %! rill.scoretemplate.__call__()
-        <<                                                                                       %! rill.scoretemplate.__call__()
-        \context globalcontext = "global_context"                                            %! abjad.scoretemplate._make_global_context()
-        <<                                                                                   %! abjad.scoretemplate._make_global_context()
-            \context globalrests = "global_rests"                                            %! abjad.scoretemplate._make_global_context()
-            {                                                                                %! abjad.scoretemplate._make_global_context()
-            }                                                                                %! abjad.scoretemplate._make_global_context()
-            \context globalskips = "global_skips"                                            %! abjad.scoretemplate._make_global_context()
-        {                                                                                %! abjad.scoretemplate._make_global_context()
-        }                                                                                %! abjad.scoretemplate._make_global_context()
-    >>                                                                                   %! abjad.scoretemplate._make_global_context()
-    \context musiccontext = "music_context"                                              %! rill.scoretemplate.__call__()
-    <<                                                                                   %! rill.scoretemplate.__call__()
-        \context staff = "violin"                                                        %! rill.scoretemplate.__call__()
-        <<                                                                               %! rill.scoretemplate.__call__()
-            \context voice = "violin_markup_voice"                                       %! rill.scoretemplate.__call__()
-            {                                                                            %! rill.scoretemplate.__call__()
-                \clef "treble"                                                           %! abjad.scoretemplate.attach_defaults(3)
-                s1                                                                       %! abjad.scoretemplate.__illustrate__()
-            }                                                                            %! rill.scoretemplate.__call__()
-            \context voice = "violin_music_voice"                                        %! rill.scoretemplate.__call__()
-            {                                                                            %! rill.scoretemplate.__call__()
-                s1                                                                       %! abjad.scoretemplate.__illustrate__()
-            }                                                                            %! rill.scoretemplate.__call__()
-            \context voice = "violin_dynamics_voice"                                     %! rill.scoretemplate.__call__()
-            {                                                                            %! rill.scoretemplate.__call__()
-                s1                                                                       %! abjad.scoretemplate.__illustrate__()
-            }                                                                            %! rill.scoretemplate.__call__()
-        >>                                                                               %! rill.scoretemplate.__call__()
-        \context staff = "monosynth"                                                     %! rill.scoretemplate.__call__()
-        <<                                                                               %! rill.scoretemplate.__call__()
-            \context voice = "monosynth_markup_voice"                                    %! rill.scoretemplate.__call__()
-            {                                                                            %! rill.scoretemplate.__call__()
-                \clef "treble"                                                           %! abjad.scoretemplate.attach_defaults(3)
-                s1                                                                       %! abjad.scoretemplate.__illustrate__()
-            }                                                                            %! rill.scoretemplate.__call__()
-            \context voice = "monosynth_music_voice"                                     %! rill.scoretemplate.__call__()
-            {                                                                            %! rill.scoretemplate.__call__()
-                s1                                                                       %! abjad.scoretemplate.__illustrate__()
-            }                                                                            %! rill.scoretemplate.__call__()
-            \context voice = "monosynth_dynamics_voice"                                  %! rill.scoretemplate.__call__()
-            {                                                                            %! rill.scoretemplate.__call__()
-                s1                                                                       %! abjad.scoretemplate.__illustrate__()
-            }                                                                            %! rill.scoretemplate.__call__()
-        >>                                                                               %! rill.scoretemplate.__call__()
-        \context musiccontext = "polysynth_music_context"                                %! rill.scoretemplate.__call__()
-        {                                                                                %! rill.scoretemplate.__call__()
-            \context polysynthmusicstaffgroup = "polysynth_music_staff_group"            %! rill.scoretemplate.__call__()
-            <<                                                                           %! rill.scoretemplate.__call__()
-                \context polysynthrhstaff = "polysynth_music_rh_staff"                   %! rill.scoretemplate.__call__()
-                <<                                                                       %! rill.scoretemplate.__call__()
-                    \context voice = "rh_i_markup_voice"                                 %! rill.scoretemplate.__call__()
-                    {                                                                    %! rill.scoretemplate.__call__()
-                        \clef "treble"                                                   %! abjad.scoretemplate.attach_defaults(3)
-                        s1                                                               %! abjad.scoretemplate.__illustrate__()
-                    }                                                                    %! rill.scoretemplate.__call__()
-                    \context voice = "rh_i_music_voice"                                  %! rill.scoretemplate.__call__()
-                    {                                                                    %! rill.scoretemplate.__call__()
-                        s1                                                               %! abjad.scoretemplate.__illustrate__()
-                    }                                                                    %! rill.scoretemplate.__call__()
-                    \context voice = "rh_i_dynamics_voice"                               %! rill.scoretemplate.__call__()
-                    {                                                                    %! rill.scoretemplate.__call__()
-                        s1                                                               %! abjad.scoretemplate.__illustrate__()
-                    }                                                                    %! rill.scoretemplate.__call__()
-                >>                                                                       %! rill.scoretemplate.__call__()
-                \context polysynthlhstaff = "polysynth_music_lh_staff"                   %! rill.scoretemplate.__call__()
-                <<                                                                       %! rill.scoretemplate.__call__()
-                    \context voice = "lh_i_markup_voice"                                 %! rill.scoretemplate.__call__()
-                    {                                                                    %! rill.scoretemplate.__call__()
-                        \clef "bass"                                                     %! abjad.scoretemplate.attach_defaults(3)
-                        s1                                                               %! abjad.scoretemplate.__illustrate__()
-                    }                                                                    %! rill.scoretemplate.__call__()
-                    \context voice = "lh_i_music_voice"                                  %! rill.scoretemplate.__call__()
-                    {                                                                    %! rill.scoretemplate.__call__()
-                        s1                                                               %! abjad.scoretemplate.__illustrate__()
-                    }                                                                    %! rill.scoretemplate.__call__()
-                    \context voice = "lh_i_dynamics_voice"                               %! rill.scoretemplate.__call__()
-                    {                                                                    %! rill.scoretemplate.__call__()
-                        s1                                                               %! abjad.scoretemplate.__illustrate__()
-                    }                                                                    %! rill.scoretemplate.__call__()
-                >>                                                                       %! rill.scoretemplate.__call__()
-            >>                                                                           %! rill.scoretemplate.__call__()
-        }                                                                                %! rill.scoretemplate.__call__()
-    >>                                                                                   %! rill.scoretemplate.__call__()
->>                                                                                       %! rill.scoretemplate.__call__()
-"""
-### CLASS VARIABLES ###
+    ### CLASS VARIABLES ###
 
     __documentation_section__ = None
 
@@ -144,11 +47,9 @@ class ScoreTemplate(abjad.ScoreTemplate):
         global_context = self._make_global_context()
 
         # Violin
-        markup_voice = abjad.Voice(name="Violin_Markup_Voice", tag=tag)
         music_voice = abjad.Voice(name="Violin_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="Violin_Dynamics_Voice", tag=tag)
         violin_staff = abjad.Staff(
-            [markup_voice, music_voice, dynamics_voice],
+            [music_voice],
             simultaneous=True,
             name="Violin",
             tag=tag,
@@ -161,11 +62,9 @@ class ScoreTemplate(abjad.ScoreTemplate):
         abjad.annotate(violin_staff, "default_clef", abjad.Clef("treble"))
 
         # MonoSynth 
-        markup_voice = abjad.Voice(name="MonoSynth_Markup_Voice", tag=tag)
         music_voice = abjad.Voice(name="MonoSynth_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="MonoSynth_Dynamics_Voice", tag=tag)
         monosynth_staff = abjad.Staff(
-            [markup_voice, music_voice, dynamics_voice],
+            [music_voice],
             simultaneous=True,
             name="MonoSynth",
             tag=tag,
@@ -179,9 +78,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
 
 
         ### RH PolySynth Voices ###
-        markup_voice = abjad.Voice(name="RH_I_Markup_Voice", tag=tag)
         music_voice = abjad.Voice(name="RH_I_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="RH_I_Dynamics_Voice", tag=tag)
 
         #rh_voice_2 = abjad.Voice(
         #            lilypond_type="RHVoiceII", name="RH_II_Music_Voice", tag=tag
@@ -189,7 +86,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
        
         # RH PolySynth Staff 
         polysynth_music_rh_staff = abjad.Staff(
-                [markup_voice, music_voice, dynamics_voice],
+                [music_voice],
                 lilypond_type="PolySynthRHStaff",
                 simultaneous=True,
                 name="PolySynth_Music_RH_Staff",
@@ -200,9 +97,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
                 )
         
         ### LH PolySynth Voices ###
-        markup_voice = abjad.Voice(name="LH_I_Markup_Voice", tag=tag)
         music_voice = abjad.Voice(name="LH_I_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="LH_I_Dynamics_Voice", tag=tag)
         #        lh_voice_2 = abjad.Voice(
         #            lilypond_type="LHVoiceII", name="LH_II_Music_Voice", tag=tag
         #        )
@@ -210,7 +105,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
        
         # LH PolySynth Staff
         polysynth_music_lh_staff = abjad.Staff(
-                [markup_voice, music_voice, dynamics_voice],
+                [music_voice],
                 lilypond_type="PolySynthLHStaff",
                 simultaneous=True,
                 name="PolySynth_Music_LH_Staff",
@@ -261,20 +156,18 @@ class ScoreTemplate(abjad.ScoreTemplate):
 
     @property
     def voice_abbreviations(self):
-        """
-        Gets voice abbreviations.
-        ..  container:: example
-            >>> score_template = rill.ScoreTemplate()
-            >>> abjad.f(score_template.voice_abbreviations)
-            abjad.OrderedDict(
-                [
-                    ('vl', 'Violin_Music_Voice'),
-                    ('msy', 'MonoSynth_Music_Voice'),
-                    ('rh_v1', 'RH_I_Music_Voice'),
-                    # ('rh_v2', 'RH_II_Music_Voice'),
-                    ('lh_v1', 'LH_I_Music_Voice'),
-                    #('lh_v2', 'LH_II_Music_Voice'),
-                    ]
-                )
-        """
+        """Gets voice abbreviations""" 
         return super(ScoreTemplate, self).voice_abbreviations
+
+if __name__ == '__main__':
+
+    template = rill.tools.ScoreTemplate()
+    path = abjad.Path('rill', 'stylesheets', 'contexts.ily')
+    lilypond_file = template.__illustrate__(
+                                            global_staff_size=14,
+                                            includes=[path],
+                                            )
+    score = template()
+    #print(format(score))
+    #abjad.show(lilypond_file) # doctest: +SKIP
+    abjad.f(lilypond_file[abjad.Score], strict=89)
