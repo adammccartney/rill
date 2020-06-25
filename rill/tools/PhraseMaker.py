@@ -19,7 +19,6 @@ class PhraseMaker(object):
         """
         return abjad.StorageFormatManager(self).get_storage_format()
 
-
     ### PUBLIC METHODS ###
 
     def make_phrase(self, durations, denominator, divisions, pitches):

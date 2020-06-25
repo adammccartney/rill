@@ -5,7 +5,7 @@ import mccartney
 
 from abjadext import rmakers 
 
-class PhraseCatcher(abjad.Container):
+class PhraseCatcher(object):
     """
     Aggregates PhraseMaker objects
     Allocates one voice per PhraseMaker
@@ -49,6 +49,8 @@ class PhraseCatcher(abjad.Container):
         for argument in self.phrases:
             if isinstance(argument, abjad.Component):
                 print("I can see your phrases")
+                copied_expr = copy.deepcopy(argument)
+                voice.append(copied_expr)
             else:
                 raise ValueError(f"what is {argument!r}?")
 
@@ -100,12 +102,11 @@ class SegmentMaker(abjad.SegmentMaker):
         """
         return self._metadata
 
-    def route_phrase(self):
+    def route_phrases(self, phrase_catcher):
         """
         Makes voices from phrases
         """
-        phrase_definition = PhraseCatcher()
-        self._phrases.append(phrase_definition)
+        self._phrases.append(phrase_catcher)
 
     def run(
             self,
@@ -131,6 +132,60 @@ class SegmentMaker(abjad.SegmentMaker):
         return self._lilypond_file
 
 if __name__ == '__main__':
-    score_template = rill.ScoreTemplate()
-    segment_maker = SegmentMaker()
-    abjad.f(segment_maker)
+    import rill.tools.FuzzyHarmony as FuzzyHarmony
+    import rill.tools.PhraseMaker as PhraseMaker
+    
+    caught_phrases = []
+    # make phrase one 
+    harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("ef' g' bf' c''"), 1) # cmin7/e
+    container = abjad.Container()
+    durations = [2, 3, 3, 6, 2]
+    denominator = 4
+    divisions = [(4, 4)] * 5
+    pitches = harmony.pitch_list
+    phrase_one = PhraseMaker(container)
+    phrase_one.make_phrase(durations, denominator, divisions, pitches)
+    caught_phrases.append(phrase_one)
+
+    # make phrase two
+    harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("g' bf' c'' ef''"), 2) 
+    container = abjad.Container()
+    pitches = harmony.pitch_list
+    phrase_two = PhraseMaker(container)
+    phrase_two.make_phrase(durations, denominator, divisions, pitches)
+    caught_phrases.append(phrase_two)
+
+    # make phrase three
+    harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("bf' c'' ef'' g''"), 3)   
+    container = abjad.Container()
+    pitches = harmony.pitch_list
+    phrase_three = PhraseMaker(container)
+    phrase_three.make_phrase(durations, denominator, divisions, pitches)
+    caught_phrases.append(phrase_three)
+
+     # make phrase four
+    harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("c'' ef'' g'' bf''"), 0)
+    container = abjad.Container()
+    pitches = harmony.pitch_list
+    phrase_four = PhraseMaker(container)
+    phrase_four.make_phrase(durations, denominator, divisions, pitches)
+    caught_phrases.append(phrase_four)
+    
+    #abjad.f(phrase_catcher)
+
+    score = rill.ScoreTemplate()
+    segment_maker = SegmentMaker(
+            name='Test',
+            time_signatures = 20 * [(4, 4)]
+            )
+
+    phrase_catcher = PhraseCatcher()
+    phrase_catcher.instrument_name = 'Violin'
+    phrase_catcher.phrases = caught_phrases
+    segment_maker.route_phrases(phrase_catcher)
+   
+    lilypond_file = segment_maker.run()
+    abjad.f(lilypond_file)
+
+
+

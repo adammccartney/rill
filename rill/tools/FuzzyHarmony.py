@@ -11,8 +11,6 @@ class FuzzyHarmony(object):
 
     """
 
-    ### CLASS ATTRIBUTES ###
-
     __slots__ = ("_pitches", "_pitch_list",  "inversion", "segment", "shortname")
 
     def __init__(self, shortname=str(), segment=None, inversion=0):
@@ -31,8 +29,6 @@ class FuzzyHarmony(object):
         shortname_str = str(self.shortname)
         return '{}: {}'.format(shortname_str, segment_str)
 
-    ### PRIVATE METHODS ###
-
     def _set_pitches(self):
         pitches = self.segment.to_pitches()
         self._pitches = tuple(pitches)
@@ -42,8 +38,6 @@ class FuzzyHarmony(object):
         self._pitch_list = []
         for pitch in self.pitches:
             self._pitch_list.append(pitch.name)
-
-    ### PUBLIC PROPERTIES ###
 
     @property
     def pitches(self):

@@ -7,6 +7,16 @@ from rill.tools.FuzzyHarmony import invert_up as invert_up
 
 from rill.tools.PhraseMaker import make_four_bar_phrase as make_four_bar_phrase
 
+# call to segment maker contains:
+    # Set instruments
+    # Set voice names
+    # set score_template
+    # set time signatures
+    # Set path for output
+    # set tempo
+    # set midi
+    # 
+
 ###########
 ### [A] ###
 ###########
