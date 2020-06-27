@@ -5,7 +5,7 @@ import mccartney
 
 from abjadext import rmakers 
 
-class PhraseCatcher(abjad.Component):
+class PhraseCatcher(object):
     """
     Aggregates PhraseMaker objects
     Allocates one voice per PhraseMaker
@@ -23,7 +23,7 @@ class PhraseCatcher(abjad.Component):
 
     def __init__(self, instrument_name=None, phrases=None):
         self.instrument_name = instrument_name
-        self.phrases = phrases
+        self._phrases = phrases
 
     def __call__(self, score):
         """
@@ -43,16 +43,35 @@ class PhraseCatcher(abjad.Component):
                 self._score["RH_I_Music_Voice"],
                 self._score["LH_I_Muisc_Voice"],
             )
+   
+    def _set_phrase_components(self):
+        for phrase in self._phrases:
+            components = phrase.components
+            for component in components:
+                print("getting to here")
+                abjad.f(component) 
 
     def _route_phrases(self):
         voice = self._score[f"{self.instrument_name}_Music_Voice"]
-        for argument in self.phrases:
+        for argument in self._phrases:
             if isinstance(argument, abjad.Component):
                 print("I can see your phrases")
                 copied_expr = copy.deepcopy(argument)
                 voice.append(copied_expr)
             else:
                 raise ValueError(f"what is {argument!r}?")
+
+    @property 
+    def phrases(self) -> tuple:
+        """
+        Gets phrases
+        """
+        return self._phrases
+
+    @phrases.setter
+    def phrases(self, argument):
+        assert isinstance(argument, list)
+        self._phrases = argument
 
 class SegmentMaker(abjad.SegmentMaker):
     
@@ -102,11 +121,11 @@ class SegmentMaker(abjad.SegmentMaker):
         """
         return self._metadata
 
-    def route_phrases(self, phrase_catcher):
+    def route_phrases(self, components):
         """
-        Makes voices from phrases
+        Makes voices from phrase components
         """
-        self._phrases.append(phrase_catcher)
+        self._phrases.append(components)
 
     def run(
             self,
@@ -171,7 +190,9 @@ if __name__ == '__main__':
     phrase_four.make_phrase(durations, denominator, divisions, pitches)
     caught_phrases.append(phrase_four)
     
-    #abjad.f(phrase_catcher)
+    #phrases = PhraseCatcher(caught_phrases)    
+    
+    #abjad.f(phrases)
 
     score = rill.ScoreTemplate()
     segment_maker = SegmentMaker(
@@ -182,10 +203,11 @@ if __name__ == '__main__':
     phrase_catcher = PhraseCatcher()
     phrase_catcher.instrument_name = 'Violin'
     phrase_catcher.phrases = caught_phrases
-    segment_maker.route_phrases(phrase_catcher)
+    abjad.f(phrase_catcher)
+    #segment_maker.route_phrases(phrase_catcher)
    
-    lilypond_file = segment_maker.run()
-    abjad.f(lilypond_file)
+    #lilypond_file = segment_maker.run()
+    #abjad.f(lilypond_file)
 
 
 

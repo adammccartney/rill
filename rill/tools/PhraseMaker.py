@@ -6,19 +6,27 @@ class PhraseMaker(object):
     """
     Makes a musical phrase by combining
     pitches from a harmony and durations
+
+    Single slot is a container
+
+    This class is purely for modifying the container
+    i.e. populating it with music
     """
 
     ### INITIALIZER ###
 
     def __init__(self, container=None):
-        self.container = container
+        self._container = container
 
     def __format__(self, format_specification="") -> str:
         """
         Formats phrase.
         """
         return abjad.StorageFormatManager(self).get_storage_format()
-
+    
+    def _extend_container(self, selection):
+        self._container.extend(selection)
+    
     ### PUBLIC METHODS ###
 
     def make_phrase(self, durations, denominator, divisions, pitches):
@@ -69,20 +77,31 @@ class PhraseMaker(object):
                     abjad.mutate(old_leaf).replace(new_leaf)
 
         # remove trivial 1:1 tuplets
-        self.container.extend(selection)
+        self._extend_container(selection)
         command = rmakers.extract_trivial()
         command(selection)
+
+
+     #   def get_container(self):
+      #      """Returns phrase as abjad.Container"""
+
 
 if __name__ == '__main__':
     import rill.tools.FuzzyHarmony as FuzzyHarmony
 
     harmony_third = FuzzyHarmony('bf_ii', abjad.PitchSegment("ef' g' bf' c''"), 1) # cmin7/e
-    container = abjad.Container()
     durations = [2, 3, 3, 6, 2]
     denominator = 4
     divisions = [(4, 4)] * 5
     pitches = harmony_third.pitch_list
     print(pitches)
-    phrase_one = PhraseMaker(container)
-    phrase_one.make_phrase(durations, denominator, divisions, pitches)
-    abjad.f(phrase_one.container) 
+    phrase_one = abjad.Container()
+    music_one = PhraseMaker(phrase_one)
+    music_one.make_phrase(durations, denominator, divisions, pitches)
+    
+    components = phrase_one.components 
+    for component in components:
+        abjad.f(component)
+
+    note = phrase_one[0]
+    abjad.f(note)
