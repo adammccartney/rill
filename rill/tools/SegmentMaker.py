@@ -5,7 +5,7 @@ import mccartney
 
 from abjadext import rmakers 
 
-class PhraseCatcher(object):
+class PhraseCatcher(abjad.Component):
     """
     Aggregates PhraseMaker objects
     Allocates one voice per PhraseMaker
