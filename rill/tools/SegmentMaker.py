@@ -77,126 +77,98 @@ class PhraseCatcher(object):
 
 #------------------------------------------------------------------------------
 
-class SegmentMaker(abjad.SegmentMaker):
+class SegmentMaker(object):
 
-    __slots__ = (
-            "_lilypond_file",
-            "_phrases",
-            "_score",
-            "build_path",
-            "current_directory",
-            "segment_name",
-            "tempo",
-            "time_signatures",
-            )
-    
     def __init__(
-            self, 
-            build_path=None,
+            self,
+            score=None,
+            lilypond_file=None,
+            phrase_catcher=None,
             current_directory=None, 
+            build_path=None,
             segment_name=None, 
+            tempo=None,
             time_signatures=None,
         ):
-            super(SegmentMaker, self).__init__()
-            self._lilypond_file = None
-            self._phrases = []
+            self.score = score
+            self._lilypond_file = lilypond_file
+            self.phrase_catcher = phrase_catcher
+            self.current_directory = current_directory
+            self.build_path = build_path
+            self.segment_name = segment_name
             self.tempo = ((1, 4), 60)
+            self.time_signatures = time_signatures 
 
-    @property 
-    def _music_voices(self):
-        return(
-                self._score["Violin_Music_Voice"],
-                self._score["Monosynth_Music_Voice"],
-                self._score["RH_I_Music_Voice"],
-                self._score["LH_I_Music_Voie"],
-            )
-
-    def _call_phrases(self):
-        for phrase in self._phrases:
-            phrase(self._score)
-    
     def _build_segment(self):
         current_directory = self.current_directory 
         score_content = open(f"{directory}/illustration.ly").readlines()
         build_path = (self.build_path / "score").resolve()
         open(f"{build_path}/{self.segment_name}.ly").writelines(score_lines)
 
-    def _render_illustration_(self):
+    def _render_illustration(self):
         score_file = self._lilypond_file
         directory = self.current_directory
         print("direcitory: ", directory)
         pdf_path = f"{directory}/illustration.pdf"
         print("pdf_path: ", pdf_path)
-        path = pathLib("illustration.pdf")
+        #ly_path = f"{directory}/illustration.ly"
+        path = pathlib.Path("illustration.pdf")
+        if path.exists():
+            print(f"Removing {pdf_path} ...")
+            path.unlink()
+        print(f"Persisting {pdf_path} ...")
+        result = abjad.persist(score_file).as_pdf(pdf_path, strict=79) 
+        if path.exists():
+            print(f"Opening {pdf_path} ...")
+            os.system(f"open {pdf_path}")
 
     def _make_lilypond_file(self, midi=False):
         path = abjad.Path('rill', 'stylesheets', 'contexts.ily')
         lilypond_file = abjad.LilyPondFile.new(
-                music=self._score, includes=[path], use_relative_includes=True
+                music=self.score, includes=[path], use_relative_includes=True
                 )
         delattr(lilypond_file.header_block, "tagline")
         for item in lilypond_file.items[:]:
             if getattr(item, "name", None) in ("layout", "paper"):
                 lilypond_file.items.remove(item)
         self._lilypond_file = lilypond_file
-
-    def _make_score(self):
-        template = rill.ScoreTemplate()
-        score = template()
-        self._score = score
-    
-
-    def _make_lilypond_file(self, midi=False):
-        path = abjad.Path('rill', 'stylesheets', 'contexts.ily')
-        lilypond_file = abjad.LilyPondFile.new(
-                music=self._score, includes=[path], use_relative_includes=True
-                )
-        delattr(lilypond_file.header_block, "tagline")
-        for item in lilypond_file.items[:]:
-            if getattr(item, "name", None) in ("layout", "paper"):
-                lilypond_file.items.remove(item)
-        self._lilypond_file = lilypond_file
-
-    def _make_score(self):
-        template = rill.ScoreTemplate()
-        score = template()
-        self._score = score
-    
-    @property
-    def metadata(self):
-        """
-        Gets metadata after run
-        """
-        return self._metadata
 
     def route_phrases(self, components):
         """
         Makes voices from phrase components
         """
-        self._phrases.append(components)
+        self.phrases.append(components)
 
     def run(
             self,
-            metadata=None,
-            persist=None,
-            previous_metadata=None,
-            previous_persist=None,
-            segments_directory=None,
     ):
         """
         Runs segment maker
         
         Returns Lilypond file
         """
-        self._metadata = abjad.OrderedDict(metadata)
-        self._persist = abjad.OrderedDict(persist)
-        self._previous_metadata = abjad.OrderedDict(previous_metadata)
-        self._previous_persist = abjad.OrderedDict(previous_persist)
-        self._segments_directory = segments_directory
-        self._make_score()
         self._make_lilypond_file()
         self._call_phrases()
+        self._render_illustration()
         return self._lilypond_file
+
+    def set_build_path(self, path):
+        self.build_path = path
+
+    def set_current_directory(self, file_parent_dir):
+        self.current_directory = file_parent_dir
+
+    def set_name(self, name):
+        self.segment_name = name 
+
+    def set_score_template(self, score_template):
+        self.score = score_template
+
+    def set_time_signatures(self, time_signatures):
+        self.time_signatures = time_signatures
+
+
+
 
 if __name__ == '__main__':
     import rill.tools.FuzzyHarmony as FuzzyHarmony
@@ -238,25 +210,24 @@ if __name__ == '__main__':
     phrase_four.make_phrase(durations, denominator, divisions, pitches)
     caught_phrases.append(container)
     
-    phrases = PhraseCatcher(caught_phrases)    
+    phrases = PhraseCatcher("Violin_Music_Voice", caught_phrases)    
     
-    #abjad.f(phrases)
+    abjad.f(phrases)
 
+
+
+    test_current_directory = pathlib.Path(__file__).parent
+    test_build_path = (pathlib.Path(__file__).parent/".."/"build").resolve()
     score = rill.ScoreTemplate()
-    segment_maker = SegmentMaker(
-            name='Test',
-            time_signatures = 20 * [(4, 4)]
-            )
+    score_template = score()
+    segment_maker = rill.SegmentMaker()
+    segment_maker.set_current_directory(test_current_directory)
+    segment_maker.set_build_path(test_build_path)
+    segment_maker.set_score_template(score_template)
+    segment_maker.set_name('A')
+    segment_maker.set_time_signatures([(4, 4)] * 20)
 
-    phrase_catcher = PhraseCatcher()
-    phrase_catcher.instrument_name = 'Violin'
-    phrase_catcher.phrases = caught_phrases
-    abjad.f(phrase_catcher)
-    #phrase_catcher._set_phrase_components()
-    segment_maker.route_phrases(phrase_catcher)
-   
-    lilypond_file = segment_maker.run()
-    abjad.f(lilypond_file)
-
+    liypond_file = segment_maker.run()
+#
 
 

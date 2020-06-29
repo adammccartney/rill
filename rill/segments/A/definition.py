@@ -1,11 +1,13 @@
 import os
+import pathlib
 import abjad
 import rill
 
 import rill.tools.FuzzyHarmony as FuzzyHarmony
 from rill.tools.FuzzyHarmony import invert_up as invert_up
+import rill.tools.PhraseMaker as PhraseMaker
+from rill.tools.SegmentMaker import PhraseCatcher
 
-from rill.tools.PhraseMaker import make_four_bar_phrase as make_four_bar_phrase
 
 # call to segment maker contains:
     # Set instruments
@@ -17,34 +19,28 @@ from rill.tools.PhraseMaker import make_four_bar_phrase as make_four_bar_phrase
     # set midi
     # 
 
-###########
-### [A] ###
-###########
+#####################
+# Setting up segment ### [A] ###
+#####################
 
-segment_maker = rill.SegmentMaker(
-        #markup_leaves=False,
-        name='A'
-        )
+score_template = rill.ScoreTemplate()
+score = score_template()
+#abjad.f(score)
 
-time_signatures = 20 * [(4, 4)]
-segment_maker.time_signatures = time_signatures
+test_current_directory = pathlib.Path(__file__).parent
+test_build_path = (pathlib.Path(__file__).parent/".."/"build").resolve()
+score = rill.ScoreTemplate()
+segment_maker = rill.SegmentMaker()
+segment_maker.set_current_directory(test_current_directory)
+segment_maker.set_build_path(test_build_path)
+segment_maker.set_score_template(score)
+segment_maker.set_name('A')
+segment_maker.set_time_signatures([(4, 4)] * 20)
+print(segment_maker.score)
 
 ###########################
 # CONSTANTS for SEGMENT A #
 ###########################
-
-durations = [
-        abjad.Duration(2, 4),
-        abjad.Duration(3, 4),
-        abjad.Duration(3, 4),
-        abjad.Duration(6, 4),
-        abjad.Duration(2, 4),
-        ]
-
-harmony_third = FuzzyHarmony('bf_ii', abjad.PitchSegment("ef' g' bf' c''"), 1) # cmin7/e
-harmony_fifth = FuzzyHarmony('bf_ii', abjad.PitchSegment("g' bf' c'' ef''"), 2) 
-harmony_seventh = FuzzyHarmony('bf_ii', abjad.PitchSegment("bf' c'' ef'' g''"), 3)
-harmony_root = FuzzyHarmony('bf_ii', abjad.PitchSegment("c'' ef'' g'' bf''"), 0)
 
 #--------------/
 #   Violin    /
@@ -53,33 +49,21 @@ harmony_root = FuzzyHarmony('bf_ii', abjad.PitchSegment("c'' ef'' g'' bf''"), 0)
 
 # Make material
 
-phrase_one = make_four_bar_phrase(harmony_third, durations)
-phrase_two= make_four_bar_phrase(harmony_fifth, durations)
-phrase_three = make_four_bar_phrase(harmony_seventh, durations)
-phrase_four = make_four_bar_phrase(harmony_root, durations)
 
 ## Attach to score
 
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = 'Violin'
+#rhythm_definition = segment_maker.define_rhythm()
+#rhythm_definition.instrument_name = 'Violin'
 
-print(phrase_one)
-rhythm_definition.notes = [
-                          phrase_one, 
-                          phrase_two, 
-                          phrase_three,
-                          phrase_four,
-                          ]
 
 
 #-----------------/
 #   MonoSynth    /
 #_______________/
 
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = 'MonoSynth'
+#rhythm_definition = segment_maker.define_rhythm()
+#rhythm_definition.instrument_name = 'MonoSynth'
 
-rhythm_definition.notes = [phrase_one]
 
 
 
@@ -89,60 +73,54 @@ rhythm_definition.notes = [phrase_one]
 # RH_I  /
 #____________/
 
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = 'RH_I'
-
-rhythm_definition.notes = [phrase_one]
-
-
-#---------------/
-# RH_II  /
-#_____________/
-#
 #rhythm_definition = segment_maker.define_rhythm()
-#rhythm_definition.instrument_name = 'RH_II'
-#
-#rhythm_definition.notes = [
-#        'r1',
-#        'r1',
-#        'r1',
-#        'r1',
-#        'r1',
-#        ]
-#
+#rhythm_definition.instrument_name = 'RH_I'
+
+#rhythm_definition.notes = [phrase_one]
+
+
 #--------------/
 # LH_I  /
 #____________/
 
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = 'LH_I'
+caught_phrases = []
+harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("ef' g' bf' c''"), 1) # cmin7/e
+container = abjad.Container()
+durations = [2, 3, 3, 6, 2]
+denominator = 4
+divisions = [(4, 4)] * 5
+pitches = harmony.pitch_list
+phrase_one = PhraseMaker(container)
+phrase_one.make_phrase(durations, denominator, divisions, pitches)
 
-rhythm_definition.notes = [
-                          phrase_one, 
-                          phrase_two, 
-                          phrase_three,
-                          phrase_four,
-                          ]
+# make phrase two
+harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("g' bf' c'' ef''"), 2) 
+container = abjad.Container()
+pitches = harmony.pitch_list
+phrase_two = PhraseMaker(container)
+phrase_two.make_phrase(durations, denominator, divisions, pitches)
+caught_phrases.append(container)
 
-rhythm_definition_dynamics = [
-        (0, abjad.Dynamic('pp')),
-        ]
+# make phrase three
+harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("bf' c'' ef'' g''"), 3)   
+container = abjad.Container()
+pitches = harmony.pitch_list
+phrase_three = PhraseMaker(container)
+phrase_three.make_phrase(durations, denominator, divisions, pitches)
+caught_phrases.append(container)
 
-#---------------/
-# LH_II  /
-#_____________/
+ # make phrase four
+harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("c'' ef'' g'' bf''"), 0)
+container = abjad.Container()
+pitches = harmony.pitch_list
+phrase_four = PhraseMaker(container)
+phrase_four.make_phrase(durations, denominator, divisions, pitches)
+caught_phrases.append(container)
 
-#rhythm_definition = segment_maker.define_rhythm()
-#rhythm_definition.instrument_name = 'LH_II'
-#
-#rhythm_definition.notes = [
-#        (pitch_list[0], abjad.Duration(1)),
-#        (pitch_list[0], abjad.Duration(1)),
-#        (pitch_list[1], abjad.Duration(1)),
-#        (pitch_list[3], abjad.Duration(1)),
-#        (pitch_list[2], abjad.Duration(1)),
-#        ]
-#
-#--------------------------------------------#
+phrases = PhraseCatcher(
+                        instrument_name = 'LH_I',
+                        phrases = caught_phrases
+                        )    
 
-    
+#segment_maker.route_phrases(phrases)
+#lilypond_file = segment_maker.run() 
