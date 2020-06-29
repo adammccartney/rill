@@ -83,7 +83,7 @@ class PhraseMaker(object):
 
 
      #   def get_container(self):
-      #      """Returns phrase as abjad.Container"""
+     #      """Returns phrase as abjad.Container"""
 
 
 if __name__ == '__main__':
@@ -95,6 +95,7 @@ if __name__ == '__main__':
     divisions = [(4, 4)] * 5
     pitches = harmony_third.pitch_list
     print(pitches)
+    
     phrase_one = abjad.Container()
     music_one = PhraseMaker(phrase_one)
     music_one.make_phrase(durations, denominator, divisions, pitches)
@@ -103,5 +104,3 @@ if __name__ == '__main__':
     for component in components:
         abjad.f(component)
 
-    note = phrase_one[0]
-    abjad.f(note)

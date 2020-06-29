@@ -1,3 +1,5 @@
+import pathlib
+
 import abjad
 import copy
 import rill
@@ -45,11 +47,11 @@ class PhraseCatcher(object):
             )
    
     def _set_phrase_components(self):
+        print("set phrase called")
         for phrase in self._phrases:
+            print("inside single phrase loop")
             components = phrase.components
-            for component in components:
-                print("getting to here")
-                abjad.f(component) 
+            abjad.f(components)
 
     def _route_phrases(self):
         voice = self._score[f"{self.instrument_name}_Music_Voice"]
@@ -73,17 +75,32 @@ class PhraseCatcher(object):
         assert isinstance(argument, list)
         self._phrases = argument
 
+#------------------------------------------------------------------------------
+
 class SegmentMaker(abjad.SegmentMaker):
+
+    __slots__ = (
+            "_lilypond_file",
+            "_phrases",
+            "_score",
+            "build_path",
+            "current_directory",
+            "segment_name",
+            "tempo",
+            "time_signatures",
+            )
     
     def __init__(
-            self, name=None, time_signatures=None,
+            self, 
+            build_path=None,
+            current_directory=None, 
+            segment_name=None, 
+            time_signatures=None,
         ):
             super(SegmentMaker, self).__init__()
             self._lilypond_file = None
             self._phrases = []
-            self.name= name
             self.tempo = ((1, 4), 60)
-            self.time_signatures = time_signatures or []
 
     @property 
     def _music_voices(self):
@@ -97,6 +114,37 @@ class SegmentMaker(abjad.SegmentMaker):
     def _call_phrases(self):
         for phrase in self._phrases:
             phrase(self._score)
+    
+    def _build_segment(self):
+        current_directory = self.current_directory 
+        score_content = open(f"{directory}/illustration.ly").readlines()
+        build_path = (self.build_path / "score").resolve()
+        open(f"{build_path}/{self.segment_name}.ly").writelines(score_lines)
+
+    def _render_illustration_(self):
+        score_file = self._lilypond_file
+        directory = self.current_directory
+        print("direcitory: ", directory)
+        pdf_path = f"{directory}/illustration.pdf"
+        print("pdf_path: ", pdf_path)
+        path = pathLib("illustration.pdf")
+
+    def _make_lilypond_file(self, midi=False):
+        path = abjad.Path('rill', 'stylesheets', 'contexts.ily')
+        lilypond_file = abjad.LilyPondFile.new(
+                music=self._score, includes=[path], use_relative_includes=True
+                )
+        delattr(lilypond_file.header_block, "tagline")
+        for item in lilypond_file.items[:]:
+            if getattr(item, "name", None) in ("layout", "paper"):
+                lilypond_file.items.remove(item)
+        self._lilypond_file = lilypond_file
+
+    def _make_score(self):
+        template = rill.ScoreTemplate()
+        score = template()
+        self._score = score
+    
 
     def _make_lilypond_file(self, midi=False):
         path = abjad.Path('rill', 'stylesheets', 'contexts.ily')
@@ -133,7 +181,7 @@ class SegmentMaker(abjad.SegmentMaker):
             persist=None,
             previous_metadata=None,
             previous_persist=None,
-            segment_directory=None,
+            segments_directory=None,
     ):
         """
         Runs segment maker
@@ -144,7 +192,7 @@ class SegmentMaker(abjad.SegmentMaker):
         self._persist = abjad.OrderedDict(persist)
         self._previous_metadata = abjad.OrderedDict(previous_metadata)
         self._previous_persist = abjad.OrderedDict(previous_persist)
-        self._segment_directory = segment_directory
+        self._segments_directory = segments_directory
         self._make_score()
         self._make_lilypond_file()
         self._call_phrases()
@@ -164,7 +212,7 @@ if __name__ == '__main__':
     pitches = harmony.pitch_list
     phrase_one = PhraseMaker(container)
     phrase_one.make_phrase(durations, denominator, divisions, pitches)
-    caught_phrases.append(phrase_one)
+    caught_phrases.append(container)
 
     # make phrase two
     harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("g' bf' c'' ef''"), 2) 
@@ -172,7 +220,7 @@ if __name__ == '__main__':
     pitches = harmony.pitch_list
     phrase_two = PhraseMaker(container)
     phrase_two.make_phrase(durations, denominator, divisions, pitches)
-    caught_phrases.append(phrase_two)
+    caught_phrases.append(container)
 
     # make phrase three
     harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("bf' c'' ef'' g''"), 3)   
@@ -180,7 +228,7 @@ if __name__ == '__main__':
     pitches = harmony.pitch_list
     phrase_three = PhraseMaker(container)
     phrase_three.make_phrase(durations, denominator, divisions, pitches)
-    caught_phrases.append(phrase_three)
+    caught_phrases.append(container)
 
      # make phrase four
     harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("c'' ef'' g'' bf''"), 0)
@@ -188,9 +236,9 @@ if __name__ == '__main__':
     pitches = harmony.pitch_list
     phrase_four = PhraseMaker(container)
     phrase_four.make_phrase(durations, denominator, divisions, pitches)
-    caught_phrases.append(phrase_four)
+    caught_phrases.append(container)
     
-    #phrases = PhraseCatcher(caught_phrases)    
+    phrases = PhraseCatcher(caught_phrases)    
     
     #abjad.f(phrases)
 
@@ -204,10 +252,11 @@ if __name__ == '__main__':
     phrase_catcher.instrument_name = 'Violin'
     phrase_catcher.phrases = caught_phrases
     abjad.f(phrase_catcher)
-    #segment_maker.route_phrases(phrase_catcher)
+    #phrase_catcher._set_phrase_components()
+    segment_maker.route_phrases(phrase_catcher)
    
-    #lilypond_file = segment_maker.run()
-    #abjad.f(lilypond_file)
+    lilypond_file = segment_maker.run()
+    abjad.f(lilypond_file)
 
 
 
