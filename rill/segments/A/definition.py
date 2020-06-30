@@ -27,16 +27,23 @@ score_template = rill.ScoreTemplate()
 score = score_template()
 #abjad.f(score)
 
+
 test_current_directory = pathlib.Path(__file__).parent
-test_build_path = (pathlib.Path(__file__).parent/".."/"build").resolve()
+test_build_path = (pathlib.Path(__file__).parent/".."/".."/"build").resolve()
 score = rill.ScoreTemplate()
-segment_maker = rill.SegmentMaker()
-segment_maker.set_current_directory(test_current_directory)
-segment_maker.set_build_path(test_build_path)
-segment_maker.set_score_template(score)
-segment_maker.set_name('A')
-segment_maker.set_time_signatures([(4, 4)] * 20)
-print(segment_maker.score)
+score_template = score()
+
+segment_maker = rill.SegmentMaker(
+                                  score=score_template,
+                                  lilypond_file=None,
+                                  phrase_catcher=None,
+                                  current_directory=test_current_directory,
+                                  build_path=test_build_path,
+                                  segment_name='A',
+                                  tempo=((1, 4), 50),
+                                  time_signatures=([(4, 4)] * 20),
+        )
+
 
 ###########################
 # CONSTANTS for SEGMENT A #
@@ -119,8 +126,9 @@ caught_phrases.append(container)
 
 phrases = PhraseCatcher(
                         instrument_name = 'LH_I',
-                        phrases = caught_phrases
+                        phrases = caught_phrases,
                         )    
 
-#segment_maker.route_phrases(phrases)
-#lilypond_file = segment_maker.run() 
+routed_score = phrases(segment_maker.score)
+liypond_file = segment_maker.run()
+

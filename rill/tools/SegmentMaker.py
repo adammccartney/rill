@@ -24,7 +24,7 @@ class PhraseCatcher(object):
     """
 
     def __init__(self, instrument_name=None, phrases=None):
-        self.instrument_name = instrument_name
+        self._instrument_name = instrument_name
         self._phrases = phrases
 
     def __call__(self, score):
@@ -62,6 +62,13 @@ class PhraseCatcher(object):
                 voice.append(copied_expr)
             else:
                 raise ValueError(f"what is {argument!r}?")
+
+    @property 
+    def instrument_name(self) -> str:
+        """
+        Gets instrument name
+        """
+        return self._instrument_name
 
     @property 
     def phrases(self) -> tuple:
@@ -133,7 +140,7 @@ class SegmentMaker(object):
                 lilypond_file.items.remove(item)
         self._lilypond_file = lilypond_file
 
-    def route_phrases(self, components):
+    def route_phrases(self, phrase_catcher):
         """
         Makes voices from phrase components
         """
@@ -148,14 +155,20 @@ class SegmentMaker(object):
         Returns Lilypond file
         """
         self._make_lilypond_file()
-        self._call_phrases()
         self._render_illustration()
         return self._lilypond_file
 
     def set_build_path(self, path):
+        """sets a path
+        for use in creating a persistent "segment_{name}".ly
+        in the build directory"""
         self.build_path = path
 
     def set_current_directory(self, file_parent_dir):
+        """sets a path
+        used to create "illustration.ly" & "illustration.pdf"
+        that persist in the current working directory of segment
+        """
         self.current_directory = file_parent_dir
 
     def set_name(self, name):
@@ -210,24 +223,27 @@ if __name__ == '__main__':
     phrase_four.make_phrase(durations, denominator, divisions, pitches)
     caught_phrases.append(container)
     
-    phrases = PhraseCatcher("Violin_Music_Voice", caught_phrases)    
+    phrases = PhraseCatcher("Violin", caught_phrases)    
     
-    abjad.f(phrases)
-
-
 
     test_current_directory = pathlib.Path(__file__).parent
     test_build_path = (pathlib.Path(__file__).parent/".."/"build").resolve()
     score = rill.ScoreTemplate()
     score_template = score()
-    segment_maker = rill.SegmentMaker()
-    segment_maker.set_current_directory(test_current_directory)
-    segment_maker.set_build_path(test_build_path)
-    segment_maker.set_score_template(score_template)
-    segment_maker.set_name('A')
-    segment_maker.set_time_signatures([(4, 4)] * 20)
 
+    segment_maker = rill.SegmentMaker(
+                                      score=score_template,
+                                      lilypond_file=None,
+                                      phrase_catcher=phrases,
+                                      current_directory=test_current_directory,
+                                      build_path=test_build_path,
+                                      segment_name='A',
+                                      tempo=((1, 4), 50),
+                                      time_signatures=([(4, 4)] * 20),
+            )
+    routed_score = phrases(segment_maker.score)
+    #abjad.f(routed_score) 
     liypond_file = segment_maker.run()
-#
+
 
 
