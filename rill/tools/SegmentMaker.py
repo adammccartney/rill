@@ -79,7 +79,7 @@ class PhraseCatcher(object):
 
     @phrases.setter
     def phrases(self, argument):
-        assert isinstance(argument, list)
+        assert isinstance(argument, abjad.Container)
         self._phrases = argument
 
 #------------------------------------------------------------------------------

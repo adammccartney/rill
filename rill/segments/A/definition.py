@@ -6,6 +6,7 @@ import rill
 import rill.tools.FuzzyHarmony as FuzzyHarmony
 from rill.tools.FuzzyHarmony import invert_up as invert_up
 import rill.tools.PhraseMaker as PhraseMaker
+from rill.tools.PhraseMaker import PhraseStream as PhraseStream
 from rill.tools.SegmentMaker import PhraseCatcher
 
 
@@ -42,12 +43,22 @@ segment_maker = rill.SegmentMaker(
                                   segment_name='A',
                                   tempo=((1, 4), 50),
                                   time_signatures=([(4, 4)] * 20),
-        )
+                                 )
 
 
 ###########################
 # CONSTANTS for SEGMENT A #
 ###########################
+
+durations = [
+            abjad.Duration(1, 2), 
+            abjad.Duration(3, 4), 
+            abjad.Duration(3, 4), 
+            abjad.Duration(3, 2),
+            abjad.Duration(1, 2),
+            ]
+
+
 
 #--------------/
 #   Violin    /
@@ -59,8 +70,6 @@ segment_maker = rill.SegmentMaker(
 
 ## Attach to score
 
-#rhythm_definition = segment_maker.define_rhythm()
-#rhythm_definition.instrument_name = 'Violin'
 
 
 
@@ -68,8 +77,6 @@ segment_maker = rill.SegmentMaker(
 #   MonoSynth    /
 #_______________/
 
-#rhythm_definition = segment_maker.define_rhythm()
-#rhythm_definition.instrument_name = 'MonoSynth'
 
 
 
@@ -80,56 +87,40 @@ segment_maker = rill.SegmentMaker(
 # RH_I  /
 #____________/
 
-#rhythm_definition = segment_maker.define_rhythm()
-#rhythm_definition.instrument_name = 'RH_I'
-
-#rhythm_definition.notes = [phrase_one]
-
 
 #--------------/
 # LH_I  /
 #____________/
 
-caught_phrases = []
 harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("ef' g' bf' c''"), 1) # cmin7/e
-container = abjad.Container()
-durations = [2, 3, 3, 6, 2]
-denominator = 4
-divisions = [(4, 4)] * 5
-pitches = harmony.pitch_list
+pitches = harmony.numbered_pitch_list
 pitches.append(None)
-phrase_one = PhraseMaker(container)
-phrase_one.make_phrase(durations, denominator, divisions, pitches)
+phrases = []
+phrase_stream = PhraseStream(phrases)
+phrase_stream.make_extension(pitches, durations)
 
 # make phrase two
 harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("g' bf' c'' ef''"), 2) 
-container = abjad.Container()
-pitches = harmony.pitch_list
-phrase_two = PhraseMaker(container)
-phrase_two.make_phrase(durations, denominator, divisions, pitches)
-caught_phrases.append(container)
+pitches = harmony.numbered_pitch_list
+pitches.append(None)
+phrase_stream.make_extension(pitches, durations)
 
 # make phrase three
 harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("bf' c'' ef'' g''"), 3)   
-container = abjad.Container()
-pitches = harmony.pitch_list
-phrase_three = PhraseMaker(container)
-phrase_three.make_phrase(durations, denominator, divisions, pitches)
-caught_phrases.append(container)
+phrase_stream.make_extension(pitches, durations)
 
- # make phrase four
+# make phrase four
 harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("c'' ef'' g'' bf''"), 0)
-container = abjad.Container()
-pitches = harmony.pitch_list
-phrase_four = PhraseMaker(container)
-phrase_four.make_phrase(durations, denominator, divisions, pitches)
-caught_phrases.append(container)
+phrase_stream.make_extension(pitches, durations)
 
-phrases = PhraseCatcher(
-                        instrument_name = 'LH_I',
-                        phrases = caught_phrases,
-                        )    
+list_phrases = phrase_stream.phrases
+print(list_phrases)
 
-routed_score = phrases(segment_maker.score)
-liypond_file = segment_maker.run()
-
+#phrases = PhraseCatcher(
+#                        instrument_name = 'LH_I',
+#                        phrases = caught_phrases,
+#                        )    
+#
+#routed_score = phrases(segment_maker.score)
+#liypond_file = segment_maker.run()
+#
