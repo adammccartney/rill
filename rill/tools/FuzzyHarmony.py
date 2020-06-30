@@ -50,6 +50,15 @@ class FuzzyHarmony(object):
     def pitch_list(self):
         return self._pitch_list
 
+    @property 
+    def numbered_pitch_list(self):
+        """Gets pitches from segment as numbered pitches"""
+        pitch_list = self.pitch_list
+        num_pitch_list = []
+        for pitch in pitch_list:
+            num_pitch = abjad.NumberedPitch(pitch)
+            num_pitch_list.append(int(str(num_pitch)))
+        return num_pitch_list
 
 class Progression(object):
     """

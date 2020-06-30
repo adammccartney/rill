@@ -97,6 +97,7 @@ durations = [2, 3, 3, 6, 2]
 denominator = 4
 divisions = [(4, 4)] * 5
 pitches = harmony.pitch_list
+pitches.append(None)
 phrase_one = PhraseMaker(container)
 phrase_one.make_phrase(durations, denominator, divisions, pitches)
 

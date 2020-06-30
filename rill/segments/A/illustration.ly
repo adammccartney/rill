@@ -49,45 +49,45 @@
                         {                                                      %! rill.ScoreTemplate.__call__()
                             {
                                 \time 4/4
-                                <g'>2
-                                <bf'>2
+                                c'2
+                                c'2
                                 ~
-                                <c''>4
-                                <ef''>2.
-                                <g'>1
+                                c'4
+                                c'2.
+                                c'1
                                 ~
-                                <bf'>2
-                                <c''>2
-                                <ef''>2
-                                <g'>2
+                                c'2
+                                c'2
+                                c'2
+                                c'2
                             }
                             {
                                 \time 4/4
-                                <bf'>2
-                                <c''>2
+                                c'2
+                                c'2
                                 ~
-                                <ef''>4
-                                <g''>2.
-                                <bf'>1
+                                c'4
+                                c'2.
+                                c'1
                                 ~
-                                <c''>2
-                                <ef''>2
-                                <g''>2
-                                <bf'>2
+                                c'2
+                                c'2
+                                c'2
+                                c'2
                             }
                             {
                                 \time 4/4
-                                <c''>2
-                                <ef''>2
+                                c'2
+                                c'2
                                 ~
-                                <g''>4
-                                <bf''>2.
-                                <c''>1
+                                c'4
+                                c'2.
+                                c'1
                                 ~
-                                <ef''>2
-                                <g''>2
-                                <bf''>2
-                                <c''>2
+                                c'2
+                                c'2
+                                c'2
+                                c'2
                             }
                         }                                                      %! rill.ScoreTemplate.__call__()
                     >>                                                         %! rill.ScoreTemplate.__call__()

@@ -29,78 +29,34 @@ class PhraseMaker(object):
     
     ### PUBLIC METHODS ###
 
-    def make_phrase(self, durations, denominator, divisions, pitches):
-        # make rhythm with one tuplet per division
-        stack = rmakers.stack(
-            rmakers.talea(
-                durations,
-                denominator, 
-                extra_counts=(0, 0, 0),
-            ),
-            rmakers.beam()
-        )
-        selection = stack(divisions)
-
-        # attach time signature to first leaf in each tuplet
-        assert len(divisions) == len(selection)
-        previous_time_signature = None
-        for division, tuplet in zip(divisions, selection):
-            time_signature = abjad.TimeSignature(division)
-            leaf = abjad.select(tuplet).leaf(0)
-            if time_signature != previous_time_signature:
-                abjad.attach(time_signature, leaf)
-                previous_time_signature = time_signature
-
-        # apply pitch material
-        cyclic_tuple = abjad.CyclicTuple(pitches) 
-        iterator = abjad.iterate(selection).logical_ties(pitched=True) # make iterator out of selection using logical ties as virtual measures
-        iterator = enumerate(iterator) # makes enum out of iterator  
-        for index, logical_tie in iterator:
-            pitch = cyclic_tuple[index]
-            for old_leaf in logical_tie:
-                if isinstance(pitch, int):
-                    old_leaf.written_pitch = pitch
-                elif isinstance(pitch, str):
-                    # warning: was formerly checking for list
-                    new_leaf = abjad.Chord(pitch, old_leaf.written_duration)
-                    indicators = abjad.inspect(old_leaf).indicators()
-                    if indicators != None:
-                        for indicator in indicators:
-                            abjad.attach(indicator, new_leaf)
-                    abjad.mutate(old_leaf).replace(new_leaf)
-                elif isinstance(pitch, abjad.Chord):
-                    new_leaf = abjad.Chord(pitch, old_leaf.written_duration)
-                    indicators = abjad.inspect(old_leaf).indicators()
-                    if indicators != None:
-                        for indicator in indicators:
-                            abjad.attach(indicator, new_leaf)
-                    abjad.mutate(old_leaf).replace(new_leaf)
-
-        # remove trivial 1:1 tuplets
-        self._extend_container(selection)
-        command = rmakers.extract_trivial()
-        command(selection)
-
-
-     #   def get_container(self):
-     #      """Returns phrase as abjad.Container"""
-
+    def make_notes(self, pitches, durations):
+        """Returns a container with leaves"""
+        maker = abjad.LeafMaker()
+        leaves = maker(pitches, durations)
+        self._extend_container(leaves)
+        
+    @property
+    def container(self):
+        """Gets container"""
+        return self._container
 
 if __name__ == '__main__':
     import rill.tools.FuzzyHarmony as FuzzyHarmony
+    import rill.tools.PhraseMaker as PhraseMaker
 
-    harmony_third = FuzzyHarmony('bf_ii', abjad.PitchSegment("ef' g' bf' c''"), 1) # cmin7/e
-    durations = [2, 3, 3, 6, 2]
-    denominator = 4
-    divisions = [(4, 4)] * 5
-    pitches = harmony_third.pitch_list
-    print(pitches)
-    
-    phrase_one = abjad.Container()
-    music_one = PhraseMaker(phrase_one)
-    music_one.make_phrase(durations, denominator, divisions, pitches)
-    
-    components = phrase_one.components 
-    for component in components:
-        abjad.f(component)
+    harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("ef' g' bf' c''"), 1)
+    pitches = harmony.numbered_pitch_list
+    pitches.append(None)
+    durations = [
+            abjad.Duration(1, 2), 
+            abjad.Duration(3, 4), 
+            abjad.Duration(3, 4), 
+            abjad.Duration(3, 2),
+            abjad.Duration(1, 2),
+            ]
+    container = abjad.Container()
+    phrase_maker = PhraseMaker(container)
+    phrase_maker.make_notes(pitches, durations)
+    made = phrase_maker.container
+    abjad.f(made)
 
