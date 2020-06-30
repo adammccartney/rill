@@ -1,7 +1,5 @@
 import abjad 
 
-from abjadext import rmakers
-
 class PhraseMaker(object):
     """
     Makes a musical phrase by combining
@@ -177,5 +175,3 @@ if __name__ == '__main__':
 
     ly_file = make_test_lilypond_file()
     abjad.f(ly_file)
-    #score = abjad.Score([violin_staff], name="rill Test Score")
-    #abjad.f(score)
