@@ -46,15 +46,22 @@ class SegmentMaker(object):
             self.time_signatures = time_signatures 
 
     def _build_segment(self):
-        current_directory = self.current_directory 
-        score_content = open(f"{directory}/illustration.ly").readlines()
-        build_path = (self.build_path / "score").resolve()
-        open(f"{build_path}/{self.segment_name}.ly").writelines(score_content)
+        directory = self.current_directory 
+        file = open(f"{directory}/illustration.ly", 'r')
+        score_content = file.readlines()
+        file.close()
+        print("score content: ", score_content[13:-1])
+        build_path = (self.build_path / "segments").resolve()
+        print("build_path: ", build_path)
+        print("file to build: ", f"{self.segment_name}.ly")
+        file = open(f"{build_path}/{self.segment_name}.ly", 'w')
+        file.writelines(score_content[13:-1])
+        file.close()
 
     def _render_illustration(self):
         score_file = self._lilypond_file
         directory = self.current_directory
-        print("direcitory: ", directory)
+        print("directory: ", directory)
         pdf_path = f"{directory}/illustration.pdf"
         print("pdf_path: ", pdf_path)
         #ly_path = f"{directory}/illustration.ly"
@@ -132,6 +139,7 @@ class SegmentMaker(object):
         self._call_phrase_outflows()
         self._configure_score()    # only needed in first segment / special cases
         self._render_illustration()
+        self._build_segment()
         return self._lilypond_file
 
 
