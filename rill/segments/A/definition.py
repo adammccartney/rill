@@ -58,27 +58,13 @@ durations = [
             abjad.Duration(1, 2),
             ]
 
-
-
 #--------------/
 #   Violin    /
 #____________/
 
-
-# Make material
-
-
-## Attach to score
-
-
-
-
 #-----------------/
 #   MonoSynth    /
 #_______________/
-
-
-
 
 
 #-------------------PolySynth----------------#

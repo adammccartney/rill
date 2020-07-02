@@ -5,103 +5,42 @@ import copy
 import rill
 import mccartney 
 
-from abjadext import rmakers 
-
-class PhraseCatcher(object):
-    """
-    Aggregates PhraseMaker objects
-    Allocates one voice per PhraseMaker
-    
-    Voices organized by instrument name (rh / lh for piano)
-    
-    e.g.: "{}_.Music_Voice".format(instrument_name)
-    can be: Violin_Music_Voice
-    
-    check via ScoreTemplate getter: .voice_abbreviations
-    Returns an ordered dictionary
-
-    Called from SegmentMaker and helps to produce lilypond file
-    """
-
-    def __init__(self, instrument_name=None, phrases=None):
-        self._instrument_name = instrument_name
-        self._phrases = phrases
-
-    def __call__(self, score):
-        """
-        Routes phrase to voice in score
-        Returns none
-        """
-        self._score = score
-        self._route_phrases()
-
-    def __format__(self, format_specification="") -> str:
-        return abjad.StorageFormatManager(self).get_storage_format()
-
-    def _get_music_voices(self):
-        return(
-                self._score["Violin_Music_Voice"],
-                self._score["Monosynth_Music_Voice"],
-                self._score["RH_I_Music_Voice"],
-                self._score["LH_I_Muisc_Voice"],
-            )
-   
-    def _set_phrase_components(self):
-        print("set phrase called")
-        for phrase in self._phrases:
-            print("inside single phrase loop")
-            components = phrase.components
-            abjad.f(components)
-
-    def _route_phrases(self):
-        voice = self._score[f"{self.instrument_name}_Music_Voice"]
-        for argument in self._phrases:
-            if isinstance(argument, abjad.Component):
-                print("I can see your phrases")
-                copied_expr = copy.deepcopy(argument)
-                voice.append(copied_expr)
-            else:
-                raise ValueError(f"what is {argument!r}?")
-
-    @property 
-    def instrument_name(self) -> str:
-        """
-        Gets instrument name
-        """
-        return self._instrument_name
-
-    @property 
-    def phrases(self) -> tuple:
-        """
-        Gets phrases
-        """
-        return self._phrases
-
-    @phrases.setter
-    def phrases(self, argument):
-        assert isinstance(argument, abjad.Container)
-        self._phrases = argument
-
-#------------------------------------------------------------------------------
+from rill.tools.PhraseMaker import PhraseOutflow as PhraseOutflow
 
 class SegmentMaker(object):
+    """Segment Maker definition for rill
+    makes a persistent section of the score.
+    """
+
+    __slots__ = (
+            "_lilypond_file",
+            "_score",
+            "_phrase_outflows",
+            "build_path",
+            "current_directory",
+            "segment_name",
+            "tempo",
+            "time_signatures",
+            )
+
+
 
     def __init__(
             self,
-            score=None,
-            lilypond_file=None,
-            phrase_catcher=None,
-            current_directory=None, 
+            _lilypond_file=None,
+            _score=None,
+            _phrase_outflows=None,
             build_path=None,
+            current_directory=None, 
             segment_name=None, 
             tempo=None,
             time_signatures=None,
         ):
-            self.score = score
-            self._lilypond_file = lilypond_file
-            self.phrase_catcher = phrase_catcher
-            self.current_directory = current_directory
+            self._lilypond_file = _lilypond_file
+            self._phrase_outflows = _phrase_outflows
+            self._score = _score
             self.build_path = build_path
+            self.current_directory = current_directory
             self.segment_name = segment_name
             self.tempo = ((1, 4), 60)
             self.time_signatures = time_signatures 
@@ -110,7 +49,7 @@ class SegmentMaker(object):
         current_directory = self.current_directory 
         score_content = open(f"{directory}/illustration.ly").readlines()
         build_path = (self.build_path / "score").resolve()
-        open(f"{build_path}/{self.segment_name}.ly").writelines(score_lines)
+        open(f"{build_path}/{self.segment_name}.ly").writelines(score_content)
 
     def _render_illustration(self):
         score_file = self._lilypond_file
@@ -140,11 +79,16 @@ class SegmentMaker(object):
                 lilypond_file.items.remove(item)
         self._lilypond_file = lilypond_file
 
-    def route_phrases(self, phrase_catcher):
+
+    def stream_phrases(self, instrument_name):
         """
-        Makes voices from phrase components
+        Calls a PhraseOutflow
+        Streams phrases to a voice in score
         """
-        self.phrases.append(components)
+        phrase_outflow = PhraseOutflow()
+        phrase_outflow.instrument_name = instrument_name
+        self._phrase_outflows.append(phrase_outflow)
+        return phrase_outflow
 
     def run(
             self,
@@ -158,92 +102,89 @@ class SegmentMaker(object):
         self._render_illustration()
         return self._lilypond_file
 
-    def set_build_path(self, path):
-        """sets a path
-        for use in creating a persistent "segment_{name}".ly
-        in the build directory"""
-        self.build_path = path
-
-    def set_current_directory(self, file_parent_dir):
-        """sets a path
-        used to create "illustration.ly" & "illustration.pdf"
-        that persist in the current working directory of segment
-        """
-        self.current_directory = file_parent_dir
-
-    def set_name(self, name):
-        self.segment_name = name 
-
-    def set_score_template(self, score_template):
-        self.score = score_template
-
-    def set_time_signatures(self, time_signatures):
-        self.time_signatures = time_signatures
-
-
-
 
 if __name__ == '__main__':
     import rill.tools.FuzzyHarmony as FuzzyHarmony
     import rill.tools.PhraseMaker as PhraseMaker
-    
-    caught_phrases = []
-    # make phrase one 
-    harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("ef' g' bf' c''"), 1) # cmin7/e
-    container = abjad.Container()
-    durations = [2, 3, 3, 6, 2]
-    denominator = 4
-    divisions = [(4, 4)] * 5
-    pitches = harmony.pitch_list
-    phrase_one = PhraseMaker(container)
-    phrase_one.make_phrase(durations, denominator, divisions, pitches)
-    caught_phrases.append(container)
-
-    # make phrase two
-    harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("g' bf' c'' ef''"), 2) 
-    container = abjad.Container()
-    pitches = harmony.pitch_list
-    phrase_two = PhraseMaker(container)
-    phrase_two.make_phrase(durations, denominator, divisions, pitches)
-    caught_phrases.append(container)
-
-    # make phrase three
-    harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("bf' c'' ef'' g''"), 3)   
-    container = abjad.Container()
-    pitches = harmony.pitch_list
-    phrase_three = PhraseMaker(container)
-    phrase_three.make_phrase(durations, denominator, divisions, pitches)
-    caught_phrases.append(container)
-
-     # make phrase four
-    harmony = FuzzyHarmony('bf_ii', abjad.PitchSegment("c'' ef'' g'' bf''"), 0)
-    container = abjad.Container()
-    pitches = harmony.pitch_list
-    phrase_four = PhraseMaker(container)
-    phrase_four.make_phrase(durations, denominator, divisions, pitches)
-    caught_phrases.append(container)
-    
-    phrases = PhraseCatcher("Violin", caught_phrases)    
+    from rill.tools.PhraseMaker import PhraseStream as PhraseStream
     
 
+    ## Set up segment 
     test_current_directory = pathlib.Path(__file__).parent
     test_build_path = (pathlib.Path(__file__).parent/".."/"build").resolve()
     score = rill.ScoreTemplate()
     score_template = score()
 
     segment_maker = rill.SegmentMaker(
-                                      score=score_template,
-                                      lilypond_file=None,
-                                      phrase_catcher=phrases,
+                                      _lilypond_file=None,
+                                      _phrase_outflows=None,
+                                      _score=score_template,
                                       current_directory=test_current_directory,
                                       build_path=test_build_path,
                                       segment_name='A',
                                       tempo=((1, 4), 50),
                                       time_signatures=([(4, 4)] * 20),
-            )
-    routed_score = phrases(segment_maker.score)
-    #abjad.f(routed_score) 
-    liypond_file = segment_maker.run()
+                                    )
 
 
+    ## Set up material for segment 
 
+    durations = [
+            abjad.Duration(1, 2), 
+            abjad.Duration(3, 4), 
+            abjad.Duration(3, 4), 
+            abjad.Duration(3, 2),
+            abjad.Duration(1, 2),
+            ]
+    
+    harmony_one = FuzzyHarmony('bf_ii', abjad.PitchSegment("ef' g' bf' c''"), 1) # cmin7/e
+    harmony_two = FuzzyHarmony('bf_ii', abjad.PitchSegment("g' bf' c'' ef''"), 2) 
+    harmony_three = FuzzyHarmony('bf_ii', abjad.PitchSegment("bf' c'' ef'' g''"), 3)   
+    harmony_four = FuzzyHarmony('bf_ii', abjad.PitchSegment("c'' ef'' g'' bf''"), 0)
+ 
+    pitch_lists = [
+              harmony_one.numbered_pitch_list,
+              harmony_two.numbered_pitch_list,
+              harmony_three.numbered_pitch_list,
+              harmony_four.numbered_pitch_list,
+              ]
+
+    # Routine to order material into containers
+
+    dry_phrase_stream = PhraseStream([])
+    def order_material(pitch_lists, durations, phrase_stream):
+        """Makes phrases and adds them to stream"""
+        for items in pitch_lists:
+            pitches = items
+            pitches.append(None)
+            phrase_stream.make_extension(pitches, durations)
+        return phrase_stream
+   
+    wet_phrase_stream = order_material(
+                                       pitch_lists, 
+                                       durations, 
+                                       dry_phrase_stream,
+                                    )  
+
+    list_phrases = wet_phrase_stream.phrases
+    print("list phrase :", list_phrases)
+    components = wet_phrase_stream.components
+    print("phrase stream components :", components)
+
+    phrase_outflow = segment_maker.stream_phrases(instrument_name="LH_I")
+    #phrase_outflow.instrument_name = 'LH_I'
+    
+
+   # Routine to order 
+
+
+#   
+#    phrases = PhraseCatcher("Violin", caught_phrases)    
+#    
+#
+#    routed_score = phrases(segment_maker.score)
+#    #abjad.f(routed_score) 
+#    liypond_file = segment_maker.run()
+#
+#
+#
