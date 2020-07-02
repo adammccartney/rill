@@ -137,7 +137,7 @@ class PhraseOutflow(object):
         self._phrases = phrase_list
 
 
-    if __name__ == '__main__':
+if __name__ == '__main__':
     import rill.tools.FuzzyHarmony as FuzzyHarmony
     import rill.tools.PhraseMaker as PhraseMaker
 
@@ -196,7 +196,9 @@ class PhraseOutflow(object):
         """
         score_template = TestScoreTemplate()
         score = score_template()
-        phrase_outflow = PhraseOutflow(instrument_name="Violin", phrases=list_phrases)
+        phrase_outflow = PhraseOutflow()
+        phrase_outflow.instrument_name = "Violin"
+        phrase_outflow.phrases = list_phrases 
         phrase_outflow(score)
         lilypond_file = abjad.LilyPondFile.new(score)
         return lilypond_file

@@ -36,9 +36,9 @@ class SegmentMaker(object):
             tempo=None,
             time_signatures=None,
         ):
-            self._lilypond_file = _lilypond_file
-            self._phrase_outflows = _phrase_outflows
-            self._score = _score
+            self._lilypond_file = None
+            self._phrase_outflows = []
+            self._score = None
             self.build_path = build_path
             self.current_directory = current_directory
             self.segment_name = segment_name
@@ -80,13 +80,14 @@ class SegmentMaker(object):
         self._lilypond_file = lilypond_file
 
 
-    def stream_phrases(self, instrument_name):
+    def stream_phrases(self, instrument_name, phrases):
         """
         Calls a PhraseOutflow
         Streams phrases to a voice in score
         """
         phrase_outflow = PhraseOutflow()
         phrase_outflow.instrument_name = instrument_name
+        phrase_outflow.phrases = phrases
         self._phrase_outflows.append(phrase_outflow)
         return phrase_outflow
 
@@ -171,8 +172,10 @@ if __name__ == '__main__':
     components = wet_phrase_stream.components
     print("phrase stream components :", components)
 
-    phrase_outflow = segment_maker.stream_phrases(instrument_name="LH_I")
-    #phrase_outflow.instrument_name = 'LH_I'
+    phrase_outflow = segment_maker.stream_phrases(
+                                                  instrument_name = "LH_I", 
+                                                  phrases = list_phrases,
+                                                  )
     
 
    # Routine to order 
