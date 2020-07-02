@@ -38,7 +38,7 @@ class SegmentMaker(object):
         ):
             self._lilypond_file = None
             self._phrase_outflows = []
-            self._score = None
+            self._score = _score
             self.build_path = build_path
             self.current_directory = current_directory
             self.segment_name = segment_name
@@ -91,9 +91,7 @@ class SegmentMaker(object):
         self._phrase_outflows.append(phrase_outflow)
         return phrase_outflow
 
-    def run(
-            self,
-    ):
+    def run(self):
         """
         Runs segment maker
         
@@ -176,7 +174,6 @@ if __name__ == '__main__':
                                                   instrument_name = "LH_I", 
                                                   phrases = list_phrases,
                                                   )
-    
 
    # Routine to order 
 
