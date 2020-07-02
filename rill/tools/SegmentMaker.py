@@ -98,6 +98,29 @@ class SegmentMaker(object):
         for phrase_outflow in self._phrase_outflows:
             phrase_outflow(self._score)
 
+    def _configure_lilypond_file(self):
+        lilypond_file = self._lilypond_file
+        lilypond_file.header_block.title = None
+        lilypond_file.header_block.composer = None
+
+    def _configure_score(self):
+        voices  = self._get_voices()
+        for voice in voices[0:3]: # violin, monosynth, rh polysynth 
+            leaf = abjad.inspect(voice).leaf(0)
+            abjad.attach(abjad.Clef("treble"), leaf)
+        voice = voices[3]  # lh polysynth
+        leaf = abjad.inspect(voice).leaf(0)
+        abjad.attach(abjad.Clef("bass"), leaf)
+
+    def _get_voices(self):
+        """Returns quadruple of staves from score"""
+        return (
+                self._score["Violin_Music_Voice"],
+                self._score["Monosynth_Music_Voice"],
+                self._score["RH_I_Music_Voice"],
+                self._score["LH_I_Music_Voice"],
+                )
+
     def run(self):
         """
         Runs segment maker
@@ -105,8 +128,10 @@ class SegmentMaker(object):
         Returns Lilypond file
         """
         self._make_lilypond_file()
+        self._configure_lilypond_file()
         self._call_phrase_outflows()
-        self._render_illustration()
+        #self._configure_score()
+        #self._render_illustration()
         return self._lilypond_file
 
 
@@ -179,10 +204,26 @@ if __name__ == '__main__':
     print("phrase stream components :", components)
 
     phrase_outflow = segment_maker.stream_phrases(
-                                                  instrument_name = "LH_I", 
-                                                  phrases = list_phrases,
-                                                  )
+                                            instrument_name = "Violin",
+                                            phrases = ["s1"],
+                                           )
 
+    phrase_outflow = segment_maker.stream_phrases(
+                                            instrument_name = "Monosynth",
+                                            phrases = ["s1"],
+                                           )
+
+    phrase_outflow = segment_maker.stream_phrases(
+                                            instrument_name = "RH_I",
+                                            phrases = ["s1"],
+                                           )
+
+    phrase_outflow = segment_maker.stream_phrases(
+                                            instrument_name = "LH_I", 
+                                            phrases = list_phrases,
+                                        ) 
+
+    segment_maker._configure_score()
     lilypond_file = segment_maker.run()
    # Routine to order 
 

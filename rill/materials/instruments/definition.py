@@ -11,14 +11,14 @@ instruments = abjad.OrderedDict(
             ),
         ),
         (
-            "MonoSynth",
+            "Monosynth",
             abjad.ClarinetInBFlat(
                 markup=mccartney.markups.instrument("MonoSynth"),
                 short_markup=mccartney.markups.short_instrument("msy"),
             ),
         ),
         (
-            "PolySynth",
+            "Polysynth",
             abjad.Piano(
                 markup=mccartney.markups.instrument("PolySynth"),
                 short_markup=mccartney.markups.short_instrument("psy"),

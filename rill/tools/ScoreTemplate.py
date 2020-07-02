@@ -62,17 +62,17 @@ class ScoreTemplate(abjad.ScoreTemplate):
         abjad.annotate(violin_staff, "default_clef", abjad.Clef("treble"))
 
         # MonoSynth 
-        music_voice = abjad.Voice(name="MonoSynth_Music_Voice", tag=tag)
+        music_voice = abjad.Voice(name="Monosynth_Music_Voice", tag=tag)
         monosynth_staff = abjad.Staff(
             [music_voice],
             simultaneous=True,
-            name="MonoSynth",
+            name="Monosynth",
             tag=tag,
         )
         abjad.annotate(
             monosynth_staff,
             "default_instrument",
-            rill.instruments["MonoSynth"],
+            rill.instruments["Monosynth"],
         )
         abjad.annotate(monosynth_staff, "default_clef", abjad.Clef("treble"))
 
@@ -87,9 +87,8 @@ class ScoreTemplate(abjad.ScoreTemplate):
         # RH PolySynth Staff 
         polysynth_music_rh_staff = abjad.Staff(
                 [music_voice],
-                lilypond_type="PolySynthRHStaff",
                 simultaneous=True,
-                name="PolySynth_Music_RH_Staff",
+                name="RH_Polysynth",
                 tag=tag,
                 )
         abjad.annotate(
@@ -106,9 +105,8 @@ class ScoreTemplate(abjad.ScoreTemplate):
         # LH PolySynth Staff
         polysynth_music_lh_staff = abjad.Staff(
                 [music_voice],
-                lilypond_type="PolySynthLHStaff",
                 simultaneous=True,
-                name="PolySynth_Music_LH_Staff",
+                name="LH_Polysynth",
                 tag=tag,
                 )
         abjad.annotate(
@@ -122,14 +120,14 @@ class ScoreTemplate(abjad.ScoreTemplate):
                 name="PolySynth_Music_Staff_Group",
                 tag=tag,
                 )
-        polysynth = rill.instruments["PolySynth"]
+        polysynth = rill.instruments["Polysynth"]
         abjad.annotate(polysynth_music_staff_group, "default_insrument", polysynth)
 
         # PolySynth Music Context
         polysynth_music_context = abjad.Context(
                 [polysynth_music_staff_group],
                 lilypond_type="MusicContext",
-                name="PolySynth_Music_Context",
+                name="Polysynth_Music_Context",
                 tag=tag
                 )
         
