@@ -130,8 +130,8 @@ class SegmentMaker(object):
         self._make_lilypond_file()
         self._configure_lilypond_file()
         self._call_phrase_outflows()
-        #self._configure_score()
-        #self._render_illustration()
+        self._configure_score()    # only needed in first segment / special cases
+        self._render_illustration()
         return self._lilypond_file
 
 
@@ -225,16 +225,5 @@ if __name__ == '__main__':
 
     segment_maker._configure_score()
     lilypond_file = segment_maker.run()
-   # Routine to order 
 
 
-#   
-#    phrases = PhraseCatcher("Violin", caught_phrases)    
-#    
-#
-#    routed_score = phrases(segment_maker.score)
-#    #abjad.f(routed_score) 
-#    liypond_file = segment_maker.run()
-#
-#
-#
