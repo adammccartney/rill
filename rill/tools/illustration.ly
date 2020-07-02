@@ -25,62 +25,6 @@
             <<                                                                 %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Music_Voice"                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
-                    {
-                        \time 4/4
-                        <ef'>2
-                        <g'>2
-                        ~
-                        <bf'>4
-                        <c''>2.
-                        <ef'>1
-                        ~
-                        <g'>2
-                        <bf'>2
-                        <c''>2
-                        <ef'>2
-                    }
-                    {
-                        \time 4/4
-                        <g'>2
-                        <bf'>2
-                        ~
-                        <c''>4
-                        <ef''>2.
-                        <g'>1
-                        ~
-                        <bf'>2
-                        <c''>2
-                        <ef''>2
-                        <g'>2
-                    }
-                    {
-                        \time 4/4
-                        <bf'>2
-                        <c''>2
-                        ~
-                        <ef''>4
-                        <g''>2.
-                        <bf'>1
-                        ~
-                        <c''>2
-                        <ef''>2
-                        <g''>2
-                        <bf'>2
-                    }
-                    {
-                        \time 4/4
-                        <c''>2
-                        <ef''>2
-                        ~
-                        <g''>4
-                        <bf''>2.
-                        <c''>1
-                        ~
-                        <ef''>2
-                        <g''>2
-                        <bf''>2
-                        <c''>2
-                    }
                 }                                                              %! rill.ScoreTemplate.__call__()
             >>                                                                 %! rill.ScoreTemplate.__call__()
             \context Staff = "MonoSynth"                                       %! rill.ScoreTemplate.__call__()
@@ -103,6 +47,34 @@
                     <<                                                         %! rill.ScoreTemplate.__call__()
                         \context Voice = "LH_I_Music_Voice"                    %! rill.ScoreTemplate.__call__()
                         {                                                      %! rill.ScoreTemplate.__call__()
+                            {
+                                ef'2
+                                g'2.
+                                bf'2.
+                                c''1.
+                                r2
+                            }
+                            {
+                                g'2
+                                bf'2.
+                                c''2.
+                                ef''1.
+                                r2
+                            }
+                            {
+                                bf'2
+                                c''2.
+                                ef''2.
+                                g''1.
+                                r2
+                            }
+                            {
+                                c''2
+                                ef''2.
+                                g''2.
+                                bf''1.
+                                r2
+                            }
                         }                                                      %! rill.ScoreTemplate.__call__()
                     >>                                                         %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()

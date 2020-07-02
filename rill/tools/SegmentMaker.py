@@ -71,7 +71,7 @@ class SegmentMaker(object):
     def _make_lilypond_file(self, midi=False):
         path = abjad.Path('rill', 'stylesheets', 'contexts.ily')
         lilypond_file = abjad.LilyPondFile.new(
-                music=self.score, includes=[path], use_relative_includes=True
+                music=self._score, includes=[path], use_relative_includes=True
                 )
         delattr(lilypond_file.header_block, "tagline")
         for item in lilypond_file.items[:]:
@@ -91,6 +91,13 @@ class SegmentMaker(object):
         self._phrase_outflows.append(phrase_outflow)
         return phrase_outflow
 
+    def _call_phrase_outflows(self):
+        """
+        Phrase streams flow into score by instrument_name
+        """
+        for phrase_outflow in self._phrase_outflows:
+            phrase_outflow(self._score)
+
     def run(self):
         """
         Runs segment maker
@@ -98,6 +105,7 @@ class SegmentMaker(object):
         Returns Lilypond file
         """
         self._make_lilypond_file()
+        self._call_phrase_outflows()
         self._render_illustration()
         return self._lilypond_file
 
@@ -175,6 +183,7 @@ if __name__ == '__main__':
                                                   phrases = list_phrases,
                                                   )
 
+    lilypond_file = segment_maker.run()
    # Routine to order 
 
 
