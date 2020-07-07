@@ -7,11 +7,13 @@ from .FuzzyHarmony import (
         get_global_maxima,
         invert_down,
         )
-from .PhraseMaker import PhraseMaker
+from .PhraseMaker import (
+        PhraseMaker,
+        PhraseStream,
+        PhraseOutflow,
+        )
 from .MusicMaker import MusicMaker 
-from .MarkupLibrary import MarkupLibrary
 from .ScoreTemplate import ScoreTemplate
 from .SegmentMaker import SegmentMaker
-from .RhythmDefinition import RhythmDefinition
 
 
