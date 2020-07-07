@@ -63,14 +63,14 @@ class PhraseStream(object):
         return self._phrases
 
     @property
-    def components(self) -> abjad.Component:
+    def containers(self) -> abjad.Container:
         """
-        Gets stream as abjad components
+        Gets stream as abjad containers
         """
-        self._components = []
+        self._containers = []
         for phrase in self._phrases:
-            self._components.append(phrase)
-        return self._components 
+            self._containers.append(phrase)
+        return self._containers 
 
 class PhraseOutflow(object):
     """Has an outlet to connect a phrase stream to a score

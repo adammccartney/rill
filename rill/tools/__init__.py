@@ -7,6 +7,8 @@ from .FuzzyHarmony import (
         get_global_maxima,
         invert_down,
         )
+
+from .material_methods import *
 from .PhraseMaker import (
         PhraseMaker,
         PhraseStream,

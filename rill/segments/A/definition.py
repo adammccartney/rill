@@ -66,18 +66,10 @@ pitch_lists = [
           harmony_four.numbered_pitch_list,
           ]
 
+
 # Routine to order material into containers
-
-dry_phrase_stream = PhraseStream([])
-def order_material(pitch_lists, durations, phrase_stream):
-    """Makes phrases and adds them to stream"""
-    for items in pitch_lists:
-        pitches = items
-        pitches.append(None)
-        phrase_stream.make_extension(pitches, durations)
-    return phrase_stream
-
-wet_phrase_stream = order_material(
+dry_phrase_stream = PhraseStream()
+wet_phrase_stream = rill.order_material(
                                    pitch_lists, 
                                    durations, 
                                    dry_phrase_stream,
