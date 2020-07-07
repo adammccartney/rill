@@ -12,7 +12,6 @@ from .PhraseMaker import (
         PhraseStream,
         PhraseOutflow,
         )
-from .MusicMaker import MusicMaker 
 from .ScoreTemplate import ScoreTemplate
 from .SegmentMaker import SegmentMaker
 
