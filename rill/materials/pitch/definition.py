@@ -35,11 +35,4 @@ tetrads = abjad.OrderedDict([
             ])
 
 
-if __name__ == '__main__':
-    # testing chord inversion function 
-    #aChord = root_guitar_chords.get('bf_ii')
-    #inversion = mccartney.invertChord
-    #aChordInv = inversion(aChord, 2)
-    #make_iib_chord_dict(root_guitar_chords)
-    for key, item in pitch_segments.items():
-        print(key, item)
+
