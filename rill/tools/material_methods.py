@@ -1,7 +1,7 @@
 import abjad
 import rill
 
-def aggregate_pitches(pitch_list):
+def make_diads(container):
     pass
 
 def order_material(pitch_lists, durations, phrase_stream):
@@ -36,9 +36,6 @@ if __name__ == '__main__':
           harmony_one.numbered_pitch_list,
           harmony_two.numbered_pitch_list,
           ]
-
-
-
 
     aggregated_pitch_lists = []
 
