@@ -1,5 +1,5 @@
 import abjad
-import rill 
+import rill
 
 """
 Defines scoretemplate, subclass of abjad.ScoreTemplate. Segments appended later. 
@@ -159,7 +159,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
 
 if __name__ == '__main__':
 
-    template = rill.tools.ScoreTemplate()
+    template = rill.ScoreTemplate()
     path = abjad.Path('rill', 'stylesheets', 'contexts.ily')
     lilypond_file = template.__illustrate__(
                                             global_staff_size=14,

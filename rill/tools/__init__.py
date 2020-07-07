@@ -14,5 +14,8 @@ from .PhraseMaker import (
         )
 from .ScoreTemplate import ScoreTemplate
 from .SegmentMaker import SegmentMaker
-
+from .set_build_path import (
+        current_directory,
+        build_path,
+        )
 

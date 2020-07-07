@@ -1,5 +1,3 @@
-import os
-import pathlib
 import abjad
 import rill
 
@@ -26,8 +24,8 @@ score = score_template()
 #abjad.f(score)
 
 
-test_current_directory = pathlib.Path(__file__).parent
-test_build_path = (pathlib.Path(__file__).parent/".."/".."/"build").resolve()
+test_current_directory = rill.current_directory
+test_build_path = rill.build_path 
 score = rill.ScoreTemplate()
 score_template = score()
 

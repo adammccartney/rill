@@ -10,7 +10,6 @@ del distutils
 del platform
 
 from rill.tools import *
-from rill.tools import MarkupLibrary as markup
 from rill.materials.instruments.definition import instruments
 from rill.materials.pitch.definition import bass_pitches, tetrads
 from rill import segments
