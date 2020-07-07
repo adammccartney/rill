@@ -18,6 +18,5 @@ def replace(tup, index, item):
     new_tuple = tuple(l)
     return new_tuple
 
-if __name__ == '__main__':
-    new_list = replace(a, 0, 'X')
-    print(new_list)
+new_list = replace(a, 0, 'X')
+print(new_list)
