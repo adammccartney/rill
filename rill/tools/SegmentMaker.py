@@ -1,3 +1,4 @@
+import os
 import pathlib
 
 import abjad
@@ -54,7 +55,7 @@ class SegmentMaker(object):
         build_path = (self.build_path / "segments").resolve()
         print("build_path: ", build_path)
         print("file to build: ", f"{self.segment_name}.ly")
-        file = open(f"{build_path}/{self.segment_name}.ly", 'w')
+        file = open(f"{build_path}/segments/{self.segment_name}.ly", 'w')
         file.writelines(score_content[13:-1])
         file.close()
 
