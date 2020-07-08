@@ -66,7 +66,7 @@ transposed = invert_down(bf_ii.segment, -202)
 print("transposed down: ", transposed)
 
 
-testing new fuzzy harmony @property 
+# testing new fuzzy harmony @property 
 # Create Pitch Material
 bf_ii = FuzzyHarmony('bf_ii', abjad.PitchSegment("ef' g' bf' c''"), 1) # cmin7
 g_v = FuzzyHarmony('g_v', abjad.PitchSegment("ef' fs' a' d''"), 2)     # D7(b9,13)

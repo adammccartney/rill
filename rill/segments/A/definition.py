@@ -82,16 +82,29 @@ harmony_three = FuzzyHarmony('bf_ii', abjad.PitchSegment("bf' c'' ef'' g''"), 3)
 harmony_four = FuzzyHarmony('bf_ii', abjad.PitchSegment("c'' ef'' g'' bf''"), 0)
 
 fuzzy_harmonies = [harmony_one, harmony_two, harmony_three, harmony_four]
-transposed_harmonies = []
-tranpose_up_fifth(fuzzy_harmonies, transposed_harmonies)
+empty_list = []
+transposed_harmonies = rill.transpose_up_fifth(fuzzy_harmonies, empty_list)
 
-pitch_lists = [
-          harmony_one.numbered_pitch_list,
-          harmony_two.numbered_pitch_list,
-          harmony_three.numbered_pitch_list,
-          harmony_four.numbered_pitch_list,
+print("transposed harmonies: ", transposed_harmonies)
+
+progression = [
+          harmony_one,
+          harmony_two,
+          harmony_three,
+          harmony_four,
           ]
 
+progression_fifth = transposed_harmonies
+
+authentic = rill.make_diads(progression)
+print("authentic: ", authentic)
+plagal = rill.make_diads(progression_fifth)
+print("plagal: ", plagal)
+
+plagal_offset = ["r1.",]
+for container in plagal[:-1]:
+    plagal_offset.append(container)
+print("plagal_offset: ", plagal_offset)
 
 # Stream material into containers
 
@@ -99,6 +112,14 @@ pitch_lists = [
 #--------------/
 # RH_I  /
 #____________/
+
+dry_phrase_stream = PhraseStream()
+wet_phrase_stream = rill.order_material(
+                                  plagal,
+                                  durations,
+                                  dry_phrase_stream,
+                                  )
+containers = wet_phrase_stream.containers
 
 
 phrase_outflow = segment_maker.stream_phrases(

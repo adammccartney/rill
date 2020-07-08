@@ -1,6 +1,7 @@
 # 8-7-20
 
  + Write test for material_methods.py
+ + Create push/pop methods for PhraseStream containers list
  + Clean up segments B-G 
  + Test a build with travis?
  + Write violin part 
@@ -14,7 +15,6 @@
   - define a pitches property in FuzzyHarmony
   - this can be used in making rmakers
   - check viability with Trevor's RhythmDefinition
-
 
  + Fix linkage to stylesheets 
   - run same segment A test and fix errors on build
@@ -78,12 +78,9 @@ Data Structure:
  + Make do-ability survey (impossible, hard, easy) 
  
  + Send notes + survey to guitarists
- 
 
 
-
-## 20-5-2020 Next Steps 
-
+# 20-5-2020 Next Steps 
 
 + re-read Oberholzer diss chpt. 3
 + design a few tests to get familiar with timespans & rmakers
