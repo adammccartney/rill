@@ -111,7 +111,7 @@ class PhraseOutflow(object):
 
     def __init__(self):
         self._instrument_name = None
-        self._phrases = []
+        self._streams = []
 
     def __call__(self, score):
         """Calls phrase outflow
@@ -119,16 +119,18 @@ class PhraseOutflow(object):
         returns none
         """
         self._score = score
-        self._route_phrases()
+        self._route_streams()
 
     def __format__(self, format_specification="") -> str:
         return abjad.StorageFormatManager(self).get_storage_format()
 
-    def _route_phrases(self):
+    def _route_streams(self):
         voice = self._score[f"{self.instrument_name}_Music_Voice"]
-        for phrase in self._phrases:
-            #print("appending phrase :", phrase)
-            voice.append(phrase)
+        print("PhraseOutflow._streams: ", self._streams)
+        for stream in self._streams:
+            print("appending stream :", stream)
+            abjad.f(stream)
+            voice.append(stream)
     
     @property 
     def components(self):
@@ -153,18 +155,18 @@ class PhraseOutflow(object):
 
 
     @property
-    def phrases(self) -> list:
+    def streams(self) -> list:
         """
         Gets list of phrases
         """
-        return self._phrases
+        return self._streams
 
-    @phrases.setter
-    def phrases(self, phrase_list):    
+    @streams.setter
+    def streams(self, streams) -> list:    
         """
         Sets list of phrases
         """
-        self._phrases = phrase_list
+        self._streams = streams
 
 
 

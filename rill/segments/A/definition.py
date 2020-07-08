@@ -45,10 +45,11 @@ segment_maker = rill.SegmentMaker(
 #   Violin    /
 #____________/
 
+skip = abjad.Voice("s1 * 20", name='silent_voice')
 
 phrase_outflow = segment_maker.stream_phrases(
                                         instrument_name = "Violin",
-                                        phrases = ["s1"],
+                                        streams = [skip],
                                        )
 
 #-----------------/
@@ -57,7 +58,7 @@ phrase_outflow = segment_maker.stream_phrases(
 
 phrase_outflow = segment_maker.stream_phrases(
                                         instrument_name = "Monosynth",
-                                        phrases = ["s1"],
+                                        streams = [skip],
                                        )
 
 #-------------------PolySynth----------------#
@@ -126,7 +127,7 @@ rh_stream.container = updated_container
 
 phrase_outflow = segment_maker.stream_phrases(
                                         instrument_name = "RH_I",
-                                        phrases = [rh_stream],
+                                        streams = [rh_stream],
                                        )
 
 #--------------/
@@ -142,7 +143,8 @@ lh_durated_stream = lh_stream.container
 
 phrase_outflow = segment_maker.stream_phrases(
                                         instrument_name = "LH_I", 
-                                        phrases = lh_durated_stream,
+                                        streams = [lh_stream],
                                     ) 
+
 
 lilypond_file = segment_maker.run()

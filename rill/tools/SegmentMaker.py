@@ -88,14 +88,14 @@ class SegmentMaker(object):
         self._lilypond_file = lilypond_file
 
 
-    def stream_phrases(self, instrument_name, phrases):
+    def stream_phrases(self, instrument_name, streams):
         """
         Calls a PhraseOutflow
         Streams phrases to a voice in score
         """
         phrase_outflow = PhraseOutflow()
         phrase_outflow.instrument_name = instrument_name
-        phrase_outflow.phrases = phrases
+        phrase_outflow.streams = streams
         self._phrase_outflows.append(phrase_outflow)
         return phrase_outflow
 
