@@ -13,6 +13,7 @@ class PhraseMaker(object):
 
     def __init__(self, container=None):
         self._container = container
+        self._voices = []
 
     def __format__(self, format_specification="") -> str:
         """
@@ -20,29 +21,41 @@ class PhraseMaker(object):
         """
         return abjad.StorageFormatManager(self).get_storage_format()
     
-    def _extend_container(self, selection):
-        self._container.extend(selection)
-    
+    def _create_voice(self, leaves, v_name):
+        """Creates and returns an empty voice"""
+        voice = abjad.Voice(leaves, name=v_name)
+        self._voices.append(voice)
+        return voice
+
     ### PUBLIC METHODS ###
 
-    def make_notes(self, phrases, durations):
-        """Returns a container with leaves"""
+    def make_voices(self, phrases, durations):
+        """Returns a list of named voices"""
         maker = abjad.LeafMaker()
         leaves = []
+        name = 'a' # going to create named voices with this value
         for phrase in phrases:
-            print("Pitch, Duration: ", phrases, durations)
+            #print("Pitch, Duration: ", phrases, durations)
             leaf = maker(phrase, durations)
-            print("leaf: ", leaf)
+            #print("leaf: ", leaf)
             leaves.append(leaf)
-        print("leaves: ", leaves)
-        self._extend_container(leaves)
-        print("container after make notes: ", self.container)
-        return self.container
+            voice = self._create_voice(leaf, name)
+            x = chr(ord(name) + 1) # unique name for voice
+            name = x
+            #print("voice after one iteration: ", voice)
+        #for voice in self._voices:
+        #    abjad.f(voice)
+        return self._voices
         
     @property
     def container(self):
         """Gets container"""
         return self._container
+
+    @property 
+    def voices(self) -> list:
+        """Gets voices"""
+        return self._voices
 
 class PhraseStream(object):
     """Interface to aggregate a list of phrases
@@ -50,37 +63,44 @@ class PhraseStream(object):
     Basically a list object with an added make and store functionality
     """
     def __init__(self, phrases=[]):
-        self._containers = None or []
-        self._durated_phrases = None or []
+        self._container = None or []
+        self._durated_voices = None or []
         self._phrases = phrases
     
-    def _set_durated_phrases_to_containers(self):
-        self.containers = self._durated_phrases
+    def _extract_voices_from_stream(self, durated_stream):
+        #print("Now working on durated stream: ", durated_stream)
+        for voice in durated_stream:
+            self._durated_voices.append(voice)
 
+    def _voices_to_container(self):
+        for voice in self._durated_voices:
+            #print("Voice: ", voice)
+            self._container.append(voice)
+    
     def durate_stream(self, durations):
         """Makes notes"""
         pitches = []
         if self._phrases == None:
             print("Error, no phrases in object")
         for phrase in self._phrases:
-            print("this is my phrase: ", phrase)
+            #print("this is my phrase: ", phrase)
             pitches.append(phrase)
         container = abjad.Container()
         phrase_maker = PhraseMaker(container)
-        durated_stream = phrase_maker.make_notes(pitches, durations)
-        print("durated stream: ", durated_stream)
-        self._durated_phrases.append(durated_stream) 
-        self._set_durated_phrases_to_containers()
+        durated_stream = phrase_maker.make_voices(pitches, durations)
+        #print("durated stream: ", durated_stream)
+        self._extract_voices_from_stream(durated_stream) 
+        self._voices_to_container()
 
     @property
-    def containers(self) -> abjad.Container:
+    def container(self) -> abjad.Container:
         """Gets stream as abjad containers"""
-        return self._containers
+        return self._container
 
-    @containers.setter
-    def containers(self, containers) -> list:
+    @container.setter
+    def container(self, container) -> abjad.Container:
        """Sets containers from list"""
-       self._containers = containers
+       self._container = container
 
 class PhraseOutflow(object):
     """Has an outlet to connect a phrase stream to a score
@@ -107,7 +127,7 @@ class PhraseOutflow(object):
     def _route_phrases(self):
         voice = self._score[f"{self.instrument_name}_Music_Voice"]
         for phrase in self._phrases:
-            print("appending phrase :", phrase)
+            #print("appending phrase :", phrase)
             voice.append(phrase)
     
     @property 

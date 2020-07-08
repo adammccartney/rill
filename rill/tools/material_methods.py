@@ -40,7 +40,6 @@ def make_diads(fuzzy_harmonies):
         harmonized_melodies.append(tuple(harmonized_melody))
     return harmonized_melodies
 
-
 def make_stream(progression):
     """Makes phrases and adds them to stream
     returns an instance of PhraseStream

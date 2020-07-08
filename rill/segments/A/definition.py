@@ -96,16 +96,6 @@ progression = [
 
 progression_fifth = transposed_harmonies
 
-authentic = rill.make_diads(progression)
-print("authentic: ", authentic)
-plagal = rill.make_diads(progression_fifth)
-print("plagal: ", plagal)
-
-
-stream = rill.make_stream(authentic)
-stream.durate_stream(durations)
-durated_stream = stream.containers
-print("final out: ", durated_stream)
 
 # Stream material into containers
 
@@ -114,37 +104,45 @@ print("final out: ", durated_stream)
 # RH_I  /
 #____________/
 
-#wet_phrase_stream = rill.order_material(
-#                                  authentic,
-#                                  durations,
-#                                  dry_phrase_stream,
-#                                  )
-#plagal_containers = wet_phrase_stream.containers
-##print("plagal_containers: ", plagal_containers)
-#
-## Rests for beggining and end of segment
-#first_container = abjad.Container("r1 r2")
-#last_container = abjad.Container("r2 r1 r1")
-#updated_containers = []
-#updated_containers.append(first_container)
-#for container in plagal_containers[:-1]:
-#    updated_containers.append(container)
-#updated_containers.append(last_container)
-#
-#wet_phrase_stream.containers = updated_containers
-#phrase_outflow = segment_maker.stream_phrases(
-#                                        instrument_name = "RH_I",
-#                                        phrases = [wet_phrase_stream],
-#                                       )
-#
+
+plagal = rill.make_diads(progression_fifth)
+
+rh_stream = rill.make_stream(plagal)
+rh_stream.durate_stream(durations)
+rh_durated_stream = rh_stream.container
+
+
+#Rests for beggining and end of segment
+first_voice = abjad.Voice("r1 r2", name='z')
+last_voice = abjad.Voice("r2 r1 r1", name='y')
+updated_container = []
+updated_container.append(first_voice)
+for voice in rh_durated_stream[:-1]:
+    updated_container.append(voice)
+updated_container.append(last_voice)
+
+print(updated_container)
+rh_stream.container = updated_container
+
+phrase_outflow = segment_maker.stream_phrases(
+                                        instrument_name = "RH_I",
+                                        phrases = [rh_stream],
+                                       )
+
 #--------------/
 # LH_I  /
 #____________/
 
 
-#phrase_outflow = segment_maker.stream_phrases(
-#                                        instrument_name = "LH_I", 
-#                                        phrases = list_phrases,
-#                                    ) 
+authentic = rill.make_diads(progression)
 
-#lilypond_file = segment_maker.run()
+lh_stream = rill.make_stream(authentic)
+lh_stream.durate_stream(durations)
+lh_durated_stream = lh_stream.container
+
+phrase_outflow = segment_maker.stream_phrases(
+                                        instrument_name = "LH_I", 
+                                        phrases = lh_durated_stream,
+                                    ) 
+
+lilypond_file = segment_maker.run()
