@@ -129,8 +129,12 @@ class PhraseOutflow(object):
         print("PhraseOutflow._streams: ", self._streams)
         for stream in self._streams:
             print("appending stream :", stream)
-            abjad.f(stream)
-            voice.append(stream)
+            print(type(stream))
+            phrase_voices = stream.container
+            for phrase in phrase_voices:
+                print("appending voice: ", phrase)
+                print(type(phrase))
+                voice.append(phrase)
     
     @property 
     def components(self):

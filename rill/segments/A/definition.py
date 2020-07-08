@@ -46,10 +46,13 @@ segment_maker = rill.SegmentMaker(
 #____________/
 
 skip = abjad.Voice("s1 * 20", name='silent_voice')
+silent_phrase_stream = PhraseStream()
+silent_phrase_stream.container = skip
+
 
 phrase_outflow = segment_maker.stream_phrases(
                                         instrument_name = "Violin",
-                                        streams = [skip],
+                                        streams = [silent_phrase_stream],
                                        )
 
 #-----------------/
@@ -58,7 +61,7 @@ phrase_outflow = segment_maker.stream_phrases(
 
 phrase_outflow = segment_maker.stream_phrases(
                                         instrument_name = "Monosynth",
-                                        streams = [skip],
+                                        streams = [silent_phrase_stream],
                                        )
 
 #-------------------PolySynth----------------#

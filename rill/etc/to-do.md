@@ -2,6 +2,9 @@
 
  + Write test for material_methods.py
  + Create push/pop methods for PhraseStream containers list
+  - okay, better way, refactor the code in  PhraseMaker module
+  - this all worked fine, Phrases are making it to Instrument Voices in Score
+  - there is a problem to solve with segment_maker._configure_score()
  + Clean up segments B-G 
  + Test a build with travis?
  + Write violin part 
