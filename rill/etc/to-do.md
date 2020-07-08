@@ -1,3 +1,12 @@
+# 8-7-20
+
+ + Write test for material_methods.py
+ + Clean up segments B-G 
+ + Test a build with travis?
+ + Write violin part 
+ + Write methods for attachments (markup + dynamics)
+
+
 # 16-6-20
  
  + Research a way to use RhythmDefinition.py effectively

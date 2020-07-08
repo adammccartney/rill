@@ -48,45 +48,8 @@ def order_material(progression, durations, phrase_stream):
     for harmony in progression: 
         augment_with_rest = harmony + (None,)
         augmented_fragments.append(augment_with_rest)
-    print("augmented_fragments: ", augmented_fragments)
-    print("first tuple from aug frags: ", augmented_fragments[0])
     for item in augmented_fragments:
-        print("here is an item: ", item)
         phrase_stream.make_extension(item, durations)
     return phrase_stream
 
-if __name__ == '__main__':
-    import rill.tools.FuzzyHarmony as FuzzyHarmony
-    from rill.tools.PhraseMaker import PhraseOutflow as PhraseOutflow
-    from rill.tools.PhraseMaker import PhraseStream as PhraseStream
-
-    
-    durations = [
-            abjad.Duration(1, 2), 
-            abjad.Duration(3, 4), 
-            abjad.Duration(3, 4), 
-            abjad.Duration(3, 2),
-            abjad.Duration(1, 2),
-            ]
-
-
-    harmony_one = FuzzyHarmony('bf_ii', abjad.PitchSegment("ef' g' bf' c''"), 1) # cmin7/e
-    harmony_two = FuzzyHarmony('bf_ii', abjad.PitchSegment("g' bf' c'' ef''"), 2) 
-
-    progression = [
-          harmony_one,
-          harmony_two,
-          ]
-
-    harmonized_progression = make_diads(progression)
-
-    dry_phrase_stream = PhraseStream()
-    wet_phrase_stream = rill.order_material(
-                                      harmonized_progression,
-                                      durations,
-                                      dry_phrase_stream,
-                                      )
-    containers = wet_phrase_stream.containers
-
-
-
+   
