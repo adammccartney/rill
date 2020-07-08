@@ -30,55 +30,16 @@ score = rill.ScoreTemplate()
 score_template = score()
 
 segment_maker = rill.SegmentMaker(
-                                      _lilypond_file=None,
-                                      _phrase_outflows=None,
-                                      _score=score_template,
-                                      current_directory=test_current_directory,
-                                      build_path=test_build_path,
-                                      segment_name='A',
-                                      tempo=((1, 4), 50),
-                                      time_signatures=([(4, 4)] * 20),
-                                    )
+                                _lilypond_file=None,
+                                _phrase_outflows=None,
+                                _score=score_template,
+                                current_directory=test_current_directory,
+                                build_path=test_build_path,
+                                segment_name='A',
+                                tempo=((1, 4), 50),
+                                time_signatures=([(4, 4)] * 20),
+                                )
 
-
-###########################
-# CONSTANTS for SEGMENT A #
-###########################
-## Set up material for segment 
-
-durations = [
-        abjad.Duration(1, 2), 
-        abjad.Duration(3, 4), 
-        abjad.Duration(3, 4), 
-        abjad.Duration(3, 2),
-        abjad.Duration(1, 2),
-        ]
-
-harmony_one = FuzzyHarmony('bf_ii', abjad.PitchSegment("ef' g' bf' c''"), 1) # cmin7/e
-harmony_two = FuzzyHarmony('bf_ii', abjad.PitchSegment("g' bf' c'' ef''"), 2) 
-harmony_three = FuzzyHarmony('bf_ii', abjad.PitchSegment("bf' c'' ef'' g''"), 3)   
-harmony_four = FuzzyHarmony('bf_ii', abjad.PitchSegment("c'' ef'' g'' bf''"), 0)
-
-pitch_lists = [
-          harmony_one.numbered_pitch_list,
-          harmony_two.numbered_pitch_list,
-          harmony_three.numbered_pitch_list,
-          harmony_four.numbered_pitch_list,
-          ]
-
-
-# Routine to order material into containers
-dry_phrase_stream = PhraseStream()
-wet_phrase_stream = rill.order_material(
-                                   pitch_lists, 
-                                   durations, 
-                                   dry_phrase_stream,
-                                )  
-
-list_phrases = wet_phrase_stream.phrases
-print("list phrase :", list_phrases)
-components = wet_phrase_stream.components
-print("phrase stream components :", components)
 
 #--------------/
 #   Violin    /
@@ -101,9 +62,44 @@ phrase_outflow = segment_maker.stream_phrases(
 
 #-------------------PolySynth----------------#
 
+###########################
+# CONSTANTS for SEGMENT A #
+###########################
+
+## Set up material for segment 
+
+durations = [
+        abjad.Duration(1, 2), 
+        abjad.Duration(3, 4), 
+        abjad.Duration(3, 4), 
+        abjad.Duration(3, 2),
+        abjad.Duration(1, 2),
+        ]
+
+harmony_one = FuzzyHarmony('bf_ii', abjad.PitchSegment("ef' g' bf' c''"), 1) # cmin7/e
+harmony_two = FuzzyHarmony('bf_ii', abjad.PitchSegment("g' bf' c'' ef''"), 2) 
+harmony_three = FuzzyHarmony('bf_ii', abjad.PitchSegment("bf' c'' ef'' g''"), 3)   
+harmony_four = FuzzyHarmony('bf_ii', abjad.PitchSegment("c'' ef'' g'' bf''"), 0)
+
+fuzzy_harmonies = [harmony_one, harmony_two, harmony_three, harmony_four]
+transposed_harmonies = []
+tranpose_up_fifth(fuzzy_harmonies, transposed_harmonies)
+
+pitch_lists = [
+          harmony_one.numbered_pitch_list,
+          harmony_two.numbered_pitch_list,
+          harmony_three.numbered_pitch_list,
+          harmony_four.numbered_pitch_list,
+          ]
+
+
+# Stream material into containers
+
+
 #--------------/
 # RH_I  /
 #____________/
+
 
 phrase_outflow = segment_maker.stream_phrases(
                                         instrument_name = "RH_I",
@@ -115,9 +111,9 @@ phrase_outflow = segment_maker.stream_phrases(
 #____________/
 
 
-phrase_outflow = segment_maker.stream_phrases(
-                                        instrument_name = "LH_I", 
-                                        phrases = list_phrases,
-                                    ) 
+#phrase_outflow = segment_maker.stream_phrases(
+#                                        instrument_name = "LH_I", 
+#                                        phrases = list_phrases,
+#                                    ) 
 
-lilypond_file = segment_maker.run()
+#lilypond_file = segment_maker.run()

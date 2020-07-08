@@ -8,7 +8,12 @@ from .FuzzyHarmony import (
         invert_down,
         )
 
-from .material_methods import *
+from .material_methods import (
+        get_pitch_classes,
+        make_diads,
+        order_material,
+        transpose_up_fifth,
+        )
 from .PhraseMaker import (
         PhraseMaker,
         PhraseStream,

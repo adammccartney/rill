@@ -1,6 +1,7 @@
 import abjad
 import rill
 
+import rill.tools.FuzzyHarmony as FuzzyHarmony
 
 def get_pitch_classes(pitch_segment):
     if isinstance(pitch_segment, abjad.PitchSegment):
@@ -52,4 +53,35 @@ def order_material(progression, durations, phrase_stream):
         phrase_stream.make_extension(item, durations)
     return phrase_stream
 
-   
+def transpose_up_fifth(fuzzy_harmonies, transposed_harmonies):
+    """Takes a lits of fuzzy harmony objects
+    returns a new list of related objects"""
+
+    harmony_shortname_lookup = {
+            str("bf_ii"): "f_ii",
+            str("g_v"): "d_v",
+            str("e_i"): "b_i",
+            str("cs_ii"): "gs_ii",
+            str("bf_v"): "f_v",
+            str("g_i"): "d_i",
+            str("e_ii"): "b_ii",
+            str("cs_v"): "gs_v",
+            str("bf_i"): "f_i",
+            str("g_ii"): "d_ii",
+            str("e_v"): "b_v",
+            str("cs_i"): "gs_i",
+            }
+
+    for harmony in fuzzy_harmonies:
+        transposed_name = harmony_shortname_lookup[harmony.shortname]
+        transposed_segment = harmony.segment.transpose(n=7)
+        inversion_num = harmony.inversion
+        transposed_harmony = FuzzyHarmony(
+                                 transposed_name, 
+                                 transposed_segment, 
+                                 inversion_num
+                                 )
+        transposed_harmonies.append(transposed_harmony)
+    return transposed_harmonies
+
+

@@ -7,7 +7,7 @@ from rill.tools.PhraseMaker import PhraseStream as PhraseStream
 
 
 #####################
-# Setting up segment ### [A] ###
+# Setting up segment ### [B] ###
 #####################
 
 score_template = rill.ScoreTemplate()

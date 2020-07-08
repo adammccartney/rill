@@ -11,12 +11,18 @@ class FuzzyHarmony(object):
 
     """
 
-    __slots__ = ("_pitches", "_pitch_list",  "inversion", "segment", "shortname")
+    __slots__ = (
+            "_inversion", 
+            "_pitches", 
+            "_pitch_list",  
+            "_shortname",
+            "segment", 
+            )
 
     def __init__(self, shortname=str(), segment=None, inversion=0):
-        self.shortname = shortname
+        self._inversion = inversion
+        self._shortname = shortname
         self.segment = abjad.PitchSegment(segment)
-        self.inversion = inversion
         self._set_pitches()
         self._make_list_pitches()
 
@@ -39,11 +45,14 @@ class FuzzyHarmony(object):
         for pitch in self.pitches:
             self._pitch_list.append(pitch.name)
 
+    @property 
+    def inversion(self):
+        """Gets inversion number"""
+        return self._inversion
+
     @property
     def pitches(self):
-        """
-        Gets pitches
-        """
+        """Gets pitches"""
         return self._pitches
 
     @property 
@@ -59,6 +68,11 @@ class FuzzyHarmony(object):
             num_pitch = abjad.NumberedPitch(pitch)
             num_pitch_list.append(int(str(num_pitch)))
         return num_pitch_list
+
+    @property
+    def shortname(self):
+        """gets shortname"""
+        return self._shortname
 
 class Progression(object):
     """
