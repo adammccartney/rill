@@ -101,10 +101,6 @@ print("authentic: ", authentic)
 plagal = rill.make_diads(progression_fifth)
 print("plagal: ", plagal)
 
-plagal_offset = ["r1.",]
-for container in plagal[:-1]:
-    plagal_offset.append(container)
-print("plagal_offset: ", plagal_offset)
 
 # Stream material into containers
 
@@ -115,18 +111,28 @@ print("plagal_offset: ", plagal_offset)
 
 dry_phrase_stream = PhraseStream()
 wet_phrase_stream = rill.order_material(
-                                  plagal,
+                                  authentic,
                                   durations,
                                   dry_phrase_stream,
                                   )
-containers = wet_phrase_stream.containers
-
-
-phrase_outflow = segment_maker.stream_phrases(
-                                        instrument_name = "RH_I",
-                                        phrases = ["s1"],
-                                       )
-
+plagal_containers = wet_phrase_stream.containers
+#print("plagal_containers: ", plagal_containers)
+#
+## Rests for beggining and end of segment
+#first_container = abjad.Container("r1 r2")
+#last_container = abjad.Container("r2 r1 r1")
+#updated_containers = []
+#updated_containers.append(first_container)
+#for container in plagal_containers[:-1]:
+#    updated_containers.append(container)
+#updated_containers.append(last_container)
+#
+#wet_phrase_stream.containers = updated_containers
+#phrase_outflow = segment_maker.stream_phrases(
+#                                        instrument_name = "RH_I",
+#                                        phrases = [wet_phrase_stream],
+#                                       )
+#
 #--------------/
 # LH_I  /
 #____________/

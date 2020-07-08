@@ -42,42 +42,37 @@ class PhraseStream(object):
     Phrases are stored as containers
     Basically a list object with an added make and store functionality
     """
-    def __init__(self, containers=[]):
-        self._containers = containers
+    def __init__(self, phrases=[]):
+        self._containers = None or []
+        self._durated_phrases = None or []
+        self._phrases = phrases
     
-    def make_extension(self, phrases, durations):
-        """Collects a number of phrase containers into a list"""
+    def _set_durated_phrases_to_containers(self):
+        self.containers = self._durated_phrases
+
+    def durate_stream(self, durations):
+        """Makes notes"""
+        pitches = []
+        if self._phrases == None:
+            print("Error, no phrases in object")
+        for phrase in self._phrases:
+            print("this is my phrase: ", phrase)
+            pitches.append(phrase)
         container = abjad.Container()
         phrase_maker = PhraseMaker(container)
-        pitches = []
-        for phrase in phrases:
-            print("this is make_extensions phrase: ", phrase)
-            pitches.append(fragment)
-            print("this is make_extensions pitch list: ", pitches)
-        phrase_maker.make_notes(pitches, durations)
-        made_phrase = phrase_maker.container
-        self._add_to_list(made_phrase)
+        self._durated_phrases.append(phrase_maker.container) 
+        self._set_durated_phrases_to_containers()
 
-    def _add_to_list(self, phrase):
-        self._phrases.append(phrase)
-
-    @property
-    def phrases(self):
-        """Gets phrases as list"""
-        return self._phrases
 
     @property
     def containers(self) -> abjad.Container:
         """Gets stream as abjad containers"""
-        self._containers = []
-        for phrase in self._phrases:
-            self._containers.append(phrase)
         return self._containers
 
     @containers.setter
-    def containers(self, container_list):
+    def containers(self, containers) -> list:
        """Sets containers from list"""
-       self._containers = container_list
+       self._containers = containers
 
 class PhraseOutflow(object):
     """Has an outlet to connect a phrase stream to a score

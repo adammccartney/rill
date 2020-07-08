@@ -40,16 +40,20 @@ def make_diads(fuzzy_harmonies):
     return harmonized_melodies
 
 
-def order_material(progression, durations, phrase_stream):
+def make_stream(progression):
     """Makes phrases and adds them to stream
     returns an instance of PhraseStream
     """
     augment_with_rest = None
-    augmented_fragments = []
+    augmented_progression = []
     for harmony in progression: 
         augment_with_rest = harmony + (None,)
-        augmented_fragments.append(augment_with_rest)
-    for item in augmented_fragments:
+        augmented_progression.append(augment_with_rest)
+    phrase_stream = abjad.PhraseStream(augmented_progression)
+    return phrase_stream
+    
+def     
+    for item in augmented_progression:
         phrase_stream.make_extension(item, durations)
     return phrase_stream
 
