@@ -102,6 +102,11 @@ plagal = rill.make_diads(progression_fifth)
 print("plagal: ", plagal)
 
 
+stream = rill.make_stream(authentic)
+stream.durate_stream(durations)
+durated_stream = stream.containers
+print("final out: ", durated_stream)
+
 # Stream material into containers
 
 
@@ -109,14 +114,13 @@ print("plagal: ", plagal)
 # RH_I  /
 #____________/
 
-dry_phrase_stream = PhraseStream()
-wet_phrase_stream = rill.order_material(
-                                  authentic,
-                                  durations,
-                                  dry_phrase_stream,
-                                  )
-plagal_containers = wet_phrase_stream.containers
-#print("plagal_containers: ", plagal_containers)
+#wet_phrase_stream = rill.order_material(
+#                                  authentic,
+#                                  durations,
+#                                  dry_phrase_stream,
+#                                  )
+#plagal_containers = wet_phrase_stream.containers
+##print("plagal_containers: ", plagal_containers)
 #
 ## Rests for beggining and end of segment
 #first_container = abjad.Container("r1 r2")

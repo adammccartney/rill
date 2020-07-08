@@ -2,6 +2,7 @@ import abjad
 import rill
 
 import rill.tools.FuzzyHarmony as FuzzyHarmony
+from rill.tools.PhraseMaker import PhraseStream as PhraseStream
 
 def get_pitch_classes(pitch_segment):
     if isinstance(pitch_segment, abjad.PitchSegment):
@@ -49,12 +50,7 @@ def make_stream(progression):
     for harmony in progression: 
         augment_with_rest = harmony + (None,)
         augmented_progression.append(augment_with_rest)
-    phrase_stream = abjad.PhraseStream(augmented_progression)
-    return phrase_stream
-    
-def     
-    for item in augmented_progression:
-        phrase_stream.make_extension(item, durations)
+    phrase_stream = PhraseStream(augmented_progression)
     return phrase_stream
 
 def transpose_up_fifth(fuzzy_harmonies, transposed_harmonies):

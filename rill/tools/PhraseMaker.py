@@ -25,12 +25,19 @@ class PhraseMaker(object):
     
     ### PUBLIC METHODS ###
 
-    def make_notes(self, fragment, durations):
+    def make_notes(self, phrases, durations):
         """Returns a container with leaves"""
         maker = abjad.LeafMaker()
-        print("this is make_notes fragment: ", fragment)
-        leaves = maker(fragment, durations)
+        leaves = []
+        for phrase in phrases:
+            print("Pitch, Duration: ", phrases, durations)
+            leaf = maker(phrase, durations)
+            print("leaf: ", leaf)
+            leaves.append(leaf)
+        print("leaves: ", leaves)
         self._extend_container(leaves)
+        print("container after make notes: ", self.container)
+        return self.container
         
     @property
     def container(self):
@@ -60,9 +67,10 @@ class PhraseStream(object):
             pitches.append(phrase)
         container = abjad.Container()
         phrase_maker = PhraseMaker(container)
-        self._durated_phrases.append(phrase_maker.container) 
+        durated_stream = phrase_maker.make_notes(pitches, durations)
+        print("durated stream: ", durated_stream)
+        self._durated_phrases.append(durated_stream) 
         self._set_durated_phrases_to_containers()
-
 
     @property
     def containers(self) -> abjad.Container:
