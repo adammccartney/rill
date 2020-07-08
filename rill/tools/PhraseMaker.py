@@ -5,8 +5,6 @@ class PhraseMaker(object):
     Makes a musical phrase by combining
     pitches from a harmony and durations
 
-    Single slot is a container
-
     This class is purely for modifying the container
     i.e. populating it with music
     """
@@ -44,16 +42,16 @@ class PhraseStream(object):
     Phrases are stored as containers
     Basically a list object with an added make and store functionality
     """
-    def __init__(self, phrases=[]):
-        self._phrases = phrases
+    def __init__(self, containers=[]):
+        self._containers = containers
     
-    def make_extension(self, fragments, durations):
+    def make_extension(self, phrases, durations):
         """Collects a number of phrase containers into a list"""
         container = abjad.Container()
         phrase_maker = PhraseMaker(container)
         pitches = []
-        for fragment in fragments:
-            print("this is make_extensions fragment: ", fragment)
+        for phrase in phrases:
+            print("this is make_extensions phrase: ", phrase)
             pitches.append(fragment)
             print("this is make_extensions pitch list: ", pitches)
         phrase_maker.make_notes(pitches, durations)
@@ -70,13 +68,16 @@ class PhraseStream(object):
 
     @property
     def containers(self) -> abjad.Container:
-        """
-        Gets stream as abjad containers
-        """
+        """Gets stream as abjad containers"""
         self._containers = []
         for phrase in self._phrases:
             self._containers.append(phrase)
-        return self._containers 
+        return self._containers
+
+    @containers.setter
+    def containers(self, container_list):
+       """Sets containers from list"""
+       self._containers = container_list
 
 class PhraseOutflow(object):
     """Has an outlet to connect a phrase stream to a score
