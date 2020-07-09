@@ -7,6 +7,7 @@ import rill.tools.FuzzyHarmony as FuzzyHarmony
 from rill.tools.PhraseMaker import PhraseOutflow as PhraseOutflow
 from rill.tools.PhraseMaker import PhraseStream as PhraseStream
 
+from typing import List
 # call to segment maker contains:
     # Set instruments
     # Set voice names
@@ -76,7 +77,7 @@ harmony_three = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("bf c' ef' g'"), 3
 harmony_four = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("c' ef' g' bf'"), 0)
 
 fuzzy_harmonies = [harmony_one, harmony_two, harmony_three, harmony_four]
-empty_list = []
+empty_list: List[FuzzyHarmony] = []
 transposed_harmonies = rill.transpose(fuzzy_harmonies, empty_list, 19)
 
 print("transposed harmonies: ", transposed_harmonies)
