@@ -98,7 +98,7 @@ class PhraseStream(object):
         return self._container
 
     @container.setter
-    def container(self, container) -> abjad.Container:
+    def container(self, container):
        """Sets containers from list"""
        self._container = container
 
@@ -166,7 +166,7 @@ class PhraseOutflow(object):
         return self._streams
 
     @streams.setter
-    def streams(self, streams) -> list:    
+    def streams(self, streams):    
         """
         Sets list of phrases
         """
