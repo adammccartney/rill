@@ -12,7 +12,7 @@ from .material_methods import (
         get_pitch_classes,
         make_diads, 
         make_stream,
-        transpose_up_fifth,
+        transpose,
         )
 from .PhraseMaker import (
         PhraseMaker,

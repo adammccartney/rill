@@ -72,19 +72,8 @@ phrase_outflow = segment_maker.stream_phrases(
 
 #-------------------PolySynth----------------#
 
-###########################
-# CONSTANTS for SEGMENT A #
-###########################
 
 ## Set up material for segment 
-
-durations = [
-        abjad.Duration(1, 1), 
-        abjad.Duration(3, 2), 
-        abjad.Duration(3, 2), 
-        abjad.Duration(3, 1),
-        abjad.Duration(1, 1),
-        ]
 
 harmony_one = FuzzyHarmony('bf_ii', abjad.PitchSegment("ef g bf c'"), 1) # cmin7/e
 harmony_two = FuzzyHarmony('bf_ii', abjad.PitchSegment("g bf c' ef'"), 2) 
@@ -93,7 +82,7 @@ harmony_four = FuzzyHarmony('bf_ii', abjad.PitchSegment("c' ef' g' bf'"), 0)
 
 fuzzy_harmonies = [harmony_one, harmony_two, harmony_three, harmony_four]
 empty_list = []
-transposed_harmonies = rill.transpose_up_fifth(fuzzy_harmonies, empty_list)
+transposed_harmonies = rill.transpose(fuzzy_harmonies, empty_list, 19)
 
 print("transposed harmonies: ", transposed_harmonies)
 
@@ -115,10 +104,19 @@ progression_fifth = transposed_harmonies
 #____________/
 
 
+rh_durations = [
+        abjad.Duration(1, 2), 
+        abjad.Duration(3, 4), 
+        abjad.Duration(3, 4), 
+        abjad.Duration(3, 2),
+        abjad.Duration(1, 2),
+        ]
+
 plagal = rill.make_diads(progression_fifth)
 
+# first_rh_stream
 rh_stream = rill.make_stream(plagal)
-rh_stream.durate_stream(durations)
+rh_stream.durate_stream(rh_durations)
 rh_durated_stream = rh_stream.container
 
 
@@ -131,23 +129,32 @@ for voice in rh_durated_stream[:-1]:
     updated_container.append(voice)
 updated_container.append(last_voice)
 
-print(updated_container)
 rh_stream.container = updated_container
+
+# second rh_stream
 
 phrase_outflow = segment_maker.stream_phrases(
                                         instrument_name = "RH_I",
-                                        streams = [rh_stream],
+                                        streams = [rh_stream, rh_repeat],
                                        )
 
 #--------------/
 # LH_I  /
 #____________/
 
+lh_durations = [
+        abjad.Duration(1, 1), 
+        abjad.Duration(3, 2), 
+        abjad.Duration(3, 2), 
+        abjad.Duration(3, 1),
+        abjad.Duration(1, 1),
+        ]
+
 
 authentic = rill.make_diads(progression)
 
 lh_stream = rill.make_stream(authentic)
-lh_stream.durate_stream(durations)
+lh_stream.durate_stream(lh_durations)
 lh_durated_stream = lh_stream.container
 
 phrase_outflow = segment_maker.stream_phrases(

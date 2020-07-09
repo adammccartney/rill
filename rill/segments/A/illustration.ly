@@ -134,27 +134,27 @@
                             }
                             \context Voice = "a"
                             {
-                                <g' bf'>1
-                                <fs' d''>1.
-                                <f'' gf''>1.
-                                <af' g''>\breve.
-                                r1
+                                <g' bf'>2
+                                <fs' d''>2.
+                                <f'' gf''>2.
+                                <af' g''>1.
+                                r2
                             }
                             \context Voice = "b"
                             {
-                                <fs' d''>1
-                                <f'' gf''>1.
-                                <af' g''>1.
-                                <g'' bf''>\breve.
-                                r1
+                                <fs' d''>2
+                                <f'' gf''>2.
+                                <af' g''>2.
+                                <g'' bf''>1.
+                                r2
                             }
                             \context Voice = "c"
                             {
-                                <f'' gf''>1
-                                <af' g''>1.
-                                <g'' bf''>1.
-                                <fs'' d'''>\breve.
-                                r1
+                                <f'' gf''>2
+                                <af' g''>2.
+                                <g'' bf''>2.
+                                <fs'' d'''>1.
+                                r2
                             }
                             \context Voice = "y"
                             {
@@ -171,34 +171,34 @@
                             \context Voice = "a"
                             {
                                 \clef "bass"
-                                <af ef'>1
-                                <af g'>1.
-                                <g' bf'>1.
-                                <g' c''>\breve.
+                                <af, ef>1
+                                <af, g>1.
+                                <g bf>1.
+                                <g c'>\breve.
                                 r1
                             }
                             \context Voice = "b"
                             {
-                                <af g'>1
-                                <g' bf'>1.
-                                <g' c''>1.
-                                <af' ef''>\breve.
+                                <af, g>1
+                                <g bf>1.
+                                <g c'>1.
+                                <af ef'>\breve.
                                 r1
                             }
                             \context Voice = "c"
                             {
-                                <g' bf'>1
-                                <g' c''>1.
-                                <af' ef''>1.
-                                <af' g''>\breve.
+                                <g bf>1
+                                <g c'>1.
+                                <af ef'>1.
+                                <af g'>\breve.
                                 r1
                             }
                             \context Voice = "d"
                             {
-                                <g' c''>1
-                                <af' ef''>1.
-                                <af' g''>1.
-                                <g'' bf''>\breve.
+                                <g c'>1
+                                <af ef'>1.
+                                <af g'>1.
+                                <g' bf'>\breve.
                                 r1
                             }
                         }                                                      %! rill.ScoreTemplate.__call__()

@@ -1,51 +1,51 @@
-# 8-7-20
+ 8-7-20
 
- + Write test for material_methods.py
- + Create push/pop methods for PhraseStream containers list
-  - okay, better way, refactor the code in  PhraseMaker module
-  - this all worked fine, Phrases are making it to Instrument Voices in Score
-  - there is a problem to solve with segment_maker._configure_score()
+ + ~~Write test for material_methods.py~~
+ + ~~Create push/pop methods for PhraseStream containers list~~
+  - ~~okay, better way, refactor the code in  PhraseMaker module~~
+  - ~~this all worked fine, Phrases are making it to Instrument Voices in
+    Score~~
+  - ~~there is a problem to solve with segment_maker._configure_score()~~
  + Clean up segments B-G 
  + Test a build with travis?
  + Write violin part 
  + Write methods for attachments (markup + dynamics)
 
-
 # 16-6-20
  
- + Research a way to use RhythmDefinition.py effectively
-  - refine the routine used to produce an rmaker
-  - define a pitches property in FuzzyHarmony
-  - this can be used in making rmakers
-  - check viability with Trevor's RhythmDefinition
+ + ~~Research a way to use RhythmDefinition.py effectively~~
+  - ~~refine the routine used to produce an rmaker~~
+  - ~~define a pitches property in FuzzyHarmony~~
+  - ~~this can be used in making rmakers~~
+  - ~~check viability with Trevor's RhythmDefinition~~
 
- + Fix linkage to stylesheets 
-  - run same segment A test and fix errors on build
+ + ~~Fix linkage to stylesheets~~ 
+  - ~~run same segment A test and fix errors on build~~
 
 # 15-6-20
 
- + Clean up tested code
- + Make a working segment
-  - first build a score example using existing code
-  - figure out how to handle overlapping rmakers
-
+ + ~~Clean up tested code~~
+ + ~~Make a working segment~~
+  - ~~first build a score example using existing code~~
+  - ~~figure out how to handle overlapping rmakers~~
 
 # 28-5-20
 
- + Read abjad.Chord to see if method exists to create invertion
- + Create method to invert guitar chords stored in abjad.OrdinaryDict
- + Iteratively invert all chords
-  - Why would you want to build a static resource that holds all
-    possible inversions? 
-  - Inversions are more commonly found in sequences
-  - Therefor it makes more sense to write a simple dictionary of used chords
-    and import a routine for inversion  
- + Make quick notational sketch of possible guitar figures
-  - pre-requisites: 
-   + these should be as general as possible, so they can be ported to other
-     instruments incase the instrumentation changes by the autumn and so that  
-     they can be used for the harp parts in the orchestral piece later in the
-     summer 
+ + ~~Read abjad.Chord to see if method exists to create invertion~~
+ + ~~Create method to invert guitar chords stored in abjad.OrdinaryDict~~
+ + ~~Iteratively invert all chords~~
+  - ~~Why would you want to build a static resource that holds all~~
+    ~~possible inversions?~~
+  - ~~Inversions are more commonly found in sequences~~
+  - ~~Therefor it makes more sense to write a simple dictionary of used
+    chords~~
+    ~~and import a routine for inversion~~
+ + ~~Make quick notational sketch of possible guitar figures~~
+  - ~~pre-requisites:~~ 
+   + ~~these should be as general as possible, so they can be ported to other~~
+     ~~instruments incase the instrumentation changes by the autumn and so that~~  
+     ~~they can be used for the harp parts in the orchestral piece later in the~~
+     ~~summer~~ 
 
 Data Structure: 
  |_ Chord
