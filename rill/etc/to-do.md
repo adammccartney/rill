@@ -64,8 +64,8 @@ Data Structure:
      |_chordal
 ```
 
- + ~~Clarification of what we want to do with these chords: ~~
-  - ~~Write a routine that outputs all possible harmonic progressions: ~~
+ + ~~Clarification of what we want to do with these chords:~~
+  - ~~Write a routine that outputs all possible harmonic progressions:~~
    + [[ii - v - i], [iib - v - i], [iib, v, ia], [ii - v -i]]
   - ~~Once these harmonic progressions are formed, it's possible~~ 
     ~~to express the harmonic material as chords or pitch segments~~
