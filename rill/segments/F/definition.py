@@ -7,10 +7,6 @@ import rill
 ### [F] ###
 ###########
 
-score_template = rill.ScoreTemplate()
-score = score_template()
-#abjad.f(score)
-
 
 this_current_directory =  pathlib.Path(__file__).parent 
 test_build_path = rill.build_path 
