@@ -1,30 +1,30 @@
+import pathlib
 import abjad
 import rill
 
 
-###########
-### [C] ###
-###########
+score_template = rill.ScoreTemplate()
+score = score_template()
+
+test_current_directory = rill.current_directory
+test_build_path = rill.build_path 
+score = rill.ScoreTemplate()
+score_template = score()
 
 segment_maker = rill.SegmentMaker(
-        name='C'
-        )
-
-time_signatures = [(4, 4) * 12]
-segment_maker.time_signatures = time_signatures
-
+                                      _lilypond_file=None,
+                                      _phrase_outflows=None,
+                                      _score=score_template,
+                                      current_directory=test_current_directory,
+                                      build_path=test_build_path,
+                                      segment_name='C',
+                                      tempo=((1, 4), 50),
+                                      time_signatures=([(4, 4)] * 20),
+                                    )
 
 #--------------/
 #   Violin    /
 #____________/
-
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = 'Violin'
-
-rhythm_definition.notes = [
-        ("C4", abjad.Duration(1)),
-        ('E4', abjad.Duration(1)),
-        ]
 
 #-----------------/
 #   MonoSynth    /

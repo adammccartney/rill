@@ -1,3 +1,4 @@
+import pathlib
 import abjad
 import rill
 
@@ -12,22 +13,24 @@ from rill.tools.PhraseMaker import PhraseStream as PhraseStream
 
 score_template = rill.ScoreTemplate()
 score = score_template()
+#abjad.f(score)
 
-test_current_directory = rill.current_directory
+
+this_current_directory =  pathlib.Path(__file__).parent 
 test_build_path = rill.build_path 
 score = rill.ScoreTemplate()
 score_template = score()
 
 segment_maker = rill.SegmentMaker(
-                                      _lilypond_file=None,
-                                      _phrase_outflows=None,
-                                      _score=score_template,
-                                      current_directory=test_current_directory,
-                                      build_path=test_build_path,
-                                      segment_name='B',
-                                      tempo=((1, 4), 50),
-                                      time_signatures=([(4, 4)] * 20),
-                                    )
+                                _lilypond_file=None,
+                                _phrase_outflows=None,
+                                _score=score_template,
+                                current_directory=this_current_directory,
+                                build_path=test_build_path,
+                                segment_name='B',
+                                tempo=((1, 4), 50),
+                                time_signatures=([(4, 4)] * 20),
+                                )
 
 
 #--------------/
