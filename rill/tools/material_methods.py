@@ -52,9 +52,11 @@ def make_stream(progression):
     phrase_stream = PhraseStream(augmented_progression)
     return phrase_stream
 
-def transpose_up_fifth(fuzzy_harmonies, transposed_harmonies):
+def transpose(fuzzy_harmonies, transposed_harmonies, t_interval=0):
     """Takes a lits of fuzzy harmony objects
-    returns a new list of related objects"""
+    returns a new list of related objects
+    based on an interval argument
+    """
 
     harmony_shortname_lookup = {
             str("bf_ii"): "f_ii",
@@ -73,7 +75,7 @@ def transpose_up_fifth(fuzzy_harmonies, transposed_harmonies):
 
     for harmony in fuzzy_harmonies:
         transposed_name = harmony_shortname_lookup[harmony.shortname]
-        transposed_segment = harmony.segment.transpose(n=7)
+        transposed_segment = harmony.segment.transpose(n=t_interval)
         inversion_num = harmony.inversion
         transposed_harmony = FuzzyHarmony(
                                  transposed_name, 

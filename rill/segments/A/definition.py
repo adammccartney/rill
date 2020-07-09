@@ -79,17 +79,17 @@ phrase_outflow = segment_maker.stream_phrases(
 ## Set up material for segment 
 
 durations = [
-        abjad.Duration(1, 2), 
-        abjad.Duration(3, 4), 
-        abjad.Duration(3, 4), 
-        abjad.Duration(3, 2),
-        abjad.Duration(1, 2),
+        abjad.Duration(1, 1), 
+        abjad.Duration(3, 2), 
+        abjad.Duration(3, 2), 
+        abjad.Duration(3, 1),
+        abjad.Duration(1, 1),
         ]
 
-harmony_one = FuzzyHarmony('bf_ii', abjad.PitchSegment("ef' g' bf' c''"), 1) # cmin7/e
-harmony_two = FuzzyHarmony('bf_ii', abjad.PitchSegment("g' bf' c'' ef''"), 2) 
-harmony_three = FuzzyHarmony('bf_ii', abjad.PitchSegment("bf' c'' ef'' g''"), 3)   
-harmony_four = FuzzyHarmony('bf_ii', abjad.PitchSegment("c'' ef'' g'' bf''"), 0)
+harmony_one = FuzzyHarmony('bf_ii', abjad.PitchSegment("ef g bf c'"), 1) # cmin7/e
+harmony_two = FuzzyHarmony('bf_ii', abjad.PitchSegment("g bf c' ef'"), 2) 
+harmony_three = FuzzyHarmony('bf_ii', abjad.PitchSegment("bf c' ef' g'"), 3)   
+harmony_four = FuzzyHarmony('bf_ii', abjad.PitchSegment("c' ef' g' bf'"), 0)
 
 fuzzy_harmonies = [harmony_one, harmony_two, harmony_three, harmony_four]
 empty_list = []
@@ -154,10 +154,5 @@ phrase_outflow = segment_maker.stream_phrases(
                                         instrument_name = "LH_I", 
                                         streams = [lh_stream],
                                     ) 
-# Configure score
-voices = segment_maker._get_voices()
-lh_i_music_voice = voices[3]
-#leaf = abjad.inspect(lh_i_music_voice_first_logical_voice).leaf(0)
-#abjad.attach(abjad.Clef("bass"), leaf)
 #
 lilypond_file = segment_maker.run()
