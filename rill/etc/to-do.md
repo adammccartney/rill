@@ -7,7 +7,7 @@
     Score~~
   - ~~there is a problem to solve with segment_maker._configure_score()~~
  + Clean up segments B-G 
- + Test a build with travis?
+ + Test a build with travis
  + Write violin part 
  + Write methods for attachments (markup + dynamics)
 
