@@ -77,7 +77,7 @@ harmony_three = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("bf c' ef' g'"), 3
 harmony_four = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("c' ef' g' bf'"), 0)
 
 fuzzy_harmonies = [harmony_one, harmony_two, harmony_three, harmony_four]
-empty_list: List[FuzzyHarmony] = []
+empty_list: List[Any] = []
 transposed_harmonies = rill.transpose(fuzzy_harmonies, empty_list, 19)
 
 print("transposed harmonies: ", transposed_harmonies)
