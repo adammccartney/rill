@@ -113,7 +113,11 @@ class SegmentMaker(object):
 
     def _configure_score(self):
         voices  = self._get_voices()
-        for voice in voices[0:3]: # violin, monosynth, rh polysynth 
+        treble_voices = voices[0:2]
+
+        print("voices: ", voices)
+        for voice in voices[0:2]: # violin, monosynth, rh polysynth 
+            print("voice: ", voice)
             leaf = abjad.inspect(voice).leaf(0)
             abjad.attach(abjad.Clef("treble"), leaf)
         voice = voices[3]  # lh polysynth
@@ -138,7 +142,7 @@ class SegmentMaker(object):
         self._make_lilypond_file()
         self._configure_lilypond_file()
         self._call_phrase_outflows()
-        self._configure_score()    # only needed in first segment / special cases
+        #self._configure_score()    # only needed in first segment / special cases
         self._render_illustration()
         self._build_segment()
         return self._lilypond_file

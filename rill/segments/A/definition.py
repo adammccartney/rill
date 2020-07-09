@@ -1,3 +1,5 @@
+import pathlib
+
 import abjad
 import rill
 
@@ -24,7 +26,7 @@ score = score_template()
 #abjad.f(score)
 
 
-test_current_directory = rill.current_directory
+this_current_directory =  pathlib.Path(__file__).parent 
 test_build_path = rill.build_path 
 score = rill.ScoreTemplate()
 score_template = score()
@@ -33,7 +35,7 @@ segment_maker = rill.SegmentMaker(
                                 _lilypond_file=None,
                                 _phrase_outflows=None,
                                 _score=score_template,
-                                current_directory=test_current_directory,
+                                current_directory=this_current_directory,
                                 build_path=test_build_path,
                                 segment_name='A',
                                 tempo=((1, 4), 50),
@@ -45,23 +47,27 @@ segment_maker = rill.SegmentMaker(
 #   Violin    /
 #____________/
 
-skip = abjad.Voice("s1 * 20", name='silent_voice')
-silent_phrase_stream = PhraseStream()
-silent_phrase_stream.container = skip
 
+rests = [None] * 10
+breve = abjad.Duration(2, 1)
+
+violin_rest_stream = PhraseStream(rests)
+violin_rest_stream.durate_stream(breve)
 
 phrase_outflow = segment_maker.stream_phrases(
                                         instrument_name = "Violin",
-                                        streams = [silent_phrase_stream],
+                                        streams = [violin_rest_stream],
                                        )
 
 #-----------------/
 #   MonoSynth    /
 #_______________/
 
+monosynth_rest_stream = PhraseStream(rests)
+monosynth_rest_stream.durate_stream(breve)
 phrase_outflow = segment_maker.stream_phrases(
                                         instrument_name = "Monosynth",
-                                        streams = [silent_phrase_stream],
+                                        streams = [monosynth_rest_stream],
                                        )
 
 #-------------------PolySynth----------------#
@@ -148,6 +154,10 @@ phrase_outflow = segment_maker.stream_phrases(
                                         instrument_name = "LH_I", 
                                         streams = [lh_stream],
                                     ) 
-
-
+# Configure score
+voices = segment_maker._get_voices()
+lh_i_music_voice = voices[3]
+#leaf = abjad.inspect(lh_i_music_voice_first_logical_voice).leaf(0)
+#abjad.attach(abjad.Clef("bass"), leaf)
+#
 lilypond_file = segment_maker.run()

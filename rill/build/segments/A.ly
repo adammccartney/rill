@@ -15,16 +15,92 @@
             <<                                                                 %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Music_Voice"                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
-                    \clef "treble"
-                    s1
+                    \context Voice = "a"
+                    {
+                        r\breve
+                    }
+                    \context Voice = "b"
+                    {
+                        r\breve
+                    }
+                    \context Voice = "c"
+                    {
+                        r\breve
+                    }
+                    \context Voice = "d"
+                    {
+                        r\breve
+                    }
+                    \context Voice = "e"
+                    {
+                        r\breve
+                    }
+                    \context Voice = "f"
+                    {
+                        r\breve
+                    }
+                    \context Voice = "g"
+                    {
+                        r\breve
+                    }
+                    \context Voice = "h"
+                    {
+                        r\breve
+                    }
+                    \context Voice = "i"
+                    {
+                        r\breve
+                    }
+                    \context Voice = "j"
+                    {
+                        r\breve
+                    }
                 }                                                              %! rill.ScoreTemplate.__call__()
             >>                                                                 %! rill.ScoreTemplate.__call__()
             \context Staff = "Monosynth"                                       %! rill.ScoreTemplate.__call__()
             <<                                                                 %! rill.ScoreTemplate.__call__()
                 \context Voice = "Monosynth_Music_Voice"                       %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
-                    \clef "treble"
-                    s1
+                    \context Voice = "a"
+                    {
+                        r\breve
+                    }
+                    \context Voice = "b"
+                    {
+                        r\breve
+                    }
+                    \context Voice = "c"
+                    {
+                        r\breve
+                    }
+                    \context Voice = "d"
+                    {
+                        r\breve
+                    }
+                    \context Voice = "e"
+                    {
+                        r\breve
+                    }
+                    \context Voice = "f"
+                    {
+                        r\breve
+                    }
+                    \context Voice = "g"
+                    {
+                        r\breve
+                    }
+                    \context Voice = "h"
+                    {
+                        r\breve
+                    }
+                    \context Voice = "i"
+                    {
+                        r\breve
+                    }
+                    \context Voice = "j"
+                    {
+                        r\breve
+                    }
                 }                                                              %! rill.ScoreTemplate.__call__()
             >>                                                                 %! rill.ScoreTemplate.__call__()
             \context MusicContext = "Polysynth_Music_Context"                  %! rill.ScoreTemplate.__call__()
@@ -35,41 +111,77 @@
                     <<                                                         %! rill.ScoreTemplate.__call__()
                         \context Voice = "RH_I_Music_Voice"                    %! rill.ScoreTemplate.__call__()
                         {                                                      %! rill.ScoreTemplate.__call__()
-                            \clef "treble"
-                            s1
+                            \context Voice = "z"
+                            {
+                                r1
+                                r2
+                            }
+                            \context Voice = "a"
+                            {
+                                <g' bf'>2
+                                <fs' d''>2.
+                                <f'' gf''>2.
+                                <af' g''>1.
+                                r2
+                            }
+                            \context Voice = "b"
+                            {
+                                <fs' d''>2
+                                <f'' gf''>2.
+                                <af' g''>2.
+                                <g'' bf''>1.
+                                r2
+                            }
+                            \context Voice = "c"
+                            {
+                                <f'' gf''>2
+                                <af' g''>2.
+                                <g'' bf''>2.
+                                <fs'' d'''>1.
+                                r2
+                            }
+                            \context Voice = "y"
+                            {
+                                r2
+                                r1
+                                r1
+                            }
                         }                                                      %! rill.ScoreTemplate.__call__()
                     >>                                                         %! rill.ScoreTemplate.__call__()
                     \context Staff = "LH_Polysynth"                            %! rill.ScoreTemplate.__call__()
                     <<                                                         %! rill.ScoreTemplate.__call__()
                         \context Voice = "LH_I_Music_Voice"                    %! rill.ScoreTemplate.__call__()
                         {                                                      %! rill.ScoreTemplate.__call__()
+                            \context Voice = "a"
                             {
-                                \clef "bass"
-                                ef'2
-                                g'2.
-                                bf'2.
-                                c''1.
+                                <af ef'>2
+                                <af g'>2.
+                                <g' bf'>2.
+                                <g' c''>1.
                                 r2
                             }
+                            \context Voice = "b"
                             {
-                                g'2
-                                bf'2.
-                                c''2.
-                                ef''1.
+                                <af g'>2
+                                <g' bf'>2.
+                                <g' c''>2.
+                                <af' ef''>1.
                                 r2
                             }
+                            \context Voice = "c"
                             {
-                                bf'2
-                                c''2.
-                                ef''2.
-                                g''1.
+                                <g' bf'>2
+                                <g' c''>2.
+                                <af' ef''>2.
+                                <af' g''>1.
                                 r2
                             }
+                            \context Voice = "d"
                             {
-                                c''2
-                                ef''2.
-                                g''2.
-                                bf''1.
+                                <g' c''>2
+                                <af' ef''>2.
+                                <af' g''>2.
+                                <g'' bf''>1.
                                 r2
                             }
                         }                                                      %! rill.ScoreTemplate.__call__()
