@@ -70,10 +70,10 @@ phrase_outflow = segment_maker.stream_phrases(
 
 ## Set up material for segment 
 
-harmony_one = FuzzyHarmony('bf_ii', abjad.PitchSegment("ef g bf c'"), 1) # cmin7/e
-harmony_two = FuzzyHarmony('bf_ii', abjad.PitchSegment("g bf c' ef'"), 2) 
-harmony_three = FuzzyHarmony('bf_ii', abjad.PitchSegment("bf c' ef' g'"), 3)   
-harmony_four = FuzzyHarmony('bf_ii', abjad.PitchSegment("c' ef' g' bf'"), 0)
+harmony_one = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("ef g bf c'"), 1) # cmin7/e
+harmony_two = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("g bf c' ef'"), 2) 
+harmony_three = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("bf c' ef' g'"), 3)   
+harmony_four = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("c' ef' g' bf'"), 0)
 
 fuzzy_harmonies = [harmony_one, harmony_two, harmony_three, harmony_four]
 empty_list = []
