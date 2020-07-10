@@ -135,6 +135,7 @@ class PhraseOutflow(object):
                 print("appending voice: ", phrase)
                 print(type(phrase))
                 voice.append(phrase)
+        #abjad.mutate(voice).rewrite_meter(abjad.Meter((4, 4)), boundary_depth=1)
     
     @property 
     def components(self):

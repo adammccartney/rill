@@ -76,25 +76,12 @@ cmin7_64 = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("g bf c' ef'"))
 cmin7_42 = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("bf c' ef' g'"))   
 cmin7 = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("c' ef' g' bf'"))
 
-fuzzy_harmonies = [cmin7_6, cmin7_64, cmin7_42, cmin7]
+cm7_fz_hrmns = [cmin7_6, cmin7_64, cmin7_42, cmin7]
 empty_list: List[any] = []
-transposed_harmonies = rill.transpose(fuzzy_harmonies, empty_list, 19)
-
-print("transposed harmonies: ", transposed_harmonies)
-
-progression = [
-        cmin7_6,
-        cmin7_64,
-        cmin7_42,
-        cmin7
-        ]
-
-progression_fifth = transposed_harmonies
+gm7_fz_hrmns = rill.transpose(cm7_fz_hrmns, empty_list, 19)
 
 
 # Stream material into containers
-
-
 #--------------/
 # RH_I  /
 #____________/
@@ -108,13 +95,12 @@ rh_durations = [
         abjad.Duration(1, 2),
         ]
 
-plagal = rill.make_diads(progression_fifth)
+gm7_diads = rill.make_diads(gm7_fz_hrmns)
 
 # first_rh_stream
-rh_stream = rill.make_stream(plagal)
+rh_stream = rill.make_stream(gm7_diads)
 rh_stream.durate_stream(rh_durations)
 rh_durated_stream = rh_stream.container
-
 
 #Rests for beggining and end of segment
 first_voice = abjad.Voice("r1 r2", name='z')
@@ -128,7 +114,6 @@ updated_container.append(last_voice)
 rh_stream.container = updated_container
 
 # second rh_stream
-
 
 phrase_outflow = segment_maker.stream_phrases(
                                         instrument_name = "RH_I",
@@ -148,9 +133,9 @@ lh_durations = [
         ]
 
 
-authentic = rill.make_diads(progression)
+cm7_diads = rill.make_diads(cm7_fz_hrmns)
 
-lh_stream = rill.make_stream(authentic)
+lh_stream = rill.make_stream(cm7_diads)
 lh_stream.durate_stream(lh_durations)
 lh_durated_stream = lh_stream.container
 

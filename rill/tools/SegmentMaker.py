@@ -123,7 +123,8 @@ class SegmentMaker(object):
         leaf = abjad.inspect(bass_voice).leaf(0)
         abjad.attach(abjad.Clef("bass"), leaf)
 
-    def _get_voices(self):
+    @property 
+    def _music_voices(self):
         """Returns quadruple of staves from score"""
         return (
                 self._score["Violin_Music_Voice"],
