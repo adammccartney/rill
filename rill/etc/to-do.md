@@ -1,14 +1,26 @@
  8-7-20
 
- + ~~Write test for material_methods.py~~
+ + ~~Write test for `material_methods.py`~~
  + ~~Create push/pop methods for PhraseStream containers list~~
   - ~~okay, better way, refactor the code in  PhraseMaker module~~
   - ~~this all worked fine, Phrases are making it to Instrument Voices in
     Score~~
-  - ~~there is a problem to solve with segment_maker._configure_score()~~
- + Clean up segments B-G 
+  - ~~there is a problem to solve with `segment_maker._configure_score()`~~
+ + ~~Clean up segments B-G~~ 
+
  + Test a build with travis
+  - Read testing with pytest and figure out how to use it properly;-)!
+
+ + rework material in segments, each segment is 64 bars long
+  - we could make all the harmonies (one harmony and inversions) for each
+    segment and store these in a dictionary with a reference 
+  - the `make_diads` routine is resulting in some pretty jumpy intervals, try
+    reducing the complexity of this a bit and see if in doing so, it's possible
+    to produce smoother lines. 
+  - one arpeggio pattern per harmony (three in total) 
+
  + Write violin part 
+ 
  + Write methods for attachments (markup + dynamics)
 
 # 16-6-20

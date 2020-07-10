@@ -52,26 +52,37 @@ def make_stream(progression):
     phrase_stream = PhraseStream(augmented_progression)
     return phrase_stream
 
+def mod_twelve(semitones):
+    """makes a positive or negative wrap value for semitone arg"""
+    if semitones in range(-176, 0):
+        neg_wrap_tval = (semitones % 12) * -1 # make negative
+        return neg_wrap_tval
+    elif semitones in range(0, 176):
+        wrap_tval = semitones % 12
+        return wrap_tval
+    else: 
+        raise ValueError('outside transposible range')
+
+def wrap_transposition(val):
+    """
+    Currently designed to return an int
+    can be adapted to also return mircrotones
+    returns a wrapped value
+    """
+    if val <= 0 or val >= 12:
+        print("inside if of wrap_tran...")
+        wrapval = mod_twelve(val)
+        return wrapval 
+    else:
+        return val
+
 def transpose(fuzzy_harmonies, transposed_harmonies, t_interval=0):
     """Takes a lits of fuzzy harmony objects
     returns a new list of related objects
     based on an interval argument
     """
-
-    harmony_shortname_lookup = {
-            str("bf_ii"): "f_ii",
-            str("g_v"): "d_v",
-            str("e_i"): "b_i",
-            str("cs_ii"): "gs_ii",
-            str("bf_v"): "f_v",
-            str("g_i"): "d_i",
-            str("e_ii"): "b_ii",
-            str("cs_v"): "gs_v",
-            str("bf_i"): "f_i",
-            str("g_ii"): "d_ii",
-            str("e_v"): "b_v",
-            str("cs_i"): "gs_i",
-            }
+    wrapped_t_interval = wrap_tranposition(t_interval)
+    harmony_shortname_lookup = transposition_lookup[wrapped_t_interval]
 
     for harmony in fuzzy_harmonies:
         transposed_name = harmony_shortname_lookup[harmony.shortname]
