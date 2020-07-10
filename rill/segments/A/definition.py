@@ -71,10 +71,10 @@ phrase_outflow = segment_maker.stream_phrases(
 
 ## Set up material for segment 
 
-harmony_one = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("ef g bf c'"), 1) # cmin7/e
-harmony_two = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("g bf c' ef'"), 2) 
-harmony_three = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("bf c' ef' g'"), 3)   
-harmony_four = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("c' ef' g' bf'"), 0)
+cmin7_6 = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("ef g bf c'")) # cmin7/e
+cmin7_64 = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("g bf c' ef'")) 
+cmin7_42 = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("bf c' ef' g'"))   
+cmin7 = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("c' ef' g' bf'"))
 
 fuzzy_harmonies = [harmony_one, harmony_two, harmony_three, harmony_four]
 empty_list: List[Any] = []
@@ -83,11 +83,11 @@ transposed_harmonies = rill.transpose(fuzzy_harmonies, empty_list, 19)
 print("transposed harmonies: ", transposed_harmonies)
 
 progression = [
-          harmony_one,
-          harmony_two,
-          harmony_three,
-          harmony_four,
-          ]
+        cmin7_6,
+        cmin7_64,
+        cmin7_42,
+        cmin7
+        ]
 
 progression_fifth = transposed_harmonies
 
