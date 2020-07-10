@@ -76,8 +76,8 @@ cmin7_64 = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("g bf c' ef'"))
 cmin7_42 = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("bf c' ef' g'"))   
 cmin7 = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("c' ef' g' bf'"))
 
-fuzzy_harmonies = [harmony_one, harmony_two, harmony_three, harmony_four]
-empty_list: List[Any] = []
+fuzzy_harmonies = [cmin7_6, cmin7_64, cmin7_42, cmin7]
+empty_list: List[any] = []
 transposed_harmonies = rill.transpose(fuzzy_harmonies, empty_list, 19)
 
 print("transposed harmonies: ", transposed_harmonies)

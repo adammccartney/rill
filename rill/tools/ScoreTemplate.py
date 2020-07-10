@@ -5,8 +5,6 @@ import rill
 Defines scoretemplate, subclass of abjad.ScoreTemplate. Segments appended later. 
 """
 
-
-
 class ScoreTemplate(abjad.ScoreTemplate):
     """
     Makes a simple score template for trio 

@@ -4,6 +4,8 @@ import rill
 import rill.tools.FuzzyHarmony as FuzzyHarmony
 from rill.tools.PhraseMaker import PhraseStream as PhraseStream
 
+from rill.materials.pitch.definition import transposition_lookup
+
 def get_pitch_classes(pitch_segment):
     if isinstance(pitch_segment, abjad.PitchSegment):
         pitch_classes = pitch_segment.to_pitch_classes()
@@ -81,19 +83,16 @@ def transpose(fuzzy_harmonies, transposed_harmonies, t_interval=0):
     returns a new list of related objects
     based on an interval argument
     """
-    wrapped_t_interval = wrap_tranposition(t_interval)
+    wrapped_t_interval = wrap_transposition(t_interval)
     harmony_shortname_lookup = transposition_lookup[wrapped_t_interval]
 
     for harmony in fuzzy_harmonies:
         transposed_name = harmony_shortname_lookup[harmony.shortname]
         transposed_segment = harmony.segment.transpose(n=t_interval)
-        inversion_num = harmony.inversion
         transposed_harmony = FuzzyHarmony(
                                  transposed_name, 
                                  transposed_segment, 
-                                 inversion_num
                                  )
         transposed_harmonies.append(transposed_harmony)
     return transposed_harmonies
-
 
