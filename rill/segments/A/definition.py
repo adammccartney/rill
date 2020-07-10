@@ -102,6 +102,9 @@ rh_stream = rill.make_stream(gm7_diads)
 rh_stream.durate_stream(rh_durations)
 rh_durated_stream = rh_stream.container
 
+print("rh stream: ", rh_stream)
+print("rh_durated_stream: ", rh_durated_stream)
+
 #Rests for beggining and end of segment
 first_voice = abjad.Voice("r1 r2", name='z')
 last_voice = abjad.Voice("r2 r1 r1", name='y')
@@ -136,8 +139,11 @@ lh_durations = [
 cm7_diads = rill.make_diads(cm7_fz_hrmns)
 
 lh_stream = rill.make_stream(cm7_diads)
+print("lh_stream: " , lh_stream.phrases)
 lh_stream.durate_stream(lh_durations)
+
 lh_durated_stream = lh_stream.container
+print("durated lh_stream: ", lh_stream.container)
 
 phrase_outflow = segment_maker.stream_phrases(
                                         instrument_name = "LH_I", 

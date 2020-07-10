@@ -66,7 +66,10 @@ class PhraseStream(object):
         self._container = None or []
         self._durated_voices = None or []
         self._phrases = phrases
-    
+ 
+    def __format__(self, format_specification="") -> str:
+        return abjad.StorageFormatManager(self).get_storage_format()
+   
     def _extract_voices_from_stream(self, durated_stream):
         #print("Now working on durated stream: ", durated_stream)
         for voice in durated_stream:
@@ -92,6 +95,7 @@ class PhraseStream(object):
         self._extract_voices_from_stream(durated_stream) 
         self._voices_to_container()
 
+
     @property
     def container(self) -> abjad.Container:
         """Gets stream as abjad containers"""
@@ -101,6 +105,11 @@ class PhraseStream(object):
     def container(self, container):
        """Sets containers from list"""
        self._container = container
+
+    @property
+    def phrases(self) -> list:
+        """Gets phrases"""
+        return self._phrases
 
 class PhraseOutflow(object):
     """Has an outlet to connect a phrase stream to a score

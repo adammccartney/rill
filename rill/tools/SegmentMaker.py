@@ -112,7 +112,7 @@ class SegmentMaker(object):
         lilypond_file.header_block.composer = None
 
     def _configure_score(self):
-        voices  = self._get_voices()
+        voices  = self._music_voices
         treble_voices = voices[:-1]
         for voice in treble_voices:
             print("treble_voice: ", voice)
