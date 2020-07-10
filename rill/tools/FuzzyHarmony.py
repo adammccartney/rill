@@ -12,15 +12,13 @@ class FuzzyHarmony(object):
     """
 
     __slots__ = (
-            "_inversion", 
             "_pitches", 
             "_pitch_list",  
             "_shortname",
             "segment", 
             )
 
-    def __init__(self, shortname=str(), segment=None, inversion=0):
-        self._inversion = inversion
+    def __init__(self, shortname=str(), segment=None):
         self._shortname = shortname
         self.segment = abjad.PitchSegment(segment)
         self._set_pitches()
@@ -44,11 +42,6 @@ class FuzzyHarmony(object):
         self._pitch_list = []
         for pitch in self.pitches:
             self._pitch_list.append(pitch.name)
-
-    @property 
-    def inversion(self):
-        """Gets inversion number"""
-        return self._inversion
 
     @property
     def pitches(self):
