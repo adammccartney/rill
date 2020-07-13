@@ -71,10 +71,10 @@ phrase_outflow = segment_maker.stream_phrases(
 
 ## Set up material for segment 
 
-cmin7_6 = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("ef g bf c'")) # cmin7/e
-cmin7_64 = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("g bf c' ef'")) 
-cmin7_42 = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("bf c' ef' g'"))   
-cmin7 = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("c' ef' g' bf'"))
+cmin7_6 = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("ef g c' bf")) # cmin7/e
+cmin7_64 = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("g bf ef' c'")) 
+cmin7_42 = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("bf c' g ef"))   
+cmin7 = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("c' bf ef g"))
 
 cm7_fz_hrmns = [cmin7_6, cmin7_64, cmin7_42, cmin7]
 empty_list: List[any] = []
@@ -88,17 +88,16 @@ gm7_fz_hrmns = rill.transpose(cm7_fz_hrmns, empty_list, 19)
 
 
 rh_durations = [
-        abjad.Duration(1, 2), 
-        #abjad.Duration(3, 4), 
-        #abjad.Duration(3, 4), 
-        #abjad.Duration(3, 2),
-        #abjad.Duration(1, 2),
+        abjad.Duration(2, 1), 
+        abjad.Duration(2, 1), 
+        abjad.Duration(2, 1), 
+        abjad.Duration(4, 1),
         ]
 
-gm7_diads = rill.make_diads(gm7_fz_hrmns)
+gm7_diads = rill.make_diads(gm7_fz_hrmns, interval_doubling=None)
 
 # first_rh_stream
-rh_stream = rill.make_augmented_stream(gm7_diads)
+rh_stream = PhraseStream(gm7_diads)
 rh_stream.durate_stream(rh_durations)
 rh_durated_stream = rh_stream.container
 print("rh stream: ", rh_stream)
@@ -116,7 +115,7 @@ phrase_outflow = segment_maker.stream_phrases(
 #____________/
 
 lh_durations = [
-        abjad.Duration(1, 1), 
+        abjad.Duration(4, 1), 
         #abjad.Duration(3, 2), 
         #abjad.Duration(3, 2), 
         #abjad.Duration(3, 1),
@@ -124,9 +123,9 @@ lh_durations = [
         ]
 
 
-cm7_diads = rill.make_diads(cm7_fz_hrmns)
+cm7_diads = rill.make_diads(cm7_fz_hrmns, interval_doubling='d5')
 
-lh_stream = rill.make_augmented_stream(cm7_diads)
+lh_stream = PhraseStream(cm7_diads)
 print("lh_stream: " , lh_stream.phrases)
 lh_stream.durate_stream(lh_durations)
 

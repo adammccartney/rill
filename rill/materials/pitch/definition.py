@@ -273,7 +273,7 @@ diatonic_register_lookup = { 'd2' : {
                             abjad.NamedPitchClass("fs"): 6, 
                             abjad.NamedPitchClass("f"): 7,    
                             abjad.NamedPitchClass("e"): 7,    
-                            abjad.NamedPitchClass("ef"): 8,  
+                            abjad.NamedPitchClass("ef"): 7,  
                             abjad.NamedPitchClass("d"): 7,   
                             abjad.NamedPitchClass("cs"): 8, 
                             },
