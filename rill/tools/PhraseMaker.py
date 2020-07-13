@@ -20,12 +20,20 @@ class PhraseMaker(object):
         Formats phrase.
         """
         return abjad.StorageFormatManager(self).get_storage_format()
-    
+   
+    ### PRIVATE METHODS ###
+
     def _create_voice(self, leaves, v_name):
         """Creates and returns an empty voice"""
         voice = abjad.Voice(leaves, name=v_name)
         self._voices.append(voice)
         return voice
+
+    def _make_leaf(self, pitch, duration_string):
+        duration = abjad.Duration(duration_string)
+        maker = abjad.LeafMaker()
+        leaves = maker([pitch], [duration])
+        return leaves
 
     ### PUBLIC METHODS ###
 
@@ -33,7 +41,7 @@ class PhraseMaker(object):
         """Returns a list of named voices"""
         maker = abjad.LeafMaker()
         leaves = []
-        name = 'a' # going to create named voices with this value
+        name = 'a' # going to create first named voice with this character
         for phrase in phrases:
             #print("Pitch, Duration: ", phrases, durations)
             leaf = maker(phrase, durations)
@@ -84,7 +92,7 @@ class PhraseStream(object):
         """Makes notes"""
         pitches = []
         if self._phrases == None:
-            print("Error, no phrases in object")
+            return ValueError("No phrases in object")
         for phrase in self._phrases:
             #print("this is my phrase: ", phrase)
             pitches.append(phrase)

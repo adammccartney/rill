@@ -89,32 +89,20 @@ gm7_fz_hrmns = rill.transpose(cm7_fz_hrmns, empty_list, 19)
 
 rh_durations = [
         abjad.Duration(1, 2), 
-        abjad.Duration(3, 4), 
-        abjad.Duration(3, 4), 
-        abjad.Duration(3, 2),
-        abjad.Duration(1, 2),
+        #abjad.Duration(3, 4), 
+        #abjad.Duration(3, 4), 
+        #abjad.Duration(3, 2),
+        #abjad.Duration(1, 2),
         ]
 
 gm7_diads = rill.make_diads(gm7_fz_hrmns)
 
 # first_rh_stream
-rh_stream = rill.make_stream(gm7_diads)
+rh_stream = rill.make_augmented_stream(gm7_diads)
 rh_stream.durate_stream(rh_durations)
 rh_durated_stream = rh_stream.container
-
 print("rh stream: ", rh_stream)
-print("rh_durated_stream: ", rh_durated_stream)
 
-#Rests for beggining and end of segment
-first_voice = abjad.Voice("r1 r2", name='z')
-last_voice = abjad.Voice("r2 r1 r1", name='y')
-updated_container = []
-updated_container.append(first_voice)
-for voice in rh_durated_stream[:-1]:
-    updated_container.append(voice)
-updated_container.append(last_voice)
-
-rh_stream.container = updated_container
 
 # second rh_stream
 
@@ -129,16 +117,16 @@ phrase_outflow = segment_maker.stream_phrases(
 
 lh_durations = [
         abjad.Duration(1, 1), 
-        abjad.Duration(3, 2), 
-        abjad.Duration(3, 2), 
-        abjad.Duration(3, 1),
-        abjad.Duration(1, 1),
+        #abjad.Duration(3, 2), 
+        #abjad.Duration(3, 2), 
+        #abjad.Duration(3, 1),
+        #abjad.Duration(1, 1),
         ]
 
 
 cm7_diads = rill.make_diads(cm7_fz_hrmns)
 
-lh_stream = rill.make_stream(cm7_diads)
+lh_stream = rill.make_augmented_stream(cm7_diads)
 print("lh_stream: " , lh_stream.phrases)
 lh_stream.durate_stream(lh_durations)
 

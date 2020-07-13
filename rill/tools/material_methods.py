@@ -4,7 +4,10 @@ import rill
 import rill.tools.FuzzyHarmony as FuzzyHarmony
 from rill.tools.PhraseMaker import PhraseStream as PhraseStream
 
-from rill.materials.pitch.definition import transposition_lookup
+from rill.materials.pitch.definition import (
+                               transposition_lookup, 
+                               diatonic_register_lookup
+                               )
 
 def get_pitch_classes(pitch_segment):
     if isinstance(pitch_segment, abjad.PitchSegment):
@@ -42,7 +45,7 @@ def make_diads(fuzzy_harmonies):
         harmonized_melodies.append(tuple(harmonized_melody))
     return harmonized_melodies
 
-def make_stream(progression):
+def make_augmented_stream(progression):
     """Makes phrases and adds them to stream
     returns an instance of PhraseStream
     """

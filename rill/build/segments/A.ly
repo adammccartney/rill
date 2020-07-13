@@ -113,41 +113,38 @@
                     <<                                                         %! rill.ScoreTemplate.__call__()
                         \context Voice = "RH_I_Music_Voice"                    %! rill.ScoreTemplate.__call__()
                         {                                                      %! rill.ScoreTemplate.__call__()
-                            \context Voice = "z"
-                            {
-                                \clef "treble"
-                                r1
-                                r2
-                            }
                             \context Voice = "a"
                             {
+                                \clef "treble"
                                 <g' bf'>2
-                                <fs' d''>2.
-                                <f'' gf''>2.
-                                <af' g''>1.
+                                <fs' d''>2
+                                <f'' gf''>2
+                                <af' g''>2
                                 r2
                             }
                             \context Voice = "b"
                             {
                                 <fs' d''>2
-                                <f'' gf''>2.
-                                <af' g''>2.
-                                <g'' bf''>1.
+                                <f'' gf''>2
+                                <af' g''>2
+                                <g'' bf''>2
                                 r2
                             }
                             \context Voice = "c"
                             {
                                 <f'' gf''>2
-                                <af' g''>2.
-                                <g'' bf''>2.
-                                <fs'' d'''>1.
+                                <af' g''>2
+                                <g'' bf''>2
+                                <fs'' d'''>2
                                 r2
                             }
-                            \context Voice = "y"
+                            \context Voice = "d"
                             {
+                                <af' g''>2
+                                <g'' bf''>2
+                                <fs'' d'''>2
+                                <f''' gf'''>2
                                 r2
-                                r1
-                                r1
                             }
                         }                                                      %! rill.ScoreTemplate.__call__()
                     >>                                                         %! rill.ScoreTemplate.__call__()
@@ -159,33 +156,33 @@
                             {
                                 \clef "bass"
                                 <af, ef>1
-                                <af, g>1.
-                                <g bf>1.
-                                <g c'>\breve.
+                                <af, g>1
+                                <g bf>1
+                                <g c'>1
                                 r1
                             }
                             \context Voice = "b"
                             {
                                 <af, g>1
-                                <g bf>1.
-                                <g c'>1.
-                                <af ef'>\breve.
+                                <g bf>1
+                                <g c'>1
+                                <af ef'>1
                                 r1
                             }
                             \context Voice = "c"
                             {
                                 <g bf>1
-                                <g c'>1.
-                                <af ef'>1.
-                                <af g'>\breve.
+                                <g c'>1
+                                <af ef'>1
+                                <af g'>1
                                 r1
                             }
                             \context Voice = "d"
                             {
                                 <g c'>1
-                                <af ef'>1.
-                                <af g'>1.
-                                <g' bf'>\breve.
+                                <af ef'>1
+                                <af g'>1
+                                <g' bf'>1
                                 r1
                             }
                         }                                                      %! rill.ScoreTemplate.__call__()

@@ -11,7 +11,7 @@ from .FuzzyHarmony import (
 from .material_methods import (
         get_pitch_classes,
         make_diads, 
-        make_stream,
+        make_augmented_stream,
         transpose,
         )
 from .PhraseMaker import (

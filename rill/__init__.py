@@ -13,7 +13,8 @@ from rill.tools import *
 from rill.materials.instruments.definition import instruments
 from rill.materials.pitch.definition import (
                                     bass_pitches, 
-                                    tetrads, 
+                                    tetrads,
+                                    pentads,
                                     transposition_lookup, 
                                    )
 from rill import segments

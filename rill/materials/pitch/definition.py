@@ -34,6 +34,22 @@ tetrads = abjad.OrderedDict([
             ('cs_i', abjad.PitchSegment("ds' f' gs' bs'")),
             ])
 
+#A container holding all harmonies used in the piece 
+pentads = abjad.OrderedDict([ 
+            ('bf_ii', abjad.PitchSegment("c ef' g' bf' c''")),       # cmin7 
+            ('g_v', abjad.PitchSegment("d ef' fs' a' d''")),     # D7(b9,13)
+            ('e_i', abjad.PitchSegment("e e' g' b' d''")),           # emin9
+            ('cs_ii', abjad.PitchSegment("ds fs' as' cs'' ds''")),   # dsmin9
+            ('bf_v', abjad.PitchSegment("f fs' a' c' ef''")),      # F7(b9)
+            ('g_i', abjad.PitchSegment("fs fs' gs' as' cs'")),   # gminb9+/+7 
+            ('e_ii', abjad.PitchSegment("fs e' fs' a' cs''")),       # fsmin7
+            ('cs_v', abjad.PitchSegment("gs ds' fs' a' d''")),   # gsb913
+            ('bf_i', abjad.PitchSegment("bf c' f' a' d''")),         # bfM9
+            ('g_ii', abjad.PitchSegment("a c' e' g' a'")),           # amin7
+            ('e_v', abjad.PitchSegment("b d' ef' fs' a'")),      # b7b913
+            ('cs_i', abjad.PitchSegment("cs ds' f' gs' bs'")),
+            ])
+
 
 transposition_lookup = { 0 : { # P1
                             "bf_ii": "bf_ii",
@@ -219,5 +235,75 @@ transposition_lookup = { 0 : { # P1
                             }
                         }
 
-
-
+diatonic_register_lookup = { 'd2' : {
+                            abjad.NamedPitchClass("c"): 2,  
+                            abjad.NamedPitchClass("b"): 1,  
+                            abjad.NamedPitchClass("bf"): 2, 
+                            abjad.NamedPitchClass("a"): 2,  
+                            abjad.NamedPitchClass("af"): 1, 
+                            abjad.NamedPitchClass("g"): 2,  
+                            abjad.NamedPitchClass("fs"): 1, 
+                            abjad.NamedPitchClass("f"): 2,    
+                            abjad.NamedPitchClass("e"): 1,    
+                            abjad.NamedPitchClass("ef"): 2,  
+                            abjad.NamedPitchClass("d"): 2,   
+                            abjad.NamedPitchClass("cs"): 1, 
+                          },
+                             'd3' : {
+                            abjad.NamedPitchClass("c"): 3,  
+                            abjad.NamedPitchClass("b"): 4,  
+                            abjad.NamedPitchClass("bf"): 4, 
+                            abjad.NamedPitchClass("a"): 3,  
+                            abjad.NamedPitchClass("af"): 4, 
+                            abjad.NamedPitchClass("g"): 4,  
+                            abjad.NamedPitchClass("fs"): 3, 
+                            abjad.NamedPitchClass("f"): 4,    
+                            abjad.NamedPitchClass("e"): 3,    
+                            abjad.NamedPitchClass("ef"): 4,  
+                            abjad.NamedPitchClass("d"): 3,   
+                            abjad.NamedPitchClass("cs"): 4, 
+                            },
+                             'd5': {
+                            abjad.NamedPitchClass("c"): 7,  
+                            abjad.NamedPitchClass("b"): 6,  
+                            abjad.NamedPitchClass("bf"): 7, 
+                            abjad.NamedPitchClass("a"): 7,  
+                            abjad.NamedPitchClass("af"): 8, 
+                            abjad.NamedPitchClass("g"): 7,  
+                            abjad.NamedPitchClass("fs"): 6, 
+                            abjad.NamedPitchClass("f"): 7,    
+                            abjad.NamedPitchClass("e"): 7,    
+                            abjad.NamedPitchClass("ef"): 8,  
+                            abjad.NamedPitchClass("d"): 7,   
+                            abjad.NamedPitchClass("cs"): 8, 
+                            },
+                             'd6': {
+                            abjad.NamedPitchClass("c"): 8,  
+                            abjad.NamedPitchClass("b"): 9,  
+                            abjad.NamedPitchClass("bf"): 9, 
+                            abjad.NamedPitchClass("a"): 8,  
+                            abjad.NamedPitchClass("af"): 9, 
+                            abjad.NamedPitchClass("g"): 8,  
+                            abjad.NamedPitchClass("fs"): 9, 
+                            abjad.NamedPitchClass("f"): 9,    
+                            abjad.NamedPitchClass("e"): 8,    
+                            abjad.NamedPitchClass("ef"): 9,  
+                            abjad.NamedPitchClass("d"): 9,   
+                            abjad.NamedPitchClass("cs"): 8,                                
+                                 },
+                             'd7': {
+                            abjad.NamedPitchClass("c"): 11,  
+                            abjad.NamedPitchClass("b"): 10,  
+                            abjad.NamedPitchClass("bf"): 11, 
+                            abjad.NamedPitchClass("a"): 10,  
+                            abjad.NamedPitchClass("af"): 11, 
+                            abjad.NamedPitchClass("g"): 10,  
+                            abjad.NamedPitchClass("fs"): 11, 
+                            abjad.NamedPitchClass("f"): 11,    
+                            abjad.NamedPitchClass("e"): 10,    
+                            abjad.NamedPitchClass("ef"): 11,  
+                            abjad.NamedPitchClass("d"): 10,   
+                            abjad.NamedPitchClass("cs"): 11,                                
+                                     },
+                             }
+                             
