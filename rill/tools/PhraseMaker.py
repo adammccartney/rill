@@ -143,14 +143,9 @@ class PhraseOutflow(object):
 
     def _route_streams(self):
         voice = self._score[f"{self.instrument_name}_Music_Voice"]
-        print("PhraseOutflow._streams: ", self._streams)
         for stream in self._streams:
-            print("appending stream :", stream)
-            print(type(stream))
             phrase_voices = stream.container
             for phrase in phrase_voices:
-                print("appending voice: ", phrase)
-                print(type(phrase))
                 voice.append(phrase)
         #abjad.mutate(voice).rewrite_meter(abjad.Meter((4, 4)), boundary_depth=1)
     

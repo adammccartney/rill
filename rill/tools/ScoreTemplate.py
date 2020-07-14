@@ -45,9 +45,11 @@ class ScoreTemplate(abjad.ScoreTemplate):
         global_context = self._make_global_context()
 
         # Violin
+        markup_voice = abjad.Voice(name="Violin_Markup_Voice", tag=tag)
         music_voice = abjad.Voice(name="Violin_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="Violin_Dynamics_Voice", tag=tag)
         violin_staff = abjad.Staff(
-            [music_voice],
+            [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
             name="Violin",
             tag=tag,
@@ -59,10 +61,12 @@ class ScoreTemplate(abjad.ScoreTemplate):
         )
         abjad.annotate(violin_staff, "default_clef", abjad.Clef("treble"))
 
-        # MonoSynth 
+        # MonoSynth
+        markup_voice = abjad.Voice(name="Monosynth_Markup_Voice", tag=tag)
         music_voice = abjad.Voice(name="Monosynth_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="Monosynth_Dynamics_Voice", tag=tag)
         monosynth_staff = abjad.Staff(
-            [music_voice],
+            [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
             name="Monosynth",
             tag=tag,
@@ -76,8 +80,9 @@ class ScoreTemplate(abjad.ScoreTemplate):
 
 
         ### RH PolySynth Voices ###
+        markup_voice = abjad.Voice(name="RH_I_Markup_Voice", tag=tag)
         music_voice = abjad.Voice(name="RH_I_Music_Voice", tag=tag)
-
+        dynamics_voice = abjad.Voice(name="RH_I_Dynamics_Voice", tag=tag)
         #rh_voice_2 = abjad.Voice(
         #            lilypond_type="RHVoiceII", name="RH_II_Music_Voice", tag=tag
         #            )
@@ -94,7 +99,9 @@ class ScoreTemplate(abjad.ScoreTemplate):
                 )
         
         ### LH PolySynth Voices ###
+        markup_voice = abjad.Voice(name="LH_I_Markup_Voice", tag=tag)
         music_voice = abjad.Voice(name="LH_I_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="LH_I_Dynamics_Voice", tag=tag)
         #        lh_voice_2 = abjad.Voice(
         #            lilypond_type="LHVoiceII", name="LH_II_Music_Voice", tag=tag
         #        )

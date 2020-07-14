@@ -63,6 +63,15 @@ class PitchVoice(object):
         Formats articulation.
         """
         return abjad.StorageFormatManager(self).get_storage_format()
+    
+    def __iter__(self) -> typing.Iterator:
+        """
+        Iterates voice only once.
+
+        Does not iterate infinitely.
+        """
+        return self._voice.__iter__()
+
 
      ### PRIVATE METHODS ###
 
@@ -126,6 +135,7 @@ class DynamicVoice(object):
         self._pitch_voice = pitch_voice or rill.PitchVoice()
         self._voice = copy.deepcopy(pitch_voice)
         self.dynamics = dynamics
+        self._handle_dynamics()
 
     def __format__(self, format_specification="") -> str:
         """
@@ -286,9 +296,5 @@ if __name__ == '__main__':
             (2, abjad.Dynamic('fp')),
             ]
 
-    dynamics_voice = DynamicVoice(new_voice, dynamics)
-    container.voices = [voice, new_voice, dynamics_voice] 
-    print("PitchVoice: ", voice)
-
-    staff = abjad.Staff(container)
-    abjad.f(staff)
+    new_phrase = DynamicVoice(new_voice, dynamics)
+    abjad.f(new_phrase)
