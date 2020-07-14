@@ -88,17 +88,6 @@ class SegmentMaker(object):
         self._lilypond_file = lilypond_file
 
 
-    def stream_phrases(self, instrument_name, streams):
-        """
-        Calls a PhraseOutflow
-        Streams phrases to a voice in score
-        """
-        phrase_outflow = PhraseOutflow()
-        phrase_outflow.instrument_name = instrument_name
-        phrase_outflow.streams = streams
-        self._phrase_outflows.append(phrase_outflow)
-        return phrase_outflow
-
     def _call_phrase_outflows(self):
         """
         Phrase streams flow into score by instrument_name
@@ -122,6 +111,21 @@ class SegmentMaker(object):
         print("Bass Voice: ", bass_voice)
         leaf = abjad.inspect(bass_voice).leaf(0)
         abjad.attach(abjad.Clef("bass"), leaf)
+
+     ### PUBLIC METHODS ###
+
+    def store_streams(self, instrument_name, streams):
+        """
+        Calls a PhraseOutflow
+        Streams phrases to a voice in score
+        """
+        phrase_outflow = PhraseOutflow()
+        phrase_outflow.instrument_name = instrument_name
+        phrase_outflow.streams = streams
+        self._phrase_outflows.append(phrase_outflow)
+
+
+    ### PRIVATE PROPERTIES ###
 
     @property 
     def _music_voices(self):

@@ -50,10 +50,7 @@ breve = abjad.Duration(2, 1)
 violin_rest_stream = PhraseStream(rests)
 violin_rest_stream.durate_stream(breve)
 
-phrase_outflow = segment_maker.stream_phrases(
-                                        instrument_name = "Violin",
-                                        streams = [violin_rest_stream],
-                                       )
+segment_maker.store_streams("Violin", [violin_rest_stream])
 
 #-----------------/
 #   MonoSynth    /
@@ -61,10 +58,7 @@ phrase_outflow = segment_maker.stream_phrases(
 
 monosynth_rest_stream = PhraseStream(rests)
 monosynth_rest_stream.durate_stream(breve)
-phrase_outflow = segment_maker.stream_phrases(
-                                        instrument_name = "Monosynth",
-                                        streams = [monosynth_rest_stream],
-                                       )
+segment_maker.store_streams("Monosynth", [monosynth_rest_stream])
 
 #-------------------PolySynth----------------#
 
@@ -99,16 +93,9 @@ gm7_diads = rill.make_diads(gm7_fz_hrmns, interval_doubling=None)
 # first_rh_stream
 rh_stream = PhraseStream(gm7_diads)
 rh_stream.durate_stream(rh_durations)
-rh_durated_stream = rh_stream.container
-print("rh stream: ", rh_stream)
-
 
 # second rh_stream
-
-phrase_outflow = segment_maker.stream_phrases(
-                                        instrument_name = "RH_I",
-                                        streams = [rh_stream],
-                                       )
+segment_maker.store_streams("RH_I", [rh_stream])
 
 #--------------/
 # LH_I  /
@@ -129,12 +116,6 @@ lh_stream = PhraseStream(cm7_diads)
 print("lh_stream: " , lh_stream.phrases)
 lh_stream.durate_stream(lh_durations)
 
-lh_durated_stream = lh_stream.container
-print("durated lh_stream: ", lh_stream.container)
+segment_maker.store_streams("LH_I", [lh_stream.container]) 
 
-phrase_outflow = segment_maker.stream_phrases(
-                                        instrument_name = "LH_I", 
-                                        streams = [lh_stream],
-                                    ) 
-#
 lilypond_file = segment_maker.run()
