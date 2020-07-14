@@ -14,6 +14,9 @@ from .material_methods import (
         make_augmented_stream,
         transpose,
         )
+
+from MarkupLibrary import *
+
 from .PhraseMaker import (
         PhraseMaker,
         PhraseStream,
@@ -22,4 +25,5 @@ from .PhraseMaker import (
 from .ScoreTemplate import ScoreTemplate
 from .SegmentMaker import SegmentMaker
 from .set_build_path import build_path
+from .tremolo import tremolo
 
