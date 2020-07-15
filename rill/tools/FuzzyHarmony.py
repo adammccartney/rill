@@ -73,6 +73,7 @@ class LegatoArpeggio(object):
     """
 
     __slots__ = (
+            "_arp_pitches",
             "_arp_strings",
             "_pitch_segment", 
             "_pitch_set",
@@ -86,6 +87,7 @@ class LegatoArpeggio(object):
         self._sequence = sequence or tuple()
         self._reorder_segment()
         self._make_ascent()
+        self._set_arp_pitches()
         self._set_arp_strings()
 
     def _make_ascent(self):
@@ -98,12 +100,20 @@ class LegatoArpeggio(object):
             pitch_ascents.append(ascent)
         self._reservoir = tuple(pitch_ascents)
 
+    def _set_arp_pitches(self):
+        """Sets a list of pitch strings"""
+        self._arp_pitches = []
+        for i in range(len(self._sequence)):
+            arpeggio_stage = str(self._reordered_segment[i])
+            arp_pitch_str = "{}".format(arpeggio_stage)
+            self._arp_pitches.append(arp_pitch_str)
+
     def _set_arp_strings(self):
         """Sets strings from pitch segments"""
         self._arp_strings = []
         if len(self._reordered_segment) == len(self._sequence):
-            for index in range(len(self._sequence)):
-                arpeggio_stage = self._reservoir[index]
+            for i in range(len(self._sequence)):
+                arpeggio_stage = self._reservoir[i]
                 arp_pitch_str = ' '.join(str(x) for x in arpeggio_stage)
                 print("arp_pitch_str: ", arp_pitch_str)
                 self._arp_strings.append(arp_pitch_str)
@@ -120,6 +130,10 @@ class LegatoArpeggio(object):
     @property 
     def stages(self) -> list:
         return self._arp_strings
+
+    @property 
+    def pitches(self) -> list:
+        return self._arp_pitches
 
 
 class Progression(object):
@@ -272,6 +286,8 @@ if __name__ == '__main__':
    sequence = (3, 1, 2, 4, 3)
    arp = LegatoArpeggio(segment, sequence)
    print("arp stages: ", arp.stages)
-
+   arp_pitches = arp.pitches
+   for pitch in arp_pitches:
+       print("Arp pitch: ", pitch)
 
 
