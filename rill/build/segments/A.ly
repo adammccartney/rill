@@ -98,12 +98,43 @@
                     <<                                                         %! rill.ScoreTemplate.__call__()
                         \context Voice = "RH_I_Markup_Voice"                   %! rill.ScoreTemplate.__call__()
                         {                                                      %! rill.ScoreTemplate.__call__()
+                            s1 * 1/1
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 3/4
+                            s1 * 1/4
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/1
+                            \stopTextSpan
                         }                                                      %! rill.ScoreTemplate.__call__()
                         \context Voice = "RH_I_Music_Voice"                    %! rill.ScoreTemplate.__call__()
                         {                                                      %! rill.ScoreTemplate.__call__()
+                            r1
+                            r2
+                            bf''2
+                            ~
+                            <bf'' d'''>2.
+                            ~
+                            <bf'' d''' f'''>4
+                            ~
+                            <bf'' d''' f'''>2
+                            ~
+                            <bf'' d''' f''' g'''>2
+                            ~
+                            <bf'' d''' f''' g'''>1
                         }                                                      %! rill.ScoreTemplate.__call__()
                         \context Voice = "RH_I_Dynamics_Voice"                 %! rill.ScoreTemplate.__call__()
                         {                                                      %! rill.ScoreTemplate.__call__()
+                            s1 * 1/1
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 3/4
+                            s1 * 1/4
+                            s1 * 1/2
+                            s1 * 1/2
+                            s1 * 1/1
+                            \!
                         }                                                      %! rill.ScoreTemplate.__call__()
                     >>                                                         %! rill.ScoreTemplate.__call__()
                     \context Staff = "LH_Polysynth"                            %! rill.ScoreTemplate.__call__()
@@ -121,14 +152,13 @@
                         }                                                      %! rill.ScoreTemplate.__call__()
                         \context Voice = "LH_I_Music_Voice"                    %! rill.ScoreTemplate.__call__()
                         {                                                      %! rill.ScoreTemplate.__call__()
-                            ef2
-                            :32
+                            g2
                             ~
                             <ef g>2
                             ~
                             <ef g>4
                             ~
-                            <ef g c'>2.
+                            <ef g bf>2.
                             ~
                             <ef g bf c'>1
                             ~

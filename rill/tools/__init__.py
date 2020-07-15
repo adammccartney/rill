@@ -18,4 +18,3 @@ from .SegmentMaker import SegmentMaker
 from .set_build_path import build_path
 from .tie import tie
 from .tremolo import tremolo
-

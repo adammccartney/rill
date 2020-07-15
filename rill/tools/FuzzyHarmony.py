@@ -76,6 +76,7 @@ class LegatoArpeggio(object):
             "_arp_strings",
             "_pitch_segment", 
             "_pitch_set",
+            "_reordered_segment",
             "_reservoir",
             "_sequence", 
             )
@@ -83,35 +84,39 @@ class LegatoArpeggio(object):
     def __init__(self, pitch_segment=None, sequence=None):
         self._pitch_segment = pitch_segment or abjad.PitchSegment()
         self._sequence = sequence or tuple()
-        self._make_pitch_set()
+        self._reorder_segment()
         self._make_ascent()
         self._set_arp_strings()
 
-    def _make_pitch_set(self):
-        """Makes pitch set from segment"""
-        notes = self._pitch_segment.make_notes()
-        pitch_set = abjad.PitchSet.from_selection(notes)
-        self._pitch_set = pitch_set
-
     def _make_ascent(self):
         """makes ascent from pitch set"""
-        pitches = self._pitch_segment
+        pitches = self._reordered_segment
         pitch_ascents = []
         for i in range(len(pitches)):
             ascent = tuple(pitches[: i + 1])
+            print("ascent: ", ascent)
             pitch_ascents.append(ascent)
         self._reservoir = tuple(pitch_ascents)
 
     def _set_arp_strings(self):
         """Sets strings from pitch segments"""
         self._arp_strings = []
-        if len(self._pitch_segment) == len(self._sequence):
-            for index in self._sequence:
+        if len(self._reordered_segment) == len(self._sequence):
+            for index in range(len(self._sequence)):
                 arpeggio_stage = self._reservoir[index]
                 arp_pitch_str = ' '.join(str(x) for x in arpeggio_stage)
                 print("arp_pitch_str: ", arp_pitch_str)
                 self._arp_strings.append(arp_pitch_str)
-
+    
+    def _reorder_segment(self):
+        """Sets a reordered segment according to sequence"""
+        pitches = []
+        for i in range(len(self._sequence)):
+            seq_val = self._sequence[i]
+            pitches.append(self._pitch_segment[seq_val])
+        self._reordered_segment = abjad.PitchSegment(pitches)
+        print("Reordered pitches: ", self._reordered_segment)
+    
     @property 
     def stages(self) -> list:
         return self._arp_strings
@@ -260,11 +265,11 @@ def invert_down(segment, inversion):
 
 if __name__ == '__main__':
    segment = abjad.PitchSegment("ef g c bf")
-   sequence = (0, 1, 2, 3)
+   sequence = (1, 0, 3, 2)
    arp = LegatoArpeggio(segment, sequence)
    print("arp stages: ", arp.stages)
    segment = abjad.PitchSegment("ef'' g'' c'' bf'' d''")
-   sequence = (0, 1, 2, 4, 3)
+   sequence = (3, 1, 2, 4, 3)
    arp = LegatoArpeggio(segment, sequence)
    print("arp stages: ", arp.stages)
 
