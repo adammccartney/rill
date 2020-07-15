@@ -7,6 +7,7 @@ import rill.tools.FuzzyHarmony as FuzzyHarmony
 from rill.tools.PhraseMaker import PhraseOutflow as PhraseOutflow
 from rill.tools.PhraseMaker import PhraseStream as PhraseStream
 
+from abjad import NamedPitch as NamedPitch
 from typing import List
 # call to segment maker contains:
     # Set instruments
@@ -66,15 +67,14 @@ rhythm_definition.markup = [
         ]
 
 
-
 #-----------------/
 #   MonoSynth    /
 #_______________/
 
-#monosynth_rest_stream = PhraseStream(rests)
-#monosynth_rest_stream.durate_stream(breve)
-#segment_maker.store_streams("Monosynth", [monosynth_rest_stream])
-#
+rhythm_definition = segment_maker.define_rhythm()
+rhythm_definition.instrument_name = 'Monosynth'
+
+
 #-------------------PolySynth----------------#
 
 
@@ -96,41 +96,25 @@ gm7_fz_hrmns = rill.transpose(cm7_fz_hrmns, empty_list, 19)
 #____________/
 
 
-rh_durations = [
-        abjad.Duration(2, 1), 
-        abjad.Duration(2, 1), 
-        abjad.Duration(2, 1), 
-        abjad.Duration(4, 1),
-        ]
 
-gm7_diads = rill.make_diads(gm7_fz_hrmns, interval_doubling=None)
+rhythm_definition = segment_maker.define_rhythm()
+rhythm_definition.instrument_name = 'LH_I'
 
-# first_rh_stream
-#rh_stream = PhraseStream(gm7_diads)
-#rh_stream.durate_stream(rh_durations)
-#
-# second rh_stream
-#segment_maker.store_streams("RH_I", [rh_stream])
+gm7_diads = rill.make_diads(gm7_fz_hrmns, interval_doubling='d3')
 
 #--------------/
 # LH_I  /
 #____________/
-
-lh_durations = [
-        abjad.Duration(4, 1), 
-        #abjad.Duration(3, 2), 
-        #abjad.Duration(3, 2), 
-        #abjad.Duration(3, 1),
-        #abjad.Duration(1, 1),
+rhythm_definition.notes = [
+        ("ef", abjad.Duration(1, 2), rill.tremolo(32), rill.tie()),
+        ("ef g", abjad.Duration(1, 2), rill.tie()),
+        ("ef g", abjad.Duration(1, 4), rill.tie()),
+        ("ef g c'", abjad.Duration(3, 4), rill.tie()),
+        ("ef g c' bf", abjad.Duration(1), rill.tie()),
+        ("ef g c' bf", abjad.Duration(1, 2)), 
+        ("r2"),
         ]
 
-
 cm7_diads = rill.make_diads(cm7_fz_hrmns, interval_doubling='d5')
-
-#lh_stream = PhraseStream(cm7_diads)
-#print("lh_stream: " , lh_stream.phrases)
-#lh_stream.durate_stream(lh_durations)
-#
-#segment_maker.store_streams("LH_I", [lh_stream]) 
 
 lilypond_file = segment_maker.run()

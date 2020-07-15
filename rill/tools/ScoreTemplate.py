@@ -89,7 +89,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
        
         # RH PolySynth Staff 
         polysynth_music_rh_staff = abjad.Staff(
-                [music_voice],
+                [markup_voice, music_voice, dynamics_voice],
                 simultaneous=True,
                 name="RH_Polysynth",
                 tag=tag,
@@ -109,7 +109,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
        
         # LH PolySynth Staff
         polysynth_music_lh_staff = abjad.Staff(
-                [music_voice],
+                [markup_voice, music_voice, dynamics_voice],
                 simultaneous=True,
                 name="LH_Polysynth",
                 tag=tag,

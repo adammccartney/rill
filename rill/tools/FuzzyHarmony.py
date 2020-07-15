@@ -44,7 +44,7 @@ class FuzzyHarmony(object):
             self._pitch_list.append(pitch.name)
 
     @property
-    def pitches(self):
+    def pitches(self) -> tuple:
         """Gets pitches"""
         return self._pitches
 
@@ -66,6 +66,56 @@ class FuzzyHarmony(object):
     def shortname(self):
         """gets shortname"""
         return self._shortname
+
+class LegatoArpeggio(object):
+    """
+    Used to create string that is used for     
+    """
+
+    __slots__ = (
+            "_arp_strings",
+            "_pitch_segment", 
+            "_pitch_set",
+            "_reservoir",
+            "_sequence", 
+            )
+
+    def __init__(self, pitch_segment=None, sequence=None):
+        self._pitch_segment = pitch_segment or abjad.PitchSegment()
+        self._sequence = sequence or tuple()
+        self._make_pitch_set()
+        self._make_ascent()
+        self._set_arp_strings()
+
+    def _make_pitch_set(self):
+        """Makes pitch set from segment"""
+        notes = self._pitch_segment.make_notes()
+        pitch_set = abjad.PitchSet.from_selection(notes)
+        self._pitch_set = pitch_set
+
+    def _make_ascent(self):
+        """makes ascent from pitch set"""
+        pitches = self._pitch_segment
+        pitch_ascents = []
+        for i in range(len(pitches)):
+            ascent = tuple(pitches[: i + 1])
+            pitch_ascents.append(ascent)
+        self._reservoir = tuple(pitch_ascents)
+
+    def _set_arp_strings(self):
+        """Sets strings from pitch segments"""
+        self._arp_strings = []
+        if len(self._pitch_segment) == len(self._sequence):
+            for index in self._sequence:
+                arpeggio_stage = self._reservoir[index]
+                arp_pitch_str = ' '.join(str(x) for x in arpeggio_stage)
+                print("arp_pitch_str: ", arp_pitch_str)
+                self._arp_strings.append(arp_pitch_str)
+
+    @property 
+    def stages(self) -> list:
+        return self._arp_strings
+
 
 class Progression(object):
     """
@@ -207,5 +257,16 @@ def invert_down(segment, inversion):
             new_pitches.append(segment[i])
         new_segment = abjad.PitchSegment(new_pitches) # make new segment
     return new_segment
+
+if __name__ == '__main__':
+   segment = abjad.PitchSegment("ef g c bf")
+   sequence = (0, 1, 2, 3)
+   arp = LegatoArpeggio(segment, sequence)
+   print("arp stages: ", arp.stages)
+   segment = abjad.PitchSegment("ef'' g'' c'' bf'' d''")
+   sequence = (0, 1, 2, 4, 3)
+   arp = LegatoArpeggio(segment, sequence)
+   print("arp stages: ", arp.stages)
+
 
 

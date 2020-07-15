@@ -5,7 +5,7 @@ def tremolo(speed):
     Makes a tremolo mark on single leaf.
     """
     if isinstance(speed, int):
-        while speed == 4 or speed == 8 or speed == 16 or speed == 32 or speed == 64:
+        while (speed == 8) or (speed == 16) or (speed == 32) or (speed == 64):
             return abjad.LilyPondLiteral(f":{speed}", "after")
     else:
         raise ValueError("int(4 ||  8 || 16 || 32 || 64) expected")

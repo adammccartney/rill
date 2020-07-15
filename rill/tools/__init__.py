@@ -1,13 +1,4 @@
-from .FuzzyHarmony import (
-        FuzzyHarmony,
-        Progression,
-        replace_and_make_new_progression,
-        get_global_minima,
-        invert_up,
-        get_global_maxima,
-        invert_down,
-        )
-
+from .FuzzyHarmony import *        
 from .material_methods import (
         get_pitch_classes,
         make_diads, 
@@ -25,5 +16,6 @@ from .PhraseMaker import (
 from .ScoreTemplate import ScoreTemplate
 from .SegmentMaker import SegmentMaker
 from .set_build_path import build_path
+from .tie import tie
 from .tremolo import tremolo
 
