@@ -15,7 +15,7 @@ from .material_methods import (
         transpose,
         )
 
-from MarkupLibrary import *
+from .MarkupLibrary import MarkupLibrary 
 
 from .PhraseMaker import (
         PhraseMaker,

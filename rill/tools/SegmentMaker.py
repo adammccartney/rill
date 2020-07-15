@@ -6,7 +6,7 @@ import copy
 import rill
 import mccartney 
 
-from rill.tools.PhraseMaker import PhraseOutflow as PhraseOutflow
+from abjadext import rmakers
 
 class RhythmDefinition(object):
     """
@@ -116,7 +116,7 @@ class RhythmDefinition(object):
         music_durations = [abjad.inspect(_).duration() for _ in leaves]
         maker = rmakers.multiplied_duration(abjad.Skip)
         selections = maker(music_durations)
-        skips = abjad.select(selections).skips()
+        skips = abjad.select(selections).components(abjad.Skip)
         markup_voice = self._score[f"{self.instrument_name}_Markup_Voice"]
         markup_voice.extend(skips)
         expressions = self.markup
@@ -235,7 +235,7 @@ class SegmentMaker(object):
             time_signatures=None,
         ):
             self._lilypond_file = None
-            self._phrase_outflows = []
+            self._rhythm_definitions = []
             self._score = _score
             self.build_path = build_path
             self.current_directory = current_directory
@@ -298,17 +298,9 @@ class SegmentMaker(object):
                 lilypond_file.items.remove(item)
         self._lilypond_file = lilypond_file
 
-
-    def _call_phrase_outflows(self):
-        """
-        Phrase streams flow into score by instrument_name
-        """
-        for phrase_outflow in self._phrase_outflows:
-            phrase_outflow(self._score)
-    
     def _call_rhythm_definitions(self):
         for rhythm_definition in self._rhythm_definitions:
-            rhythm_definitions(self._score)
+            rhythm_definition(self._score)
 
     def _configure_lilypond_file(self):
         lilypond_file = self._lilypond_file
@@ -327,44 +319,30 @@ class SegmentMaker(object):
         leaf = abjad.inspect(bass_voice).leaf(0)
         abjad.attach(abjad.Clef("bass"), leaf)
 
-     ### PUBLIC METHODS ###
+    ### PUBLIC METHODS ###
 
-     def define_rhythm(self):
-         """ 
-         Makes rhythm definition
-         Returns rhythm definition
-         """
-         rhythm_definition = RhythmDefinition()
-         self._rhythm_definitions.append(rhythm_definitions)
-         return rhythm_definition
-
-     def store_streams(self, instrument_name, streams):
+    def define_rhythm(self):
+        """ 
+        Makes rhythm definition
+        Returns rhythm definition
         """
-        Calls a PhraseOutflow
-        Streams phrases to a voice in score
-        """
-        phrase_outflow = PhraseOutflow()
-        phrase_outflow.instrument_name = instrument_name
-        ### Passing a bound object into phrase_outflow
-        phrase_outflow.streams = streams
-        ### 
-        self._phrase_outflows.append(phrase_outflow)
+        rhythm_definition = RhythmDefinition()
+        self._rhythm_definitions.append(rhythm_definition)
+        return rhythm_definition
 
-
-       def run(self):
+    def run(self):
         """
         Runs segment maker
-        
+
         Returns Lilypond file
         """
         self._make_lilypond_file()
         self._configure_lilypond_file()
-        #self._call_phrase_outflows()
         self._call_rhythm_definitions()
-        self._configure_score()    
+        #self._configure_score()    
         self._render_illustration()
         self._build_segment()
         return self._lilypond_file
 
 
-    
+

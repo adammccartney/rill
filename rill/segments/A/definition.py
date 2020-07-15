@@ -43,23 +43,38 @@ segment_maker = rill.SegmentMaker(
 #   Violin    /
 #____________/
 
+rhythm_definition = segment_maker.define_rhythm()
+rhythm_definition.instrument_name = 'Violin'
 
-rests = [None] * 10
-breve = abjad.Duration(2, 1)
+rhythm_definition.notes = [
+        ("c'", abjad.Duration(1, 1), rill.tremolo(32)),
+        ("d'", abjad.Duration(2, 1)),
+        ("e'", abjad.Duration(1, 4)),
+        ("f'", abjad.Duration(3, 4)),
+        ]
 
-violin_rest_stream = PhraseStream(rests)
-violin_rest_stream.durate_stream(breve)
+rhythm_definition.dynamics = [
+        (0, abjad.Dynamic('ppp'), 2.5),
+        (1, abjad.Dynamic('f')),
+        (3, abjad.Dynamic('mf')),
+       ]
 
-segment_maker.store_streams("Violin", [violin_rest_stream])
+rhythm_definition.markup = [
+        (0, rill.markup.tasto(), 1.5),
+        (1, rill.markup.pont()),
+        (2, rill.markup.flaut_pont()),
+        ]
+
+
 
 #-----------------/
 #   MonoSynth    /
 #_______________/
 
-monosynth_rest_stream = PhraseStream(rests)
-monosynth_rest_stream.durate_stream(breve)
-segment_maker.store_streams("Monosynth", [monosynth_rest_stream])
-
+#monosynth_rest_stream = PhraseStream(rests)
+#monosynth_rest_stream.durate_stream(breve)
+#segment_maker.store_streams("Monosynth", [monosynth_rest_stream])
+#
 #-------------------PolySynth----------------#
 
 
@@ -91,11 +106,11 @@ rh_durations = [
 gm7_diads = rill.make_diads(gm7_fz_hrmns, interval_doubling=None)
 
 # first_rh_stream
-rh_stream = PhraseStream(gm7_diads)
-rh_stream.durate_stream(rh_durations)
-
+#rh_stream = PhraseStream(gm7_diads)
+#rh_stream.durate_stream(rh_durations)
+#
 # second rh_stream
-segment_maker.store_streams("RH_I", [rh_stream])
+#segment_maker.store_streams("RH_I", [rh_stream])
 
 #--------------/
 # LH_I  /
@@ -112,10 +127,10 @@ lh_durations = [
 
 cm7_diads = rill.make_diads(cm7_fz_hrmns, interval_doubling='d5')
 
-lh_stream = PhraseStream(cm7_diads)
-print("lh_stream: " , lh_stream.phrases)
-lh_stream.durate_stream(lh_durations)
-
-segment_maker.store_streams("LH_I", [lh_stream.container]) 
+#lh_stream = PhraseStream(cm7_diads)
+#print("lh_stream: " , lh_stream.phrases)
+#lh_stream.durate_stream(lh_durations)
+#
+#segment_maker.store_streams("LH_I", [lh_stream]) 
 
 lilypond_file = segment_maker.run()
