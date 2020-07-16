@@ -24,5 +24,6 @@ def generate_pitches(harmonies):
 
 generate_pitches(cm_harmonies)
 
-
 print("item access: ", cm7_6.pitches[1])
+
+

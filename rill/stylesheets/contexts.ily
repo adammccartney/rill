@@ -1,5 +1,5 @@
 % rill (2020)
-\include "/home/adam/mccartney/lilypond/mccartney.ily"
+\include "/home/adam/mccartney/mccartney/lilypond/mccartney.ily"
 
 
 \layout {

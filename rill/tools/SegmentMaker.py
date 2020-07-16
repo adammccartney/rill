@@ -207,7 +207,7 @@ class RhythmDefinition(object):
                 abjad.attach(copied_indicator, component)
         return component
 
-class SegmentMaker(object):
+class SegmentMaker(abjad.SegmentMaker):
     """Segment Maker definition for rill
     makes a persistent section of the score.
     """
@@ -218,6 +218,7 @@ class SegmentMaker(object):
             "_rhythm_definitions",
             "build_path",
             "current_directory",
+            "markup_leaves",
             "segment_name",
             "tempo",
             "time_signatures",
@@ -230,15 +231,18 @@ class SegmentMaker(object):
             _phrase_outflows=None,
             build_path=None,
             current_directory=None, 
+            markup_leaves=None,
             segment_name=None, 
             tempo=None,
             time_signatures=None,
         ):
+            super(SegmentMaker, self).__init__()
             self._lilypond_file = None
             self._rhythm_definitions = []
             self._score = _score
             self.build_path = build_path
             self.current_directory = current_directory
+            self.markup_leaves = markup_leaves
             self.segment_name = segment_name
             self.tempo = ((1, 4), 60)
             self.time_signatures = time_signatures 
@@ -256,56 +260,25 @@ class SegmentMaker(object):
                 )
 
     ### PRIVATE METHODS ###
+    
+    def _attach_leaf_index_markup(self):
+        if not self.markup_leaves:
+            return
+        for voice in self._music_voices:
+            logical_ties = abjad.iterate(voice).logical_ties()
+            for i, logical_tie in enumerate(logical_ties):
+                markup = abjad.Markup(i)
+                abjad.attach(markup, logical_tie.head)
 
     def _build_segment(self):
         directory = self.current_directory 
         file = open(f"{directory}/illustration.ly", 'r')
         score_content = file.readlines()
         file.close()
-        print("score content: ", score_content[13:-1])
         build_path = (self.build_path / "segments").resolve()
-        print("build_path: ", build_path)
-        print("file to build: ", f"{self.segment_name}.ly")
         file = open(f"{build_path}/{self.segment_name}.ly", 'w')
         file.writelines(score_content[13:-1])
         file.close()
-
-    def _render_illustration(self):
-        score_file = self._lilypond_file
-        directory = self.current_directory
-        print("directory: ", directory)
-        pdf_path = f"{directory}/illustration.pdf"
-        print("pdf_path: ", pdf_path)
-        #ly_path = f"{directory}/illustration.ly"
-        path = pathlib.Path("illustration.pdf")
-        if path.exists():
-            print(f"Removing {pdf_path} ...")
-            path.unlink()
-        print(f"Persisting {pdf_path} ...")
-        result = abjad.persist(score_file).as_pdf(pdf_path, strict=79) 
-        if path.exists():
-            print(f"Opening {pdf_path} ...")
-            os.system(f"open {pdf_path}")
-
-    def _make_lilypond_file(self, midi=False):
-        path = abjad.Path('rill', 'stylesheets', 'contexts.ily')
-        lilypond_file = abjad.LilyPondFile.new(
-                music=self._score, includes=[path], use_relative_includes=True
-                )
-        delattr(lilypond_file.header_block, "tagline")
-        for item in lilypond_file.items[:]:
-            if getattr(item, "name", None) in ("layout", "paper"):
-                lilypond_file.items.remove(item)
-        self._lilypond_file = lilypond_file
-
-    def _call_rhythm_definitions(self):
-        for rhythm_definition in self._rhythm_definitions:
-            rhythm_definition(self._score)
-
-    def _configure_lilypond_file(self):
-        lilypond_file = self._lilypond_file
-        lilypond_file.header_block.title = None
-        lilypond_file.header_block.composer = None
 
     def _configure_score(self):
         voices  = self._music_voices
@@ -336,10 +309,12 @@ class SegmentMaker(object):
 
         Returns Lilypond file
         """
+        print("### STARTING RUN ###")
         self._make_lilypond_file()
         self._configure_lilypond_file()
         self._call_rhythm_definitions()
-        #self._configure_score()    
+        self._configure_score()
+        self._attach_leaf_index_markup()
         self._render_illustration()
         self._build_segment()
         return self._lilypond_file

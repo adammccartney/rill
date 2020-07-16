@@ -28,8 +28,6 @@
             <<                                                                 %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Markup_Voice"                         %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
-                    \override TextScript.staff-padding = 1.5
-                    \override TextSpanner.staff-padding = 2.25
                     s1 * 1/1
                     - \abjad-invisible-line
                     - \tweak bound-details.left.text \markup {
@@ -43,36 +41,13 @@
                         }
                     \startTextSpan
                     s1 * 2/1
-                    \stopTextSpan
-                    - \abjad-invisible-line
-                    - \tweak bound-details.left.text \markup {
-                        \concat
-                            {
-                                \upright
-                                    "sul pont."
-                                \hspace
-                                    #0.5
-                            }
-                        }
-                    \startTextSpan
                     s1 * 1/4
-                    \stopTextSpan
-                    - \abjad-invisible-line
-                    - \tweak bound-details.left.text \markup {
-                        \concat
-                            {
-                                \upright
-                                    "flaut. + pont."
-                                \hspace
-                                    #0.5
-                            }
-                        }
-                    \startTextSpan
                     s1 * 3/4
                     \stopTextSpan
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Music_Voice"                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
+                    \clef "treble"
                     c'1
                     :32
                     d'\breve
@@ -95,12 +70,27 @@
             <<                                                                 %! rill.ScoreTemplate.__call__()
                 \context Voice = "Monosynth_Markup_Voice"                      %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    \stopTextSpan
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Monosynth_Music_Voice"                       %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
+                    \clef "treble"
+                    r1
+                    r1
+                    r1
+                    r1
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Monosynth_Dynamics_Voice"                    %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    \!
                 }                                                              %! rill.ScoreTemplate.__call__()
             >>                                                                 %! rill.ScoreTemplate.__call__()
             \context MusicContext = "Polysynth_Music_Context"                  %! rill.ScoreTemplate.__call__()
@@ -123,6 +113,7 @@
                         }                                                      %! rill.ScoreTemplate.__call__()
                         \context Voice = "RH_I_Music_Voice"                    %! rill.ScoreTemplate.__call__()
                         {                                                      %! rill.ScoreTemplate.__call__()
+                            \clef "treble"
                             r1
                             r2
                             bf''2
@@ -165,6 +156,7 @@
                         }                                                      %! rill.ScoreTemplate.__call__()
                         \context Voice = "LH_I_Music_Voice"                    %! rill.ScoreTemplate.__call__()
                         {                                                      %! rill.ScoreTemplate.__call__()
+                            \clef "bass"
                             g2
                             ~
                             <ef g>2

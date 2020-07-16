@@ -36,6 +36,7 @@ segment_maker = rill.SegmentMaker(
                                 _score=score_template,
                                 current_directory=this_current_directory,
                                 build_path=test_build_path,
+                                markup_leaves=False,
                                 segment_name='A',
                                 tempo=((1, 4), 50),
                                 time_signatures=([(4, 4)] * 20),
@@ -77,9 +78,7 @@ rhythm_definition.dynamics = [
        ]
 
 rhythm_definition.markup = [
-        (0, rill.markup.tasto(), 1.5),
-        (1, rill.markup.pont()),
-        (2, rill.markup.flaut_pont()),
+        (0, rill.markup.tasto()),
         ]
 
 
@@ -89,6 +88,19 @@ rhythm_definition.markup = [
 
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'Monosynth'
+
+rhythm_definition.notes = [
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ]
+
+rhythm_definition.dynamics = [
+       ]
+
+rhythm_definition.markup = [
+        ]
 
 
 #-------------------PolySynth----------------#
@@ -129,6 +141,13 @@ rhythm_definition.notes = [
         ]
 
 
+rhythm_definition.dynamics = [
+       ]
+
+rhythm_definition.markup = [
+        ]
+
+
 #--------------/
 # LH_I  /
 #____________/
@@ -153,4 +172,12 @@ rhythm_definition.notes = [
 
 cm7_diads = rill.make_diads(cm7_fz_hrmns, interval_doubling='d5')
 
+rhythm_definition.dynamics = [
+       ]
+
+rhythm_definition.markup = [
+        ]
+
+
+print("### ABOUT TO RUN ###")
 lilypond_file = segment_maker.run()
