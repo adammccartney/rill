@@ -280,6 +280,30 @@ class SegmentMaker(abjad.SegmentMaker):
         file.writelines(score_content[13:-1])
         file.close()
 
+    def _render_illustration(self):
+        score_file = self._lilypond_file
+        directory = self.current_directory
+        pdf_path = f"{directory}/illustration.pdf"
+        ly_path = f"{directory}/illustration.ly"
+        path = pathlib.Path("illustration.pdf")
+        if path.exists():
+            print(f"Removing {pdf_path} ...")
+            path.unlink()
+        print(f"Persisting {pdf_path} ...")
+        result = abjad.persist(score_file).as_pdf(pdf_path, strict=79) 
+        if path.exists():
+            print(f"Opening {pdf_path} ...")
+            os.system(f"open {pdf_path}")
+    
+    def _call_rhythm_definitions(self):
+        for rhythm_definition in self._rhythm_definitions:
+            rhythm_definition(self._score)
+
+    def _configure_lilypond_file(self):
+        lilypond_file = self._lilypond_file
+        lilypond_file.header_block.title = None
+        lilypond_file.header_block.composer = None
+
     def _configure_score(self):
         voices  = self._music_voices
         treble_voices = voices[:-1]
@@ -291,6 +315,17 @@ class SegmentMaker(abjad.SegmentMaker):
         print("Bass Voice: ", bass_voice)
         leaf = abjad.inspect(bass_voice).leaf(0)
         abjad.attach(abjad.Clef("bass"), leaf)
+
+    def _make_lilypond_file(self):
+        path = "../../stylesheets/stylesheet.ily"
+        lilypond_file = abjad.LilyPondFile.new(
+            music=self._score, includes=[path], use_relative_includes=True
+        )
+        delattr(lilypond_file.header_block, "tagline")
+        for item in lilypond_file.items[:]:
+            if getattr(item, "name", None) in ("layout", "paper"):
+                lilypond_file.items.remove(item)
+        self._lilypond_file = lilypond_file
 
     ### PUBLIC METHODS ###
 

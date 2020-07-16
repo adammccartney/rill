@@ -3,7 +3,7 @@
 
 #(ly:set-option 'relative-includes #t)
 
-\include "/home/adam/scores/rill/rill/stylesheets/contexts.ily"                %! abjad.LilyPondFile._get_formatted_includes()
+\include "../../stylesheets/stylesheet.ily"                                    %! abjad.LilyPondFile._get_formatted_includes()
 
 \header {                                                                      %! abjad.LilyPondFile._get_formatted_blocks()
     title = ##f
