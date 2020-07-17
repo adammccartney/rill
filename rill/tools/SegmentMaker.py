@@ -207,7 +207,7 @@ class RhythmDefinition(object):
                 abjad.attach(copied_indicator, component)
         return component
 
-class SegmentMaker(abjad.SegmentMaker):
+class SegmentMaker(object):
     """Segment Maker definition for rill
     makes a persistent section of the score.
     """
@@ -219,6 +219,7 @@ class SegmentMaker(abjad.SegmentMaker):
             "build_path",
             "current_directory",
             "markup_leaves",
+            "metronome_marks",
             "segment_name",
             "tempo",
             "time_signatures",
@@ -232,6 +233,7 @@ class SegmentMaker(abjad.SegmentMaker):
             build_path=None,
             current_directory=None, 
             markup_leaves=None,
+            metronome_marks=None,
             segment_name=None, 
             tempo=None,
             time_signatures=None,
@@ -243,9 +245,10 @@ class SegmentMaker(abjad.SegmentMaker):
             self.build_path = build_path
             self.current_directory = current_directory
             self.markup_leaves = markup_leaves
+            self.metronome_marks = metronome_marks or []
             self.segment_name = segment_name
             self.tempo = ((1, 4), 60)
-            self.time_signatures = time_signatures 
+            self.time_signatures = time_signatures or []
     
     ### PRIVATE PROPERTIES ###
 
@@ -316,6 +319,98 @@ class SegmentMaker(abjad.SegmentMaker):
         leaf = abjad.inspect(bass_voice).leaf(0)
         abjad.attach(abjad.Clef("bass"), leaf)
 
+    def _handle_metronome_marks(self):
+        if not self.metronome_marks:
+            return
+        context = self._score["Global_Skips"]
+        skips = abjad.select(context).components(abjad.Skip)
+        skip_count = len(skips)
+        prototype = (
+            #baca.Accelerando,
+            abjad.Fermata,
+            abjad.MetronomeMark,
+            #baca.Ritardando,
+        )
+        for i, expression in enumerate(self.metronome_marks):
+            index = expression[0]
+            if index < 0:
+                index = skip_count + index
+            skip = skips[index]
+            indicator = expression[1]
+            trend = None
+            if isinstance(indicator, list):
+                assert len(indicator) == 2, repr(indicator)
+                indicator, trend = indicator
+                trend = copy.copy(trend)
+            indicator = copy.copy(indicator)
+            assert isinstance(indicator, prototype), repr(indicator)
+            if isinstance(indicator, abjad.Fermata):
+                abjad.attach(indicator, skip)
+            elif isinstance(indicator, abjad.MetronomeMark):
+                left_text = indicator._get_markup()
+                if trend:
+                    style = "dashed-line-with-arrow"
+                else:
+                    style = "invisible-line"
+                start_text_span = abjad.StartTextSpan(
+                    left_text=left_text, style=style
+                )
+                abjad.attach(start_text_span, skip)
+                indicator._hide = True
+                abjad.attach(indicator, skip)
+                if trend:
+                    trend._hide = True
+                    abjad.attach(trend, skip)
+            else:
+                trend_prototype = (baca.Accelerando, baca.Ritardando)
+                assert isinstance(indicator, trend_prototype)
+                left_text = indicator._get_markup()
+                start_text_span = abjad.StartTextSpan(
+                    left_text=left_text, style="dashed-line-with-arrow"
+                )
+                abjad.attach(start_text_span, skip)
+                indicator._hide = True
+                abjad.attach(indicator, skip)
+            if 0 < i and not isinstance(indicator, abjad.Fermata):
+                stop_text_span = abjad.StopTextSpan()
+                abjad.attach(stop_text_span, skip)
+            if len(expression) == 3:
+                staff_padding = expression[2]
+                string = f"\override Script.staff-padding = {staff_padding}"
+                command = abjad.LilyPondLiteral(string)
+                abjad.attach(command, skip)
+                string = (
+                    f"\override TextScript.staff-padding = {staff_padding}"
+                )
+                command = abjad.LilyPondLiteral(string)
+                abjad.attach(command, skip)
+                value = staff_padding + 0.75
+                string = f"\override TextSpanner.staff-padding = {value}"
+                command = abjad.LilyPondLiteral(string)
+                abjad.attach(command, skip)
+        stop_text_span = abjad.StopTextSpan()
+        abjad.attach(stop_text_span, skips[-1])
+
+
+
+    def _handle_time_signatures(self):
+        if not self.metronome_marks:
+            return
+        context = self._score["Global_Skips"]
+        skips = []
+        for item in self.time_signatures:
+            skip = abjad.Skip(1, multiplier=item)
+            time_signature = abjad.TimeSignature(item)
+            abjad.attach(time_signature, skip, context="Score")
+            skips.append(skip)
+        context.extend(skips)
+        #context = self._score["Global_Rests"]
+        #rests = []
+        #for item in self.time_signatures:
+        #    rest = abjad.MultimeasureRest(1, multiplier=item)
+        #    rests.append(rest)
+        #context.extend(rests)
+
     def _make_lilypond_file(self):
         path = "../../stylesheets/stylesheet.ily"
         lilypond_file = abjad.LilyPondFile.new(
@@ -347,6 +442,8 @@ class SegmentMaker(abjad.SegmentMaker):
         print("### STARTING RUN ###")
         self._make_lilypond_file()
         self._configure_lilypond_file()
+        #self._handle_time_signatures()
+        #self._handle_metronome_marks()
         self._call_rhythm_definitions()
         self._configure_score()
         self._attach_leaf_index_markup()

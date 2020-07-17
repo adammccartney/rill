@@ -5,33 +5,12 @@ import rill
 Defines scoretemplate, subclass of abjad.ScoreTemplate. Segments appended later. 
 """
 
-class ScoreTemplate(abjad.ScoreTemplate):
+class ScoreTemplate(object):
     """
     Makes a simple score template for trio 
     Violin, Monosynth and Polysynth
     """
     
-    ### CLASS VARIABLES ###
-
-    __documentation_section__ = None
-
-    _always_make_global_rests = True
-
-    _global_rests_in_topmost_staff = True
-
-    def __init__(self):
-        super(ScoreTemplate, self).__init__()
-        self.voice_abbreviations.update(
-            {
-                "vn": "Violin_Music_Voice", 
-                "msy" : "MonoSynth_Music_Voice",
-                "rh_v1": "RH_I_Music_Voice",
-                #"rh_v2": "RH_II_Music_Voice",
-                "lh_v1": "LH_I_Music_Voice",
-                #"lh_v2": "LH_II_Music_Voice",
-                }
-        )
-
     ### SPECIAL METHODS ###
 
     def __call__(self) -> abjad.Score:
@@ -42,7 +21,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
         tag = abjad.Tag(site)
 
         # GLOBAL CONTEXT
-        global_context = self._make_global_context()
+        #global_context = self._make_global_context()
 
         # Violin
         markup_voice = abjad.Voice(name="Violin_Markup_Voice", tag=tag)
@@ -151,7 +130,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
 
         # Score
         score = abjad.Score(
-                [global_context, music_context], name="Score", tag=tag
+                [music_context], name="Score", tag=tag
                 )
         return score
 

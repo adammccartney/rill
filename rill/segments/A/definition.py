@@ -39,12 +39,16 @@ segment_maker = rill.SegmentMaker(
                                 markup_leaves=False,
                                 segment_name='A',
                                 tempo=((1, 4), 50),
-                                time_signatures=([(4, 4)] * 20),
+                                time_signatures=([(4, 4)] * 24),
                                 )
 
-#-----------------/
-# Pitch Material /
-#_______________/
+segment_maker.metronome_marks = [
+        (0, rill.metronome_marks['50'], 5),
+        ]
+
+#-----------------/________________________
+# Pitch Material /  Constants for section /
+#_______________/------------------------/
 
 cmin7_6 = rill.tetrads['bf_ii']
 cmin7_64 = rill.invert_up(cmin7_6, 1)
@@ -56,6 +60,31 @@ cm7_64 = rill.FuzzyHarmony('bf_ii', cmin7_64)
 cm7_42 = rill.FuzzyHarmony('bf_ii', cmin7_42)   
 cm7 = rill.FuzzyHarmony('bf_ii', cmin7)
 
+""" 
+    Make harmonies and fifth offsets in all octaves
+    Note: octave names are in german:
+    gross, klein, 
+    ein-, zwei-, dreigestr = ein,- zwei-, dreigestrichen
+    """
+
+cm7_hrmns_eingestr = [cm7_6, cm7_64, cm7_42, cm7]
+
+empty_list: List[any] = []
+
+cm7_hrmns_klein = rill.transpose(cm7_hrmns_eingestr, empty_list, -12)
+gm7_hrmns_zweigestr = rill.transpose(cm7_hrmns_eingestr, empty_list, 19)
+
+
+# ----- Diads
+
+#cm7_diads = rill.make_diads(cm7_hrmns_gross, interval_doubling='d5')
+#gm7_diads_zweigestr= rill.make_diads(gm7_hrmns_zweigestr, interval_doubling='d3')
+
+
+# -- sequences of notes for arpeggios
+
+seq_one = (1, 0, 3, 2)
+
 
 #--------------/
 #   Violin    /
@@ -65,20 +94,45 @@ rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'Violin'
 
 rhythm_definition.notes = [
-        ("c'", abjad.Duration(1, 1), rill.tremolo(32)),
-        ("d'", abjad.Duration(2, 1)),
-        ("e'", abjad.Duration(1, 4)),
-        ("f'", abjad.Duration(3, 4)),
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        #------------Bar 5
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        #------------Bar 9
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        #------------Bar 13
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        #------------Bar 17
+        ("r1"),
+        ("r1"),
+        ("r1"),       
+        ("r1"),
+        #------------Bar 21
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ("r1"),
         ]
 
 rhythm_definition.dynamics = [
         (0, abjad.Dynamic('ppp'), 2.5),
-        (1, abjad.Dynamic('f')),
+        (0, '-|'),
         (3, abjad.Dynamic('mf')),
        ]
 
 rhythm_definition.markup = [
-        (0, rill.markup.tasto()),
+        (0, rill.markup.tasto(), 1.5),
         ]
 
 
@@ -90,6 +144,31 @@ rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'Monosynth'
 
 rhythm_definition.notes = [
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        #------------Bar 5
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        #------------Bar 9
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        #------------Bar 13
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        #------------Bar 17
+        ("r1"),
+        ("r1"),
+        ("r1"),       
+        ("r1"),
+        #------------Bar 21
         ("r1"),
         ("r1"),
         ("r1"),
@@ -108,12 +187,6 @@ rhythm_definition.markup = [
 
 ## Set up material for segment 
 
-cm7_fz_hrmns = [cm7_6, cm7_64, cm7_42, cm7]
-empty_list: List[any] = []
-gm7_fz_hrmns = rill.transpose(cm7_fz_hrmns, empty_list, 19)
-
-
-gm7_diads = rill.make_diads(gm7_fz_hrmns, interval_doubling='d3')
 # Stream material into containers
 #--------------/
 # RH_I  /
@@ -122,11 +195,11 @@ gm7_diads = rill.make_diads(gm7_fz_hrmns, interval_doubling='d3')
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'RH_I'
 
-gmin7_6 = gm7_fz_hrmns[0].segment
-
-rh_seq_one = (0, 1, 2, 3)
-rh_arp_one = LegatoArpeggio(gmin7_6, rh_seq_one)
+gmin7_6_zwgstrn = gm7_hrmns_zweigestr[0].segment
+rh_arp_one = LegatoArpeggio(gmin7_6_zwgstrn, seq_one)
 gmin7_6_stages = rh_arp_one.stages
+
+gmin7_64 = gm7_hrmns_zweigestr[1].segment
 
 rhythm_definition.notes = [
         ("r1"),
@@ -138,14 +211,35 @@ rhythm_definition.notes = [
         (gmin7_6_stages[3], abjad.Duration(2, 4), rill.tie()),
         (gmin7_6_stages[3], abjad.Duration(1)), 
         # ------------------------------------------ Bar 6
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        #------------Bar 9
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        #------------Bar 13
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        #------------Bar 17
+        ("r1"),
+        ("r1"),
+        ("r1"),       
+        ("r1"),
+        #------------Bar 21
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ("r1"),
         ]
 
 
-rhythm_definition.dynamics = [
-       ]
+rhythm_definition.dynamics = []
 
-rhythm_definition.markup = [
-        ]
+rhythm_definition.markup = []
 
 
 #--------------/
@@ -155,8 +249,8 @@ rhythm_definition.markup = [
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'LH_I'
 
-lh_seq_one = (1, 0, 3, 2)
-lh_arp_one = LegatoArpeggio(abjad.PitchSegment("ef g c' bf"), lh_seq_one)
+cmin7_6_kln = cm7_hrmns_klein[0].segment
+lh_arp_one = LegatoArpeggio(cmin7_6_kln, seq_one)
 cmin7_6_stages = lh_arp_one.stages
 
 rhythm_definition.notes = [
@@ -168,16 +262,37 @@ rhythm_definition.notes = [
         (cmin7_6_stages[3], abjad.Duration(1, 2)), 
         ("r2"),
         # ------------------------------------------ Bar 5
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        #------------Bar 9
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        #------------Bar 13
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        #------------Bar 17
+        ("r1"),
+        ("r1"),
+        ("r1"),       
+        ("r1"),
+        #------------Bar 21
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ("r1"),
         ]
 
-cm7_diads = rill.make_diads(cm7_fz_hrmns, interval_doubling='d5')
 
-rhythm_definition.dynamics = [
-       ]
+rhythm_definition.dynamics = []
 
-rhythm_definition.markup = [
-        ]
+rhythm_definition.markup = []
 
+# ---------------------------------------RUN SEGMENT
 
-print("### ABOUT TO RUN ###")
 lilypond_file = segment_maker.run()

@@ -18,4 +18,5 @@ from rill.materials.pitch.definition import (
                                     pentads,
                                     transposition_lookup, 
                                    )
+from rill.materials.metronome_marks.definition import  metronome_marks
 from rill import segments

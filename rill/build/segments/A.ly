@@ -1,20 +1,13 @@
     \context Score = "Score"                                                   %! rill.ScoreTemplate.__call__()
     <<                                                                         %! rill.ScoreTemplate.__call__()
-        \context GlobalContext = "Global_Context"                              %! abjad.ScoreTemplate._make_global_context()
-        <<                                                                     %! abjad.ScoreTemplate._make_global_context()
-            \context GlobalRests = "Global_Rests"                              %! abjad.ScoreTemplate._make_global_context()
-            {                                                                  %! abjad.ScoreTemplate._make_global_context()
-            }                                                                  %! abjad.ScoreTemplate._make_global_context()
-            \context GlobalSkips = "Global_Skips"                              %! abjad.ScoreTemplate._make_global_context()
-            {                                                                  %! abjad.ScoreTemplate._make_global_context()
-            }                                                                  %! abjad.ScoreTemplate._make_global_context()
-        >>                                                                     %! abjad.ScoreTemplate._make_global_context()
         \context MusicContext = "Music_Context"                                %! rill.ScoreTemplate.__call__()
         <<                                                                     %! rill.ScoreTemplate.__call__()
             \context Staff = "Violin"                                          %! rill.ScoreTemplate.__call__()
             <<                                                                 %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Markup_Voice"                         %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
+                    \override TextScript.staff-padding = 1.5
+                    \override TextSpanner.staff-padding = 2.25
                     s1 * 1/1
                     - \abjad-invisible-line
                     - \tweak bound-details.left.text \markup {
@@ -27,36 +20,117 @@
                             }
                         }
                     \startTextSpan
-                    s1 * 2/1
-                    s1 * 1/4
-                    s1 * 3/4
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
                     \stopTextSpan
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Music_Voice"                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     \clef "treble"
-                    c'1
-                    :32
-                    d'\breve
-                    e'4
-                    f'2.
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Dynamics_Voice"                       %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
+                    \once \override Hairpin.stencil = #constante-hairpin
                     \override DynamicLineSpanner.staff-padding = 2.5
                     s1 * 1/1
                     \ppp
-                    s1 * 2/1
-                    \f
-                    s1 * 1/4
-                    s1 * 3/4
+                    \<
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
                     \mf
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    \!
                 }                                                              %! rill.ScoreTemplate.__call__()
             >>                                                                 %! rill.ScoreTemplate.__call__()
             \context Staff = "Monosynth"                                       %! rill.ScoreTemplate.__call__()
             <<                                                                 %! rill.ScoreTemplate.__call__()
                 \context Voice = "Monosynth_Markup_Voice"                      %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
@@ -70,9 +144,49 @@
                     r1
                     r1
                     r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Monosynth_Dynamics_Voice"                    %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
@@ -96,6 +210,25 @@
                             s1 * 1/2
                             s1 * 1/2
                             s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
                             \stopTextSpan
                         }                                                      %! rill.ScoreTemplate.__call__()
                         \context Voice = "RH_I_Music_Voice"                    %! rill.ScoreTemplate.__call__()
@@ -103,17 +236,36 @@
                             \clef "treble"
                             r1
                             r2
-                            bf''2
+                            g2
                             ~
-                            <bf'' d'''>2.
+                            <ef g>2.
                             ~
-                            <bf'' d''' f'''>4
+                            <ef g c'>4
                             ~
-                            <bf'' d''' f'''>2
+                            <ef g c'>2
                             ~
-                            <bf'' d''' f''' g'''>2
+                            <ef g bf c'>2
                             ~
-                            <bf'' d''' f''' g'''>1
+                            <ef g bf c'>1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
                         }                                                      %! rill.ScoreTemplate.__call__()
                         \context Voice = "RH_I_Dynamics_Voice"                 %! rill.ScoreTemplate.__call__()
                         {                                                      %! rill.ScoreTemplate.__call__()
@@ -124,6 +276,25 @@
                             s1 * 1/4
                             s1 * 1/2
                             s1 * 1/2
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
                             s1 * 1/1
                             \!
                         }                                                      %! rill.ScoreTemplate.__call__()
@@ -139,6 +310,26 @@
                             s1 * 1/1
                             s1 * 1/2
                             s1 * 1/2
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
                             \stopTextSpan
                         }                                                      %! rill.ScoreTemplate.__call__()
                         \context Voice = "LH_I_Music_Voice"                    %! rill.ScoreTemplate.__call__()
@@ -150,12 +341,32 @@
                             ~
                             <ef g>4
                             ~
-                            <ef g bf>2.
+                            <ef g c'>2.
                             ~
                             <ef g bf c'>1
                             ~
                             <ef g bf c'>2
                             r2
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
                         }                                                      %! rill.ScoreTemplate.__call__()
                         \context Voice = "LH_I_Dynamics_Voice"                 %! rill.ScoreTemplate.__call__()
                         {                                                      %! rill.ScoreTemplate.__call__()
@@ -166,6 +377,26 @@
                             s1 * 1/1
                             s1 * 1/2
                             s1 * 1/2
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
+                            s1 * 1/1
                             \!
                         }                                                      %! rill.ScoreTemplate.__call__()
                     >>                                                         %! rill.ScoreTemplate.__call__()
