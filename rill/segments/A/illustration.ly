@@ -33,14 +33,18 @@
                             }
                         }
                     \startTextSpan
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/1
+                    s1 * 1/2
+                    s1 * 1/2
                     s1 * 1/1
                     s1 * 1/1
+                    s1 * 1/2
+                    s1 * 1/2
                     s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
+                    s1 * 1/4
+                    s1 * 3/4
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
@@ -62,15 +66,28 @@
                 {                                                              %! rill.ScoreTemplate.__call__()
                     \clef "treble"
                     r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
+                    r2
+                    d''2
+                    ~
+                    d''1
+                    ~
+                    d''2
+                    bf'2
+                    ~
+                    bf'1
+                    ~
+                    bf'1
+                    ~
+                    bf'2
+                    ~
+                    f''2
+                    ~
+                    f''1
+                    ~
+                    f''4
+                    g''2.
+                    ~
+                    g''1
                     r1
                     r1
                     r1
@@ -88,21 +105,27 @@
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Dynamics_Voice"                       %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
-                    \once \override Hairpin.stencil = #constante-hairpin
+                    s1 * 1/1
+                    s1 * 1/2
                     \override DynamicLineSpanner.staff-padding = 2.5
+                    s1 * 1/2
+                    \ppp
+                    s1 * 1/1
+                    \<
+                    s1 * 1/2
+                    \override DynamicLineSpanner.staff-padding = 2.5
+                    s1 * 1/2
+                    \p
+                    s1 * 1/1
+                    \>
+                    s1 * 1/1
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/1
+                    s1 * 1/4
+                    s1 * 3/4
                     s1 * 1/1
                     \ppp
-                    \<
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    \mf
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
@@ -224,9 +247,11 @@
                             s1 * 1/2
                             s1 * 1/1
                             s1 * 1/1
+                            s1 * 1/2
+                            s1 * 1/2
                             s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
+                            s1 * 1/4
+                            s1 * 3/4
                             s1 * 1/1
                             s1 * 1/1
                             s1 * 1/1
@@ -249,22 +274,31 @@
                             \clef "treble"
                             r1
                             r2
-                            g2
+                            d'''2
                             ~
-                            <ef g>2.
+                            <bf'' d'''>2.
                             ~
-                            <ef g c'>4
+                            <bf'' d''' g'''>4
                             ~
-                            <ef g c'>2
+                            <bf'' d''' g'''>2
                             ~
-                            <ef g bf c'>2
+                            <bf'' d''' f''' g'''>2
                             ~
-                            <ef g bf c'>1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
+                            <bf'' d''' f''' g'''>1
+                            ~
+                            <d''' g''' bf'''>1
+                            ~
+                            <d''' g''' bf'''>2
+                            ~
+                            <d''' f''' g''' bf'''>2
+                            ~
+                            <d''' f''' g''' bf'''>1
+                            ~
+                            <d''' f''' g''' bf'''>4
+                            ~
+                            <g''' bf'''>2.
+                            ~
+                            bf'''1
                             r1
                             r1
                             r1
@@ -282,7 +316,9 @@
                         }                                                      %! rill.ScoreTemplate.__call__()
                         \context Voice = "RH_I_Dynamics_Voice"                 %! rill.ScoreTemplate.__call__()
                         {                                                      %! rill.ScoreTemplate.__call__()
+                            \override DynamicLineSpanner.staff-padding = 2.5
                             s1 * 1/1
+                            \ppp
                             s1 * 1/2
                             s1 * 1/2
                             s1 * 3/4
@@ -291,9 +327,11 @@
                             s1 * 1/2
                             s1 * 1/1
                             s1 * 1/1
+                            s1 * 1/2
+                            s1 * 1/2
                             s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
+                            s1 * 1/4
+                            s1 * 3/4
                             s1 * 1/1
                             s1 * 1/1
                             s1 * 1/1
@@ -321,8 +359,8 @@
                             s1 * 1/4
                             s1 * 3/4
                             s1 * 1/1
-                            s1 * 1/2
-                            s1 * 1/2
+                            s1 * 3/4
+                            s1 * 1/4
                             s1 * 1/1
                             s1 * 1/1
                             s1 * 1/1
@@ -358,8 +396,8 @@
                             ~
                             <ef g bf c'>1
                             ~
-                            <ef g bf c'>2
-                            r2
+                            <ef g bf c'>2.
+                            r4
                             r1
                             r1
                             r1
@@ -388,8 +426,8 @@
                             s1 * 1/4
                             s1 * 3/4
                             s1 * 1/1
-                            s1 * 1/2
-                            s1 * 1/2
+                            s1 * 3/4
+                            s1 * 1/4
                             s1 * 1/1
                             s1 * 1/1
                             s1 * 1/1

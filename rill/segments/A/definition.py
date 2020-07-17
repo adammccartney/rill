@@ -67,12 +67,11 @@ cm7 = rill.FuzzyHarmony('bf_ii', cmin7)
     ein-, zwei-, dreigestr = ein,- zwei-, dreigestrichen
     """
 
-cm7_hrmns_eingestr = [cm7_6, cm7_64, cm7_42, cm7]
+cm7_hrmns_ein_zw = [cm7_6, cm7_64, cm7_42, cm7]
 
-empty_list: List[any] = []
-
-cm7_hrmns_klein = rill.transpose(cm7_hrmns_eingestr, empty_list, -12)
-gm7_hrmns_zweigestr = rill.transpose(cm7_hrmns_eingestr, empty_list, 19)
+cm7_hrmns_kln_eing = rill.transpose(cm7_hrmns_ein_zw, -12)
+gm7_hrmns_ein_zw = rill.transpose(cm7_hrmns_ein_zw, 7)
+gm7_hrmns_zw_dr = rill.transpose(cm7_hrmns_ein_zw, 19)
 
 
 # ----- Diads
@@ -93,19 +92,28 @@ seq_one = (1, 0, 3, 2)
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'Violin'
 
+
+gmin7_6_eingstrn = gm7_hrmns_ein_zw[0].segment
+rh_arp_one = LegatoArpeggio(gmin7_6_eingstrn, seq_one)
+gmin7_6_pitches = rh_arp_one.pitches
+
 rhythm_definition.notes = [
         ("r1"),
-        ("r1"),
-        ("r1"),
-        ("r1"),
+        ("r2"),
+        (gmin7_6_pitches[0], abjad.Duration(1, 2), rill.tie()),
+        (gmin7_6_pitches[0], abjad.Duration(1), rill.tie()),
+        (gmin7_6_pitches[0], abjad.Duration(1, 2)),
+        (gmin7_6_pitches[1], abjad.Duration(1, 2), rill.tie()),
         #------------Bar 5
-        ("r1"),
-        ("r1"),
-        ("r1"),
-        ("r1"),
+        (gmin7_6_pitches[1], abjad.Duration(1), rill.tie()),
+        (gmin7_6_pitches[1], abjad.Duration(1), rill.tie()),
+        (gmin7_6_pitches[1], abjad.Duration(1, 2), rill.tie()),
+        (gmin7_6_pitches[3], abjad.Duration(1, 2), rill.tie()),
+        (gmin7_6_pitches[3], abjad.Duration(1), rill.tie()),
         #------------Bar 9
-        ("r1"),
-        ("r1"),
+        (gmin7_6_pitches[3], abjad.Duration(1, 4)),
+        (gmin7_6_pitches[2], abjad.Duration(3, 4), rill.tie()),
+        (gmin7_6_pitches[2], abjad.Duration(1)),
         ("r1"),
         ("r1"),
         #------------Bar 13
@@ -126,9 +134,11 @@ rhythm_definition.notes = [
         ]
 
 rhythm_definition.dynamics = [
-        (0, abjad.Dynamic('ppp'), 2.5),
-        (0, '-|'),
-        (3, abjad.Dynamic('mf')),
+        (2, abjad.Dynamic('ppp'), 2.5),
+        (3, '<'),
+        (5, abjad.Dynamic('p'), 2.5),
+        (6, '>'),
+        (13, abjad.Dynamic('ppp')),
        ]
 
 rhythm_definition.markup = [
@@ -195,11 +205,14 @@ rhythm_definition.markup = [
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'RH_I'
 
-gmin7_6_zwgstrn = gm7_hrmns_zweigestr[0].segment
+gmin7_6_zwgstrn = gm7_hrmns_zw_dr[0].segment
 rh_arp_one = LegatoArpeggio(gmin7_6_zwgstrn, seq_one)
 gmin7_6_stages = rh_arp_one.stages
 
-gmin7_64 = gm7_hrmns_zweigestr[1].segment
+seq_two = (3, 2, 0, 1)
+gmin7_64 = gm7_hrmns_zw_dr[1].segment
+rh_arp_two = LegatoArpeggio(gmin7_64, seq_two)
+gmin7_64_stages = rh_arp_two.stages
 
 rhythm_definition.notes = [
         ("r1"),
@@ -209,15 +222,17 @@ rhythm_definition.notes = [
         (gmin7_6_stages[2], abjad.Duration(1, 4), rill.tie()),
         (gmin7_6_stages[2], abjad.Duration(2, 4), rill.tie()),
         (gmin7_6_stages[3], abjad.Duration(2, 4), rill.tie()),
-        (gmin7_6_stages[3], abjad.Duration(1)), 
+        (gmin7_6_stages[3], abjad.Duration(1), rill.tie()), 
         # ------------------------------------------ Bar 6
-        ("r1"),
-        ("r1"),
-        ("r1"),
+        (gmin7_64_stages[2], abjad.Duration(1), rill.tie()),
+        (gmin7_64_stages[2], abjad.Duration(1,2), rill.tie()),
+        (gmin7_64_stages[3], abjad.Duration(1,2), rill.tie()),
+        (gmin7_64_stages[3], abjad.Duration(1), rill.tie()),
         #------------Bar 9
-        ("r1"),
-        ("r1"),
-        ("r1"),
+        (gmin7_64_stages[3], abjad.Duration(1, 4), rill.tie()),
+        (gmin7_64_stages[1], abjad.Duration(3, 4), rill.tie()),
+        (gmin7_64_stages[0], abjad.Duration(1)),
+        ("r1"),  
         ("r1"),
         #------------Bar 13
         ("r1"),
@@ -237,7 +252,9 @@ rhythm_definition.notes = [
         ]
 
 
-rhythm_definition.dynamics = []
+rhythm_definition.dynamics = [ 
+                    (0, abjad.Dynamic('ppp'), 2.5)
+                       ]
 
 rhythm_definition.markup = []
 
@@ -249,7 +266,7 @@ rhythm_definition.markup = []
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'LH_I'
 
-cmin7_6_kln = cm7_hrmns_klein[0].segment
+cmin7_6_kln = cm7_hrmns_kln_eing[0].segment
 lh_arp_one = LegatoArpeggio(cmin7_6_kln, seq_one)
 cmin7_6_stages = lh_arp_one.stages
 
@@ -259,8 +276,8 @@ rhythm_definition.notes = [
         (cmin7_6_stages[1], abjad.Duration(1, 4), rill.tie()),
         (cmin7_6_stages[2], abjad.Duration(3, 4), rill.tie()),
         (cmin7_6_stages[3], abjad.Duration(1), rill.tie()),
-        (cmin7_6_stages[3], abjad.Duration(1, 2)), 
-        ("r2"),
+        (cmin7_6_stages[3], abjad.Duration(3, 4)), 
+        ("r4"),
         # ------------------------------------------ Bar 5
         ("r1"),
         ("r1"),

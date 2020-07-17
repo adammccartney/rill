@@ -100,9 +100,9 @@ def wrap_transposition(val):
 
 def deep_copy_harmonies_list(harmonies):
     copied_harmonies = []
-    for harmony in harmonies:
-        new_harmony = copy.deepcopy(harmony)
-        harmonies.append(new_harmony)
+    for i in range(len(harmonies)):
+        new_harmony = copy.deepcopy(harmonies[i])
+        copied_harmonies.append(new_harmony)
     return copied_harmonies
 
 
@@ -115,8 +115,7 @@ def transpose(fuzzy_harmonies, t_interval=0):
     harmony_shortname_lookup = transposition_lookup[wrapped_t_interval]
     
     new_harmonies = deep_copy_harmonies_list(fuzzy_harmonies)
-    print("$$$$$$$$$$$$$COPIED HARMONIES: ", harmonies)
-
+    
     transposed_harmonies = []
     for harmony in new_harmonies:
         transposed_name = harmony_shortname_lookup[harmony.shortname]
@@ -293,12 +292,37 @@ if __name__ == '__main__':
 
     # Test copy function in transpose() on FuzzyHarmony object
 
-    harmony = rill.FuzzyHarmony('c_maj', abjad.PitchSegment("c' e' g'"))
-    second_harmony = rill.FuzzyHarmony('d_min', abjad.PitchSegment("d' f' a'"))
+    harmony = rill.FuzzyHarmony('bf_ii', abjad.PitchSegment("ef' g' bf' c''"))
+    second_harmony = rill.FuzzyHarmony('g_v', abjad.PitchSegment("g' b' d' f'"))
     copied_harmony = copy.deepcopy(harmony)
+    copied_second = copy.deepcopy(second_harmony)
     harmonies = [harmony, second_harmony]
-    empty_list = []
-    transposed_up_fifth = transpose(harmonies, empty_list, 7)
+    copied_harmonies = [copied_harmony, copied_second]
+    if harmony == copied_harmony:
+        print(True)
+    else:
+        print(False)
+    
+    if harmony is copied_harmony:
+        print(True)
+    else:
+        print(False)
+    
+    if harmonies == copied_harmonies:
+        print(True)
+    else:
+        print(False)
+    
+    if harmonies is copied_harmonies:
+        print(True)
+    else:
+        print(False)
+
+    second_copy = deep_copy_harmonies_list(harmonies)
+    for i in range(len(second_copy)):
+        print(f"Copied harmony {second_copy[i]}")
+    
+    transposed_up_fifth = transpose(harmonies, 7)
     for harmony in range(len(transposed_up_fifth)):
         print("transposed harmony: ", transposed_up_fifth[harmony])
 
