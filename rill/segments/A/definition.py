@@ -103,8 +103,10 @@ rhythm_definition.instrument_name = 'Violin'
 
 
 gmin7_6_eingstrn = gm7_hrmns_ein_zw[0].segment
-rh_arp_one = LegatoArpeggio(gmin7_6_eingstrn, seq_one)
-gmin7_6_pitches = rh_arp_one.pitches
+vln_arp_one = LegatoArpeggio(gmin7_6_eingstrn, seq_one)
+gmin7_6_pitches = vln_arp_one.pitches
+
+
 
 rhythm_definition.notes = [
         ("r1"),

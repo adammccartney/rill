@@ -16,7 +16,9 @@ from rill.materials.pitch.definition import (
                                     bass_pitches, 
                                     tetrads,
                                     pentads,
-                                    transposition_lookup, 
+                                    transposition_lookup,
+                                    scale_lookup,
+                                    melody_lookup,
                                    )
 from rill.materials.metronome_marks.definition import  metronome_marks
 from rill import segments

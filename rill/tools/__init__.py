@@ -7,7 +7,7 @@ from .material_methods import (
         )
 
 from .MarkupLibrary import MarkupLibrary 
-
+from .notehead_overrides import *
 from .PhraseMaker import (
         PhraseMaker,
         PhraseStream,
