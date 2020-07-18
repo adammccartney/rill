@@ -1,4 +1,5 @@
 from .FuzzyHarmony import *        
+from .line_break import line_break
 from .material_methods import (
         get_pitch_classes,
         make_diads, 

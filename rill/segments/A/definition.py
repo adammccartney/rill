@@ -1,3 +1,5 @@
+import copy
+
 import pathlib
 
 import abjad
@@ -106,7 +108,30 @@ gmin7_6_eingstrn = gm7_hrmns_ein_zw[0].segment
 vln_arp_one = LegatoArpeggio(gmin7_6_eingstrn, seq_one)
 gmin7_6_pitches = vln_arp_one.pitches
 
+m_seq_a = (0, 1, 2, 3)
+m_frag_a = rill.melody_lookup['bfm'][1]
+m_frag_b = rill.melody_lookup['bfm'][2]
 
+def transpose_fragment(fragment, t_interval):
+    """Takes a melodic fragment i.e. pitch segment
+       makes a copy and transposes that copy
+       returns the newly transposed fragment
+       """
+    copied_fragment = copy.deepcopy(fragment)
+    transposed_fragment = copied_fragment.transpose(t_interval)
+    return transposed_fragment
+
+
+m_frag_a_oct_down = transpose_fragment(m_frag_a, -12)
+m_frag_a_oct_up = transpose_fragment(m_frag_a, 12)
+
+m_arp_a = LegatoArpeggio(m_frag_a, m_seq_a)
+m_arp_a_oct_up = LegatoArpeggio(m_frag_a_oct_up, m_seq_a)
+m_arp_a_oct_down = LegatoArpeggio(m_frag_a_oct_down, m_seq_a)
+
+melody_a = m_arp_a.pitches
+melody_a_oct_up = m_arp_a_oct_up.pitches
+melody_a_oct_down = m_arp_a_oct_down.pitches
 
 rhythm_definition.notes = [
         ("r1"),
@@ -124,13 +149,16 @@ rhythm_definition.notes = [
         #------------Bar 9
         (gmin7_6_pitches[3], abjad.Duration(1, 4)),
         (gmin7_6_pitches[2], abjad.Duration(3, 4), rill.tie()),
-        (gmin7_6_pitches[2], abjad.Duration(1)),
-        ("r1"),
-        ("r1"),
+        (gmin7_6_pitches[2], abjad.Duration(1), rill.line_break()),
+        ("r4"),
+        (melody_a[0], abjad.Duration(3, 4), rill.tie()),
+        (melody_a[0], abjad.Duration(1, 8)),
+        ("r8"),
         #------------Bar 13
-        ("r1"),
-        ("r1"),
-        ("r1"),
+        (melody_a_oct_up[0], abjad.Duration(2, 4)), 
+        (melody_a[1], abjad.Duration(1,4)), 
+        (melody_a[3], abjad.Duration(1)), 
+        (melody_a_oct_down[2], abjad.Duration(1)), 
         ("r1"),
         #------------Bar 17
         ("r1"),
