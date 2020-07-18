@@ -3,6 +3,7 @@ import abjad
 def time_signature(ts_string):
     """
     Makes a time signature on a single leaf.
+    WARNING: no checks ... 
     """
     return abjad.LilyPondLiteral(f"\\time {ts_string}", "before")
 

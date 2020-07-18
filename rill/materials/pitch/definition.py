@@ -403,6 +403,10 @@ transposition_lookup = {  -12 : { # -P8
                             }
                         }
 
+"""Lookup table used for make_diads function
+   harmonizing in diatonic variations of C scales
+   C maj // Harmonic Minor
+   """
 diatonic_register_lookup = { 'd2' : {
                             abjad.NamedPitchClass("c"): 2,  
                             abjad.NamedPitchClass("b"): 1,  
@@ -474,4 +478,38 @@ diatonic_register_lookup = { 'd2' : {
                             abjad.NamedPitchClass("cs"): 11,                                
                                      },
                              }
-                             
+                            
+scale_lookup = { 'bfm' : abjad.PitchSegment("bf b c' df' ef' f gf' g af' a'"),
+                 'gm' : abjad.PitchSegment("g' af' a' bf' c'' d'' ef'' e'' f'' fs''"),
+                 'em' : abjad.PitchSegment("e' f' fs' g' a' b' c'' cs'' d'' ds''")
+                 'csm': abjad.PitchSegment("cs' d' ds' e' fs' gs' a' as' b' bs'")
+               }
+
+melody_lookup = { 'bfm' : {
+                  1: abjad.PitchSegment("g' bf' ef'' b'"), 
+                  2: abjad.PitchSegment("b df'' g' ef''")
+                  3: abjad.PitchSegment("ef' g' c'' a'"),
+                  4: abjad.PitchSegment("a' c'' g' ef''"),
+                  5: abjad.PitchSegment("ef' g' c'' a'"),
+                  },
+                  'gm' : {
+                  1: abjad.PitchSegment("g' bf' ef'' c''"), 
+                  2: abjad.PitchSegment("c'' ef'' a' f''")
+                  3: abjad.PitchSegment("f' a' d'' bf'"),
+                  4: abjad.PitchSegment("bf' d'' g' ef''"),
+                  5: abjad.PitchSegment("ef' g' c'' a'"),
+                  },
+                  'em' : {
+                  1: abjad.PitchSegment("g' b' e' cs''"), 
+                  2: abjad.PitchSegment("cs'' e' a' f''")
+                  3: abjad.PitchSegment("f' a' d'' b'"),
+                  4: abjad.PitchSegment("b' d'' g' e''"),
+                  5: abjad.PitchSegment("e' g' c'' a'"),
+                  },
+                  'csm' : {
+                  1: abjad.PitchSegment("gs' b' e'' cs''"), 
+                  2: abjad.PitchSegment("cs'' e'' a' fs''")
+                  3: abjad.PitchSegment("fs' a' d'' b'"),
+                  4: abjad.PitchSegment("b' ds'' gs' e''"),
+                  5: abjad.PitchSegment("e' gs' cs'' a'"),
+                  },
