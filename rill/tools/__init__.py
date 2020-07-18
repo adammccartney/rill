@@ -17,4 +17,5 @@ from .ScoreTemplate import ScoreTemplate
 from .SegmentMaker import SegmentMaker
 from .set_build_path import build_path
 from .tie import tie
+from .time_signature import time_signature
 from .tremolo import tremolo

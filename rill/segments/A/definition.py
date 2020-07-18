@@ -30,6 +30,15 @@ test_build_path = rill.build_path
 score = rill.ScoreTemplate()
 score_template = score()
 
+seg_t_signatures = (
+                    [((4, 4)) * 10] + 
+                    [(3, 4) * 4] +
+                    [(5, 4) * 8] +
+                    [(4, 4) * 9] +
+                    [(3, 4) * 5] +
+                    [(5, 4) * 8]
+                    )
+
 segment_maker = rill.SegmentMaker(
                                 _lilypond_file=None,
                                 _phrase_outflows=None,
@@ -39,7 +48,7 @@ segment_maker = rill.SegmentMaker(
                                 markup_leaves=False,
                                 segment_name='A',
                                 tempo=((1, 4), 50),
-                                time_signatures=([(4, 4)] * 24),
+                                time_signatures=(seg_t_signatures),
                                 )
 
 segment_maker.metronome_marks = [
