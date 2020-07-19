@@ -1,5 +1,28 @@
 import abjad
 
+
+class Diad(object):
+    """
+    Simple diad with a string representation
+    Initialized with a tuple of abjad.NamedPitch objects
+    """
+    __slots__ = "_pitches", "_pitch_string"
+
+    def __init__(self, pitches=tuple()):
+        self._pitches = pitches
+        self._set_diad()
+
+    def _set_diad(self):
+        pitch_one = str(self._pitches[0])
+        pitch_two = str(self._pitches[1])
+        pitch_string = f"{pitch_one} {pitch_two}"
+        self._pitch_string = pitch_string
+
+    @property
+    def pitch_string(self) -> str:
+        """Gets pitch string"""
+        return self._pitch_string
+
 class FuzzyHarmony(object):
     """
     Stores a collection of notes in a PitchSegment
@@ -290,4 +313,6 @@ if __name__ == '__main__':
    for pitch in arp_pitches:
        print("Arp pitch: ", pitch)
 
-
+   fifth = (abjad.NamedPitch('c'), abjad.NamedPitch('g'))
+   diad = Diad(fifth)
+   print(diad.pitch_string)

@@ -1,14 +1,13 @@
 import abjad
 
-def attach_clef(clef):
+def clef(name):
     """
     Makes a clef before a specific leaf
     """
+    clef = abjad.Clef(name)
     if isinstance(clef, abjad.Clef):
         return abjad.LilyPondLiteral(f"{format(clef, 'lilypond')}", "before")
-
-
                 
 if __name__ == '__main__':
-    clef = attach_clef(abjad.Clef('bass'))
+    clef = clef('bass')
     abjad.f(clef)

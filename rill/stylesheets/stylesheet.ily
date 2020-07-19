@@ -6,6 +6,13 @@
 \include "markups.ily"
 
 \paper {
+    system-system-spacing #'basic-distance = #24
+    score-system-spacing =
+    #'((basic-distance . 12)
+       (minimum-distance . 12)
+       (padding . 1)
+       (stretchability . 12))
+    system-separator-markup = \slashSeparator
     bottom-margin = 7\mm
     evenFooterMarkup = \markup \fill-line {
         " "
