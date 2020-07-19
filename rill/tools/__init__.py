@@ -1,3 +1,4 @@
+from .attach_clef import attach_clef 
 from .FuzzyHarmony import *        
 from .line_break import line_break
 from .material_methods import (

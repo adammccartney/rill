@@ -50,7 +50,7 @@ segment_maker = rill.SegmentMaker(
                                 markup_leaves=False,
                                 segment_name='A',
                                 tempo=((1, 4), 50),
-                                time_signatures=(seg_t_signatures),
+                                time_signatures=([(4, 4) * 46]),
                                 )
 
 segment_maker.metronome_marks = [
@@ -205,12 +205,15 @@ rhythm_definition.notes = [
         #------------Bar 9
         ("r1"),
         ("r1"),
-        ("r1"),
-        ("r1"),
+        ("r4"),
+        (melody_a_oct_down[0], abjad.Duration(3, 4), rill.tie()),
+        (melody_a_oct_down[0], abjad.Duration(1, 8)),
+        ("r8"),
         #------------Bar 13
-        ("r1"),
-        ("r1"),
-        ("r1"),
+        (melody_a[0], abjad.Duration(2, 4)), 
+        (melody_a_oct_down[1], abjad.Duration(1,4)), 
+        (melody_a_oct_down[3], abjad.Duration(1)), 
+        (melody_a_oct_down[2], abjad.Duration(1), rill.tremolo(32)), 
         ("r1"),
         #------------Bar 17
         ("r1"),
