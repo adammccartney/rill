@@ -335,12 +335,6 @@ class SegmentMaker(object):
         context = self._score["Global_Skips"]
         skips = abjad.select(context).components(abjad.Skip)
         skip_count = len(skips)
-        prototype = (
-            #baca.Accelerando,
-            abjad.Fermata,
-            abjad.MetronomeMark,
-            #baca.Ritardando,
-        )
         for i, expression in enumerate(self.metronome_marks):
             index = expression[0]
             if index < 0:
@@ -353,55 +347,6 @@ class SegmentMaker(object):
                 indicator, trend = indicator
                 trend = copy.copy(trend)
             indicator = copy.copy(indicator)
-            assert isinstance(indicator, prototype), repr(indicator)
-            if isinstance(indicator, abjad.Fermata):
-                abjad.attach(indicator, skip)
-            elif isinstance(indicator, abjad.MetronomeMark):
-                left_text = indicator._get_markup()
-                if trend:
-                    style = "dashed-line-with-arrow"
-                else:
-                    style = "invisible-line"
-                start_text_span = abjad.StartTextSpan(
-                    left_text=left_text, style=style
-                )
-                abjad.attach(start_text_span, skip)
-                indicator._hide = True
-                abjad.attach(indicator, skip)
-                if trend:
-                    trend._hide = True
-                    abjad.attach(trend, skip)
-            else:
-                trend_prototype = (baca.Accelerando, baca.Ritardando)
-                assert isinstance(indicator, trend_prototype)
-                left_text = indicator._get_markup()
-                start_text_span = abjad.StartTextSpan(
-                    left_text=left_text, style="dashed-line-with-arrow"
-                )
-                abjad.attach(start_text_span, skip)
-                indicator._hide = True
-                abjad.attach(indicator, skip)
-            if 0 < i and not isinstance(indicator, abjad.Fermata):
-                stop_text_span = abjad.StopTextSpan()
-                abjad.attach(stop_text_span, skip)
-            if len(expression) == 3:
-                staff_padding = expression[2]
-                string = f"\override Script.staff-padding = {staff_padding}"
-                command = abjad.LilyPondLiteral(string)
-                abjad.attach(command, skip)
-                string = (
-                    f"\override TextScript.staff-padding = {staff_padding}"
-                )
-                command = abjad.LilyPondLiteral(string)
-                abjad.attach(command, skip)
-                value = staff_padding + 0.75
-                string = f"\override TextSpanner.staff-padding = {value}"
-                command = abjad.LilyPondLiteral(string)
-                abjad.attach(command, skip)
-        stop_text_span = abjad.StopTextSpan()
-        abjad.attach(stop_text_span, skips[-1])
-
-
 
     def _handle_time_signatures(self):
         if not self.metronome_marks:

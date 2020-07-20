@@ -10,8 +10,6 @@ from rill.tools.barlines import barline as barline
 from rill.tools.clef import clef as clef
 from rill.tools.FuzzyHarmony import Diad as Diad
 from rill.tools.FuzzyHarmony import LegatoArpeggio as LegatoArpeggio
-from rill.tools.PhraseMaker import PhraseOutflow as PhraseOutflow
-from rill.tools.PhraseMaker import PhraseStream as PhraseStream
 from rill.tools.material_methods import transpose_segment as transpose_segment
 from rill.tools.tremolo import tremolo as tremolo
 
@@ -23,7 +21,6 @@ from typing import List
 #####################
 
 this_current_directory =  pathlib.Path(__file__).parent 
-test_build_path = rill.build_path 
 score = rill.ScoreTemplate()
 score_template = score()
 
@@ -31,12 +28,12 @@ segment_maker = rill.SegmentMaker(
                                 _lilypond_file=None,
                                 _score=score_template,
                                 current_directory=this_current_directory,
-                                build_path=test_build_path,
+                                build_path=rill.build_path,
                                 markup_leaves=False,
                                 segment_name='A',
                                 rehearsal_mark=1,
                                 tempo=((1, 4), 50),
-                                time_signatures=([(4, 4) * 46]),
+                                time_signatures=[(4, 4)] * 42,
                                 )
 
 segment_maker.metronome_marks = [
@@ -174,7 +171,7 @@ rhythm_definition.notes = [
         #------------Bar 9
         (gmin7_6_pitches[3], abjad.Duration(1, 4)),
         (gmin7_6_pitches[2], abjad.Duration(3, 4), rill.tie()),
-        (gmin7_6_pitches[2], abjad.Duration(1), rill.line_break()),
+        (gmin7_6_pitches[2], abjad.Duration(1), ),
         ("r1"),
         ("r4"),
         (melody_a[0], abjad.Duration(3, 4), rill.tie()),
@@ -242,6 +239,8 @@ rhythm_definition.notes = [
         (melody_cefaf[0], abjad.Duration(1,4)),
         (melody_fadbf[1], abjad.Duration(1,4)),
         (melody_fadbf[1], abjad.Duration(2,4), rill.tie()), 
+        (melody_fadbf[1], abjad.Duration(1), rill.tie()), 
+        (melody_fadbf[1], abjad.Duration(1), rill.tie()),
         (melody_fadbf[1], abjad.Duration(1), barline("||")),
         ]
 
@@ -261,6 +260,8 @@ rhythm_definition.dynamics = [
         (37, '>'),
         (44, abjad.Dynamic('ppp')),
         (50, abjad.Dynamic('pp')),
+        (72, '>'),
+        (75, abjad.Dynamic('niente')),
        ]
 
 rhythm_definition.markup = [
@@ -269,6 +270,7 @@ rhythm_definition.markup = [
         (28, rill.markup.flaut_pont(), 3.5),
         (36, rill.markup.tasto(), 3.5),
         (50, rill.markup.rhythmically(), 3.5),
+        (72, rill.markup.flaut(), 1.5),
         ]
 
 
@@ -355,6 +357,8 @@ rhythm_definition.notes = [
         (diad_AE_kln_eing, abjad.Duration(1), tremolo(32), rill.tie()),
         #-----------Bar 41
         (diad_AE_kln_eing, abjad.Duration(1), tremolo(32)),
+        ("r1"),
+        ("r1"),
         ("r1"),
         ]
 
@@ -457,6 +461,8 @@ rhythm_definition.notes = [
         #-----------Bar 41
         ("r1"),
         ("r1"),
+        ("r1"),
+        ("r1"),
         ]
 
 
@@ -547,11 +553,17 @@ rhythm_definition.notes = [
         (diad_AE_kln_eing, abjad.Duration(1), rill.tie()),
         #-----------Bar 41
         (diad_AE_kln_eing, abjad.Duration(1), rill.tie()),
+        (diad_AE_kln_eing, abjad.Duration(1), rill.tie()), 
+        (diad_AE_kln_eing, abjad.Duration(1), rill.tie()),
         (diad_AE_kln_eing, abjad.Duration(1), barline("||")),
         ]
 
 
-rhythm_definition.dynamics = []
+rhythm_definition.dynamics = [
+        (47, abjad.Dynamic('pp')),
+        (48, '>'),
+        (51, abjad.Dynamic('niente')),
+        ]
 
 rhythm_definition.markup = []
 

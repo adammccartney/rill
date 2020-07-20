@@ -133,6 +133,27 @@ class ScoreTemplate(object):
                 [music_context], name="Score", tag=tag
                 )
         return score
+    
+    ### PRIVATE METHODS ###
+
+    def _make_global_context(self):
+        site = "abjad.ScoreTemplate._make_global_context()"
+        tag = abjad.Tag(site)
+        global_rests = abjad.Context(
+            lilypond_type="GlobalRests", name="Global_Rests", tag=tag,
+        )
+        global_skips = abjad.Context(
+            lilypond_type="GlobalSkips", name="Global_Skips", tag=tag,
+        )
+        global_context = abjad.Context(
+            [global_rests, global_skips],
+            lilypond_type="GlobalContext",
+            simultaneous=True,
+            name="Global_Context",
+            tag=tag,
+        )
+        return global_context
+
 
     ### PUBLIC PROPERTIES ###
 
@@ -142,4 +163,7 @@ class ScoreTemplate(object):
         return super(ScoreTemplate, self).voice_abbreviations
 
 
-   
+if __name__ == '__main__':
+    score = ScoreTemplate()
+    score_template = score()
+    abjad.f(score_template)

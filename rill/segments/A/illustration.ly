@@ -168,7 +168,23 @@
                     s1 * 1/4
                     s1 * 1/4
                     s1 * 1/4
+                    \override TextScript.staff-padding = 1.5
+                    \override TextSpanner.staff-padding = 2.25
                     s1 * 1/2
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    flautando
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
+                    s1 * 1/1
+                    s1 * 1/1
                     s1 * 1/1
                     \stopTextSpan
                 }                                                              %! rill.ScoreTemplate.__call__()
@@ -199,7 +215,6 @@
                     g''2.
                     ~
                     g''1
-                    \break
                     r1
                     r4
                     g'2.
@@ -278,6 +293,10 @@
                     c''4
                     a'4
                     a'2
+                    ~
+                    a'1
+                    ~
+                    a'1
                     ~
                     a'1
                     \bar "||"
@@ -375,8 +394,11 @@
                     s1 * 1/4
                     s1 * 1/4
                     s1 * 1/2
+                    \>
                     s1 * 1/1
-                    \!
+                    s1 * 1/1
+                    s1 * 1/1
+                    _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
                 }                                                              %! rill.ScoreTemplate.__call__()
             >>                                                                 %! rill.ScoreTemplate.__call__()
             \context Staff = "Monosynth"                                       %! rill.ScoreTemplate.__call__()
@@ -430,6 +452,8 @@
                     s1 * 1/1
                     s1 * 3/4
                     s1 * 1/4
+                    s1 * 1/1
+                    s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
@@ -552,6 +576,8 @@
                     <a e'>1
                     :32
                     r1
+                    r1
+                    r1
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Monosynth_Dynamics_Voice"                    %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
@@ -624,6 +650,9 @@
                     s1 * 1/1
                     s1 * 1/1
                     _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
+                    s1 * 1/1
+                    s1 * 1/1
+                    \!
                 }                                                              %! rill.ScoreTemplate.__call__()
             >>                                                                 %! rill.ScoreTemplate.__call__()
             \context MusicContext = "Polysynth_Music_Context"                  %! rill.ScoreTemplate.__call__()
@@ -648,6 +677,8 @@
                             s1 * 1/1
                             s1 * 1/4
                             s1 * 3/4
+                            s1 * 1/1
+                            s1 * 1/1
                             s1 * 1/1
                             s1 * 1/1
                             s1 * 1/1
@@ -748,6 +779,8 @@
                             r1
                             r1
                             r1
+                            r1
+                            r1
                         }                                                      %! rill.ScoreTemplate.__call__()
                         \context Voice = "RH_I_Dynamics_Voice"                 %! rill.ScoreTemplate.__call__()
                         {                                                      %! rill.ScoreTemplate.__call__()
@@ -767,6 +800,8 @@
                             s1 * 1/1
                             s1 * 1/4
                             s1 * 3/4
+                            s1 * 1/1
+                            s1 * 1/1
                             s1 * 1/1
                             s1 * 1/1
                             s1 * 1/1
@@ -844,6 +879,8 @@
                             s1 * 1/1
                             s1 * 1/4
                             s1 * 3/4
+                            s1 * 1/1
+                            s1 * 1/1
                             s1 * 1/1
                             s1 * 1/1
                             s1 * 1/1
@@ -936,6 +973,10 @@
                             <a e'>1
                             ~
                             <a e'>1
+                            ~
+                            <a e'>1
+                            ~
+                            <a e'>1
                             \bar "||"
                         }                                                      %! rill.ScoreTemplate.__call__()
                         \context Voice = "LH_I_Dynamics_Voice"                 %! rill.ScoreTemplate.__call__()
@@ -988,9 +1029,13 @@
                             s1 * 1/1
                             s1 * 1/1
                             s1 * 1/1
+                            \pp
+                            s1 * 1/1
+                            \>
                             s1 * 1/1
                             s1 * 1/1
-                            \!
+                            s1 * 1/1
+                            _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
                         }                                                      %! rill.ScoreTemplate.__call__()
                     >>                                                         %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
