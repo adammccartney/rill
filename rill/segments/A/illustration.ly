@@ -269,36 +269,36 @@
                     r1
                     r1
                     r4
-                    d''4
-                    d''2
-                    ef''4
+                    a'4
+                    a'2
+                    bf'4
+                    bf'4
+                    bf'2
+                    a'4
+                    a'2
+                    bf'4
+                    bf'4
+                    bf'2
                     ef''4
                     ef''2
                     d''4
+                    d''4
                     d''2
-                    c''4
-                    c''4
-                    c''2
-                    a'4
-                    a'2
-                    g'4
-                    g'4
-                    g'2
-                    a'4
-                    a'2
-                    c''4
-                    c''4
-                    c''4
+                    ef''4
+                    ef''2
+                    bf'4
+                    bf'4
+                    bf'4
                     ~
-                    c''4
-                    a'4
-                    a'2
+                    bf'4
+                    ef''4
+                    ef''2
                     ~
-                    a'1
+                    ef''1
                     ~
-                    a'1
+                    ef''1
                     ~
-                    a'1
+                    ef''1
                     \bar "||"
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Dynamics_Voice"                       %! rill.ScoreTemplate.__call__()
