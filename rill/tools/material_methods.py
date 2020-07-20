@@ -127,6 +127,14 @@ def transpose(fuzzy_harmonies, t_interval=0):
         transposed_harmonies.append(transposed_harmony)
     return transposed_harmonies
 
+def transpose_segment(pitch_segment, t_interval):
+    """Takes a melodic fragment i.e. pitch segment
+       makes a copy and transposes that copy
+       returns the newly transposed fragment
+       """
+    copied_segment = copy.deepcopy(pitch_segment)
+    transposed_segment = copied_segment.transpose(t_interval)
+    return transposed_segment
 
 if __name__ == '__main__':
 

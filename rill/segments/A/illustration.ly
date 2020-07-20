@@ -12,6 +12,10 @@
 
 \score {                                                                       %! abjad.LilyPondFile._get_formatted_blocks()
     \context Score = "Score"                                                   %! rill.ScoreTemplate.__call__()
+    \with                                                                      %! rill.ScoreTemplate.__call__()
+    {                                                                          %! rill.ScoreTemplate.__call__()
+        markFormatter = #format-mark-box-alphabet                              %! rill.ScoreTemplate.__call__()
+    }                                                                          %! rill.ScoreTemplate.__call__()
     <<                                                                         %! rill.ScoreTemplate.__call__()
         \context MusicContext = "Music_Context"                                %! rill.ScoreTemplate.__call__()
         <<                                                                     %! rill.ScoreTemplate.__call__()
@@ -48,7 +52,21 @@
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/4
+                    \override TextScript.staff-padding = 1.5
+                    \override TextSpanner.staff-padding = 2.25
                     s1 * 3/4
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    ord.
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
                     s1 * 1/8
                     s1 * 1/8
                     s1 * 1/2
@@ -60,7 +78,25 @@
                     s1 * 1/4
                     s1 * 3/4
                     s1 * 1/1
+                    \override TextScript.staff-padding = 3.5
+                    \override TextSpanner.staff-padding = 4.25
                     s1 * 3/4
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    \center-column
+                                        {
+                                            flaut.-
+                                            pont.
+                                        }
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
                     s1 * 1/4
                     s1 * 1/2
                     s1 * 1/2
@@ -68,7 +104,21 @@
                     s1 * 1/2
                     s1 * 1/2
                     s1 * 1/1
+                    \override TextScript.staff-padding = 3.5
+                    \override TextSpanner.staff-padding = 4.25
                     s1 * 1/2
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    "sul tasto"
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
                     s1 * 1/2
                     s1 * 1/1
                     s1 * 1/1
@@ -81,25 +131,51 @@
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
+                    s1 * 1/4
+                    \override TextScript.staff-padding = 3.5
+                    \override TextSpanner.staff-padding = 4.25
+                    s1 * 1/4
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    rhythmically
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/2
                     s1 * 1/1
                     \stopTextSpan
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Music_Voice"                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     \clef "treble"
+                    \mark #1
                     r1
                     r2
                     d''2
@@ -177,20 +253,34 @@
                     r1
                     r1
                     r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
+                    r4
+                    d''4
+                    d''2
+                    ef''4
+                    ef''4
+                    ef''2
+                    d''4
+                    d''2
+                    c''4
+                    c''4
+                    c''2
+                    a'4
+                    a'2
+                    g'4
+                    g'4
+                    g'2
+                    a'4
+                    a'2
+                    c''4
+                    c''4
+                    c''4
+                    ~
+                    c''4
+                    a'4
+                    a'2
+                    ~
+                    a'1
+                    \bar "||"
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Dynamics_Voice"                       %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
@@ -218,27 +308,36 @@
                     s1 * 1/1
                     s1 * 1/4
                     s1 * 3/4
+                    \pp
                     s1 * 1/8
                     s1 * 1/8
                     s1 * 1/2
                     s1 * 1/4
                     s1 * 1/1
                     s1 * 1/1
+                    \mp
                     s1 * 1/2
                     s1 * 1/2
                     s1 * 1/4
+                    \>
                     s1 * 3/4
                     s1 * 1/1
                     s1 * 3/4
+                    \ppp
                     s1 * 1/4
                     s1 * 1/2
                     s1 * 1/2
                     s1 * 1/1
+                    \override DynamicLineSpanner.staff-padding = 2.5
                     s1 * 1/2
+                    \ppp
                     s1 * 1/2
+                    \<
                     s1 * 1/1
                     s1 * 1/2
+                    \p
                     s1 * 1/2
+                    \>
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/2
@@ -246,23 +345,36 @@
                     s1 * 1/1
                     s1 * 1/4
                     s1 * 3/4
+                    \ppp
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
+                    s1 * 1/4
+                    s1 * 1/4
+                    \pp
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/2
                     s1 * 1/1
                     \!
                 }                                                              %! rill.ScoreTemplate.__call__()
@@ -281,7 +393,21 @@
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
+                    \override TextScript.staff-padding = 1.5
+                    \override TextSpanner.staff-padding = 2.25
                     s1 * 1/1
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    \bold
+                                        MX.
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
                     s1 * 1/4
                     s1 * 3/4
                     s1 * 1/8
@@ -304,11 +430,6 @@
                     s1 * 1/1
                     s1 * 3/4
                     s1 * 1/4
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
@@ -333,6 +454,7 @@
                 \context Voice = "Monosynth_Music_Voice"                       %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     \clef "treble"
+                    \mark #1
                     r1
                     r1
                     r1
@@ -430,18 +552,6 @@
                     <a e'>1
                     :32
                     r1
-                    r1
-                    <a e'>1
-                    :32
-                    ~
-                    <a e'>1
-                    :32
-                    ~
-                    <a e'>1
-                    :32
-                    ~
-                    <a e'>1
-                    :32
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Monosynth_Dynamics_Voice"                    %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
@@ -458,25 +568,33 @@
                     s1 * 1/1
                     s1 * 1/4
                     s1 * 3/4
+                    \ppp
                     s1 * 1/8
                     s1 * 1/8
                     s1 * 1/2
                     s1 * 1/4
                     s1 * 1/1
                     s1 * 1/1
+                    \>
                     s1 * 1/2
                     s1 * 1/2
+                    \<
                     s1 * 1/4
                     s1 * 3/4
                     s1 * 1/1
+                    \>
                     s1 * 3/4
+                    \ppp
                     s1 * 1/4
                     s1 * 1/2
+                    \<
                     s1 * 1/2
                     s1 * 1/4
                     s1 * 3/4
+                    \>
                     s1 * 1/1
                     s1 * 3/4
+                    _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
                     s1 * 1/4
                     s1 * 1/1
                     s1 * 1/1
@@ -485,24 +603,27 @@
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
+                    _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
+                    s1 * 1/1
+                    \<
                     s1 * 1/1
                     s1 * 1/1
+                    \>
                     s1 * 1/1
                     s1 * 1/1
+                    _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
                     s1 * 1/1
                     s1 * 1/1
+                    _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
+                    s1 * 1/1
+                    \<
+                    s1 * 1/1
+                    \override DynamicLineSpanner.staff-padding = 3.5
+                    s1 * 1/1
+                    \>
                     s1 * 1/1
                     s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    \!
+                    _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
                 }                                                              %! rill.ScoreTemplate.__call__()
             >>                                                                 %! rill.ScoreTemplate.__call__()
             \context MusicContext = "Polysynth_Music_Context"                  %! rill.ScoreTemplate.__call__()
@@ -560,16 +681,12 @@
                             s1 * 1/1
                             s1 * 1/1
                             s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
                             \stopTextSpan
                         }                                                      %! rill.ScoreTemplate.__call__()
                         \context Voice = "RH_I_Music_Voice"                    %! rill.ScoreTemplate.__call__()
                         {                                                      %! rill.ScoreTemplate.__call__()
                             \clef "treble"
+                            \mark #1
                             r1
                             r2
                             d'''2
@@ -631,11 +748,6 @@
                             r1
                             r1
                             r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
                         }                                                      %! rill.ScoreTemplate.__call__()
                         \context Voice = "RH_I_Dynamics_Voice"                 %! rill.ScoreTemplate.__call__()
                         {                                                      %! rill.ScoreTemplate.__call__()
@@ -655,11 +767,6 @@
                             s1 * 1/1
                             s1 * 1/4
                             s1 * 3/4
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
                             s1 * 1/1
                             s1 * 1/1
                             s1 * 1/1
@@ -750,16 +857,12 @@
                             s1 * 1/1
                             s1 * 1/1
                             s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
                             \stopTextSpan
                         }                                                      %! rill.ScoreTemplate.__call__()
                         \context Voice = "LH_I_Music_Voice"                    %! rill.ScoreTemplate.__call__()
                         {                                                      %! rill.ScoreTemplate.__call__()
                             \clef "bass"
+                            \mark #1
                             g2
                             ~
                             <ef g>2
@@ -833,13 +936,7 @@
                             <a e'>1
                             ~
                             <a e'>1
-                            ~
-                            <a e'>1
-                            ~
-                            <a e'>1
-                            r1
-                            r1
-                            r1
+                            \bar "||"
                         }                                                      %! rill.ScoreTemplate.__call__()
                         \context Voice = "LH_I_Dynamics_Voice"                 %! rill.ScoreTemplate.__call__()
                         {                                                      %! rill.ScoreTemplate.__call__()
@@ -880,11 +977,6 @@
                             s1 * 1/1
                             s1 * 1/4
                             s1 * 3/4
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
                             s1 * 1/1
                             s1 * 1/1
                             s1 * 1/1

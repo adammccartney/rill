@@ -220,6 +220,7 @@ class SegmentMaker(object):
             "current_directory",
             "markup_leaves",
             "metronome_marks",
+            "rehearsal_mark",
             "segment_name",
             "tempo",
             "time_signatures",
@@ -229,12 +230,12 @@ class SegmentMaker(object):
             self,
             _lilypond_file=None,
             _score=None,
-            _phrase_outflows=None,
             build_path=None,
             current_directory=None, 
             markup_leaves=None,
             metronome_marks=None,
             segment_name=None, 
+            rehearsal_mark=None,
             tempo=None,
             time_signatures=None,
         ):
@@ -247,6 +248,7 @@ class SegmentMaker(object):
             self.markup_leaves = markup_leaves
             self.metronome_marks = metronome_marks or []
             self.segment_name = segment_name
+            self.rehearsal_mark = rehearsal_mark
             self.tempo = ((1, 4), 60)
             self.time_signatures = time_signatures or []
     
@@ -307,15 +309,23 @@ class SegmentMaker(object):
         lilypond_file.header_block.title = None
         lilypond_file.header_block.composer = None
 
+    def _configure_rehearsal_mark(self):
+        mark_num = self.rehearsal_mark
+        voices = self._music_voices
+        for voice in voices:
+            leaf = abjad.inspect(voice).leaf(0)
+            abjad.attach(abjad.RehearsalMark(number=mark_num), leaf)
+        scheme = abjad.Scheme('format-mark-box-alphabet')
+        score = self._score
+        abjad.setting(score).markFormatter = scheme
+
     def _configure_score(self):
         voices  = self._music_voices
         treble_voices = voices[:-1]
         for voice in treble_voices:
-            print("treble_voice: ", voice)
             leaf = abjad.inspect(voice).leaf(0)
             abjad.attach(abjad.Clef("treble"), leaf)
         bass_voice = voices[3]  # lh polysynth
-        print("Bass Voice: ", bass_voice)
         leaf = abjad.inspect(bass_voice).leaf(0)
         abjad.attach(abjad.Clef("bass"), leaf)
 
@@ -446,6 +456,7 @@ class SegmentMaker(object):
         #self._handle_metronome_marks()
         self._call_rhythm_definitions()
         self._configure_score()
+        self._configure_rehearsal_mark()
         self._attach_leaf_index_markup()
         self._render_illustration()
         self._build_segment()

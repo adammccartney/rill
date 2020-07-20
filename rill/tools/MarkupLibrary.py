@@ -16,8 +16,21 @@ class MarkupLibrary(object):
         return abjad.Markup("ord.", direction=abjad.Up).upright()
 
     @staticmethod
+    def mx():
+        return abjad.Markup("\\bold MX.", direction=abjad.Up).upright()
+
+    @staticmethod
     def pont():
         return abjad.Markup("sul pont.", direction=abjad.Up).upright()
+
+    @staticmethod
+    def mark(num):
+        string = f"\\mark #{num}"
+        return abjad.Markup(string, direction=abjad.Up).upright()
+
+    @staticmethod
+    def rhythmically():
+        return abjad.Markup("rhythmically", direction=abjad.Up).upright()
 
     @staticmethod
     def tasto():
@@ -29,4 +42,6 @@ class MarkupLibrary(object):
 
     @staticmethod
     def flaut_pont():
-        return abjad.Markup("flaut. + pont.", direction=abjad.Up).upright()
+        return abjad.Markup(
+                "\\center-column {flaut.-  pont.}", 
+                direction=abjad.Up).upright()

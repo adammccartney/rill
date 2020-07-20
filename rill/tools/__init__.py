@@ -1,3 +1,4 @@
+from .barlines import barline, repeat
 from .clef import clef 
 from .FuzzyHarmony import *        
 from .line_break import line_break
@@ -6,6 +7,7 @@ from .material_methods import (
         make_diads, 
         make_augmented_stream,
         transpose,
+        transpose_segment
         )
 
 from .MarkupLibrary import MarkupLibrary 
