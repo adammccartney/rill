@@ -23,32 +23,60 @@
             <<                                                                 %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Markup_Voice"                         %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
+                    s1 * 1/1
+                    s1 * 1/2
                     \override TextScript.staff-padding = 1.5
                     \override TextSpanner.staff-padding = 2.25
-                    s1 * 1/1
+                    s1 * 1/2
                     - \abjad-invisible-line
                     - \tweak bound-details.left.text \markup {
                         \concat
                             {
                                 \upright
-                                    "sul tasto"
+                                    "sul pont."
                                 \hspace
                                     #0.5
                             }
                         }
                     \startTextSpan
-                    s1 * 1/2
-                    s1 * 1/2
                     s1 * 1/1
                     s1 * 1/2
+                    \override TextScript.staff-padding = 1.5
+                    \override TextSpanner.staff-padding = 2.25
                     s1 * 1/2
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    ord.
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/2
                     s1 * 1/2
                     s1 * 1/1
                     s1 * 1/4
+                    \override TextScript.staff-padding = 3.5
+                    \override TextSpanner.staff-padding = 4.25
                     s1 * 3/4
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    "sul pont."
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/4
@@ -98,7 +126,21 @@
                         }
                     \startTextSpan
                     s1 * 1/4
+                    \override TextScript.staff-padding = 2.5
+                    \override TextSpanner.staff-padding = 3.25
                     s1 * 1/2
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    ord.
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
                     s1 * 1/2
                     s1 * 1/1
                     s1 * 1/2
@@ -113,7 +155,7 @@
                         \concat
                             {
                                 \upright
-                                    "sul tasto"
+                                    flautando
                                 \hspace
                                     #0.5
                             }
@@ -141,7 +183,7 @@
                         \concat
                             {
                                 \upright
-                                    rhythmically
+                                    ord.
                                 \hspace
                                     #0.5
                             }
@@ -270,35 +312,44 @@
                     r1
                     r4
                     a'4
+                    --
                     a'2
                     bf'4
+                    --
                     bf'4
                     bf'2
                     a'4
+                    --
                     a'2
                     bf'4
+                    --
                     bf'4
                     bf'2
-                    ef''4
-                    ef''2
-                    d''4
-                    d''4
-                    d''2
-                    ef''4
-                    ef''2
+                    a'4
+                    --
+                    a'2
                     bf'4
+                    --
+                    bf'4
+                    bf'2
+                    c''4
+                    --
+                    c''2
+                    bf'4
+                    --
                     bf'4
                     bf'4
                     ~
                     bf'4
-                    ef''4
-                    ef''2
+                    a'4
+                    --
+                    a'2
                     ~
-                    ef''1
+                    a'1
                     ~
-                    ef''1
+                    a'1
                     ~
-                    ef''1
+                    a'1
                     \bar "||"
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Dynamics_Voice"                       %! rill.ScoreTemplate.__call__()
@@ -315,11 +366,11 @@
                     s1 * 1/2
                     \p
                     s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/2
+                    s1 * 1/2
+                    s1 * 1/1
                     \>
-                    s1 * 1/1
-                    s1 * 1/2
-                    s1 * 1/2
-                    s1 * 1/1
                     s1 * 1/4
                     s1 * 3/4
                     s1 * 1/1
@@ -334,7 +385,6 @@
                     s1 * 1/4
                     s1 * 1/1
                     s1 * 1/1
-                    \mp
                     s1 * 1/2
                     s1 * 1/2
                     s1 * 1/4
@@ -349,24 +399,24 @@
                     s1 * 1/1
                     \override DynamicLineSpanner.staff-padding = 2.5
                     s1 * 1/2
-                    \ppp
+                    _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
                     s1 * 1/2
                     \<
                     s1 * 1/1
                     s1 * 1/2
-                    \p
+                    \pp
                     s1 * 1/2
-                    \>
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/2
                     s1 * 1/2
                     s1 * 1/1
                     s1 * 1/4
+                    \>
                     s1 * 3/4
-                    \ppp
                     s1 * 1/1
                     s1 * 1/1
+                    _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/4
@@ -415,6 +465,14 @@
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
+                    s1 * 1/1
+                    s1 * 1/4
+                    s1 * 3/4
+                    s1 * 1/8
+                    s1 * 1/8
+                    s1 * 1/2
+                    s1 * 1/4
+                    s1 * 1/1
                     \override TextScript.staff-padding = 1.5
                     \override TextSpanner.staff-padding = 2.25
                     s1 * 1/1
@@ -430,14 +488,6 @@
                             }
                         }
                     \startTextSpan
-                    s1 * 1/4
-                    s1 * 3/4
-                    s1 * 1/8
-                    s1 * 1/8
-                    s1 * 1/2
-                    s1 * 1/4
-                    s1 * 1/1
-                    s1 * 1/1
                     s1 * 1/2
                     s1 * 1/2
                     s1 * 1/4

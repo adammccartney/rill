@@ -6,6 +6,7 @@ import rill
 
 import rill.tools.FuzzyHarmony as FuzzyHarmony
 
+from rill.tools.accents import tenuto as tenuto
 from rill.tools.barlines import barline as barline
 from rill.tools.clef import clef as clef
 from rill.tools.FuzzyHarmony import Diad as Diad
@@ -219,62 +220,65 @@ rhythm_definition.notes = [
         #-----------Bar 33
         ("r1"),
         ("r4"),
-        (melody_two_a[2], abjad.Duration(1,4)),
+        (melody_two_a[2], abjad.Duration(1,4), tenuto()),
         (melody_two_a[2], abjad.Duration(2,4)), 
-        (melody_two_b[3], abjad.Duration(1,4)),
+        (melody_two_b[3], abjad.Duration(1,4), tenuto()),
         (melody_two_b[3], abjad.Duration(1,4)), 
         (melody_two_b[3], abjad.Duration(2,4)), 
-        (melody_two_a[2], abjad.Duration(1,4)),
+        (melody_two_a[2], abjad.Duration(1,4), tenuto()),
         (melody_two_a[2], abjad.Duration(2,4)), 
-        (melody_two_c[0], abjad.Duration(1,4)),
+        (melody_two_c[0], abjad.Duration(1,4), tenuto()),
         #-----------Bar 37
         (melody_two_c[0], abjad.Duration(1,4)), 
         (melody_two_c[0], abjad.Duration(2,4)), 
-        (melody_two_a[1], abjad.Duration(1,4)),
-        (melody_two_a[1], abjad.Duration(2,4)), 
-        (melody_two_b[2], abjad.Duration(1,4)),
-        (melody_two_b[2], abjad.Duration(1,4)), 
-        (melody_two_b[2], abjad.Duration(2,4)), 
-        (melody_two_a[1], abjad.Duration(1,4)),
-        (melody_two_a[1], abjad.Duration(2,4)), 
-        (melody_two_c[0], abjad.Duration(1,4)),
+        (melody_two_a[2], abjad.Duration(1,4), tenuto()),
+        (melody_two_a[2], abjad.Duration(2,4)), 
+        (melody_two_b[3], abjad.Duration(1,4), tenuto()),
+        (melody_two_b[3], abjad.Duration(1,4)), 
+        (melody_two_b[3], abjad.Duration(2,4)), 
+        (melody_two_a[0], abjad.Duration(1,4), tenuto()),
+        (melody_two_a[0], abjad.Duration(2,4)), 
+        (melody_two_c[0], abjad.Duration(1,4), tenuto()),
         (melody_two_c[0], abjad.Duration(1,4)),
         (melody_two_c[0], abjad.Duration(1,4), rill.tie()),
         #-----------Bar 41
         (melody_two_c[0], abjad.Duration(1,4)),
-        (melody_two_a[1], abjad.Duration(1,4)),
-        (melody_two_a[1], abjad.Duration(2,4), rill.tie()), 
-        (melody_two_a[1], abjad.Duration(1), rill.tie()), 
-        (melody_two_a[1], abjad.Duration(1), rill.tie()),
-        (melody_two_a[1], abjad.Duration(1), barline("||")),
+        (melody_two_a[2], abjad.Duration(1,4), tenuto()),
+        (melody_two_a[2], abjad.Duration(2,4), rill.tie()), 
+        (melody_two_a[2], abjad.Duration(1), rill.tie()), 
+        (melody_two_a[2], abjad.Duration(1), rill.tie()),
+        (melody_two_a[2], abjad.Duration(1), barline("||")),
         ]
+
 
 rhythm_definition.dynamics = [
         (2, abjad.Dynamic('ppp'), 2.5),
         (3, '<'),
         (5, abjad.Dynamic('p'), 2.5),
-        (6, '>'),
+        (10, '>'),
         (13, abjad.Dynamic('ppp')),
         (16, abjad.Dynamic('pp')),
-        (22, abjad.Dynamic('mp')),
         (25, '>'),
         (28, abjad.Dynamic('ppp')),
-        (33, abjad.Dynamic('ppp'), 2.5),
+        (33, abjad.Dynamic('niente'), 2.5),
         (34, '<'),
-        (36, abjad.Dynamic('p')),
-        (37, '>'),
-        (44, abjad.Dynamic('ppp')),
+        (36, abjad.Dynamic('pp')),
+        (43, '>'),
+        (46, abjad.Dynamic('niente')),
         (50, abjad.Dynamic('pp')),
         (72, '>'),
         (75, abjad.Dynamic('niente')),
        ]
 
 rhythm_definition.markup = [
-        (0, rill.markup.tasto(), 1.5),
+        (2, rill.markup.pont(), 1.5),
+        (5, rill.markup.ord(), 1.5),
+        (12, rill.markup.pont(), 3.5), 
         (16, rill.markup.ord(), 1.5),
         (28, rill.markup.flaut_pont(), 3.5),
-        (36, rill.markup.tasto(), 3.5),
-        (50, rill.markup.rhythmically(), 3.5),
+        (30, rill.markup.ord(), 2.5),
+        (36, rill.markup.flaut(), 3.5),
+        (50, rill.markup.ord(), 3.5),
         (72, rill.markup.flaut(), 1.5),
         ]
 
@@ -387,7 +391,7 @@ rhythm_definition.dynamics = [
        ]
 
 rhythm_definition.markup = [
-        (10, rill.markup.mx(), 1.5),
+        (18, rill.markup.mx(), 1.5),
         ]
 
 
@@ -490,8 +494,8 @@ cmin7_6_arp= LegatoArpeggio(cmin7_6_kln, seq_one)
 lh_arp_one = cmin7_6_arp.stages
 
 d7_9 = d7_hrmns_gr_kln[0].segment
-d7_9_stages = LegatoArpeggio(d7_9, seq_three)
-lh_arp_two = d7_9_stages.stages
+d7_9_arp = LegatoArpeggio(d7_9, seq_three)
+lh_arp_two = d7_9_arp.stages
 
 d7_6 = d7_hrmns_gr_kln[1].segment
 d7_6_arp = LegatoArpeggio(d7_6, seq_three)

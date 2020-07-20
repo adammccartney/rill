@@ -70,5 +70,5 @@
     ragged-bottom = ##t
     ragged-last = ##t
     ragged-right = ##t
-    #(layout-set-staff-size 17)
+    #(layout-set-staff-size 15)
 }

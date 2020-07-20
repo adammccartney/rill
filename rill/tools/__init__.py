@@ -1,3 +1,4 @@
+from .accents import *
 from .barlines import barline, repeat
 from .clef import clef 
 from .FuzzyHarmony import *        
