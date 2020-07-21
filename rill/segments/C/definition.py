@@ -91,35 +91,6 @@ plag_two_zw_dr = rill.transpose(auth_two_ein_zw, 19)
 
 # ---- Diads 
 
-vln_open = (
-            abjad.NamedPitch("g"), 
-            abjad.NamedPitch("d'"),
-            abjad.NamedPitch("a'"),
-            abjad.NamedPitch("e''"),
-            )
-
-vln_frth_flgs = (
-            abjad.NamedPitch("g''"), 
-            abjad.NamedPitch("d'''"),
-            abjad.NamedPitch("a'''"),
-            abjad.NamedPitch("e''''"),
-            )
-
-vln_fth_flgs = (
-            abjad.NamedPitch("b''"),
-            abjad.NamedPitch("fs'''"),
-            abjad.NamedPitch("cs''''"),
-            abjad.NamedPitch("gs''''"),
-            )
-
-one = rill.make_decimo_diad(vln_open[0])
-diad_one = rill.Diad(one)
-two = rill.make_decimo_diad(vln_open[1])
-diad_two = rill.Diad(two)
-three = rill.make_decimo_diad(vln_open[2])
-diad_three = rill.Diad(three)
-four = rill.make_decimo_diad(vln_open[3])
-diad_four = rill.Diad(four)
 
 
 # -- sequences of notes for arpeggios
@@ -134,6 +105,8 @@ seq_three = (2, 0, 1, 3)
 
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'Violin'
+
+open_string_I = rill.vln_str_diads['I'].lower
 
 rhythm_definition.notes = [
         ("r1"),

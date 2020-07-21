@@ -12,6 +12,7 @@ from rill.tools.barlines import barline as barline
 from rill.tools.clef import clef as clef
 from rill.tools.FuzzyHarmony import Diad as Diad
 from rill.tools.FuzzyHarmony import LegatoArpeggio as LegatoArpeggio
+from rill.tools.grace import *
 from rill.tools.material_methods import transpose_segment as transpose_segment
 from rill.tools.tremolo import tremolo as tremolo
 

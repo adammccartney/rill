@@ -75,16 +75,20 @@ vln_fth_flgs = abjad.OrderedDict([
             ('I', abjad.NamedPitch("gs''''")),
             ])
 
-four = rill.make_decimo_diad(vln_open['IV'])
-three = rill.make_decimo_diad(vln_open['III'])
-two = rill.make_decimo_diad(vln_open['II'])
-one = rill.make_decimo_diad(vln_open['I'])
+
+from rill.tools.material_methods import make_decimo_diad as make_decimo_diad
+from rill.tools.FuzzyHarmony import Diad as Diad
+
+four = make_decimo_diad(vln_open['IV'])
+three = make_decimo_diad(vln_open['III'])
+two = make_decimo_diad(vln_open['II'])
+one = make_decimo_diad(vln_open['I'])
 
 vln_str_diads = abjad.OrderedDict([
-            ('IV',  rill.Diad(four)), 
-            ('III', rill.Diad(three)),
-            ('II', rill.Diad(two)),
-            ('II', rill.Diad(one)),
+            ('IV',  Diad(four)), 
+            ('III', Diad(three)),
+            ('II', Diad(two)),
+            ('I', Diad(one)),
           ])
 
 fl_four = rill.Diad((vln_frth_flgs['IV'], vln_fth_flgs['IV']))

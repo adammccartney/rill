@@ -6,11 +6,6 @@ import rill
 import rill.tools.FuzzyHarmony as FuzzyHarmony
 from rill.tools.PhraseMaker import PhraseStream as PhraseStream
 
-from rill.materials.pitch.definition import (
-                               transposition_lookup, 
-                               diatonic_register_lookup
-                               )
-
 def get_pitch_classes(pitch_segment):
     if isinstance(pitch_segment, abjad.PitchSegment):
         pitch_classes = pitch_segment.to_pitch_classes()
