@@ -16,6 +16,18 @@ def get_pitch_classes(pitch_segment):
         pitch_classes = pitch_segment.to_pitch_classes()
         return pitch_classes
 
+def make_decimo_diad(root):
+    """Makes a diad of a root + chromatic tenth returns a string"""
+    if isinstance(root, abjad.NamedPitch):
+        pitch = copy.deepcopy(root)
+        upper_pitch = pitch.transpose(16)
+        decimo = abjad.NamedPitch(upper_pitch) 
+        diad = tuple((root, decimo))
+        return diad
+    # WARNING, error not getting returned
+    else:
+        ValueError("Expecting {root} to be an abjad.NamedPitch")
+
 def make_diads(fuzzy_harmonies, interval_doubling=None):
     """
     Harmonizes with lookup table 
@@ -334,4 +346,17 @@ if __name__ == '__main__':
     for harmony in range(len(transposed_up_fifth)):
         print("transposed harmony: ", transposed_up_fifth[harmony])
 
+    middle_c = abjad.NamedPitch("c'")
+    diad = make_decimo_diad(middle_c)
+    print("Diad: ", diad)
+    any_pitch = 'gasdasd'
+    diad = make_decimo_diad(any_pitch)
+    print("Diad: ", diad)
 
+    from rill.tools.FuzzyHarmony import Diad as Diad
+
+    d_first_oct = abjad.NamedPitch("d'")
+    decimo = make_decimo_diad(d_first_oct)
+    diad = Diad(decimo)
+    print(diad.upper)
+    print(diad.lower)

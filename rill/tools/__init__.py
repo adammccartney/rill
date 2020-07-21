@@ -6,6 +6,7 @@ from .grace import *
 from .line_break import line_break
 from .material_methods import (
         get_pitch_classes,
+        make_decimo_diad,
         make_diads, 
         make_augmented_stream,
         transpose,

@@ -44,9 +44,9 @@ segment_maker = rill.SegmentMaker(
 #_______________/------------------------/
 
 fd7b9_42 = rill.tetrads['bf_v']
-fd7b9_6 = rill.invert_up(emin7, 1)
-fd7b9_64 = rill.invert_up(emin7, 2)
-fd7b9 = rill.invert_up(emin7, 3)
+fd7b9_6 = rill.invert_up(fd7b9_42, 1)
+fd7b9_64 = rill.invert_up(fd7b9_42, 2)
+fd7b9 = rill.invert_up(fd7b9_42, 3)
 
 f7b9_42 = rill.FuzzyHarmony('bf_v', fd7b9_42) # emin7
 f7b9_6 = rill.FuzzyHarmony('bf_v', fd7b9_6) 
@@ -72,12 +72,12 @@ fs9_64 = rill.FuzzyHarmony('g_i', fsj9_64)
     ein-, zwei-, dreigestr = ein,- zwei-, dreigestrichen
     """
 
-auth_one_ein_zw = [f7b9, f7b9_6, f7b9_64, f7_b9]
+auth_one_ein_zw = [f7b9_42, f7b9_6, f7b9_64, f7b9]
 auth_one_kl_eing = rill.transpose(auth_one_ein_zw, -12)
 
-plag_one_zw_dr = rill.transpose(auth_a_ein_zw, 19)
-plag_one_ein_zw = rill.transpose(auth_a_ein_zw, 7)
-plag_one_gr = rill.transpose(auth_a_ein_zw, -17)
+plag_one_zw_dr = rill.transpose(auth_one_ein_zw, 19)
+plag_one_ein_zw = rill.transpose(auth_one_ein_zw, 7)
+plag_one_gr = rill.transpose(auth_one_ein_zw, -17)
 
 auth_two_ein_zw = [fs9, fs9_2, fs9_6, fs9_64]
 
@@ -89,13 +89,18 @@ plag_two_ein_zw = rill.transpose(auth_two_ein_zw, 7)
 plag_two_zw_dr = rill.transpose(auth_two_ein_zw, 19)
 
 
-# ----- Diads
+def make_decimo_diad(root):
+    """Makes a diad of a root + chromatic tenth returns a string"""
+    if isinstance(root, abjad.NamedPitch):
+        pitch = copy.deepcopy(root)
+        decimo = pitch.transpose(16)
+        string = f"{
 
 fs7_diads_gr_kln = rill.make_diads(fs7_hrmns_gr_kln, interval_doubling='d5')
-fs7_diads_kln_eing = rill.make_diads(fs7_hrmns_kln_eing, interval_doubling='d5')
+diad_one = rill.make_diads(auth_one_ein_zw, 'd10')
+
 
 fs7_fifths_gr_kln = [fs7_diads_gr_kln[0][2], fs7_diads_gr_kln[0][3]]
-fs7_fifths_kln_eing = [fs7_diads_kln_eing[0][2], fs7_diads_kln_eing[0][3]]
 
 # -- sequences of notes for arpeggios
 

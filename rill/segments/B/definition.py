@@ -267,7 +267,7 @@ rhythm_definition.dynamics = [
 
 rhythm_definition.markup = [
         (2, rill.markup.pont(), 1.5),
-        (5 rill.markup.ord(), 1.5),
+        (5, rill.markup.ord(), 1.5),
         (12, rill.markup.pont(), 3.5),
         (16, rill.markup.ord(), 1.5),
         (38, rill.markup.flaut(), 3.5),
