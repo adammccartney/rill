@@ -4,7 +4,14 @@ from .clef import clef
 from .FuzzyHarmony import *        
 from .grace import *
 from .line_break import line_break
-from .material_methods import * 
+from .material_methods import (
+        get_pitch_classes,
+        make_decimo_diad,
+        make_diads, 
+        make_augmented_stream,
+        transpose,
+        transpose_segment,
+        )
 from .ottava import ottava 
 from .MarkupLibrary import MarkupLibrary 
 from .notehead_overrides import *

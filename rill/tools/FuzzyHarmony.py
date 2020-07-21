@@ -24,18 +24,20 @@ class Diad(object):
         self._pitch_string = pitch_string
 
     @property
-    def pitch_string(self) -> str:
+    def pitches(self) -> tuple:
         """Getter"""
+        return self._pitches
+
+    @property
+    def pitch_string(self) -> str:
         return self._pitch_string
 
     @property 
     def lower(self) -> str:
-        """Getter"""
         return self._pitch_one
 
     @property 
     def upper(self) -> str:
-        """Getter"""
         return self._pitch_two
 
 class FuzzyHarmony(object):

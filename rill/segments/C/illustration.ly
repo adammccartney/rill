@@ -27,7 +27,8 @@
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
-                    s1 * 1/1
+                    s1 * 1/2
+                    s1 * 1/2
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
@@ -73,11 +74,18 @@
                 {                                                              %! rill.ScoreTemplate.__call__()
                     \clef "treble"
                     \mark #3
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
+                    e''1
+                    ~
+                    e''1
+                    ~
+                    e''1
+                    ~
+                    e''1
+                    \override Staff.NoteHead.style = #'harmonic-mixed
+                    \repeat tremolo 16 {
+                        gs''''32
+                        e''''32
+                    }
                     r1
                     r1
                     r1
@@ -124,7 +132,8 @@
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
-                    s1 * 1/1
+                    s1 * 1/2
+                    s1 * 1/2
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
@@ -221,7 +230,8 @@
                 {                                                              %! rill.ScoreTemplate.__call__()
                     \clef "treble"
                     \mark #3
-                    r1
+                    <e'' gs'''>1
+                    :32
                     r1
                     r1
                     r1

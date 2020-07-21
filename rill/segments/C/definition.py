@@ -106,16 +106,44 @@ seq_three = (2, 0, 1, 3)
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'Violin'
 
-open_string_I = rill.vln_str_diads['I'].lower
+sul_I = rill.vln_str_diads['I'].lower
+sul_II = rill.vln_str_diads['II'].lower
+sul_III = rill.vln_str_diads['III'].lower 
+sul_IV = rill.vln_str_diads['IV'].lower
+
+I_fl_2 = rill.pure_fifth_diads['I'].lower
+II_fl_2 = rill.pure_fifth_diads['II'].lower
+III_fl_2 = rill.pure_fifth_diads['III'].lower
+IV_fl_2 = rill.pure_fifth_diads['IV'].lower
+
+I_fl_3 = rill.pure_fifth_diads['I'].upper
+II_fl_3 = rill.pure_fifth_diads['II'].upper
+III_fl_3 = rill.pure_fifth_diads['III'].upper
+IV_fl_3 = rill.pure_fifth_diads['IV'].upper
+
+I_fl_4 = rill.pure_maj_third_diads['I'].lower
+II_fl_4 = rill.pure_maj_third_diads['II'].lower
+III_fl_4 = rill.pure_maj_third_diads['III'].lower
+IV_fl_4 = rill.pure_maj_third_diads['IV'].lower
+
+I_fl_5  = rill.pure_maj_third_diads['I'].upper
+II_fl_5 = rill.pure_maj_third_diads['II'].upper
+III_fl_5 = rill.pure_maj_third_diads['III'].upper
+IV_fl_5 = rill.pure_maj_third_diads['IV'].upper
+
+fl_trem_I = abjad.TremoloContainer(16, "{0}32 {1}".format(I_fl_5, I_fl_4))
+fl_trem_II = abjad.TremoloContainer(16, "{0}32 {1}".format(II_fl_5, II_fl_4))
+fl_trem_III = abjad.TremoloContainer(16, "{0}32 {1}".format(III_fl_5, III_fl_4))
+fl_trem_IV = abjad.TremoloContainer(16, "{0}32 {1}".format(IV_fl_5, IV_fl_4))
 
 rhythm_definition.notes = [
-        ("r1"),
-        ("r1"),
-        ("r1"),
-        ("r1"),
+        (sul_I, abjad.Duration(1), rill.tie()),
+        (sul_I, abjad.Duration(1), rill.tie()),
+        (sul_I, abjad.Duration(1), rill.tie()),
+        (sul_I, abjad.Duration(1)),
         #----------------Bar 5
-        ("r1"),
-        ("r1"),
+        (fl_trem_I, abjad.Duration(1), rill.harmonic_mixed_on()),
+        (I_fl_2, abjad.Duration(1)),
         ("r1"),
         ("r1"),
         #----------------Bar 9
@@ -177,8 +205,13 @@ rhythm_definition.markup = []
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'Monosynth'
 
+diad_one = rill.vln_str_diads['I'].pitch_string
+diad_two = rill.vln_str_diads['II'].pitch_string
+diad_three = rill.vln_str_diads['III'].pitch_string
+diad_four = rill.vln_str_diads['IV'].pitch_string
+
 rhythm_definition.notes = [
-        ("r1"),
+        (diad_one, abjad.Duration(1), rill.tremolo(32)),
         ("r1"),
         ("r1"),
         ("r1"),

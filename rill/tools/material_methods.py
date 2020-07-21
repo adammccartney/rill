@@ -28,6 +28,8 @@ def make_diads(fuzzy_harmonies, interval_doubling=None):
     Harmonizes with lookup table 
     Returns a list of tuples
     """
+    from rill.materials.pitch.definition import diatonic_register_lookup
+
     harmonized_melodies = []
     if interval_doubling == None:
         for harmony in fuzzy_harmonies:
@@ -112,12 +114,13 @@ def deep_copy_harmonies_list(harmonies):
         copied_harmonies.append(new_harmony)
     return copied_harmonies
 
-
 def transpose(fuzzy_harmonies, t_interval=0):
     """Takes a lits of fuzzy harmony objects
     returns a new list of related objects
     based on an interval argument
     """
+    from rill.materials.pitch.definition import transposition_lookup
+    
     wrapped_t_interval = wrap_transposition(t_interval)
     harmony_shortname_lookup = transposition_lookup[wrapped_t_interval]
     

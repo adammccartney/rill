@@ -61,6 +61,21 @@ vln_open = abjad.OrderedDict([
             ('I', abjad.NamedPitch("e''")),
         ])
 
+vln_scnd_flgs = abjad.OrderedDict([
+            ('IV', abjad.NamedPitch("g'")), 
+            ('III', abjad.NamedPitch("d''")),
+            ('II', abjad.NamedPitch("a''")),
+            ('I', abjad.NamedPitch("e'''")),
+        ])
+
+vln_thrd_flgs = abjad.OrderedDict([
+            ('IV', abjad.NamedPitch("d''")), 
+            ('III', abjad.NamedPitch("a''")),
+            ('II', abjad.NamedPitch("e'''")),
+            ('I', abjad.NamedPitch("b'''")),
+        ])
+
+
 vln_frth_flgs = abjad.OrderedDict([
             ('IV', abjad.NamedPitch("g''")), 
             ('III', abjad.NamedPitch("d'''")),
@@ -91,16 +106,28 @@ vln_str_diads = abjad.OrderedDict([
             ('I', Diad(one)),
           ])
 
-fl_four = rill.Diad((vln_frth_flgs['IV'], vln_fth_flgs['IV']))
-fl_three = rill.Diad((vln_frth_flgs['III'], vln_fth_flgs['III']))
-fl_two = rill.Diad((vln_frth_flgs['II'], vln_fth_flgs[ 'II']))
-fl_one = rill.Diad((vln_frth_flgs['I'], vln_fth_flgs['I']))
+fl_four_P5 = rill.Diad((vln_scnd_flgs['IV'], vln_thrd_flgs['IV']))
+fl_three_P5 = rill.Diad((vln_scnd_flgs['III'], vln_thrd_flgs['III']))
+fl_two_P5 = rill.Diad((vln_scnd_flgs['II'], vln_thrd_flgs['II']))
+fl_one_P5 = rill.Diad((vln_scnd_flgs['I'], vln_thrd_flgs['I']))
+
+pure_fifth_diads = abjad.OrderedDict([
+           ('IV', fl_four_P5),
+           ('III', fl_three_P5),
+           ('II', fl_two_P5),
+           ('I', fl_one_P5),
+           ])
+
+fl_four_P3 = rill.Diad((vln_frth_flgs['IV'], vln_fth_flgs['IV']))
+fl_three_P3 = rill.Diad((vln_frth_flgs['III'], vln_fth_flgs['III']))
+fl_two_P3 = rill.Diad((vln_frth_flgs['II'], vln_fth_flgs[ 'II']))
+fl_one_P3 = rill.Diad((vln_frth_flgs['I'], vln_fth_flgs['I']))
 
 pure_maj_third_diads = abjad.OrderedDict([
-           ('IV', fl_four),
-           ('III', fl_three),
-           ('II', fl_two),
-           ('I', fl_one),
+           ('IV', fl_four_P3),
+           ('III', fl_three_P3),
+           ('II', fl_two_P3),
+           ('I', fl_one_P3),
            ])
 
 transposition_lookup = {  -12 : { # -P8
