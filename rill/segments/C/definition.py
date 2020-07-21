@@ -89,18 +89,38 @@ plag_two_ein_zw = rill.transpose(auth_two_ein_zw, 7)
 plag_two_zw_dr = rill.transpose(auth_two_ein_zw, 19)
 
 
-def make_decimo_diad(root):
-    """Makes a diad of a root + chromatic tenth returns a string"""
-    if isinstance(root, abjad.NamedPitch):
-        pitch = copy.deepcopy(root)
-        decimo = pitch.transpose(16)
-        string = f"{
+# ---- Diads 
 
-fs7_diads_gr_kln = rill.make_diads(fs7_hrmns_gr_kln, interval_doubling='d5')
-diad_one = rill.make_diads(auth_one_ein_zw, 'd10')
+vln_open = (
+            abjad.NamedPitch("g"), 
+            abjad.NamedPitch("d'"),
+            abjad.NamedPitch("a'"),
+            abjad.NamedPitch("e''"),
+            )
 
+vln_frth_flgs = (
+            abjad.NamedPitch("g''"), 
+            abjad.NamedPitch("d'''"),
+            abjad.NamedPitch("a'''"),
+            abjad.NamedPitch("e''''"),
+            )
 
-fs7_fifths_gr_kln = [fs7_diads_gr_kln[0][2], fs7_diads_gr_kln[0][3]]
+vln_fth_flgs = (
+            abjad.NamedPitch("b''"),
+            abjad.NamedPitch("fs'''"),
+            abjad.NamedPitch("cs''''"),
+            abjad.NamedPitch("gs''''"),
+            )
+
+one = rill.make_decimo_diad(vln_open[0])
+diad_one = rill.Diad(one)
+two = rill.make_decimo_diad(vln_open[1])
+diad_two = rill.Diad(two)
+three = rill.make_decimo_diad(vln_open[2])
+diad_three = rill.Diad(three)
+four = rill.make_decimo_diad(vln_open[3])
+diad_four = rill.Diad(four)
+
 
 # -- sequences of notes for arpeggios
 

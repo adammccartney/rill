@@ -19,6 +19,8 @@ from rill.materials.pitch.definition import (
                                     transposition_lookup,
                                     scale_lookup,
                                     melody_lookup,
+                                    vln_str_diads,
+                                    pure_maj_third_diads,
                                    )
 from rill.materials.metronome_marks.definition import  metronome_marks
 from rill import segments

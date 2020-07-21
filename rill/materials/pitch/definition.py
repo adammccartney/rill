@@ -1,4 +1,5 @@
 import abjad
+import rill
 
 #--------------------------------
 #   bf_ii |  bf_ii7             |
@@ -50,6 +51,53 @@ pentads = abjad.OrderedDict([
             ('cs_i', abjad.PitchSegment("cs ds' f' gs' bs'")),
             ])
 
+
+# ---- Diads based around Violin string properties (open strings & flageolets)
+
+vln_open = abjad.OrderedDict([
+            ('IV', abjad.NamedPitch("g")), 
+            ('III', abjad.NamedPitch("d'")),
+            ('II', abjad.NamedPitch("a'")),
+            ('I', abjad.NamedPitch("e''")),
+        ])
+
+vln_frth_flgs = abjad.OrderedDict([
+            ('IV', abjad.NamedPitch("g''")), 
+            ('III', abjad.NamedPitch("d'''")),
+            ('II', abjad.NamedPitch("a'''")),
+            ('I', abjad.NamedPitch("e''''")),
+            ])
+
+vln_fth_flgs = abjad.OrderedDict([
+            ('IV', abjad.NamedPitch("b''")),
+            ('III', abjad.NamedPitch("fs'''")),
+            ('II', abjad.NamedPitch("cs''''")),
+            ('I', abjad.NamedPitch("gs''''")),
+            ])
+
+four = rill.make_decimo_diad(vln_open['IV'])
+three = rill.make_decimo_diad(vln_open['III'])
+two = rill.make_decimo_diad(vln_open['II'])
+one = rill.make_decimo_diad(vln_open['I'])
+
+vln_str_diads = abjad.OrderedDict([
+            ('IV',  rill.Diad(four)), 
+            ('III', rill.Diad(three)),
+            ('II', rill.Diad(two)),
+            ('II', rill.Diad(one)),
+          ])
+
+fl_four = rill.Diad((vln_frth_flgs['IV'], vln_fth_flgs['IV']))
+fl_three = rill.Diad((vln_frth_flgs['III'], vln_fth_flgs['III']))
+fl_two = rill.Diad((vln_frth_flgs['II'], vln_fth_flgs[ 'II']))
+fl_one = rill.Diad((vln_frth_flgs['I'], vln_fth_flgs['I']))
+
+pure_maj_third_diads = abjad.OrderedDict([
+           ('IV', fl_four),
+           ('III', fl_three),
+           ('II', fl_two),
+           ('I', fl_one),
+           ])
 
 transposition_lookup = {  -12 : { # -P8
                             "bf_ii": "bf_ii",
