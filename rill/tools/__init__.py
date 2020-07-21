@@ -2,6 +2,7 @@ from .accents import *
 from .barlines import barline, repeat
 from .clef import clef 
 from .FuzzyHarmony import *        
+from .grace import *
 from .line_break import line_break
 from .material_methods import (
         get_pitch_classes,
