@@ -42,26 +42,26 @@ segment_maker = rill.SegmentMaker(
 # Pitch Material /  Constants for section /
 #_______________/------------------------/
 
-emin7 = rill.tetrads['e_i']
-emin7_6 = rill.invert_up(emin7, 1)
-emin7_64 = rill.invert_up(emin7, 2)
-emin7_42 = rill.invert_up(emin7, 3)
+fsmin7_42 = rill.tetrads['e_ii']
+fsmin7 = rill.invert_up(fs_min7_42, 1)
+fsmin7_6 = rill.invert_up(fs_min7_42, 2)
+fsmin7_64 = rill.invert_up(fs_min7_42, 3)
 
-em7 = rill.FuzzyHarmony('e_i', emin7) # emin7
-em7_6 = rill.FuzzyHarmony('e_i', emin7_6) 
-em7_64 = rill.FuzzyHarmony('e_i', emin7_64)   
-em7_42 = rill.FuzzyHarmony('e_i', emin7_42)
+fsm7_42 = rill.FuzzyHarmony('e_ii', fsmin7_42) # emin7
+fsm7 = rill.FuzzyHarmony('e_ii', fsmin6) 
+fsm7_6 = rill.FuzzyHarmony('e_ii', fsmin7_6)   
+fsm7_64 = rill.FuzzyHarmony('e_ii', fsmin7_62)
 
 # D7(b9, 13)
-fsj_65 = rill.tetrads['cs_ii']
-fsj_43 = rill.invert_up(fsj_65, 1)
-fsj_42 = rill.invert_up(fsj_65, 2)
-efmin7 = rill.invert_up(fsj_65, 3)
+gsd7_64 = rill.tetrads['cs_v']
+gsd7_42 = rill.invert_up(gsd7_64, 1)
+gsd7_mi2 = rill.invert_up(gsd7_64, 2)
+gsd7_aug4 = rill.invert_up(gsd7_64, 3)
 
-fs_65 = rill.FuzzyHarmony('cs_ii', fsj_65)
-fs_43 = rill.FuzzyHarmony('cs_ii', fsj_43) 
-fs_42 = rill.FuzzyHarmony('cs_ii', fsj_42)   
-efm7 = rill.FuzzyHarmony('cs_ii', efmin7)
+gs7_64 = rill.FuzzyHarmony('cs_v', gsd7_64)
+gs7_42 = rill.FuzzyHarmony('cs_v', gsd7_42) 
+gs7_mi2 = rill.FuzzyHarmony('cs_v', gsd7_mi2)   
+gs7_aug4 = rill.FuzzyHarmony('cs_v', gsd7_aug4)
 
 """ 
     Make harmonies and fifth offsets in all octaves
@@ -70,21 +70,21 @@ efm7 = rill.FuzzyHarmony('cs_ii', efmin7)
     ein-, zwei-, dreigestr = ein,- zwei-, dreigestrichen
     """
 
-em7_hrmns_ein_zw = [em7, em7_6, em7_64, em7_42]
+auth_one_ein_zw = [fsm7_42, fsm7, fsm7_6, fsm7_64]
+auth_one_kl_eing = rill.transpose(auth_one_ein_zw, -12)
 
-em7_hrmns_kln_eing = rill.transpose(em7_hrmns_ein_zw, -12)
-bm7_hrmns_zw_dr = rill.transpose(em7_hrmns_ein_zw, 19)
-bm7_hrmns_ein_zw = rill.transpose(em7_hrmns_ein_zw, 7)
-bm7_hrmns_gr = rill.transpose(em7_hrmns_ein_zw, -17)
+plag_one_zw_dr = rill.transpose(auth_a_ein_zw, 19)
+plag_one_ein_zw = rill.transpose(auth_a_ein_zw, 7)
+plag_one_gr = rill.transpose(auth_a_ein_zw, -17)
 
-fs7_hrmns_ein_zw = [fs_65, fs_43, fs_42, efm7]
+auth_two_ein_zw = [gs7_64, gs7_42, gs7_mi2, gs7_aug4]
 
-fs7_hrmns_gr_kln = rill.transpose(fs7_hrmns_ein_zw, -24)
-fs7_hrmns_kln_eing = rill.transpose(fs7_hrmns_ein_zw, -12)
-fs7_hrmns_zw_dr = rill.transpose(fs7_hrmns_ein_zw, 12)
+auth_two_gr_kln = rill.transpose(auth_two_ein_zw, -24)
+auth_two_kln_eing = rill.transpose(auth_two_ein_zw, -12)
+auth_two_zw_dr = rill.transpose(auth_two_ein_zw, 12)
 
-cs7_hrmns_ein_zw = rill.transpose(fs7_hrmns_ein_zw, 7)
-cs7_hrmns_zw_dr = rill.transpose(fs7_hrmns_ein_zw, 19)
+plag_two_ein_zw = rill.transpose(auth_two_ein_zw, 7)
+plag_two_zw_dr = rill.transpose(auth_two_ein_zw, 19)
 
 # ----- Diads
 

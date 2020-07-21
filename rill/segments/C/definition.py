@@ -47,21 +47,21 @@ fd7b9_6 = rill.invert_up(emin7, 1)
 fd7b9_64 = rill.invert_up(emin7, 2)
 fd7b9 = rill.invert_up(emin7, 3)
 
-f7b9_42 = rill.FuzzyHarmony('e_i', fd7b9_42) # emin7
-f7b9_6 = rill.FuzzyHarmony('e_i', fd7b9_6) 
-f7b9_64 = rill.FuzzyHarmony('e_i', fd7b9_64)   
-f7b9 = rill.FuzzyHarmony('e_i', fd7b9)
+f7b9_42 = rill.FuzzyHarmony('bf_v', fd7b9_42) # emin7
+f7b9_6 = rill.FuzzyHarmony('bf_v', fd7b9_6) 
+f7b9_64 = rill.FuzzyHarmony('bf_v', fd7b9_64)   
+f7b9 = rill.FuzzyHarmony('bf_v', fd7b9)
 
 # D7(b9, 13)
-fsj_65 = rill.tetrads['cs_ii']
-fsj_43 = rill.invert_up(fsj_65, 1)
-fsj_42 = rill.invert_up(fsj_65, 2)
-efmin7 = rill.invert_up(fsj_65, 3)
+fsj9 = rill.tetrads['g_i']
+fsj9_2 = rill.invert_up(fsj9, 1)
+fsj9_6 = rill.invert_up(fsj9, 2)
+fsj9_64 = rill.invert_up(fsj9, 3)
 
-fs_65 = rill.FuzzyHarmony('cs_ii', fsj_65)
-fs_43 = rill.FuzzyHarmony('cs_ii', fsj_43) 
-fs_42 = rill.FuzzyHarmony('cs_ii', fsj_42)   
-efm7 = rill.FuzzyHarmony('cs_ii', efmin7)
+fs9 = rill.FuzzyHarmony('g_i', fsj9)
+fs9_2 = rill.FuzzyHarmony('g_i', fsj9_2) 
+fs9_6 = rill.FuzzyHarmony('g_i', fsj9_6)   
+fs9_64 = rill.FuzzyHarmony('g_i', fsj9_64)
 
 
 """ 
@@ -71,21 +71,21 @@ efm7 = rill.FuzzyHarmony('cs_ii', efmin7)
     ein-, zwei-, dreigestr = ein,- zwei-, dreigestrichen
     """
 
-em7_hrmns_ein_zw = [em7, em7_6, em7_64, em7_42]
+auth_one_ein_zw = [f7b9, f7b9_6, f7b9_64, f7_b9]
+auth_one_kl_eing = rill.transpose(auth_one_ein_zw, -12)
 
-em7_hrmns_kln_eing = rill.transpose(em7_hrmns_ein_zw, -12)
-bm7_hrmns_zw_dr = rill.transpose(em7_hrmns_ein_zw, 19)
-bm7_hrmns_ein_zw = rill.transpose(em7_hrmns_ein_zw, 7)
-bm7_hrmns_gr = rill.transpose(em7_hrmns_ein_zw, -17)
+plag_one_zw_dr = rill.transpose(auth_a_ein_zw, 19)
+plag_one_ein_zw = rill.transpose(auth_a_ein_zw, 7)
+plag_one_gr = rill.transpose(auth_a_ein_zw, -17)
 
-fs7_hrmns_ein_zw = [fs_65, fs_43, fs_42, efm7]
+auth_two_ein_zw = [fs9, fs9_2, fs9_6, fs9_64]
 
-fs7_hrmns_gr_kln = rill.transpose(fs7_hrmns_ein_zw, -24)
-fs7_hrmns_kln_eing = rill.transpose(fs7_hrmns_ein_zw, -12)
-fs7_hrmns_zw_dr = rill.transpose(fs7_hrmns_ein_zw, 12)
+auth_two_gr_kln = rill.transpose(auth_two_ein_zw, -24)
+auth_two_kln_eing = rill.transpose(auth_two_ein_zw, -12)
+auth_two_zw_dr = rill.transpose(auth_two_ein_zw, 12)
 
-cs7_hrmns_ein_zw = rill.transpose(fs7_hrmns_ein_zw, 7)
-cs7_hrmns_zw_dr = rill.transpose(fs7_hrmns_ein_zw, 19)
+plag_two_ein_zw = rill.transpose(auth_two_ein_zw, 7)
+plag_two_zw_dr = rill.transpose(auth_two_ein_zw, 19)
 
 
 # ----- Diads
