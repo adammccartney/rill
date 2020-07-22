@@ -676,7 +676,7 @@
             >>                                                                 %! rill.ScoreTemplate.__call__()
             \context MusicContext = "Polysynth_Music_Context"                  %! rill.ScoreTemplate.__call__()
             {                                                                  %! rill.ScoreTemplate.__call__()
-                \context PolySynthMusicStaffGroup = "PolySynth_Music_Staff_Group" %! rill.ScoreTemplate.__call__()
+                \context Polysynth_Music_Staff_Group = "Polysynth_Music_Staff_Group" %! rill.ScoreTemplate.__call__()
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Staff = "RH_Polysynth"                            %! rill.ScoreTemplate.__call__()
                     <<                                                         %! rill.ScoreTemplate.__call__()
