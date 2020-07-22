@@ -174,9 +174,6 @@ class RhythmDefinition(object):
             elif isinstance(argument, tuple):
                 component = self._tuple_to_component(argument)
                 voice.append(component)
-            elif isinstance(argument, container):
-                copied_container = copy.deepcopy(argument)
-                voice.append(container)
             else:
                 raise ValueError(f"what is {argument!r}?")
 

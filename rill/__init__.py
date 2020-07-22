@@ -21,6 +21,7 @@ from rill.materials.pitch.definition import (
                                     melody_lookup,
                                     vln_str_diads,
                                     vln_scnd_flgs,
+                                    pure_fifth_diads,
                                     pure_maj_third_diads,
                                    )
 from rill.materials.metronome_marks.definition import  metronome_marks
