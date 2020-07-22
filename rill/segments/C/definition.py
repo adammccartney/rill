@@ -184,47 +184,68 @@ rhythm_definition.notes = [
         (fifth_fl_trem_III),
         (III_fl_2, abjad.Duration(1)),
         (sul_III, abjad.Duration(1), rill.tie(), rill.default_on()),
-        (sul_III, abjad.Duration(1), rill.tie(), rill.default_on()),
+        (sul_III, abjad.Duration(1), rill.tie()),
         #----------------Bar 33
-        (sul_III, abjad.Duration(1), rill.tie(), rill.default_on()),
-        ("r1"),
-        ("r1"),
-        ("r1"),
+        (sul_III, abjad.Duration(1), rill.tie()),
+        (sul_III, abjad.Duration(1), rill.tie()),
+        (sul_III, abjad.Duration(1), rill.tie()),
+        (sul_III, abjad.Duration(1), rill.tie()),
         #----------------Bar 37
-        ("r1"),
-        ("r1"),
-        ("r1"),
-        ("r1"),
+        (sul_III, abjad.Duration(1), rill.tie()),
+        (sul_III, abjad.Duration(1), rill.tie()),
+        (sul_III, abjad.Duration(1), rill.tie()),
+        (sul_III, abjad.Duration(1)),
         #----------------Bar 41
         (empty_58_measure),
         ("r4"),
-        ("r4."),
+        (sul_II, abjad.Duration(3, 8), rill.staccato()),
         ("r4"),
-        ("r4."),
+        (III_fl_2, abjad.Duration(3, 8), rill.staccato(), 
+                rill.harmonic_mixed_on()),
         ("r4"),
-        ("r4."),
+        (II_fl_3, abjad.Duration(3, 8), rill.staccato()),
         #----------------Bar 45
         ("r4"),
-        ("r4."),
+        (sul_III, abjad.Duration(3, 8), rill.staccato(), rill.default_on()),
         ("r4"),
-        ("r4."),
+        (II_fl_3, abjad.Duration(3, 8), rill.staccato(), 
+                rill.harmonic_mixed_on()),
         ("r4"),
-        ("r4."),
+        (III_fl_2, abjad.Duration(3, 8), rill.staccato()),
         ("r4"),
-        ("r4."),
+        (II_fl_4, abjad.Duration(3, 8), rill.staccato()),
         #----------------Bar 50
         ("r4"),
-        ("r4."),
+        (sul_II, abjad.Duration(3, 8), rill.staccato(), rill.default_on()),
         ("r4"),
-        ("r4."),
+        (III_fl_3, abjad.Duration(3, 8), rill.staccato(), 
+                rill.harmonic_mixed_on()),
         ("r4"),
-        ("r4."),
+        (III_fl_4, abjad.Duration(3, 8), rill.staccato(),
+                rill.barline("||")),
             ]
 
 
-rhythm_definition.dynamics = []
+rhythm_definition.dynamics = [
+        (0, abjad.Dynamic("niente")),
+        (1, "<"),
+        (2, abjad.Dynamic("pp")),
+        ]
 
-rhythm_definition.markup = []
+rhythm_definition.markup = [
+        (0, rill.markup.flaut(), 1.5),
+        (3, rill.markup.sul_I(), 5.5),
+        (22, rill.markup.flaut(), 1.5),
+        (25, rill.markup.sul_II(), 2.5),
+        (50, rill.markup.sul_II(), 2.5),
+        (52, rill.markup.sul_III(), 2.5),
+        (54, rill.markup.sul_II(), 5.5),
+        (56, rill.markup.sul_III(), 2.5),
+        (58, rill.markup.sul_II(), 4.5),
+        (60, rill.markup.sul_III(), 2.5),
+        (62, rill.markup.sul_II(), 6.5),
+        (66, rill.markup.sul_III(), 3.5),
+        ]
 
 #-----------------/
 #   MonoSynth    /
@@ -323,7 +344,37 @@ rhythm_definition.notes = [
         ("r4."),
     ]
 
-rhythm_definition.dynamics = []
+rhythm_definition.dynamics = [
+        (0, abjad.Dynamic("niente")),
+        (1, "<"),
+        (2, abjad.Dynamic("p")),
+        (3, ">"),
+        (5, abjad.Dynamic("niente")),
+        (6, "<"),
+        (7, abjad.Dynamic("p")),
+        (8, ">"),
+        (10, "<"),
+        (11, abjad.Dynamic("p")),
+        (12, ">"),
+        (14, "<"),
+        (15, ">"),
+        (16, "<"),
+        (17, ">"),
+        (19, abjad.Dynamic("niente")),
+        (21, "<"),
+        (22, ">"),
+        (23, "<"),
+        (24, ">"),
+        (26, "<"),
+        (27, ">"),
+        (28, "<"),
+        (29, ">"),
+        (30, "<"),
+        (31, ">"),
+        (31, "<"),
+        (32, ">"),
+        (36, abjad.Dynamic("niente")),
+        ]
 
 rhythm_definition.markup = []
 
@@ -408,8 +459,6 @@ rhythm_definition.notes = [
         (rh_arp_one_b_auth[0], abjad.Duration(1), rill.tie()),
         (rh_arp_one_b_auth[0], abjad.Duration(1), rill.tie()),
         #----------------Bar 41
-        #(rh_arp_one_b_auth[0], abjad.Duration(1, 4), rill.time_signature("5/8")),
-        #("r4."),
         (empty_58_measure),
         ("r4"),
         (rh_arp_one_b_auth[2], abjad.Duration(3, 8), rill.staccato()),
@@ -425,7 +474,7 @@ rhythm_definition.notes = [
         ("r4"),
         (rh_arp_one_c_auth[0], abjad.Duration(3, 8), rill.staccato()),
         ("r4"),
-        (rh_arp_one_d_auth[2], abjad.Duration(3, 8), rill.staccato()),
+        (rh_arp_one_d_auth[1], abjad.Duration(3, 8), rill.staccato()),
         #----------------Bar 50
         ("r4"),
         (rh_arp_one_a_auth[0], abjad.Duration(3, 8), rill.staccato()),
@@ -436,7 +485,9 @@ rhythm_definition.notes = [
                 rill.barline("||")),
     ]
 
-rhythm_definition.dynamics = []
+rhythm_definition.dynamics = [
+        (30, abjad.Dynamic("pp")),
+        ]
 
 rhythm_definition.markup = []
 
@@ -534,11 +585,13 @@ rhythm_definition.notes = [
         ("r4"),
         (lh_arp_one_auth[1], abjad.Duration(3, 8), rill.tie(), rill.staccato()),
         ("r4"),
-        (lh_arp_two_auth[1], abjad.Duration(3, 8), rill.tie(), rill.staccato(),
+        (lh_arp_two_auth[1], abjad.Duration(3, 8), rill.staccato(), 
                 rill.barline("||")),
     ]
 
-rhythm_definition.dynamics = []
+rhythm_definition.dynamics = [
+        (6, abjad.Dynamic("pp")),
+        ]
 
 rhythm_definition.markup = []
 

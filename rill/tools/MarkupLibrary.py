@@ -33,6 +33,22 @@ class MarkupLibrary(object):
         return abjad.Markup("rhythmically", direction=abjad.Up).upright()
 
     @staticmethod
+    def sul_I():
+        return abjad.Markup("sul I", direction=abjad.Up).upright()
+    
+    @staticmethod
+    def sul_II():
+        return abjad.Markup("sul II", direction=abjad.Up).upright()
+    
+    @staticmethod
+    def sul_III():
+        return abjad.Markup("sul III", direction=abjad.Up).upright()
+    
+    @staticmethod
+    def sul_IV():
+        return abjad.Markup("sul IV", direction=abjad.Up).upright()
+ 
+    @staticmethod
     def tasto():
         return abjad.Markup("sul tasto", direction=abjad.Up).upright()
     

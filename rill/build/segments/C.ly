@@ -10,10 +10,37 @@
             <<                                                                 %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Markup_Voice"                         %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
+                    \override TextScript.staff-padding = 1.5
+                    \override TextSpanner.staff-padding = 2.25
+                    s1 * 1/1
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    flautando
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
                     s1 * 1/1
                     s1 * 1/1
+                    \override TextScript.staff-padding = 5.5
+                    \override TextSpanner.staff-padding = 6.25
                     s1 * 1/1
-                    s1 * 1/1
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    "sul I"
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
                     s1 * 1/2
                     s1 * 1/2
                     s1 * 1/1
@@ -32,10 +59,38 @@
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
+                    \override TextScript.staff-padding = 1.5
+                    \override TextSpanner.staff-padding = 2.25
+                    s1 * 1/1
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    flautando
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
                     s1 * 1/1
                     s1 * 1/1
+                    \override TextScript.staff-padding = 2.5
+                    \override TextSpanner.staff-padding = 3.25
                     s1 * 1/1
-                    s1 * 1/1
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    "sul II"
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
                     s1 * 1/2
                     s1 * 1/2
                     s1 * 1/1
@@ -60,23 +115,135 @@
                     s1 * 1/1
                     s1 * 1/4
                     s1 * 3/8
+                    \override TextScript.staff-padding = 2.5
+                    \override TextSpanner.staff-padding = 3.25
                     s1 * 1/4
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    "sul II"
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
+                    s1 * 3/8
+                    \override TextScript.staff-padding = 2.5
+                    \override TextSpanner.staff-padding = 3.25
+                    s1 * 1/4
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    "sul III"
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
+                    s1 * 3/8
+                    \override TextScript.staff-padding = 5.5
+                    \override TextSpanner.staff-padding = 6.25
+                    s1 * 1/4
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    "sul II"
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
+                    s1 * 3/8
+                    \override TextScript.staff-padding = 2.5
+                    \override TextSpanner.staff-padding = 3.25
+                    s1 * 1/4
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    "sul III"
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
+                    s1 * 3/8
+                    \override TextScript.staff-padding = 4.5
+                    \override TextSpanner.staff-padding = 5.25
+                    s1 * 1/4
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    "sul II"
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
+                    s1 * 3/8
+                    \override TextScript.staff-padding = 2.5
+                    \override TextSpanner.staff-padding = 3.25
+                    s1 * 1/4
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    "sul III"
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
+                    s1 * 3/8
+                    \override TextScript.staff-padding = 6.5
+                    \override TextSpanner.staff-padding = 7.25
+                    s1 * 1/4
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    "sul II"
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
                     s1 * 3/8
                     s1 * 1/4
                     s1 * 3/8
+                    \override TextScript.staff-padding = 3.5
+                    \override TextSpanner.staff-padding = 4.25
                     s1 * 1/4
-                    s1 * 3/8
-                    s1 * 1/4
-                    s1 * 3/8
-                    s1 * 1/4
-                    s1 * 3/8
-                    s1 * 1/4
-                    s1 * 3/8
-                    s1 * 1/4
-                    s1 * 3/8
-                    s1 * 1/4
-                    s1 * 3/8
-                    s1 * 1/4
+                    \stopTextSpan
+                    - \abjad-invisible-line
+                    - \tweak bound-details.left.text \markup {
+                        \concat
+                            {
+                                \upright
+                                    "sul III"
+                                \hspace
+                                    #0.5
+                            }
+                        }
+                    \startTextSpan
                     s1 * 3/8
                     s1 * 1/4
                     s1 * 3/8
@@ -158,50 +325,73 @@
                     \override Staff.NoteHead.style = #'default
                     d'1
                     ~
-                    \override Staff.NoteHead.style = #'default
                     d'1
                     ~
-                    \override Staff.NoteHead.style = #'default
                     d'1
                     ~
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
+                    d'1
+                    ~
+                    d'1
+                    ~
+                    d'1
+                    ~
+                    d'1
+                    ~
+                    d'1
+                    ~
+                    d'1
+                    ~
+                    d'1
                     {
                         \time 5/8
                         r4
                         r4.
                     }
                     r4
-                    r4.
+                    a'4.
+                    -.
                     r4
-                    r4.
+                    \override Staff.NoteHead.style = #'harmonic-mixed
+                    d''4.
+                    -.
                     r4
-                    r4.
+                    e'''4.
+                    -.
                     r4
-                    r4.
+                    \override Staff.NoteHead.style = #'default
+                    d'4.
+                    -.
                     r4
-                    r4.
+                    \override Staff.NoteHead.style = #'harmonic-mixed
+                    e'''4.
+                    -.
                     r4
-                    r4.
+                    d''4.
+                    -.
                     r4
-                    r4.
+                    a'''4.
+                    -.
                     r4
-                    r4.
+                    \override Staff.NoteHead.style = #'default
+                    a'4.
+                    -.
                     r4
-                    r4.
+                    \override Staff.NoteHead.style = #'harmonic-mixed
+                    a''4.
+                    -.
                     r4
-                    r4.
+                    d'''4.
+                    -.
+                    \bar "||"
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Dynamics_Voice"                       %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     s1 * 1/1
+                    _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
                     s1 * 1/1
+                    \<
                     s1 * 1/1
+                    \pp
                     s1 * 1/1
                     s1 * 1/2
                     s1 * 1/2
@@ -493,42 +683,71 @@
                 \context Voice = "Monosynth_Dynamics_Voice"                    %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     s1 * 1/1
+                    _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
+                    s1 * 1/1
+                    \<
+                    s1 * 1/1
+                    \p
+                    s1 * 1/2
+                    \>
+                    s1 * 1/2
+                    s1 * 1/1
+                    _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
+                    s1 * 1/1
+                    \<
+                    s1 * 1/1
+                    \p
+                    s1 * 1/1
+                    \>
                     s1 * 1/1
                     s1 * 1/1
+                    \<
+                    s1 * 1/1
+                    \p
+                    s1 * 1/1
+                    \>
+                    s1 * 1/2
+                    s1 * 1/2
+                    \<
+                    s1 * 1/1
+                    \>
+                    s1 * 1/1
+                    \<
+                    s1 * 1/1
+                    \>
+                    s1 * 1/1
+                    s1 * 1/1
+                    _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
+                    s1 * 1/1
+                    s1 * 1/1
+                    \<
+                    s1 * 1/1
+                    \>
+                    s1 * 1/2
+                    \<
+                    s1 * 1/2
+                    \>
+                    s1 * 1/1
+                    s1 * 1/1
+                    \<
+                    s1 * 1/1
+                    \>
+                    s1 * 1/1
+                    \<
+                    s1 * 1/1
+                    \>
+                    s1 * 1/1
+                    \<
+                    s1 * 1/1
+                    \>
+                    \<
+                    s1 * 1/1
+                    \>
                     s1 * 1/2
                     s1 * 1/2
                     s1 * 1/1
                     s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/2
-                    s1 * 1/2
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/2
-                    s1 * 1/2
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/1
-                    s1 * 1/2
-                    s1 * 1/2
-                    s1 * 1/1
-                    s1 * 1/1
+                    _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
                     s1 * 1/1
                     s1 * 1/1
                     s1 * 1/1
@@ -563,7 +782,7 @@
             >>                                                                 %! rill.ScoreTemplate.__call__()
             \context MusicContext = "Polysynth_Music_Context"                  %! rill.ScoreTemplate.__call__()
             {                                                                  %! rill.ScoreTemplate.__call__()
-                \context PolySynthMusicStaffGroup = "PolySynth_Music_Staff_Group" %! rill.ScoreTemplate.__call__()
+                \context Polysynth_Music_Staff_Group = "Polysynth_Music_Staff_Group" %! rill.ScoreTemplate.__call__()
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Staff = "RH_Polysynth"                            %! rill.ScoreTemplate.__call__()
                     <<                                                         %! rill.ScoreTemplate.__call__()
@@ -726,7 +945,7 @@
                             c''4.
                             -.
                             r4
-                            <c'' c'' ef''>4.
+                            <c'' ef''>4.
                             -.
                             r4
                             fs'4.
@@ -772,6 +991,7 @@
                             s1 * 1/1
                             s1 * 1/2
                             s1 * 1/2
+                            \pp
                             s1 * 3/4
                             s1 * 1/4
                             s1 * 1/2
@@ -1001,7 +1221,6 @@
                             -.
                             r4
                             <c ef>4.
-                            ~
                             -.
                             \bar "||"
                         }                                                      %! rill.ScoreTemplate.__call__()
@@ -1014,6 +1233,7 @@
                             s1 * 1/1
                             s1 * 1/2
                             s1 * 1/2
+                            \pp
                             s1 * 1/1
                             s1 * 1/1
                             s1 * 1/1

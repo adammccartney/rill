@@ -100,8 +100,8 @@ class ScoreTemplate(object):
         # PolySynth Staff Group 
         polysynth_music_staff_group = abjad.StaffGroup(
                 [polysynth_music_rh_staff, polysynth_music_lh_staff],
-                lilypond_type="PolySynthMusicStaffGroup",
-                name="PolySynth_Music_Staff_Group",
+                lilypond_type="Polysynth_Music_Staff_Group",
+                name="Polysynth_Music_Staff_Group",
                 tag=tag,
                 )
         polysynth = rill.instruments["Polysynth"]
