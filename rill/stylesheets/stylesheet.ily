@@ -1,4 +1,4 @@
-% #(set-default-paper-size "a3portrait")
+%#(set-default-paper-size "A4")
 #(set-global-staff-size 14)
 
 \include "/home/adam/mccartney/mccartney/lilypond/mccartney.ily"
@@ -6,12 +6,15 @@
 \include "markups.ily"
 
 \paper {
-    system-system-spacing #'basic-distance = #24
+    system-system-spacing = 
+        #'((basic-distance . 24) 
+           (minimum-distance . 18) 
+           (padding . 4))
     score-system-spacing =
-    #'((basic-distance . 12)
-       (minimum-distance . 12)
-       (padding . 1)
-       (stretchability . 12))
+        #'((basic-distance . 12)
+           (minimum-distance . 12)
+           (padding . 1)
+           (stretchability . 12))
     system-separator-markup = \slashSeparator
     bottom-margin = 7\mm
     evenFooterMarkup = \markup \fill-line {
@@ -70,5 +73,4 @@
     ragged-bottom = ##t
     ragged-last = ##t
     ragged-right = ##t
-    #(layout-set-staff-size 15)
 }

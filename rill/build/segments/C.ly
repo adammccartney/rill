@@ -85,7 +85,7 @@
                         \concat
                             {
                                 \upright
-                                    "sul II"
+                                    "sul III"
                                 \hspace
                                     #0.5
                             }

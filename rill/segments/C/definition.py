@@ -36,7 +36,7 @@ segment_maker = rill.SegmentMaker(
                                 segment_name='C',
                                 rehearsal_mark=3,
                                 tempo=((1, 4), 50),
-                                time_signatures=([(4, 4)] * 20),
+                                time_signatures=[(4, 4)] * 44,
                                 )
 
 #-----------------/________________________
@@ -53,7 +53,6 @@ f7b9_6 = rill.FuzzyHarmony('bf_v', fd7b9_6)
 f7b9_64 = rill.FuzzyHarmony('bf_v', fd7b9_64)   
 f7b9 = rill.FuzzyHarmony('bf_v', fd7b9)
 
-# D7(b9, 13)
 fsj9 = rill.tetrads['g_i']
 fsj9_2 = rill.invert_up(fsj9, 1)
 fsj9_6 = rill.invert_up(fsj9, 2)
@@ -63,7 +62,6 @@ fs9 = rill.FuzzyHarmony('g_i', fsj9)
 fs9_2 = rill.FuzzyHarmony('g_i', fsj9_2) 
 fs9_6 = rill.FuzzyHarmony('g_i', fsj9_6)   
 fs9_64 = rill.FuzzyHarmony('g_i', fsj9_64)
-
 
 """ 
     Make harmonies and fifth offsets in all octaves
@@ -94,8 +92,6 @@ plag_two_zw_dr = rill.transpose(auth_two_ein_zw, 19)
 
 string = r"\time 5/8 r4 r4."
 empty_58_measure = abjad.Container(string)
-
-
 
 # -- sequences of notes for arpeggios
 
@@ -236,7 +232,7 @@ rhythm_definition.markup = [
         (0, rill.markup.flaut(), 1.5),
         (3, rill.markup.sul_I(), 5.5),
         (22, rill.markup.flaut(), 1.5),
-        (25, rill.markup.sul_II(), 2.5),
+        (25, rill.markup.sul_III(), 2.5),
         (50, rill.markup.sul_II(), 2.5),
         (52, rill.markup.sul_III(), 2.5),
         (54, rill.markup.sul_II(), 5.5),

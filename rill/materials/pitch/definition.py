@@ -69,7 +69,7 @@ vln_scnd_flgs = abjad.OrderedDict([
         ])
 
 vln_thrd_flgs = abjad.OrderedDict([
-            ('IV', abjad.NamedPitch("d'''")), 
+            ('IV', abjad.NamedPitch("d''")), 
             ('III', abjad.NamedPitch("a''")),
             ('II', abjad.NamedPitch("e'''")),
             ('I', abjad.NamedPitch("b'''")),
