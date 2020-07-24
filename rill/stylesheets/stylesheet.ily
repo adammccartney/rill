@@ -1,20 +1,19 @@
-%#(set-default-paper-size "A4")
-#(set-global-staff-size 14)
+#(set-default-paper-size "a4portrait")
+#(set-global-staff-size 15)
 
-\include "/home/adam/mccartney/mccartney/lilypond/mccartney.ily"
+\include "./_stylesheets/abjad.ily"
 \include "contexts.ily"
-\include "markups.ily"
 
 \paper {
     system-system-spacing = 
-        #'((basic-distance . 24) 
-           (minimum-distance . 18) 
-           (padding . 4))
+        #'((basic-distance . 20) 
+           (minimum-distance . 20) 
+           (padding . 12))
     score-system-spacing =
-        #'((basic-distance . 12)
-           (minimum-distance . 12)
-           (padding . 1)
-           (stretchability . 12))
+        #'((basic-distance . 16)
+           (minimum-distance . 16)
+           (padding . 4)
+           (stretchability . 14))
     system-separator-markup = \slashSeparator
     bottom-margin = 7\mm
     evenFooterMarkup = \markup \fill-line {
@@ -62,7 +61,7 @@
             \vspace #1.25
             \override #'(font-name . "Palatino Italic")
             \fontsize #5
-            "for flutes, clarinets, guitar and viola"
+            "for violin, monosynth and polysynth"
         }
     }
 }
