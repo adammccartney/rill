@@ -1,19 +1,19 @@
 #(set-default-paper-size "a4portrait")
-#(set-global-staff-size 15)
+#(set-global-staff-size 14)
 
 \include "./_stylesheets/abjad.ily"
 \include "contexts.ily"
 
 \paper {
     system-system-spacing = 
-        #'((basic-distance . 20) 
-           (minimum-distance . 20) 
-           (padding . 12))
+        #'((basic-distance . 15) 
+           (minimum-distance . 15) 
+           (padding . 6))
     score-system-spacing =
-        #'((basic-distance . 16)
-           (minimum-distance . 16)
+        #'((basic-distance . 14)
+           (minimum-distance . 14)
            (padding . 4)
-           (stretchability . 14))
+           (stretchability . 6))
     system-separator-markup = \slashSeparator
     bottom-margin = 7\mm
     evenFooterMarkup = \markup \fill-line {

@@ -39,6 +39,10 @@ class ScoreTemplate(object):
             rill.instruments["Violin"],
         )
         abjad.annotate(violin_staff, "default_clef", abjad.Clef("treble"))
+        violin_tag = abjad.LilyPondLiteral(r"\ŧag #'violin", format_slot='before')
+        abjad.attach(violin_tag, violin_staff)
+        abjad.setting(violin_staff).midi_instrument = abjad.scheme.Scheme(
+                'violin', force_quotes=True)
 
         # MonoSynth
         markup_voice = abjad.Voice(name="Monosynth_Markup_Voice", tag=tag)
@@ -56,7 +60,10 @@ class ScoreTemplate(object):
             rill.instruments["Monosynth"],
         )
         abjad.annotate(monosynth_staff, "default_clef", abjad.Clef("treble"))
-
+        monosynth_tag = abjad.LilyPondLiteral(r"\ŧag #'monosynth", format_slot='before')
+        abjad.attach(monosynth_tag, monosynth_staff)
+        abjad.setting(monosynth_staff).midi_instrument = abjad.scheme.Scheme(
+                'clarinet', force_quotes=True)
 
         ### RH PolySynth Voices ###
         markup_voice = abjad.Voice(name="RH_I_Markup_Voice", tag=tag)
@@ -97,30 +104,31 @@ class ScoreTemplate(object):
                 polysynth_music_lh_staff, "default_clef", abjad.Clef("bass")
                 )
 
-        # PolySynth Staff Group 
-        polysynth_music_staff_group = abjad.StaffGroup(
-                [polysynth_music_rh_staff, polysynth_music_lh_staff],
-                lilypond_type="Polysynth_Music_Staff_Group",
-                name="Polysynth_Music_Staff_Group",
-                tag=tag,
-                )
-        polysynth = rill.instruments["Polysynth"]
-        abjad.annotate(polysynth_music_staff_group, "default_insrument", polysynth)
-
         # PolySynth Music Context
         polysynth_music_context = abjad.Context(
-                [polysynth_music_staff_group],
+                [polysynth_music_rh_staff, polysynth_music_lh_staff],
                 lilypond_type="MusicContext",
                 name="Polysynth_Music_Context",
                 tag=tag
                 )
+        
+        # Polysynth Staff Group
+        polysynth_staff_group = abjad.StaffGroup(
+                [polysynth_music_context],
+                lilypond_type="PianoStaffGroup",
+                name="Polysynth_Staff_Group",
+                )
+        polysynth_tag = abjad.LilyPondLiteral(r"\ŧag #'polysynth", format_slot='before')
+        abjad.attach(polysynth_tag, polysynth_staff_group)
+        abjad.setting(polysynth_staff_group).midi_instrument = abjad.scheme.Scheme(
+                'organ', force_quotes=True)
         
         # Music Context
         music_context = abjad.Context(
                 [
                     violin_staff,
                     monosynth_staff,
-                    polysynth_music_context,
+                    polysynth_staff_group,
                 ],
                 lilypond_type="MusicContext",
                 simultaneous=True,

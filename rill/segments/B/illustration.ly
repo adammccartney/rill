@@ -1,4 +1,4 @@
-\version "2.18.2"                                                              %! abjad.LilyPondFile._get_format_pieces()
+\version ""                                                                    %! abjad.LilyPondFile._get_format_pieces()
 \language "english"                                                            %! abjad.LilyPondFile._get_format_pieces()
 
 #(ly:set-option 'relative-includes #t)
@@ -19,7 +19,12 @@
     <<                                                                         %! rill.ScoreTemplate.__call__()
         \context MusicContext = "Music_Context"                                %! rill.ScoreTemplate.__call__()
         <<                                                                     %! rill.ScoreTemplate.__call__()
+            \ŧag #'violin
             \context Staff = "Violin"                                          %! rill.ScoreTemplate.__call__()
+            \with                                                              %! rill.ScoreTemplate.__call__()
+            {                                                                  %! rill.ScoreTemplate.__call__()
+                midiInstrument = #"violin"                                     %! rill.ScoreTemplate.__call__()
+            }                                                                  %! rill.ScoreTemplate.__call__()
             <<                                                                 %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Markup_Voice"                         %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
@@ -420,7 +425,12 @@
                     \!
                 }                                                              %! rill.ScoreTemplate.__call__()
             >>                                                                 %! rill.ScoreTemplate.__call__()
+            \ŧag #'monosynth
             \context Staff = "Monosynth"                                       %! rill.ScoreTemplate.__call__()
+            \with                                                              %! rill.ScoreTemplate.__call__()
+            {                                                                  %! rill.ScoreTemplate.__call__()
+                midiInstrument = #"clarinet"                                   %! rill.ScoreTemplate.__call__()
+            }                                                                  %! rill.ScoreTemplate.__call__()
             <<                                                                 %! rill.ScoreTemplate.__call__()
                 \context Voice = "Monosynth_Markup_Voice"                      %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
