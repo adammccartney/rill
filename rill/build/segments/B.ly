@@ -6,7 +6,7 @@
     <<                                                                         %! rill.ScoreTemplate.__call__()
         \context MusicContext = "Music_Context"                                %! rill.ScoreTemplate.__call__()
         <<                                                                     %! rill.ScoreTemplate.__call__()
-            \ŧag #'violin
+            \tag #'violin
             \context Staff = "Violin"                                          %! rill.ScoreTemplate.__call__()
             \with                                                              %! rill.ScoreTemplate.__call__()
             {                                                                  %! rill.ScoreTemplate.__call__()
@@ -412,7 +412,7 @@
                     \!
                 }                                                              %! rill.ScoreTemplate.__call__()
             >>                                                                 %! rill.ScoreTemplate.__call__()
-            \ŧag #'monosynth
+            \tag #'monosynth
             \context Staff = "Monosynth"                                       %! rill.ScoreTemplate.__call__()
             \with                                                              %! rill.ScoreTemplate.__call__()
             {                                                                  %! rill.ScoreTemplate.__call__()
@@ -671,422 +671,424 @@
                     \!
                 }                                                              %! rill.ScoreTemplate.__call__()
             >>                                                                 %! rill.ScoreTemplate.__call__()
-            \context MusicContext = "Polysynth_Music_Context"                  %! rill.ScoreTemplate.__call__()
+            \tag #'polysynth
+            \context PianoStaff = "Polysynth_Staff_Group"                      %! rill.ScoreTemplate.__call__()
+            \with                                                              %! rill.ScoreTemplate.__call__()
             {                                                                  %! rill.ScoreTemplate.__call__()
-                \context Polysynth_Music_Staff_Group = "Polysynth_Music_Staff_Group" %! rill.ScoreTemplate.__call__()
-                <<                                                             %! rill.ScoreTemplate.__call__()
-                    \context Staff = "RH_Polysynth"                            %! rill.ScoreTemplate.__call__()
-                    <<                                                         %! rill.ScoreTemplate.__call__()
-                        \context Voice = "RH_I_Markup_Voice"                   %! rill.ScoreTemplate.__call__()
-                        {                                                      %! rill.ScoreTemplate.__call__()
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 1/4
-                            s1 * 3/4
-                            s1 * 1/1
-                            s1 * 3/4
-                            s1 * 1/4
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 1/4
-                            s1 * 3/4
-                            s1 * 1/1
-                            s1 * 3/4
-                            s1 * 1/4
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 1/4
-                            s1 * 3/4
-                            s1 * 1/1
-                            s1 * 3/4
-                            s1 * 1/4
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 3/4
-                            s1 * 1/4
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 1/1
-                            s1 * 1/4
-                            s1 * 3/4
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            \stopTextSpan
-                        }                                                      %! rill.ScoreTemplate.__call__()
-                        \context Voice = "RH_I_Music_Voice"                    %! rill.ScoreTemplate.__call__()
-                        {                                                      %! rill.ScoreTemplate.__call__()
-                            \clef "bass"
-                            \clef "treble"
-                            \mark #2
-                            e2
-                            ~
-                            <e g>2
-                            ~
-                            <e g>4
-                            ~
-                            <e g b>2.
-                            ~
-                            <e g b d'>1
-                            ~
-                            <e g b d'>2.
-                            r4
-                            b2
-                            ~
-                            <b d'>2
-                            ~
-                            <b d'>4
-                            ~
-                            <b d' e'>2.
-                            ~
-                            <b d' e' g'>1
-                            ~
-                            <b d' e' g'>2.
-                            r4
-                            d'2
-                            ~
-                            <d' e'>2
-                            ~
-                            <d' e'>4
-                            ~
-                            <d' e' g'>2.
-                            ~
-                            <d' e' g' b'>1
-                            ~
-                            <d' e' g' b'>2.
-                            r4
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r2
-                            \clef "bass"
-                            cs2
-                            ~
-                            <fs, cs>2.
-                            ~
-                            <fs, as, cs>4
-                            ~
-                            <fs, as, cs>2
-                            ~
-                            <fs, as, cs ds>2
-                            ~
-                            <fs, as, cs ds>1
-                            ~
-                            <as, cs ds fs>1
-                            ~
-                            <as, cs ds fs>2
-                            ~
-                            <as, cs ds>2
-                            ~
-                            <as, cs ds>1
-                            ~
-                            <as, cs ds>4
-                            ~
-                            <as, ds>2.
-                            ~
-                            ds1
-                            r1
-                            r1
-                            <ds as>1
-                            ~
-                            <ds as>1
-                            ~
-                            <ds as>1
-                            ~
-                            <ds as>1
-                            ~
-                            <ds as>1
-                            r1
-                            r1
-                            \clef "treble"
-                            <cs' a'>1
-                            ~
-                            <cs' a'>1
-                            ~
-                            <cs' a'>1
-                            ~
-                            <cs' a'>1
-                            ~
-                            <cs' a'>1
-                            \bar "||"
-                        }                                                      %! rill.ScoreTemplate.__call__()
-                        \context Voice = "RH_I_Dynamics_Voice"                 %! rill.ScoreTemplate.__call__()
-                        {                                                      %! rill.ScoreTemplate.__call__()
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 1/4
-                            s1 * 3/4
-                            s1 * 1/1
-                            s1 * 3/4
-                            s1 * 1/4
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 1/4
-                            s1 * 3/4
-                            s1 * 1/1
-                            s1 * 3/4
-                            s1 * 1/4
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 1/4
-                            s1 * 3/4
-                            s1 * 1/1
-                            s1 * 3/4
-                            s1 * 1/4
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 3/4
-                            s1 * 1/4
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 1/1
-                            s1 * 1/4
-                            s1 * 3/4
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            \pp
-                            s1 * 1/1
-                            \>
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            \!
-                        }                                                      %! rill.ScoreTemplate.__call__()
-                    >>                                                         %! rill.ScoreTemplate.__call__()
-                    \context Staff = "LH_Polysynth"                            %! rill.ScoreTemplate.__call__()
-                    <<                                                         %! rill.ScoreTemplate.__call__()
-                        \context Voice = "LH_I_Markup_Voice"                   %! rill.ScoreTemplate.__call__()
-                        {                                                      %! rill.ScoreTemplate.__call__()
-                            s1 * 1/1
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 3/4
-                            s1 * 1/4
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 1/1
-                            s1 * 1/4
-                            s1 * 3/4
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            \stopTextSpan
-                        }                                                      %! rill.ScoreTemplate.__call__()
-                        \context Voice = "LH_I_Music_Voice"                    %! rill.ScoreTemplate.__call__()
-                        {                                                      %! rill.ScoreTemplate.__call__()
-                            \clef "bass"
-                            \mark #2
-                            r1
-                            r2
-                            b,2
-                            ~
-                            <b, d>2.
-                            ~
-                            <b, d fs>4
-                            ~
-                            <b, d fs>2
-                            ~
-                            <b, d fs a>2
-                            ~
-                            <b, d fs a>1
-                            ~
-                            <d a b>1
-                            ~
-                            <d a b>2
-                            ~
-                            <d fs a b>2
-                            ~
-                            <d fs a b>1
-                            ~
-                            <d fs a b>4
-                            ~
-                            <a b>2.
-                            ~
-                            b1
-                            ~
-                            b1
-                            ~
-                            b1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                            r1
-                        }                                                      %! rill.ScoreTemplate.__call__()
-                        \context Voice = "LH_I_Dynamics_Voice"                 %! rill.ScoreTemplate.__call__()
-                        {                                                      %! rill.ScoreTemplate.__call__()
-                            \override DynamicLineSpanner.staff-padding = 2.5
-                            s1 * 1/1
-                            \ppp
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 3/4
-                            s1 * 1/4
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/2
-                            s1 * 1/2
-                            s1 * 1/1
-                            s1 * 1/4
-                            s1 * 3/4
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            s1 * 1/1
-                            \!
-                        }                                                      %! rill.ScoreTemplate.__call__()
-                    >>                                                         %! rill.ScoreTemplate.__call__()
-                >>                                                             %! rill.ScoreTemplate.__call__()
+                midiInstrument = #"organ"                                      %! rill.ScoreTemplate.__call__()
             }                                                                  %! rill.ScoreTemplate.__call__()
+            <<                                                                 %! rill.ScoreTemplate.__call__()
+                \context Staff = "RH_Polysynth"                                %! rill.ScoreTemplate.__call__()
+                <<                                                             %! rill.ScoreTemplate.__call__()
+                    \context Voice = "RH_I_Markup_Voice"                       %! rill.ScoreTemplate.__call__()
+                    {                                                          %! rill.ScoreTemplate.__call__()
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 1/4
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 1/4
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 1/4
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/4
+                        s1 * 1/4
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/1
+                        s1 * 1/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        \stopTextSpan
+                    }                                                          %! rill.ScoreTemplate.__call__()
+                    \context Voice = "RH_I_Music_Voice"                        %! rill.ScoreTemplate.__call__()
+                    {                                                          %! rill.ScoreTemplate.__call__()
+                        \clef "bass"
+                        \clef "treble"
+                        \mark #2
+                        e2
+                        ~
+                        <e g>2
+                        ~
+                        <e g>4
+                        ~
+                        <e g b>2.
+                        ~
+                        <e g b d'>1
+                        ~
+                        <e g b d'>2.
+                        r4
+                        b2
+                        ~
+                        <b d'>2
+                        ~
+                        <b d'>4
+                        ~
+                        <b d' e'>2.
+                        ~
+                        <b d' e' g'>1
+                        ~
+                        <b d' e' g'>2.
+                        r4
+                        d'2
+                        ~
+                        <d' e'>2
+                        ~
+                        <d' e'>4
+                        ~
+                        <d' e' g'>2.
+                        ~
+                        <d' e' g' b'>1
+                        ~
+                        <d' e' g' b'>2.
+                        r4
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r2
+                        \clef "bass"
+                        cs2
+                        ~
+                        <fs, cs>2.
+                        ~
+                        <fs, as, cs>4
+                        ~
+                        <fs, as, cs>2
+                        ~
+                        <fs, as, cs ds>2
+                        ~
+                        <fs, as, cs ds>1
+                        ~
+                        <as, cs ds fs>1
+                        ~
+                        <as, cs ds fs>2
+                        ~
+                        <as, cs ds>2
+                        ~
+                        <as, cs ds>1
+                        ~
+                        <as, cs ds>4
+                        ~
+                        <as, ds>2.
+                        ~
+                        ds1
+                        r1
+                        r1
+                        <ds as>1
+                        ~
+                        <ds as>1
+                        ~
+                        <ds as>1
+                        ~
+                        <ds as>1
+                        ~
+                        <ds as>1
+                        r1
+                        r1
+                        \clef "treble"
+                        <cs' a'>1
+                        ~
+                        <cs' a'>1
+                        ~
+                        <cs' a'>1
+                        ~
+                        <cs' a'>1
+                        ~
+                        <cs' a'>1
+                        \bar "||"
+                    }                                                          %! rill.ScoreTemplate.__call__()
+                    \context Voice = "RH_I_Dynamics_Voice"                     %! rill.ScoreTemplate.__call__()
+                    {                                                          %! rill.ScoreTemplate.__call__()
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 1/4
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 1/4
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 1/4
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/4
+                        s1 * 1/4
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/1
+                        s1 * 1/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        \pp
+                        s1 * 1/1
+                        \>
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        \!
+                    }                                                          %! rill.ScoreTemplate.__call__()
+                >>                                                             %! rill.ScoreTemplate.__call__()
+                \context Staff = "LH_Polysynth"                                %! rill.ScoreTemplate.__call__()
+                <<                                                             %! rill.ScoreTemplate.__call__()
+                    \context Voice = "LH_I_Markup_Voice"                       %! rill.ScoreTemplate.__call__()
+                    {                                                          %! rill.ScoreTemplate.__call__()
+                        s1 * 1/1
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/4
+                        s1 * 1/4
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/1
+                        s1 * 1/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        \stopTextSpan
+                    }                                                          %! rill.ScoreTemplate.__call__()
+                    \context Voice = "LH_I_Music_Voice"                        %! rill.ScoreTemplate.__call__()
+                    {                                                          %! rill.ScoreTemplate.__call__()
+                        \clef "bass"
+                        \mark #2
+                        r1
+                        r2
+                        b,2
+                        ~
+                        <b, d>2.
+                        ~
+                        <b, d fs>4
+                        ~
+                        <b, d fs>2
+                        ~
+                        <b, d fs a>2
+                        ~
+                        <b, d fs a>1
+                        ~
+                        <d a b>1
+                        ~
+                        <d a b>2
+                        ~
+                        <d fs a b>2
+                        ~
+                        <d fs a b>1
+                        ~
+                        <d fs a b>4
+                        ~
+                        <a b>2.
+                        ~
+                        b1
+                        ~
+                        b1
+                        ~
+                        b1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                    }                                                          %! rill.ScoreTemplate.__call__()
+                    \context Voice = "LH_I_Dynamics_Voice"                     %! rill.ScoreTemplate.__call__()
+                    {                                                          %! rill.ScoreTemplate.__call__()
+                        \override DynamicLineSpanner.staff-padding = 2.5
+                        s1 * 1/1
+                        \ppp
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 3/4
+                        s1 * 1/4
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/1
+                        s1 * 1/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        \!
+                    }                                                          %! rill.ScoreTemplate.__call__()
+                >>                                                             %! rill.ScoreTemplate.__call__()
+            >>                                                                 %! rill.ScoreTemplate.__call__()
         >>                                                                     %! rill.ScoreTemplate.__call__()
     >>                                                                         %! rill.ScoreTemplate.__call__()

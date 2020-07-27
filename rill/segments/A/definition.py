@@ -22,7 +22,7 @@ from typing import List
 #####################
 
 this_current_directory =  pathlib.Path(__file__).parent 
-score = rill.ScoreTemplate()
+score =rill.ScoreTemplate()
 score_template = score()
 
 segment_maker = rill.SegmentMaker(

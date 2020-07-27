@@ -6,9 +6,9 @@
 
 \paper {
     system-system-spacing = 
-        #'((basic-distance . 15) 
+        #'((basic-distance . 24) 
            (minimum-distance . 15) 
-           (padding . 6))
+           (padding . 15))
     score-system-spacing =
         #'((basic-distance . 14)
            (minimum-distance . 14)
