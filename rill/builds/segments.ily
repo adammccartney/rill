@@ -1,9 +1,9 @@
 {
-    \include "../segments/A.ly"
-    \include "../segments/B.ly"
-    \include "../segments/C.ly"
-    \include "../segments/D.ly"
-    \include "../segments/E.ly"
-    \include "../segments/F.ly"
-    \include "../segments/G.ly"
+    \include "../segments/segment_A.ly"
+    \include "../segments/segment_B.ly"
+    \include "../segments/segment_C.ly"
+    \include "../segments/segment_D.ly"
+    \include "../segments/segment_E.ly"
+    \include "../segments/segment_F.ly"
+    \include "../segments/segment_G.ly"
 }

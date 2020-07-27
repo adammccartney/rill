@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2020.7.24)  27 JUL 2020 15:17
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2020.7.24)  27 JUL 2020 20:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -337,31 +337,16 @@ ABD: EveryShipout initializing macros
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-
-! LaTeX Error: File `../assets/performance-notes/.tex' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: tex)
-
-Enter file name: ../assets/performance-notes
-(../assets/performance-notes.tex)
-
-! LaTeX Error: File `../assets/instrumentation/.tex' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: tex)
-
-Enter file name: ../assets/instrumentation
-(../assets/instrumentation.tex) [1
+[1
 
 ] (./preface.aux) ) 
 Here is how much of TeX's memory you used:
- 7859 strings out of 479277
- 171978 string characters out of 5882574
+ 7838 strings out of 479277
+ 171347 string characters out of 5882574
  446851 words of memory out of 5000000
- 25468 multiletter control sequences out of 15000+600000
- 535392 words of font info for 33 fonts, out of 8000000 for 9000
+ 25462 multiletter control sequences out of 15000+600000
+ 535376 words of font info for 31 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 52i,4n,46p,288b,157s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 52i,4n,46p,288b,137s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on preface.pdf (1 page).
