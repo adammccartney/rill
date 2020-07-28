@@ -1,5 +1,3 @@
-% rill (2020) for violin, monosynth and polysynth 
-
 \version "2.20.0"
 \language "english"
 

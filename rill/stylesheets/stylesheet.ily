@@ -1,4 +1,4 @@
-#(set-default-paper-size "a4portrait")
+#(set-default-paper-size "letter" 'portrait)
 #(set-global-staff-size 14)
 
 \include "./_stylesheets/abjad.ily"
@@ -72,4 +72,27 @@
     ragged-bottom = ##t
     ragged-last = ##t
     ragged-right = ##t
-}
+    \context {
+      \Staff
+      \name ViolinStaff
+      \type Engraver_Group
+      \alias Staff
+      instrumentName = "Violin"
+      shortInstrumentName = "Vn."
+    }
+    \context {
+      \name MonosynthStaff
+      \type Engraver_Group
+      \alias Staff
+      instrumentName = "Monosynth"
+      shortInstrumentName = "My."
+    }
+    \context {
+      \name PolysynthStaff
+      \type Engraver_Group
+      \alias Staff
+      instrumentName = "Polysynth"
+      shortInstrumentName = "Py."
+    }
+  }
+
