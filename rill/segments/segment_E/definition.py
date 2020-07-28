@@ -19,7 +19,7 @@ segment_maker = rill.SegmentMaker(
                                 _score=score_template,
                                 current_directory=this_current_directory,
                                 build_path=test_build_path,
-                                segment_name='E',
+                                segment_name='segment_E',
                                 tempo=((1, 4), 50),
                                 time_signatures=([(4, 4)] * 20),
                                 )
