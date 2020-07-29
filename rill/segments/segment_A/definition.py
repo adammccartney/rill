@@ -407,13 +407,13 @@ rhythm_definition.markup = [
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'RH_I'
 
-gmin7_6_zwgstrn = gm7_hrmns_zw_dr[0].segment
-gmin7_6_arp = LegatoArpeggio(gmin7_6_zwgstrn, seq_one)
-rh_arp_one = gmin7_6_arp.stages
+plag_one_a = gm7_hrmns_zw_dr[0].segment
+plag_one_a_arp = LegatoArpeggio(plag_one_a, seq_one)
+rh_arp_one = plag_one_a_arp.stages
 
-gmin7_64 = gm7_hrmns_zw_dr[1].segment
-gmin7_64_arp = LegatoArpeggio(gmin7_64, seq_two)
-rh_arp_two = gmin7_64_arp.stages
+plag_one_b = gm7_hrmns_zw_dr[1].segment
+plag_one_b_arp = LegatoArpeggio(plag_one_b, seq_two)
+rh_arp_two = plag_one_b_arp.stages
 
 rhythm_definition.notes = [
         ("r1"),
@@ -492,18 +492,17 @@ rhythm_definition.markup = []
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'LH_I'
 
-cmin7_6_kln = cm7_hrmns_kln_eing[0].segment
-cmin7_6_arp= LegatoArpeggio(cmin7_6_kln, seq_one)
-lh_arp_one = cmin7_6_arp.stages
+auth_one_a = cm7_hrmns_kln_eing[0].segment
+auth_one_a_arp= LegatoArpeggio(auth_one_a, seq_one)
+lh_arp_one = auth_one_a_arp.stages
 
-d7_9 = d7_hrmns_gr_kln[0].segment
-d7_9_arp = LegatoArpeggio(d7_9, seq_three)
-lh_arp_two = d7_9_arp.stages
+auth_two_a = d7_hrmns_gr_kln[0].segment
+auth_two_a_arp = LegatoArpeggio(auth_two_a, seq_three)
+lh_arp_two = auth_two_a_arp.stages
 
-d7_6 = d7_hrmns_gr_kln[1].segment
-d7_6_arp = LegatoArpeggio(d7_6, seq_three)
-lh_arp_three = d7_6_arp.stages
-
+auth_two_b = d7_hrmns_gr_kln[1].segment
+auth_two_b_arp = LegatoArpeggio(auth_two_b, seq_three)
+lh_arp_three = auth_two_b_arp.stages
 
 rhythm_definition.notes = [
         (lh_arp_one[0], abjad.Duration(1, 2), rill.tie()),
