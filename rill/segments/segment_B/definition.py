@@ -100,7 +100,6 @@ seq_one = (0, 1, 2, 3)
 seq_two = (3, 2, 0, 1)
 seq_three = (2, 0, 1, 3)
 
-
 #--------------/
 #   Violin    /
 #____________/
@@ -108,8 +107,8 @@ seq_three = (2, 0, 1, 3)
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'Violin'
 
-bmin7_eingstrn = bm7_hrmns_ein_zw[0].segment
-vln_arp_one = LegatoArpeggio(bmin7_eingstrn, seq_one)
+plag_one_a = bm7_hrmns_ein_zw[0].segment
+vln_arp_one = LegatoArpeggio(plag_one_a, seq_one)
 violin_arp_one = vln_arp_one.pitches
 
 m_seq_a = (0, 1, 2, 3)
@@ -130,12 +129,12 @@ melody_one_a = mel_one_a_arp.pitches
 melody_one_a_oct_up = mel_one_a_arp_oct_up.pitches
 melody_one_a_oct_down = mel_one_a_arp_oct_down.pitches
 
-emin7_64_zwei = em7_hrmns_ein_zw[2].segment
-tr_arp_one = LegatoArpeggio(emin7_64_zwei, seq_one)
+auth_one_c = em7_hrmns_ein_zw[2].segment
+tr_arp_one = LegatoArpeggio(auth_one_c, seq_one)
 violin_arp_two = tr_arp_one.pitches 
 
-emin7_42_zwei = em7_hrmns_ein_zw[3].segment
-tr_arp_two = LegatoArpeggio(emin7_42_zwei, seq_one)
+auth_one_d = em7_hrmns_ein_zw[3].segment
+tr_arp_two = LegatoArpeggio(auth_one_d, seq_one)
 violin_arp_three = tr_arp_two.pitches
 
 fs7_eingstrn = fs7_hrmns_zw_dr[0].segment

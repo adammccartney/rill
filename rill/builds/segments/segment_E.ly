@@ -1,16 +1,3 @@
-\version "2.20.0"                                                              %! abjad.LilyPondFile._get_format_pieces()
-\language "english"                                                            %! abjad.LilyPondFile._get_format_pieces()
-
-#(ly:set-option 'relative-includes #t)
-
-\include "../../stylesheets/stylesheet.ily"                                    %! abjad.LilyPondFile._get_formatted_includes()
-
-\header {                                                                      %! abjad.LilyPondFile._get_formatted_blocks()
-    title = ##f
-    composer = ##f
-}                                                                              %! abjad.LilyPondFile._get_formatted_blocks()
-
-\score {                                                                       %! abjad.LilyPondFile._get_formatted_blocks()
     \context Score = "Score"                                                   %! rill.ScoreTemplate.__call__()
     \with                                                                      %! rill.ScoreTemplate.__call__()
     {                                                                          %! rill.ScoreTemplate.__call__()
@@ -1104,4 +1091,3 @@
             >>                                                                 %! rill.ScoreTemplate.__call__()
         >>                                                                     %! rill.ScoreTemplate.__call__()
     >>                                                                         %! rill.ScoreTemplate.__call__()
-}                                                                              %! abjad.LilyPondFile._get_formatted_blocks()

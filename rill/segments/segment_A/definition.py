@@ -112,8 +112,10 @@ seq_three = (2, 0, 1, 3)
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'Violin'
 
-gmin7_6_eingstrn = gm7_hrmns_ein_zw[0].segment
-vln_arp_one = LegatoArpeggio(gmin7_6_eingstrn, seq_one)
+# Violin Arpeggio One 
+
+plag_two_a = gm7_hrmns_ein_zw[0].segment
+vln_arp_one = LegatoArpeggio(plag_two_a, seq_one)
 violin_arp_one = vln_arp_one.pitches
 
 m_seq_a = (0, 1, 2, 3)
@@ -134,18 +136,19 @@ melody_one_a = mel_one_a_arp.pitches
 melody_one_a_oct_up = mel_one_a_arp_oct_up.pitches
 melody_one_a_oct_down = mel_one_a_arp_oct_down.pitches
 
-cmin7_42_zwei = cm7_hrmns_ein_zw[2].segment
-tr_arp_one = LegatoArpeggio(cmin7_42_zwei, seq_one)
+# Violin Arpeggio Two
+
+auth_one_c = cm7_hrmns_ein_zw[2].segment
+tr_arp_one = LegatoArpeggio(auth_one_c, seq_one)
 violin_arp_two = tr_arp_one.pitches 
 
-cmin7_zwei = cm7_hrmns_ein_zw[3].segment
-tr_arp_two = LegatoArpeggio(cmin7_zwei, seq_one)
+auth_one_d = cm7_hrmns_ein_zw[3].segment
+tr_arp_two = LegatoArpeggio(auth_one_d, seq_one)
 violin_arp_three = tr_arp_two.pitches
 
-d7_9_eingstrn = d7_hrmns_zw_dr[0].segment
-vln_arp_two = LegatoArpeggio(d7_9_eingstrn, seq_three)
+auth_two_a = d7_hrmns_zw_dr[0].segment
+vln_arp_two = LegatoArpeggio(auth_two_a, seq_three)
 violin_arp_four = vln_arp_two.pitches
-
 
 # Melody Two 
 
@@ -290,12 +293,12 @@ rhythm_definition.markup = [
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'Monosynth'
 
-cmin7_42_eing = cm7_hrmns_kln_eing[2].segment
-tr_arp_one = LegatoArpeggio(cmin7_42_eing, seq_one)
+auth_one_c = cm7_hrmns_kln_eing[2].segment
+tr_arp_one = LegatoArpeggio(auth_one_c, seq_one)
 monosynth_arp_one = tr_arp_one.stages 
 
-cmin7_kln = cm7_hrmns_kln_eing[3].segment
-tr_arp_two = LegatoArpeggio(cmin7_kln, seq_one)
+auth_one_d = cm7_hrmns_kln_eing[3].segment
+tr_arp_two = LegatoArpeggio(auth_one_d, seq_one)
 monosynth_arp_two = tr_arp_two.stages 
 
 diad_DA = Diad(d7_fifths_gr_kln[1])
