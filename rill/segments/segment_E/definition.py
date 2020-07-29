@@ -93,8 +93,6 @@ plag_two_kln_eing = rill.transpose(auth_two_ein_zw, -5)
 plag_two_ein_zw = rill.transpose(auth_two_ein_zw, 7)
 plag_two_zw_dr = rill.transpose(auth_two_ein_zw, 19)
 
-
-
 # ----- Diads
 
 plag_two_diads_gr_kln = rill.make_diads(plag_two_gr_kln, interval_doubling='d5')
@@ -102,7 +100,6 @@ plag_two_diads_kln_eing = rill.make_diads(plag_two_kln_eing, interval_doubling='
 
 plag_two_fifths_gr_kln = [plag_two_diads_gr_kln[0][2], plag_two_diads_gr_kln[0][3]]
 plag_two_fifths_kln_eing = [plag_two_diads_kln_eing[0][2], plag_two_diads_kln_eing[0][3]]
-
 
 # Sequences 
 
@@ -289,10 +286,6 @@ rhythm_definition.markup = [
         (50, rill.markup.ord(), 3.5),
         (72, rill.markup.flaut(), 1.5),
         ]
-
-
-
-
 
 #-----------------/
 #   MonoSynth    /
