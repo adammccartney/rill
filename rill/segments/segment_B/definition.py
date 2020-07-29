@@ -69,27 +69,27 @@ efm7 = rill.FuzzyHarmony('cs_ii', efmin7)
     ein-, zwei-, dreigestr = ein,- zwei-, dreigestrichen
     """
 
-em7_hrmns_ein_zw = [em7, em7_6, em7_64, em7_42]
+auth_one_ein_zw = [em7, em7_6, em7_64, em7_42]
 
-em7_hrmns_kln_eing = rill.transpose(em7_hrmns_ein_zw, -12)
-bm7_hrmns_zw_dr = rill.transpose(em7_hrmns_ein_zw, 19)
-bm7_hrmns_ein_zw = rill.transpose(em7_hrmns_ein_zw, 7)
-bm7_hrmns_gr = rill.transpose(em7_hrmns_ein_zw, -17)
+auth_one_kln_eing = rill.transpose(auth_one_ein_zw, -12)
+plag_one_zw_dr = rill.transpose(auth_one_ein_zw, 19)
+plag_one_ein_zw = rill.transpose(auth_one_ein_zw, 7)
+plag_one_gr = rill.transpose(auth_one_ein_zw, -17)
 
-fs7_hrmns_ein_zw = [fs_65, fs_43, fs_42, efm7]
+auth_two_ein_zw = [fs_65, fs_43, fs_42, efm7]
 
-fs7_hrmns_gr_kln = rill.transpose(fs7_hrmns_ein_zw, -24)
-fs7_hrmns_kln_eing = rill.transpose(fs7_hrmns_ein_zw, -12)
-fs7_hrmns_zw_dr = rill.transpose(fs7_hrmns_ein_zw, 12)
+auth_two_gr_kln = rill.transpose(auth_two_ein_zw, -24)
+auth_two_kln_eing = rill.transpose(auth_two_ein_zw, -12)
+auth_two_zw_dr = rill.transpose(auth_two_ein_zw, 12)
 
-cs7_hrmns_ein_zw = rill.transpose(fs7_hrmns_ein_zw, 7)
-cs7_hrmns_zw_dr = rill.transpose(fs7_hrmns_ein_zw, 19)
+plag_two_ein_zw = rill.transpose(auth_two_ein_zw, 7)
+plag_two_zw_dr = rill.transpose(auth_two_ein_zw, 19)
 
 
 # ----- Diads
 
-fs7_diads_gr_kln = rill.make_diads(fs7_hrmns_gr_kln, interval_doubling='d5')
-fs7_diads_kln_eing = rill.make_diads(fs7_hrmns_kln_eing, interval_doubling='d5')
+fs7_diads_gr_kln = rill.make_diads(auth_two_gr_kln, interval_doubling='d5')
+fs7_diads_kln_eing = rill.make_diads(auth_two_kln_eing, interval_doubling='d5')
 
 fs7_fifths_gr_kln = [fs7_diads_gr_kln[0][2], fs7_diads_gr_kln[0][3]]
 fs7_fifths_kln_eing = [fs7_diads_kln_eing[0][2], fs7_diads_kln_eing[0][3]]
@@ -107,7 +107,7 @@ seq_three = (2, 0, 1, 3)
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'Violin'
 
-plag_one_a = bm7_hrmns_ein_zw[0].segment
+plag_one_a = plag_one_ein_zw[0].segment
 vln_arp_one = LegatoArpeggio(plag_one_a, seq_one)
 violin_arp_one = vln_arp_one.pitches
 
@@ -129,15 +129,15 @@ melody_one_a = mel_one_a_arp.pitches
 melody_one_a_oct_up = mel_one_a_arp_oct_up.pitches
 melody_one_a_oct_down = mel_one_a_arp_oct_down.pitches
 
-auth_one_c = em7_hrmns_ein_zw[2].segment
+auth_one_c = auth_one_ein_zw[2].segment
 tr_arp_one = LegatoArpeggio(auth_one_c, seq_one)
 violin_arp_two = tr_arp_one.pitches 
 
-auth_one_d = em7_hrmns_ein_zw[3].segment
+auth_one_d = auth_one_ein_zw[3].segment
 tr_arp_two = LegatoArpeggio(auth_one_d, seq_one)
 violin_arp_three = tr_arp_two.pitches
 
-auth_two_a = fs7_hrmns_zw_dr[0].segment
+auth_two_a = auth_two_zw_dr[0].segment
 vln_arp_two = LegatoArpeggio(auth_two_a, seq_three)
 violin_arp_four = vln_arp_two.pitches
 
@@ -278,11 +278,11 @@ rhythm_definition.markup = [
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'Monosynth'
 
-auth_one_c = em7_hrmns_kln_eing[2].segment
+auth_one_c = auth_one_kln_eing[2].segment
 tr_arp_one = LegatoArpeggio(auth_one_c, seq_one)
 monosynth_arp_one = tr_arp_one.stages 
 
-auth_one_d = em7_hrmns_kln_eing[3].segment
+auth_one_d = auth_one_kln_eing[3].segment
 tr_arp_two = LegatoArpeggio(auth_one_d, seq_one)
 monosynth_arp_two = tr_arp_two.stages 
 
@@ -392,23 +392,23 @@ rhythm_definition.markup = [
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'RH_I'
 
-auth_one_a = em7_hrmns_kln_eing[0].segment
+auth_one_a = auth_one_kln_eing[0].segment
 auth_one_a_arp = LegatoArpeggio(auth_one_a, seq_one)
 rh_arp_one = auth_one_a_arp.stages
 
-auth_one_c = em7_hrmns_kln_eing[2].segment
+auth_one_c = auth_one_kln_eing[2].segment
 auth_one_c_arp= LegatoArpeggio(auth_one_c, seq_one)
 rh_arp_one_i = auth_one_c_arp.stages
 
-auth_one_d = em7_hrmns_kln_eing[3].segment
+auth_one_d = auth_one_kln_eing[3].segment
 auth_one_d_arp = LegatoArpeggio(auth_one_d, seq_one)
 rh_arp_one_b = auth_one_d_arp.stages
 
-auth_two_a = fs7_hrmns_gr_kln[0].segment
+auth_two_a = auth_two_gr_kln[0].segment
 auth_two_a_arp = LegatoArpeggio(auth_two_a, seq_three)
 rh_arp_two = auth_two_a_arp.stages
 
-auth_two_b = fs7_hrmns_gr_kln[1].segment
+auth_two_b = auth_two_gr_kln[1].segment
 auth_two_b_arp = LegatoArpeggio(auth_two_b, seq_three)
 rh_arp_three = auth_two_b_arp.stages
 
@@ -499,11 +499,11 @@ rhythm_definition.markup = []
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'LH_I'
 
-plag_one_a = bm7_hrmns_gr[0].segment
+plag_one_a = plag_one_gr[0].segment
 plag_one_a_arp = LegatoArpeggio(plag_one_a, seq_one)
 lh_arp_one = plag_one_a_arp.stages
 
-plag_one_b = bm7_hrmns_gr[1].segment
+plag_one_b = plag_one_gr[1].segment
 plag_one_b_arp = LegatoArpeggio(plag_one_b, seq_two)
 lh_arp_two = plag_one_b_arp.stages
 

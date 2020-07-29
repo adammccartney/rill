@@ -1,16 +1,3 @@
-\version "2.20.0"                                                              %! abjad.LilyPondFile._get_format_pieces()
-\language "english"                                                            %! abjad.LilyPondFile._get_format_pieces()
-
-#(ly:set-option 'relative-includes #t)
-
-\include "../../stylesheets/stylesheet.ily"                                    %! abjad.LilyPondFile._get_formatted_includes()
-
-\header {                                                                      %! abjad.LilyPondFile._get_formatted_blocks()
-    title = ##f
-    composer = ##f
-}                                                                              %! abjad.LilyPondFile._get_formatted_blocks()
-
-\score {                                                                       %! abjad.LilyPondFile._get_formatted_blocks()
     \context Score = "Score"                                                   %! rill.ScoreTemplate.__call__()
     \with                                                                      %! rill.ScoreTemplate.__call__()
     {                                                                          %! rill.ScoreTemplate.__call__()
@@ -207,123 +194,123 @@
                 \context Voice = "Violin_Music_Voice"                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     \clef "treble"
-                    \mark \default
+                    \mark #2
                     r1
                     r2
-                    c''2
+                    b'2
                     ~
-                    c''1
+                    b'1
                     ~
-                    c''2
-                    gs'2
+                    b'2
+                    d''2
                     ~
-                    gs'1
+                    d''1
                     ~
-                    gs'1
-                    ~
-                    gs'2
-                    ~
-                    ds''2
-                    ~
-                    ds''1
-                    ~
-                    ds''4
-                    fss''2.
-                    ~
-                    fss''1
-                    r1
-                    r4
-                    b'2.
-                    ~
-                    b'8
-                    r8
-                    b''2
-                    d''4
-                    e''1
-                    g''1
-                    a'2
-                    ~
-                    fs'2
-                    ~
-                    fs'4
-                    ~
-                    ef''2.
-                    --
                     d''1
                     ~
                     d''2
+                    ~
+                    a''2
+                    ~
+                    a''1
+                    ~
+                    a''4
+                    fs''2.
+                    ~
+                    fs''1
+                    r1
+                    r4
+                    g'2.
+                    ~
+                    g'8
+                    r8
+                    g''2
+                    b'4
+                    cs''1
+                    e''1
+                    b'2
+                    ~
+                    d''2
+                    ~
+                    d''4
+                    ~
+                    e''2.
+                    --
+                    g''1
+                    ~
+                    g''2
                     r2
                     r4
                     d''4
                     --
-                    a'2
+                    e''2
                     ~
-                    a'1
+                    e''1
                     r2
+                    cs'''2
+                    ~
+                    cs'''1
+                    ~
+                    cs'''2
+                    fs''2
+                    ~
+                    fs''1
+                    ~
+                    fs''1
+                    ~
+                    fs''2
+                    ~
                     ds'''2
                     ~
                     ds'''1
                     ~
-                    ds'''2
-                    gs''2
+                    ds'''4
+                    as''2.
                     ~
-                    gs''1
-                    ~
-                    gs''1
-                    ~
-                    gs''2
-                    ~
-                    fss'''2
-                    ~
-                    fss'''1
-                    ~
-                    fss'''4
-                    c'''2.
-                    ~
-                    c'''1
+                    as''1
                     r1
                     r1
                     r1
                     r4
+                    a'4
+                    --
+                    a'2
+                    b'4
+                    --
+                    b'4
+                    b'2
+                    a'4
+                    --
+                    a'2
+                    b'4
+                    --
+                    b'4
+                    b'2
+                    e''4
+                    --
+                    e''2
                     d''4
                     --
-                    d''2
-                    ef''4
-                    --
-                    ef''4
-                    ef''2
                     d''4
-                    --
                     d''2
-                    ef'4
+                    e''4
                     --
-                    ef'4
-                    ef'2
-                    a'4
+                    e''2
+                    b'4
                     --
-                    a'2
-                    g'4
-                    --
-                    g'4
-                    g'2
-                    a'4
-                    --
-                    a'2
-                    ef'4
-                    --
-                    ef'4
-                    ef'4
+                    b'4
+                    b'4
                     ~
-                    ef'4
-                    a'4
+                    b'4
+                    e''4
                     --
-                    a'2
+                    e''2
                     ~
-                    a'1
+                    e''1
                     ~
-                    a'1
+                    e''1
                     ~
-                    a'1
+                    e''1
                     \bar "||"
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Dynamics_Voice"                       %! rill.ScoreTemplate.__call__()
@@ -507,7 +494,7 @@
                 \context Voice = "Monosynth_Music_Voice"                       %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     \clef "treble"
-                    \mark \default
+                    \mark #2
                     r1
                     r1
                     r1
@@ -521,50 +508,49 @@
                     r1
                     r4
                     \clef "bass"
-                    b2.
+                    g2.
                     ~
-                    b8
+                    g8
                     r8
-                    b'2
-                    d'4
-                    e'1
+                    g'2
+                    b4
+                    cs'1
+                    e1
+                    :32
                     \clef "treble"
-                    g1
+                    b2
                     :32
-                    a2
-                    :32
-                    ~
-                    <fs a>2
+                    <b d'>2
                     :32
                     ~
-                    <fs a>4
+                    <b d'>4
                     :32
                     ~
-                    <fs a ef'>2.
+                    <b d' e'>2.
                     :32
                     ~
-                    <fs a d' ef'>1
+                    <b d' e' g'>1
                     :32
                     ~
-                    <fs a d' ef'>2.
+                    <b d' e' g'>2.
                     :32
                     r4
                     d'2
                     :32
                     ~
-                    <a d'>2
+                    <d' e'>2
                     :32
                     ~
-                    <a d'>4
+                    <d' e'>4
                     :32
                     ~
-                    <a d' fs'>2.
+                    <d' e' g'>2.
                     :32
                     ~
-                    <a d' ef' fs'>1
+                    <d' e' g' b'>1
                     :32
                     ~
-                    <a d' ef' fs'>2.
+                    <d' e' g' b'>2.
                     :32
                     r4
                     r1
@@ -574,35 +560,36 @@
                     r1
                     r1
                     \clef "bass"
-                    <fss css'>1
+                    <ds as>1
                     :32
                     ~
-                    <fss css'>1
+                    <ds as>1
                     :32
                     ~
-                    <fss css'>1
+                    <ds as>1
                     :32
                     ~
-                    <fss css'>1
+                    <ds as>1
                     :32
                     ~
-                    <fss css'>1
+                    <ds as>1
                     :32
                     r1
                     r1
-                    <ds' as'>1
+                    \clef "treble"
+                    <cs' a'>1
                     :32
                     ~
-                    <ds' as'>1
+                    <cs' a'>1
                     :32
                     ~
-                    <ds' as'>1
+                    <cs' a'>1
                     :32
                     ~
-                    <ds' as'>1
+                    <cs' a'>1
                     :32
                     ~
-                    <ds' as'>1
+                    <cs' a'>1
                     :32
                     r1
                     r1
@@ -759,42 +746,42 @@
                     {                                                          %! rill.ScoreTemplate.__call__()
                         \clef "bass"
                         \clef "treble"
-                        \mark \default
-                        bf''2
+                        \mark #2
+                        e2
                         ~
-                        <a'' bf''>2
+                        <e g>2
                         ~
-                        <a'' bf''>4
+                        <e g>4
                         ~
-                        <a'' bf'' e'''>2.
+                        <e g b>2.
                         ~
-                        <a'' bf'' cs''' e'''>1
+                        <e g b d'>1
                         ~
-                        <a'' bf'' cs''' e'''>2.
+                        <e g b d'>2.
                         r4
-                        a2
+                        b2
                         ~
-                        <fs a>2
+                        <b d'>2
                         ~
-                        <fs a>4
+                        <b d'>4
                         ~
-                        <fs a ef'>2.
+                        <b d' e'>2.
                         ~
-                        <fs a d' ef'>1
+                        <b d' e' g'>1
                         ~
-                        <fs a d' ef'>2.
+                        <b d' e' g'>2.
                         r4
                         d'2
                         ~
-                        <a d'>2
+                        <d' e'>2
                         ~
-                        <a d'>4
+                        <d' e'>4
                         ~
-                        <a d' fs'>2.
+                        <d' e' g'>2.
                         ~
-                        <a d' ef' fs'>1
+                        <d' e' g' b'>1
                         ~
-                        <a d' ef' fs'>2.
+                        <d' e' g' b'>2.
                         r4
                         r1
                         r1
@@ -807,54 +794,54 @@
                         r1
                         r2
                         \clef "bass"
-                        a'''2
+                        cs2
                         ~
-                        <e''' a'''>2.
+                        <fs, cs>2.
                         ~
-                        <bf'' e''' a'''>4
+                        <fs, as, cs>4
                         ~
-                        <bf'' e''' a'''>2
+                        <fs, as, cs>2
                         ~
-                        <bf'' cs''' e''' a'''>2
+                        <fs, as, cs ds>2
                         ~
-                        <bf'' cs''' e''' a'''>1
+                        <fs, as, cs ds>1
                         ~
-                        <f, gs, bs, cs>1
+                        <as, cs ds fs>1
                         ~
-                        <f, gs, bs, cs>2
+                        <as, cs ds fs>2
                         ~
-                        <f, gs, bs,>2
+                        <as, cs ds>2
                         ~
-                        <f, gs, bs,>1
+                        <as, cs ds>1
                         ~
-                        <f, gs, bs,>4
+                        <as, cs ds>4
                         ~
-                        <f, bs,>2.
+                        <as, ds>2.
                         ~
-                        bs,1
+                        ds1
                         r1
                         r1
-                        <fss css'>1
+                        <ds as>1
                         ~
-                        <fss css'>1
+                        <ds as>1
                         ~
-                        <fss css'>1
+                        <ds as>1
                         ~
-                        <fss css'>1
+                        <ds as>1
                         ~
-                        <fss css'>1
+                        <ds as>1
                         r1
                         r1
                         \clef "treble"
-                        <ds' as'>1
+                        <cs' a'>1
                         ~
-                        <ds' as'>1
+                        <cs' a'>1
                         ~
-                        <ds' as'>1
+                        <cs' a'>1
                         ~
-                        <ds' as'>1
+                        <cs' a'>1
                         ~
-                        <ds' as'>1
+                        <cs' a'>1
                         \bar "||"
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "RH_I_Dynamics_Voice"                     %! rill.ScoreTemplate.__call__()
@@ -981,38 +968,38 @@
                     \context Voice = "LH_I_Music_Voice"                        %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         \clef "bass"
-                        \mark \default
+                        \mark #2
                         r1
                         r2
-                        ef2
+                        b,2
                         ~
-                        <d ef>2.
+                        <b, d>2.
                         ~
-                        <d ef a>4
+                        <b, d fs>4
                         ~
-                        <d ef a>2
+                        <b, d fs>2
                         ~
-                        <d ef fs a>2
+                        <b, d fs a>2
                         ~
-                        <d ef fs a>1
+                        <b, d fs a>1
                         ~
-                        <cs, f, gs,>1
+                        <d a b>1
                         ~
-                        <cs, f, gs,>2
+                        <d a b>2
                         ~
-                        <cs, f, gs, bs,>2
+                        <d fs a b>2
                         ~
-                        <cs, f, gs, bs,>1
+                        <d fs a b>1
                         ~
-                        <cs, f, gs, bs,>4
+                        <d fs a b>4
                         ~
-                        <cs, gs,>2.
+                        <a b>2.
                         ~
-                        gs,1
+                        b1
                         ~
-                        gs,1
+                        b1
                         ~
-                        gs,1
+                        b1
                         r1
                         r1
                         r1
@@ -1105,4 +1092,3 @@
             >>                                                                 %! rill.ScoreTemplate.__call__()
         >>                                                                     %! rill.ScoreTemplate.__call__()
     >>                                                                         %! rill.ScoreTemplate.__call__()
-}                                                                              %! abjad.LilyPondFile._get_formatted_blocks()

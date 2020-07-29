@@ -1,6 +1,22 @@
+import copy
 import pathlib
+
 import abjad
 import rill
+
+import rill.tools.FuzzyHarmony as FuzzyHarmony
+
+from rill.tools.accents import staccato as stassato
+from rill.tools.accents import tenuto as tenuto
+from rill.tools.barlines import barline as barline
+from rill.tools.clef import clef as clef
+from rill.tools.FuzzyHarmony import Diad as Diad
+from rill.tools.FuzzyHarmony import LegatoArpeggio as LegatoArpeggio
+from rill.tools.material_methods import transpose_segment as transpose_segment
+from rill.tools.tremolo import tremolo as tremolo
+
+from abjad import NamedPitch as NamedPitch
+from typing import List
 
 
 ###########
@@ -55,18 +71,20 @@ cs7_42 = rill.FuzzyHarmony('cs_i', csj7_42)
 
 auth_one_ein_zw = [b7_x, b7_6, b7_64, b7_42]
 auth_one_gr = rill.transpose(auth_one_ein_zw, -24)
-auth_one_kl_eing = rill.transpose(auth_one_ein_zw, -12)
+auth_one_kln_eing = rill.transpose(auth_one_ein_zw, -12)
 
 plag_one_zw_dr = rill.transpose(auth_one_ein_zw, 19)
 plag_one_ein_zw = rill.transpose(auth_one_ein_zw, 7)
 plag_one_gr = rill.transpose(auth_one_ein_zw, -17)
 
-auth_two_ein_zw = [cs7, cs7_6, cs7_64, csj7_42]
+auth_two_ein_zw = [cs7, cs7_6, cs7_64, cs7_42]
 
 auth_two_gr_kln = rill.transpose(auth_two_ein_zw, -24)
 auth_two_kln_eing = rill.transpose(auth_two_ein_zw, -12)
 auth_two_zw_dr = rill.transpose(auth_two_ein_zw, 12)
 
+plag_two_gr_kln = rill.transpose(auth_two_ein_zw, -17)
+plag_two_kln_eing = rill.transpose(auth_two_ein_zw, -5)
 plag_two_ein_zw = rill.transpose(auth_two_ein_zw, 7)
 plag_two_zw_dr = rill.transpose(auth_two_ein_zw, 19)
 
@@ -143,6 +161,124 @@ mel_two_c_arp = LegatoArpeggio(mel_two_c, m_seq_a)
 melody_two_a = mel_two_a_arp.pitches
 melody_two_b = mel_two_b_arp.pitches
 melody_two_c = mel_two_c_arp.pitches
+
+
+rhythm_definition.notes = [
+        ("r1"),
+        ("r2"),
+        (violin_arp_one[0], abjad.Duration(1, 2), rill.tie()),
+        (violin_arp_one[0], abjad.Duration(1), rill.tie()),
+        (violin_arp_one[0], abjad.Duration(1, 2)),
+        (violin_arp_one[1], abjad.Duration(1, 2), rill.tie()),
+        #------------Bar 5
+        (violin_arp_one[1], abjad.Duration(1), rill.tie()),
+        (violin_arp_one[1], abjad.Duration(1), rill.tie()),
+        (violin_arp_one[1], abjad.Duration(1, 2), rill.tie()),
+        (violin_arp_one[3], abjad.Duration(1, 2), rill.tie()),
+        (violin_arp_one[3], abjad.Duration(1), rill.tie()),
+        #------------Bar 9
+        (violin_arp_one[3], abjad.Duration(1, 4)),
+        (violin_arp_one[2], abjad.Duration(3, 4), rill.tie()),
+        (violin_arp_one[2], abjad.Duration(1), ),
+        ("r1"),
+        ("r4"),
+        (melody_one_a[0], abjad.Duration(3, 4), rill.tie()),
+        #------------Bar 13
+        (melody_one_a[0], abjad.Duration(1, 8)),
+        ("r8"),
+        (melody_one_a_oct_up[0], abjad.Duration(2, 4)), 
+        (melody_one_a[1], abjad.Duration(1,4)), 
+        (melody_one_a[3], abjad.Duration(1)), 
+        (melody_one_a_oct_up[2], abjad.Duration(1)), 
+        (violin_arp_two[0], abjad.Duration(1, 2), rill.tie()),
+        (violin_arp_two[1], abjad.Duration(1, 2), rill.tie()),
+        #------------Bar 17
+        (violin_arp_two[1], abjad.Duration(1, 4), rill.tie()),
+        (violin_arp_two[2], abjad.Duration(3, 4), tenuto()),
+        (violin_arp_two[3], abjad.Duration(1), rill.tie()),
+        (violin_arp_two[3], abjad.Duration(1, 2)), 
+        ("r2"),
+        ("r4"),
+        (violin_arp_three[0], abjad.Duration(1, 4), tenuto()),
+        (violin_arp_three[1], abjad.Duration(1, 2), rill.tie()),
+        #------------Bar 21
+        (violin_arp_three[1], abjad.Duration(1)),
+        ("r2"),
+        (violin_arp_four[0], abjad.Duration(1, 2), rill.tie()),
+        (violin_arp_four[0], abjad.Duration(1), rill.tie()),
+        (violin_arp_four[0], abjad.Duration(1, 2)),
+        (violin_arp_four[1], abjad.Duration(1, 2), rill.tie()),
+        #------------Bar 25
+        (violin_arp_four[1], abjad.Duration(1), rill.tie()),
+        (violin_arp_four[1], abjad.Duration(1), rill.tie()),
+        (violin_arp_four[1], abjad.Duration(1, 2), rill.tie()),
+        (violin_arp_four[3], abjad.Duration(1, 2), rill.tie()),
+        (violin_arp_four[3], abjad.Duration(1), rill.tie()),
+        #------------Bar 29
+        (violin_arp_four[3], abjad.Duration(1, 4)),
+        (violin_arp_four[2], abjad.Duration(3, 4), rill.tie()),
+        (violin_arp_four[2], abjad.Duration(1)),
+        ("r1"),
+        ("r1"),
+        #-----------Bar 33
+        ("r1"),
+        ("r4"),
+        (melody_two_a[2], abjad.Duration(1,4), tenuto()),
+        (melody_two_a[2], abjad.Duration(2,4)), 
+        (melody_two_b[3], abjad.Duration(1,4), tenuto()),
+        (melody_two_b[3], abjad.Duration(1,4)), 
+        (melody_two_b[3], abjad.Duration(2,4)), 
+        (melody_two_a[2], abjad.Duration(1,4), tenuto()),
+        (melody_two_a[2], abjad.Duration(2,4)), 
+        (melody_two_c[0], abjad.Duration(1,4), tenuto()),
+        #-----------Bar 37
+        (melody_two_c[0], abjad.Duration(1,4)), 
+        (melody_two_c[0], abjad.Duration(2,4)), 
+        (melody_two_a[1], abjad.Duration(1,4), tenuto()),
+        (melody_two_a[1], abjad.Duration(2,4)), 
+        (melody_two_b[2], abjad.Duration(1,4), tenuto()),
+        (melody_two_b[2], abjad.Duration(1,4)), 
+        (melody_two_b[2], abjad.Duration(2,4)), 
+        (melody_two_a[1], abjad.Duration(1,4), tenuto()),
+        (melody_two_a[1], abjad.Duration(2,4)), 
+        (melody_two_c[0], abjad.Duration(1,4), tenuto()),
+        (melody_two_c[0], abjad.Duration(1,4)),
+        (melody_two_c[0], abjad.Duration(1,4), rill.tie()),
+        #-----------Bar 41
+        (melody_two_c[0], abjad.Duration(1,4)),
+        (melody_two_a[1], abjad.Duration(1,4), tenuto()),
+        (melody_two_a[1], abjad.Duration(2,4), rill.tie()), 
+        (melody_two_a[1], abjad.Duration(1), rill.tie()), 
+        (melody_two_a[1], abjad.Duration(1), rill.tie()),
+        (melody_two_a[1], abjad.Duration(1), barline("||")),
+        ]
+
+rhythm_definition.dynamics = [
+        (2, abjad.Dynamic('ppp'), 2.5),
+        (3, '<'),
+        (5, abjad.Dynamic('p'), 2.5),
+        (10, '>'),
+        (13, abjad.Dynamic('ppp')),
+        (16, abjad.Dynamic('pp')),
+        (34, abjad.Dynamic('niente'), 2.5),
+        (35, '<'),
+        (38, abjad.Dynamic('pp')),
+        (44, '>'),
+        (47, abjad.Dynamic('niente')),
+        (50, abjad.Dynamic('pp')),
+        (72, '>'),
+        (75, abjad.Dynamic('niente')),
+        ]
+
+rhythm_definition.markup = [
+        (2, rill.markup.pont(), 1.5),
+        (5, rill.markup.ord(), 1.5),
+        (12, rill.markup.pont(), 3.5),
+        (16, rill.markup.ord(), 1.5),
+        (38, rill.markup.flaut(), 3.5),
+        (50, rill.markup.ord(), 3.5),
+        (72, rill.markup.flaut(), 1.5),
+        ]
 
 #-----------------/
 #   MonoSynth    /
@@ -269,30 +405,142 @@ plag_one_a = plag_one_zw_dr[0].segment
 plag_one_a_arp = LegatoArpeggio(plag_one_a, seq_one)
 rh_arp_one = plag_one_a_arp.stages
 
+auth_one_c = auth_one_kln_eing[2].segment
+auth_one_c_arp= LegatoArpeggio(auth_one_c, seq_one)
+rh_arp_one_i = auth_one_c_arp.stages
+
+auth_one_d = auth_one_kln_eing[3].segment
+auth_one_d_arp = LegatoArpeggio(auth_one_d, seq_one)
+rh_arp_one_b = auth_one_d_arp.stages
+
 plag_one_a = plag_one_zw_dr[1].segment
 plag_one_a_arp = LegatoArpeggio(plag_one_a, seq_two)
 rh_arp_two = plag_one_a_arp.stages
 
+auth_two_b = auth_two_gr_kln[1].segment
+auth_two_b_arp = LegatoArpeggio(auth_two_b, seq_three)
+rh_arp_three = auth_two_b_arp.stages
+
+rhythm_definition.notes = [
+        (rh_arp_one[0], abjad.Duration(1, 2), rill.tie(), clef('bass')),
+        (rh_arp_one[1], abjad.Duration(1, 2), rill.tie()),
+        (rh_arp_one[1], abjad.Duration(1, 4), rill.tie()),
+        (rh_arp_one[2], abjad.Duration(3, 4), rill.tie()),
+        (rh_arp_one[3], abjad.Duration(1), rill.tie()),
+        (rh_arp_one[3], abjad.Duration(3, 4)), 
+        ("r4"),
+        # ------------------------------------------ Bar 5
+        (rh_arp_one_i[0], abjad.Duration(1, 2), rill.tie()),
+        (rh_arp_one_i[1], abjad.Duration(1, 2), rill.tie()),
+        (rh_arp_one_i[1], abjad.Duration(1, 4), rill.tie()),
+        (rh_arp_one_i[2], abjad.Duration(3, 4), rill.tie()),
+        (rh_arp_one_i[3], abjad.Duration(1), rill.tie()),
+        (rh_arp_one_i[3], abjad.Duration(3, 4)), 
+        ("r4"),
+        #------------Bar 9
+        (rh_arp_one_b[0], abjad.Duration(1, 2), rill.tie()),
+        (rh_arp_one_b[1], abjad.Duration(1, 2), rill.tie()),
+        (rh_arp_one_b[1], abjad.Duration(1, 4), rill.tie()),
+        (rh_arp_one_b[2], abjad.Duration(3, 4), rill.tie()),
+        (rh_arp_one_b[3], abjad.Duration(1), rill.tie()),
+        (rh_arp_one_b[3], abjad.Duration(3, 4)), 
+        ("r4"),
+    #------------Bar 13
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        ("r1"),
+        #------------Bar 17
+        ("r1"),
+        ("r1"),
+        ("r1"),       
+        ("r1"),
+        #------------Bar 21
+        ("r1"),
+        ("r2"),
+        (rh_arp_two[0], abjad.Duration(1, 2), rill.tie(), clef('bass')),
+        (rh_arp_two[1], abjad.Duration(3, 4), rill.tie()),
+        (rh_arp_two[2], abjad.Duration(1, 4), rill.tie()),
+        (rh_arp_two[2], abjad.Duration(2, 4), rill.tie()),
+        (rh_arp_two[3], abjad.Duration(2, 4), rill.tie()),
+        #------------ Bar 25
+        (rh_arp_two[3], abjad.Duration(1), rill.tie()), 
+        (rh_arp_three[3], abjad.Duration(1), rill.tie()),
+        (rh_arp_three[3], abjad.Duration(1,2), rill.tie()),
+        (rh_arp_three[2], abjad.Duration(1,2), rill.tie()),
+        (rh_arp_three[2], abjad.Duration(1), rill.tie()),
+        #------------Bar 29
+        (rh_arp_three[2], abjad.Duration(1, 4), rill.tie()),
+        (rh_arp_three[1], abjad.Duration(3, 4), rill.tie()),
+        (rh_arp_three[0], abjad.Duration(1)),
+        ("r1"),  
+        ("r1"),
+        #-----------Bar 33
+        (diad_one, abjad.Duration(1), rill.tie()),
+        (diad_one, abjad.Duration(1), rill.tie()),
+        (diad_one, abjad.Duration(1), rill.tie()),
+        (diad_one, abjad.Duration(1), rill.tie()),
+        #-----------Bar 37
+        (diad_one, abjad.Duration(1)),
+        ("r1"),
+        ("r1"),
+        (diad_two, abjad.Duration(1), rill.tie(), clef('treble')),
+        #-----------Bar 41
+        (diad_two, abjad.Duration(1), rill.tie()),
+        (diad_two, abjad.Duration(1), rill.tie()), 
+        (diad_two, abjad.Duration(1), rill.tie()),
+        (diad_two, abjad.Duration(1), barline("||")),
+        ]
+
+
+rhythm_definition.dynamics = [
+        (47, abjad.Dynamic('pp')),
+        (48, '>'),
+        (51, abjad.Dynamic('niente')),
+        ]
+
+rhythm_definition.markup = []
+
+
+#--------------/
+# LH_I  /
+#____________/
+
+rhythm_definition = segment_maker.define_rhythm()
+rhythm_definition.instrument_name = 'LH_I'
+
+auth_one_a = auth_one_kln_eing[0].segment
+auth_one_a_arp= LegatoArpeggio(auth_one_a, seq_one)
+lh_arp_one = auth_one_a_arp.stages
+
+auth_two_a = auth_two_gr_kln[0].segment
+auth_two_a_arp = LegatoArpeggio(auth_two_a, seq_three)
+lh_arp_two = auth_two_a_arp.stages
+
+auth_two_b = auth_two_gr_kln[1].segment
+auth_two_b_arp = LegatoArpeggio(auth_two_b, seq_three)
+lh_arp_three = auth_two_b_arp.stages
+
 rhythm_definition.notes = [
         ("r1"),
         ("r2"),
-        (rh_arp_one[0], abjad.Duration(1, 2), rill.tie()),
-        (rh_arp_one[1], abjad.Duration(3, 4), rill.tie()),
-        (rh_arp_one[2], abjad.Duration(1, 4), rill.tie()),
-        (rh_arp_one[2], abjad.Duration(2, 4), rill.tie()),
-        (rh_arp_one[3], abjad.Duration(2, 4), rill.tie()),
-        (rh_arp_one[3], abjad.Duration(1), rill.tie()), 
+        (lh_arp_one[0], abjad.Duration(1, 2), rill.tie()),
+        (lh_arp_one[1], abjad.Duration(3, 4), rill.tie()),
+        (lh_arp_one[2], abjad.Duration(1, 4), rill.tie()),
+        (lh_arp_one[2], abjad.Duration(2, 4), rill.tie()),
+        (lh_arp_one[3], abjad.Duration(2, 4), rill.tie()),
+        (lh_arp_one[3], abjad.Duration(1), rill.tie()), 
         # ------------------------------------------ Bar 6
-        (rh_arp_two[2], abjad.Duration(1), rill.tie()),
-        (rh_arp_two[2], abjad.Duration(1,2), rill.tie()),
-        (rh_arp_two[3], abjad.Duration(1,2), rill.tie()),
-        (rh_arp_two[3], abjad.Duration(1), rill.tie()),
+        (lh_arp_two[2], abjad.Duration(1), rill.tie()),
+        (lh_arp_two[2], abjad.Duration(1,2), rill.tie()),
+        (lh_arp_two[3], abjad.Duration(1,2), rill.tie()),
+        (lh_arp_two[3], abjad.Duration(1), rill.tie()),
         #------------Bar 9
-        (rh_arp_two[3], abjad.Duration(1, 4), rill.tie()),
-        (rh_arp_two[1], abjad.Duration(3, 4), rill.tie()),
-        (rh_arp_two[0], abjad.Duration(1), rill.tie()),
-        (rh_arp_two[0], abjad.Duration(1), rill.tie()),
-        (rh_arp_two[0], abjad.Duration(1)),
+        (lh_arp_two[3], abjad.Duration(1, 4), rill.tie()),
+        (lh_arp_two[1], abjad.Duration(3, 4), rill.tie()),
+        (lh_arp_two[0], abjad.Duration(1), rill.tie()),
+        (lh_arp_two[0], abjad.Duration(1), rill.tie()),
+        (lh_arp_two[0], abjad.Duration(1)),
         #------------Bar 13
         ("r1"),
         ("r1"),
@@ -342,99 +590,6 @@ rhythm_definition.dynamics = [
 
 rhythm_definition.markup = []
 
-
-#--------------/
-# LH_I  /
-#____________/
-
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = 'LH_I'
-
-auth_one_a = auth_one_kln_eing[0].segment
-auth_one_a_arp= LegatoArpeggio(auth_one_a, seq_one)
-lh_arp_one = auth_one_a_arp.stages
-
-auth_two_a = auth_two_gr_kln[0].segment
-auth_two_a_arp = LegatoArpeggio(auth_two_a, seq_three)
-lh_arp_two = auth_two_a_arp.stages
-
-auth_two_b = auth_two_gr_kln[1].segment
-auth_two_b_arp = LegatoArpeggio(auth_two_b, seq_three)
-lh_arp_three = auth_two_b_arp.stages
-
-rhythm_definition.notes = [
-        (lh_arp_one[0], abjad.Duration(1, 2), rill.tie()),
-        (lh_arp_one[1], abjad.Duration(1, 2), rill.tie()),
-        (lh_arp_one[1], abjad.Duration(1, 4), rill.tie()),
-        (lh_arp_one[2], abjad.Duration(3, 4), rill.tie()),
-        (lh_arp_one[3], abjad.Duration(1), rill.tie()),
-        (lh_arp_one[3], abjad.Duration(3, 4)), 
-        ("r4"),
-        # ------------------------------------------ Bar 5
-        ("r1"),
-        ("r1"),
-        ("r1"),
-        ("r1"),
-        #------------Bar 9
-        ("r1"),
-        ("r1"),
-        ("r1"),
-        ("r1"),
-        #------------Bar 13
-        ("r1"),
-        ("r1"),
-        ("r1"),
-        ("r1"),
-        #------------Bar 17
-        ("r1"),
-        ("r1"),
-        ("r1"),       
-        ("r1"),
-        #------------Bar 21
-        ("r1"),
-        ("r2"),
-        (lh_arp_two[0], abjad.Duration(1, 2), rill.tie()),
-        (lh_arp_two[1], abjad.Duration(3, 4), rill.tie()),
-        (lh_arp_two[2], abjad.Duration(1, 4), rill.tie()),
-        (lh_arp_two[2], abjad.Duration(2, 4), rill.tie()),
-        (lh_arp_two[3], abjad.Duration(2, 4), rill.tie()),
-        #------------ Bar 25
-        (lh_arp_two[3], abjad.Duration(1), rill.tie()), 
-        (lh_arp_three[3], abjad.Duration(1), rill.tie()),
-        (lh_arp_three[3], abjad.Duration(1,2), rill.tie()),
-        (lh_arp_three[2], abjad.Duration(1,2), rill.tie()),
-        (lh_arp_three[2], abjad.Duration(1), rill.tie()),
-        #------------Bar 29
-        (lh_arp_three[2], abjad.Duration(1, 4), rill.tie()),
-        (lh_arp_three[1], abjad.Duration(3, 4), rill.tie()),
-        (lh_arp_three[0], abjad.Duration(1)),
-        ("r1"),  
-        ("r1"),
-        #-----------Bar 33
-        (diad_one, abjad.Duration(1), rill.tie()),
-        (diad_one, abjad.Duration(1), rill.tie()),
-        (diad_one, abjad.Duration(1), rill.tie()),
-        (diad_one, abjad.Duration(1), rill.tie()),
-        #-----------Bar 37
-        (diad_one, abjad.Duration(1)),
-        ("r1"),
-        ("r1"),
-        (diad_two, abjad.Duration(1), rill.tie()),
-        #-----------Bar 41
-        (diad_two, abjad.Duration(1), rill.tie()),
-        (diad_two, abjad.Duration(1), rill.tie()), 
-        (diad_two, abjad.Duration(1), rill.tie()),
-        (diad_two, abjad.Duration(1), barline("||")),
-        ]
-
-
-rhythm_definition.dynamics = [
-        (47, abjad.Dynamic('pp')),
-        (48, '>'),
-        (51, abjad.Dynamic('niente')),
-        ]
-
-rhythm_definition.markup = []
 
 # ------------ run and build segment
 lilypond_file = segment_maker.run()
