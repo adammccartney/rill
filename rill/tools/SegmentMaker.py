@@ -8,6 +8,9 @@ import mccartney
 
 from abjadext import rmakers
 
+"""Design of RhythmDefinition and SegmentMaker
+   borrowed gratefully from Trevor Baca's ins_wasser repository"""
+
 class RhythmDefinition(object):
     """
     Rhythm definition.
