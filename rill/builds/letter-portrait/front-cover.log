@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2020.7.24)  28 JUL 2020 16:34
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2020.7.24)  30 JUL 2020 13:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -582,20 +582,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 14.
-
-Overfull \hbox (181.87143pt too wide) in paragraph at lines 57--59
- [][] 
- []
-
-[1
+ [1
 
 ] (./front-cover.aux) ) 
 Here is how much of TeX's memory you used:
- 17760 strings out of 479277
- 385308 string characters out of 5882574
+ 17758 strings out of 479277
+ 385249 string characters out of 5882574
  636282 words of memory out of 5000000
- 35179 multiletter control sequences out of 15000+600000
- 535392 words of font info for 33 fonts, out of 8000000 for 9000
+ 35178 multiletter control sequences out of 15000+600000
+ 535384 words of font info for 32 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,5n,60p,439b,394s stack positions out of 5000i,500n,10000p,200000b,80000s
 
