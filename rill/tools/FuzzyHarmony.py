@@ -13,15 +13,20 @@ class Diad(object):
                  "_pitch_two",
                  )
 
-    def __init__(self, pitches=tuple()):
+    def __init__(self, pitches=None):
         self._pitches = pitches
         self._set_diad()
 
     def _set_diad(self):
-        self._pitch_one = str(self._pitches[0])
-        self._pitch_two = str(self._pitches[1])
-        pitch_string = f"{self._pitch_one} {self._pitch_two}"
-        self._pitch_string = pitch_string
+        if self._pitches != None:
+            self._pitch_one = str(self._pitches[0])
+            self._pitch_two = str(self._pitches[1])
+            pitch_string = f"{self._pitch_one} {self._pitch_two}"
+            self._pitch_string = pitch_string
+        else:
+            self._pitch_one = ""
+            self._pitch_two = ""
+            self._pitch_string = ""
 
     @property
     def pitches(self) -> tuple:
