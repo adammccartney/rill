@@ -14,15 +14,27 @@ from rill.tools.FuzzyHarmony import (
         invert_down as invert_downi,
         )
 
-# Testing Classes in the FuzzyHarmony Module
-
 def test_defaults():
-    """Using no paramaters should init defaults"""
+    """Using no paramaters should initialize defaults"""
     d1 = Diad()
     d2 = Diad(None)
-    assert d1 == d2
+    assert d1.pitches == d2.pitches
+    fz1 = FuzzyHarmony()
+    fz2 = FuzzyHarmony("",None)
+    assert fz1.shortname == fz2.shortname
+    assert fz1.segment == fz2.segment
 
 def test_pitch_equality():
+    """Using the same pitches to construct should lead to equality"""
     d1 = Diad((abjad.NamedPitch("c'"), abjad.NamedPitch("g'")))
     d2 = Diad((abjad.NamedPitch("c'"), abjad.NamedPitch("g'")))
-    assert d1 == d2
+    assert d1.pitches == d2.pitches
+
+def test_member_access():
+    """Check field functionalits of Diad class"""
+    d = Diad((abjad.NamedPitch("c'"), abjad.NamedPitch("g'")))
+    assert d.pitches == (abjad.NamedPitch("c'"), abjad.NamedPitch("g'"))
+    assert d.pitch_string == "c' g'"
+    assert d.lower == "c'"
+    assert d.upper == "g'"
+
