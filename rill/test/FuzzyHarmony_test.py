@@ -24,6 +24,19 @@ def test_defaults():
     assert fz1.shortname == fz2.shortname
     assert fz1.segment == fz2.segment
 
+
+root_pitches = ("c'", "d'", "d'", "fs'")
+@pytest.mark.parameterize('scale_degree, pitch_segment',
+                        [('bf_ii', abjad.PitchSegment("c' ef' g' bf'")),
+                         ('d_iv', abjad.PitchSegment("d' f' a' c'")),
+                         ('g_v', abjad.PitchSegment("d' fs' a' c'")),
+                         ('e_ii', abjad.PitchSegment("fs' a' cs'' e''")),
+                         ])
+def test_init_1(scale_degree, pitch_segment):
+    """Tests different used to initialize harmonies"""
+    harmony = FuzzyHarmony(scale_degree, pitch_segment)
+
+
 def test_pitch_equality():
     """Using the same pitches to construct should lead to equality"""
     d1 = Diad((abjad.NamedPitch("c'"), abjad.NamedPitch("g'")))
@@ -31,10 +44,19 @@ def test_pitch_equality():
     assert d1.pitches == d2.pitches
 
 def test_member_access():
-    """Check field functionalits of Diad class"""
+    """Check field functionality of Diad, FuzzyHarmony, LegatoArpeggio"""
     d = Diad((abjad.NamedPitch("c'"), abjad.NamedPitch("g'")))
     assert d.pitches == (abjad.NamedPitch("c'"), abjad.NamedPitch("g'"))
     assert d.pitch_string == "c' g'"
     assert d.lower == "c'"
     assert d.upper == "g'"
-
+    cmin7_6 = rill.tetrads['bf_ii']
+    tetrad = (
+            abjad.NamedPitch("ef'"), 
+            abjad.NamedPitch("g'"), 
+            abjad.NamedPitch("bf'"), 
+            abjad.NamedPitch("c''"),
+            )
+    f = FuzzyHarmony('bf_ii', cmin7_6)
+    assert abjad.NamedPitch("c''") in f.pitches
+    assert abjad.NamedPitch("d''") not in f.pitches

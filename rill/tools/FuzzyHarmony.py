@@ -322,21 +322,4 @@ def invert_down(segment, inversion):
         new_segment = abjad.PitchSegment(new_pitches) # make new segment
     return new_segment
 
-if __name__ == '__main__':
-   segment = abjad.PitchSegment("ef g c bf")
-   sequence = (1, 0, 3, 2)
-   arp = LegatoArpeggio(segment, sequence)
-   print("arp stages: ", arp.stages)
-   segment = abjad.PitchSegment("ef'' g'' c'' bf'' d''")
-   sequence = (3, 1, 2, 4, 3)
-   arp = LegatoArpeggio(segment, sequence)
-   print("arp stages: ", arp.stages)
-   arp_pitches = arp.pitches
-   for pitch in arp_pitches:
-       print("Arp pitch: ", pitch)
 
-   fifth = (abjad.NamedPitch('c'), abjad.NamedPitch('g'))
-   diad = Diad(fifth)
-   print(diad.pitch_string)
-   print(diad.lower)
-   print(diad.upper)
