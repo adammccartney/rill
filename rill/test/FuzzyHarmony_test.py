@@ -36,7 +36,6 @@ def test_init_1(scale_degree, pitch_segment):
     """Tests different used to initialize harmonies"""
     harmony = FuzzyHarmony(scale_degree, pitch_segment)
 
-
 def test_pitch_equality():
     """Using the same pitches to construct should lead to equality"""
     d1 = Diad((abjad.NamedPitch("c'"), abjad.NamedPitch("g'")))
