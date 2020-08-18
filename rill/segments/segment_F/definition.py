@@ -443,36 +443,42 @@ rhythm_definition.notes = [
         (rh_arp_one_b[1], abjad.Duration(1, 4), rill.tie()),
         (rh_arp_one_b[2], abjad.Duration(3, 4), rill.tie()),
         (rh_arp_one_b[3], abjad.Duration(1), rill.tie()),
-        (rh_arp_one_b[3], abjad.Duration(3, 4)), 
-        ("r4"),
-    #------------Bar 13
-        ("r1"),
-        ("r1"),
-        ("r1"),
-        ("r1"),
+        (rh_arp_one_b[3], abjad.Duration(1, 4)), 
+        (melody_one_a[0], abjad.Duration(3, 4), rill.tie()),
+        #------------Bar 13
+        (melody_one_a[0], abjad.Duration(1, 8)),
+        ("r8"),
+        (melody_one_a_oct_up[0], abjad.Duration(2, 4)), 
+        (melody_one_a[1], abjad.Duration(1,4)), 
+        (melody_one_a[3], abjad.Duration(1)), 
+        (melody_one_a_oct_up[2], abjad.Duration(1)), 
+        (violin_arp_two[0], abjad.Duration(1, 2), rill.tie()),
+        (violin_arp_two[1], abjad.Duration(1, 2), rill.tie()),
         #------------Bar 17
-        ("r1"),
-        ("r1"),
-        ("r1"),       
-        ("r1"),
-        #------------Bar 21
-        ("r1"),
+        (violin_arp_two[1], abjad.Duration(1, 4), rill.tie()),
+        (violin_arp_two[2], abjad.Duration(3, 4), tenuto()),
+        (violin_arp_two[3], abjad.Duration(1), rill.tie()),
+        (violin_arp_two[3], abjad.Duration(1, 2)), 
         ("r2"),
-        (rh_arp_two[0], abjad.Duration(1, 2), rill.tie(), clef('bass')),
+        ("r4"),
+        (violin_arp_three[0], abjad.Duration(1, 4), tenuto()),
+        (violin_arp_three[1], abjad.Duration(1, 2), rill.tie()),
+        #------------Bar 21
+        (violin_arp_three[1], abjad.Duration(1)),
+        ("r2"),
+        (rh_arp_two[0], abjad.Duration(1, 2), rill.tie()),
         (rh_arp_two[1], abjad.Duration(3, 4), rill.tie()),
         (rh_arp_two[2], abjad.Duration(1, 4), rill.tie()),
         (rh_arp_two[2], abjad.Duration(2, 4), rill.tie()),
         (rh_arp_two[3], abjad.Duration(2, 4), rill.tie()),
         #------------ Bar 25
         (rh_arp_two[3], abjad.Duration(1), rill.tie()), 
-        (rh_arp_three[3], abjad.Duration(1), rill.tie()),
-        (rh_arp_three[3], abjad.Duration(1,2), rill.tie()),
-        (rh_arp_three[2], abjad.Duration(1,2), rill.tie()),
-        (rh_arp_three[2], abjad.Duration(1), rill.tie()),
+        ("r1"),
+        ("r1"),
+        ("r1"),
         #------------Bar 29
-        (rh_arp_three[2], abjad.Duration(1, 4), rill.tie()),
-        (rh_arp_three[1], abjad.Duration(3, 4), rill.tie()),
-        (rh_arp_three[0], abjad.Duration(1)),
+        ("r1"),
+        ("r1"),
         ("r1"),  
         ("r1"),
         #-----------Bar 33
@@ -494,9 +500,7 @@ rhythm_definition.notes = [
 
 
 rhythm_definition.dynamics = [
-        (47, abjad.Dynamic('pp')),
-        (48, '>'),
-        (51, abjad.Dynamic('niente')),
+                    (0, abjad.Dynamic('ppp'), 2.5),
         ]
 
 rhythm_definition.markup = []
@@ -555,15 +559,17 @@ rhythm_definition.notes = [
         ("r1"),
         ("r1"),
         ("r1"),
-        ("r1"),
+        (rh_arp_three[0], abjad.Duration(1), rill.tie()),
         #-----------Bar 25
-        ("r1"),
-        ("r1"),
-        ("r1"),
-        ("r1"),
-        #-----------Bar 29
-        ("r1"),
-        ("r1"),
+        (rh_arp_three[1], abjad.Duration(1), rill.tie()),
+        (rh_arp_three[3], abjad.Duration(1), rill.tie()),
+        (rh_arp_three[3], abjad.Duration(1,2), rill.tie()),
+        (rh_arp_three[2], abjad.Duration(1,2), rill.tie()),
+        (rh_arp_three[2], abjad.Duration(1), rill.tie()),
+        #------------Bar 29
+        (rh_arp_three[2], abjad.Duration(1, 4), rill.tie()),
+        (rh_arp_three[1], abjad.Duration(3, 4), rill.tie()),
+        (rh_arp_three[0], abjad.Duration(1)),
         ("r1"),
         ("r1"),
         #-----------Bar 33
@@ -585,7 +591,9 @@ rhythm_definition.notes = [
 
 
 rhythm_definition.dynamics = [ 
-                    (0, abjad.Dynamic('ppp'), 2.5)
+                    (32, abjad.Dynamic('pp')),
+                    (33, '>'),
+                    (36, abjad.Dynamic('niente')),
                        ]
 
 rhythm_definition.markup = []

@@ -701,16 +701,24 @@
                         s1 * 1/4
                         s1 * 3/4
                         s1 * 1/1
+                        s1 * 1/4
                         s1 * 3/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/2
                         s1 * 1/4
                         s1 * 1/1
                         s1 * 1/1
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/4
+                        s1 * 3/4
                         s1 * 1/1
-                        s1 * 1/1
-                        s1 * 1/1
-                        s1 * 1/1
-                        s1 * 1/1
-                        s1 * 1/1
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/2
                         s1 * 1/1
                         s1 * 1/2
                         s1 * 1/2
@@ -720,11 +728,9 @@
                         s1 * 1/2
                         s1 * 1/1
                         s1 * 1/1
-                        s1 * 1/2
-                        s1 * 1/2
                         s1 * 1/1
-                        s1 * 1/4
-                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 1/1
                         s1 * 1/1
                         s1 * 1/1
                         s1 * 1/1
@@ -781,19 +787,34 @@
                         ~
                         <a d' ef' fs'>1
                         ~
-                        <a d' ef' fs'>2.
-                        r4
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
+                        <a d' ef' fs'>4
+                        b'2.
+                        ~
+                        b'8
+                        r8
+                        b''2
+                        d''4
+                        e''1
+                        g''1
+                        a'2
+                        ~
+                        fs'2
+                        ~
+                        fs'4
+                        ~
+                        ef''2.
+                        --
+                        d''1
+                        ~
+                        d''2
                         r2
-                        \clef "bass"
+                        r4
+                        d''4
+                        --
+                        a'2
+                        ~
+                        a'1
+                        r2
                         a'''2
                         ~
                         <e''' a'''>2.
@@ -806,19 +827,11 @@
                         ~
                         <bf'' cs''' e''' a'''>1
                         ~
-                        <f, gs, bs, cs>1
-                        ~
-                        <f, gs, bs, cs>2
-                        ~
-                        <f, gs, bs,>2
-                        ~
-                        <f, gs, bs,>1
-                        ~
-                        <f, gs, bs,>4
-                        ~
-                        <f, bs,>2.
-                        ~
-                        bs,1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
                         r1
                         r1
                         <fss css'>1
@@ -846,14 +859,9 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "RH_I_Dynamics_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
+                        \override DynamicLineSpanner.staff-padding = 2.5
                         s1 * 1/2
-                        s1 * 1/2
-                        s1 * 1/4
-                        s1 * 3/4
-                        s1 * 1/1
-                        s1 * 3/4
-                        s1 * 1/4
-                        s1 * 1/2
+                        \ppp
                         s1 * 1/2
                         s1 * 1/4
                         s1 * 3/4
@@ -867,14 +875,29 @@
                         s1 * 1/1
                         s1 * 3/4
                         s1 * 1/4
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 1/4
+                        s1 * 3/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/2
+                        s1 * 1/4
                         s1 * 1/1
                         s1 * 1/1
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/4
+                        s1 * 3/4
                         s1 * 1/1
-                        s1 * 1/1
-                        s1 * 1/1
-                        s1 * 1/1
-                        s1 * 1/1
-                        s1 * 1/1
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/2
                         s1 * 1/1
                         s1 * 1/2
                         s1 * 1/2
@@ -884,23 +907,18 @@
                         s1 * 1/2
                         s1 * 1/1
                         s1 * 1/1
-                        s1 * 1/2
-                        s1 * 1/2
-                        s1 * 1/1
-                        s1 * 1/4
-                        s1 * 3/4
                         s1 * 1/1
                         s1 * 1/1
                         s1 * 1/1
                         s1 * 1/1
                         s1 * 1/1
-                        \pp
-                        s1 * 1/1
-                        \>
                         s1 * 1/1
                         s1 * 1/1
                         s1 * 1/1
-                        _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
+                        s1 * 1/1
                         s1 * 1/1
                         s1 * 1/1
                         s1 * 1/1
@@ -945,9 +963,11 @@
                         s1 * 1/1
                         s1 * 1/1
                         s1 * 1/1
+                        s1 * 1/2
+                        s1 * 1/2
                         s1 * 1/1
-                        s1 * 1/1
-                        s1 * 1/1
+                        s1 * 1/4
+                        s1 * 3/4
                         s1 * 1/1
                         s1 * 1/1
                         s1 * 1/1
@@ -1011,13 +1031,23 @@
                         r1
                         r1
                         r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
+                        bs,1
+                        ~
+                        <f, bs,>1
+                        ~
+                        <f, gs, bs, cs>1
+                        ~
+                        <f, gs, bs, cs>2
+                        ~
+                        <f, gs, bs,>2
+                        ~
+                        <f, gs, bs,>1
+                        ~
+                        <f, gs, bs,>4
+                        ~
+                        <f, bs,>2.
+                        ~
+                        bs,1
                         r1
                         r1
                         r1
@@ -1035,9 +1065,7 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "LH_I_Dynamics_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        \override DynamicLineSpanner.staff-padding = 2.5
                         s1 * 1/1
-                        \ppp
                         s1 * 1/2
                         s1 * 1/2
                         s1 * 3/4
@@ -1068,10 +1096,15 @@
                         s1 * 1/1
                         s1 * 1/1
                         s1 * 1/1
+                        s1 * 1/2
+                        s1 * 1/2
+                        \pp
                         s1 * 1/1
+                        \>
+                        s1 * 1/4
+                        s1 * 3/4
                         s1 * 1/1
-                        s1 * 1/1
-                        s1 * 1/1
+                        _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "niente"))
                         s1 * 1/1
                         s1 * 1/1
                         s1 * 1/1

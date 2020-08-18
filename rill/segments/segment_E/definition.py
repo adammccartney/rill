@@ -192,7 +192,7 @@ rhythm_definition.notes = [
         (melody_one_a_oct_up[0], abjad.Duration(2, 4)), 
         (melody_one_a[1], abjad.Duration(1,4)), 
         (melody_one_a[3], abjad.Duration(1)), 
-        (melody_one_a_oct_down[2], abjad.Duration(1)), 
+        (melody_one_a[2], abjad.Duration(1)), 
         (violin_arp_two[0], abjad.Duration(1, 2), rill.tie()),
         (violin_arp_two[1], abjad.Duration(1, 2), rill.tie()),
         #------------Bar 17
@@ -437,28 +437,35 @@ rhythm_definition.notes = [
         (rh_arp_two[0], abjad.Duration(1), rill.tie()),
         (rh_arp_two[0], abjad.Duration(1)),
         #------------Bar 13
-        ("r1"),
-        ("r1"),
-        ("r1"),
-        ("r1"),
+        ("r4"),
+        (melody_one_a_oct_up[0], abjad.Duration(2, 4)), 
+        (melody_one_a[1], abjad.Duration(1,4)), 
+        (melody_one_a[3], abjad.Duration(1)), 
+        (melody_one_a[2], abjad.Duration(1)), 
+        (violin_arp_two[0], abjad.Duration(1, 2), rill.tie()),
+        (violin_arp_two[1], abjad.Duration(1, 2), rill.tie()),
         #------------Bar 17
+        (violin_arp_two[1], abjad.Duration(1, 4), rill.tie()),
+        (violin_arp_two[2], abjad.Duration(3, 4), rill.tie()),
+        (violin_arp_two[3], abjad.Duration(1), rill.tie()),
         ("r1"),
-        ("r1"),
-        ("r1"),       
         ("r1"),
         #------------Bar 21
         ("r1"),
         ("r1"),
         ("r1"),
-        ("r1"),
-        #-----------Bar 25
-        ("r1"),
-        ("r1"),
-        ("r1"),
-        ("r1"),
-        #-----------Bar 29
-        ("r1"),
-        ("r1"),
+        (violin_arp_four[0], abjad.Duration(1, 2)),
+        (violin_arp_four[1], abjad.Duration(1, 2), rill.tie()),
+        #------------Bar 25
+        (violin_arp_four[1], abjad.Duration(1), rill.tie()),
+        (violin_arp_four[1], abjad.Duration(1), rill.tie()),
+        (violin_arp_four[1], abjad.Duration(1, 2), rill.tie()),
+        (violin_arp_four[3], abjad.Duration(1, 2), rill.tie()),
+        (violin_arp_four[3], abjad.Duration(1), rill.tie()),
+        #------------Bar 29
+        (violin_arp_four[3], abjad.Duration(1, 4)),
+        (violin_arp_four[2], abjad.Duration(3, 4), rill.tie()),
+        (violin_arp_four[2], abjad.Duration(1)),
         ("r1"),
         ("r1"),
         #-----------Bar 33
@@ -494,8 +501,8 @@ rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = 'LH_I'
 
 auth_one_a = auth_one_kln_eing[0].segment
-plag_one_a_arp= LegatoArpeggio(plag_one_a, seq_one)
-lh_arp_one = plag_one_a_arp.stages
+auth_one_a_arp= LegatoArpeggio(auth_one_a, seq_one)
+lh_arp_one = auth_one_a_arp.stages
 
 plag_two_a = plag_two_gr_kln[0].segment
 plag_two_a_arp = LegatoArpeggio(plag_two_a, seq_three)
