@@ -269,6 +269,7 @@
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Music_Voice"                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
+                    \time 4/4
                     \clef "treble"
                     \mark #3
                     e''1

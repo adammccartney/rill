@@ -256,6 +256,7 @@
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Music_Voice"                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
+                    \time 4/4
                     \clef "treble"
                     \mark #4
                     g1
@@ -546,6 +547,7 @@
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Monosynth_Music_Voice"                       %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
+                    \time 4/4
                     \clef "treble"
                     \mark #4
                     <g b'>1
@@ -872,9 +874,12 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "RH_I_Music_Voice"                        %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        \clef "treble"
-                        \mark #4
-                        r1
+                        {
+                            \time 4/4
+                            \clef "treble"
+                            \mark #4
+                            r1
+                        }
                         r1
                         r1
                         r1
@@ -1115,9 +1120,12 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "LH_I_Music_Voice"                        %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        \clef "bass"
-                        \mark #4
-                        r1
+                        {
+                            \time 4/4
+                            \clef "bass"
+                            \mark #4
+                            r1
+                        }
                         r1
                         r1
                         r1

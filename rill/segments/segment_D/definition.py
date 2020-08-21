@@ -89,8 +89,11 @@ plag_two_zw_dr = rill.transpose(auth_two_ein_zw, 19)
 
 # ---- Rest Leaf for time signature change to 5/8
 
-string = r"\time 5/8 r4 r4."
-empty_58_measure = abjad.Container(string)
+astring = r"\time 5/8 r4 r4."
+empty_58_measure = abjad.Container(astring)
+
+bstring = r"\time 4/4 r1"
+empty_44_measure = abjad.Container(bstring)
 
 
 # -- sequences of notes for arpeggios
@@ -143,7 +146,7 @@ third_fl_trem_IV = abjad.TremoloContainer(16, "{0}32 {1}".format(IV_fl_5, IV_fl_
 
 
 rhythm_definition.notes = [
-        (sul_IV, abjad.Duration(1), rill.tie()),
+        (sul_IV, abjad.Duration(1), rill.time_signature("4/4"), rill.tie()),
         (sul_IV, abjad.Duration(1), rill.tie()),
         (sul_IV, abjad.Duration(1), rill.tie()),
         (IV_fl_2, abjad.Duration(1), rill.harmonic_mixed_on()),
@@ -262,7 +265,10 @@ vln_sul_III_double = sul_III
 vln_sul_IV_double = sul_IV
 
 rhythm_definition.notes = [
-        (diad_four, abjad.Duration(1), rill.tremolo(32), rill.tie()),
+        (diad_four, 
+            abjad.Duration(1), 
+            rill.time_signature("4/4"), 
+            rill.tremolo(32), rill.tie()),
         (diad_four, abjad.Duration(1), rill.tremolo(32), rill.tie()),
         (diad_four, abjad.Duration(1), rill.tremolo(32), rill.tie()),
         (diad_four, abjad.Duration(1, 2), rill.tremolo(32), rill.tie()),
@@ -400,7 +406,7 @@ rh_arp_one_c_auth = arp_one_c_auth.stages
 rh_arp_one_d_auth = arp_one_d_auth.stages 
 
 rhythm_definition.notes = [
-        ("r1"),
+        (empty_44_measure),
         ("r1"),
         ("r1"),
         ("r1"),
@@ -508,7 +514,7 @@ arp_two_auth = LegatoArpeggio(segment_two_authentic, seq_two)
 lh_arp_two_auth = arp_two_auth.stages
 
 rhythm_definition.notes = [
-        ("r1"),
+        (empty_44_measure),
         ("r1"),
         ("r1"),
         ("r1"),

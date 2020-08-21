@@ -103,6 +103,14 @@ plag_two_fifths_kln_eing = [plag_two_diads_kln_eing[0][2], plag_two_diads_kln_ei
 
 # Sequences 
 
+# ---- Rest Leaves for time signature changes
+
+astring = r"\time 5/8 r4 r4."
+empty_58_measure = abjad.Container(astring)
+
+bstring = r"\time 4/4 r1"
+empty_44_measure = abjad.Container(bstring)
+
 m_seq_a = (0, 1, 2, 3)
 seq_one = (1, 0, 3, 2)
 seq_two = (3, 2, 0, 1)
@@ -167,9 +175,9 @@ melody_two_b = mel_two_b_arp.pitches
 melody_two_c = mel_two_c_arp.pitches
 
 rhythm_definition.notes = [
-        ("r1"),
+        (empty_44_measure),
         ("r2"),
-        (violin_arp_one[0], abjad.Duration(1, 2), rill.tie()),
+        (violin_arp_one[0], abjad.Duration(1, 2), rill.tie(), rill.default_on()),
         (violin_arp_one[0], abjad.Duration(1), rill.tie()),
         (violin_arp_one[0], abjad.Duration(1, 2)),
         (violin_arp_one[1], abjad.Duration(1, 2), rill.tie()),

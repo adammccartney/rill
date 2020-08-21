@@ -237,10 +237,14 @@
                 }                                                              %! rill.ScoreTemplate.__call__()
                 \context Voice = "Violin_Music_Voice"                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
-                    \clef "treble"
-                    \mark \default
-                    r1
+                    {
+                        \time 4/4
+                        \clef "treble"
+                        \mark \default
+                        r1
+                    }
                     r2
+                    \override Staff.NoteHead.style = #'default
                     c''2
                     ~
                     c''1

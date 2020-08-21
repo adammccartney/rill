@@ -1,24 +1,24 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2020.8.11)  18 AUG 2020 14:07
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2020.8.19)  22 AUG 2020 01:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **score.tex
 (./score.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-06-18>
+L3 programming layer <2020-07-17>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
-\c@part=\count163
-\c@section=\count164
-\c@subsection=\count165
-\c@subsubsection=\count166
-\c@paragraph=\count167
-\c@subparagraph=\count168
-\c@figure=\count169
-\c@table=\count170
+\c@part=\count164
+\c@section=\count165
+\c@subsection=\count166
+\c@subsubsection=\count167
+\c@paragraph=\count168
+\c@subparagraph=\count169
+\c@figure=\count170
+\c@table=\count171
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
@@ -36,9 +36,9 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
-\Gm@cnth=\count171
-\Gm@cntv=\count172
-\c@Gm@tempcnt=\count173
+\Gm@cnth=\count172
+\Gm@cntv=\count173
+\c@Gm@tempcnt=\count174
 \Gm@bindingoffset=\dimen135
 \Gm@wd@mp=\dimen136
 \Gm@odd@mp=\dimen137
@@ -57,15 +57,15 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count174
-\calc@Bcount=\count175
+\calc@Acount=\count175
+\calc@Bcount=\count176
 \calc@Adimen=\dimen143
 \calc@Bdimen=\dimen144
 \calc@Askip=\skip49
 \calc@Bskip=\skip50
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count176
+\calc@Ccount=\count177
 \calc@Cskip=\skip51
 )
 (/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
@@ -125,17 +125,17 @@ File: ppxetex.def 2020/01/28 v0.5q Pdfpages driver for XeTeX (AM)
 )
 \AM@pagebox=\box45
 \AM@global@opts=\toks17
-\AM@pagecnt=\count177
+\AM@pagecnt=\count178
 \AM@toc@title=\toks18
-\c@AM@survey=\count178
+\c@AM@survey=\count179
 \AM@templatesizebox=\box46
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def
-File: l3backend-xdvipdfmx.def 2020-06-23 L3 backend support: xdvipdfmx
-\g__graphics_track_int=\count179
+File: l3backend-xdvipdfmx.def 2020-06-29 L3 backend support: xdvipdfmx
+\g__graphics_track_int=\count180
 \l__pdf_internal_box=\box47
-\g__pdf_backend_object_int=\count180
-\g__pdf_backend_annotation_int=\count181
+\g__pdf_backend_object_int=\count181
+\g__pdf_backend_annotation_int=\count182
 )
 (./score.aux)
 \openout1 = `score.aux'.
@@ -289,13 +289,6 @@ File: music.pdf Graphic file (type pdf)
 File: music.pdf Graphic file (type pdf)
 <use music.pdf, page 6>
  [8]
-File: music.pdf Graphic file (type pdf)
-<use music.pdf, page 7>
-File: music.pdf Graphic file (type pdf)
-<use music.pdf, page 7>
-File: music.pdf Graphic file (type pdf)
-<use music.pdf, page 7>
- [9]
 File: back-cover.pdf Graphic file (type pdf)
 <use back-cover.pdf>
 File: back-cover.pdf Graphic file (type pdf)
@@ -310,14 +303,14 @@ File: back-cover.pdf Graphic file (type pdf)
 <use back-cover.pdf, page 1>
 File: back-cover.pdf Graphic file (type pdf)
 <use back-cover.pdf, page 1>
- [10] (./score.aux) ) 
+ [9] (./score.aux) ) 
 Here is how much of TeX's memory you used:
- 2841 strings out of 479277
- 42787 string characters out of 5882574
- 295309 words of memory out of 5000000
- 20498 multiletter control sequences out of 15000+600000
- 532346 words of font info for 25 fonts, out of 8000000 for 9000
+ 2839 strings out of 479712
+ 42734 string characters out of 5891447
+ 297755 words of memory out of 5000000
+ 20061 multiletter control sequences out of 15000+600000
+ 535096 words of font info for 30 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 43i,20n,47p,252b,435s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,20n,47p,252b,435s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on score.pdf (10 pages).
+Output written on score.pdf (9 pages).

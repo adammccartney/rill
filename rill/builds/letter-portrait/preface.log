@@ -1,24 +1,24 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2020.8.11)  18 AUG 2020 14:07
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2020.8.19)  22 AUG 2020 01:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **preface.tex
 (./preface.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-06-18>
+L3 programming layer <2020-07-17>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
-\c@part=\count163
-\c@section=\count164
-\c@subsection=\count165
-\c@subsubsection=\count166
-\c@paragraph=\count167
-\c@subparagraph=\count168
-\c@figure=\count169
-\c@table=\count170
+\c@part=\count164
+\c@section=\count165
+\c@subsection=\count166
+\c@subsubsection=\count167
+\c@paragraph=\count168
+\c@subparagraph=\count169
+\c@figure=\count170
+\c@table=\count171
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
@@ -46,8 +46,8 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@outerparindent=\dimen135
 \enit@toks=\toks18
 \enit@inbox=\box45
-\enit@count@id=\count171
-\enitdp@description=\count172
+\enit@count@id=\count172
+\enitdp@description=\count173
 )
 (/usr/share/texlive/texmf-dist/tex/latex/import/import.sty
 Package: import 2020/04/01  v 6.2
@@ -67,38 +67,38 @@ Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2020-06-18 L3 programming layer (loader) 
+Package: expl3 2020-07-17 L3 programming layer (loader) 
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def
-File: l3backend-xdvipdfmx.def 2020-06-23 L3 backend support: xdvipdfmx
-\g__graphics_track_int=\count173
+File: l3backend-xdvipdfmx.def 2020-06-29 L3 backend support: xdvipdfmx
+\g__graphics_track_int=\count174
 \l__pdf_internal_box=\box46
-\g__pdf_backend_object_int=\count174
-\g__pdf_backend_annotation_int=\count175
+\g__pdf_backend_object_int=\count175
+\g__pdf_backend_annotation_int=\count176
 ))
 Package: xparse 2020-05-15 L3 Experimental document command parser
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex
-\l__xparse_current_arg_int=\count176
-\g__xparse_grabber_int=\count177
-\l__xparse_m_args_int=\count178
-\l__xparse_v_nesting_int=\count179
+\l__xparse_current_arg_int=\count177
+\g__xparse_grabber_int=\count178
+\l__xparse_m_args_int=\count179
+\l__xparse_v_nesting_int=\count180
 ))
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count180
-\l__fontspec_language_int=\count181
-\l__fontspec_strnum_int=\count182
-\l__fontspec_tmp_int=\count183
-\l__fontspec_tmpa_int=\count184
-\l__fontspec_tmpb_int=\count185
-\l__fontspec_tmpc_int=\count186
-\l__fontspec_em_int=\count187
-\l__fontspec_emdef_int=\count188
-\l__fontspec_strong_int=\count189
-\l__fontspec_strongdef_int=\count190
+\l__fontspec_script_int=\count181
+\l__fontspec_language_int=\count182
+\l__fontspec_strnum_int=\count183
+\l__fontspec_tmp_int=\count184
+\l__fontspec_tmpa_int=\count185
+\l__fontspec_tmpb_int=\count186
+\l__fontspec_tmpc_int=\count187
+\l__fontspec_em_int=\count188
+\l__fontspec_emdef_int=\count189
+\l__fontspec_strong_int=\count190
+\l__fontspec_strongdef_int=\count191
 \l__fontspec_tmpa_dim=\dimen136
 \l__fontspec_tmpb_dim=\dimen137
 \l__fontspec_tmpc_dim=\dimen138
@@ -160,7 +160,7 @@ other characters in Unicode lower plane
 (/usr/share/texmf/tex/latex/tipa/t3enc.def
 File: t3enc.def 2001/12/31 T3 encoding
 )
-\tipaTiiicode=\count191
+\tipaTiiicode=\count192
 \tipasavetokens=\toks22
 \tipachecktokens=\toks23
 )
@@ -191,9 +191,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count192
-\Gm@cntv=\count193
-\c@Gm@tempcnt=\count194
+\Gm@cnth=\count193
+\Gm@cntv=\count194
+\c@Gm@tempcnt=\count195
 \Gm@bindingoffset=\dimen150
 \Gm@wd@mp=\dimen151
 \Gm@odd@mp=\dimen152
@@ -341,11 +341,11 @@ ABD: EveryShipout initializing macros
 
 ] (./preface.aux) ) 
 Here is how much of TeX's memory you used:
- 7838 strings out of 479277
- 171347 string characters out of 5882574
- 446852 words of memory out of 5000000
- 25462 multiletter control sequences out of 15000+600000
- 535376 words of font info for 31 fonts, out of 8000000 for 9000
+ 7837 strings out of 479712
+ 171335 string characters out of 5891447
+ 449401 words of memory out of 5000000
+ 25026 multiletter control sequences out of 15000+600000
+ 538126 words of font info for 36 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  52i,4n,46p,288b,137s stack positions out of 5000i,500n,10000p,200000b,80000s
 
