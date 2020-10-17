@@ -1,6 +1,6 @@
 import abjad
 
-from . import markups as markups
+from rill.instruments.markups import instruments as instrument_markups
 
 instruments = abjad.OrderedDict(
     [
