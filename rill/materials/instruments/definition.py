@@ -1,29 +1,28 @@
 import abjad
 
-from rill.materials.instruments.markups import instrument as instrument
-from rill.materials.instruments.markups import short_instrument as short_instrument
+from rill.materials.instruments import markups as markups
 
 instruments = abjad.OrderedDict(
     [
         (
             "Violin",
             abjad.Violin(
-                markup=instrument("Violin"),
-                short_markup=short_instrument("vln"),
+                markup=markups.instrument("Violin"),
+                short_markup=markups.short_instrument("vln"),
             ),
         ),
         (
             "Monosynth",
             abjad.ClarinetInBFlat(
-                markup=instrument("MonoSynth"),
-                short_markup=short_instrument("msy"),
+                markup=markups.instrument("MonoSynth"),
+                short_markup=markups.short_instrument("msy"),
             ),
         ),
         (
             "Polysynth",
             abjad.Piano(
-                markup=instrument("PolySynth"),
-                short_markup=short_instrument("psy"),
+                markup=markups.instrument("PolySynth"),
+                short_markup=markups.short_instrument("psy"),
             ),
         ),
         ]
