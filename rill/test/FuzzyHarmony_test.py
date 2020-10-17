@@ -24,18 +24,6 @@ def test_defaults():
     assert fz1.shortname == fz2.shortname
     assert fz1.segment == fz2.segment
 
-
-root_pitches = ("c'", "d'", "d'", "fs'")
-@pytest.mark.parameterize('scale_degree, pitch_segment',
-                        [('bf_ii', abjad.PitchSegment("c' ef' g' bf'")),
-                         ('d_iv', abjad.PitchSegment("d' f' a' c'")),
-                         ('g_v', abjad.PitchSegment("d' fs' a' c'")),
-                         ('e_ii', abjad.PitchSegment("fs' a' cs'' e''")),
-                         ])
-def test_init_1(scale_degree, pitch_segment):
-    """Tests different used to initialize harmonies"""
-    harmony = FuzzyHarmony(scale_degree, pitch_segment)
-
 def test_pitch_equality():
     """Using the same pitches to construct should lead to equality"""
     d1 = Diad((abjad.NamedPitch("c'"), abjad.NamedPitch("g'")))
