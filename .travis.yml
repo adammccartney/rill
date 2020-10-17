@@ -14,7 +14,7 @@ install:
     - pip install -e .
 
 script:
-    - py.test -xrf ./marana
+    - py.test -xrf ./rill
 
 notifications:
     email: false
