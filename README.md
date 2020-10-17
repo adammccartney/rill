@@ -1,5 +1,6 @@
 rill (erosion)
 ==============
+[![Build Status](https://travis-ci.org/adammccartney/rill.svg?branch=master)](https://travis-ci.org/adammccartney/rill)
 
 For violin, monosynth and polysynth. 
 
