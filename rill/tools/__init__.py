@@ -1,7 +1,8 @@
 from .accents import *
 from .barlines import barline, repeat
 from .clef import clef 
-from .FuzzyHarmony import *        
+from .FuzzyHarmony import Diad as Diad
+from .FuzzyHarmony import FuzzyHarmony as FuzzyHarmony
 from .grace import *
 from .line_break import line_break
 from .material_methods import (
