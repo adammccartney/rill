@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2020.8.19)  22 AUG 2020 01:07
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2020.10.5)  17 OCT 2020 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **score.tex
 (./score.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-07-17>
+L3 programming layer <2020-09-24>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -78,7 +78,7 @@ Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -89,7 +89,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package xcolor Info: Driver file: xetex.def on input line 225.
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def
-File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+File: xetex.def 2020/08/26 v5.0i Graphics/color driver for xetex
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -130,8 +130,8 @@ File: ppxetex.def 2020/01/28 v0.5q Pdfpages driver for XeTeX (AM)
 \c@AM@survey=\count179
 \AM@templatesizebox=\box46
 )
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def
-File: l3backend-xdvipdfmx.def 2020-06-29 L3 backend support: xdvipdfmx
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2020-09-24 L3 backend support: XeTeX
 \g__graphics_track_int=\count180
 \l__pdf_internal_box=\box47
 \g__pdf_backend_object_int=\count181
@@ -305,10 +305,10 @@ File: back-cover.pdf Graphic file (type pdf)
 <use back-cover.pdf, page 1>
  [9] (./score.aux) ) 
 Here is how much of TeX's memory you used:
- 2839 strings out of 479712
- 42734 string characters out of 5891447
- 297755 words of memory out of 5000000
- 20061 multiletter control sequences out of 15000+600000
+ 2857 strings out of 479681
+ 43199 string characters out of 5890730
+ 298817 words of memory out of 5000000
+ 20110 multiletter control sequences out of 15000+600000
  535096 words of font info for 30 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  44i,20n,47p,252b,435s stack positions out of 5000i,500n,10000p,200000b,80000s

@@ -1,27 +1,28 @@
 import abjad
-import mccartney 
+
+from . import markups as markups
 
 instruments = abjad.OrderedDict(
     [
         (
             "Violin",
             abjad.Violin(
-                markup=mccartney.markups.instrument("Violin"),
-                short_markup=mccartney.markups.short_instrument("vln"),
+                markup=markups.instrument("Violin"),
+                short_markup=markups.short_instrument("vln"),
             ),
         ),
         (
             "Monosynth",
             abjad.ClarinetInBFlat(
-                markup=mccartney.markups.instrument("MonoSynth"),
-                short_markup=mccartney.markups.short_instrument("msy"),
+                markup=markups.instrument("MonoSynth"),
+                short_markup=markups.short_instrument("msy"),
             ),
         ),
         (
             "Polysynth",
             abjad.Piano(
-                markup=mccartney.markups.instrument("PolySynth"),
-                short_markup=mccartney.markups.short_instrument("psy"),
+                markup=markups.instrument("PolySynth"),
+                short_markup=markups.short_instrument("psy"),
             ),
         ),
         ]

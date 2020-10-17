@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2020.8.19)  22 AUG 2020 01:07
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2020.10.5)  17 OCT 2020 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **front-cover.tex
 (./front-cover.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-07-17>
+L3 programming layer <2020-09-24>
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
@@ -94,7 +94,7 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 Package graphics Info: Driver file: xetex.def on input line 105.
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def
-File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+File: xetex.def 2020/08/26 v5.0i Graphics/color driver for xetex
 ))
 \Gin@req@height=\dimen145
 \Gin@req@width=\dimen146
@@ -382,10 +382,10 @@ Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2020-07-17 L3 programming layer (loader) 
+Package: expl3 2020-09-24 L3 programming layer (loader) 
 
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def
-File: l3backend-xdvipdfmx.def 2020-06-29 L3 backend support: xdvipdfmx
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2020-09-24 L3 backend support: XeTeX
 \g__graphics_track_int=\count198
 \l__pdf_internal_box=\box56
 \g__pdf_backend_object_int=\count199
@@ -586,10 +586,10 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 
 ] (./front-cover.aux) ) 
 Here is how much of TeX's memory you used:
- 17757 strings out of 479712
- 385237 string characters out of 5891447
- 638909 words of memory out of 5000000
- 34742 multiletter control sequences out of 15000+600000
+ 17775 strings out of 479681
+ 385699 string characters out of 5890730
+ 639951 words of memory out of 5000000
+ 34791 multiletter control sequences out of 15000+600000
  538134 words of font info for 37 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,5n,60p,439b,394s stack positions out of 5000i,500n,10000p,200000b,80000s

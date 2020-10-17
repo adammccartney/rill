@@ -1,6 +1,5 @@
 from abjad import *
 import rill
-import mccartney
 import os
 import importlib
 import shutil

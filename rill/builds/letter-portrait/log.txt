@@ -6,7 +6,7 @@ This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded
 entering extended mode
 (./front-cover.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-06-18>
+L3 programming layer <2020-09-24>
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo))
@@ -130,7 +130,7 @@ zlibrarytopaths.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def))
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex))
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
@@ -145,11 +145,7 @@ zlibrarycalc.code.tex) (./front-cover.aux)
 (/usr/share/texmf/tex/latex/tipa/t3cmr.fd)
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
-ABD: EveryShipout initializing macros
-Overfull \hbox (181.87143pt too wide) in paragraph at lines 57--59
- [][] 
-[1] (./front-cover.aux) )
-(see the transcript file for additional information)
+ABD: EveryShipout initializing macros [1] (./front-cover.aux) )
 Output written on front-cover.pdf (1 page).
 Transcript written on front-cover.log.
 xelatex front-cover.tex
@@ -158,7 +154,7 @@ This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded
 entering extended mode
 (./front-cover.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-06-18>
+L3 programming layer <2020-09-24>
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo))
@@ -282,7 +278,7 @@ zlibrarytopaths.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def))
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex))
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
@@ -297,11 +293,7 @@ zlibrarycalc.code.tex) (./front-cover.aux)
 (/usr/share/texmf/tex/latex/tipa/t3cmr.fd)
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
-ABD: EveryShipout initializing macros
-Overfull \hbox (181.87143pt too wide) in paragraph at lines 57--59
- [][] 
-[1] (./front-cover.aux) )
-(see the transcript file for additional information)
+ABD: EveryShipout initializing macros [1] (./front-cover.aux) )
 Output written on front-cover.pdf (1 page).
 Transcript written on front-cover.log.
 make[1]: Leaving directory '/home/adam/Scores/rill/rill/builds/letter-portrait'
@@ -313,7 +305,7 @@ This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded
 entering extended mode
 (./preface.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-06-18>
+L3 programming layer <2020-09-24>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
@@ -332,7 +324,7 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def))
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex))
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
@@ -377,7 +369,7 @@ This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded
 entering extended mode
 (./preface.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-06-18>
+L3 programming layer <2020-09-24>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
@@ -396,7 +388,7 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def))
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex))
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
@@ -448,7 +440,7 @@ This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded
 entering extended mode
 (./back-cover.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-06-18>
+L3 programming layer <2020-09-24>
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo))
@@ -575,7 +567,7 @@ zlibrarytopaths.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def))
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex))
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
@@ -606,7 +598,7 @@ This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded
 entering extended mode
 (./back-cover.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-06-18>
+L3 programming layer <2020-09-24>
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo))
@@ -733,7 +725,7 @@ zlibrarytopaths.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def))
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex))
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
@@ -767,7 +759,7 @@ This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded
 entering extended mode
 (./score.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-06-18>
+L3 programming layer <2020-09-24>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
@@ -790,7 +782,7 @@ Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
 (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/ppxetex.def))
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def)
 (./score.aux) (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -805,7 +797,7 @@ This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded
 entering extended mode
 (./score.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-06-18>
+L3 programming layer <2020-09-24>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
@@ -828,7 +820,7 @@ Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
 (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/ppxetex.def))
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def)
 (./score.aux) (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
