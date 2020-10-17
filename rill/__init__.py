@@ -11,18 +11,5 @@ del platform
 
 from rill.tools import *
 from rill.tools import MarkupLibrary as markup
-from rill.materials.instruments.definition import instruments
-from rill.materials.pitch.definition import (
-                                    bass_pitches, 
-                                    tetrads,
-                                    pentads,
-                                    transposition_lookup,
-                                    scale_lookup,
-                                    melody_lookup,
-                                    vln_str_diads,
-                                    vln_scnd_flgs,
-                                    pure_fifth_diads,
-                                    pure_maj_third_diads,
-                                   )
-from rill.materials.metronome_marks.definition import  metronome_marks
+from rill.materials import *
 from rill import segments
