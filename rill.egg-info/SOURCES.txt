@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+rill/__init__.py
+rill/__metadata__.py
+rill.egg-info/PKG-INFO
+rill.egg-info/SOURCES.txt
+rill.egg-info/dependency_links.txt
+rill.egg-info/not-zip-safe
+rill.egg-info/requires.txt
+rill.egg-info/top_level.txt
