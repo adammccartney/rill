@@ -1,4 +1,36 @@
-8-7-20
+
+** New branch ensemble v2.0
+
+*** TODO Create new score template 
++ update materials/instruments/definition.py
++ update tools/ScoreTemplate.py
++ test new Template by running ScoreTemplate.py locally
+
+*** TODO Import new segment maker from marana
++ replace rill/tools/SegmentMaker.py with marana/tools/SegmentMaker.py
++ compare differences, update functions:
+  - _get_music_voices(self)
+  - _get_staves(self)
+  - _handle_time_signatures(self)
+  - _sort_instruments_by_clef(self)
+  - run(self)
+
+*** TODO generate new structure for segments
++ recursively delete all existing subdirectories and files in segments 
++ import generator scripts from marana
++ run `generateSegments.sh` on the empty segments directory
++ rewrite DefGen.py to reflect structure of new score template 
++ update makefile in builds to reflect new segments
++ delete all pdfs from builds/letter-portrait
++ update segments.ily file
+
+*** TODO Test build all segments and run make on the score
+
+*** TODO Find solution for missing instrument name markups
+
+** Initial Setup of v1.0 
+
+*** 8-7-20
 
  + ~~Write test for `material_methods.py`~~
  + ~~Create push/pop methods for PhraseStream containers list~~
@@ -23,7 +55,7 @@
  
  + Write methods for attachments (markup + dynamics)
 
-# 16-6-20
+*** 16-6-20
  
  + ~~Research a way to use RhythmDefinition.py effectively~~
   - ~~refine the routine used to produce an rmaker~~
@@ -34,14 +66,14 @@
  + ~~Fix linkage to stylesheets~~ 
   - ~~run same segment A test and fix errors on build~~
 
-# 15-6-20
+*** 15-6-20
 
  + ~~Clean up tested code~~
  + ~~Make a working segment~~
   - ~~first build a score example using existing code~~
   - ~~figure out how to handle overlapping rmakers~~
 
-# 28-5-20
+*** 28-5-20
 
  + ~~Read abjad.Chord to see if method exists to create invertion~~
  + ~~Create method to invert guitar chords stored in abjad.OrdinaryDict~~
@@ -58,7 +90,9 @@
      ~~instruments incase the instrumentation changes by the autumn and so that~~  
      ~~they can be used for the harp parts in the orchestral piece later in the~~
      ~~summer~~ 
-```
+
+#+BEGIN_SRC 
+
 Data Structure: 
  |_ Chord
    |_sub-grouping
@@ -74,7 +108,8 @@ Data Structure:
        |_down
        |_random
      |_chordal
-```
+
+#+END_SRC
 
  + ~~Clarification of what we want to do with these chords:~~
   - ~~Write a routine that outputs all possible harmonic progressions:~~
