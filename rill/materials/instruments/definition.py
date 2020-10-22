@@ -5,21 +5,21 @@ from rill.materials.instruments import markups as markups
 instruments = abjad.OrderedDict(
     [
         (
-            "flute 1",
+            "Flute 1",
             abjad.Flute(
                 markup=markups.instrument("Flute 1"),
                 short_markup=markups.short_instrument("fl.1"),
                 ),
             ),
         (
-            "flute 2",
+            "Flute 2",
             abjad.Flute(
                 markup=markups.instrument("Flute 2"),
                 short_markup=markups.short_instrument("fl.2"),
                 ),
             ),
         (
-            "flute 3",
+            "Flute 3",
             abjad.Flute(
                 markup=markups.instrument("Flute 3"),
                 short_markup=markups.short_instrument("fl.3"),
@@ -34,7 +34,7 @@ instruments = abjad.OrderedDict(
                 ),
             ),
         (
-            "vibraphone",
+            "Vibraphone",
             abjad.Percussion(
                 markup=markups.instrument("Vibraphone"),
                 short_markup=markups.short_instrument("vibes"),
