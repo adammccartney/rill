@@ -316,16 +316,16 @@ class SegmentMaker(abjad.SegmentMaker):
         file.close()
 
     def _render_illustration(self):
-        # score_file = self._lilypond_file
+        score_file = self._lilypond_file
         directory = self.current_directory
         pdf_path = f"{directory}/illustration.pdf"
-        # ly_path = f"{directory}/illustration.ly"
+        ly_path = f"{directory}/illustration.ly"
         path = pathlib.Path("illustration.pdf")
         if path.exists():
             print(f"Removing {pdf_path} ...")
             path.unlink()
         print(f"Persisting {pdf_path} ...")
-        # result = abjad.persist(score_file).as_pdf(pdf_path, strict=79)
+        result = abjad.persist(score_file).as_pdf(pdf_path, strict=79)
         if path.exists():
             print(f"Opening {pdf_path} ...")
             os.system(f"open {pdf_path}")
