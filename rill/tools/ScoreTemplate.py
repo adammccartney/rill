@@ -18,19 +18,19 @@ class ScoreTemplate(abjad.ScoreTemplate):
     def __init__(self):
         super(ScoreTemplate, self).__init__()
         self.voice_abbreviations.update(
-            {"fl1": "flute1_Music_Voice",
-             "fl2": "flute2_Music_Voice",
-             "fl3": "flute3_Music_Voice",
+            {"fl1": "Flute1_Music_Voice",
+             "fl2": "Flute2_Music_Voice",
+             "fl3": "Flute3_Music_Voice",
              "Bbcl1": "Bbclarinet1_Music_Voice",
              "vb": "vibraphone_Music_Voice",
-             "vn1": "violin1_Music_Voice",
-             "vn2": "violin2_Music_Voice",
-             "vn3": "violin3_Music_Voice",
-             "vn4": "violin4_Music_Voice",
-             "vn5": "violin5_Music_Voice",
-             "vn6": "violin6_Music_Voice",
-             "vn7": "violin7_Music_Voice",
-             "va": "viola_Music_Voice",
+             "vn1": "Violin1_Music_Voice",
+             "vn2": "Violin2_Music_Voice",
+             "vn3": "Violin3_Music_Voice",
+             "vn4": "Violin4_Music_Voice",
+             "vn5": "Violin5_Music_Voice",
+             "vn6": "Violin6_Music_Voice",
+             "vn7": "Violin7_Music_Voice",
+             "va": "Viola_Music_Voice",
              }
             )
 
@@ -48,9 +48,9 @@ class ScoreTemplate(abjad.ScoreTemplate):
 
         # Woodwind
         # Flute 1
-        markup_voice = abjad.Voice(name="flute1_Markup_Voice", tag=tag)
-        music_voice = abjad.Voice(name="flute1_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="flute1_Dynamics_Voice", tag=tag)
+        markup_voice = abjad.Voice(name="Flute1_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="Flute1_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="Flute1_Dynamics_Voice", tag=tag)
         fluteOne_staff = abjad.Staff(
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
@@ -70,9 +70,9 @@ class ScoreTemplate(abjad.ScoreTemplate):
                 'flute', force_quotes=True)
 
         # Flute 1
-        markup_voice = abjad.Voice(name="flute2_Markup_Voice", tag=tag)
-        music_voice = abjad.Voice(name="flute2_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="flute2_Dynamics_Voice", tag=tag)
+        markup_voice = abjad.Voice(name="Flute2_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="Flute2_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="Flute2_Dynamics_Voice", tag=tag)
         fluteTwo_staff = abjad.Staff(
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
@@ -92,9 +92,9 @@ class ScoreTemplate(abjad.ScoreTemplate):
                 'flute', force_quotes=True)
 
         # Flute Three
-        markup_voice = abjad.Voice(name="flute3_Markup_Voice", tag=tag)
-        music_voice = abjad.Voice(name="flute3_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="flute3_Dynamics_Voice", tag=tag)
+        markup_voice = abjad.Voice(name="Flute3_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="Flute3_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="Flute3_Dynamics_Voice", tag=tag)
         fluteThree_staff = abjad.Staff(
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
@@ -137,9 +137,9 @@ class ScoreTemplate(abjad.ScoreTemplate):
                 'Bbclarinet', force_quotes=True)
 
         # Vibraphone
-        markup_voice = abjad.Voice(name="vibraphone_Markup_Voice", tag=tag)
-        music_voice = abjad.Voice(name="vibraphone_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="vibraphone_Dynamics_Voice", tag=tag)
+        markup_voice = abjad.Voice(name="Vibraphone_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="Vibraphone_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="Vibraphone_Dynamics_Voice", tag=tag)
         vibraphone_staff = abjad.Staff(
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
@@ -160,9 +160,9 @@ class ScoreTemplate(abjad.ScoreTemplate):
 
         # Strings
         # Violin 1
-        markup_voice = abjad.Voice(name="violin1_Markup_Voice", tag=tag)
-        music_voice = abjad.Voice(name="violin1_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="violin1_Dynamics_Voice", tag=tag)
+        markup_voice = abjad.Voice(name="Violin1_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="Violin1_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="Violin1_Dynamics_Voice", tag=tag)
         violinOne_staff = abjad.Staff(
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
@@ -182,9 +182,9 @@ class ScoreTemplate(abjad.ScoreTemplate):
                 'violin', force_quotes=True)
 
         # Violin 2
-        markup_voice = abjad.Voice(name="violin2_Markup_Voice", tag=tag)
-        music_voice = abjad.Voice(name="violin2_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="violin2_Dynamics_Voice", tag=tag)
+        markup_voice = abjad.Voice(name="Violin2_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="Violin2_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="Violin2_Dynamics_Voice", tag=tag)
         violinTwo_staff = abjad.Staff(
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
@@ -204,9 +204,9 @@ class ScoreTemplate(abjad.ScoreTemplate):
                 'violin', force_quotes=True)
 
         # Violin 3
-        markup_voice = abjad.Voice(name="violin3_Markup_Voice", tag=tag)
-        music_voice = abjad.Voice(name="violin3_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="violin3_Dynamics_Voice", tag=tag)
+        markup_voice = abjad.Voice(name="Violin3_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="Violin3_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="Violin3_Dynamics_Voice", tag=tag)
         violinThree_staff = abjad.Staff(
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
@@ -226,9 +226,9 @@ class ScoreTemplate(abjad.ScoreTemplate):
                 'violin', force_quotes=True)
 
         # Violin 4
-        markup_voice = abjad.Voice(name="violin4_Markup_Voice", tag=tag)
-        music_voice = abjad.Voice(name="violin4_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="violin4_Dynamics_Voice", tag=tag)
+        markup_voice = abjad.Voice(name="Violin4_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="Violin4_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="Violin4_Dynamics_Voice", tag=tag)
         violinFour_staff = abjad.Staff(
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
@@ -248,9 +248,9 @@ class ScoreTemplate(abjad.ScoreTemplate):
                 'violin', force_quotes=True)
 
         # Violin 5
-        markup_voice = abjad.Voice(name="violin5_Markup_Voice", tag=tag)
-        music_voice = abjad.Voice(name="violin5_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="violin5_Dynamics_Voice", tag=tag)
+        markup_voice = abjad.Voice(name="Violin5_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="Violin5_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="Violin5_Dynamics_Voice", tag=tag)
         violinFive_staff = abjad.Staff(
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
@@ -270,9 +270,9 @@ class ScoreTemplate(abjad.ScoreTemplate):
                 'violin', force_quotes=True)
 
         # Violin 6
-        markup_voice = abjad.Voice(name="violin6_Markup_Voice", tag=tag)
-        music_voice = abjad.Voice(name="violin6_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="violin6_Dynamics_Voice", tag=tag)
+        markup_voice = abjad.Voice(name="Violin6_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="Violin6_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="Violin6_Dynamics_Voice", tag=tag)
         violinSix_staff = abjad.Staff(
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
@@ -292,9 +292,9 @@ class ScoreTemplate(abjad.ScoreTemplate):
                 'violin', force_quotes=True)
 
         # Violin 7
-        markup_voice = abjad.Voice(name="violin7_Markup_Voice", tag=tag)
-        music_voice = abjad.Voice(name="violin7_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="violin7_Dynamics_Voice", tag=tag)
+        markup_voice = abjad.Voice(name="Violin7_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="Violin7_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="Violin7_Dynamics_Voice", tag=tag)
         violinSeven_staff = abjad.Staff(
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
@@ -315,9 +315,9 @@ class ScoreTemplate(abjad.ScoreTemplate):
                 'violin', force_quotes=True)
 
         # Viola
-        markup_voice = abjad.Voice(name="viola_Markup_Voice", tag=tag)
-        music_voice = abjad.Voice(name="viola_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="viola_Dynamics_Voice", tag=tag)
+        markup_voice = abjad.Voice(name="Viola_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="Viola_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="Viola_Dynamics_Voice", tag=tag)
         viola_staff = abjad.Staff(
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
