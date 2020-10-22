@@ -299,7 +299,7 @@ rhythm_definition.markup = []
 # Viola
 #------------------------------------------------#
 rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = "viola1"
+rhythm_definition.instrument_name = "Viola"
 
 rhythm_definition.notes = [
         ("r1"),
