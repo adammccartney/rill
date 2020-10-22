@@ -10,17 +10,18 @@ from abjadext import rmakers
 """Design of RhythmDefinition and SegmentMaker
    borrowed gratefully from Trevor Baca's ins_wasser repository"""
 
+
 class RhythmDefinition(object):
     """
     Rhythm definition.
 
     """
 
-    ### CLASS ATTRIBUTES ###
+    # CLASS ATTRIBUTES #
 
     __slots__ = ("_score", "dynamics", "instrument_name", "markup", "notes")
 
-    ### INITIALIZER ###
+    # INITIALIZER #
 
     def __init__(
         self, dynamics=None, instrument_name=None, markup=None, notes=None
@@ -30,7 +31,7 @@ class RhythmDefinition(object):
         self.markup = markup or []
         self.notes = notes or []
 
-    ### SPECIAL METHODS ###
+    # SPECIAL METHODS #
 
     def __call__(self, score):
         """
@@ -49,22 +50,41 @@ class RhythmDefinition(object):
         """
         return abjad.StorageFormatManager(self).get_storage_format()
 
-    ### PRIVATE METHODS ###
+    # PRIVATE METHODS #
 
     def _get_music_voices(self):
         return (
-            self._score["Violin_Music_Voice"],
-            self._score["Monosynth_Music_Voice"],
-            self._score["RH_I_Music_Voice"],
-            self._score["LH_I_Music_Voice"],
+                self._score["Flute1_Music_Voice"],
+                self._score["Flute2_Music_Voice"],
+                self._score["Flute3_Music_Voice"],
+                self._score["Bbclarinet1_Music_Voice"],
+                self._score["Vibraphone_Music_Voice"],
+                self._score["Violin1_Music_Voice"],
+                self._score["Violin2_Music_Voice"],
+                self._score["Violin3_Music_Voice"],
+                self._score["Violin4_Music_Voice"],
+                self._score["Violin5_Music_Voice"],
+                self._score["Violin6_Music_Voice"],
+                self._score["Violin7_Music_Voice"],
+                self._score["Viola_Music_Voice"],
         )
 
     def _get_staves(self):
         return (
-                self._score["Violin"], 
-                self._score["Monosynth"], 
-                self._score["Polysynth"],
-                )
+                self._score["Flute1"],
+                self._score["Flute2"],
+                self._score["Flute3"],
+                self._score["Bbclarinet1"],
+                self._score["Vibraphone"],
+                self._score["Violin1"],
+                self._score["Violin2"],
+                self._score["Violin3"],
+                self._score["Violin4"],
+                self._score["Violin5"],
+                self._score["Violin6"],
+                self._score["Violin7"],
+                self._score["Viola"],
+        )
 
     def _handle_dynamics(self):
         voice = self._score[f"{self.instrument_name}_Music_Voice"]
@@ -130,7 +150,7 @@ class RhythmDefinition(object):
                 abjad.attach(markup, skip)
                 extra_offset = expression[2]
                 x, y = extra_offset
-                string = fr"\once \override TextScript.extra-offset"
+                string = r"\once \override TextScript.extra-offset"
                 string += f" = #'({x} . {y})"
                 command = abjad.LilyPondLiteral(string)
                 abjad.attach(command, skip)
@@ -209,8 +229,9 @@ class RhythmDefinition(object):
                 abjad.attach(copied_indicator, component)
         return component
 
-class SegmentMaker(object):
-    """Segment Maker definition for rill
+
+class SegmentMaker(abjad.SegmentMaker):
+    """Segment Maker definition for marana
     makes a persistent section of the score.
     """
 
@@ -233,41 +254,48 @@ class SegmentMaker(object):
             _lilypond_file=None,
             _score=None,
             build_path=None,
-            current_directory=None, 
+            current_directory=None,
             markup_leaves=None,
             metronome_marks=None,
-            segment_name=None, 
+            segment_name=None,
             rehearsal_mark=None,
             tempo=None,
             time_signatures=None,
-        ):
-            super(SegmentMaker, self).__init__()
-            self._lilypond_file = None
-            self._rhythm_definitions = []
-            self._score = _score
-            self.build_path = build_path
-            self.current_directory = current_directory
-            self.markup_leaves = markup_leaves
-            self.metronome_marks = metronome_marks or []
-            self.segment_name = segment_name
-            self.rehearsal_mark = rehearsal_mark
-            self.tempo = ((1, 4), 60)
-            self.time_signatures = time_signatures or []
-    
-    ### PRIVATE PROPERTIES ###
+         ):
+        super(SegmentMaker, self).__init__()
+        self._lilypond_file = None
+        self._rhythm_definitions = []
+        self._score = _score
+        self.build_path = build_path
+        self.current_directory = current_directory
+        self.markup_leaves = markup_leaves
+        self.metronome_marks = metronome_marks or []
+        self.segment_name = segment_name
+        self.rehearsal_mark = rehearsal_mark
+        self.tempo = ((1, 4), 60)
+        self.time_signatures = time_signatures or []
 
-    @property 
+    # PRIVATE PROPERTIES #
+    @property
     def _music_voices(self):
         """Returns quadruple of staves from score"""
         return (
-                self._score["Violin_Music_Voice"],
-                self._score["Monosynth_Music_Voice"],
-                self._score["RH_I_Music_Voice"],
-                self._score["LH_I_Music_Voice"],
+                self._score["Flute1_Music_Voice"],
+                self._score["Flute2_Music_Voice"],
+                self._score["Flute3_Music_Voice"],
+                self._score["Bbclarinet1_Music_Voice"],
+                self._score["Vibraphone_Music_Voice"],
+                self._score["Violin1_Music_Voice"],
+                self._score["Violin2_Music_Voice"],
+                self._score["Violin3_Music_Voice"],
+                self._score["Violin4_Music_Voice"],
+                self._score["Violin5_Music_Voice"],
+                self._score["Violin6_Music_Voice"],
+                self._score["Violin7_Music_Voice"],
+                self._score["Viola_Music_Voice"],
                 )
 
-    ### PRIVATE METHODS ###
-    
+    # PRIVATE METHODS #
     def _attach_leaf_index_markup(self):
         if not self.markup_leaves:
             return
@@ -278,7 +306,7 @@ class SegmentMaker(object):
                 abjad.attach(markup, logical_tie.head)
 
     def _build_segment(self):
-        directory = self.current_directory 
+        directory = self.current_directory
         file = open(f"{directory}/illustration.ly", 'r')
         score_content = file.readlines()
         file.close()
@@ -288,20 +316,20 @@ class SegmentMaker(object):
         file.close()
 
     def _render_illustration(self):
-        score_file = self._lilypond_file
+        # score_file = self._lilypond_file
         directory = self.current_directory
         pdf_path = f"{directory}/illustration.pdf"
-        ly_path = f"{directory}/illustration.ly"
+        # ly_path = f"{directory}/illustration.ly"
         path = pathlib.Path("illustration.pdf")
         if path.exists():
             print(f"Removing {pdf_path} ...")
             path.unlink()
         print(f"Persisting {pdf_path} ...")
-        result = abjad.persist(score_file).as_pdf(pdf_path, strict=79) 
+        # result = abjad.persist(score_file).as_pdf(pdf_path, strict=79)
         if path.exists():
             print(f"Opening {pdf_path} ...")
             os.system(f"open {pdf_path}")
-    
+
     def _call_rhythm_definitions(self):
         for rhythm_definition in self._rhythm_definitions:
             rhythm_definition(self._score)
@@ -316,20 +344,39 @@ class SegmentMaker(object):
         voices = self._music_voices
         for voice in voices:
             leaf = abjad.inspect(voice).leaf(0)
+            print("this is the leaf: ", leaf)
             abjad.attach(abjad.RehearsalMark(number=mark_num), leaf)
         scheme = abjad.Scheme('format-mark-box-alphabet')
         score = self._score
         abjad.setting(score).markFormatter = scheme
 
+    def _sort_instruments_by_clef(self, voice_list, target):
+        if isinstance(voice_list, list):
+            for i in range(len(voice_list)):
+                target.append(voice_list[i])
+            return target
+        else:
+            single_voice = voice_list
+            target.append(single_voice)
+            return target
+
     def _configure_score(self):
-        voices  = self._music_voices
-        treble_voices = voices[:-1]
-        for voice in treble_voices:
-            leaf = abjad.inspect(voice).leaf(0)
-            abjad.attach(abjad.Clef("treble"), leaf)
-        bass_voice = voices[3]  # lh polysynth
-        leaf = abjad.inspect(bass_voice).leaf(0)
-        abjad.attach(abjad.Clef("bass"), leaf)
+        voices = self._music_voices  # list of voices
+        treble, alto, bass = [], [], []
+        temp = voices[0:3]  # fl, ob, cl
+        self._sort_instruments_by_clef(temp, treble)
+        temp = voices[3]  # bassoon
+        self._sort_instruments_by_clef(temp, bass)
+        temp = voices[4:7]  # hrn1, hrn3, trp
+        self._sort_instruments_by_clef(temp, treble)
+        temp = voices[8]  # timpani
+        self._sort_instruments_by_clef(temp, bass)
+        temp = voices[9:13]  # vibraphone, harp, vln1, vln2
+        self._sort_instruments_by_clef(temp, treble)
+        temp = voices[13]  # viola
+        self._sort_instruments_by_clef(temp, alto)  # cello, db
+        temp = voices[14:16]  # cello, db
+        self._sort_instruments_by_clef(temp, bass)
 
     def _handle_metronome_marks(self):
         if not self.metronome_marks:
@@ -361,12 +408,12 @@ class SegmentMaker(object):
             abjad.attach(time_signature, skip, context="Score")
             skips.append(skip)
         context.extend(skips)
-        #context = self._score["Global_Rests"]
-        #rests = []
-        #for item in self.time_signatures:
-        #    rest = abjad.MultimeasureRest(1, multiplier=item)
-        #    rests.append(rest)
-        #context.extend(rests)
+        context = self._score["Global_Rests"]
+        rests = []
+        for item in self.time_signatures:
+            rest = abjad.MultimeasureRest(1, multiplier=item)
+            rests.append(rest)
+        context.extend(rests)
 
     def _make_lilypond_file(self):
         path = "../../stylesheets/stylesheet.ily"
@@ -379,10 +426,10 @@ class SegmentMaker(object):
                 lilypond_file.items.remove(item)
         self._lilypond_file = lilypond_file
 
-    ### PUBLIC METHODS ###
+    # PUBLIC METHODS #
 
     def define_rhythm(self):
-        """ 
+        """
         Makes rhythm definition
         Returns rhythm definition
         """
@@ -396,11 +443,11 @@ class SegmentMaker(object):
 
         Returns Lilypond file
         """
-        print("### STARTING RUN ###")
+        print("# STARTING RUN #")
         self._make_lilypond_file()
         self._configure_lilypond_file()
-        #self._handle_time_signatures()
-        #self._handle_metronome_marks()
+        self._handle_time_signatures()
+        # self._handle_metronome_marks()
         self._call_rhythm_definitions()
         self._configure_score()
         self._configure_rehearsal_mark()
@@ -408,6 +455,3 @@ class SegmentMaker(object):
         self._render_illustration()
         self._build_segment()
         return self._lilypond_file
-
-
-
