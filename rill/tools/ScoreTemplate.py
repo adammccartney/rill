@@ -1,17 +1,40 @@
 import abjad
 import rill
 
-"""
-Defines scoretemplate, subclass of abjad.ScoreTemplate. Segments appended later. 
-"""
 
-class ScoreTemplate(object):
+class ScoreTemplate(abjad.ScoreTemplate):
     """
-    Makes a simple score template for trio 
-    Violin, Monosynth and Polysynth
+    Makes a simple score template for ensemble
     """
-    
-    ### SPECIAL METHODS ###
+
+    # CLASS VARIABLES #
+
+    __documentation_section__ = None
+
+    _always_make_global_rests = True
+
+    _global_rests_in_topmost_staff = True
+
+    def __init__(self):
+        super(ScoreTemplate, self).__init__()
+        self.voice_abbreviations.update(
+            {"fl1": "flute1_Music_Voice",
+             "fl2": "flute2_Music_Voice",
+             "fl3": "flute3_Music_Voice",
+             "Bbcl1": "Bbclarinet1_Music_Voice",
+             "vb": "vibraphone_Music_Voice",
+             "vn1": "violin1_Music_Voice",
+             "vn2": "violin2_Music_Voice",
+             "vn3": "violin3_Music_Voice",
+             "vn4": "violin4_Music_Voice",
+             "vn5": "violin5_Music_Voice",
+             "vn6": "violin6_Music_Voice",
+             "vn7": "violin7_Music_Voice",
+             "va": "viola_Music_Voice",
+             }
+            )
+
+    # SPECIAL METHODS #
 
     def __call__(self) -> abjad.Score:
         """
@@ -21,108 +44,346 @@ class ScoreTemplate(object):
         tag = abjad.Tag(site)
 
         # GLOBAL CONTEXT
-        #global_context = self._make_global_context()
+        global_context = self._make_global_context()
 
-        # Violin
-        markup_voice = abjad.Voice(name="Violin_Markup_Voice", tag=tag)
-        music_voice = abjad.Voice(name="Violin_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="Violin_Dynamics_Voice", tag=tag)
-        violin_staff = abjad.Staff(
+        # Woodwind
+        # Flute 1
+        markup_voice = abjad.Voice(name="flute1_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="flute1_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="flute1_Dynamics_Voice", tag=tag)
+        fluteOne_staff = abjad.Staff(
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
-            name="Violin",
+            name="flute1",
             tag=tag,
         )
         abjad.annotate(
-            violin_staff,
+            fluteOne_staff,
             "default_instrument",
-            rill.instruments["Violin"],
+            rill.instruments["Flute 1"],
         )
-        abjad.annotate(violin_staff, "default_clef", abjad.Clef("treble"))
-        violin_tag = abjad.LilyPondLiteral(r"\tag #'violin", format_slot='before')
-        abjad.attach(violin_tag, violin_staff)
-        abjad.setting(violin_staff).midi_instrument = abjad.scheme.Scheme(
+        abjad.annotate(fluteOne_staff, "default_clef", abjad.Clef("treble"))
+        fluteOne_tag = abjad.LilyPondLiteral(
+            r"\tag #'fluteOne", format_slot='before')
+        abjad.attach(fluteOne_tag, fluteOne_staff)
+        abjad.setting(fluteOne_staff).midi_instrument = abjad.scheme.Scheme(
+                'flute', force_quotes=True)
+
+        # Flute 1
+        markup_voice = abjad.Voice(name="flute2_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="flute2_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="flute2_Dynamics_Voice", tag=tag)
+        fluteTwo_staff = abjad.Staff(
+            [markup_voice, music_voice, dynamics_voice],
+            simultaneous=True,
+            name="flute2",
+            tag=tag,
+        )
+        abjad.annotate(
+            fluteTwo_staff,
+            "default_instrument",
+            rill.instruments["Flute 2"],
+        )
+        abjad.annotate(fluteTwo_staff, "default_clef", abjad.Clef("treble"))
+        fluteTwo_tag = abjad.LilyPondLiteral(
+            r"\tag #'fluteTwo", format_slot='before')
+        abjad.attach(fluteTwo_tag, fluteTwo_staff)
+        abjad.setting(fluteTwo_staff).midi_instrument = abjad.scheme.Scheme(
+                'flute', force_quotes=True)
+
+        # Flute Three
+        markup_voice = abjad.Voice(name="flute3_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="flute3_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="flute3_Dynamics_Voice", tag=tag)
+        fluteThree_staff = abjad.Staff(
+            [markup_voice, music_voice, dynamics_voice],
+            simultaneous=True,
+            name="flute3",
+            tag=tag,
+        )
+        abjad.annotate(
+            fluteThree_staff,
+            "default_instrument",
+            rill.instruments["Flute 3"],
+        )
+        abjad.annotate(fluteThree_staff, "default_clef", abjad.Clef("treble"))
+        fluteThree_tag = abjad.LilyPondLiteral(
+            r"\tag #'fluteThree", format_slot='before')
+        abjad.attach(fluteThree_tag, fluteThree_staff)
+        abjad.setting(fluteThree_staff).midi_instrument = abjad.scheme.Scheme(
+                'flute', force_quotes=True)
+
+        # Bb Clarinet
+        markup_voice = abjad.Voice(name="Bbclarinet1_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="Bbclarinet1_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(
+            name="Bbclarinet1_Dynamics_Voice", tag=tag)
+        Bbclarinet_staff = abjad.Staff(
+            [markup_voice, music_voice, dynamics_voice],
+            simultaneous=True,
+            name="Bbclarinet1",
+            tag=tag,
+        )
+        abjad.annotate(
+            Bbclarinet_staff,
+            "default_instrument",
+            rill.instruments["Bbclarinet 1"],
+        )
+        abjad.annotate(Bbclarinet_staff, "default_clef", abjad.Clef("treble"))
+        BbclarinetOne_tag = abjad.LilyPondLiteral(
+            r"\tag #'BbclarinetOne", format_slot='before')
+        abjad.attach(BbclarinetOne_tag, Bbclarinet_staff)
+        abjad.setting(Bbclarinet_staff).midi_instrument = abjad.scheme.Scheme(
+                'Bbclarinet', force_quotes=True)
+
+        # Vibraphone
+        markup_voice = abjad.Voice(name="vibraphone_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="vibraphone_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="vibraphone_Dynamics_Voice", tag=tag)
+        vibraphone_staff = abjad.Staff(
+            [markup_voice, music_voice, dynamics_voice],
+            simultaneous=True,
+            name="vibraphone",
+            tag=tag,
+        )
+        abjad.annotate(
+            vibraphone_staff,
+            "default_instrument",
+            rill.instruments["Vibraphone"],
+        )
+        abjad.annotate(vibraphone_staff, "default_clef", abjad.Clef("treble"))
+        vibraphone_tag = abjad.LilyPondLiteral(
+            r"\tag #'vibraphone", format_slot='before')
+        abjad.attach(vibraphone_tag, vibraphone_staff)
+        abjad.setting(vibraphone_staff).midi_instrument = abjad.scheme.Scheme(
+                'vibraphone', force_quotes=True)
+
+        # Strings
+        # Violin 1
+        markup_voice = abjad.Voice(name="violin1_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="violin1_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="violin1_Dynamics_Voice", tag=tag)
+        violinOne_staff = abjad.Staff(
+            [markup_voice, music_voice, dynamics_voice],
+            simultaneous=True,
+            name="violin1",
+            tag=tag,
+        )
+        abjad.annotate(
+            violinOne_staff,
+            "default_instrument",
+            rill.instruments["Violin 1"],
+        )
+        abjad.annotate(violinOne_staff, "default_clef", abjad.Clef("treble"))
+        violinOne_tag = abjad.LilyPondLiteral(
+            r"\tag #'violinOne", format_slot='before')
+        abjad.attach(violinOne_tag, violinOne_staff)
+        abjad.setting(violinOne_staff).midi_instrument = abjad.scheme.Scheme(
                 'violin', force_quotes=True)
 
-        # MonoSynth
-        markup_voice = abjad.Voice(name="Monosynth_Markup_Voice", tag=tag)
-        music_voice = abjad.Voice(name="Monosynth_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="Monosynth_Dynamics_Voice", tag=tag)
-        monosynth_staff = abjad.Staff(
+        # Violin 2
+        markup_voice = abjad.Voice(name="violin2_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="violin2_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="violin2_Dynamics_Voice", tag=tag)
+        violinTwo_staff = abjad.Staff(
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
-            name="Monosynth",
+            name="violin2",
             tag=tag,
         )
         abjad.annotate(
-            monosynth_staff,
+            violinTwo_staff,
             "default_instrument",
-            rill.instruments["Monosynth"],
+            rill.instruments["Violin 2"],
         )
-        abjad.annotate(monosynth_staff, "default_clef", abjad.Clef("treble"))
-        monosynth_tag = abjad.LilyPondLiteral(r"\tag #'monosynth", format_slot='before')
-        abjad.attach(monosynth_tag, monosynth_staff)
-        abjad.setting(monosynth_staff).midi_instrument = abjad.scheme.Scheme(
-                'clarinet', force_quotes=True)
+        abjad.annotate(violinTwo_staff, "default_clef", abjad.Clef("treble"))
+        violinTwo_tag = abjad.LilyPondLiteral(
+            r"\tag #'violinTwo", format_slot='before')
+        abjad.attach(violinTwo_tag, violinTwo_staff)
+        abjad.setting(violinTwo_staff).midi_instrument = abjad.scheme.Scheme(
+                'violin', force_quotes=True)
 
-        ### RH PolySynth Voices ###
-        markup_voice = abjad.Voice(name="RH_I_Markup_Voice", tag=tag)
-        music_voice = abjad.Voice(name="RH_I_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="RH_I_Dynamics_Voice", tag=tag)
-        #rh_voice_2 = abjad.Voice(
-        #            lilypond_type="RHVoiceII", name="RH_II_Music_Voice", tag=tag
-        #            )
-       
-        # RH PolySynth Staff 
-        polysynth_music_rh_staff = abjad.Staff(
-                [markup_voice, music_voice, dynamics_voice],
-                simultaneous=True,
-                name="RH_Polysynth",
-                tag=tag,
-                )
+        # Violin 3
+        markup_voice = abjad.Voice(name="violin3_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="violin3_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="violin3_Dynamics_Voice", tag=tag)
+        violinThree_staff = abjad.Staff(
+            [markup_voice, music_voice, dynamics_voice],
+            simultaneous=True,
+            name="violin3",
+            tag=tag,
+        )
         abjad.annotate(
-                polysynth_music_rh_staff, "default_clef", abjad.Clef("treble")
-                )
-        
-        ### LH PolySynth Voices ###
-        markup_voice = abjad.Voice(name="LH_I_Markup_Voice", tag=tag)
-        music_voice = abjad.Voice(name="LH_I_Music_Voice", tag=tag)
-        dynamics_voice = abjad.Voice(name="LH_I_Dynamics_Voice", tag=tag)
-        #        lh_voice_2 = abjad.Voice(
-        #            lilypond_type="LHVoiceII", name="LH_II_Music_Voice", tag=tag
-        #        )
-        #
-       
-        # LH PolySynth Staff
-        polysynth_music_lh_staff = abjad.Staff(
-                [markup_voice, music_voice, dynamics_voice],
-                simultaneous=True,
-                name="LH_Polysynth",
-                tag=tag,
-                )
+            violinThree_staff,
+            "default_instrument",
+            rill.instruments["Violin 3"],
+        )
+        abjad.annotate(violinThree_staff, "default_clef", abjad.Clef("treble"))
+        violinThree_tag = abjad.LilyPondLiteral(
+            r"\tag #'violinThree", format_slot='before')
+        abjad.attach(violinThree_tag, violinThree_staff)
+        abjad.setting(violinThree_staff).midi_instrument = abjad.scheme.Scheme(
+                'violin', force_quotes=True)
+
+        # Violin 4
+        markup_voice = abjad.Voice(name="violin4_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="violin4_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="violin4_Dynamics_Voice", tag=tag)
+        violinFour_staff = abjad.Staff(
+            [markup_voice, music_voice, dynamics_voice],
+            simultaneous=True,
+            name="violin4",
+            tag=tag,
+        )
         abjad.annotate(
-                polysynth_music_lh_staff, "default_clef", abjad.Clef("bass")
+            violinFour_staff,
+            "default_instrument",
+            rill.instruments["Violin 4"],
+        )
+        abjad.annotate(violinFour_staff, "default_clef", abjad.Clef("treble"))
+        violinFour_tag = abjad.LilyPondLiteral(
+            r"\tag #'violinFour", format_slot='before')
+        abjad.attach(violinFour_tag, violinFour_staff)
+        abjad.setting(violinFour_staff).midi_instrument = abjad.scheme.Scheme(
+                'violin', force_quotes=True)
+
+        # Violin 5
+        markup_voice = abjad.Voice(name="violin5_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="violin5_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="violin5_Dynamics_Voice", tag=tag)
+        violinFive_staff = abjad.Staff(
+            [markup_voice, music_voice, dynamics_voice],
+            simultaneous=True,
+            name="violin5",
+            tag=tag,
+        )
+        abjad.annotate(
+            violinFive_staff,
+            "default_instrument",
+            rill.instruments["Violin 5"],
+        )
+        abjad.annotate(violinFive_staff, "default_clef", abjad.Clef("treble"))
+        violinFive_tag = abjad.LilyPondLiteral(
+            r"\tag #'violinFive", format_slot='before')
+        abjad.attach(violinFive_tag, violinFive_staff)
+        abjad.setting(violinFive_staff).midi_instrument = abjad.scheme.Scheme(
+                'violin', force_quotes=True)
+
+        # Violin 6
+        markup_voice = abjad.Voice(name="violin6_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="violin6_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="violin6_Dynamics_Voice", tag=tag)
+        violinSix_staff = abjad.Staff(
+            [markup_voice, music_voice, dynamics_voice],
+            simultaneous=True,
+            name="violin6",
+            tag=tag,
+        )
+        abjad.annotate(
+            violinSix_staff,
+            "default_instrument",
+            rill.instruments["Violin 6"],
+        )
+        abjad.annotate(violinSix_staff, "default_clef", abjad.Clef("treble"))
+        violinSix_tag = abjad.LilyPondLiteral(
+            r"\tag #'violinSix", format_slot='before')
+        abjad.attach(violinSix_tag, violinSix_staff)
+        abjad.setting(violinSix_staff).midi_instrument = abjad.scheme.Scheme(
+                'violin', force_quotes=True)
+
+        # Violin 7
+        markup_voice = abjad.Voice(name="violin7_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="violin7_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="violin7_Dynamics_Voice", tag=tag)
+        violinSeven_staff = abjad.Staff(
+            [markup_voice, music_voice, dynamics_voice],
+            simultaneous=True,
+            name="violin7",
+            tag=tag,
+        )
+        abjad.annotate(
+            violinSeven_staff,
+            "default_instrument",
+            rill.instruments["Violin 7"],
+        )
+        abjad.annotate(violinSeven_staff, "default_clef", abjad.Clef("treble"))
+        violinSeven_tag = abjad.LilyPondLiteral(
+            r"\tag #'violinSeven", format_slot='before'
+        )
+        abjad.attach(violinSeven_tag, violinSeven_staff)
+        abjad.setting(violinSeven_staff).midi_instrument = abjad.scheme.Scheme(
+                'violin', force_quotes=True)
+
+        # Viola
+        markup_voice = abjad.Voice(name="viola_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="viola_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="viola_Dynamics_Voice", tag=tag)
+        viola_staff = abjad.Staff(
+            [markup_voice, music_voice, dynamics_voice],
+            simultaneous=True,
+            name="viola",
+            tag=tag,
+        )
+        abjad.annotate(
+            viola_staff,
+            "default_instrument",
+            rill.instruments["Viola"],
+        )
+        abjad.annotate(viola_staff, "default_clef", abjad.Clef("alto"))
+        viola_tag = abjad.LilyPondLiteral(
+            r"\tag #'viola", format_slot='before')
+        abjad.attach(viola_tag, viola_staff)
+        abjad.setting(viola_staff).midi_instrument = abjad.scheme.Scheme(
+                'viola', force_quotes=True)
+
+        # Define staff groups
+        # Woodwind Staff Group
+        woodwind_staff_group = abjad.StaffGroup(
+                [
+                    fluteOne_staff,
+                    fluteTwo_staff,
+                    fluteThree_staff,
+                    Bbclarinet_staff
+                ],
+                simultaneous=True,
+                lilypond_type="StaffGroup",
+                name="Woodwind_Staff_Group",
+                tag=tag,
                 )
 
-        # Polysynth Staff Group
-        polysynth_staff_group = abjad.StaffGroup(
-                [polysynth_music_rh_staff, polysynth_music_lh_staff],
+        # Percussion Staff Group
+        percussion_staff_group = abjad.StaffGroup(
+                [vibraphone_staff],
                 simultaneous=True,
-                lilypond_type="PianoStaff",
-                name="Polysynth_Staff_Group",
+                lilypond_type="StaffGroup",
+                name="Percussion_Staff_Group",
                 tag=tag,
                 )
-        polysynth_tag = abjad.LilyPondLiteral(r"\tag #'polysynth", format_slot='before')
-        abjad.attach(polysynth_tag, polysynth_staff_group)
-        abjad.setting(polysynth_staff_group).midi_instrument = abjad.scheme.Scheme(
-                'organ', force_quotes=True)
-        
+
+        # String Staff Group
+        string_staff_group = abjad.StaffGroup(
+                [
+                    violinOne_staff,
+                    violinTwo_staff,
+                    violinThree_staff,
+                    violinFour_staff,
+                    violinFive_staff,
+                    violinSix_staff,
+                    violinSeven_staff,
+                    viola_staff
+                ],
+                simultaneous=True,
+                lilypond_type="StaffGroup",
+                name="String_Staff_Group",
+                tag=tag,
+                )
+
         # Music Context
         music_context = abjad.Context(
                 [
-                    violin_staff,
-                    monosynth_staff,
-                    polysynth_staff_group,
+                    woodwind_staff_group,
+                    percussion_staff_group,
+                    string_staff_group,
                 ],
                 lilypond_type="MusicContext",
                 simultaneous=True,
@@ -132,12 +393,14 @@ class ScoreTemplate(object):
 
         # Score
         score = abjad.Score(
-                [music_context], name="Score", tag=tag
+                [global_context, music_context], name="Score", tag=tag
                 )
+        #self._assert_lilypond_identifiers(score)
+        #self._assert_unique_context_names(score)
+        #self._assert_matching_custom_context_names(score)
         return score
-    
-    ### PRIVATE METHODS ###
 
+    # PRIVATE METHODS #
     def _make_global_context(self):
         site = "abjad.ScoreTemplate._make_global_context()"
         tag = abjad.Tag(site)
@@ -148,7 +411,7 @@ class ScoreTemplate(object):
             lilypond_type="GlobalSkips", name="Global_Skips", tag=tag,
         )
         global_context = abjad.Context(
-            [global_rests, global_skips],
+            [global_skips, global_rests],
             lilypond_type="GlobalContext",
             simultaneous=True,
             name="Global_Context",
@@ -156,12 +419,10 @@ class ScoreTemplate(object):
         )
         return global_context
 
-
-    ### PUBLIC PROPERTIES ###
-
+    # PUBLIC PROPERTIES #
     @property
     def voice_abbreviations(self):
-        """Gets voice abbreviations""" 
+        """Gets voice abbreviations"""
         return super(ScoreTemplate, self).voice_abbreviations
 
 
