@@ -15,7 +15,7 @@
   - _sort_instruments_by_clef(self)
   - run(self)
 
-*** TODO generate new structure for segments
+*** DONE generate new structure for segments
 + recursively delete all existing subdirectories and files in segments 
 + import generator scripts from marana
 + run `generateSegments.sh` on the empty segments directory
@@ -24,8 +24,9 @@
 + delete all pdfs from builds/letter-portrait
 + update segments.ily file
 
-*** TODO Test build all segments and run make on the score
+*** DONE Test build all segments and run make on the score
 
+*** TODO Remove seventh Violin
 *** TODO Find solution for missing instrument name markups
 
 ** Initial Setup of v1.0 
