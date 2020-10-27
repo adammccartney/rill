@@ -26,8 +26,9 @@
 
 *** DONE Test build all segments and run make on the score
 
-*** TODO Remove seventh Violin
+*** TODO Re-configure ScoreTemplate to reflect final instrumentation
 *** TODO Find solution for missing instrument name markups
+
 
 ** Initial Setup of v1.0 
 

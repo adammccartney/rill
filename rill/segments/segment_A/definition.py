@@ -14,6 +14,7 @@ from rill.tools.FuzzyHarmony import Diad as Diad
 from rill.tools.FuzzyHarmony import LegatoArpeggio as LegatoArpeggio
 from rill.tools.material_methods import transpose_segment as transpose_segment
 from rill.tools.tremolo import tremolo as tremolo
+from rill.tools.MusicMaker import MusicMaker as MusicMaker
 
 from abjad import NamedPitch as NamedPitch
 from typing import List
@@ -61,14 +62,16 @@ segment_maker.time_signatures = time_signatures
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = "Flute1"
 
-rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
-]
+time_signature_pairs = [(4, 4), (3, 4), (3, 4), (4, 4), (3,4), (3, 4)]
+counts = [1, 2, -3, 4]
+denominator = 16
+pitches = abjad.CyclicTuple([0, 3, 7, 12, 7, 3])
+clef = "treble"
+
+my_musicmaker = MusicMaker(counts, denominator, pitches, clef)
+music = my_musicmaker.make_music(time_signature_pairs)
+
+rhythm_definition.notes = [music]
 
 rhythm_definition.dynamics = []
 
