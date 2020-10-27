@@ -1,0 +1,148 @@
+* rill (erosion)
+
+** Compositional Idea in v1.0 
+a rill is the soft impression left in the soil in the wake of a soft, lightly 
+flowing stream of water. in nature, a rill will form part of a network. 
+
+In musical terms, the basic idea will be to map the two elements acoustically: 
+ 
+ + chaotic (as in mathematics) melodies in poly modal space
+ + a delayed tremolo texture that follows the same outline 
+
+The score is a sequence of short pieces or fragments that explore this
+idea.  
+
+
+* Material Definitions
+** Pitch Material types v1.0
++ dictionaries of `abjad.PitchSegment` that convey the information about a set of (tonal/harmonic)
+  changes 
++ lookup tables that are designed to process transformation of
+  material (mostly transpositions and offsets)
++ natural harmonic tremolo figures occuring on the violin
++ legato tremolo figures that occur 
+
+
+* Use of Object Oriented Programming
+Generally speaking, the piece attempts to keep the inheritance
+hierarchies as flat as possible. Also, it tries to limit the
+complexity and size of any single class definitions, preferring
+instead to a allow complexity to arise from the combination or
+succession of simple classes in a sort of "pipeline" style program. 
+
+As a library, Abjad has some fairly robust class definitions that
+make it easy to interact with the fundamental musical types as they
+are found in lilypond. 
+
+Lilypond as a language is also in a fairly mature stage of
+development, and the basic syntax and usage is well defined and
+documented. 
+
+While there is a bit of a learning curve associated with both the
+lilypond and (moreso) python languages, as well as the abjad API, the
+payoff as a composer is such that once a fundamental understanding has
+been attained, one is free to start thinking about music composition
+in the type of high-level abstraction that computer programming
+languages are really good at handling.  
+
+The basic approach that is being adopted for the context of this score
+is to try and think about it as a sort of "interface library" that
+interacts with abjad. The reason for doing this is with a view to
+retaining as much "orthogonality" as possible within the context of
+the design (in this case the composition). 
+ 
+** Diad
+*** v1.0
+Used primarily to greate tremolo figures on the strings, with this in
+mind the pitch material is always a pair of natural harmonics that are
+found on the same string. 
+
+** FuzzyHarmony 
+Stores a collection of notes in a PitchSegment Fuzzy because the names
+are used to roughly track the position in a given harmonic sequence
+and not to store precise information on the harmony e.g.: bf_ii = key
+of bflat, minor harmony on ii degree (results in a cmin chord)
+
+*** v1.0
+The instances used are usually tetradic (contain 4 pitches)
+and use an inversion/figured bass position that obscures the root
+triad by utilizing suspended tones.  
+
+** LegatoArpeggio
+Basically creates a string of pitches that is used when generating the
+pitch aspects of a leaf.
+
+*** v1.0
+As the objects are used in this version, they represent a sort of
+"floating" harmonic figure. A chord is essentially augmented in time. 
+
+** MusicMaker
+The purpose of the music maker class is to prepare a container that
+can be passed into the `.notes` member of a `SegmentMaker`
+instance. Using this sort of a wrapper makes it slightly easier to
+focus on composing with "phrases" as opposed to always referencing
+"atomic" note values and passing these to a leaf maker when the
+`SegmentMaker` runs. 
+
+** MusicStream 
+
+
+* General Methodology (point to point procedure)
+
+The general approach to getting music into the score is through the
+instantiation of a SegmentMaker class. Basically, this class contains
+a ScoreTemplate as a member, which in turn contains the reference information
+about "voices" and "staves" contained within the score. 
+
+The score is divided into a number of discrete segments and these are
+created as instances of the class in a `semgent_$x/definition.py`
+file. There is one such file per section of the score. 
+
+** Approach in v0.1
+Very simply generating strings of lilypond syntax using vanilla
+python, more or less by using simple format strings. All the control
+of structures were done manually.   
+
+** Approach in v1.0 
+Using abjad as a layer to interface with lilypond. The complexity of
+the API made it somewhat tricky to understand what was
+happening. Basically ended up reading a number of existing source code
+repos of other composers (Trevor Baca, Josiah Wold Oberholzer, Gregory
+Evans) to see what sort of approaches were being employed. 
+
+Eventually ended up with an approach where the "notes", "dynamics" and
+"markup" were prepared in lists and passed into the appropriate
+members of the `SegmentMaker` instance. While this enabled some higher
+level thinking and use of variables to reference the contents of
+custom objects, it still meant practically dealing with all of the
+note material on an atomic level.
+
+*** Problems
++ no bar checks
++ re-use of variablec
+
+** Approach in v2.0 
+
+
+   
+
+* Instrumentation
+
+v0.1
+ + flute(s) 
+ + guitar 
+ + clarinet Bb
+ + viola
+
+v1.0
++ Violin
++ Monosynth
++ Polysynth
+
+v2.0
++ 4 Flutes
++ 1 Bb Clarinet
++ Percussion
++ 8 Violins
++ 1 Viola
+
