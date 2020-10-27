@@ -94,7 +94,15 @@ focus on composing with "phrases" as opposed to always referencing
 "atomic" note values and passing these to a leaf maker when the
 `SegmentMaker` runs. 
 
-** MusicStream 
+** MusicStream, PhraseStream
+This was a rather long-winded attempt to understand the functionality
+of the SegmentMaker class. Basically, it was a set of small classes
+that were designed to take route musical definitions through various
+stages into a format that would eventually work in a score. 
+Once it was clear that the type of pipeline approach was already
+present in a better implemented form in the existing `SegmentMaker`
+and, in particular, `RhythmDefinition` classes, it made the most sense
+to give up digging the hole and use the existing implementations. 
 
 
 * General Methodology (point to point procedure)
