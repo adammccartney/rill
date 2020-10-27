@@ -22,6 +22,16 @@ idea.
 + natural harmonic tremolo figures occuring on the violin
 + legato tremolo figures that occur 
 
+** Pitch Material Types v2.0
+
++ slightly similar use of dictionaries three main strands of material:
+  - chord \rightarrow { color::otave::index }
+  - melody \rightarrow { color::phrase::partial::index }
+  - tremolo \rightarrow { color::octave::vein::index }
++ each strand has a slightly different tree like structure in how it's
+  spectral/registral components are represented.  
++ this times offsets programmed into the dictionaries (instead of
+  transposing at run time)
 
 * Use of Object Oriented Programming
 Generally speaking, the piece attempts to keep the inheritance
@@ -119,11 +129,9 @@ note material on an atomic level.
 
 *** Problems
 + no bar checks
-+ re-use of variablec
++ re-use of variables, risk of aliasing
 
 ** Approach in v2.0 
-
-
    
 
 * Instrumentation
@@ -145,4 +153,4 @@ v2.0
 + Percussion
 + 8 Violins
 + 1 Viola
-
+  
