@@ -57,54 +57,30 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute1_Markup_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
+                        s1 * 3/8
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
+                        s1 * 1/8
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
+                        s1 * 1/2
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
+                        s1 * 3/8
                         s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/2
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute1_Music_Voice"                      %! rill.ScoreTemplate.__call__()
@@ -114,164 +90,90 @@
                             \time 4/4
                             \clef "treble"
                             \mark #1
-                            c'16
+                            fs''8
                             \p
                             - \accent
                             \<
-                            ef'16
+                            cs''8
                             ~
-                            ef'16
+                            cs''8
                             \f
-                            r16
-                            r8
+                            r4.
                             \once \override DynamicLineSpanner.staff-padding = #3
-                            g'8
-                            \p
-                            - \accent
-                            \<
-                            ~
-                            g'8
-                            c''16
-                            g'16
-                            ~
-                            g'16
-                            \f
-                            r8.
-                            \once \override DynamicLineSpanner.staff-padding = #3
-                            \time 3/4
-                            ef'4
-                            \p
-                            - \accent
-                            \<
-                            c'16
-                            ef'16
-                            ~
-                            ef'16
-                            \f
-                            r16
-                            r8
-                            \once \override DynamicLineSpanner.staff-padding = #3
-                            g'8
+                            fs''4
                             \p
                             - \accent
                             \<
                             ~
                             \time 3/4
-                            g'8
-                            c''16
-                            g'16
+                            fs''4
+                            cs''8
+                            fs''8
                             ~
-                            g'16
+                            fs''8
                             \f
-                            r8.
+                            r8
+                            \time 3/4
+                            r4
                             \once \override DynamicLineSpanner.staff-padding = #3
-                            ef'4
+                            cs''2
                             \p
                             - \accent
                             \<
                             \time 4/4
-                            c'16
-                            ef'16
+                            fs''8
+                            cs''8
                             ~
-                            ef'16
+                            cs''8
                             \f
-                            r16
-                            r8
+                            r4.
                             \once \override DynamicLineSpanner.staff-padding = #3
-                            g'8
-                            \p
-                            - \accent
-                            \<
-                            ~
-                            g'8
-                            c''16
-                            g'16
-                            ~
-                            g'16
-                            \f
-                            r8.
-                            \once \override DynamicLineSpanner.staff-padding = #3
-                            \time 3/4
-                            ef'4
-                            \p
-                            - \accent
-                            \<
-                            c'16
-                            ef'16
-                            ~
-                            ef'16
-                            \f
-                            r16
-                            r8
-                            \once \override DynamicLineSpanner.staff-padding = #3
-                            g'8
+                            fs''4
                             \p
                             - \accent
                             \<
                             ~
                             \time 3/4
-                            g'8
-                            c''16
-                            g'16
+                            fs''4
+                            cs''8
+                            fs''8
                             ~
-                            g'16
+                            fs''8
                             \f
-                            r8.
-                            ef'4
+                            r8
+                            \time 3/4
+                            r4
+                            cs''2
                             \ppp
                             - \accent
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute1_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
+                        s1 * 3/8
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
+                        s1 * 1/8
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
+                        s1 * 1/2
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
+                        s1 * 3/8
                         s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/2
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -284,32 +186,221 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute2_Markup_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/1
-                        s1 * 3/4
-                        s1 * 3/4
-                        s1 * 1/1
-                        s1 * 3/4
-                        s1 * 3/4
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/4
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/4
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/4
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute2_Music_Voice"                      %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        \mark #1
-                        r1
-                        r2.
-                        r2.
-                        r1
-                        r2.
-                        r2.
+                        {
+                            \once \override DynamicLineSpanner.staff-padding = #3
+                            \time 4/4
+                            \clef "treble"
+                            \mark #1
+                            fs'16
+                            \p
+                            - \accent
+                            \<
+                            a'16
+                            ~
+                            a'16
+                            \f
+                            r16
+                            r8
+                            \once \override DynamicLineSpanner.staff-padding = #3
+                            fs'8
+                            \p
+                            - \accent
+                            \<
+                            ~
+                            fs'8
+                            a'16
+                            fs'16
+                            ~
+                            fs'16
+                            \f
+                            r8.
+                            \once \override DynamicLineSpanner.staff-padding = #3
+                            \time 3/4
+                            a'4
+                            \p
+                            - \accent
+                            \<
+                            fs'16
+                            a'16
+                            ~
+                            a'16
+                            \f
+                            r16
+                            r8
+                            \once \override DynamicLineSpanner.staff-padding = #3
+                            fs'8
+                            \p
+                            - \accent
+                            \<
+                            ~
+                            \time 3/4
+                            fs'8
+                            a'16
+                            fs'16
+                            ~
+                            fs'16
+                            \f
+                            r8.
+                            \once \override DynamicLineSpanner.staff-padding = #3
+                            a'4
+                            \p
+                            - \accent
+                            \<
+                            \time 4/4
+                            fs'16
+                            a'16
+                            ~
+                            a'16
+                            \f
+                            r16
+                            r8
+                            \once \override DynamicLineSpanner.staff-padding = #3
+                            fs'8
+                            \p
+                            - \accent
+                            \<
+                            ~
+                            fs'8
+                            a'16
+                            fs'16
+                            ~
+                            fs'16
+                            \f
+                            r8.
+                            \once \override DynamicLineSpanner.staff-padding = #3
+                            \time 3/4
+                            a'4
+                            \p
+                            - \accent
+                            \<
+                            fs'16
+                            a'16
+                            ~
+                            a'16
+                            \f
+                            r16
+                            r8
+                            \once \override DynamicLineSpanner.staff-padding = #3
+                            fs'8
+                            \p
+                            - \accent
+                            \<
+                            ~
+                            \time 3/4
+                            fs'8
+                            a'16
+                            fs'16
+                            ~
+                            fs'16
+                            \f
+                            r8.
+                            a'4
+                            \ppp
+                            - \accent
+                        }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute2_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/1
-                        s1 * 3/4
-                        s1 * 3/4
-                        s1 * 1/1
-                        s1 * 3/4
-                        s1 * 3/4
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/4
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/4
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/4
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()

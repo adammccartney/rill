@@ -23,31 +23,32 @@ from typing import List
 # Setting up segment ### [A] ###
 #####################
 
-this_current_directory =  pathlib.Path(__file__).parent 
-score =rill.ScoreTemplate()
+this_current_directory = pathlib.Path(__file__).parent
+score = rill.ScoreTemplate()
 score_template = score()
 
 segment_maker = rill.SegmentMaker(
-                                _lilypond_file=None,
-                                _score=score_template,
-                                current_directory=this_current_directory,
-                                build_path=rill.build_path,
-                                markup_leaves=False,
-                                segment_name='segment_A',
-                                rehearsal_mark=1,
-                                tempo=((1, 4), 50),
-                                )
+    _lilypond_file=None,
+    _score=score_template,
+    current_directory=this_current_directory,
+    build_path=rill.build_path,
+    markup_leaves=False,
+    segment_name='segment_A',
+    rehearsal_mark=1,
+    tempo=((1, 4), 50),
+)
 
 segment_maker.metronome_marks = [
-        (0, rill.metronome_marks['50'], 5),
-        ]
+    (0, rill.metronome_marks['50'], 5),
+]
 
-time_signatures= [(4, 4)] + [(3, 4)] + [(3, 4)] + [(4, 4)] + [(3, 4)] + [(3,4)]
+time_signatures = [(4, 4)] + [(3, 4)] + [(3, 4)] + \
+    [(4, 4)] + [(3, 4)] + [(3, 4)]
 segment_maker.time_signatures = time_signatures
 
-#-----------------/________________________
+# -----------------/________________________
 # Pitch Material /  Constants for section /
-#_______________/------------------------/
+# _______________/------------------------/
 
 
 # ----- Diads
@@ -55,27 +56,31 @@ segment_maker.time_signatures = time_signatures
 
 
 # -------------- Woodwinds ----------------------/
-#-----------------------------------------------/
+# -----------------------------------------------/
 
 # Flute1
 #-----------------------------------------------#
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = "Flute1"
 
-time_signature_pairs = [(4, 4), (3, 4), (3, 4), (4, 4), (3,4), (3, 4)]
+flute_1rhythm_definition = segment_maker.define_rhythm()
+
+flute_1rhythm_definition.instrument_name = "Flute1"
+
+flute1_test_pitches = rill.chord_voice["blue"][5][1:3]
+
+time_signature_pairs = [(4, 4), (3, 4), (3, 4), (4, 4), (3, 4), (3, 4)]
 counts = [1, 2, -3, 4]
-denominator = 16
-pitches = abjad.CyclicTuple([0, 3, 7, 12, 7, 3])
+denominator = 8
+pitches = abjad.CyclicTuple(flute1_test_pitches)
 clef = "treble"
 
 my_musicmaker = MusicMaker(counts, denominator, pitches, clef)
 music = my_musicmaker.make_music(time_signature_pairs)
 
-rhythm_definition.notes = [music]
+flute_1rhythm_definition.notes = [music]
 
-rhythm_definition.dynamics = []
+flute_1rhythm_definition.dynamics = []
 
-rhythm_definition.markup = []
+flute_1rhythm_definition.markup = []
 
 
 # Flute2
@@ -83,14 +88,19 @@ rhythm_definition.markup = []
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = "Flute2"
 
-rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
-]
+
+flute1_test_pitches = rill.chord_voice["green"][4][1:3]
+
+time_signature_pairs = [(4, 4), (3, 4), (3, 4), (4, 4), (3, 4), (3, 4)]
+counts = [1, 2, -3, 4]
+denominator = 16
+pitches = abjad.CyclicTuple(flute1_test_pitches)
+clef = "treble"
+
+my_musicmaker = MusicMaker(counts, denominator, pitches, clef)
+flute2_music = my_musicmaker.make_music(time_signature_pairs)
+
+rhythm_definition.notes = [flute2_music]
 
 rhythm_definition.dynamics = []
 
@@ -103,18 +113,17 @@ rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = "Flute3"
 
 rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
 ]
 
 rhythm_definition.dynamics = []
 
 rhythm_definition.markup = []
-
 
 
 # Bbclarinet
@@ -123,37 +132,37 @@ rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = "Bbclarinet1"
 
 rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
 ]
 
 rhythm_definition.dynamics = []
 
 rhythm_definition.markup = []
 
-# Vibraphone 
+# Vibraphone
 #------------------------------------------------#
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = "Vibraphone"
 
 rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
 ]
 
 rhythm_definition.dynamics = []
 
 rhythm_definition.markup = []
 
-#----------------Strings -------------------------/
+# ----------------Strings -------------------------/
 # Violin1
 #------------------------------------------------#
 rhythm_definition = segment_maker.define_rhythm()
@@ -161,12 +170,12 @@ rhythm_definition.instrument_name = "Violin1"
 
 
 rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
 ]
 
 rhythm_definition.dynamics = []
@@ -180,12 +189,12 @@ rhythm_definition.instrument_name = "Violin2"
 
 
 rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
 ]
 
 rhythm_definition.dynamics = []
@@ -199,12 +208,12 @@ rhythm_definition.instrument_name = "Violin3"
 
 
 rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
 ]
 
 rhythm_definition.dynamics = []
@@ -219,12 +228,12 @@ rhythm_definition.instrument_name = "Violin4"
 
 
 rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
 ]
 
 rhythm_definition.dynamics = []
@@ -239,12 +248,12 @@ rhythm_definition.instrument_name = "Violin5"
 
 
 rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
 ]
 
 rhythm_definition.dynamics = []
@@ -259,12 +268,12 @@ rhythm_definition.instrument_name = "Violin6"
 
 
 rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
 ]
 
 rhythm_definition.dynamics = []
@@ -279,18 +288,17 @@ rhythm_definition.instrument_name = "Violin7"
 
 
 rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
 ]
 
 rhythm_definition.dynamics = []
 
 rhythm_definition.markup = []
-
 
 
 # Viola
@@ -299,12 +307,12 @@ rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = "Viola"
 
 rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
+    ("r1"),
+    ("r2."),
+    ("r2."),
 ]
 
 rhythm_definition.dynamics = []
