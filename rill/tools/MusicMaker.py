@@ -60,7 +60,6 @@ class MusicMaker(object):
             self.counts,
             self.denominator,
             )
-        music = self._clean_up_rhythm(music, time_signature_pairs)
         music = self._add_pitches(music, self.pitches)
         music = self._add_attachments(music)
         return music
