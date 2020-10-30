@@ -26,8 +26,23 @@
 
 *** DONE Test build all segments and run make on the score
 
+
+*** TODO Design generator script for creating definition.py files
++ 28-30. Oct 20: created new Dev branch and began working on
+  defGen_v1.py
++ define new classes that generate a "music code block" as output (use
+  factory method design pattern)
++ move mMakerGenerator into the MusicMaker module, so it can be
+  imported into the `segment_$X/definition.py`
++ test that output is building a coherant score
+
 *** TODO Re-configure ScoreTemplate to reflect final instrumentation
 *** TODO Find solution for missing instrument name markups
+
+
+*** TODO Merge Dev branch into Ensemble
+
+*** TODO Find way to tag score with build time and git branch
 
 
 ** Initial Setup of v1.0 

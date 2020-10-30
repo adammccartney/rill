@@ -4,7 +4,7 @@ import abjad
 import rill
 
 from rill.tools.MusicMaker import MusicMaker as MusicMaker
-from rill.tools.MusicMaker import *
+from rill.tools.MusicMaker import AccentAttachmentMaker as AccentAttachmentMaker
 
 segment_name = sys.argv[1]
 rehearsal_mark = sys.argv[2]
@@ -21,91 +21,54 @@ test_counts = [1, 2, -3, 4]
 test_denominator = 8
 test_pitches = abjad.CyclicTuple(test_pitches)
 
-tenuto_attachment_maker = rill.AccentAttachmentMaker(
+tenuto_attachment_maker = AccentAttachmentMaker(
     selector=abjad.select().logical_ties(),
     attachment=abjad.Articulation("tenuto")
 )
 
-staccato_attachment_maker = rill.AccentAttachmentMaker(
+staccato_attachment_maker = AccentAttachmentMaker(
     selector=abjad.select().logical_ties(),
     attachment=abjad.Staccato()
 )
 
 
-# Need to assign variables for mMakerDataManager
-
-class mMakerDataManager(object):
-    """container class for music maker data"""
-
-    def __init__(
-            self,
-            counts,
-            denominator,
-            pitches,
-            attachment_makers
-    ):
-        self.counts = counts
-        self.denominator = denominator
-        self.pitches = pitches
-        self.attachment_makers = attachment_makers
-
-
-def factory(aClass, *pargs, **kargs):
-    return aClass(*pargs, **kargs)
-
-
-class mMakerGenerator(object):
-    """Generates the code block for a MusicGenerator"""
-
-    def __init__(
-            self,
-            counts,
-            denominator,
-            pitches,
-            attachment_makers,
-            time_signature_pairs,
-    ):
-        self.counts = counts
-        self.denominator = denominator
-        self.pitches = pitches
-        self.attachment_makers = attachment_makers
-        self.time_signature_pairs = time_signature_pairs
-
-    def __call__(self, instrument_name):
-        music_maker_obj = self._make_music_maker_object()
-        music = music_maker_obj(self.time_signature_pairs)
-        return music
-
-    def _make_music_maker_object(self):
-        music_maker_obj = factory(
-            MusicMaker,
-            self.counts,
-            self.denominator,
-            self.pitches,
-            self.attachment_makers,
-        )
-        return music_maker_obj
-
-
 def make_music_code_block(instrument_name):
-    music_block = f"""
-       {instrument_name}_rhythm_definition = segment_maker.define_rhythm()
-       music = generator({instrument_name})
-       {instrument_name}_rhythm_definition.notes = [music]
-       {instrument_name}_rhythm_definition.instrument_name = \"{instrument_name}\"
-       """
-    return music_block
-
-
-generator = mMakerGenerator(
+    music_block = f"""{instrument_name}_rhythm_definition = segment_maker.define_rhythm()
+{instrument_name}_music_generator = mMakerGenerator(
     counts=test_counts,
     denominator=test_denominator,
     pitches=test_pitches,
-    attachment_makers=[tenuto_attachment_maker, staccato_attachment_maker],
+    attachment_makers=[
+                    tenuto_attachment_maker,
+                    staccato_attachment_maker
+                    ],
     time_signature_pairs=test_ts_pairs,
-)
+    )
+{instrument_name}_music = {instrument_name}_music_generator()
+{instrument_name}_rhythm_definition.notes = [{instrument_name}_music]
+{instrument_name}_rhythm_definition.instrument_name = \"{instrument_name}\"
+"""
+    return music_block
 
-music_code_block = make_music_code_block(instrument_name="Flute1")
+
+Flute1_music_code_block = make_music_code_block(instrument_name="Flute1")
+Flute2_music_code_block = make_music_code_block(instrument_name="Flute2")
+Flute3_music_code_block = make_music_code_block(instrument_name="Flute3")
+Bbclarinet1_music_code_block = make_music_code_block(
+    instrument_name="Bbclarinet1")
+
+
+Vibraphone_music_code_block = make_music_code_block(
+    instrument_name="Vibraphone")
+
+Violin1_music_code_block = make_music_code_block(instrument_name="Violin1")
+Violin2_music_code_block = make_music_code_block(instrument_name="Violin2")
+Violin3_music_code_block = make_music_code_block(instrument_name="Violin3")
+Violin4_music_code_block = make_music_code_block(instrument_name="Violin4")
+Violin5_music_code_block = make_music_code_block(instrument_name="Violin5")
+Violin6_music_code_block = make_music_code_block(instrument_name="Violin6")
+Violin7_music_code_block = make_music_code_block(instrument_name="Violin7")
+Viola_music_code_block = make_music_code_block(instrument_name="Viola")
 
 
 segment_definition = f"""
@@ -115,9 +78,10 @@ import pathlib
 import abjad
 import rill
 
-#####################
-# Setting up segment ### [{segment_name}] ###
-#####################
+
+from rill.tools.MusicMaker import MusicMaker as MusicMaker
+from rill.tools.MusicMaker import mMakerGenerator as mMakerGenerator
+from rill.tools.MusicMaker import AccentAttachmentMaker as AccentAttachmentMaker
 
 this_current_directory =  pathlib.Path(__file__).parent 
 score =rill.ScoreTemplate()
@@ -141,273 +105,56 @@ segment_maker.metronome_marks = [
 time_signatures= [(4, 4)] + [(3, 4)] + [(3, 4)] + [(4, 4)] + [(3, 4)] + [(3,4)]
 segment_maker.time_signatures = time_signatures
 
+# Test variables
 
+test_pitches = rill.chord_voice["blue"][5][1:3]
 
-# -----------------/________________________
-# Pitch Material /  Constants for section /
-# _______________/------------------------/
+test_ts_pairs = [(4, 4), (3, 4), (3, 4), (4, 4), (3, 4), (3, 4)]
+test_counts = [1, 2, -3, 4]
+test_denominator = 8
+test_pitches = abjad.CyclicTuple(test_pitches)
 
+tenuto_attachment_maker = AccentAttachmentMaker(
+    selector=abjad.select().logical_ties(),
+    attachment=abjad.Articulation("tenuto")
+)
 
-# ----- Diads
-# -- sequences of notes for arpeggios
+staccato_attachment_maker = AccentAttachmentMaker(
+    selector=abjad.select().logical_ties(),
+    attachment=abjad.Staccato()
+)
 
 
-# -------------- Woodwinds ----------------------/
-# -----------------------------------------------/
+{Flute1_music_code_block}
 
-# Flute1
-#-----------------------------------------------#
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = "Flute1"
+{Flute2_music_code_block}
 
-rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
-]
+{Flute3_music_code_block}
 
-rhythm_definition.dynamics = []
+{Bbclarinet1_music_code_block}
 
-rhythm_definition.markup = []
 
 
-# Flute2
-#-----------------------------------------------#
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = "Flute2"
+{Vibraphone_music_code_block}
 
-rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
-]
 
-rhythm_definition.dynamics = []
 
-rhythm_definition.markup = []
+{Violin1_music_code_block}
 
+{Violin2_music_code_block}
 
-# Flute3
-#-----------------------------------------------#
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = "Flute3"
+{Violin3_music_code_block}
 
-rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
-]
+{Violin4_music_code_block}
 
-rhythm_definition.dynamics = []
+{Violin5_music_code_block}
 
-rhythm_definition.markup = []
+{Violin6_music_code_block}
 
+{Violin7_music_code_block}
 
+{Viola_music_code_block}
 
-# Bbclarinet
-#------------------------------------------------#
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = "Bbclarinet1"
-
-rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
-]
-
-rhythm_definition.dynamics = []
-
-rhythm_definition.markup = []
-
-# Vibraphone 
-#------------------------------------------------#
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = "Vibraphone"
-
-rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
-]
-
-rhythm_definition.dynamics = []
-
-rhythm_definition.markup = []
-
-# ----------------Strings -------------------------/
-# Violin1
-#------------------------------------------------#
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = "Violin1"
-
-
-rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
-]
-
-rhythm_definition.dynamics = []
-
-rhythm_definition.markup = []
-
-# Violin2
-#------------------------------------------------#
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = "Violin2"
-
-
-rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
-]
-
-rhythm_definition.dynamics = []
-
-rhythm_definition.markup = []
-
-# Violin3
-#------------------------------------------------#
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = "Violin3"
-
-
-rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
-]
-
-rhythm_definition.dynamics = []
-
-rhythm_definition.markup = []
-
-
-# Violin4
-#------------------------------------------------#
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = "Violin4"
-
-
-rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
-]
-
-rhythm_definition.dynamics = []
-
-rhythm_definition.markup = []
-
-
-# Violin5
-#------------------------------------------------#
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = "Violin5"
-
-
-rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
-]
-
-rhythm_definition.dynamics = []
-
-rhythm_definition.markup = []
-
-
-# Violin6
-#------------------------------------------------#
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = "Violin6"
-
-
-rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
-]
-
-rhythm_definition.dynamics = []
-
-rhythm_definition.markup = []
-
-
-# Violin7
-#------------------------------------------------#
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = "Violin7"
-
-
-rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
-]
-
-rhythm_definition.dynamics = []
-
-rhythm_definition.markup = []
-
-
-
-# Viola
-#------------------------------------------------#
-rhythm_definition = segment_maker.define_rhythm()
-rhythm_definition.instrument_name = "Viola"
-
-rhythm_definition.notes = [
-        ("r1"),
-        ("r2."),
-        ("r2."),
-        ("r1"),
-        ("r2."),
-        ("r2."),
-]
-
-rhythm_definition.dynamics = []
-
-rhythm_definition.markup = []
-
-# ---------------------------------------RUN SEGMENT
 
 lilypond_file = segment_maker.run()
 """
