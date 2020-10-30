@@ -3,10 +3,6 @@ import sys
 import abjad
 import rill
 
-from rill.tools.AttachmentMaker import (
-    AccentAttachmentMaker as AccentAttachmentMaker
-)
-
 segment_name = sys.argv[1]
 rehearsal_mark = sys.argv[2]
 
@@ -14,24 +10,6 @@ rehearsal_mark = sys.argv[2]
 # Switch over segment_name to make assignments
 
 # Test variables
-
-test_pitches = rill.chord_voice["blue"][5][1:3]
-
-test_ts_pairs = [(4, 4), (3, 4), (3, 4), (4, 4), (3, 4), (3, 4)]
-test_counts = [1, 2, -3, 4]
-test_denominator = 8
-test_pitches = abjad.CyclicTuple(test_pitches)
-
-tenuto_attachment_maker = AccentAttachmentMaker(
-    selector=abjad.select().logical_ties(),
-    attachment=abjad.Articulation("tenuto")
-)
-
-staccato_attachment_maker = AccentAttachmentMaker(
-    selector=abjad.select().logical_ties(),
-    attachment=abjad.Staccato()
-)
-
 
 def make_music_code_block(instrument_name):
     music_block = f"""{instrument_name}_rhythm_definition = segment_maker.define_rhythm()
