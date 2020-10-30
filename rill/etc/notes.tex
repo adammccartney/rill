@@ -1,0 +1,209 @@
+% Created 2020-10-27 Tue 19:42
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{adam}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={adam},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.3.8)}, 
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\section{rill (erosion)}
+\label{sec:orgcbe8723}
+
+\subsection{Compositional Idea in v1.0}
+\label{sec:org0452364}
+a rill is the soft impression left in the soil in the wake of a soft, lightly 
+flowing stream of water. in nature, a rill will form part of a network. 
+
+In musical terms, the basic idea will be to map the two elements acoustically: 
+
+\begin{itemize}
+\item chaotic (as in mathematics) melodies in poly modal space
+\item a delayed tremolo texture that follows the same outline
+\end{itemize}
+
+The score is a sequence of short pieces or fragments that explore this
+idea.  
+
+
+\section{Material Definitions}
+\label{sec:org0240183}
+\subsection{Pitch Material types v1.0}
+\label{sec:orgf0c49f8}
+\begin{itemize}
+\item dictionaries of `abjad.PitchSegment` that convey the information about a set of (tonal/harmonic)
+changes
+\item lookup tables that are designed to process transformation of
+material (mostly transpositions and offsets)
+\item natural harmonic tremolo figures occuring on the violin
+\item legato tremolo figures that occur
+\end{itemize}
+
+
+\section{Use of Object Oriented Programming}
+\label{sec:orgd497e0c}
+Generally speaking, the piece attempts to keep the inheritance
+hierarchies as flat as possible. Also, it tries to limit the
+complexity and size of any single class definitions, preferring
+instead to a allow complexity to arise from the combination or
+succession of simple classes in a sort of "pipeline" style program. 
+
+As a library, Abjad has some fairly robust class definitions that
+make it easy to interact with the fundamental musical types as they
+are found in lilypond. 
+
+Lilypond as a language is also in a fairly mature stage of
+development, and the basic syntax and usage is well defined and
+documented. 
+
+While there is a bit of a learning curve associated with both the
+lilypond and (moreso) python languages, as well as the abjad API, the
+payoff as a composer is such that once a fundamental understanding has
+been attained, one is free to start thinking about music composition
+in the type of high-level abstraction that computer programming
+languages are really good at handling.  
+
+The basic approach that is being adopted for the context of this score
+is to try and think about it as a sort of "interface library" that
+interacts with abjad. The reason for doing this is with a view to
+retaining as much "orthogonality" as possible within the context of
+the design (in this case the composition). 
+
+\subsection{Diad}
+\label{sec:orgd47b653}
+\subsubsection{v1.0}
+\label{sec:org17e4638}
+Used primarily to greate tremolo figures on the strings, with this in
+mind the pitch material is always a pair of natural harmonics that are
+found on the same string. 
+
+\subsection{FuzzyHarmony}
+\label{sec:org15491f5}
+Stores a collection of notes in a PitchSegment Fuzzy because the names
+are used to roughly track the position in a given harmonic sequence
+and not to store precise information on the harmony e.g.: bf\textsubscript{ii} = key
+of bflat, minor harmony on ii degree (results in a cmin chord)
+
+\subsubsection{v1.0}
+\label{sec:orgd38aa9d}
+The instances used are usually tetradic (contain 4 pitches)
+and use an inversion/figured bass position that obscures the root
+triad by utilizing suspended tones.  
+
+\subsection{LegatoArpeggio}
+\label{sec:orgf607325}
+Basically creates a string of pitches that is used when generating the
+pitch aspects of a leaf.
+
+\subsubsection{v1.0}
+\label{sec:org42b2830}
+As the objects are used in this version, they represent a sort of
+"floating" harmonic figure. A chord is essentially augmented in time. 
+
+\subsection{MusicMaker}
+\label{sec:orgc6754d8}
+The purpose of the music maker class is to prepare a container that
+can be passed into the `.notes` member of a `SegmentMaker`
+instance. Using this sort of a wrapper makes it slightly easier to
+focus on composing with "phrases" as opposed to always referencing
+"atomic" note values and passing these to a leaf maker when the
+`SegmentMaker` runs. 
+
+\subsection{MusicStream}
+\label{sec:orga129853}
+
+
+\section{General Methodology (point to point procedure)}
+\label{sec:org9650dfa}
+
+The general approach to getting music into the score is through the
+instantiation of a SegmentMaker class. Basically, this class contains
+a ScoreTemplate as a member, which in turn contains the reference information
+about "voices" and "staves" contained within the score. 
+
+The score is divided into a number of discrete segments and these are
+created as instances of the class in a `semgent\_\$x/definition.py`
+file. There is one such file per section of the score. 
+
+\subsection{Approach in v0.1}
+\label{sec:org56976f7}
+Very simply generating strings of lilypond syntax using vanilla
+python, more or less by using simple format strings. All the control
+of structures were done manually.   
+
+\subsection{Approach in v1.0}
+\label{sec:org32777ea}
+Using abjad as a layer to interface with lilypond. The complexity of
+the API made it somewhat tricky to understand what was
+happening. Basically ended up reading a number of existing source code
+repos of other composers (Trevor Baca, Josiah Wold Oberholzer, Gregory
+Evans) to see what sort of approaches were being employed. 
+
+Eventually ended up with an approach where the "notes", "dynamics" and
+"markup" were prepared in lists and passed into the appropriate
+members of the `SegmentMaker` instance. While this enabled some higher
+level thinking and use of variables to reference the contents of
+custom objects, it still meant practically dealing with all of the
+note material on an atomic level.
+
+\subsubsection{Problems}
+\label{sec:orge3632f4}
+\begin{itemize}
+\item no bar checks
+\item re-use of variablec
+\end{itemize}
+
+\subsection{Approach in v2.0}
+\label{sec:orgae85e7b}
+
+
+
+
+\section{Instrumentation}
+\label{sec:orgd1a0394}
+
+v0.1
+\begin{itemize}
+\item flute(s)
+\item guitar
+\item clarinet Bb
+\item viola
+\end{itemize}
+
+v1.0
+\begin{itemize}
+\item Violin
+\item Monosynth
+\item Polysynth
+\end{itemize}
+
+v2.0
+\begin{itemize}
+\item 4 Flutes
+\item 1 Bb Clarinet
+\item Percussion
+\item 8 Violins
+\item 1 Viola
+\end{itemize}
+\end{document}

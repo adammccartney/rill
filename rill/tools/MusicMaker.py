@@ -3,40 +3,6 @@ import abjadext.rmakers
 import abjad
 
 
-class AttachmentMaker(object):
-    """
-    An abstract attachment-making class
-    """
-
-    def __init__(self, attachment, selector):
-        self.attachment = attachment
-        self.selector = selector
-
-    def __call__(self, music):
-        assert False, "maker must be defined"
-
-
-class AccentAttachmentMaker(AttachmentMaker):
-    """
-    Adds an accent to the first note in a logical tie
-    """
-
-    def __init__(self, attachment, selector):
-        AttachmentMaker.__init__(self, attachment, selector)
-
-    def __call__(self, music):
-        for selection in self.selector(music):
-            self._attach_to_first_leaf(selection)
-
-    def _attach_to_first_leaf(self, logical_tie):
-        first_leaf = logical_tie.head
-        if not isinstance(first_leaf, abjad.Rest):
-            attachment = copy.copy(self.attachment)
-            abjad.attach(attachment, first_leaf)
-        elif isinstance(first_leaf, abjad.Rest):
-            pass
-
-
 class MusicMaker(object):
     """
     A music-making machine.
@@ -48,7 +14,7 @@ class MusicMaker(object):
         denominator,
         pitches,
         attachment_makers=None,
-        ):
+    ):
         self.counts = counts
         self.denominator = denominator
         self.pitches = pitches
@@ -59,7 +25,7 @@ class MusicMaker(object):
             time_signature_pairs,
             self.counts,
             self.denominator,
-            )
+        )
         music = self._add_pitches(music, self.pitches)
         music = self._add_attachments(music)
         return music
@@ -71,11 +37,11 @@ class MusicMaker(object):
         """
         total_duration = sum(
             abjad.Duration(pair) for pair in time_signature_pairs
-            )
+        )
         talea = abjadext.rmakers.Talea(
             counts=counts,
             denominator=denominator,
-            )
+        )
         talea_index = 0
         all_leaves = []
         current_duration = abjad.Duration(0)
