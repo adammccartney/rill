@@ -8,9 +8,12 @@ import rill
 
 from rill.tools.MusicMaker import MusicMaker as MusicMaker
 from rill.tools.MusicMaker import mMakerGenerator as mMakerGenerator
-from rill.tools.MusicMaker import AccentAttachmentMaker as AccentAttachmentMaker
+from rill.tools.AttachmentMaker import (
+                                        AccentAttachmentMaker
+                                        as AccentAttachmentMaker
+                                       )
 
-this_current_directory =  pathlib.Path(__file__).parent 
+this_current_directory =  pathlib.Path(__file__).parent
 score =rill.ScoreTemplate()
 score_template = score()
 
