@@ -14,7 +14,9 @@ from rill.tools.FuzzyHarmony import Diad as Diad
 from rill.tools.FuzzyHarmony import LegatoArpeggio as LegatoArpeggio
 from rill.tools.material_methods import transpose_segment as transpose_segment
 from rill.tools.tremolo import tremolo as tremolo
+
 from rill.tools.MusicMaker import MusicMaker as MusicMaker
+from rill.tools.MusicMaker import *
 
 from abjad import NamedPitch as NamedPitch
 from typing import List
@@ -71,10 +73,29 @@ time_signature_pairs = [(4, 4), (3, 4), (3, 4), (4, 4), (3, 4), (3, 4)]
 counts = [1, 2, -3, 4]
 denominator = 8
 pitches = abjad.CyclicTuple(flute1_test_pitches)
-clef = "treble"
 
-my_musicmaker = MusicMaker(counts, denominator, pitches, clef)
-music = my_musicmaker.make_music(time_signature_pairs)
+tenuto_attachment_maker = rill.AccentAttachmentMaker(
+    selector=abjad.select().logical_ties(),
+    attachment=abjad.Articulation("tenuto")
+)
+
+staccato_attachment_maker = rill.AccentAttachmentMaker(
+    selector=abjad.select().logical_ties(),
+    attachment=abjad.Staccato()
+)
+
+
+my_musicmaker = MusicMaker(
+    counts,
+    denominator,
+    pitches,
+    attachment_makers=[
+        tenuto_attachment_maker,
+        staccato_attachment_maker,
+    ],
+)
+
+music = my_musicmaker(time_signature_pairs)
 
 flute_1rhythm_definition.notes = [music]
 
@@ -97,8 +118,17 @@ denominator = 16
 pitches = abjad.CyclicTuple(flute1_test_pitches)
 clef = "treble"
 
-my_musicmaker = MusicMaker(counts, denominator, pitches, clef)
-flute2_music = my_musicmaker.make_music(time_signature_pairs)
+my_flute2_musicmaker = MusicMaker(
+    counts,
+    denominator,
+    pitches,
+    attachment_makers=[
+        tenuto_attachment_maker,
+        staccato_attachment_maker,
+    ],
+)
+
+flute2_music = my_flute2_musicmaker(time_signature_pairs)
 
 rhythm_definition.notes = [flute2_music]
 

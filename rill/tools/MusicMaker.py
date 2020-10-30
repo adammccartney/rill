@@ -38,6 +38,9 @@ class AccentAttachmentMaker(AttachmentMaker):
 
 
 class MusicMaker(object):
+    """
+    A music-making machine.
+    """
 
     def __init__(
         self,
@@ -57,61 +60,59 @@ class MusicMaker(object):
             self.counts,
             self.denominator,
         )
-        music = self._clean_up_rhythm(music, time_signature_pairs)
+        #music = self._clean_up_rhythm(music, time_signature_pairs)
         music = self._add_pitches(music, self.pitches)
         music = self._add_attachments(music)
         return music
 
     def _make_basic_rhythm(self, time_signature_pairs, counts, denominator):
-        # THIS IS HOW WE MAKE THE BASIC RHYTHM
-        total_duration = sum(abjad.Duration(pair)
-                             for pair in time_signature_pairs)
-        talea = abjadext.rmakers.Talea(counts=counts, denominator=denominator)
+        """
+        Make a basic rhythm using ``time_signature_pairs``, ``counts`` and
+        ``denominator``.
+        """
+        total_duration = sum(
+            abjad.Duration(pair) for pair in time_signature_pairs
+        )
+        talea = abjadext.rmakers.Talea(
+            counts=counts,
+            denominator=denominator,
+        )
         talea_index = 0
-        all_leaves = []  # create an empty list for generated leaves
-        # keep track of the total duration as we generate each new leaf
+        all_leaves = []
         current_duration = abjad.Duration(0)
-        while current_duration < total_duration:  # generate leaves until they add up to the total duration
-            leaf_duration = talea[talea_index]  # get a fraction from the talea
+        while current_duration < total_duration:
+            leaf_duration = talea[talea_index]
             if leaf_duration > 0:
-                # assign the leaf a pitch of middle C
                 pitch = abjad.NamedPitch("c'")
             else:
-                pitch = None  # if the leaf is a rest, don't assign a pitch
-            # cancel the minus sign on the duration
+                pitch = None
             leaf_duration = abs(leaf_duration)
             if (leaf_duration + current_duration) > total_duration:
-                # catch any end condition by truncating the last duration
                 leaf_duration = total_duration - current_duration
-            current_leaves = abjad.LeafMaker()(
-                [pitch], [leaf_duration])   # make the leaves
-            # add the new leaves to the list of leaves
+            current_leaves = abjad.LeafMaker()([pitch], [leaf_duration])
             all_leaves.extend(current_leaves)
-            current_duration += leaf_duration  # advance the total duration
-            talea_index += 1  # advance the talea index to the next fraction
+            current_duration += leaf_duration
+            talea_index += 1
         music = abjad.Container(all_leaves)
-        abjad.attach(abjad.Clef(clef), music[0])
         return music
 
-    def _clean_up_rhythm(self, music, time_signature_pairs):
-        # THIS IS HOW WE CLEAN UP THE RHYTHM
-        time_signatures = []
-        for item in time_signature_pairs:
-            time_signatures.append(abjad.TimeSignature(item))
-
-        splits = abjad.mutate(music[:]).split(
-            time_signature_pairs, cyclic=True)
-        for time, measure in zip(time_signatures, splits):
-            abjad.attach(time, measure[0])
-
-        selector = abjad.select(music).leaves()
-        measures = selector.group_by_measure()
-        for time, measure in zip(time_signatures, measures):
-            abjad.mutate(measure).rewrite_meter(time)
-        return music
+#    def _clean_up_rhythm(self, music, time_signature_pairs):
+#        """
+#        Clean up rhythms in ``music`` via ``time_signature_pairs``.
+#        """
+#        shards = abjad.mutate(music[:]).split(time_signature_pairs)
+#        for i, shard in enumerate(shards):
+#            time_signature_pair = time_signature_pairs[i]
+#            measure = abjad.Measure(time_signature_pair)
+#            assert abjad.inspect(shard).duration() == abjad.Duration(
+#                time_signature_pair)
+#            abjad.mutate(shard).wrap(measure)
+#        return music
 
     def _add_pitches(self, music, pitches):
-        # THIS IS HOW WE ADD PITCHES
+        """
+        Add ``pitches`` to music.
+        """
         pitches = abjad.CyclicTuple(pitches)
         logical_ties = abjad.iterate(music).logical_ties(pitched=True)
         for i, logical_tie in enumerate(logical_ties):
