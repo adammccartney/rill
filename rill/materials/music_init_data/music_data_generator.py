@@ -1,6 +1,6 @@
 import abjad
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List, Sequence
 
 from rill.tools.AttachmentMaker import (AttachmentMaker,
@@ -8,13 +8,50 @@ from rill.tools.AttachmentMaker import (AttachmentMaker,
 from rill.materials.pitch.definition import chord_voice
 
 
+
+def make_default_pitches():
+    default_pitch_materials = chord_voice["black"][5][0:3]
+    default_pitch_materials += chord_voice["red"][5][0:3]
+    default_pitches = abjad.CyclicTuple(default_pitch_materials)
+    return default_pitches
+
+
+def make_default_attachments():
+    tenuto_attachment_maker = AccentAttachmentMaker(
+        selector=abjad.select().logical_ties(),
+        attachment=abjad.Articulation("tenuto")
+    )
+
+    staccato_attachment_maker = AccentAttachmentMaker(
+        selector=abjad.select().logical_ties(),
+        attachment=abjad.Staccato()
+    )
+
+    default_attachments = [tenuto_attachment_maker, staccato_attachment_maker]
+    return default_attachments
+
+
+default_denominator = 16
+
+
+def make_default_tsig_pairs():
+    default_tsig_pairs = [(4, 4), (3, 4), (3, 4), (4, 4), (3, 4), (3, 4)]
+    return default_tsig_pairs
+
+
+def make_default_talea():
+    default_talea = [1, 2, -3, 4]
+    return default_talea
+
 @dataclass
 class InstrumentMusicData:
-    pitches: abjad.CyclicTuple
-    attachments: List[AttachmentMaker]
-    denominator: int
-    time_signature_pairs: Sequence[tuple]
-    talea: List[int]
+    pitches: abjad.CyclicTuple = field(default_factory=make_default_pitches)
+    attachments: Sequence[AttachmentMaker] = field(
+        default_factory=make_default_attachments)
+    denominator: int = default_denominator
+    time_signature_pairs: Sequence[tuple] = field(
+        default_factory=make_default_tsig_pairs)
+    talea: List[int] = field(default_factory=make_default_talea)
 
 
 @dataclass
@@ -22,36 +59,10 @@ class SegmentMusicData:
     mu_makers: List[InstrumentMusicData]
 
 
-# Pitches
-v1_pitch_materials = chord_voice["black"][5][0:3]
-v1_pitch_materials += chord_voice["red"][5][0:3]
-
-v1_pitches_segment_A = abjad.CyclicTuple(v1_pitch_materials)
-
-tenuto_attachment_maker = AccentAttachmentMaker(
-    selector=abjad.select().logical_ties(),
-    attachment=abjad.Articulation("tenuto")
-)
-
-staccato_attachment_maker = AccentAttachmentMaker(
-    selector=abjad.select().logical_ties(),
-    attachment=abjad.Staccato()
-)
-
-v1_attachments_segment_A = [tenuto_attachment_maker, staccato_attachment_maker]
-v1_denominator_segment_A = 16
-v1_tsig_pairs_segment_A = [(4, 4), (3, 4), (3, 4), (4, 4), (3, 4), (3, 4)]
-v1_talea_segment_A = [1, 2, -3, 4]
-
-v1_init_data_segment_A = InstrumentMusicData(
-    pitches=v1_pitches_segment_A,
-    attachments=v1_attachments_segment_A,
-    denominator=v1_denominator_segment_A,
-    time_signature_pairs=v1_tsig_pairs_segment_A,
-    talea=v1_talea_segment_A,
-)
-
 if __name__ == '__main__':
-    print(v1_init_data_segment_A)
-    for attachment in v1_init_data_segment_A.attachments:
-        print(attachment)
+    default_init_data = InstrumentMusicData()
+    print(default_init_data)
+    def make_new_talea():
+        return [2, 3, -4, 5]
+    adapted_data = InstrumentMusicData(talea=[2, 3, -4, 5])
+    print(adapted_data)
