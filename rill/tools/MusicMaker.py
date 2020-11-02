@@ -34,8 +34,10 @@ class MusicMaker(object):
         """
         Clean up rhythms in ``music`` via ``time_signature_pairs``.
         """
-        print(music)
-        return music
+        music_by_measure = abjad.mutate(music[:]).split(time_signature_pairs, cyclic=True)
+        for measure in music_by_measure:
+            print("measure: ", measure)
+        return music_by_measure
 
     def _make_basic_rhythm(self, time_signature_pairs, counts, denominator):
         """
@@ -141,10 +143,12 @@ class mMakerGenerator(object):
 
 if __name__ == '__main__':
     import abjad
+    from rill.tools.AttachmentMaker import AccentAttachmentMaker
+
     # THIS IS THE INPUT TO MY MUSICAL IDEA
     time_signature_pairs = [(3, 4), (5, 16), (3, 8), (4, 4)]
     counts = [1, 2, -3, 4]
-    denominator = 16
+    denominator = 8
 
     pitches = abjad.CyclicTuple([0, 3, 7, 12, 7, 3])
     clef = "treble"
