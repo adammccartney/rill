@@ -5,31 +5,31 @@ from rill.materials.instruments import markups as markups
 instruments = abjad.OrderedDict(
     [
         (
-            "Flute 1",
+            "Flute1",
             abjad.Flute(
-                markup=markups.instrument("Flute 1"),
+                markup=markups.instrument("Flute1"),
                 short_markup=markups.short_instrument("fl.1"),
                 ),
             ),
         (
-            "Flute 2",
+            "Flute2",
             abjad.Flute(
-                markup=markups.instrument("Flute 2"),
+                markup=markups.instrument("Flute2"),
                 short_markup=markups.short_instrument("fl.2"),
                 ),
             ),
         (
-            "Flute 3",
+            "Flute3",
             abjad.Flute(
-                markup=markups.instrument("Flute 3"),
+                markup=markups.instrument("Flute3"),
                 short_markup=markups.short_instrument("fl.3"),
                 ),
             ),
 
         (
-            "Bbclarinet 1",
+            "Bbclarinet1",
             abjad.ClarinetInBFlat(
-                markup=markups.instrument("Bb Clarinet 1"),
+                markup=markups.instrument("Bb Clarinet1"),
                 short_markup=markups.short_instrument("Bbcl.1"),
                 ),
             ),
@@ -41,52 +41,52 @@ instruments = abjad.OrderedDict(
                 ),
             ),
         (
-            "Violin 1",
+            "Violin1",
             abjad.Violin(
-                markup=markups.instrument("Violin 1"),
-                short_markup=markups.short_instrument("vn 1"),
+                markup=markups.instrument("Violin1"),
+                short_markup=markups.short_instrument("vn1"),
             ),
         ),
         (
-            "Violin 2",
+            "Violin2",
             abjad.Violin(
-                markup=markups.instrument("Violin 2"),
-                short_markup=markups.short_instrument("vn 2"),
+                markup=markups.instrument("Violin2"),
+                short_markup=markups.short_instrument("vn2"),
             ),
         ),
         (
-            "Violin 3",
+            "Violin3",
             abjad.Violin(
-                markup=markups.instrument("Violin 3"),
-                short_markup=markups.short_instrument("vn 3"),
+                markup=markups.instrument("Violin3"),
+                short_markup=markups.short_instrument("vn3"),
             ),
         ),
         (
-            "Violin 4",
+            "Violin4",
             abjad.Violin(
-                markup=markups.instrument("Violin 4"),
-                short_markup=markups.short_instrument("vn 4"),
+                markup=markups.instrument("Violin4"),
+                short_markup=markups.short_instrument("vn4"),
             ),
         ),
         (
-            "Violin 5",
+            "Violin5",
             abjad.Violin(
-                markup=markups.instrument("Violin 5"),
-                short_markup=markups.short_instrument("vn 5"),
+                markup=markups.instrument("Violin5"),
+                short_markup=markups.short_instrument("vn5"),
             ),
         ),
         (
-            "Violin 6",
+            "Violin6",
             abjad.Violin(
-                markup=markups.instrument("Violin 6"),
-                short_markup=markups.short_instrument("vn 6"),
+                markup=markups.instrument("Violin6"),
+                short_markup=markups.short_instrument("vn6"),
             ),
-        ), 
+        ),
         (
-            "Violin 7",
+            "Violin7",
             abjad.Violin(
-                markup=markups.instrument("Violin 7"),
-                short_markup=markups.short_instrument("vn 7"),
+                markup=markups.instrument("Violin7"),
+                short_markup=markups.short_instrument("vn7"),
             ),
         ),
         (
@@ -100,9 +100,7 @@ instruments = abjad.OrderedDict(
 )
 
 if __name__ == '__main__':
-    
+
     print(f"number of instruments = {len(instruments)}")
     for key, item in instruments.items():
         print(key, item)
-
-

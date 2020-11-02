@@ -36,13 +36,17 @@
   imported into the `segment_$X/definition.py`
 + test that output is building a coherant score
 
-*** IN-PROGRESS Define persistent data structure for material in segments
+*** DONE Define persistent data structure for material in segments
+:LOGBOOK:
+- State "DONE"       from "IN-PROGRESS" [2020-11-02 Mon 15:27]
+:END:
  + worked through a couple of iterations that tried to use a NamedTuple to manage the data used to initialize the music functions as they are passed into the SegmentMaker member functions before being typeset as notation. Problem is that it is seemingly not so easy to use user defined and complex types in a namedtuple
 
  + use of python's DataClass seems to facilitate working with (more) complex datatypes and custom classes
 
    - I'm trying to get around having to hand-hack the initialization of the MusicMaker objects: so I want to be able to generate the "definition.py" scripts on a per segment basis, and not have to tweak the output. So ideally, each "definition.py" would refer to an "init segment music" data class on a per instrument basis in each segment. This means that we could write a generator script for all instances of "definition.py" within the subdirectories of segments
 
+*** TODO Write a member function in the MusicMaker class that tidies according to meter
 
 *** TODO Re-configure ScoreTemplate to reflect final instrumentation
 *** TODO Find solution for missing instrument name markups
