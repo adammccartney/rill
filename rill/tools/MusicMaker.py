@@ -2,7 +2,6 @@ import copy
 import abjadext.rmakers
 import abjad
 
-
 class MusicMaker(object):
     """
     A music-making machine.
