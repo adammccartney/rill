@@ -25,8 +25,16 @@ class MusicMaker(object):
             self.counts,
             self.denominator,
         )
-        music = self._add_pitches(music, self.pitches)
-        music = self._add_attachments(music)
+        rcleaned_music = self._clean_up_rhythm(music, time_signature_pairs)
+        pitched_music = self._add_pitches(rcleaned_music, self.pitches)
+        articulate_music = self._add_attachments(pitched_music)
+        return articulate_music
+
+    def _clean_up_rhythm(self, music, time_signature_pairs):
+        """
+        Clean up rhythms in ``music`` via ``time_signature_pairs``.
+        """
+        print(music)
         return music
 
     def _make_basic_rhythm(self, time_signature_pairs, counts, denominator):
@@ -66,10 +74,14 @@ class MusicMaker(object):
         """
         pitches = abjad.CyclicTuple(pitches)
         logical_ties = abjad.iterate(music).logical_ties(pitched=True)
+        print(logical_ties)
         for i, logical_tie in enumerate(logical_ties):
             pitch = pitches[i]
             for note in logical_tie:
+                print(note)
                 note.written_pitch = pitch
+                print(note)
+        print(music)
         return music
 
     def _add_attachments(self, music):

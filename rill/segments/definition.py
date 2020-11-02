@@ -7,7 +7,6 @@ import rill
 
 
 from rill.tools.MusicMaker import MusicMaker as MusicMaker
-from rill.tools.MusicMaker import mMakerGenerator as mMakerGenerator
 from rill.tools.AttachmentMaker import (
                                         AccentAttachmentMaker
                                         as AccentAttachmentMaker
@@ -56,7 +55,7 @@ staccato_attachment_maker = AccentAttachmentMaker(
 
 
 Flute1_rhythm_definition = segment_maker.define_rhythm()
-Flute1_music_generator = mMakerGenerator(
+Flute1_music_maker = MusicMaker(
     counts=test_counts,
     denominator=test_denominator,
     pitches=test_pitches,
@@ -64,15 +63,14 @@ Flute1_music_generator = mMakerGenerator(
                     tenuto_attachment_maker,
                     staccato_attachment_maker
                     ],
-    time_signature_pairs=test_ts_pairs,
     )
-Flute1_music = Flute1_music_generator()
-Flute1_rhythm_definition.notes = [Flute1_music]
+Flute1_music = Flute1_music_maker(time_signature_pairs=test_ts_pairs),
+Flute1_rhythm_definition.notes = Flute1_music
 Flute1_rhythm_definition.instrument_name = "Flute1"
 
 
 Flute2_rhythm_definition = segment_maker.define_rhythm()
-Flute2_music_generator = mMakerGenerator(
+Flute2_music_maker = MusicMaker(
     counts=test_counts,
     denominator=test_denominator,
     pitches=test_pitches,
@@ -80,15 +78,14 @@ Flute2_music_generator = mMakerGenerator(
                     tenuto_attachment_maker,
                     staccato_attachment_maker
                     ],
-    time_signature_pairs=test_ts_pairs,
     )
-Flute2_music = Flute2_music_generator()
-Flute2_rhythm_definition.notes = [Flute2_music]
+Flute2_music = Flute2_music_maker(time_signature_pairs=test_ts_pairs),
+Flute2_rhythm_definition.notes = Flute2_music
 Flute2_rhythm_definition.instrument_name = "Flute2"
 
 
 Flute3_rhythm_definition = segment_maker.define_rhythm()
-Flute3_music_generator = mMakerGenerator(
+Flute3_music_maker = MusicMaker(
     counts=test_counts,
     denominator=test_denominator,
     pitches=test_pitches,
@@ -96,15 +93,14 @@ Flute3_music_generator = mMakerGenerator(
                     tenuto_attachment_maker,
                     staccato_attachment_maker
                     ],
-    time_signature_pairs=test_ts_pairs,
     )
-Flute3_music = Flute3_music_generator()
-Flute3_rhythm_definition.notes = [Flute3_music]
+Flute3_music = Flute3_music_maker(time_signature_pairs=test_ts_pairs),
+Flute3_rhythm_definition.notes = Flute3_music
 Flute3_rhythm_definition.instrument_name = "Flute3"
 
 
 Bbclarinet1_rhythm_definition = segment_maker.define_rhythm()
-Bbclarinet1_music_generator = mMakerGenerator(
+Bbclarinet1_music_maker = MusicMaker(
     counts=test_counts,
     denominator=test_denominator,
     pitches=test_pitches,
@@ -112,17 +108,16 @@ Bbclarinet1_music_generator = mMakerGenerator(
                     tenuto_attachment_maker,
                     staccato_attachment_maker
                     ],
-    time_signature_pairs=test_ts_pairs,
     )
-Bbclarinet1_music = Bbclarinet1_music_generator()
-Bbclarinet1_rhythm_definition.notes = [Bbclarinet1_music]
+Bbclarinet1_music = Bbclarinet1_music_maker(time_signature_pairs=test_ts_pairs),
+Bbclarinet1_rhythm_definition.notes = Bbclarinet1_music
 Bbclarinet1_rhythm_definition.instrument_name = "Bbclarinet1"
 
 
 
 
 Vibraphone_rhythm_definition = segment_maker.define_rhythm()
-Vibraphone_music_generator = mMakerGenerator(
+Vibraphone_music_maker = MusicMaker(
     counts=test_counts,
     denominator=test_denominator,
     pitches=test_pitches,
@@ -130,17 +125,16 @@ Vibraphone_music_generator = mMakerGenerator(
                     tenuto_attachment_maker,
                     staccato_attachment_maker
                     ],
-    time_signature_pairs=test_ts_pairs,
     )
-Vibraphone_music = Vibraphone_music_generator()
-Vibraphone_rhythm_definition.notes = [Vibraphone_music]
+Vibraphone_music = Vibraphone_music_maker(time_signature_pairs=test_ts_pairs),
+Vibraphone_rhythm_definition.notes = Vibraphone_music
 Vibraphone_rhythm_definition.instrument_name = "Vibraphone"
 
 
 
 
 Violin1_rhythm_definition = segment_maker.define_rhythm()
-Violin1_music_generator = mMakerGenerator(
+Violin1_music_maker = MusicMaker(
     counts=test_counts,
     denominator=test_denominator,
     pitches=test_pitches,
@@ -148,15 +142,14 @@ Violin1_music_generator = mMakerGenerator(
                     tenuto_attachment_maker,
                     staccato_attachment_maker
                     ],
-    time_signature_pairs=test_ts_pairs,
     )
-Violin1_music = Violin1_music_generator()
-Violin1_rhythm_definition.notes = [Violin1_music]
+Violin1_music = Violin1_music_maker(time_signature_pairs=test_ts_pairs),
+Violin1_rhythm_definition.notes = Violin1_music
 Violin1_rhythm_definition.instrument_name = "Violin1"
 
 
 Violin2_rhythm_definition = segment_maker.define_rhythm()
-Violin2_music_generator = mMakerGenerator(
+Violin2_music_maker = MusicMaker(
     counts=test_counts,
     denominator=test_denominator,
     pitches=test_pitches,
@@ -164,15 +157,14 @@ Violin2_music_generator = mMakerGenerator(
                     tenuto_attachment_maker,
                     staccato_attachment_maker
                     ],
-    time_signature_pairs=test_ts_pairs,
     )
-Violin2_music = Violin2_music_generator()
-Violin2_rhythm_definition.notes = [Violin2_music]
+Violin2_music = Violin2_music_maker(time_signature_pairs=test_ts_pairs),
+Violin2_rhythm_definition.notes = Violin2_music
 Violin2_rhythm_definition.instrument_name = "Violin2"
 
 
 Violin3_rhythm_definition = segment_maker.define_rhythm()
-Violin3_music_generator = mMakerGenerator(
+Violin3_music_maker = MusicMaker(
     counts=test_counts,
     denominator=test_denominator,
     pitches=test_pitches,
@@ -180,15 +172,14 @@ Violin3_music_generator = mMakerGenerator(
                     tenuto_attachment_maker,
                     staccato_attachment_maker
                     ],
-    time_signature_pairs=test_ts_pairs,
     )
-Violin3_music = Violin3_music_generator()
-Violin3_rhythm_definition.notes = [Violin3_music]
+Violin3_music = Violin3_music_maker(time_signature_pairs=test_ts_pairs),
+Violin3_rhythm_definition.notes = Violin3_music
 Violin3_rhythm_definition.instrument_name = "Violin3"
 
 
 Violin4_rhythm_definition = segment_maker.define_rhythm()
-Violin4_music_generator = mMakerGenerator(
+Violin4_music_maker = MusicMaker(
     counts=test_counts,
     denominator=test_denominator,
     pitches=test_pitches,
@@ -196,15 +187,14 @@ Violin4_music_generator = mMakerGenerator(
                     tenuto_attachment_maker,
                     staccato_attachment_maker
                     ],
-    time_signature_pairs=test_ts_pairs,
     )
-Violin4_music = Violin4_music_generator()
-Violin4_rhythm_definition.notes = [Violin4_music]
+Violin4_music = Violin4_music_maker(time_signature_pairs=test_ts_pairs),
+Violin4_rhythm_definition.notes = Violin4_music
 Violin4_rhythm_definition.instrument_name = "Violin4"
 
 
 Violin5_rhythm_definition = segment_maker.define_rhythm()
-Violin5_music_generator = mMakerGenerator(
+Violin5_music_maker = MusicMaker(
     counts=test_counts,
     denominator=test_denominator,
     pitches=test_pitches,
@@ -212,15 +202,14 @@ Violin5_music_generator = mMakerGenerator(
                     tenuto_attachment_maker,
                     staccato_attachment_maker
                     ],
-    time_signature_pairs=test_ts_pairs,
     )
-Violin5_music = Violin5_music_generator()
-Violin5_rhythm_definition.notes = [Violin5_music]
+Violin5_music = Violin5_music_maker(time_signature_pairs=test_ts_pairs),
+Violin5_rhythm_definition.notes = Violin5_music
 Violin5_rhythm_definition.instrument_name = "Violin5"
 
 
 Violin6_rhythm_definition = segment_maker.define_rhythm()
-Violin6_music_generator = mMakerGenerator(
+Violin6_music_maker = MusicMaker(
     counts=test_counts,
     denominator=test_denominator,
     pitches=test_pitches,
@@ -228,15 +217,14 @@ Violin6_music_generator = mMakerGenerator(
                     tenuto_attachment_maker,
                     staccato_attachment_maker
                     ],
-    time_signature_pairs=test_ts_pairs,
     )
-Violin6_music = Violin6_music_generator()
-Violin6_rhythm_definition.notes = [Violin6_music]
+Violin6_music = Violin6_music_maker(time_signature_pairs=test_ts_pairs),
+Violin6_rhythm_definition.notes = Violin6_music
 Violin6_rhythm_definition.instrument_name = "Violin6"
 
 
 Violin7_rhythm_definition = segment_maker.define_rhythm()
-Violin7_music_generator = mMakerGenerator(
+Violin7_music_maker = MusicMaker(
     counts=test_counts,
     denominator=test_denominator,
     pitches=test_pitches,
@@ -244,15 +232,14 @@ Violin7_music_generator = mMakerGenerator(
                     tenuto_attachment_maker,
                     staccato_attachment_maker
                     ],
-    time_signature_pairs=test_ts_pairs,
     )
-Violin7_music = Violin7_music_generator()
-Violin7_rhythm_definition.notes = [Violin7_music]
+Violin7_music = Violin7_music_maker(time_signature_pairs=test_ts_pairs),
+Violin7_rhythm_definition.notes = Violin7_music
 Violin7_rhythm_definition.instrument_name = "Violin7"
 
 
 Viola_rhythm_definition = segment_maker.define_rhythm()
-Viola_music_generator = mMakerGenerator(
+Viola_music_maker = MusicMaker(
     counts=test_counts,
     denominator=test_denominator,
     pitches=test_pitches,
@@ -260,10 +247,9 @@ Viola_music_generator = mMakerGenerator(
                     tenuto_attachment_maker,
                     staccato_attachment_maker
                     ],
-    time_signature_pairs=test_ts_pairs,
     )
-Viola_music = Viola_music_generator()
-Viola_rhythm_definition.notes = [Viola_music]
+Viola_music = Viola_music_maker(time_signature_pairs=test_ts_pairs),
+Viola_rhythm_definition.notes = Viola_music
 Viola_rhythm_definition.instrument_name = "Viola"
 
 

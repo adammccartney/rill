@@ -13,7 +13,7 @@ rehearsal_mark = sys.argv[2]
 
 def make_music_code_block(instrument_name):
     music_block = f"""{instrument_name}_rhythm_definition = segment_maker.define_rhythm()
-{instrument_name}_music_generator = mMakerGenerator(
+{instrument_name}_music_maker = MusicMaker(
     counts=test_counts,
     denominator=test_denominator,
     pitches=test_pitches,
@@ -21,10 +21,9 @@ def make_music_code_block(instrument_name):
                     tenuto_attachment_maker,
                     staccato_attachment_maker
                     ],
-    time_signature_pairs=test_ts_pairs,
     )
-{instrument_name}_music = {instrument_name}_music_generator()
-{instrument_name}_rhythm_definition.notes = [{instrument_name}_music]
+{instrument_name}_music = {instrument_name}_music_maker(time_signature_pairs=test_ts_pairs),
+{instrument_name}_rhythm_definition.notes = {instrument_name}_music
 {instrument_name}_rhythm_definition.instrument_name = \"{instrument_name}\"
 """
     return music_block
@@ -59,7 +58,6 @@ import rill
 
 
 from rill.tools.MusicMaker import MusicMaker as MusicMaker
-from rill.tools.MusicMaker import mMakerGenerator as mMakerGenerator
 from rill.tools.AttachmentMaker import (
                                         AccentAttachmentMaker
                                         as AccentAttachmentMaker

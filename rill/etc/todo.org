@@ -1,7 +1,7 @@
 
 ** New branch ensemble v2.0
 
-*** DONE Create new score template 
+*** DONE Create new score template
 + update materials/instruments/definition.py
 + update tools/ScoreTemplate.py
 + test new Template by running ScoreTemplate.py locally
@@ -16,10 +16,10 @@
   - run(self)
 
 *** DONE generate new structure for segments
-+ recursively delete all existing subdirectories and files in segments 
++ recursively delete all existing subdirectories and files in segments
 + import generator scripts from marana
 + run `generateSegments.sh` on the empty segments directory
-+ rewrite DefGen.py to reflect structure of new score template 
++ rewrite DefGen.py to reflect structure of new score template
 + update makefile in builds to reflect new segments
 + delete all pdfs from builds/letter-portrait
 + update segments.ily file
@@ -27,7 +27,7 @@
 *** DONE Test build all segments and run make on the score
 
 
-*** TODO Design generator script for creating definition.py files
+*** IN-PROGRESS Design generator script for creating definition.py files
 + 28-30. Oct 20: created new Dev branch and began working on
   defGen_v1.py
 + define new classes that generate a "music code block" as output (use
@@ -35,6 +35,14 @@
 + move mMakerGenerator into the MusicMaker module, so it can be
   imported into the `segment_$X/definition.py`
 + test that output is building a coherant score
+
+*** IN-PROGRESS Define persistent data structure for material in segments
+ + worked through a couple of iterations that tried to use a NamedTuple to manage the data used to initialize the music functions as they are passed into the SegmentMaker member functions before being typeset as notation. Problem is that it is seemingly not so easy to use user defined and complex types in a namedtuple
+
+ + use of python's DataClass seems to facilitate working with (more) complex datatypes and custom classes
+
+   - I'm trying to get around having to hand-hack the initialization of the MusicMaker objects: so I want to be able to generate the "definition.py" scripts on a per segment basis, and not have to tweak the output. So ideally, each "definition.py" would refer to an "init segment music" data class on a per instrument basis in each segment. This means that we could write a generator script for all instances of "definition.py" within the subdirectories of segments
+
 
 *** TODO Re-configure ScoreTemplate to reflect final instrumentation
 *** TODO Find solution for missing instrument name markups
@@ -45,7 +53,7 @@
 *** TODO Find way to tag score with build time and git branch
 
 
-** Initial Setup of v1.0 
+** Initial Setup of v1.0
 
 *** 8-7-20
 
@@ -55,32 +63,32 @@
   - DONE this all worked fine, Phrases are making it to Instrument Voices in
     Score
   - DONE there is a problem to solve with `segment_maker._configure_score()`
- + DONE Clean up segments B-G 
+ + DONE Clean up segments B-G
 
  + Test a build with travis
   - Read testing with pytest and figure out how to use it properly;-)!
 
  + rework material in segments, each segment is 64 bars long
   - we could make all the harmonies (one harmony and inversions) for each
-    segment and store these in a dictionary with a reference 
+    segment and store these in a dictionary with a reference
   - the `make_diads` routine is resulting in some pretty jumpy intervals, try
     reducing the complexity of this a bit and see if in doing so, it's possible
-    to produce smoother lines. 
-  - one arpeggio pattern per harmony (three in total) 
+    to produce smoother lines.
+  - one arpeggio pattern per harmony (three in total)
 
- + Write violin part 
- 
+ + Write violin part
+
  + Write methods for attachments (markup + dynamics)
 
 *** 16-6-20
- 
+
  + DONE Research a way to use RhythmDefinition.py effectively
   - DONE refine the routine used to produce an rmaker
   - DONE define a pitches property in FuzzyHarmony
   - DONE this can be used in making rmakers
   - DONE check viability with Trevor's RhythmDefinition
 
- + DONE Fix linkage to stylesheets 
+ + DONE Fix linkage to stylesheets
   - DONE run same segment A test and fix errors on build
 
 *** 15-6-20
@@ -102,19 +110,19 @@
     chords
     DONE and import a routine for inversion
  + DONE Make quick notational sketch of possible guitar figures
-  - DONE pre-requisites: 
+  - DONE pre-requisites:
    + DONE these should be as general as possible, so they can be ported to other
-     DONE instruments incase the instrumentation changes by the autumn and so that  
+     DONE instruments incase the instrumentation changes by the autumn and so that
      DONE they can be used for the harp parts in the orchestral piece later in the
-     DONE summer 
+     DONE summer
 
-#+BEGIN_SRC 
+#+BEGIN_SRC
 
-Data Structure: 
+Data Structure:
  |_ Chord
    |_sub-grouping
-     |_max-voices is restricted by instrument 
-     |_tetrad voicing 
+     |_max-voices is restricted by instrument
+     |_tetrad voicing
      |_triad voicing
      |_min voices = diad voicing
    |_figuration style
@@ -131,20 +139,20 @@ Data Structure:
  + DONE Clarification of what we want to do with these chords:
   - DONE Write a routine that outputs all possible harmonic progressions:
    + [[ii - v - i], [iib - v - i], [iib, v, ia], [ii - v -i]]
-  - DONE Once these harmonic progressions are formed, it's possible 
+  - DONE Once these harmonic progressions are formed, it's possible
     DONE to express the harmonic material as chords or pitch segments
     DONE and to use these in collaboration with rmakers to create actual
     "phrases"
 
 
-* DONE Figure out if there is some way to make a selection based on a PitchSegment  
+* DONE Figure out if there is some way to make a selection based on a PitchSegment
   - DONE review abjad music maker def by Trevor (abjad users::re:rmakers)
   - DONE build verbatim example to see how iterators are making leaves
- + DONE Make do-ability survey (impossible, hard, easy) 
+ + DONE Make do-ability survey (impossible, hard, easy)
  + DONE Send notes + survey to guitarists
 
 
-# 20-5-2020 Next Steps 
+# 20-5-2020 Next Steps
 + DONE re-read Oberholzer diss chpt. 3
 + DONE design a few tests to get familiar with timespans & rmakers
 + DONE re-read Oberholzer diss chpt. 3

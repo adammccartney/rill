@@ -183,8 +183,12 @@ class RhythmDefinition(object):
 
     def _handle_notes(self):
         voice = self._score[f"{self.instrument_name}_Music_Voice"]
+        print(self.notes)
         for argument in self.notes:
             if isinstance(argument, abjad.Component):
+                copied_expr = copy.deepcopy(argument)
+                voice.append(copied_expr)
+            elif isinstance(argument, abjad.Container):
                 copied_expr = copy.deepcopy(argument)
                 voice.append(copied_expr)
             elif isinstance(argument, str):
