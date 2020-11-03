@@ -1,13 +1,11 @@
 import abjad
 
 from dataclasses import dataclass, field
-from typing import List, Sequence
+from typing import Dict, List, Sequence
 
 from rill.tools.AttachmentMaker import (AttachmentMaker,
                                         AccentAttachmentMaker)
 from rill.materials.pitch.definition import chord_voice
-
-
 
 def make_default_pitches():
     default_pitch_materials = chord_voice["black"][5][0:3]
@@ -54,15 +52,46 @@ class InstrumentMusicData:
     talea: List[int] = field(default_factory=make_default_talea)
 
 
+from rill.materials.instruments.definition import instruments
+
+
+def get_instrument_names():
+    instrument_names = []
+    for key, item in instruments.items():
+        instrument_names.append(key)
+    return instrument_names
+
+
+def make_segment_music_default():
+    instrument_names = get_instrument_names()
+    segment_defaults = {}
+    for iname in instrument_names:
+        instrument_input = "{instrument_name}_music_data"
+        instrument_input.format(instrument_name=iname)
+        instrument_input = InstrumentMusicData()
+        segment_defaults[iname] = instrument_input
+    return segment_defaults
+
+
 @dataclass
 class SegmentMusicData:
-    mu_makers: List[InstrumentMusicData]
+    instrument_music_data: Sequence[InstrumentMusicData] = field(
+        default_factory=make_segment_music_default)
 
 
 if __name__ == '__main__':
-    default_init_data = InstrumentMusicData()
-    print(default_init_data)
-    def make_new_talea():
-        return [2, 3, -4, 5]
-    adapted_data = InstrumentMusicData(talea=[2, 3, -4, 5])
-    print(adapted_data)
+   # default_init_data = InstrumentMusicData()
+   # print(default_init_data)
+   # def make_new_talea():
+   #     return [2, 3, -4, 5]
+   # adapted_data = InstrumentMusicData(talea=[2, 3, -4, 5])
+   # print(adapted_data)
+   # instrument_names = get_instrument_names()
+   # print(instrument_names)
+    #segment_defaults = make_segment_music_default()
+    #for instrument_music_data in segment_defaults:
+    #    print(instrument_music_data)
+    segment_test_music_data = SegmentMusicData()
+    segment_dict = segment_test_music_data.instrument_music_data
+    for instrument in instruments:
+        print(instrument, ": ", segment_dict[instrument], '\n')

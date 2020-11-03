@@ -49,7 +49,7 @@
             \context StaffGroup = "Woodwind_Staff_Group"                       %! rill.ScoreTemplate.__call__()
             <<                                                                 %! rill.ScoreTemplate.__call__()
                 \tag #'fluteOne
-                \context Staff = "flute1"                                      %! rill.ScoreTemplate.__call__()
+                \context Staff = "Flute1"                                      %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"flute"                                  %! rill.ScoreTemplate.__call__()
@@ -87,7 +87,7 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'fluteTwo
-                \context Staff = "flute2"                                      %! rill.ScoreTemplate.__call__()
+                \context Staff = "Flute2"                                      %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"flute"                                  %! rill.ScoreTemplate.__call__()
@@ -125,7 +125,7 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'fluteThree
-                \context Staff = "flute3"                                      %! rill.ScoreTemplate.__call__()
+                \context Staff = "Flute3"                                      %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"flute"                                  %! rill.ScoreTemplate.__call__()
@@ -204,7 +204,7 @@
             \context StaffGroup = "Percussion_Staff_Group"                     %! rill.ScoreTemplate.__call__()
             <<                                                                 %! rill.ScoreTemplate.__call__()
                 \tag #'vibraphone
-                \context Staff = "vibraphone"                                  %! rill.ScoreTemplate.__call__()
+                \context Staff = "Vibraphone"                                  %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"vibraphone"                             %! rill.ScoreTemplate.__call__()
@@ -245,7 +245,7 @@
             \context StaffGroup = "String_Staff_Group"                         %! rill.ScoreTemplate.__call__()
             <<                                                                 %! rill.ScoreTemplate.__call__()
                 \tag #'violinOne
-                \context Staff = "violin1"                                     %! rill.ScoreTemplate.__call__()
+                \context Staff = "Violin1"                                     %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
@@ -283,7 +283,7 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinTwo
-                \context Staff = "violin2"                                     %! rill.ScoreTemplate.__call__()
+                \context Staff = "Violin2"                                     %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
@@ -321,7 +321,7 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinThree
-                \context Staff = "violin3"                                     %! rill.ScoreTemplate.__call__()
+                \context Staff = "Violin3"                                     %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
@@ -359,7 +359,7 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinFour
-                \context Staff = "violin4"                                     %! rill.ScoreTemplate.__call__()
+                \context Staff = "Violin4"                                     %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
@@ -397,7 +397,7 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinFive
-                \context Staff = "violin5"                                     %! rill.ScoreTemplate.__call__()
+                \context Staff = "Violin5"                                     %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
@@ -435,7 +435,7 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinSix
-                \context Staff = "violin6"                                     %! rill.ScoreTemplate.__call__()
+                \context Staff = "Violin6"                                     %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
@@ -473,7 +473,7 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinSeven
-                \context Staff = "violin7"                                     %! rill.ScoreTemplate.__call__()
+                \context Staff = "Violin7"                                     %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
@@ -511,7 +511,7 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'viola
-                \context Staff = "viola"                                       %! rill.ScoreTemplate.__call__()
+                \context Staff = "Viola"                                       %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"viola"                                  %! rill.ScoreTemplate.__call__()

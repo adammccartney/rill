@@ -66,7 +66,7 @@ from rill.tools.AttachmentMaker import (
 from rill.materials.music_init_data.definition import InstrumentMusicData
 
 
-this_current_directory =  pathlib.Path(__file__).parent
+this_current_directory =  pathlib.Path.cwd().parent
 score =rill.ScoreTemplate()
 score_template = score()
 

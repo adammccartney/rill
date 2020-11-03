@@ -6,7 +6,7 @@ rehearsal_mark=sys.argv[2]
 
 segment_definition=f"""
 import copy
-import pathlib
+from pathlib import Path
 
 import abjad
 import rill
@@ -28,7 +28,7 @@ from typing import List
 # Setting up segment ### [{segment_name}] ###
 #####################
 
-this_current_directory =  pathlib.Path(__file__).parent 
+this_current_directory =  Path.cwd().parent 
 score =rill.ScoreTemplate()
 score_template = score()
 

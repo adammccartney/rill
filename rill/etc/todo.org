@@ -46,8 +46,16 @@
 
    - I'm trying to get around having to hand-hack the initialization of the MusicMaker objects: so I want to be able to generate the "definition.py" scripts on a per segment basis, and not have to tweak the output. So ideally, each "definition.py" would refer to an "init segment music" data class on a per instrument basis in each segment. This means that we could write a generator script for all instances of "definition.py" within the subdirectories of segments
 
-*** TODO Write a member function in the MusicMaker class that tidies according to meter
+*** DONE Write a member function in the MusicMaker class that tidies according to meter
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2020-11-03 Tue 11:27]
+:END:
+"clean up rhythm" member function is now taking music as input and re-grouping the rhythms according to the time signatures as passed in by the "time signature pairs" variable
 
+*** TODO Define a way to persist objects that will be later used to construct MusicMaker objects
+ + Going to do a couple of experiments with python's shelve object
+
+ + Test where the
 *** TODO Re-configure ScoreTemplate to reflect final instrumentation
 *** TODO Find solution for missing instrument name markups
 
