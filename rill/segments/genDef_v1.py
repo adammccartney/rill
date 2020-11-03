@@ -7,46 +7,104 @@ segment_name = sys.argv[1]
 rehearsal_mark = sys.argv[2]
 
 
-# Switch over segment_name to make assignments
-
-# Test variables
-
-def make_music_code_block(instrument_name):
+def make_music_code_block(instrument_name, instrument_music_data):
     music_block = f"""{instrument_name}_rhythm_definition = segment_maker.define_rhythm()
 {instrument_name}_music_maker = MusicMaker(
-    counts=test_counts,
-    denominator=test_denominator,
-    pitches=test_pitches,
-    attachment_makers=[
-                    tenuto_attachment_maker,
-                    staccato_attachment_maker
-                    ],
+    counts={instrument_name}_instrument_music_data.talea,
+    denominator={instrument_name}_instrument_music_data.denominator,
+    pitches={instrument_name}_instrument_music_data.pitches,
+    attachment_makers={instrument_name}_instrument_music_data.attachments
     )
-{instrument_name}_music = {instrument_name}_music_maker(time_signature_pairs=test_ts_pairs),
+{instrument_name}_music = {instrument_name}_music_maker(
+    time_signature_pairs={instrument_name}_instrument_music_data.time_signature_pairs),
 {instrument_name}_rhythm_definition.notes = {instrument_name}_music
-{instrument_name}_rhythm_definition.instrument_name = \"{instrument_name}\"
+{instrument_name}_rhythm_definition.instrument_name = '{instrument_name}'
 """
     return music_block
 
 
-Flute1_music_code_block = make_music_code_block(instrument_name="Flute1")
-Flute2_music_code_block = make_music_code_block(instrument_name="Flute2")
-Flute3_music_code_block = make_music_code_block(instrument_name="Flute3")
+from rill.segments.music_data import segment_music_data
+
+
+segment_music_dict = segment_music_data.instrument_music_data
+Flute1_instrument_music_data = segment_music_dict['Flute1']
+Flute1_music_code_block = make_music_code_block(
+    instrument_name="Flute1",
+    instrument_music_data=Flute1_instrument_music_data
+)
+
+Flute2_instrument_music_data = segment_music_dict['Flute2']
+Flute2_music_code_block = make_music_code_block(
+    instrument_name="Flute2",
+    instrument_music_data=Flute2_instrument_music_data
+)
+
+Flute3_instrument_music_data = segment_music_dict['Flute3']
+Flute3_music_code_block = make_music_code_block(
+    instrument_name="Flute3",
+    instrument_music_data=Flute3_instrument_music_data
+)
+
+Bbclarinet1_instrument_music_data = segment_music_dict['Bbclarinet1']
 Bbclarinet1_music_code_block = make_music_code_block(
-    instrument_name="Bbclarinet1")
+    instrument_name="Bbclarinet1",
+    instrument_music_data=Bbclarinet1_instrument_music_data
+)
 
-
+Vibraphone_instrument_music_data = segment_music_dict['Vibraphone']
 Vibraphone_music_code_block = make_music_code_block(
-    instrument_name="Vibraphone")
+    instrument_name="Vibraphone",
+    instrument_music_data=Vibraphone_instrument_music_data
+)
 
-Violin1_music_code_block = make_music_code_block(instrument_name="Violin1")
-Violin2_music_code_block = make_music_code_block(instrument_name="Violin2")
-Violin3_music_code_block = make_music_code_block(instrument_name="Violin3")
-Violin4_music_code_block = make_music_code_block(instrument_name="Violin4")
-Violin5_music_code_block = make_music_code_block(instrument_name="Violin5")
-Violin6_music_code_block = make_music_code_block(instrument_name="Violin6")
-Violin7_music_code_block = make_music_code_block(instrument_name="Violin7")
-Viola_music_code_block = make_music_code_block(instrument_name="Viola")
+Violin1_instrument_music_data = segment_music_dict['Violin1']
+Violin1_music_code_block = make_music_code_block(
+    instrument_name="Violin1",
+    instrument_music_data=Violin1_instrument_music_data
+)
+
+Violin2_instrument_music_data = segment_music_dict['Violin2']
+Violin2_music_code_block = make_music_code_block(
+    instrument_name="Violin2",
+    instrument_music_data=Violin2_instrument_music_data
+)
+
+Violin3_instrument_music_data = segment_music_dict['Violin3']
+Violin3_music_code_block = make_music_code_block(
+    instrument_name="Violin3",
+    instrument_music_data=Violin3_instrument_music_data
+)
+
+Violin4_instrument_music_data = segment_music_dict['Violin4']
+Violin4_music_code_block = make_music_code_block(
+    instrument_name="Violin4",
+    instrument_music_data=Violin4_instrument_music_data
+)
+
+Violin5_instrument_music_data = segment_music_dict['Violin5']
+Violin5_music_code_block = make_music_code_block(
+    instrument_name="Violin5",
+    instrument_music_data=Violin5_instrument_music_data
+)
+
+Violin6_instrument_music_data = segment_music_dict['Violin6']
+Violin6_music_code_block = make_music_code_block(
+    instrument_name="Violin6",
+    instrument_music_data=Violin6_instrument_music_data
+)
+
+Violin7_instrument_music_data = segment_music_dict['Violin7']
+Violin7_music_code_block = make_music_code_block(
+    instrument_name="Violin7",
+    instrument_music_data=Violin7_instrument_music_data
+)
+
+Viola_instrument_music_data = segment_music_dict['Viola']
+Viola_music_code_block = make_music_code_block(
+    instrument_name="Viola",
+    instrument_music_data=Viola_instrument_music_data
+)
+
 
 
 segment_definition = f"""
@@ -57,14 +115,8 @@ import abjad
 import rill
 
 
-from rill.tools.MusicMaker import MusicMaker as MusicMaker
-from rill.tools.AttachmentMaker import (
-                                        AccentAttachmentMaker
-                                        as AccentAttachmentMaker
-                                       )
-
-from rill.materials.music_init_data.definition import InstrumentMusicData
-
+from rill.tools.MusicMaker import MusicMaker
+from rill.tools.AttachmentMaker import AccentAttachmentMaker
 
 this_current_directory =  pathlib.Path.cwd().parent
 score =rill.ScoreTemplate()
@@ -88,56 +140,50 @@ segment_maker.metronome_marks = [
 time_signatures= [(4, 4)] + [(3, 4)] + [(3, 4)] + [(4, 4)] + [(3, 4)] + [(3,4)]
 segment_maker.time_signatures = time_signatures
 
-# Test variables
 
-test_pitches = rill.chord_voice["blue"][5][1:3]
-
-test_ts_pairs = [(4, 4), (3, 4), (3, 4), (4, 4), (3, 4), (3, 4)]
-test_counts = [1, 2, -3, 4]
-test_denominator = 8
-test_pitches = abjad.CyclicTuple(test_pitches)
-
-tenuto_attachment_maker = AccentAttachmentMaker(
-    selector=abjad.select().logical_ties(),
-    attachment=abjad.Articulation("tenuto")
-)
-
-staccato_attachment_maker = AccentAttachmentMaker(
-    selector=abjad.select().logical_ties(),
-    attachment=abjad.Staccato()
-)
+from rill.segments.music_data import segment_music_data
 
 
+segment_music_dict = segment_music_data.instrument_music_data
+
+Flute1_instrument_music_data = segment_music_dict['Flute1']
 {Flute1_music_code_block}
 
+Flute2_instrument_music_data = segment_music_dict['Flute2']
 {Flute2_music_code_block}
 
+Flute3_instrument_music_data = segment_music_dict['Flute3']
 {Flute3_music_code_block}
 
+Bbclarinet1_instrument_music_data = segment_music_dict['Bbclarinet1']
 {Bbclarinet1_music_code_block}
 
-
-
+Vibraphone_instrument_music_data = segment_music_dict['Vibraphone']
 {Vibraphone_music_code_block}
 
-
-
+Violin1_instrument_music_data = segment_music_dict['Violin1']
 {Violin1_music_code_block}
 
+Violin2_instrument_music_data = segment_music_dict['Violin2']
 {Violin2_music_code_block}
 
+Violin3_instrument_music_data = segment_music_dict['Violin3']
 {Violin3_music_code_block}
 
+Violin4_instrument_music_data = segment_music_dict['Violin4']
 {Violin4_music_code_block}
 
+Violin5_instrument_music_data = segment_music_dict['Violin5']
 {Violin5_music_code_block}
 
+Violin6_instrument_music_data = segment_music_dict['Violin6']
 {Violin6_music_code_block}
 
+Violin7_instrument_music_data = segment_music_dict['Violin7']
 {Violin7_music_code_block}
 
+Viola_instrument_music_data = segment_music_dict['Viola']
 {Viola_music_code_block}
-
 
 lilypond_file = segment_maker.run()
 """
