@@ -34,10 +34,19 @@ class MusicMaker(object):
         """
         Clean up rhythms in ``music`` via ``time_signature_pairs``.
         """
-        music_by_measure = abjad.mutate(music[:]).split(time_signature_pairs, cyclic=True)
-        for measure in music_by_measure:
-            print("measure: ", measure)
-        return music_by_measure
+        for i in range(len(time_signature_pairs)):
+            time_signature = time_signature_pairs[i]
+            print("time_signature: ", time_signature)
+        shards = abjad.mutate(music[:]).split(time_signature_pairs)
+        for i, shard in enumerate(shards):
+            print(shard)
+            time_signature = time_signature_pairs[i]
+            meter = abjad.Meter(time_signature)
+            shard_duration = abjad.inspect(shard).duration()
+            time_sig_duration = abjad.Duration(time_signature)
+            assert shard_duration == time_sig_duration
+            abjad.mutate(shard).split([meter.duration], cyclic=True)
+        return music
 
     def _make_basic_rhythm(self, time_signature_pairs, counts, denominator):
         """
@@ -76,14 +85,11 @@ class MusicMaker(object):
         """
         pitches = abjad.CyclicTuple(pitches)
         logical_ties = abjad.iterate(music).logical_ties(pitched=True)
-        print(logical_ties)
         for i, logical_tie in enumerate(logical_ties):
             pitch = pitches[i]
             for note in logical_tie:
-                print(note)
                 note.written_pitch = pitch
-                print(note)
-        print(music)
+        print("music after mutation: ", music)
         return music
 
     def _add_attachments(self, music):
@@ -174,4 +180,8 @@ if __name__ == '__main__':
         ],
     )
     music = my_musicmaker(time_signature_pairs)
-    abjad.f(music)
+    staff = abjad.Staff([music])
+    for i in range(len(time_signature_pairs)):
+        print(abjad.TimeSignature(time_signature_pairs[i]))
+
+    abjad.f(staff)
