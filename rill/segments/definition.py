@@ -6,16 +6,10 @@ import abjad
 import rill
 
 
-from rill.tools.MusicMaker import MusicMaker as MusicMaker
-from rill.tools.AttachmentMaker import (
-                                        AccentAttachmentMaker
-                                        as AccentAttachmentMaker
-                                       )
+from rill.tools.MusicMaker import MusicMaker
+from rill.tools.AttachmentMaker import AccentAttachmentMaker
 
-from rill.materials.music_init_data.definition import InstrumentMusicData
-
-
-this_current_directory =  pathlib.Path.cwd().parent
+this_current_directory =  pathlib.Path.cwd()
 score =rill.ScoreTemplate()
 score_template = score()
 
@@ -37,224 +31,192 @@ segment_maker.metronome_marks = [
 time_signatures= [(4, 4)] + [(3, 4)] + [(3, 4)] + [(4, 4)] + [(3, 4)] + [(3,4)]
 segment_maker.time_signatures = time_signatures
 
-# Test variables
 
-test_pitches = rill.chord_voice["blue"][5][1:3]
-
-test_ts_pairs = [(4, 4), (3, 4), (3, 4), (4, 4), (3, 4), (3, 4)]
-test_counts = [1, 2, -3, 4]
-test_denominator = 8
-test_pitches = abjad.CyclicTuple(test_pitches)
-
-tenuto_attachment_maker = AccentAttachmentMaker(
-    selector=abjad.select().logical_ties(),
-    attachment=abjad.Articulation("tenuto")
-)
-
-staccato_attachment_maker = AccentAttachmentMaker(
-    selector=abjad.select().logical_ties(),
-    attachment=abjad.Staccato()
-)
+from rill.segments.music_data import segment_music_data
 
 
+segment_music_dict = segment_music_data.instrument_music_data
+
+Flute1_instrument_music_data = segment_music_dict['Flute1']
 Flute1_rhythm_definition = segment_maker.define_rhythm()
 Flute1_music_maker = MusicMaker(
-    counts=test_counts,
-    denominator=test_denominator,
-    pitches=test_pitches,
-    attachment_makers=[
-                    tenuto_attachment_maker,
-                    staccato_attachment_maker
-                    ],
+    counts=Flute1_instrument_music_data.talea,
+    denominator=Flute1_instrument_music_data.denominator,
+    pitches=Flute1_instrument_music_data.pitches,
+    attachment_makers=Flute1_instrument_music_data.attachments
     )
-Flute1_music = Flute1_music_maker(time_signature_pairs=test_ts_pairs),
+Flute1_music = Flute1_music_maker(
+    time_signature_pairs=Flute1_instrument_music_data.time_signature_pairs),
 Flute1_rhythm_definition.notes = Flute1_music
-Flute1_rhythm_definition.instrument_name = "Flute1"
+Flute1_rhythm_definition.instrument_name = 'Flute1'
 
 
+Flute2_instrument_music_data = segment_music_dict['Flute2']
 Flute2_rhythm_definition = segment_maker.define_rhythm()
 Flute2_music_maker = MusicMaker(
-    counts=test_counts,
-    denominator=test_denominator,
-    pitches=test_pitches,
-    attachment_makers=[
-                    tenuto_attachment_maker,
-                    staccato_attachment_maker
-                    ],
+    counts=Flute2_instrument_music_data.talea,
+    denominator=Flute2_instrument_music_data.denominator,
+    pitches=Flute2_instrument_music_data.pitches,
+    attachment_makers=Flute2_instrument_music_data.attachments
     )
-Flute2_music = Flute2_music_maker(time_signature_pairs=test_ts_pairs),
+Flute2_music = Flute2_music_maker(
+    time_signature_pairs=Flute2_instrument_music_data.time_signature_pairs),
 Flute2_rhythm_definition.notes = Flute2_music
-Flute2_rhythm_definition.instrument_name = "Flute2"
+Flute2_rhythm_definition.instrument_name = 'Flute2'
 
 
+Flute3_instrument_music_data = segment_music_dict['Flute3']
 Flute3_rhythm_definition = segment_maker.define_rhythm()
 Flute3_music_maker = MusicMaker(
-    counts=test_counts,
-    denominator=test_denominator,
-    pitches=test_pitches,
-    attachment_makers=[
-                    tenuto_attachment_maker,
-                    staccato_attachment_maker
-                    ],
+    counts=Flute3_instrument_music_data.talea,
+    denominator=Flute3_instrument_music_data.denominator,
+    pitches=Flute3_instrument_music_data.pitches,
+    attachment_makers=Flute3_instrument_music_data.attachments
     )
-Flute3_music = Flute3_music_maker(time_signature_pairs=test_ts_pairs),
+Flute3_music = Flute3_music_maker(
+    time_signature_pairs=Flute3_instrument_music_data.time_signature_pairs),
 Flute3_rhythm_definition.notes = Flute3_music
-Flute3_rhythm_definition.instrument_name = "Flute3"
+Flute3_rhythm_definition.instrument_name = 'Flute3'
 
 
+Bbclarinet1_instrument_music_data = segment_music_dict['Bbclarinet1']
 Bbclarinet1_rhythm_definition = segment_maker.define_rhythm()
 Bbclarinet1_music_maker = MusicMaker(
-    counts=test_counts,
-    denominator=test_denominator,
-    pitches=test_pitches,
-    attachment_makers=[
-                    tenuto_attachment_maker,
-                    staccato_attachment_maker
-                    ],
+    counts=Bbclarinet1_instrument_music_data.talea,
+    denominator=Bbclarinet1_instrument_music_data.denominator,
+    pitches=Bbclarinet1_instrument_music_data.pitches,
+    attachment_makers=Bbclarinet1_instrument_music_data.attachments
     )
-Bbclarinet1_music = Bbclarinet1_music_maker(time_signature_pairs=test_ts_pairs),
+Bbclarinet1_music = Bbclarinet1_music_maker(
+    time_signature_pairs=Bbclarinet1_instrument_music_data.time_signature_pairs),
 Bbclarinet1_rhythm_definition.notes = Bbclarinet1_music
-Bbclarinet1_rhythm_definition.instrument_name = "Bbclarinet1"
+Bbclarinet1_rhythm_definition.instrument_name = 'Bbclarinet1'
 
 
-
-
+Vibraphone_instrument_music_data = segment_music_dict['Vibraphone']
 Vibraphone_rhythm_definition = segment_maker.define_rhythm()
 Vibraphone_music_maker = MusicMaker(
-    counts=test_counts,
-    denominator=test_denominator,
-    pitches=test_pitches,
-    attachment_makers=[
-                    tenuto_attachment_maker,
-                    staccato_attachment_maker
-                    ],
+    counts=Vibraphone_instrument_music_data.talea,
+    denominator=Vibraphone_instrument_music_data.denominator,
+    pitches=Vibraphone_instrument_music_data.pitches,
+    attachment_makers=Vibraphone_instrument_music_data.attachments
     )
-Vibraphone_music = Vibraphone_music_maker(time_signature_pairs=test_ts_pairs),
+Vibraphone_music = Vibraphone_music_maker(
+    time_signature_pairs=Vibraphone_instrument_music_data.time_signature_pairs),
 Vibraphone_rhythm_definition.notes = Vibraphone_music
-Vibraphone_rhythm_definition.instrument_name = "Vibraphone"
+Vibraphone_rhythm_definition.instrument_name = 'Vibraphone'
 
 
-
-
+Violin1_instrument_music_data = segment_music_dict['Violin1']
 Violin1_rhythm_definition = segment_maker.define_rhythm()
 Violin1_music_maker = MusicMaker(
-    counts=test_counts,
-    denominator=test_denominator,
-    pitches=test_pitches,
-    attachment_makers=[
-                    tenuto_attachment_maker,
-                    staccato_attachment_maker
-                    ],
+    counts=Violin1_instrument_music_data.talea,
+    denominator=Violin1_instrument_music_data.denominator,
+    pitches=Violin1_instrument_music_data.pitches,
+    attachment_makers=Violin1_instrument_music_data.attachments
     )
-Violin1_music = Violin1_music_maker(time_signature_pairs=test_ts_pairs),
+Violin1_music = Violin1_music_maker(
+    time_signature_pairs=Violin1_instrument_music_data.time_signature_pairs),
 Violin1_rhythm_definition.notes = Violin1_music
-Violin1_rhythm_definition.instrument_name = "Violin1"
+Violin1_rhythm_definition.instrument_name = 'Violin1'
 
 
+Violin2_instrument_music_data = segment_music_dict['Violin2']
 Violin2_rhythm_definition = segment_maker.define_rhythm()
 Violin2_music_maker = MusicMaker(
-    counts=test_counts,
-    denominator=test_denominator,
-    pitches=test_pitches,
-    attachment_makers=[
-                    tenuto_attachment_maker,
-                    staccato_attachment_maker
-                    ],
+    counts=Violin2_instrument_music_data.talea,
+    denominator=Violin2_instrument_music_data.denominator,
+    pitches=Violin2_instrument_music_data.pitches,
+    attachment_makers=Violin2_instrument_music_data.attachments
     )
-Violin2_music = Violin2_music_maker(time_signature_pairs=test_ts_pairs),
+Violin2_music = Violin2_music_maker(
+    time_signature_pairs=Violin2_instrument_music_data.time_signature_pairs),
 Violin2_rhythm_definition.notes = Violin2_music
-Violin2_rhythm_definition.instrument_name = "Violin2"
+Violin2_rhythm_definition.instrument_name = 'Violin2'
 
 
+Violin3_instrument_music_data = segment_music_dict['Violin3']
 Violin3_rhythm_definition = segment_maker.define_rhythm()
 Violin3_music_maker = MusicMaker(
-    counts=test_counts,
-    denominator=test_denominator,
-    pitches=test_pitches,
-    attachment_makers=[
-                    tenuto_attachment_maker,
-                    staccato_attachment_maker
-                    ],
+    counts=Violin3_instrument_music_data.talea,
+    denominator=Violin3_instrument_music_data.denominator,
+    pitches=Violin3_instrument_music_data.pitches,
+    attachment_makers=Violin3_instrument_music_data.attachments
     )
-Violin3_music = Violin3_music_maker(time_signature_pairs=test_ts_pairs),
+Violin3_music = Violin3_music_maker(
+    time_signature_pairs=Violin3_instrument_music_data.time_signature_pairs),
 Violin3_rhythm_definition.notes = Violin3_music
-Violin3_rhythm_definition.instrument_name = "Violin3"
+Violin3_rhythm_definition.instrument_name = 'Violin3'
 
 
+Violin4_instrument_music_data = segment_music_dict['Violin4']
 Violin4_rhythm_definition = segment_maker.define_rhythm()
 Violin4_music_maker = MusicMaker(
-    counts=test_counts,
-    denominator=test_denominator,
-    pitches=test_pitches,
-    attachment_makers=[
-                    tenuto_attachment_maker,
-                    staccato_attachment_maker
-                    ],
+    counts=Violin4_instrument_music_data.talea,
+    denominator=Violin4_instrument_music_data.denominator,
+    pitches=Violin4_instrument_music_data.pitches,
+    attachment_makers=Violin4_instrument_music_data.attachments
     )
-Violin4_music = Violin4_music_maker(time_signature_pairs=test_ts_pairs),
+Violin4_music = Violin4_music_maker(
+    time_signature_pairs=Violin4_instrument_music_data.time_signature_pairs),
 Violin4_rhythm_definition.notes = Violin4_music
-Violin4_rhythm_definition.instrument_name = "Violin4"
+Violin4_rhythm_definition.instrument_name = 'Violin4'
 
 
+Violin5_instrument_music_data = segment_music_dict['Violin5']
 Violin5_rhythm_definition = segment_maker.define_rhythm()
 Violin5_music_maker = MusicMaker(
-    counts=test_counts,
-    denominator=test_denominator,
-    pitches=test_pitches,
-    attachment_makers=[
-                    tenuto_attachment_maker,
-                    staccato_attachment_maker
-                    ],
+    counts=Violin5_instrument_music_data.talea,
+    denominator=Violin5_instrument_music_data.denominator,
+    pitches=Violin5_instrument_music_data.pitches,
+    attachment_makers=Violin5_instrument_music_data.attachments
     )
-Violin5_music = Violin5_music_maker(time_signature_pairs=test_ts_pairs),
+Violin5_music = Violin5_music_maker(
+    time_signature_pairs=Violin5_instrument_music_data.time_signature_pairs),
 Violin5_rhythm_definition.notes = Violin5_music
-Violin5_rhythm_definition.instrument_name = "Violin5"
+Violin5_rhythm_definition.instrument_name = 'Violin5'
 
 
+Violin6_instrument_music_data = segment_music_dict['Violin6']
 Violin6_rhythm_definition = segment_maker.define_rhythm()
 Violin6_music_maker = MusicMaker(
-    counts=test_counts,
-    denominator=test_denominator,
-    pitches=test_pitches,
-    attachment_makers=[
-                    tenuto_attachment_maker,
-                    staccato_attachment_maker
-                    ],
+    counts=Violin6_instrument_music_data.talea,
+    denominator=Violin6_instrument_music_data.denominator,
+    pitches=Violin6_instrument_music_data.pitches,
+    attachment_makers=Violin6_instrument_music_data.attachments
     )
-Violin6_music = Violin6_music_maker(time_signature_pairs=test_ts_pairs),
+Violin6_music = Violin6_music_maker(
+    time_signature_pairs=Violin6_instrument_music_data.time_signature_pairs),
 Violin6_rhythm_definition.notes = Violin6_music
-Violin6_rhythm_definition.instrument_name = "Violin6"
+Violin6_rhythm_definition.instrument_name = 'Violin6'
 
 
+Violin7_instrument_music_data = segment_music_dict['Violin7']
 Violin7_rhythm_definition = segment_maker.define_rhythm()
 Violin7_music_maker = MusicMaker(
-    counts=test_counts,
-    denominator=test_denominator,
-    pitches=test_pitches,
-    attachment_makers=[
-                    tenuto_attachment_maker,
-                    staccato_attachment_maker
-                    ],
+    counts=Violin7_instrument_music_data.talea,
+    denominator=Violin7_instrument_music_data.denominator,
+    pitches=Violin7_instrument_music_data.pitches,
+    attachment_makers=Violin7_instrument_music_data.attachments
     )
-Violin7_music = Violin7_music_maker(time_signature_pairs=test_ts_pairs),
+Violin7_music = Violin7_music_maker(
+    time_signature_pairs=Violin7_instrument_music_data.time_signature_pairs),
 Violin7_rhythm_definition.notes = Violin7_music
-Violin7_rhythm_definition.instrument_name = "Violin7"
+Violin7_rhythm_definition.instrument_name = 'Violin7'
 
 
+Viola_instrument_music_data = segment_music_dict['Viola']
 Viola_rhythm_definition = segment_maker.define_rhythm()
 Viola_music_maker = MusicMaker(
-    counts=test_counts,
-    denominator=test_denominator,
-    pitches=test_pitches,
-    attachment_makers=[
-                    tenuto_attachment_maker,
-                    staccato_attachment_maker
-                    ],
+    counts=Viola_instrument_music_data.talea,
+    denominator=Viola_instrument_music_data.denominator,
+    pitches=Viola_instrument_music_data.pitches,
+    attachment_makers=Viola_instrument_music_data.attachments
     )
-Viola_music = Viola_music_maker(time_signature_pairs=test_ts_pairs),
+Viola_music = Viola_music_maker(
+    time_signature_pairs=Viola_instrument_music_data.time_signature_pairs),
 Viola_rhythm_definition.notes = Viola_music
-Viola_rhythm_definition.instrument_name = "Viola"
-
+Viola_rhythm_definition.instrument_name = 'Viola'
 
 
 lilypond_file = segment_maker.run()

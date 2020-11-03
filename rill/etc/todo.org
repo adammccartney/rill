@@ -35,7 +35,18 @@
 + move mMakerGenerator into the MusicMaker module, so it can be
   imported into the `segment_$X/definition.py`
 + test that output is building a coherant score
-
+ +  redefine basic structure to reflect that it is possible to import music data initializer objects from database in a systematic way
+*** CANCELED Define workflow for "auditioning" and persisting music data init objects to db
+:LOGBOOK:
+- State "CANCELED"   from "IN-PROGRESS" [2020-11-03 Tue 20:43]
+:END:
+ +  currently, in order to see how a set of music data objects we're calling up a Segment
+ + initial solution to persist music data objects on a per segment basis to some sort of a db failed -> there was an issue with using mutable objects in a shelve db. I'm sure there is a way to set this up to work, possibly by using an OOdb. However, I'm going to try and keep things simple for now, see next todo for details
+*** IN-PROGRESS write generator script for "music data" files on a per segment basis
+ + I'm going to exploit some of python's handy namespace rules and create a one module per segment to store the music initializer data
+ + basically, there are two objects essential for this operation: "InstrumentMusicData" and "SegmentMusicData"
+ + this means we can call the instance of "SegmentMusicData" that is in the segment scope in a way that supports scripting the definition files (basically the reason for this is to avoid hand-hacking the "definition.py" file
+ + ...but there will ultimately be a little hand hacking... basically, I'm going to initialize the pair of objects mentioned above with their default values and then override on a per segment basis
 *** DONE Define persistent data structure for material in segments
 :LOGBOOK:
 - State "DONE"       from "IN-PROGRESS" [2020-11-02 Mon 15:27]
@@ -52,14 +63,13 @@
 :END:
 "clean up rhythm" member function is now taking music as input and re-grouping the rhythms according to the time signatures as passed in by the "time signature pairs" variable
 
-*** TODO Define a way to persist objects that will be later used to construct MusicMaker objects
+*** DONE Define a way to persist objects that will be later used to construct MusicMaker objects
  + Going to do a couple of experiments with python's shelve object
 
- + Test where the
+ + Test that you can access via Path
+
 *** TODO Re-configure ScoreTemplate to reflect final instrumentation
 *** TODO Find solution for missing instrument name markups
-
-
 *** TODO Merge Dev branch into Ensemble
 
 *** TODO Find way to tag score with build time and git branch

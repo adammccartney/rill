@@ -118,7 +118,7 @@ import rill
 from rill.tools.MusicMaker import MusicMaker
 from rill.tools.AttachmentMaker import AccentAttachmentMaker
 
-this_current_directory =  pathlib.Path.cwd().parent
+this_current_directory =  pathlib.Path.cwd()
 score =rill.ScoreTemplate()
 score_template = score()
 
