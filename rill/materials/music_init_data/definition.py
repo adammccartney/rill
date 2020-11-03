@@ -52,6 +52,10 @@ class InstrumentMusicData:
     talea: List[int] = field(default_factory=make_default_talea)
 
 
+    def __getitem__(self, key):
+        return getattr(self, key)
+
+
 from rill.materials.instruments.definition import instruments
 
 
@@ -75,8 +79,14 @@ def make_segment_music_default():
 
 @dataclass
 class SegmentMusicData:
+    """Stores a dictionary of segment defaults
+    Access through instance.instrument_music_data[instrument]
+    """
     instrument_music_data: Sequence[InstrumentMusicData] = field(
         default_factory=make_segment_music_default)
+
+    def __getitem__(self, key):
+        return getattr(self, key)
 
 
 if __name__ == '__main__':
