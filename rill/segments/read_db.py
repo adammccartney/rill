@@ -17,11 +17,11 @@ import abjad
 
 
 segment_A_pitch_data = db['segment_A_pitches']
-print(type(segment_A_pitch_data))
+print(segment_A_pitch_data)
 
-segment_A_cv3 = segment_A_pitch_data.chord_voice3
+segment_A_cv3 = str(segment_A_pitch_data.chord_voice3)
 
-print("segment_A_cv3:", type(segment_A_cv3))
+print("segment_A_cv3:", segment_A_cv3)
 
 test_pitch_segment = abjad.PitchSegment(segment_A_cv3)
 
