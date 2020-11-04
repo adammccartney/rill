@@ -118,7 +118,6 @@ class SegmentPitchData:
 
     @property
     def chord_voice1(self) -> str:
-        pitch_segment = self._chord_voice1
         pitch_segment_as_string = self._replace_brackets(self._chord_voice1)
         return pitch_segment_as_string
 
