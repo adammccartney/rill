@@ -2,12 +2,14 @@
 import shelve
 import abjad
 
+from pathlib import Path
+
 from rill.materials.music_init_data.definition import InstrumentMusicData
 from rill.materials.music_init_data.definition import SegmentMusicData
 
 
 up_two_dirs = Path.cwd().parents[1] # ../segments/
-db_path = parent / 'materials' / 'music_data' / 'music_data_shelve'
+db_path = up_two_dirs / 'materials' / 'music_data' / 'music_data_shelve'
 
 db = shelve.open(str(db_path))
 

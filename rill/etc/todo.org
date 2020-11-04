@@ -42,6 +42,14 @@
 :END:
  +  currently, in order to see how a set of music data objects we're calling up a Segment
  + initial solution to persist music data objects on a per segment basis to some sort of a db failed -> there was an issue with using mutable objects in a shelve db. I'm sure there is a way to set this up to work, possibly by using an OOdb. However, I'm going to try and keep things simple for now, see next todo for details
+*** DONE Simplify data storage for segment music data
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2020-11-04 Wed 14:08]
+:END:
+ + created two new classes SegmentPitchData and SegmentTaleaData
+ + their members are simple (strings and lists of ints, respectively)
+ + they can be pickled and stored in a shelve database, recalled on a per segment basis
+ + this will let us script (at least some of) the variable assignment that needs to happen for each segment
 *** IN-PROGRESS write generator script for "music data" files on a per segment basis
  + I'm going to exploit some of python's handy namespace rules and create a one module per segment to store the music initializer data
  + basically, there are two objects essential for this operation: "InstrumentMusicData" and "SegmentMusicData"
@@ -56,7 +64,7 @@
  + use of python's DataClass seems to facilitate working with (more) complex datatypes and custom classes
 
    - I'm trying to get around having to hand-hack the initialization of the MusicMaker objects: so I want to be able to generate the "definition.py" scripts on a per segment basis, and not have to tweak the output. So ideally, each "definition.py" would refer to an "init segment music" data class on a per instrument basis in each segment. This means that we could write a generator script for all instances of "definition.py" within the subdirectories of segments
-
+[[./segment_DataFlow.png]]
 *** DONE Write a member function in the MusicMaker class that tidies according to meter
 :LOGBOOK:
 - State "DONE"       from "TODO"       [2020-11-03 Tue 11:27]

@@ -1,4 +1,4 @@
-% Created 2020-11-02 Mon 15:35
+% Created 2020-11-04 Wed 14:14
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -16,10 +16,10 @@
 \usepackage{hyperref}
 \author{adam}
 \date{\today}
-\title{Define persistent data structure for material in segments}
+\title{New branch ensemble v2.0}
 \hypersetup{
  pdfauthor={adam},
- pdftitle={Define persistent data structure for material in segments},
+ pdftitle={New branch ensemble v2.0},
  pdfkeywords={},
  pdfsubject={},
  pdfcreator={Emacs 26.3 (Org mode 9.1.9)}, 
@@ -27,6 +27,82 @@
 \begin{document}
 
 \maketitle
+\section*{{\bfseries\sffamily DONE} Create new score template}
+\label{sec:org1e5c2be}
+\begin{itemize}
+\item update materials/instruments/definition.py
+\item update tools/ScoreTemplate.py
+\item test new Template by running ScoreTemplate.py locally
+\end{itemize}
+
+\section*{{\bfseries\sffamily DONE} Import new segment maker from marana}
+\label{sec:orgf8e824f}
+\begin{itemize}
+\item replace rill/tools/SegmentMaker.py with marana/tools/SegmentMaker.py
+\item compare differences, update functions:
+\begin{itemize}
+\item \_get\(_{\text{music}}\)\(_{\text{voices}}\)(self)
+\item \_get\(_{\text{staves}}\)(self)
+\item \_handle\(_{\text{time}}\)\(_{\text{signatures}}\)(self)
+\item \_sort\(_{\text{instruments}}\)\(_{\text{by}}\)\(_{\text{clef}}\)(self)
+\item run(self)
+\end{itemize}
+\end{itemize}
+
+\section*{{\bfseries\sffamily DONE} generate new structure for segments}
+\label{sec:org23fd2c5}
+\begin{itemize}
+\item recursively delete all existing subdirectories and files in segments
+\item import generator scripts from marana
+\item run `generateSegments.sh` on the empty segments directory
+\item rewrite DefGen.py to reflect structure of new score template
+\item update makefile in builds to reflect new segments
+\item delete all pdfs from builds/letter-portrait
+\item update segments.ily file
+\end{itemize}
+
+\section*{{\bfseries\sffamily DONE} Test build all segments and run make on the score}
+\label{sec:org8aaf0fa}
+
+
+\section*{{\bfseries\sffamily IN-PROGRESS} Design generator script for creating definition.py files}
+\label{sec:org814748f}
+\begin{itemize}
+\item 28-30. Oct 20: created new Dev branch and began working on
+defGen\(_{\text{v1.py}}\)
+\item define new classes that generate a "music code block" as output (use
+factory method design pattern)
+\item move mMakerGenerator into the MusicMaker module, so it can be
+imported into the `segment\_\$X/definition.py`
+\item test that output is building a coherant score
+\begin{itemize}
+\item redefine basic structure to reflect that it is possible to import music data initializer objects from database in a systematic way
+\end{itemize}
+\end{itemize}
+\section*{{\bfseries\sffamily CANCELED} Define workflow for "auditioning" and persisting music data init objects to db}
+\label{sec:org5c8fd03}
+\begin{itemize}
+\item currently, in order to see how a set of music data objects we're calling up a Segment
+\item initial solution to persist music data objects on a per segment basis to some sort of a db failed -> there was an issue with using mutable objects in a shelve db. I'm sure there is a way to set this up to work, possibly by using an OOdb. However, I'm going to try and keep things simple for now, see next todo for details
+\end{itemize}
+\section*{{\bfseries\sffamily DONE} Simplify data storage for segment music data}
+\label{sec:org421a52e}
+\begin{itemize}
+\item created two new classes SegmentPitchData and SegmentTaleaData
+\item their members are simple (strings and lists of ints, respectively)
+\item they can be pickled and stored in a shelve database, recalled on a per segment basis
+\item this will let us script (at least some of) the variable assignment that needs to happen for each segment
+\end{itemize}
+\section*{{\bfseries\sffamily IN-PROGRESS} write generator script for "music data" files on a per segment basis}
+\label{sec:org2d492e7}
+\begin{itemize}
+\item I'm going to exploit some of python's handy namespace rules and create a one module per segment to store the music initializer data
+\item basically, there are two objects essential for this operation: "InstrumentMusicData" and "SegmentMusicData"
+\item this means we can call the instance of "SegmentMusicData" that is in the segment scope in a way that supports scripting the definition files (basically the reason for this is to avoid hand-hacking the "definition.py" file
+\item \ldots{}but there will ultimately be a little hand hacking\ldots{} basically, I'm going to initialize the pair of objects mentioned above with their default values and then override on a per segment basis
+\end{itemize}
+\section*{{\bfseries\sffamily DONE} Define persistent data structure for material in segments}
+\label{sec:org627f3e2}
 \begin{itemize}
 \item worked through a couple of iterations that tried to use a NamedTuple to manage the data used to initialize the music functions as they are passed into the SegmentMaker member functions before being typeset as notation. Problem is that it is seemingly not so easy to use user defined and complex types in a namedtuple
 
@@ -36,4 +112,28 @@
 \item I'm trying to get around having to hand-hack the initialization of the MusicMaker objects: so I want to be able to generate the "definition.py" scripts on a per segment basis, and not have to tweak the output. So ideally, each "definition.py" would refer to an "init segment music" data class on a per instrument basis in each segment. This means that we could write a generator script for all instances of "definition.py" within the subdirectories of segments
 \end{itemize}
 \end{itemize}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./segment_DataFlow.png}
+\end{center}
+\section*{{\bfseries\sffamily DONE} Write a member function in the MusicMaker class that tidies according to meter}
+\label{sec:orgf866104}
+"clean up rhythm" member function is now taking music as input and re-grouping the rhythms according to the time signatures as passed in by the "time signature pairs" variable
+
+\section*{{\bfseries\sffamily DONE} Define a way to persist objects that will be later used to construct MusicMaker objects}
+\label{sec:org444c069}
+\begin{itemize}
+\item Going to do a couple of experiments with python's shelve object
+
+\item Test that you can access via Path
+\end{itemize}
+
+\section*{{\bfseries\sffamily TODO} Re-configure ScoreTemplate to reflect final instrumentation}
+\label{sec:org844d776}
+\section*{{\bfseries\sffamily TODO} Find solution for missing instrument name markups}
+\label{sec:org31af4fc}
+\section*{{\bfseries\sffamily TODO} Merge Dev branch into Ensemble}
+\label{sec:org5ff3713}
+
+\section*{{\bfseries\sffamily TODO} Find way to tag score with build time and git branch}
+\label{sec:org21e4c0f}
 \end{document}

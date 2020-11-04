@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-11-02 Mon 15:36 -->
+<!-- 2020-11-04 Wed 14:15 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>New branch ensemble v2.0</title>
@@ -230,9 +230,9 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">New branch ensemble v2.0</h1>
-<div id="outline-container-orgef20591" class="outline-2">
-<h2 id="orgef20591"><span class="done DONE">DONE</span> Create new score template</h2>
-<div class="outline-text-2" id="text-orgef20591">
+<div id="outline-container-org764361b" class="outline-2">
+<h2 id="org764361b"><span class="done DONE">DONE</span> Create new score template</h2>
+<div class="outline-text-2" id="text-org764361b">
 <ul class="org-ul">
 <li>update materials/instruments/definition.py</li>
 <li>update tools/ScoreTemplate.py</li>
@@ -241,9 +241,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org4e1dc5b" class="outline-2">
-<h2 id="org4e1dc5b"><span class="done DONE">DONE</span> Import new segment maker from marana</h2>
-<div class="outline-text-2" id="text-org4e1dc5b">
+<div id="outline-container-org2e02e2a" class="outline-2">
+<h2 id="org2e02e2a"><span class="done DONE">DONE</span> Import new segment maker from marana</h2>
+<div class="outline-text-2" id="text-org2e02e2a">
 <ul class="org-ul">
 <li>replace rill/tools/SegmentMaker.py with marana/tools/SegmentMaker.py</li>
 <li>compare differences, update functions:
@@ -258,9 +258,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orge294926" class="outline-2">
-<h2 id="orge294926"><span class="done DONE">DONE</span> generate new structure for segments</h2>
-<div class="outline-text-2" id="text-orge294926">
+<div id="outline-container-org8d9401d" class="outline-2">
+<h2 id="org8d9401d"><span class="done DONE">DONE</span> generate new structure for segments</h2>
+<div class="outline-text-2" id="text-org8d9401d">
 <ul class="org-ul">
 <li>recursively delete all existing subdirectories and files in segments</li>
 <li>import generator scripts from marana</li>
@@ -273,14 +273,14 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orga4f6017" class="outline-2">
-<h2 id="orga4f6017"><span class="done DONE">DONE</span> Test build all segments and run make on the score</h2>
+<div id="outline-container-org8aba6ed" class="outline-2">
+<h2 id="org8aba6ed"><span class="done DONE">DONE</span> Test build all segments and run make on the score</h2>
 </div>
 
 
-<div id="outline-container-org9d6d0b5" class="outline-2">
-<h2 id="org9d6d0b5"><span class="todo IN_PROGRESS">IN-PROGRESS</span> Design generator script for creating definition.py files</h2>
-<div class="outline-text-2" id="text-org9d6d0b5">
+<div id="outline-container-org1d503e3" class="outline-2">
+<h2 id="org1d503e3"><span class="todo IN_PROGRESS">IN-PROGRESS</span> Design generator script for creating definition.py files</h2>
+<div class="outline-text-2" id="text-org1d503e3">
 <ul class="org-ul">
 <li>28-30. Oct 20: created new Dev branch and began working on
 defGen<sub>v1.py</sub></li>
@@ -288,14 +288,47 @@ defGen<sub>v1.py</sub></li>
 factory method design pattern)</li>
 <li>move mMakerGenerator into the MusicMaker module, so it can be
 imported into the `segment_$X/definition.py`</li>
-<li>test that output is building a coherant score</li>
+<li>test that output is building a coherant score
+<ul class="org-ul">
+<li>redefine basic structure to reflect that it is possible to import music data initializer objects from database in a systematic way</li>
+</ul></li>
 </ul>
 </div>
 </div>
-
-<div id="outline-container-org3833049" class="outline-2">
-<h2 id="org3833049"><span class="done DONE">DONE</span> Define persistent data structure for material in segments</h2>
-<div class="outline-text-2" id="text-org3833049">
+<div id="outline-container-orgb9ca626" class="outline-2">
+<h2 id="orgb9ca626"><span class="done CANCELED">CANCELED</span> Define workflow for "auditioning" and persisting music data init objects to db</h2>
+<div class="outline-text-2" id="text-orgb9ca626">
+<ul class="org-ul">
+<li>currently, in order to see how a set of music data objects we're calling up a Segment</li>
+<li>initial solution to persist music data objects on a per segment basis to some sort of a db failed -&gt; there was an issue with using mutable objects in a shelve db. I'm sure there is a way to set this up to work, possibly by using an OOdb. However, I'm going to try and keep things simple for now, see next todo for details</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org75f1dad" class="outline-2">
+<h2 id="org75f1dad"><span class="done DONE">DONE</span> Simplify data storage for segment music data</h2>
+<div class="outline-text-2" id="text-org75f1dad">
+<ul class="org-ul">
+<li>created two new classes SegmentPitchData and SegmentTaleaData</li>
+<li>their members are simple (strings and lists of ints, respectively)</li>
+<li>they can be pickled and stored in a shelve database, recalled on a per segment basis</li>
+<li>this will let us script (at least some of) the variable assignment that needs to happen for each segment</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd87fce9" class="outline-2">
+<h2 id="orgd87fce9"><span class="todo IN_PROGRESS">IN-PROGRESS</span> write generator script for "music data" files on a per segment basis</h2>
+<div class="outline-text-2" id="text-orgd87fce9">
+<ul class="org-ul">
+<li>I'm going to exploit some of python's handy namespace rules and create a one module per segment to store the music initializer data</li>
+<li>basically, there are two objects essential for this operation: "InstrumentMusicData" and "SegmentMusicData"</li>
+<li>this means we can call the instance of "SegmentMusicData" that is in the segment scope in a way that supports scripting the definition files (basically the reason for this is to avoid hand-hacking the "definition.py" file</li>
+<li>&#x2026;but there will ultimately be a little hand hacking&#x2026; basically, I'm going to initialize the pair of objects mentioned above with their default values and then override on a per segment basis</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9fc91f7" class="outline-2">
+<h2 id="org9fc91f7"><span class="done DONE">DONE</span> Define persistent data structure for material in segments</h2>
+<div class="outline-text-2" id="text-org9fc91f7">
 <ul class="org-ul">
 <li>worked through a couple of iterations that tried to use a NamedTuple to manage the data used to initialize the music functions as they are passed into the SegmentMaker member functions before being typeset as notation. Problem is that it is seemingly not so easy to use user defined and complex types in a namedtuple</li>
 
@@ -305,32 +338,50 @@ imported into the `segment_$X/definition.py`</li>
 <li>I'm trying to get around having to hand-hack the initialization of the MusicMaker objects: so I want to be able to generate the "definition.py" scripts on a per segment basis, and not have to tweak the output. So ideally, each "definition.py" would refer to an "init segment music" data class on a per instrument basis in each segment. This means that we could write a generator script for all instances of "definition.py" within the subdirectories of segments</li>
 </ul></li>
 </ul>
+
+<div class="figure">
+<p><img src="./segment_DataFlow.png" alt="segment_DataFlow.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3c4bc75" class="outline-2">
+<h2 id="org3c4bc75"><span class="done DONE">DONE</span> Write a member function in the MusicMaker class that tidies according to meter</h2>
+<div class="outline-text-2" id="text-org3c4bc75">
+<p>
+"clean up rhythm" member function is now taking music as input and re-grouping the rhythms according to the time signatures as passed in by the "time signature pairs" variable
+</p>
 </div>
 </div>
 
-<div id="outline-container-org4fe3f1d" class="outline-2">
-<h2 id="org4fe3f1d"><span class="todo TODO">TODO</span> Write a member function in the MusicMaker class that tidies according to meter</h2>
+<div id="outline-container-org0a7e857" class="outline-2">
+<h2 id="org0a7e857"><span class="done DONE">DONE</span> Define a way to persist objects that will be later used to construct MusicMaker objects</h2>
+<div class="outline-text-2" id="text-org0a7e857">
+<ul class="org-ul">
+<li>Going to do a couple of experiments with python's shelve object</li>
+
+<li>Test that you can access via Path</li>
+</ul>
+</div>
 </div>
 
-<div id="outline-container-orgc5708ea" class="outline-2">
-<h2 id="orgc5708ea"><span class="todo TODO">TODO</span> Re-configure ScoreTemplate to reflect final instrumentation</h2>
+<div id="outline-container-org3cdfdbd" class="outline-2">
+<h2 id="org3cdfdbd"><span class="todo TODO">TODO</span> Re-configure ScoreTemplate to reflect final instrumentation</h2>
 </div>
-<div id="outline-container-orgc9d74af" class="outline-2">
-<h2 id="orgc9d74af"><span class="todo TODO">TODO</span> Find solution for missing instrument name markups</h2>
+<div id="outline-container-org4365102" class="outline-2">
+<h2 id="org4365102"><span class="todo TODO">TODO</span> Find solution for missing instrument name markups</h2>
 </div>
-
-
-<div id="outline-container-org8093abf" class="outline-2">
-<h2 id="org8093abf"><span class="todo TODO">TODO</span> Merge Dev branch into Ensemble</h2>
+<div id="outline-container-orgf9f13bd" class="outline-2">
+<h2 id="orgf9f13bd"><span class="todo TODO">TODO</span> Merge Dev branch into Ensemble</h2>
 </div>
 
-<div id="outline-container-orgcedd665" class="outline-2">
-<h2 id="orgcedd665"><span class="todo TODO">TODO</span> Find way to tag score with build time and git branch</h2>
+<div id="outline-container-org3f95efc" class="outline-2">
+<h2 id="org3f95efc"><span class="todo TODO">TODO</span> Find way to tag score with build time and git branch</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: adam</p>
-<p class="date">Created: 2020-11-02 Mon 15:36</p>
+<p class="date">Created: 2020-11-04 Wed 14:15</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

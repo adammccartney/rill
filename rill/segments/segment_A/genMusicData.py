@@ -1,18 +1,29 @@
+import sys
 
+var = sys.argv[1]
+segment_name = f"segment_{var}"  # used to recall music data from db
+
+
+pitch_data_key = f"{segment_name}_pitches"
+talea_data_key = f"{segment_name}_talea"
+
+music_data = f"""
 import shelve
 import abjad
+
+from pathlib import Path
 
 from rill.materials.music_init_data.definition import InstrumentMusicData
 from rill.materials.music_init_data.definition import SegmentMusicData
 
 
 up_two_dirs = Path.cwd().parents[1] # ../segments/
-db_path = parent / 'materials' / 'music_data' / 'music_data_shelve'
+db_path = up_two_dirs / 'materials' / 'music_data' / 'music_data_shelve'
 
 db = shelve.open(str(db_path))
 
-segment_TEST_pitch_data = db['segment_TEST_pitches']
-segment_TEST_talea_data = db['segment_TEST_talea']
+{segment_name}_pitch_data = db['{pitch_data_key}']
+{segment_name}_talea_data = db['{talea_data_key}']
 
 Flute1_music_data = InstrumentMusicData()
 Flute2_music_data = InstrumentMusicData()
@@ -33,3 +44,8 @@ Violin7_music_data = InstrumentMusicData()
 Viola_music_data = InstrumentMusicData()
 
 segment_music_data = SegmentMusicData()
+"""
+
+output_file = open('music_data.py', 'w')
+output_file.write(music_data)
+output_file.close()

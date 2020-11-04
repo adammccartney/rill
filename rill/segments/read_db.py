@@ -1,5 +1,6 @@
 import shelve
-import re
+import abjad
+
 
 from pathlib import Path
 
@@ -12,8 +13,6 @@ db = shelve.open(str(db_path))
 
 #for key in db:
 #    print(key)
-
-import abjad
 
 
 segment_A_pitch_data = db['segment_A_pitches']
