@@ -106,13 +106,20 @@ class SegmentPitchData:
     _tremolo_voice2: str = field(default_factory=make_empty_string)
 
     def _replace_brackets(self, pitch_segment_as_string):
-        pitch_segment = re.sub("<|>", '"', pitch_segment_as_string)
-        return pitch_segment
-    
+        if pitch_segment_as_string[0] == '<':
+            pitch_string = pitch_segment_as_string[1:]
+        else:
+            raise TypeError("Cannot replace ", pitch_segment_as_string[0])
+        if pitch_string[-1] == '>':
+            final_pitch_string = pitch_string[:-1]
+        else:
+            raise TypeError("Cannont replace ", pitch_string[-1])
+        return final_pitch_string
+
     @property
     def chord_voice1(self) -> str:
         pitch_segment = self._chord_voice1
-        pitch_segment_as_string = self._replace_brackets(pitch_segment)
+        pitch_segment_as_string = self._replace_brackets(self._chord_voice1)
         return pitch_segment_as_string
 
     @chord_voice1.setter
@@ -174,6 +181,18 @@ class SegmentPitchData:
         self._tremolo_voice1 = v
 
 
+def make_empty_list():
+    return []
+
+@dataclass
+class SegmentTaleaData:
+    "Stores rhythmic data as lists of integers"
+    syncopated_counts: List[int] = field(default_factory=make_empty_list)
+    euclidean_counts: List[int] = field(default_factory=make_empty_list)
+    pedal_tone_counts: List[int] = field(default_factory=make_empty_list)
+    short_percussive_counts: List[int] = field(default_factory=make_empty_list)
+
+
 if __name__ == '__main__':
    # default_init_data = InstrumentMusicData()
    # print(default_init_data)
@@ -195,6 +214,8 @@ if __name__ == '__main__':
     default_pitch_materials += chord_voice["red"][5][0:3]
     default_pitch_data = str(default_pitch_materials)
     test_segment_pitch_data = SegmentPitchData(_chord_voice3=default_pitch_data)
+    test_segment_talea_data = SegmentTaleaData(syncopated_counts=[-2, 2])
     test_segment_cv3_pitch_segment = test_segment_pitch_data.chord_voice3
     print(test_segment_pitch_data)
     print(test_segment_cv3_pitch_segment)
+    print(test_segment_talea_data)
