@@ -106,9 +106,9 @@ class SegmentPitchData:
     _tremolo_voice2: str = field(default_factory=make_empty_string)
 
     def _replace_brackets(self, pitch_segment_as_string):
-        pitch_segment = re.sub(r'<|>', r'"', pitch_segment_as_string)
+        pitch_segment = re.sub("<|>", '"', pitch_segment_as_string)
         return pitch_segment
-
+    
     @property
     def chord_voice1(self) -> str:
         pitch_segment = self._chord_voice1

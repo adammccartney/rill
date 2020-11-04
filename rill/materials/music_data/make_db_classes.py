@@ -1,22 +1,28 @@
 import shelve
 
 from rill.materials.music_init_data.definition import (
-    InstrumentMusicData,
-    SegmentMusicData,
-    )
+    SegmentPitchData,
+)
 
-from rill.materials.instruments.definition import instruments
-
-from pathlib import Path
-
-default_vals = InstrumentMusicData()
-
-default_instrument_data = InstrumentMusicData
-default_segment_data = SegmentMusicData
+from rill.materials.pitch.definition import chord_voice
 
 db = shelve.open('music_data_shelve')
 
-db['default_instrument_data'] = default_instrument_data()
-db['default_segment_data'] = default_segment_data()
+segmentA_cv3_pitch_materials = chord_voice["black"][5][0:3]
+segmentA_cv3_pitch_materials += chord_voice["red"][5][0:3]
+segmentA_cv3_pitches = str(segmentA_cv3_pitch_materials)
+
+segmentA_pitch_data = SegmentPitchData(_chord_voice3=segmentA_cv3_pitches)
+
+
+db['segment_A_pitches'] = segmentA_pitch_data
 
 db.close()
+
+if __name__ == '__main__':
+    db = shelve.open('music_data_shelve')
+    for key in db:
+        print(key)
+    segment_A_pitch_data = db['segment_A_pitches']
+    print(segment_A_pitch_data.chord_voice3)
+    db.close()
