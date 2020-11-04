@@ -180,16 +180,57 @@ class SegmentPitchData:
         self._tremolo_voice1 = v
 
 
-def make_empty_list():
-    return []
+def make_sync_talea():
+    return [-2, 2]
+
+def make_euclid_talea():
+    return [3, 4, 4]
+
+def make_pedal_talea():
+    return [20]
+
+def make_perc_talea():
+    return [-1, 1, -1, -1, 1, 1, -1, -1]
 
 @dataclass
 class SegmentTaleaData:
     "Stores rhythmic data as lists of integers"
-    syncopated_counts: List[int] = field(default_factory=make_empty_list)
-    euclidean_counts: List[int] = field(default_factory=make_empty_list)
-    pedal_tone_counts: List[int] = field(default_factory=make_empty_list)
-    short_percussive_counts: List[int] = field(default_factory=make_empty_list)
+    _syncopated_counts: List[int] = field(default_factory=make_sync_talea)
+    _euclidean_counts: List[int] = field(default_factory=make_euclid_talea)
+    _pedal_tone_counts: List[int] = field(default_factory=make_pedal_talea)
+    _short_percussive_counts: List[int] = field(default_factory=make_perc_talea)
+
+    @property
+    def syncopated_counts(self) -> list:
+        return self._syncopated_counts
+
+    @syncopated_counts.setter
+    def syncopated_counts(self, sync_counts: List[int]) -> None:
+        self._syncopated_counts = sync_counts
+
+    @property
+    def euclidean_counts(self) -> list:
+        return self._euclidean_counts
+
+    @euclidean_counts.setter
+    def euclidean_counts(self, sync_counts: List[int]) -> None:
+        self._euclidean_counts = sync_counts
+
+    @property
+    def pedal_tone_counts(self) -> list:
+        return self._pedal_tone_counts
+
+    @pedal_tone_counts.setter
+    def pedal_tone_counts(self, sync_counts: List[int]) -> None:
+        self._pedal_tone_counts = sync_counts
+
+    @property
+    def short_percussive_counts(self) -> list:
+        return self._short_percussive_counts
+
+    @short_percussive_counts.setter
+    def short_percussive_counts(self, sync_counts: List[int]) -> None:
+        self._short_percussive_counts = sync_counts
 
 
 if __name__ == '__main__':
@@ -213,7 +254,7 @@ if __name__ == '__main__':
     default_pitch_materials += chord_voice["red"][5][0:3]
     default_pitch_data = str(default_pitch_materials)
     test_segment_pitch_data = SegmentPitchData(_chord_voice3=default_pitch_data)
-    test_segment_talea_data = SegmentTaleaData(syncopated_counts=[-2, 2])
+    test_segment_talea_data = SegmentTaleaData()
     test_segment_cv3_pitch_segment = test_segment_pitch_data.chord_voice3
     print(test_segment_pitch_data)
     print(test_segment_cv3_pitch_segment)
