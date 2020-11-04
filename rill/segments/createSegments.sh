@@ -14,6 +14,7 @@ do
     touch __layout__.py
     touch definition.py
     touch illustration.ly
+    touch music_data.py
     touch .optimization
     cd ..
 done
