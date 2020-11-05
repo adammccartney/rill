@@ -74,25 +74,131 @@
     ragged-right = ##t
     \context {
       \Staff
-      \name ViolinStaff
-      \type Engraver_Group
+      \name FluteOneStaff
       \alias Staff
-      instrumentName = "Violin"
-      shortInstrumentName = "Vn."
+      instrumentName = "flute1"
+      shortInstrumentName = "fl.1"
     }
     \context {
-      \name MonosynthStaff
-      \type Engraver_Group
+      \Staff
+      \name FluteThreeStaff
       \alias Staff
-      instrumentName = "Monosynth"
-      shortInstrumentName = "My."
+      instrumentName = "flute2"
+      shortInstrumentName = "fl.2"
     }
     \context {
-      \name PolysynthStaff
-      \type Engraver_Group
+      \Staff
+      \name FluteFourStaff
       \alias Staff
-      instrumentName = "Polysynth"
-      shortInstrumentName = "Py."
+      instrumentName = "flute4"
+      shortInstrumentName = "fl.4"
     }
-  }
+    \context {
+      \Staff
+      \name BbclarinetOneStaff
+      \alias Staff
+      instrumentName = "Bb Clarinet"
+      shortInstrumentName = "cl."
+    }
+    \context {
+      \StaffGroup
+      \name WoodwindStaffGroup
+      \alias StaffGroup
+      \accepts FluteOneStaff
+      \accepts FluteTwoStaff
+      \accepts FluteThreeStaff
+      \accepts FluteFourStaff
+      \accepts BbclarinetOneStaff
+    }
+    \context {
+      \Staff
+      \name VibraphoneStaff
+      \alias Staff
+      instrumentName = "vibraphone"
+      shortInstrumentName = "vibes."
+    }
+    \context {
+     \StaffGroup
+     \name PercussionStaffGroup
+     \alias StaffGroup
+     \accepts VibraphoneStaff
+     }
+     \context {
+      \Staff
+      \name ViolinOneStaff
+      \alias Staff
+      instrumentName = "Violin1"
+      shortInstrumentName = "vn.1"
+    }
+     \context {
+      \Staff
+      \name ViolinTwoStaff
+      \alias Staff
+      instrumentName = "Violin2"
+      shortInstrumentName = "vn.2"
+    }
+     \context {
+      \Staff
+      \name ViolinThreeStaff
+      \alias Staff
+      instrumentName = "Violin3"
+      shortInstrumentName = "vn.3"
+    }
+     \context {
+      \Staff
+      \name ViolinFourStaff
+      \alias Staff
+      instrumentName = "Violin4"
+      shortInstrumentName = "vn.4"
+    }
+     \context {
+      \Staff
+      \name ViolinFiveStaff
+      \alias Staff
+      instrumentName = "Violin5"
+      shortInstrumentName = "vn.5"
+    }
+     \context {
+      \Staff
+      \name ViolinSixStaff
+      \alias Staff
+      instrumentName = "Violin6"
+      shortInstrumentName = "vn.6"
+    }
+     \context {
+      \Staff
+      \name ViolinSevenStaff
+      \alias Staff
+      instrumentName = "Violin7"
+      shortInstrumentName = "vn.7"
+    }
+     \context {
+      \Staff
+      \name ViolinEightStaff
+      \alias Staff
+      instrumentName = "Violin8"
+      shortInstrumentName = "vn.8"
+    }
+     \context {
+      \Staff
+      \name ViolaStaff
+      \alias Staff
+      instrumentName = "Viola"
+      shortInstrumentName = "va."
+    }
+    \context {
+      \StaffGroup
+      \name StringsStaffGroup
+      \alias StaffGroup
+      \accept ViolinOneStaff
+      \accept ViolinTwoStaff
+      \accept ViolinThreeStaff
+      \accept ViolinFourStaff
+      \accept ViolinFiveStaff
+      \accept ViolinSixStaff
+      \accept ViolinSevenStaff
+      \accept ViolinEightStaff
+      \accept ViolaStaff
+    }
+}
 
