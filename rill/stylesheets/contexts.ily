@@ -63,6 +63,8 @@
         \alias ChoirStaff
         systemStartDelimiter = #'SystemStartBar
         \accepts WoodwindStaffGroup
+        \accepts PercussionStaffGroup
+        \accepts StringsStaffGroup
     }
 
     % SCORE
