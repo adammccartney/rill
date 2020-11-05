@@ -62,6 +62,7 @@
         \type Engraver_group
         \alias ChoirStaff
         systemStartDelimiter = #'SystemStartBar
+        \accepts WoodwindStaffGroup
     }
 
     % SCORE
