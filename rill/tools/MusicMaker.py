@@ -13,11 +13,13 @@ class MusicMaker(object):
         denominator,
         pitches,
         attachment_makers=None,
+        override_makers=None,
     ):
         self.counts = counts
         self.denominator = denominator
         self.pitches = pitches
         self.attachment_makers = attachment_makers or []
+        self.override_makers = override_makers or []
 
     def __call__(self, time_signature_pairs):
         music = self._make_basic_rhythm(
@@ -28,7 +30,8 @@ class MusicMaker(object):
         rcleaned_music = self._clean_up_rhythm(music, time_signature_pairs)
         pitched_music = self._add_pitches(rcleaned_music, self.pitches)
         articulate_music = self._add_attachments(pitched_music)
-        return articulate_music
+        music_with_overrides = self._add_overrides(articulate_music)
+        return music_with_overrides
 
     def _clean_up_rhythm(self, music, time_signature_pairs):
         """
@@ -103,10 +106,23 @@ class MusicMaker(object):
                 attachment_maker(music)
                 return music
             except TypeError:
-                print("Expected a selection as input")
+                print(attachment_maker, " is not an attachment maker")
         elif isinstance(self.attachment_makers, list):
             for attachment_maker in self.attachment_makers:
                 attachment_maker(music)
+            return music
+
+    def _add_overrides(self, music):
+        if not isinstance(self.attachment_makers, list):
+            try:
+                override_maker = self.override_makers
+                override_maker(music)
+                return music
+            except TypeError:
+                print(override_maker, " is not an override maker")
+        elif isinstance(self.attachment_makers, list):
+            for override_maker in self.override_makers:
+                override_maker(music)
             return music
 
 
