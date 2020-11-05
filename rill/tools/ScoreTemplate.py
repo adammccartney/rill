@@ -55,6 +55,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
             name="Flute1",
+            lilypond_type="FluteOneStaff",
             tag=tag,
         )
         abjad.annotate(
@@ -77,6 +78,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
             name="Flute2",
+            lilypond_type="FluteTwoStaff",
             tag=tag,
         )
         abjad.annotate(
@@ -99,6 +101,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
             name="Flute3",
+            lilypond_type="FluteThreeStaff"
             tag=tag,
         )
         abjad.annotate(
