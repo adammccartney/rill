@@ -101,7 +101,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
             name="Flute3",
-            lilypond_type="FluteThreeStaff"
+            lilypond_type="FluteThreeStaff",
             tag=tag,
         )
         abjad.annotate(
@@ -116,6 +116,29 @@ class ScoreTemplate(abjad.ScoreTemplate):
         abjad.setting(fluteThree_staff).midi_instrument = abjad.scheme.Scheme(
                 'flute', force_quotes=True)
 
+        # Flute Four
+        markup_voice = abjad.Voice(name="Flute4_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="Flute4_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="Flute4_Dynamics_Voice", tag=tag)
+        fluteFour_staff = abjad.Staff(
+            [markup_voice, music_voice, dynamics_voice],
+            simultaneous=True,
+            name="Flute4",
+            lilypond_type="FluteFourStaff",
+            tag=tag,
+        )
+        abjad.annotate(
+            fluteFour_staff,
+            "default_instrument",
+            rill.instruments["Flute4"],
+        )
+        abjad.annotate(fluteFour_staff, "default_clef", abjad.Clef("treble"))
+        fluteFour_tag = abjad.LilyPondLiteral(
+            r"\tag #'fluteFour", format_slot='before')
+        abjad.attach(fluteFour_tag, fluteFour_staff)
+        abjad.setting(fluteFour_staff).midi_instrument = abjad.scheme.Scheme(
+                'flute', force_quotes=True)
+
         # Bb Clarinet
         markup_voice = abjad.Voice(name="Bbclarinet1_Markup_Voice", tag=tag)
         music_voice = abjad.Voice(name="Bbclarinet1_Music_Voice", tag=tag)
@@ -125,6 +148,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
             name="Bbclarinet1",
+            lilypond_type="BbclarinetOneStaff",
             tag=tag,
         )
         abjad.annotate(
@@ -147,6 +171,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
             name="Vibraphone",
+            lilypond_type="VibraphoneStaff",
             tag=tag,
         )
         abjad.annotate(
@@ -170,6 +195,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
             name="Violin1",
+            lilypond_type="ViolinOneStaff",
             tag=tag,
         )
         abjad.annotate(
@@ -192,6 +218,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
             name="Violin2",
+            lilypond_type="ViolinTwoStaff",
             tag=tag,
         )
         abjad.annotate(
@@ -214,6 +241,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
             name="Violin3",
+            lilypond_type="ViolinThreeStaff",
             tag=tag,
         )
         abjad.annotate(
@@ -236,6 +264,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
             name="Violin4",
+            lilypond_type="ViolinFourStaff",
             tag=tag,
         )
         abjad.annotate(
@@ -258,6 +287,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
             name="Violin5",
+            lilypond_type="ViolinFiveStaff",
             tag=tag,
         )
         abjad.annotate(
@@ -280,6 +310,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
             name="Violin6",
+            lilypond_type="ViolinSixStaff",
             tag=tag,
         )
         abjad.annotate(
@@ -302,6 +333,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
             name="Violin7",
+            lilypond_type="ViolinSevenStaff",
             tag=tag,
         )
         abjad.annotate(
@@ -317,6 +349,31 @@ class ScoreTemplate(abjad.ScoreTemplate):
         abjad.setting(violinSeven_staff).midi_instrument = abjad.scheme.Scheme(
                 'violin', force_quotes=True)
 
+        # Violin8
+        markup_voice = abjad.Voice(name="Violin8_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="Violin8_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="Violin8_Dynamics_Voice", tag=tag)
+        violinEight_staff = abjad.Staff(
+            [markup_voice, music_voice, dynamics_voice],
+            simultaneous=True,
+            name="Violin8",
+            lilypond_type="ViolinEightStaff",
+            tag=tag,
+        )
+        abjad.annotate(
+            violinEight_staff,
+            "default_instrument",
+            rill.instruments["Violin8"],
+        )
+        abjad.annotate(violinEight_staff, "default_clef", abjad.Clef("treble"))
+        violinEight_tag = abjad.LilyPondLiteral(
+            r"\tag #'violinEight", format_slot='before'
+        )
+        abjad.attach(violinEight_tag, violinEight_staff)
+        abjad.setting(violinEight_staff).midi_instrument = abjad.scheme.Scheme(
+                'violin', force_quotes=True)
+
+
         # Viola
         markup_voice = abjad.Voice(name="Viola_Markup_Voice", tag=tag)
         music_voice = abjad.Voice(name="Viola_Music_Voice", tag=tag)
@@ -325,6 +382,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
             name="Viola",
+            type="ViolaStaff",
             tag=tag,
         )
         abjad.annotate(
@@ -346,10 +404,11 @@ class ScoreTemplate(abjad.ScoreTemplate):
                     fluteOne_staff,
                     fluteTwo_staff,
                     fluteThree_staff,
+                    fluteFour_staff,
                     Bbclarinet_staff
                 ],
                 simultaneous=True,
-                lilypond_type="StaffGroup",
+                lilypond_type="WoodwindStaffGroup",
                 name="Woodwind_Staff_Group",
                 tag=tag,
                 )
@@ -358,7 +417,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
         percussion_staff_group = abjad.StaffGroup(
                 [vibraphone_staff],
                 simultaneous=True,
-                lilypond_type="StaffGroup",
+                lilypond_type="PercussionStaffGroup",
                 name="Percussion_Staff_Group",
                 tag=tag,
                 )
@@ -373,10 +432,11 @@ class ScoreTemplate(abjad.ScoreTemplate):
                     violinFive_staff,
                     violinSix_staff,
                     violinSeven_staff,
+                    violinEight_staff,
                     viola_staff
                 ],
                 simultaneous=True,
-                lilypond_type="StaffGroup",
+                lilypond_type="StringStaffGroup",
                 name="String_Staff_Group",
                 tag=tag,
                 )
