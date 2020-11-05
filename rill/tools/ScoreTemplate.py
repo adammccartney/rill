@@ -21,6 +21,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
             {"fl1": "Flute1_Music_Voice",
              "fl2": "Flute2_Music_Voice",
              "fl3": "Flute3_Music_Voice",
+             "fl4": "Flute4_Music_Voice",
              "Bbcl1": "Bbclarinet1_Music_Voice",
              "vb": "vibraphone_Music_Voice",
              "vn1": "Violin1_Music_Voice",
@@ -30,6 +31,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
              "vn5": "Violin5_Music_Voice",
              "vn6": "Violin6_Music_Voice",
              "vn7": "Violin7_Music_Voice",
+             "vn8": "Violin8_Music_Voice",
              "va": "Viola_Music_Voice",
              }
             )
