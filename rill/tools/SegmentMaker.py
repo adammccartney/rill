@@ -57,6 +57,7 @@ class RhythmDefinition(object):
                 self._score["Flute1_Music_Voice"],
                 self._score["Flute2_Music_Voice"],
                 self._score["Flute3_Music_Voice"],
+                self._score["Flute4_Music_Voice"],
                 self._score["Bbclarinet1_Music_Voice"],
                 self._score["Vibraphone_Music_Voice"],
                 self._score["Violin1_Music_Voice"],
@@ -66,6 +67,7 @@ class RhythmDefinition(object):
                 self._score["Violin5_Music_Voice"],
                 self._score["Violin6_Music_Voice"],
                 self._score["Violin7_Music_Voice"],
+                self._score["Violin8_Music_Voice"],
                 self._score["Viola_Music_Voice"],
         )
 
@@ -74,6 +76,7 @@ class RhythmDefinition(object):
                 self._score["Flute1"],
                 self._score["Flute2"],
                 self._score["Flute3"],
+                self._score["Flute4"],
                 self._score["Bbclarinet1"],
                 self._score["Vibraphone"],
                 self._score["Violin1"],
@@ -83,6 +86,7 @@ class RhythmDefinition(object):
                 self._score["Violin5"],
                 self._score["Violin6"],
                 self._score["Violin7"],
+                self._score["Violin8"],
                 self._score["Viola"],
         )
 
@@ -287,6 +291,7 @@ class SegmentMaker(abjad.SegmentMaker):
                 self._score["Flute1_Music_Voice"],
                 self._score["Flute2_Music_Voice"],
                 self._score["Flute3_Music_Voice"],
+                self._score["Flute4_Music_Voice"],
                 self._score["Bbclarinet1_Music_Voice"],
                 self._score["Vibraphone_Music_Voice"],
                 self._score["Violin1_Music_Voice"],
@@ -296,6 +301,7 @@ class SegmentMaker(abjad.SegmentMaker):
                 self._score["Violin5_Music_Voice"],
                 self._score["Violin6_Music_Voice"],
                 self._score["Violin7_Music_Voice"],
+                self._score["Violin8_Music_Voice"],
                 self._score["Viola_Music_Voice"],
                 )
 
