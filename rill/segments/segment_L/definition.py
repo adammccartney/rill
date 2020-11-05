@@ -1,29 +1,20 @@
 
 import copy
-import pathlib
+from pathlib import Path
 
 import abjad
 import rill
 
-import rill.tools.FuzzyHarmony as FuzzyHarmony
+from rill.tools.ScoreTemplate import ScoreTemplate
 
-from rill.tools.accents import tenuto as tenuto
-from rill.tools.barlines import barline as barline
-from rill.tools.clef import clef as clef
-from rill.tools.FuzzyHarmony import Diad as Diad
-from rill.tools.FuzzyHarmony import LegatoArpeggio as LegatoArpeggio
-from rill.tools.material_methods import transpose_segment as transpose_segment
-from rill.tools.tremolo import tremolo as tremolo
-
-from abjad import NamedPitch as NamedPitch
 from typing import List
 
 #####################
 # Setting up segment ### [L] ###
 #####################
 
-this_current_directory =  pathlib.Path(__file__).parent 
-score =rill.ScoreTemplate()
+this_current_directory =  Path.cwd()
+score = ScoreTemplate()
 score_template = score()
 
 segment_maker = rill.SegmentMaker(
@@ -113,6 +104,26 @@ rhythm_definition.dynamics = []
 rhythm_definition.markup = []
 
 
+# Flute4
+#-----------------------------------------------#
+rhythm_definition = segment_maker.define_rhythm()
+rhythm_definition.instrument_name = "Flute4"
+
+rhythm_definition.notes = [
+        ("r1"),
+        ("r2."),
+        ("r2."),
+        ("r1"),
+        ("r2."),
+        ("r2."),
+]
+
+rhythm_definition.dynamics = []
+
+rhythm_definition.markup = []
+
+
+
 
 # Bbclarinet
 #------------------------------------------------#
@@ -132,7 +143,7 @@ rhythm_definition.dynamics = []
 
 rhythm_definition.markup = []
 
-# Vibraphone 
+# Vibraphone
 #------------------------------------------------#
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = "Vibraphone"
@@ -273,6 +284,25 @@ rhythm_definition.markup = []
 #------------------------------------------------#
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = "Violin7"
+
+
+rhythm_definition.notes = [
+        ("r1"),
+        ("r2."),
+        ("r2."),
+        ("r1"),
+        ("r2."),
+        ("r2."),
+]
+
+rhythm_definition.dynamics = []
+
+rhythm_definition.markup = []
+
+# Violin8
+#------------------------------------------------#
+rhythm_definition = segment_maker.define_rhythm()
+rhythm_definition.instrument_name = "Violin8"
 
 
 rhythm_definition.notes = [

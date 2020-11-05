@@ -166,6 +166,7 @@ class mMakerGenerator(object):
 if __name__ == '__main__':
     import abjad
     from rill.tools.AttachmentMaker import AccentAttachmentMaker
+    from rill.tools.OverrideMaker import NoteHeadOverrideMaker
 
     # THIS IS THE INPUT TO MY MUSICAL IDEA
     time_signature_pairs = [(3, 4), (5, 16), (3, 8), (4, 4)]
@@ -184,6 +185,8 @@ if __name__ == '__main__':
         attachment=abjad.Staccato()
     )
 
+    harmonic_override_maker = NoteHeadOverrideMaker('harmonic')
+
     attachment_makers = [tenuto_attachment_maker, staccato_attachment_maker]
 
     my_musicmaker = MusicMaker(
@@ -194,6 +197,7 @@ if __name__ == '__main__':
             tenuto_attachment_maker,
             staccato_attachment_maker,
         ],
+        override_makers=[harmonic_override_maker],
     )
     music = my_musicmaker(time_signature_pairs)
     staff = abjad.Staff([music])

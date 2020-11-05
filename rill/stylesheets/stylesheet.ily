@@ -81,10 +81,17 @@
     }
     \context {
       \Staff
-      \name FluteThreeStaff
+      \name FluteTwoStaff
       \alias Staff
       instrumentName = "flute2"
       shortInstrumentName = "fl.2"
+    }
+    \context {
+      \Staff
+      \name FluteThreeStaff
+      \alias Staff
+      instrumentName = "flute3"
+      shortInstrumentName = "fl.3"
     }
     \context {
       \Staff
@@ -190,15 +197,15 @@
       \StaffGroup
       \name StringsStaffGroup
       \alias StaffGroup
-      \accept ViolinOneStaff
-      \accept ViolinTwoStaff
-      \accept ViolinThreeStaff
-      \accept ViolinFourStaff
-      \accept ViolinFiveStaff
-      \accept ViolinSixStaff
-      \accept ViolinSevenStaff
-      \accept ViolinEightStaff
-      \accept ViolaStaff
+      \accepts ViolinOneStaff
+      \accepts ViolinTwoStaff
+      \accepts ViolinThreeStaff
+      \accepts ViolinFourStaff
+      \accepts ViolinFiveStaff
+      \accepts ViolinSixStaff
+      \accepts ViolinSevenStaff
+      \accepts ViolinEightStaff
+      \accepts ViolaStaff
     }
 }
 

@@ -11,25 +11,16 @@ from pathlib import Path
 import abjad
 import rill
 
-import rill.tools.FuzzyHarmony as FuzzyHarmony
+from rill.tools.ScoreTemplate import ScoreTemplate
 
-from rill.tools.accents import tenuto as tenuto
-from rill.tools.barlines import barline as barline
-from rill.tools.clef import clef as clef
-from rill.tools.FuzzyHarmony import Diad as Diad
-from rill.tools.FuzzyHarmony import LegatoArpeggio as LegatoArpeggio
-from rill.tools.material_methods import transpose_segment as transpose_segment
-from rill.tools.tremolo import tremolo as tremolo
-
-from abjad import NamedPitch as NamedPitch
 from typing import List
 
 #####################
 # Setting up segment ### [{segment_name}] ###
 #####################
 
-this_current_directory =  Path.cwd().parent
-score =rill.ScoreTemplate()
+this_current_directory =  Path.cwd()
+score = ScoreTemplate()
 score_template = score()
 
 segment_maker = rill.SegmentMaker(

@@ -46,10 +46,10 @@
         >>                                                                     %! abjad.ScoreTemplate._make_global_context()
         \context MusicContext = "Music_Context"                                %! rill.ScoreTemplate.__call__()
         <<                                                                     %! rill.ScoreTemplate.__call__()
-            \context StaffGroup = "Woodwind_Staff_Group"                       %! rill.ScoreTemplate.__call__()
+            \context WoodwindStaffGroup = "Woodwind_Staff_Group"               %! rill.ScoreTemplate.__call__()
             <<                                                                 %! rill.ScoreTemplate.__call__()
                 \tag #'fluteOne
-                \context Staff = "flute1"                                      %! rill.ScoreTemplate.__call__()
+                \context FluteOneStaff = "Flute1"                              %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"flute"                                  %! rill.ScoreTemplate.__call__()
@@ -57,128 +57,37 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute1_Markup_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 3/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/2
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 3/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/2
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute1_Music_Voice"                      %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        {
-                            \once \override DynamicLineSpanner.staff-padding = #3
-                            \time 4/4
-                            \clef "treble"
-                            \mark #1
-                            fs''8
-                            \p
-                            - \accent
-                            \<
-                            cs''8
-                            ~
-                            cs''8
-                            \f
-                            r4.
-                            \once \override DynamicLineSpanner.staff-padding = #3
-                            fs''4
-                            \p
-                            - \accent
-                            \<
-                            ~
-                            \time 3/4
-                            fs''4
-                            cs''8
-                            fs''8
-                            ~
-                            fs''8
-                            \f
-                            r8
-                            \time 3/4
-                            r4
-                            \once \override DynamicLineSpanner.staff-padding = #3
-                            cs''2
-                            \p
-                            - \accent
-                            \<
-                            \time 4/4
-                            fs''8
-                            cs''8
-                            ~
-                            cs''8
-                            \f
-                            r4.
-                            \once \override DynamicLineSpanner.staff-padding = #3
-                            fs''4
-                            \p
-                            - \accent
-                            \<
-                            ~
-                            \time 3/4
-                            fs''4
-                            cs''8
-                            fs''8
-                            ~
-                            fs''8
-                            \f
-                            r8
-                            \time 3/4
-                            r4
-                            cs''2
-                            \ppp
-                            - \accent
-                        }
+                        \mark #1
+                        r1
+                        r2.
+                        r2.
+                        r1
+                        r2.
+                        r2.
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute1_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 3/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/2
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 3/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/2
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'fluteTwo
-                \context Staff = "flute2"                                      %! rill.ScoreTemplate.__call__()
+                \context FluteTwoStaff = "Flute2"                              %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"flute"                                  %! rill.ScoreTemplate.__call__()
@@ -186,226 +95,37 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute2_Markup_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute2_Music_Voice"                      %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        {
-                            \once \override DynamicLineSpanner.staff-padding = #3
-                            \time 4/4
-                            \clef "treble"
-                            \mark #1
-                            fs'16
-                            \p
-                            - \accent
-                            \<
-                            a'16
-                            ~
-                            a'16
-                            \f
-                            r16
-                            r8
-                            \once \override DynamicLineSpanner.staff-padding = #3
-                            fs'8
-                            \p
-                            - \accent
-                            \<
-                            ~
-                            fs'8
-                            a'16
-                            fs'16
-                            ~
-                            fs'16
-                            \f
-                            r8.
-                            \once \override DynamicLineSpanner.staff-padding = #3
-                            \time 3/4
-                            a'4
-                            \p
-                            - \accent
-                            \<
-                            fs'16
-                            a'16
-                            ~
-                            a'16
-                            \f
-                            r16
-                            r8
-                            \once \override DynamicLineSpanner.staff-padding = #3
-                            fs'8
-                            \p
-                            - \accent
-                            \<
-                            ~
-                            \time 3/4
-                            fs'8
-                            a'16
-                            fs'16
-                            ~
-                            fs'16
-                            \f
-                            r8.
-                            \once \override DynamicLineSpanner.staff-padding = #3
-                            a'4
-                            \p
-                            - \accent
-                            \<
-                            \time 4/4
-                            fs'16
-                            a'16
-                            ~
-                            a'16
-                            \f
-                            r16
-                            r8
-                            \once \override DynamicLineSpanner.staff-padding = #3
-                            fs'8
-                            \p
-                            - \accent
-                            \<
-                            ~
-                            fs'8
-                            a'16
-                            fs'16
-                            ~
-                            fs'16
-                            \f
-                            r8.
-                            \once \override DynamicLineSpanner.staff-padding = #3
-                            \time 3/4
-                            a'4
-                            \p
-                            - \accent
-                            \<
-                            fs'16
-                            a'16
-                            ~
-                            a'16
-                            \f
-                            r16
-                            r8
-                            \once \override DynamicLineSpanner.staff-padding = #3
-                            fs'8
-                            \p
-                            - \accent
-                            \<
-                            ~
-                            \time 3/4
-                            fs'8
-                            a'16
-                            fs'16
-                            ~
-                            fs'16
-                            \f
-                            r8.
-                            a'4
-                            \ppp
-                            - \accent
-                        }
+                        \mark #1
+                        r1
+                        r2.
+                        r2.
+                        r1
+                        r2.
+                        r2.
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute2_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'fluteThree
-                \context Staff = "flute3"                                      %! rill.ScoreTemplate.__call__()
+                \context FluteThreeStaff = "Flute3"                            %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"flute"                                  %! rill.ScoreTemplate.__call__()
@@ -442,8 +162,46 @@
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
+                \tag #'fluteFour
+                \context FluteFourStaff = "Flute4"                             %! rill.ScoreTemplate.__call__()
+                \with                                                          %! rill.ScoreTemplate.__call__()
+                {                                                              %! rill.ScoreTemplate.__call__()
+                    midiInstrument = #"flute"                                  %! rill.ScoreTemplate.__call__()
+                }                                                              %! rill.ScoreTemplate.__call__()
+                <<                                                             %! rill.ScoreTemplate.__call__()
+                    \context Voice = "Flute4_Markup_Voice"                     %! rill.ScoreTemplate.__call__()
+                    {                                                          %! rill.ScoreTemplate.__call__()
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        \stopTextSpan
+                    }                                                          %! rill.ScoreTemplate.__call__()
+                    \context Voice = "Flute4_Music_Voice"                      %! rill.ScoreTemplate.__call__()
+                    {                                                          %! rill.ScoreTemplate.__call__()
+                        \mark #1
+                        r1
+                        r2.
+                        r2.
+                        r1
+                        r2.
+                        r2.
+                    }                                                          %! rill.ScoreTemplate.__call__()
+                    \context Voice = "Flute4_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
+                    {                                                          %! rill.ScoreTemplate.__call__()
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        \!
+                    }                                                          %! rill.ScoreTemplate.__call__()
+                >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'BbclarinetOne
-                \context Staff = "Bbclarinet1"                                 %! rill.ScoreTemplate.__call__()
+                \context BbclarinetOneStaff = "Bbclarinet1"                    %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"Bbclarinet"                             %! rill.ScoreTemplate.__call__()
@@ -481,10 +239,10 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
             >>                                                                 %! rill.ScoreTemplate.__call__()
-            \context StaffGroup = "Percussion_Staff_Group"                     %! rill.ScoreTemplate.__call__()
+            \context PercussionStaffGroup = "Percussion_Staff_Group"           %! rill.ScoreTemplate.__call__()
             <<                                                                 %! rill.ScoreTemplate.__call__()
                 \tag #'vibraphone
-                \context Staff = "vibraphone"                                  %! rill.ScoreTemplate.__call__()
+                \context VibraphoneStaff = "Vibraphone"                        %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"vibraphone"                             %! rill.ScoreTemplate.__call__()
@@ -522,10 +280,10 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
             >>                                                                 %! rill.ScoreTemplate.__call__()
-            \context StaffGroup = "String_Staff_Group"                         %! rill.ScoreTemplate.__call__()
+            \context StringStaffGroup = "String_Staff_Group"                   %! rill.ScoreTemplate.__call__()
             <<                                                                 %! rill.ScoreTemplate.__call__()
                 \tag #'violinOne
-                \context Staff = "violin1"                                     %! rill.ScoreTemplate.__call__()
+                \context ViolinOneStaff = "Violin1"                            %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
@@ -563,7 +321,7 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinTwo
-                \context Staff = "violin2"                                     %! rill.ScoreTemplate.__call__()
+                \context ViolinTwoStaff = "Violin2"                            %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
@@ -601,7 +359,7 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinThree
-                \context Staff = "violin3"                                     %! rill.ScoreTemplate.__call__()
+                \context ViolinThreeStaff = "Violin3"                          %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
@@ -639,7 +397,7 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinFour
-                \context Staff = "violin4"                                     %! rill.ScoreTemplate.__call__()
+                \context ViolinFourStaff = "Violin4"                           %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
@@ -677,7 +435,7 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinFive
-                \context Staff = "violin5"                                     %! rill.ScoreTemplate.__call__()
+                \context ViolinFiveStaff = "Violin5"                           %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
@@ -715,7 +473,7 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinSix
-                \context Staff = "violin6"                                     %! rill.ScoreTemplate.__call__()
+                \context ViolinSixStaff = "Violin6"                            %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
@@ -753,7 +511,7 @@
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinSeven
-                \context Staff = "violin7"                                     %! rill.ScoreTemplate.__call__()
+                \context ViolinSevenStaff = "Violin7"                          %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
@@ -790,8 +548,46 @@
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
+                \tag #'violinEight
+                \context ViolinEightStaff = "Violin8"                          %! rill.ScoreTemplate.__call__()
+                \with                                                          %! rill.ScoreTemplate.__call__()
+                {                                                              %! rill.ScoreTemplate.__call__()
+                    midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
+                }                                                              %! rill.ScoreTemplate.__call__()
+                <<                                                             %! rill.ScoreTemplate.__call__()
+                    \context Voice = "Violin8_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
+                    {                                                          %! rill.ScoreTemplate.__call__()
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        \stopTextSpan
+                    }                                                          %! rill.ScoreTemplate.__call__()
+                    \context Voice = "Violin8_Music_Voice"                     %! rill.ScoreTemplate.__call__()
+                    {                                                          %! rill.ScoreTemplate.__call__()
+                        \mark #1
+                        r1
+                        r2.
+                        r2.
+                        r1
+                        r2.
+                        r2.
+                    }                                                          %! rill.ScoreTemplate.__call__()
+                    \context Voice = "Violin8_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
+                    {                                                          %! rill.ScoreTemplate.__call__()
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        \!
+                    }                                                          %! rill.ScoreTemplate.__call__()
+                >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'viola
-                \context Staff = "viola"                                       %! rill.ScoreTemplate.__call__()
+                \context ViolaStaff = "Viola"                                  %! rill.ScoreTemplate.__call__()
                 \with                                                          %! rill.ScoreTemplate.__call__()
                 {                                                              %! rill.ScoreTemplate.__call__()
                     midiInstrument = #"viola"                                  %! rill.ScoreTemplate.__call__()

@@ -76,8 +76,19 @@
 
  + Test that you can access via Path
 
-*** TODO Re-configure ScoreTemplate to reflect final instrumentation
+*** DONE Define an OverrideMaker class to handle the different styles of notehead
+:LOGBOOK:
+- State "DONE"       from "IN-PROGRESS" [2020-11-05 Thu 19:57]
+:END:
+ + define & unit test class
+ + integration with MusicMaker and test
+*** IN-PROGRESS Re-configure ScoreTemplate to reflect final instrumentation
+ + Okay, after plenty of dickin' around with getting the stylesheets to manage instrument names, I finally found a way to get them to display:
+   - There is a sort of Staff override in lilypond, whereby the a new context staff can be specified with a name like "FluteOneStaff" and refer to another type of staff in the stylesheet block. These can be wrapped in custom StaffGroup staffs in order to make their management a little bit easier
+
+   - they then have to be referenced in the MusicStaff context block
 *** TODO Find solution for missing instrument name markups
+ +  looks like the best solution is to implement the names by hand via the stylesheet.ily
 *** TODO Merge Dev branch into Ensemble
 
 *** TODO Find way to tag score with build time and git branch

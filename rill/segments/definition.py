@@ -1,15 +1,14 @@
-
 import copy
-import pathlib
-
 import abjad
 import rill
 
 
+from pathlib import Path
+
 from rill.tools.MusicMaker import MusicMaker
 from rill.tools.AttachmentMaker import AccentAttachmentMaker
 
-this_current_directory =  pathlib.Path.cwd()
+this_current_directory = Path.cwd()
 score =rill.ScoreTemplate()
 score_template = score()
 
