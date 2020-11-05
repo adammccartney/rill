@@ -384,7 +384,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
             [markup_voice, music_voice, dynamics_voice],
             simultaneous=True,
             name="Viola",
-            type="ViolaStaff",
+            lilypond_type="ViolaStaff",
             tag=tag,
         )
         abjad.annotate(
