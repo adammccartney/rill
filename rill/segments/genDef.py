@@ -28,7 +28,7 @@ from typing import List
 # Setting up segment ### [{segment_name}] ###
 #####################
 
-this_current_directory =  Path.cwd().parent 
+this_current_directory =  Path.cwd().parent
 score =rill.ScoreTemplate()
 score_template = score()
 
@@ -119,6 +119,26 @@ rhythm_definition.dynamics = []
 rhythm_definition.markup = []
 
 
+# Flute4
+#-----------------------------------------------#
+rhythm_definition = segment_maker.define_rhythm()
+rhythm_definition.instrument_name = "Flute4"
+
+rhythm_definition.notes = [
+        ("r1"),
+        ("r2."),
+        ("r2."),
+        ("r1"),
+        ("r2."),
+        ("r2."),
+]
+
+rhythm_definition.dynamics = []
+
+rhythm_definition.markup = []
+
+
+
 
 # Bbclarinet
 #------------------------------------------------#
@@ -138,7 +158,7 @@ rhythm_definition.dynamics = []
 
 rhythm_definition.markup = []
 
-# Vibraphone 
+# Vibraphone
 #------------------------------------------------#
 rhythm_definition = segment_maker.define_rhythm()
 rhythm_definition.instrument_name = "Vibraphone"
@@ -294,6 +314,25 @@ rhythm_definition.dynamics = []
 
 rhythm_definition.markup = []
 
+# Violin8
+#------------------------------------------------#
+rhythm_definition = segment_maker.define_rhythm()
+rhythm_definition.instrument_name = "Violin8"
+
+
+rhythm_definition.notes = [
+        ("r1"),
+        ("r2."),
+        ("r2."),
+        ("r1"),
+        ("r2."),
+        ("r2."),
+]
+
+rhythm_definition.dynamics = []
+
+rhythm_definition.markup = []
+
 
 
 # Viola
@@ -322,4 +361,3 @@ lilypond_file = segment_maker.run()
 output_file = open('definition.py', 'w')
 output_file.write(segment_definition)
 output_file.close()
-
