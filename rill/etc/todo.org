@@ -82,7 +82,10 @@
 :END:
  + define & unit test class
  + integration with MusicMaker and test
-*** IN-PROGRESS Re-configure ScoreTemplate to reflect final instrumentation
+*** DONE Re-configure ScoreTemplate to reflect final instrumentation
+:LOGBOOK:
+- State "DONE"       from "IN-PROGRESS" [2020-11-05 Thu 21:25]
+:END:
  + Okay, after plenty of dickin' around with getting the stylesheets to manage instrument names, I finally found a way to get them to display:
    - There is a sort of Staff override in lilypond, whereby the a new context staff can be specified with a name like "FluteOneStaff" and refer to another type of staff in the stylesheet block. These can be wrapped in custom StaffGroup staffs in order to make their management a little bit easier
 
