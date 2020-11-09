@@ -17,7 +17,7 @@ from rill.materials.music_init_data.definition import InstrumentMusicData
 from rill.materials.music_init_data.definition import SegmentMusicData
 
 
-up_two_dirs = Path.cwd().parents[1] # ../segments/
+up_two_dirs = Path.cwd().parents[1] # ../rill/
 db_path = up_two_dirs / 'materials' / 'music_data' / 'music_data_shelve'
 
 db = shelve.open(str(db_path))

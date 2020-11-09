@@ -115,22 +115,35 @@ Specifically, it is focused on chapter 3:
 #abjad.show(lilypond_file)
 
 
-staff = abjad.Staff(r"c'4 d'2 f'4 e'1")
-selection = staff[:]
-#for i in enumerate(selection):
+#staff = abjad.Staff(r"c'4 d'2 f'4 e'1")
+#selection = staff[:]
+##for i in enumerate(selection):
+#
+#for leaf in selection:
+#    abjad.override(leaf).note_head.style = 'harmonic'
+#
+#abjad.f(staff)
+#
+#
+#override = abjad.LilyPondGrobOverride(
+#    lilypond_type="Staff",
+#    grob_name="NoteHead",
+#    once=True,
+#    property_path=("style"),
+#    value=abjad.override().note_head.style('harmonic')
+#)
+#
+#print(override.override_string)
 
-for leaf in selection:
-    abjad.override(leaf).note_head.style = 'harmonic'
 
-abjad.f(staff)
+# Percussive rhythm generator
+def generate_percussive_rhythm_counts(val):
+    "Returns a list of 1/-1 values to use as counts"
 
+    from random import getrandbits
 
-override = abjad.LilyPondGrobOverride(
-    lilypond_type="Staff",
-    grob_name="NoteHead",
-    once=True,
-    property_path=("style"),
-    value=abjad.override().note_head.style('harmonic')
-)
-
-print(override.override_string)
+    bits = getrandbits
+    binary_string = "{0:b}".format(bits(val))
+    binary_list = [int(x) for x in binary_string]
+    rhythm_list = [x if x == 1 else -1 for x in binary_list]
+    return rhythm_list

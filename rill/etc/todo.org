@@ -56,6 +56,7 @@
  + this means we can call the instance of "SegmentMusicData" that is in the segment scope in a way that supports scripting the definition files (basically the reason for this is to avoid hand-hacking the "definition.py" file
  + ...but there will ultimately be a little hand hacking... basically, I'm going to initialize the pair of objects mentioned above with their default values and then override on a per segment basis
 *** TODO Define materials on a per segment basis and include references in the "music data" scripts
+ +  this amounts to a formal description of the composition itself
 *** DONE Define generator for percussive counts                    :active:
 :LOGBOOK:
 - State "DONE"       from "TODO"       [2020-11-09 Mon 10:55]
