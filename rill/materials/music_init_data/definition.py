@@ -50,11 +50,24 @@ class InstrumentMusicData:
     denominator: int = default_denominator
     time_signature_pairs: Sequence[tuple] = field(
         default_factory=make_default_tsig_pairs)
-    talea: List[int] = field(default_factory=make_default_talea)
+    _talea: List[int] = field(default_factory=make_default_talea)
 
+    @property
+    def talea(self) -> list:
+        return self._talea
 
-    def __getitem__(self, key):
-        return getattr(self, key)
+    @talea.setter
+    def talea(self, counts) -> None:
+        self._talea = counts
+
+    def mute(self):
+        for i in range(len(self.talea)):
+            if self.talea[i] < 0:
+                pass
+            elif self.talea[i] > 0:
+                self.talea[i] = self.talea[i] * -1
+            else:
+                ValueError(self.talea[i], "is an unnacceptable count value")
 
 
 from rill.materials.instruments.definition import instruments
@@ -259,3 +272,8 @@ if __name__ == '__main__':
     print(test_segment_pitch_data)
     print(test_segment_cv3_pitch_segment)
     print(test_segment_talea_data)
+    test_music_data = InstrumentMusicData()
+    test_counts = test_music_data.talea
+    print(test_counts)
+    mute_counts = test_music_data.mute()
+    print(test_counts)
