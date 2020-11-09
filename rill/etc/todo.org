@@ -55,6 +55,12 @@
  + basically, there are two objects essential for this operation: "InstrumentMusicData" and "SegmentMusicData"
  + this means we can call the instance of "SegmentMusicData" that is in the segment scope in a way that supports scripting the definition files (basically the reason for this is to avoid hand-hacking the "definition.py" file
  + ...but there will ultimately be a little hand hacking... basically, I'm going to initialize the pair of objects mentioned above with their default values and then override on a per segment basis
+*** TODO Define materials on a per segment basis and include references in the "music data" scripts
+*** DONE Define generator for percussive counts                    :active:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2020-11-09 Mon 10:55]
+:END:
+ +  function accepts an integer val as argument and returns a "boolean" (1, -1) list
 *** DONE Define persistent data structure for material in segments
 :LOGBOOK:
 - State "DONE"       from "IN-PROGRESS" [2020-11-02 Mon 15:27]
@@ -90,8 +96,12 @@
    - There is a sort of Staff override in lilypond, whereby the a new context staff can be specified with a name like "FluteOneStaff" and refer to another type of staff in the stylesheet block. These can be wrapped in custom StaffGroup staffs in order to make their management a little bit easier
 
    - they then have to be referenced in the MusicStaff context block
-*** TODO Find solution for missing instrument name markups
- +  looks like the best solution is to implement the names by hand via the stylesheet.ily
+*** DONE Find solution for missing instrument name markups
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2020-11-09 Mon 09:43]
+:END:
+ +  looks like the better solution is to implement the names by hand via the stylesheet.ily
+ + This involved defining custom names for the "lilypond type" variables that were present in the ScoreTemplate file. These names are then referenced in the stylesheet, where the actual instrument names are also defined
 *** TODO Merge Dev branch into Ensemble
 
 *** TODO Find way to tag score with build time and git branch
