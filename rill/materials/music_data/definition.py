@@ -6,7 +6,11 @@ from rill.materials.music_init_data.definition import (
     SegmentTaleaData,
 )
 
-from rill.materials.pitch.definition import chord_voice
+from rill.materials.pitch.definition import (
+    chord_voice,
+    melody_voice,
+    tremolo_voice,
+    )
 
 db = shelve.open('music_data_shelve')
 
@@ -47,6 +51,8 @@ segment_A_cv3_pitches = str(segment_A_cv3_pitch_materials)
 segment_A_cv4_pitch_materials = chord_voice["black"][4][0:3]
 segment_A_cv4_pitches = str(segment_A_cv4_pitch_materials)
 
+segment_A_mv_materials = melody_voice["blue"]["p1"][4][:]
+segment_A_mv_pitches = str(segment_A_mv_materials)
 
 segment_B_cv1_pitch_material = copy.deepcopy(segment_A_cv1_pitch_materials)
 segment_B_cv1_transposed = segment_B_cv1_pitch_material.transpose(-12)
@@ -64,17 +70,20 @@ segment_B_cv4_pitch_material = copy.deepcopy(segment_A_cv4_pitch_materials)
 segment_B_cv4_transposed = segment_B_cv4_pitch_material.transpose(12)
 segment_B_cv4_pitches = str(segment_B_cv4_transposed)
 
-segment_F_cv1_pitch_materials = chord_voice["blue"][6][0:3]
+segment_B_mv_materials = melody_voice["blue"]["p1"][6][:]
+segment_B_mv_pitches = str(segment_B_mv_materials)
+
+segment_F_cv1_pitch_materials = chord_voice["blue"][5][0:3]
 segment_F_cv1_pitches = str(segment_F_cv1_pitch_materials)
 
-segment_F_cv2_pitch_materials = chord_voice["green"][6][0:3]
+segment_F_cv2_pitch_materials = chord_voice["green"][5][0:3]
 segment_F_cv2_pitches = str(segment_F_cv2_pitch_materials)
 
 segment_F_cv3_pitch_materials = chord_voice["black"][5][0:3]
 segment_F_cv3_pitch_materials += chord_voice["red"][5][0:3]
 segment_F_cv3_pitches = str(segment_F_cv3_pitch_materials)
 
-segment_F_cv4_pitch_materials = chord_voice["black"][4][0:3]
+segment_F_cv4_pitch_materials = chord_voice["black"][5][0:3]
 segment_F_cv4_pitches = str(segment_F_cv4_pitch_materials)
 
 segment_J_cv1_pitch_materials = chord_voice["blue"][6][0:3]
@@ -89,6 +98,37 @@ segment_J_cv3_pitches = str(segment_J_cv3_pitch_materials)
 
 segment_J_cv4_pitch_materials = chord_voice["black"][4][0:3]
 segment_J_cv4_pitches = str(segment_J_cv4_pitch_materials)
+
+
+
+
+segment_C_mv_materials = melody_voice["blue"]["p2"][5][:]
+segment_C_mv_pitches = str(segment_C_mv_materials)
+
+segment_G_mv_materials = melody_voice["blue"]["p2"][4][:]
+segment_G_mv_pitches = str(segment_G_mv_materials)
+
+segment_F_mv_materials = melody_voice["blue"]["p2"][3][:]
+segment_F_mv_pitches = str(segment_F_mv_materials)
+
+segment_K_mv_materials = melody_voice["blue"]["p2"][2][:]
+segment_K_mv_pitches = str(segment_G_mv_materials)
+
+
+segment_D_mv_materials = melody_voice["blue"]["p3"][6][:]
+segment_D_mv_pitches = str(segment_D_mv_materials)
+
+segment_E_mv_materials = melody_voice["blue"]["p3"][8][:]
+segment_E_mv_pitches = str(segment_E_mv_materials)
+
+segment_I_mv_materials = melody_voice["blue"]["p3"][10][:]
+segment_I_mv_pitches = str(segment_I_mv_materials)
+
+segment_L_mv_materials = melody_voice["blue"]["p3"][1][:]
+segment_L_mv_pitches = str(segment_G_mv_materials)
+
+
+
 
 
 db.close()
