@@ -3,6 +3,11 @@ import sys
 import abjad
 import rill
 
+from pathlib import Path
+
+from rill.segments.music_data import segment_music_data
+
+
 segment_name = sys.argv[1]
 rehearsal_mark = sys.argv[2]
 
@@ -23,88 +28,83 @@ def make_music_code_block(instrument_name, instrument_music_data):
     return music_block
 
 
-from rill.segments.music_data import segment_music_data
-
-
-segment_music_dict = segment_music_data.instrument_music_data
-Flute1_instrument_music_data = segment_music_dict['Flute1']
+Flute1_instrument_music_data = segment_music_data.Flute1
 Flute1_music_code_block = make_music_code_block(
     instrument_name="Flute1",
     instrument_music_data=Flute1_instrument_music_data
 )
 
-Flute2_instrument_music_data = segment_music_dict['Flute2']
+Flute2_instrument_music_data = segment_music_data.Flute2
 Flute2_music_code_block = make_music_code_block(
     instrument_name="Flute2",
     instrument_music_data=Flute2_instrument_music_data
 )
 
-Flute3_instrument_music_data = segment_music_dict['Flute3']
+Flute3_instrument_music_data = segment_music_data.Flute3
 Flute3_music_code_block = make_music_code_block(
     instrument_name="Flute3",
     instrument_music_data=Flute3_instrument_music_data
 )
 
-Bbclarinet1_instrument_music_data = segment_music_dict['Bbclarinet1']
+Bbclarinet1_instrument_music_data = segment_music_data.Bbclarinet1
 Bbclarinet1_music_code_block = make_music_code_block(
     instrument_name="Bbclarinet1",
     instrument_music_data=Bbclarinet1_instrument_music_data
 )
 
-Vibraphone_instrument_music_data = segment_music_dict['Vibraphone']
+Vibraphone_instrument_music_data = segment_music_data.Vibraphone
 Vibraphone_music_code_block = make_music_code_block(
     instrument_name="Vibraphone",
     instrument_music_data=Vibraphone_instrument_music_data
 )
 
-Violin1_instrument_music_data = segment_music_dict['Violin1']
+Violin1_instrument_music_data = segment_music_data.Violin1
 Violin1_music_code_block = make_music_code_block(
     instrument_name="Violin1",
     instrument_music_data=Violin1_instrument_music_data
 )
 
-Violin2_instrument_music_data = segment_music_dict['Violin2']
+Violin2_instrument_music_data = segment_music_data.Violin2
 Violin2_music_code_block = make_music_code_block(
     instrument_name="Violin2",
     instrument_music_data=Violin2_instrument_music_data
 )
 
-Violin3_instrument_music_data = segment_music_dict['Violin3']
+Violin3_instrument_music_data = segment_music_data.Violin3
 Violin3_music_code_block = make_music_code_block(
     instrument_name="Violin3",
     instrument_music_data=Violin3_instrument_music_data
 )
 
-Violin4_instrument_music_data = segment_music_dict['Violin4']
+Violin4_instrument_music_data = segment_music_data.Violin4
 Violin4_music_code_block = make_music_code_block(
     instrument_name="Violin4",
     instrument_music_data=Violin4_instrument_music_data
 )
 
-Violin5_instrument_music_data = segment_music_dict['Violin5']
+Violin5_instrument_music_data = segment_music_data.Violin5
 Violin5_music_code_block = make_music_code_block(
     instrument_name="Violin5",
     instrument_music_data=Violin5_instrument_music_data
 )
 
-Violin6_instrument_music_data = segment_music_dict['Violin6']
+Violin6_instrument_music_data = segment_music_data.Violin6
 Violin6_music_code_block = make_music_code_block(
     instrument_name="Violin6",
     instrument_music_data=Violin6_instrument_music_data
 )
 
-Violin7_instrument_music_data = segment_music_dict['Violin7']
+Violin7_instrument_music_data = segment_music_data.Violin7
 Violin7_music_code_block = make_music_code_block(
     instrument_name="Violin7",
     instrument_music_data=Violin7_instrument_music_data
 )
 
-Viola_instrument_music_data = segment_music_dict['Viola']
+Viola_instrument_music_data = segment_music_data.Viola
 Viola_music_code_block = make_music_code_block(
     instrument_name="Viola",
     instrument_music_data=Viola_instrument_music_data
 )
-
 
 
 segment_definition = f"""
@@ -188,6 +188,9 @@ Viola_instrument_music_data = segment_music_dict['Viola']
 lilypond_file = segment_maker.run()
 """
 
-output_file = open('definition.py', 'w')
+
+cwd = Path.cwd()
+target = cwd / segment_name / 'definition.py'
+output_file = open(target, 'w')
 output_file.write(segment_definition)
 output_file.close()
