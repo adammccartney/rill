@@ -238,11 +238,11 @@ class SegmentTaleaData:
         self._pedal_tone_counts = sync_counts
 
     @property
-    def short_percussive_counts(self) -> list:
+    def pulse_counts(self) -> list:
         return self._short_percussive_counts
 
-    @short_percussive_counts.setter
-    def short_percussive_counts(self, sync_counts: List[int]) -> None:
+    @pulse_counts.setter
+    def pulse_counts(self, sync_counts: List[int]) -> None:
         self._short_percussive_counts = sync_counts
 
 
