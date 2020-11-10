@@ -68,24 +68,24 @@ segment_A_pitch_data.tremolo_voice2 = str(segment_A_tv2_materials)
 
 db['segment_A_pitch_data'] = segment_A_pitch_data
 
-segment_A_instrument_pitch_data_ref = InstrumentPitchData()
-segment_A_instrument_pitch_data_ref.Flute1 = 'cv3'
-segment_A_instrument_pitch_data_ref.Flute2 = 'cv3'
-segment_A_instrument_pitch_data_ref.Flute3 = 'cv3'
-segment_A_instrument_pitch_data_ref.Flute4 = 'cv3'
-segment_A_instrument_pitch_data_ref.Bbclarinet1 = 'cv3'
-segment_A_instrument_pitch_data_ref.Vibraphone = 'cv3'
-segment_A_instrument_pitch_data_ref.Violin1 = 'tv1'
-segment_A_instrument_pitch_data_ref.Violin2 = 'tv1'
-segment_A_instrument_pitch_data_ref.Violin3 = 'tv2'
-segment_A_instrument_pitch_data_ref.Violin4 = 'tv2'
-segment_A_instrument_pitch_data_ref.Violin5 = 'tv2'
-segment_A_instrument_pitch_data_ref.Violin6 = 'cv3'
-segment_A_instrument_pitch_data_ref.Violin7 = 'cv3'
-segment_A_instrument_pitch_data_ref.Violin8 = 'cv3'
-segment_A_instrument_pitch_data_ref.Viola = 'cv3'
+segment_A_instr_pdref = InstrumentPitchData()
+segment_A_instr_pdref.Flute1 = 'chord_voice3'
+segment_A_instr_pdref.Flute2 = 'chord_voice3'
+segment_A_instr_pdref.Flute3 = 'chord_voice3'
+segment_A_instr_pdref.Flute4 = 'chord_voice3'
+segment_A_instr_pdref.Bbclarinet1 = 'chord_voice3'
+segment_A_instr_pdref.Vibraphone = 'chord_voice3'
+segment_A_instr_pdref.Violin1 = 'tremolo_voice1'
+segment_A_instr_pdref.Violin2 = 'tremolo_voice1'
+segment_A_instr_pdref.Violin3 = 'tremolo_voice2'
+segment_A_instr_pdref.Violin4 = 'tremolo_voice2'
+segment_A_instr_pdref.Violin5 = 'tremolo_voice2'
+segment_A_instr_pdref.Violin6 = 'chord_voice3'
+segment_A_instr_pdref.Violin7 = 'chord_voice3'
+segment_A_instr_pdref.Violin8 = 'chord_voice3'
+segment_A_instr_pdref.Viola = 'chord_voice3'
 
-db['segment_A_instrument_pitch_data_ref'] = segment_A_instrument_pitch_data_ref
+db['segment_A_instr_pdref'] = segment_A_instr_pdref
 
 segment_A_talea_data = SegmentTaleaData()
 segment_A_pulse_sequence = seq.generate_random_pulse_sequence(10)
@@ -123,24 +123,24 @@ segment_B_pitch_data.tremolo_voice2 = str(segment_B_tv2_materials)
 
 db['segment_B_pitch_data'] = segment_B_pitch_data
 
-segment_B_instrument_pitch_data_ref = InstrumentPitchData()
-segment_B_instrument_pitch_data_ref.Flute1 = 'cv1'
-segment_B_instrument_pitch_data_ref.Flute2 = 'cv1'
-segment_B_instrument_pitch_data_ref.Flute3 = 'cv2'
-segment_B_instrument_pitch_data_ref.Flute4 = 'cv2'
-segment_B_instrument_pitch_data_ref.Bbclarinet1 = 'cv3'
-segment_B_instrument_pitch_data_ref.Vibraphone = 'cv3'
-segment_B_instrument_pitch_data_ref.Violin1 = 'tv1'
-segment_B_instrument_pitch_data_ref.Violin2 = 'tv1'
-segment_B_instrument_pitch_data_ref.Violin3 = 'tv2'
-segment_B_instrument_pitch_data_ref.Violin4 = 'tv2'
-segment_B_instrument_pitch_data_ref.Violin5 = 'tv2'
-segment_B_instrument_pitch_data_ref.Violin6 = 'tv1'
-segment_B_instrument_pitch_data_ref.Violin7 = 'tv1'
-segment_B_instrument_pitch_data_ref.Violin8 = 'tv2'
-segment_B_instrument_pitch_data_ref.Viola = 'tv2'
+segment_B_instr_pdref = InstrumentPitchData()
+segment_B_instr_pdref.Flute1 = 'chord_voice1'
+segment_B_instr_pdref.Flute2 = 'chord_voice1'
+segment_B_instr_pdref.Flute3 = 'chord_voice2'
+segment_B_instr_pdref.Flute4 = 'chord_voice2'
+segment_B_instr_pdref.Bbclarinet1 = 'chord_voice3'
+segment_B_instr_pdref.Vibraphone = 'chord_voice3'
+segment_B_instr_pdref.Violin1 = 'tremolo_voice1'
+segment_B_instr_pdref.Violin2 = 'tremolo_voice1'
+segment_B_instr_pdref.Violin3 = 'tremolo_voice2'
+segment_B_instr_pdref.Violin4 = 'tremolo_voice2'
+segment_B_instr_pdref.Violin5 = 'tremolo_voice2'
+segment_B_instr_pdref.Violin6 = 'tremolo_voice1'
+segment_B_instr_pdref.Violin7 = 'tremolo_voice1'
+segment_B_instr_pdref.Violin8 = 'tremolo_voice2'
+segment_B_instr_pdref.Viola = 'tremolo_voice2'
 
-db['segment_B_instrument_pitch_data_ref'] = segment_B_instrument_pitch_data_ref
+db['segment_B_instr_pdref'] = segment_B_instr_pdref
 
 
 segment_B_talea_data = SegmentTaleaData()
@@ -176,24 +176,24 @@ segment_C_pitch_data.tremolo_voice2 = str(segment_C_tv2_materials)
 
 db['segment_C_pitch_data'] = segment_C_pitch_data
 
-segment_C_instrument_pitch_data_ref = InstrumentPitchData()
-segment_C_instrument_pitch_data_ref.Flute1 = 'cv1'
-segment_C_instrument_pitch_data_ref.Flute2 = 'cv1'
-segment_C_instrument_pitch_data_ref.Flute3 = 'cv2'
-segment_C_instrument_pitch_data_ref.Flute4 = 'cv2'
-segment_C_instrument_pitch_data_ref.Bbclarinet1 = 'cv3'
-segment_C_instrument_pitch_data_ref.Vibraphone = 'cv3'
-segment_C_instrument_pitch_data_ref.Violin1 = 'tv1'
-segment_C_instrument_pitch_data_ref.Violin2 = 'tv1'
-segment_C_instrument_pitch_data_ref.Violin3 = 'tv2'
-segment_C_instrument_pitch_data_ref.Violin4 = 'tv2'
-segment_C_instrument_pitch_data_ref.Violin5 = 'tv2'
-segment_C_instrument_pitch_data_ref.Violin6 = 'cv1'
-segment_C_instrument_pitch_data_ref.Violin7 = 'cv2'
-segment_C_instrument_pitch_data_ref.Violin8 = 'cv4'
-segment_C_instrument_pitch_data_ref.Viola = 'cv4'
+segment_C_instr_pdref = InstrumentPitchData()
+segment_C_instr_pdref.Flute1 = 'chord_voice1'
+segment_C_instr_pdref.Flute2 = 'chord_voice1'
+segment_C_instr_pdref.Flute3 = 'chord_voice2'
+segment_C_instr_pdref.Flute4 = 'chord_voice2'
+segment_C_instr_pdref.Bbclarinet1 = 'chord_voice3'
+segment_C_instr_pdref.Vibraphone = 'chord_voice3'
+segment_C_instr_pdref.Violin1 = 'tremolo_voice1'
+segment_C_instr_pdref.Violin2 = 'tremolo_voice1'
+segment_C_instr_pdref.Violin3 = 'tremolo_voice2'
+segment_C_instr_pdref.Violin4 = 'tremolo_voice2'
+segment_C_instr_pdref.Violin5 = 'tremolo_voice2'
+segment_C_instr_pdref.Violin6 = 'chord_voice1'
+segment_C_instr_pdref.Violin7 = 'chord_voice2'
+segment_C_instr_pdref.Violin8 = 'chord_voice4'
+segment_C_instr_pdref.Viola = 'chord_voice4'
 
-db['segment_C_instrument_pitch_data_ref'] = segment_C_instrument_pitch_data_ref
+db['segment_C_instr_pdref'] = segment_C_instr_pdref
 
 
 segment_C_talea_data = SegmentTaleaData()
@@ -227,24 +227,24 @@ segment_D_pitch_data.tremolo_voice2 = str(segment_D_tv2_materials)
 
 db['segment_D_pitch_data'] = segment_D_pitch_data
 
-segment_D_instrument_pitch_data_ref = InstrumentPitchData()
-segment_D_instrument_pitch_data_ref.Flute1 = 'cv1'
-segment_D_instrument_pitch_data_ref.Flute2 = 'cv1'
-segment_D_instrument_pitch_data_ref.Flute3 = 'cv2'
-segment_D_instrument_pitch_data_ref.Flute4 = 'cv2'
-segment_D_instrument_pitch_data_ref.Bbclarinet1 = 'cv3'
-segment_D_instrument_pitch_data_ref.Vibraphone = 'cv3'
-segment_D_instrument_pitch_data_ref.Violin1 = 'mv'
-segment_D_instrument_pitch_data_ref.Violin2 = 'mv'
-segment_D_instrument_pitch_data_ref.Violin3 = 'mv'
-segment_D_instrument_pitch_data_ref.Violin4 = 'mv'
-segment_D_instrument_pitch_data_ref.Violin5 = 'mv'
-segment_D_instrument_pitch_data_ref.Violin6 = 'tv1'
-segment_D_instrument_pitch_data_ref.Violin7 = 'tv1'
-segment_D_instrument_pitch_data_ref.Violin8 = 'tv1'
-segment_D_instrument_pitch_data_ref.Viola = 'cv3'
+segment_D_instr_pdref = InstrumentPitchData()
+segment_D_instr_pdref.Flute1 = 'chord_voice1'
+segment_D_instr_pdref.Flute2 = 'chord_voice1'
+segment_D_instr_pdref.Flute3 = 'chord_voice2'
+segment_D_instr_pdref.Flute4 = 'chord_voice2'
+segment_D_instr_pdref.Bbclarinet1 = 'chord_voice3'
+segment_D_instr_pdref.Vibraphone = 'chord_voice3'
+segment_D_instr_pdref.Violin1 = 'melody_voice'
+segment_D_instr_pdref.Violin2 = 'melody_voice'
+segment_D_instr_pdref.Violin3 = 'melody_voice'
+segment_D_instr_pdref.Violin4 = 'melody_voice'
+segment_D_instr_pdref.Violin5 = 'melody_voice'
+segment_D_instr_pdref.Violin6 = 'tremolo_voice1'
+segment_D_instr_pdref.Violin7 = 'tremolo_voice1'
+segment_D_instr_pdref.Violin8 = 'tremolo_voice1'
+segment_D_instr_pdref.Viola = 'chord_voice3'
 
-db['segment_D_instrument_pitch_data_ref'] = segment_D_instrument_pitch_data_ref
+db['segment_D_instr_pdref'] = segment_D_instr_pdref
 
 
 segment_D_talea_data = SegmentTaleaData()
@@ -282,24 +282,24 @@ segment_E_pitch_data.tremolo_voice2 = str(segment_E_tv2_materials)
 
 db['segment_E_pitch_data'] = segment_E_pitch_data
 
-segment_E_instrument_pitch_data_ref = InstrumentPitchData()
-segment_E_instrument_pitch_data_ref.Flute1 = 'cv2'
-segment_E_instrument_pitch_data_ref.Flute2 = 'cv4'
-segment_E_instrument_pitch_data_ref.Flute3 = 'tv1'
-segment_E_instrument_pitch_data_ref.Flute4 = 'tv1'
-segment_E_instrument_pitch_data_ref.Bbclarinet1 = 'tv2'
-segment_E_instrument_pitch_data_ref.Vibraphone = 'tv2'
-segment_E_instrument_pitch_data_ref.Violin1 = 'mv'
-segment_E_instrument_pitch_data_ref.Violin2 = 'mv'
-segment_E_instrument_pitch_data_ref.Violin3 = 'mv'
-segment_E_instrument_pitch_data_ref.Violin4 = 'mv'
-segment_E_instrument_pitch_data_ref.Violin5 = 'mv'
-segment_E_instrument_pitch_data_ref.Violin6 = 'cv3'
-segment_E_instrument_pitch_data_ref.Violin7 = 'cv3'
-segment_E_instrument_pitch_data_ref.Violin8 = 'cv3'
-segment_E_instrument_pitch_data_ref.Viola = 'tv2'
+segment_E_instr_pdref = InstrumentPitchData()
+segment_E_instr_pdref.Flute1 = 'chord_voice2'
+segment_E_instr_pdref.Flute2 = 'chord_voice4'
+segment_E_instr_pdref.Flute3 = 'tremolo_voice1'
+segment_E_instr_pdref.Flute4 = 'tremolo_voice1'
+segment_E_instr_pdref.Bbclarinet1 = 'tremolo_voice2'
+segment_E_instr_pdref.Vibraphone = 'tremolo_voice2'
+segment_E_instr_pdref.Violin1 = 'melody_voice'
+segment_E_instr_pdref.Violin2 = 'melody_voice'
+segment_E_instr_pdref.Violin3 = 'melody_voice'
+segment_E_instr_pdref.Violin4 = 'melody_voice'
+segment_E_instr_pdref.Violin5 = 'melody_voice'
+segment_E_instr_pdref.Violin6 = 'chord_voice3'
+segment_E_instr_pdref.Violin7 = 'chord_voice3'
+segment_E_instr_pdref.Violin8 = 'chord_voice3'
+segment_E_instr_pdref.Viola = 'tremolo_voice2'
 
-db['segment_E_instrument_pitch_data_ref'] = segment_E_instrument_pitch_data_ref
+db['segment_E_instr_pdref'] = segment_E_instr_pdref
 
 
 segment_E_talea_data = SegmentTaleaData()
@@ -334,24 +334,24 @@ segment_F_pitch_data.tremolo_voice2 = str(segment_F_tv2_materials)
 
 db['segment_F_pitch_data'] = segment_F_pitch_data
 
-segment_F_instrument_pitch_data_ref = InstrumentPitchData()
-segment_F_instrument_pitch_data_ref.Flute1 = 'cv1'
-segment_F_instrument_pitch_data_ref.Flute2 = 'cv2'
-segment_F_instrument_pitch_data_ref.Flute3 = 'tv1'
-segment_F_instrument_pitch_data_ref.Flute4 = 'tv2'
-segment_F_instrument_pitch_data_ref.Bbclarinet1 = 'mv'
-segment_F_instrument_pitch_data_ref.Vibraphone = 'mv'
-segment_F_instrument_pitch_data_ref.Violin1 = 'cv3'
-segment_F_instrument_pitch_data_ref.Violin2 = 'cv3'
-segment_F_instrument_pitch_data_ref.Violin3 = 'cv3'
-segment_F_instrument_pitch_data_ref.Violin4 = 'cv3'
-segment_F_instrument_pitch_data_ref.Violin5 = 'cv3'
-segment_F_instrument_pitch_data_ref.Violin6 = 'cv3'
-segment_F_instrument_pitch_data_ref.Violin7 = 'cv3'
-segment_F_instrument_pitch_data_ref.Violin8 = 'cv3'
-segment_F_instrument_pitch_data_ref.Viola = 'mv'
+segment_F_instr_pdref = InstrumentPitchData()
+segment_F_instr_pdref.Flute1 = 'chord_voice1'
+segment_F_instr_pdref.Flute2 = 'chord_voice2'
+segment_F_instr_pdref.Flute3 = 'tremolo_voice1'
+segment_F_instr_pdref.Flute4 = 'tremolo_voice2'
+segment_F_instr_pdref.Bbclarinet1 = 'melody_voice'
+segment_F_instr_pdref.Vibraphone = 'melody_voice'
+segment_F_instr_pdref.Violin1 = 'chord_voice3'
+segment_F_instr_pdref.Violin2 = 'chord_voice3'
+segment_F_instr_pdref.Violin3 = 'chord_voice3'
+segment_F_instr_pdref.Violin4 = 'chord_voice3'
+segment_F_instr_pdref.Violin5 = 'chord_voice3'
+segment_F_instr_pdref.Violin6 = 'chord_voice3'
+segment_F_instr_pdref.Violin7 = 'chord_voice3'
+segment_F_instr_pdref.Violin8 = 'chord_voice3'
+segment_F_instr_pdref.Viola = 'melody_voice'
 
-db['segment_F_instrument_pitch_data_ref'] = segment_F_instrument_pitch_data_ref
+db['segment_F_instr_pdref'] = segment_F_instr_pdref
 
 segment_F_talea_data = SegmentTaleaData()
 segment_F_pulse_sequence = seq.generate_random_pulse_sequence(10)
@@ -387,24 +387,24 @@ segment_G_pitch_data.tremolo_voice2 = str(segment_G_tv2_materials)
 
 db['segment_G_pitch_data'] = segment_G_pitch_data
 
-segment_G_instrument_pitch_data_ref = InstrumentPitchData()
-segment_G_instrument_pitch_data_ref.Flute1 = 'cv1'
-segment_G_instrument_pitch_data_ref.Flute2 = 'cv2'
-segment_G_instrument_pitch_data_ref.Flute3 = 'tv1'
-segment_G_instrument_pitch_data_ref.Flute4 = 'tv2'
-segment_G_instrument_pitch_data_ref.Bbclarinet1 = 'mv'
-segment_G_instrument_pitch_data_ref.Vibraphone = 'mv'
-segment_G_instrument_pitch_data_ref.Violin1 = 'cv3'
-segment_G_instrument_pitch_data_ref.Violin2 = 'cv3'
-segment_G_instrument_pitch_data_ref.Violin3 = 'cv3'
-segment_G_instrument_pitch_data_ref.Violin4 = 'cv3'
-segment_G_instrument_pitch_data_ref.Violin5 = 'cv3'
-segment_G_instrument_pitch_data_ref.Violin6 = 'cv3'
-segment_G_instrument_pitch_data_ref.Violin7 = 'cv3'
-segment_G_instrument_pitch_data_ref.Violin8 = 'cv3'
-segment_G_instrument_pitch_data_ref.Viola = 'mv'
+segment_G_instr_pdref = InstrumentPitchData()
+segment_G_instr_pdref.Flute1 = 'chord_voice1'
+segment_G_instr_pdref.Flute2 = 'chord_voice2'
+segment_G_instr_pdref.Flute3 = 'tremolo_voice1'
+segment_G_instr_pdref.Flute4 = 'tremolo_voice2'
+segment_G_instr_pdref.Bbclarinet1 = 'melody_voice'
+segment_G_instr_pdref.Vibraphone = 'melody_voice'
+segment_G_instr_pdref.Violin1 = 'chord_voice3'
+segment_G_instr_pdref.Violin2 = 'chord_voice3'
+segment_G_instr_pdref.Violin3 = 'chord_voice3'
+segment_G_instr_pdref.Violin4 = 'chord_voice3'
+segment_G_instr_pdref.Violin5 = 'chord_voice3'
+segment_G_instr_pdref.Violin6 = 'chord_voice3'
+segment_G_instr_pdref.Violin7 = 'chord_voice3'
+segment_G_instr_pdref.Violin8 = 'chord_voice3'
+segment_G_instr_pdref.Viola = 'melody_voice'
 
-db['segment_G_instrument_pitch_data_ref'] = segment_G_instrument_pitch_data_ref
+db['segment_G_instr_pdref'] = segment_G_instr_pdref
 
 
 segment_G_talea_data = SegmentTaleaData()
@@ -438,24 +438,24 @@ segment_H_pitch_data.tremolo_voice2 = str(segment_H_tv2_materials)
 
 db['segment_H_pitch_data'] = segment_H_pitch_data
 
-segment_H_instrument_pitch_data_ref = InstrumentPitchData()
-segment_H_instrument_pitch_data_ref.Flute1 = 'cv1'
-segment_H_instrument_pitch_data_ref.Flute2 = 'cv2'
-segment_H_instrument_pitch_data_ref.Flute3 = 'cv3'
-segment_H_instrument_pitch_data_ref.Flute4 = 'cv4'
-segment_H_instrument_pitch_data_ref.Bbclarinet1 = 'mv'
-segment_H_instrument_pitch_data_ref.Vibraphone = 'cv4'
-segment_H_instrument_pitch_data_ref.Violin1 = 'cv1'
-segment_H_instrument_pitch_data_ref.Violin2 = 'cv1'
-segment_H_instrument_pitch_data_ref.Violin3 = 'cv2'
-segment_H_instrument_pitch_data_ref.Violin4 = 'cv3'
-segment_H_instrument_pitch_data_ref.Violin5 = 'cv4'
-segment_H_instrument_pitch_data_ref.Violin6 = 'cv1'
-segment_H_instrument_pitch_data_ref.Violin7 = 'cv2'
-segment_H_instrument_pitch_data_ref.Violin8 = 'cv3'
-segment_H_instrument_pitch_data_ref.Viola = 'cv4'
+segment_H_instr_pdref = InstrumentPitchData()
+segment_H_instr_pdref.Flute1 = 'chord_voice1'
+segment_H_instr_pdref.Flute2 = 'chord_voice2'
+segment_H_instr_pdref.Flute3 = 'chord_voice3'
+segment_H_instr_pdref.Flute4 = 'chord_voice4'
+segment_H_instr_pdref.Bbclarinet1 = 'melody_voice'
+segment_H_instr_pdref.Vibraphone = 'chord_voice4'
+segment_H_instr_pdref.Violin1 = 'chord_voice1'
+segment_H_instr_pdref.Violin2 = 'chord_voice1'
+segment_H_instr_pdref.Violin3 = 'chord_voice2'
+segment_H_instr_pdref.Violin4 = 'chord_voice3'
+segment_H_instr_pdref.Violin5 = 'chord_voice4'
+segment_H_instr_pdref.Violin6 = 'chord_voice1'
+segment_H_instr_pdref.Violin7 = 'chord_voice2'
+segment_H_instr_pdref.Violin8 = 'chord_voice3'
+segment_H_instr_pdref.Viola = 'chord_voice4'
 
-db['segment_H_instrument_pitch_data_ref'] = segment_H_instrument_pitch_data_ref
+db['segment_H_instr_pdref'] = segment_H_instr_pdref
 
 segment_H_talea_data = SegmentTaleaData()
 segment_H_pulse_sequence = seq.generate_random_pulse_sequence(10)
@@ -488,24 +488,24 @@ segment_I_pitch_data.tremolo_voice2 = str(segment_I_tv2_materials)
 
 db['segment_I_pitch_data'] = segment_I_pitch_data
 
-segment_I_instrument_pitch_data_ref = InstrumentPitchData()
-segment_I_instrument_pitch_data_ref.Flute1 = 'cv1'
-segment_I_instrument_pitch_data_ref.Flute2 = 'cv1'
-segment_I_instrument_pitch_data_ref.Flute3 = 'cv2'
-segment_I_instrument_pitch_data_ref.Flute4 = 'cv2'
-segment_I_instrument_pitch_data_ref.Bbclarinet1 = 'cv4'
-segment_I_instrument_pitch_data_ref.Vibraphone = 'cv4'
-segment_I_instrument_pitch_data_ref.Violin1 = 'mv'
-segment_I_instrument_pitch_data_ref.Violin2 = 'mv'
-segment_I_instrument_pitch_data_ref.Violin3 = 'mv'
-segment_I_instrument_pitch_data_ref.Violin4 = 'mv'
-segment_I_instrument_pitch_data_ref.Violin5 = 'mv'
-segment_I_instrument_pitch_data_ref.Violin6 = 'mv'
-segment_I_instrument_pitch_data_ref.Violin7 = 'mv'
-segment_I_instrument_pitch_data_ref.Violin8 = 'mv'
-segment_I_instrument_pitch_data_ref.Viola = 'cv4'
+segment_I_instr_pdref = InstrumentPitchData()
+segment_I_instr_pdref.Flute1 = 'chord_voice1'
+segment_I_instr_pdref.Flute2 = 'chord_voice1'
+segment_I_instr_pdref.Flute3 = 'chord_voice2'
+segment_I_instr_pdref.Flute4 = 'chord_voice2'
+segment_I_instr_pdref.Bbclarinet1 = 'chord_voice4'
+segment_I_instr_pdref.Vibraphone = 'chord_voice4'
+segment_I_instr_pdref.Violin1 = 'melody_voice'
+segment_I_instr_pdref.Violin2 = 'melody_voice'
+segment_I_instr_pdref.Violin3 = 'melody_voice'
+segment_I_instr_pdref.Violin4 = 'melody_voice'
+segment_I_instr_pdref.Violin5 = 'melody_voice'
+segment_I_instr_pdref.Violin6 = 'melody_voice'
+segment_I_instr_pdref.Violin7 = 'melody_voice'
+segment_I_instr_pdref.Violin8 = 'melody_voice'
+segment_I_instr_pdref.Viola = 'chord_voice4'
 
-db['segment_I_instrument_pitch_data_ref'] = segment_I_instrument_pitch_data_ref
+db['segment_I_instr_pdref'] = segment_I_instr_pdref
 
 segment_I_talea_data = SegmentTaleaData()
 segment_I_pulse_sequence = seq.generate_random_pulse_sequence(10)
@@ -538,24 +538,24 @@ segment_J_pitch_data = str(segment_J_tv2_materials)
 
 db['segment_J_pitch_data'] = segment_J_pitch_data
 
-segment_J_instrument_pitch_data_ref = InstrumentPitchData()
-segment_J_instrument_pitch_data_ref.Flute1 = 'cv1'
-segment_J_instrument_pitch_data_ref.Flute2 = 'cv1'
-segment_J_instrument_pitch_data_ref.Flute3 = 'tv1'
-segment_J_instrument_pitch_data_ref.Flute4 = 'tv2'
-segment_J_instrument_pitch_data_ref.Bbclarinet1 = 'mv'
-segment_J_instrument_pitch_data_ref.Vibraphone = 'mv'
-segment_J_instrument_pitch_data_ref.Violin1 = 'cv2'
-segment_J_instrument_pitch_data_ref.Violin2 = 'cv2'
-segment_J_instrument_pitch_data_ref.Violin3 = 'cv2'
-segment_J_instrument_pitch_data_ref.Violin4 = 'cv2'
-segment_J_instrument_pitch_data_ref.Violin5 = 'cv2'
-segment_J_instrument_pitch_data_ref.Violin6 = 'cv3'
-segment_J_instrument_pitch_data_ref.Violin7 = 'cv3'
-segment_J_instrument_pitch_data_ref.Violin8 = 'cv3'
-segment_J_instrument_pitch_data_ref.Viola = 'mv'
+segment_J_instr_pdref = InstrumentPitchData()
+segment_J_instr_pdref.Flute1 = 'chord_voice1'
+segment_J_instr_pdref.Flute2 = 'chord_voice1'
+segment_J_instr_pdref.Flute3 = 'tremolo_voice1'
+segment_J_instr_pdref.Flute4 = 'tremolo_voice2'
+segment_J_instr_pdref.Bbclarinet1 = 'melody_voice'
+segment_J_instr_pdref.Vibraphone = 'melody_voice'
+segment_J_instr_pdref.Violin1 = 'chord_voice2'
+segment_J_instr_pdref.Violin2 = 'chord_voice2'
+segment_J_instr_pdref.Violin3 = 'chord_voice2'
+segment_J_instr_pdref.Violin4 = 'chord_voice2'
+segment_J_instr_pdref.Violin5 = 'chord_voice2'
+segment_J_instr_pdref.Violin6 = 'chord_voice3'
+segment_J_instr_pdref.Violin7 = 'chord_voice3'
+segment_J_instr_pdref.Violin8 = 'chord_voice3'
+segment_J_instr_pdref.Viola = 'melody_voice'
 
-db['segment_J_instrument_pitch_data_ref'] = segment_J_instrument_pitch_data_ref
+db['segment_J_instr_pdref'] = segment_J_instr_pdref
 
 segment_J_talea_data = SegmentTaleaData()
 segment_J_pulse_sequence = seq.generate_random_pulse_sequence(10)
@@ -588,24 +588,24 @@ segment_K_pitch_data.tremolo_voice2 = str(segment_K_tv2_materials)
 
 db['segment_K_pitch_data'] = segment_K_pitch_data
 
-segment_K_instrument_pitch_data_ref = InstrumentPitchData()
-segment_K_instrument_pitch_data_ref.Flute1 = 'cv1'
-segment_K_instrument_pitch_data_ref.Flute2 = 'cv2'
-segment_K_instrument_pitch_data_ref.Flute3 = 'cv3'
-segment_K_instrument_pitch_data_ref.Flute4 = 'cv4'
-segment_K_instrument_pitch_data_ref.Bbclarinet1 = 'mv'
-segment_K_instrument_pitch_data_ref.Vibraphone = 'cv4'
-segment_K_instrument_pitch_data_ref.Violin1 = 'cv2'
-segment_K_instrument_pitch_data_ref.Violin2 = 'cv2'
-segment_K_instrument_pitch_data_ref.Violin3 = 'tv1'
-segment_K_instrument_pitch_data_ref.Violin4 = 'tv1'
-segment_K_instrument_pitch_data_ref.Violin5 = 'tv1'
-segment_K_instrument_pitch_data_ref.Violin6 = 'cv1'
-segment_K_instrument_pitch_data_ref.Violin7 = 'cv2'
-segment_K_instrument_pitch_data_ref.Violin8 = 'cv3'
-segment_K_instrument_pitch_data_ref.Viola = 'cv4'
+segment_K_instr_pdref = InstrumentPitchData()
+segment_K_instr_pdref.Flute1 = 'chord_voice1'
+segment_K_instr_pdref.Flute2 = 'chord_voice2'
+segment_K_instr_pdref.Flute3 = 'chord_voice3'
+segment_K_instr_pdref.Flute4 = 'chord_voice4'
+segment_K_instr_pdref.Bbclarinet1 = 'melody_voice'
+segment_K_instr_pdref.Vibraphone = 'chord_voice4'
+segment_K_instr_pdref.Violin1 = 'chord_voice2'
+segment_K_instr_pdref.Violin2 = 'chord_voice2'
+segment_K_instr_pdref.Violin3 = 'tremolo_voice1'
+segment_K_instr_pdref.Violin4 = 'tremolo_voice1'
+segment_K_instr_pdref.Violin5 = 'tremolo_voice1'
+segment_K_instr_pdref.Violin6 = 'chord_voice1'
+segment_K_instr_pdref.Violin7 = 'chord_voice2'
+segment_K_instr_pdref.Violin8 = 'chord_voice3'
+segment_K_instr_pdref.Viola = 'chord_voice4'
 
-db['segment_K_instrument_pitch_data_ref'] = segment_K_instrument_pitch_data_ref
+db['segment_K_instr_pdref'] = segment_K_instr_pdref
 
 
 segment_K_talea_data = SegmentTaleaData()
@@ -639,24 +639,24 @@ segment_L_pitch_data.tremolo_voice2 = str(segment_L_tv2_materials)
 
 db['segment_L_pitch_data'] = segment_L_pitch_data
 
-segment_L_instrument_pitch_data_ref = InstrumentPitchData()
-segment_L_instrument_pitch_data_ref.Flute1 = 'cv1'
-segment_L_instrument_pitch_data_ref.Flute2 = 'cv2'
-segment_L_instrument_pitch_data_ref.Flute3 = 'cv3'
-segment_L_instrument_pitch_data_ref.Flute4 = 'cv4'
-segment_L_instrument_pitch_data_ref.Bbclarinet1 = 'mv'
-segment_L_instrument_pitch_data_ref.Vibraphone = 'cv4'
-segment_L_instrument_pitch_data_ref.Violin1 = 'cv4'
-segment_L_instrument_pitch_data_ref.Violin2 = 'cv4'
-segment_L_instrument_pitch_data_ref.Violin3 = 'tv2'
-segment_L_instrument_pitch_data_ref.Violin4 = 'tv2'
-segment_L_instrument_pitch_data_ref.Violin5 = 'tv2'
-segment_L_instrument_pitch_data_ref.Violin6 = 'cv1'
-segment_L_instrument_pitch_data_ref.Violin7 = 'cv2'
-segment_L_instrument_pitch_data_ref.Violin8 = 'cv3'
-segment_L_instrument_pitch_data_ref.Viola = 'cv4'
+segment_L_instr_pdref = InstrumentPitchData()
+segment_L_instr_pdref.Flute1 = 'chord_voice1'
+segment_L_instr_pdref.Flute2 = 'chord_voice2'
+segment_L_instr_pdref.Flute3 = 'chord_voice3'
+segment_L_instr_pdref.Flute4 = 'chord_voice4'
+segment_L_instr_pdref.Bbclarinet1 = 'melody_voice'
+segment_L_instr_pdref.Vibraphone = 'chord_voice4'
+segment_L_instr_pdref.Violin1 = 'chord_voice4'
+segment_L_instr_pdref.Violin2 = 'chord_voice4'
+segment_L_instr_pdref.Violin3 = 'tremolo_voice2'
+segment_L_instr_pdref.Violin4 = 'tremolo_voice2'
+segment_L_instr_pdref.Violin5 = 'tremolo_voice2'
+segment_L_instr_pdref.Violin6 = 'chord_voice1'
+segment_L_instr_pdref.Violin7 = 'chord_voice2'
+segment_L_instr_pdref.Violin8 = 'chord_voice3'
+segment_L_instr_pdref.Viola = 'chord_voice4'
 
-db['segment_L_instrument_pitch_data_ref'] = segment_L_instrument_pitch_data_ref
+db['segment_L_instr_pdref'] = segment_L_instr_pdref
 
 
 segment_L_talea_data = SegmentTaleaData()
@@ -667,13 +667,16 @@ db['segment_L_talea_data'] = segment_L_talea_data
 db.close()
 
 if __name__ == '__main__':
+    import abjad
     db = shelve.open('music_data_shelve')
-    for key in db:
-        print(key)
-    segment_TEST_pitch_data = db['segment_TEST_pitches']
-    segment_TEST_talea_data = db['segment_TEST_talea']
-    print(segment_TEST_pitch_data.chord_voice3)
-    print(segment_TEST_talea_data)
+    #for key in db:
+    #    print(key)
 
-
+    segment_A_instr_pdref = db['segment_A_instr_pdref']
+    segment_A_pitch_data = db['segment_A_pitch_data']
+    segment_A_Flute1_instr_pdref = segment_A_instr_pdref.Flute1
+    segment_A_Flute1_pd = getattr(segment_A_pitch_data,
+                                  segment_A_Flute1_instr_pdref)
+    segment_A_Flute1_pitch_segment = abjad.PitchSegment(segment_A_Flute1_pd)
+    print(segment_A_Flute1_pitch_segment)
     db.close()
