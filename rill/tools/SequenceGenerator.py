@@ -15,7 +15,7 @@ class SequenceGenerator(object):
         from random import getrandbits
 
         bits = getrandbits
-        binary_string = "{0:b}".format(bits(val))
+        binary_string = "{0:b}".format(bits(length))
         binary_list = [int(x) for x in binary_string]
         rhythm_list = [x if x == 1 else -1 for x in binary_list]
         return rhythm_list
