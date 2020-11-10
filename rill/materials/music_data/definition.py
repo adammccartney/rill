@@ -668,6 +668,7 @@ db.close()
 
 if __name__ == '__main__':
     import abjad
+    from rill.materials.music_init_data.definition import InstrumentMusicData
     db = shelve.open('music_data_shelve')
     #for key in db:
     #    print(key)
@@ -678,5 +679,6 @@ if __name__ == '__main__':
     segment_A_Flute1_pd = getattr(segment_A_pitch_data,
                                   segment_A_Flute1_instr_pdref)
     segment_A_Flute1_pitch_segment = abjad.PitchSegment(segment_A_Flute1_pd)
-    print(segment_A_Flute1_pitch_segment)
+    Flute1_music_data = InstrumentMusicData()
+    Flute1_music_data.pitches = segment_A_Flute1_pitch_segment
     db.close()
