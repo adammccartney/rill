@@ -334,6 +334,25 @@ segment_F_pitch_data.tremolo_voice2 = str(segment_F_tv2_materials)
 
 db['segment_F_pitch_data'] = segment_F_pitch_data
 
+segment_F_instrument_pitch_data_ref = InstrumentPitchData()
+segment_F_instrument_pitch_data_ref.Flute1 = 'cv1'
+segment_F_instrument_pitch_data_ref.Flute2 = 'cv2'
+segment_F_instrument_pitch_data_ref.Flute3 = 'tv1'
+segment_F_instrument_pitch_data_ref.Flute4 = 'tv2'
+segment_F_instrument_pitch_data_ref.Bbclarinet1 = 'mv'
+segment_F_instrument_pitch_data_ref.Vibraphone = 'mv'
+segment_F_instrument_pitch_data_ref.Violin1 = 'cv3'
+segment_F_instrument_pitch_data_ref.Violin2 = 'cv3'
+segment_F_instrument_pitch_data_ref.Violin3 = 'cv3'
+segment_F_instrument_pitch_data_ref.Violin4 = 'cv3'
+segment_F_instrument_pitch_data_ref.Violin5 = 'cv3'
+segment_F_instrument_pitch_data_ref.Violin6 = 'cv3'
+segment_F_instrument_pitch_data_ref.Violin7 = 'cv3'
+segment_F_instrument_pitch_data_ref.Violin8 = 'cv3'
+segment_F_instrument_pitch_data_ref.Viola = 'mv'
+
+db['segment_F_instrument_pitch_data_ref'] = segment_F_instrument_pitch_data_ref
+
 segment_F_talea_data = SegmentTaleaData()
 segment_F_pulse_sequence = seq.generate_random_pulse_sequence(10)
 segment_F_talea_data.pulse_counts = segment_F_pulse_sequence
