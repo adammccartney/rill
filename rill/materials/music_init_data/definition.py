@@ -45,13 +45,22 @@ def make_default_talea():
 
 @dataclass
 class InstrumentMusicData:
-    pitches: abjad.CyclicTuple = field(default_factory=make_default_pitches)
+    _pitches: abjad.CyclicTuple = field(default_factory=make_default_pitches)
     attachments: Sequence[AttachmentMaker] = field(
         default_factory=make_default_attachments)
     denominator: int = default_denominator
     time_signature_pairs: Sequence[tuple] = field(
         default_factory=make_default_tsig_pairs)
     _talea: List[int] = field(default_factory=make_default_talea)
+
+    @property
+    def pitches(self) -> abjad.CyclicTuple:
+        return self._pitches
+
+    @pitches.setter
+    def pitches(self, pitch_segment) -> None:
+        cyclic_tuple = abjad.CyclicTuple(pitch_segment)
+        self._pitches = cyclic_tuple
 
     @property
     def talea(self) -> list:
@@ -69,8 +78,6 @@ class InstrumentMusicData:
                 self.talea[i] = self.talea[i] * -1
             else:
                 ValueError(self.talea[i], "is an unnacceptable count value")
-
-
 
 
 def get_instrument_names():
@@ -516,6 +523,7 @@ if __name__ == '__main__':
     default_pitch_materials = chord_voice["black"][5][0:3]
     default_pitch_materials += chord_voice["red"][5][0:3]
     default_pitch_data = str(default_pitch_materials)
+    print("default_pitch_data: ", type(default_pitch_materials))
     test_segment_pitch_data = SegmentPitchData(_chord_voice3=default_pitch_data)
     test_segment_talea_data = SegmentTaleaData()
     test_segment_cv3_pitch_segment = test_segment_pitch_data.chord_voice3
