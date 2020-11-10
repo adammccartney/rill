@@ -1,12 +1,13 @@
-import re
 import abjad
 
 from dataclasses import dataclass, field
-from typing import Dict, List, Sequence
+from typing import List, Sequence
 
 from rill.tools.AttachmentMaker import (AttachmentMaker,
                                         AccentAttachmentMaker)
 from rill.materials.pitch.definition import chord_voice
+from rill.materials.instruments.definition import instruments
+
 
 def make_default_pitches():
     default_pitch_materials = chord_voice["black"][5][0:3]
@@ -70,7 +71,6 @@ class InstrumentMusicData:
                 ValueError(self.talea[i], "is an unnacceptable count value")
 
 
-from rill.materials.instruments.definition import instruments
 
 
 def get_instrument_names():
@@ -196,14 +196,18 @@ class SegmentPitchData:
 def make_sync_talea():
     return [-2, 2]
 
+
 def make_euclid_talea():
     return [3, 4, 4]
+
 
 def make_pedal_talea():
     return [20]
 
-def make_perc_talea():
-    return [-1, 1, -1, -1, 1, 1, -1, -1]
+
+def make_pulse_talea():
+    return [-1, 1, -1, -1, 1, 1, -1, -1, 1, 1]
+
 
 @dataclass
 class SegmentTaleaData:
@@ -211,7 +215,7 @@ class SegmentTaleaData:
     _syncopated_counts: List[int] = field(default_factory=make_sync_talea)
     _euclidean_counts: List[int] = field(default_factory=make_euclid_talea)
     _pedal_tone_counts: List[int] = field(default_factory=make_pedal_talea)
-    _short_percussive_counts: List[int] = field(default_factory=make_perc_talea)
+    _pulse_counts: List[int] = field(default_factory=make_pulse_talea)
 
     @property
     def syncopated_counts(self) -> list:
