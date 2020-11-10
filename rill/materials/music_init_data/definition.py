@@ -97,17 +97,170 @@ def make_segment_music_default():
         segment_defaults[iname] = instrument_input
     return segment_defaults
 
+def make_instrument_music_default():
+    instrument_music_data = InstrumentMusicData()
+    return instrument_music_data()
+
 
 @dataclass
 class SegmentMusicData:
     """Stores a dictionary of segment defaults
     Access through instance.instrument_music_data[instrument]
     """
+    # Can remove this first function, was scaffolding for test
     instrument_music_data: Sequence[InstrumentMusicData] = field(
         default_factory=make_segment_music_default)
 
-    def __getitem__(self, key):
-        return getattr(self, key)
+    _Flute1: InstrumentMusicData = field(
+        default_factory=make_instrument_music_default)
+    _Flute2: InstrumentMusicData = field(
+        default_factory=make_instrument_music_default)
+    _Flute3: InstrumentMusicData = field(
+        default_factory=make_instrument_music_default)
+    _Flute4: InstrumentMusicData = field(
+        default_factory=make_instrument_music_default)
+    _Bbclarinet1: InstrumentMusicData = field(
+        default_factory=make_instrument_music_default)
+    _Vibraphone: InstrumentMusicData = field(
+        default_factory=make_instrument_music_default)
+    _Violin1: InstrumentMusicData = field(
+        default_factory=make_instrument_music_default)
+    _Violin2: InstrumentMusicData = field(
+        default_factory=make_instrument_music_default)
+    _Violin3: InstrumentMusicData = field(
+        default_factory=make_instrument_music_default)
+    _Violin4: InstrumentMusicData = field(
+        default_factory=make_instrument_music_default)
+    _Violin5: InstrumentMusicData = field(
+        default_factory=make_instrument_music_default)
+    _Violin6: InstrumentMusicData = field(
+        default_factory=make_instrument_music_default)
+    _Violin7: InstrumentMusicData = field(
+        default_factory=make_instrument_music_default)
+    _Violin8: InstrumentMusicData = field(
+        default_factory=make_instrument_music_default)
+    _Viola: InstrumentMusicData = field(
+        default_factory=make_instrument_music_default)
+
+    @property
+    def Flute1(self) -> InstrumentMusicData:
+        return self._Flute1
+
+    @Flute1.setter
+    def Flute1(self, instrument_music_data) -> None:
+        self._Flute1 = instrument_music_data
+
+    @property
+    def Flute2(self) -> InstrumentMusicData:
+        return self._Flute2
+
+    @Flute2.setter
+    def Flute2(self, instrument_music_data) -> None:
+        self._Flute2 = instrument_music_data
+
+    @property
+    def Flute3(self) -> InstrumentMusicData:
+        return self._Flute3
+
+    @Flute3.setter
+    def Flute3(self, instrument_music_data) -> None:
+        self._Flute3 = instrument_music_data
+
+    @property
+    def Flute4(self) -> InstrumentMusicData:
+        return self._Flute4
+
+    @Flute4.setter
+    def Flute4(self, instrument_music_data) -> None:
+        self._Flute4 = instrument_music_data
+
+    @property
+    def Bbclarinet1(self) -> InstrumentMusicData:
+        return self._Bbclarinet1
+
+    @Bbclarinet1.setter
+    def Bbclarinet1(self, instrument_music_data) -> None:
+        self._Bbclarinet1 = instrument_music_data
+
+    @property
+    def Vibraphone(self) -> InstrumentMusicData:
+        return self._Vibraphone
+
+    @Vibraphone.setter
+    def Vibraphone(self, instrument_music_data) -> None:
+        self._Vibraphone = instrument_music_data
+
+    @property
+    def Violin1(self) -> InstrumentMusicData:
+        return self._Violin1
+
+    @Violin1.setter
+    def Violin1(self, instrument_music_data) -> None:
+        self._Violin1 = instrument_music_data
+
+    @property
+    def Violin2(self) -> InstrumentMusicData:
+        return self._Violin2
+
+    @Violin2.setter
+    def Violin2(self, instrument_music_data) -> None:
+        self._Violin2 = instrument_music_data
+
+    @property
+    def Violin3(self) -> InstrumentMusicData:
+        return self._Violin3
+
+    @Violin3.setter
+    def Violin3(self, instrument_music_data) -> None:
+        self._Violin3 = instrument_music_data
+
+    @property
+    def Violin4(self) -> InstrumentMusicData:
+        return self._Violin4
+
+    @Violin4.setter
+    def Violin4(self, instrument_music_data) -> None:
+        self._Violin4 = instrument_music_data
+
+    @property
+    def Violin5(self) -> InstrumentMusicData:
+        return self._Violin5
+
+    @Violin5.setter
+    def Violin5(self, instrument_music_data) -> None:
+        self._Violin5 = instrument_music_data
+
+    @property
+    def Violin6(self) -> InstrumentMusicData:
+        return self._Violin6
+
+    @Violin6.setter
+    def Violin6(self, instrument_music_data) -> None:
+        self._Violin6 = instrument_music_data
+
+    @property
+    def Violin7(self) -> InstrumentMusicData:
+        return self._Violin7
+
+    @Violin7.setter
+    def Violin7(self, instrument_music_data) -> None:
+        self._Violin7 = instrument_music_data
+
+    @property
+    def Violin8(self) -> InstrumentMusicData:
+        return self._Violin8
+
+    @Violin8.setter
+    def Violin8(self, instrument_music_data) -> None:
+        self._Violin8 = instrument_music_data
+
+    @property
+    def Viola(self) -> InstrumentMusicData:
+        return self._Viola
+
+    @Viola.setter
+    def Viola(self, instrument_music_data) -> None:
+        self._Viola = instrument_music_data
 
 
 def make_empty_string():
@@ -447,19 +600,6 @@ class InstrumentPitchData:
             self._Violin8 = ref
         else:
             ValueError(ref, "is not a valid reference for pdata")
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @dataclass
