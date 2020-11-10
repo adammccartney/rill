@@ -365,61 +365,66 @@ segment_J_talea_data.pulse_counts = segment_J_pulse_sequence
 db['segment_J_talea_data'] = segment_J_talea_data
 
 # K
-
+segment_K_pitch_data = SegmentPitchData()
 segment_K_cv1_pitch_materials = chord_voice["blue"][6][3:5]
-segment_K_cv1_pitches = str(segment_K_cv1_pitch_materials)
+segment_K_pitch_data.chord_voice1 = str(segment_K_cv1_pitch_materials)
 
 segment_K_cv2_pitch_materials = chord_voice["green"][6][3:5]
-segment_K_cv2_pitches = str(segment_K_cv2_pitch_materials)
+segment_K_pitch_data.chord_voice2 = str(segment_K_cv2_pitch_materials)
 
 segment_K_cv3_pitch_materials = chord_voice["black"][5][3:5].rotate(n=1)
 segment_K_cv3_pitch_materials += chord_voice["red"][5][3:5].rotate(n=1)
-segment_K_cv3_pitches = str(segment_K_cv3_pitch_materials)
+segment_K_pitch_data.chord_voice3 = str(segment_K_cv3_pitch_materials)
 
 segment_K_cv4_pitch_materials = chord_voice["black"][4][3:5]
-segment_K_cv4_pitches = str(segment_K_cv4_pitch_materials)
+segment_K_pitch_data.chord_voice4 = str(segment_K_cv4_pitch_materials)
 
 segment_K_mv_materials = melody_voice["blue"]["p2"][2][:]
-segment_K_mv_pitches = str(segment_G_mv_materials)
+segment_K_pitch_data.melody_voice = str(segment_G_mv_materials)
 
 segment_K_tv1_materials = tremolo_voice["green"][6]["v2"][:]
-segment_K_tv1_pitches = str(segment_K_tv1_materials)
+segment_K_pitch_data.tremolo_voice1 = str(segment_K_tv1_materials)
 
 segment_K_tv2_materials = tremolo_voice["black"][4]["v2"][:]
-segment_K_tv2_pitches = str(segment_K_tv2_materials)
+segment_K_pitch_data.tremolo_voice2 = str(segment_K_tv2_materials)
+
+db['segment_K_pitch_data'] = segment_K_pitch_data
 
 segment_K_talea_data = SegmentTaleaData()
 segment_K_pulse_sequence = seq.generate_random_pulse_sequence(10)
 segment_K_talea_data.pulse_counts = segment_K_pulse_sequence
+db['segment_K_talea_data'] = segment_K_talea_data
 
 # L
-
+segment_L_pitch_data = SegmentPitchData()
 segment_L_cv1_pitch_materials = chord_voice["blue"][6][6:8]
-segment_L_cv1_pitches = str(segment_L_cv1_pitch_materials)
+segment_L_pitch_data.chord_voice1 = str(segment_L_cv1_pitch_materials)
 
 segment_L_cv2_pitch_materials = chord_voice["green"][6][6:8]
-segment_L_cv2_pitches = str(segment_L_cv2_pitch_materials)
+segment_L_pitch_data.chord_voice2 = str(segment_L_cv2_pitch_materials)
 
 segment_L_cv3_pitch_materials = chord_voice["black"][5][6:8].rotate(n=1)
 segment_L_cv3_pitch_materials += chord_voice["red"][5][6:8].rotate(n=1)
-segment_L_cv3_pitches = str(segment_L_cv3_pitch_materials)
+segment_L_pitch_data.chord_voice3 = str(segment_L_cv3_pitch_materials)
 
 segment_L_cv4_pitch_materials = chord_voice["black"][4][6:8]
-segment_L_cv4_pitches = str(segment_L_cv4_pitch_materials)
+segment_L_pitch_data.chord_voice4 = str(segment_L_cv4_pitch_materials)
 
 segment_L_mv_materials = melody_voice["blue"]["p3"][1][:]
-segment_L_mv_pitches = str(segment_G_mv_materials)
+segment_L_pitch_data.melody_voice = str(segment_G_mv_materials)
 
 segment_L_tv1_materials = tremolo_voice["green"][6]["v3"][:]
-segment_L_tv1_pitches = str(segment_L_tv1_materials)
+segment_L_pitch_data.tremolo_voice1 = str(segment_L_tv1_materials)
 
 segment_L_tv2_materials = tremolo_voice["black"][4]["v3"][:]
-segment_L_tv2_pitches = str(segment_L_tv2_materials)
+segment_L_pitch_data.tremolo_voice2 = str(segment_L_tv2_materials)
+
+db['segment_L_pitch_data'] = segment_L_pitch_data
 
 segment_L_talea_data = SegmentTaleaData()
 segment_L_pulse_sequence = seq.generate_random_pulse_sequence(10)
 segment_L_talea_data.pulse_counts = segment_L_pulse_sequence
-
+db['segment_L_talea_data'] = segment_L_talea_data
 
 db.close()
 
@@ -432,4 +437,3 @@ if __name__ == '__main__':
     print(segment_TEST_pitch_data.chord_voice3)
     print(segment_TEST_talea_data)
     db.close()
-    print(segment_A_pulse_talea)
