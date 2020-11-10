@@ -64,6 +64,8 @@ segment_A_tv1_pitches = str(segment_A_tv1_materials)
 segment_A_tv2_materials = tremolo_voice["black"][5]["v1"][:]
 segment_A_tv2_pitches = str(segment_A_tv2_materials)
 
+segment_A_pulse_talea = seq.generate_random_pulse_sequence(10)
+
 # B
 
 segment_B_cv1_pitch_material = copy.deepcopy(segment_A_cv1_pitch_materials)
@@ -341,14 +343,6 @@ segment_L_tv1_pitches = str(segment_L_tv1_materials)
 
 segment_L_tv2_materials = tremolo_voice["black"][4]["v3"][:]
 segment_L_tv2_pitches = str(segment_L_tv2_materials)
-
-
-
-
-
-
-
-
 
 
 db.close()
