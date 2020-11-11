@@ -1,15 +1,23 @@
 import sys
+import importlib
 
 import abjad
 import rill
 
 from pathlib import Path
 
+from rill.segments.segment_A.music_data import segment_music_data
+
 segment_name = sys.argv[1]
 rehearsal_mark = sys.argv[2]
 
 segment_dir = f"segment_{segment_name}"
-from rill.segments.segment_A.music_data import segment_music_data
+
+#module_name = "rill.segments.{0}.music_data".format(segment_dir)
+#print(module_name)
+#module = importlib.import_module(module_name)
+#segment_music_data = module.__dict__['segment_music_data']
+
 
 
 def make_music_code_block(instrument_name, instrument_music_data):
@@ -109,17 +117,17 @@ Viola_music_code_block = make_music_code_block(
 
 segment_definition = f"""
 import copy
-import pathlib
 
 import abjad
 import rill
 
+from pathlib import Path
 
 from rill.tools.MusicMaker import MusicMaker
 from rill.tools.AttachmentMaker import AccentAttachmentMaker
 
-this_current_directory =  pathlib.Path.cwd()
-score =rill.ScoreTemplate()
+this_current_directory =  Path.cwd()
+score = rill.ScoreTemplate()
 score_template = score()
 
 segment_maker = rill.SegmentMaker(
@@ -190,7 +198,7 @@ lilypond_file = segment_maker.run()
 
 
 cwd = Path.cwd()
-target = cwd / segment_dir / 'definition.py'
+target = cwd / 'definition.py'
 print(target)
 output_file = open(target, 'w')
 output_file.write(segment_definition)
