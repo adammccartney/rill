@@ -54,6 +54,12 @@ Flute3_music_code_block = make_music_code_block(
     instrument_music_data=Flute3_instrument_music_data
 )
 
+Flute4_instrument_music_data = segment_music_data.Flute4
+Flute4_music_code_block = make_music_code_block(
+    instrument_name="Flute4",
+    instrument_music_data=Flute4_instrument_music_data
+)
+
 Bbclarinet1_instrument_music_data = segment_music_data.Bbclarinet1
 Bbclarinet1_music_code_block = make_music_code_block(
     instrument_name="Bbclarinet1",
@@ -106,6 +112,12 @@ Violin7_instrument_music_data = segment_music_data.Violin7
 Violin7_music_code_block = make_music_code_block(
     instrument_name="Violin7",
     instrument_music_data=Violin7_instrument_music_data
+)
+
+Violin8_instrument_music_data = segment_music_data.Violin8
+Violin8_music_code_block = make_music_code_block(
+    instrument_name="Violin8",
+    instrument_music_data=Violin8_instrument_music_data
 )
 
 Viola_instrument_music_data = segment_music_data.Viola
@@ -163,6 +175,9 @@ Flute2_instrument_music_data = segment_music_dict['Flute2']
 Flute3_instrument_music_data = segment_music_dict['Flute3']
 {Flute3_music_code_block}
 
+Flute4_instrument_music_data = segment_music_dict['Flute4']
+{Flute4_music_code_block}
+
 Bbclarinet1_instrument_music_data = segment_music_dict['Bbclarinet1']
 {Bbclarinet1_music_code_block}
 
@@ -189,6 +204,9 @@ Violin6_instrument_music_data = segment_music_dict['Violin6']
 
 Violin7_instrument_music_data = segment_music_dict['Violin7']
 {Violin7_music_code_block}
+
+Violin8_instrument_music_data = segment_music_dict['Violin8']
+{Violin8_music_code_block}
 
 Viola_instrument_music_data = segment_music_dict['Viola']
 {Viola_music_code_block}
