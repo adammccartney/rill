@@ -62,9 +62,11 @@ segment_A_pitch_data.melody_voice = str(segment_A_mv_materials)
 
 segment_A_tv1_materials = tremolo_voice["green"][6]["v1"][:]
 segment_A_pitch_data.tremolo_voice1 = str(segment_A_tv1_materials)
+print("tv1: ", segment_A_pitch_data.tremolo_voice1)
 
 segment_A_tv2_materials = tremolo_voice["black"][5]["v1"][:]
 segment_A_pitch_data.tremolo_voice2 = str(segment_A_tv2_materials)
+print("again as string: ", segment_A_pitch_data.tremolo_voice2)
 
 db['segment_A_pitch_data'] = segment_A_pitch_data
 
@@ -676,9 +678,48 @@ if __name__ == '__main__':
     segment_A_instr_pdref = db['segment_A_instr_pdref']
     segment_A_pitch_data = db['segment_A_pitch_data']
     segment_A_Flute1_instr_pdref = segment_A_instr_pdref.Flute1
+    print("Flute1 pdref: ", segment_A_Flute1_instr_pdref )
     segment_A_Flute1_pd = getattr(segment_A_pitch_data,
                                   segment_A_Flute1_instr_pdref)
     segment_A_Flute1_pitch_segment = abjad.PitchSegment(segment_A_Flute1_pd)
     Flute1_music_data = InstrumentMusicData()
     Flute1_music_data.pitches = segment_A_Flute1_pitch_segment
+
+    segments = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
+    for name in segments:
+        lookup = f"segment_{name}"
+
+    print(segment_A_instr_pdref.Flute1)
+    print(segment_A_instr_pdref.Flute2)
+    print(segment_A_instr_pdref.Flute3)
+    print(segment_A_instr_pdref.Flute4)
+    print(segment_A_instr_pdref.Bbclarinet1)
+    print(segment_A_instr_pdref.Vibraphone)
+    print(segment_A_instr_pdref.Violin1)
+    print(segment_A_instr_pdref.Violin2)
+
+    segment_A_Violin3_instr_pdref = segment_A_instr_pdref.Violin3
+    print("HERE: ", segment_A_Violin3_instr_pdref)
+    segment_A_Violin3_pd = segment_A_pitch_data.tremolo_voice2
+    for i in segment_A_Violin3_pd:
+        print(i)
+    segment_A_Violin3_pitch_segment = abjad.PitchSegment(segment_A_Violin3_pd)
+    print(segment_A_Violin3_pitch_segment)
+    for i in segment_A_Violin3_pitch_segment:
+        print(i)
+    Violin3_music_data = InstrumentMusicData()
+    Violin3_music_data.pitches = segment_A_Violin3_pitch_segment
+    print(Violin3_music_data)
+
+
+    print(segment_A_instr_pdref.Violin4)
+    print(segment_A_instr_pdref.Violin5)
+    print(segment_A_instr_pdref.Violin6)
+    print(segment_A_instr_pdref.Violin7)
+    print(segment_A_instr_pdref.Violin8)
+    print(segment_A_instr_pdref.Viola)
+
+    #segment_A_Violin1_instr_pdref = segment_A_instr_pdref.Violin1
+    #segment_A_Violin1_pd = getattr(segment_A_pitch_data, segment_A_Violin1_instr_pdref)
+    #print(segment_A_Violin1_pd)
     db.close()
