@@ -4,7 +4,7 @@
 #
 
 declare -i REHEARSAL_MARK=1
-for SEGMENT_NAME in A B C D E F G H I K L
+for SEGMENT_NAME in A B C D E F G H I J K L
 
 do
     echo $(python ./genMusicData.py "$SEGMENT_NAME" &)

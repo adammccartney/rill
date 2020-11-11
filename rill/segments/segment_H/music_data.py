@@ -51,7 +51,7 @@ Flute4_music_data.pitches = segment_H_Flute4_pitch_segment
 segment_music_data.Flute4 = Flute4_music_data
 
 segment_H_Bbclarinet1_instr_pdref = segment_H_instr_pdref.Bbclarinet1
-segment_H_Bbclarinet1_pd = getattr(segment_H_pitch_data, segment_A_Bbclarinet1_instr_pdref)
+segment_H_Bbclarinet1_pd = getattr(segment_H_pitch_data, segment_H_Bbclarinet1_instr_pdref)
 segment_H_Bbclarinet1_pitch_segment = abjad.PitchSegment(
 segment_H_Bbclarinet1_pd)
 Bbclarinet1_music_data = InstrumentMusicData()
@@ -59,7 +59,7 @@ Bbclarinet1_music_data.pitches = segment_H_Bbclarinet1_pitch_segment
 segment_music_data.Bbclarinet1 = Bbclarinet1_music_data
 
 segment_H_Vibraphone_instr_pdref = segment_H_instr_pdref.Vibraphone
-segment_H_Vibraphone_pd = getattr(segment_H_pitch_data, segment_A_Vibraphone_instr_pdref)
+segment_H_Vibraphone_pd = getattr(segment_H_pitch_data, segment_H_Vibraphone_instr_pdref)
 segment_H_Vibraphone_pitch_segment = abjad.PitchSegment(
 segment_H_Vibraphone_pd)
 Vibraphone_music_data = InstrumentMusicData()
@@ -67,63 +67,63 @@ Vibraphone_music_data.pitches = segment_H_Vibraphone_pitch_segment
 segment_music_data.Vibraphone = Vibraphone_music_data
 
 segment_H_Violin1_instr_pdref = segment_H_instr_pdref.Violin1
-segment_H_Violin1_pd = getattr(segment_H_pitch_data, segment_A_Violin1_instr_pdref)
+segment_H_Violin1_pd = getattr(segment_H_pitch_data, segment_H_Violin1_instr_pdref)
 segment_H_Violin1_pitch_segment = abjad.PitchSegment(segment_H_Violin1_pd)
 Violin1_music_data = InstrumentMusicData()
 Violin1_music_data.pitches = segment_H_Violin1_pitch_segment
 segment_music_data.Violin1 = Violin1_music_data
 
 segment_H_Violin2_instr_pdref = segment_H_instr_pdref.Violin2
-segment_H_Violin2_pd = getattr(segment_H_pitch_data, segment_A_Violin2_instr_pdref)
+segment_H_Violin2_pd = getattr(segment_H_pitch_data, segment_H_Violin2_instr_pdref)
 segment_H_Violin2_pitch_segment = abjad.PitchSegment(segment_H_Violin2_pd)
 Violin2_music_data = InstrumentMusicData()
 Violin2_music_data.pitches = segment_H_Violin2_pitch_segment
 segment_music_data.Violin2 = Violin2_music_data
 
 segment_H_Violin3_instr_pdref = segment_H_instr_pdref.Violin3
-segment_H_Violin3_pd = getattr(segment_H_pitch_data, segment_A_Violin3_instr_pdref)
+segment_H_Violin3_pd = getattr(segment_H_pitch_data, segment_H_Violin3_instr_pdref)
 segment_H_Violin3_pitch_segment = abjad.PitchSegment(segment_H_Violin3_pd)
 Violin3_music_data = InstrumentMusicData()
 Violin3_music_data.pitches = segment_H_Violin3_pitch_segment
 segment_music_data.Violin3 = Violin3_music_data
 
 segment_H_Violin4_instr_pdref = segment_H_instr_pdref.Violin4
-segment_H_Violin4_pd = getattr(segment_H_pitch_data, segment_A_Violin4_instr_pdref)
+segment_H_Violin4_pd = getattr(segment_H_pitch_data, segment_H_Violin4_instr_pdref)
 segment_H_Violin4_pitch_segment = abjad.PitchSegment(segment_H_Violin4_pd)
 Violin4_music_data = InstrumentMusicData()
 Violin4_music_data.pitches = segment_H_Violin4_pitch_segment
 segment_music_data.Violin4 = Violin4_music_data
 
 segment_H_Violin5_instr_pdref = segment_H_instr_pdref.Violin5
-segment_H_Violin5_pd = getattr(segment_H_pitch_data, segment_A_Violin5_instr_pdref)
+segment_H_Violin5_pd = getattr(segment_H_pitch_data, segment_H_Violin5_instr_pdref)
 segment_H_Violin5_pitch_segment = abjad.PitchSegment(segment_H_Violin5_pd)
 Violin5_music_data = InstrumentMusicData()
 Violin5_music_data.pitches = segment_H_Violin5_pitch_segment
 segment_music_data.Violin5 = Violin5_music_data
 
 segment_H_Violin6_instr_pdref = segment_H_instr_pdref.Violin6
-segment_H_Violin6_pd = getattr(segment_H_pitch_data, segment_A_Violin6_instr_pdref)
+segment_H_Violin6_pd = getattr(segment_H_pitch_data, segment_H_Violin6_instr_pdref)
 segment_H_Violin6_pitch_segment = abjad.PitchSegment(segment_H_Violin6_pd)
 Violin6_music_data = InstrumentMusicData()
 Violin6_music_data.pitches = segment_H_Violin6_pitch_segment
 segment_music_data.Violin6 = Violin6_music_data
 
 segment_H_Violin7_instr_pdref = segment_H_instr_pdref.Violin7
-segment_H_Violin7_pd = getattr(segment_H_pitch_data, segment_A_Violin7_instr_pdref)
+segment_H_Violin7_pd = getattr(segment_H_pitch_data, segment_H_Violin7_instr_pdref)
 segment_H_Violin7_pitch_segment = abjad.PitchSegment(segment_H_Violin7_pd)
 Violin7_music_data = InstrumentMusicData()
 Violin7_music_data.pitches = segment_H_Violin7_pitch_segment
 segment_music_data.Violin7 = Violin7_music_data
 
 segment_H_Violin8_instr_pdref = segment_H_instr_pdref.Violin8
-segment_H_Violin8_pd = getattr(segment_H_pitch_data, segment_A_Violin8_instr_pdref)
+segment_H_Violin8_pd = getattr(segment_H_pitch_data, segment_H_Violin8_instr_pdref)
 segment_H_Violin8_pitch_segment = abjad.PitchSegment(segment_H_Violin8_pd)
 Violin8_music_data = InstrumentMusicData()
 Violin8_music_data.pitches = segment_H_Violin8_pitch_segment
 segment_music_data.Violin8 = Violin8_music_data
 
 segment_H_Viola_instr_pdref = segment_H_instr_pdref.Viola
-segment_H_Viola_pd = getattr(segment_H_pitch_data, segment_A_Viola_instr_pdref)
+segment_H_Viola_pd = getattr(segment_H_pitch_data, segment_H_Viola_instr_pdref)
 segment_H_Viola_pitch_segment = abjad.PitchSegment(segment_H_Viola_pd)
 Viola_music_data = InstrumentMusicData()
 Viola_music_data.pitches = segment_H_Viola_pitch_segment
