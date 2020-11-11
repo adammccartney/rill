@@ -34,28 +34,28 @@ db = shelve.open(str(db_path))
 segment_music_data = SegmentMusicData()
 
 {seg_name}_Flute1_instr_pdref = {seg_name}_instr_pdref.Flute1
-{seg_name}_Flute1_pd = getattr({seg_name}_pitch_data, segment_A_Flute1_instr_pdref)
+{seg_name}_Flute1_pd = getattr({seg_name}_pitch_data, {seg_name}_Flute1_instr_pdref)
 {seg_name}_Flute1_pitch_segment = abjad.PitchSegment({seg_name}_Flute1_pd)
 Flute1_music_data = InstrumentMusicData()
 Flute1_music_data.pitches = {seg_name}_Flute1_pitch_segment
 segment_music_data.Flute1 = Flute1_music_data
 
 {seg_name}_Flute2_instr_pdref = {seg_name}_instr_pdref.Flute2
-{seg_name}_Flute2_pd = getattr({seg_name}_pitch_data, segment_A_Flute2_instr_pdref)
+{seg_name}_Flute2_pd = getattr({seg_name}_pitch_data, {seg_name}_Flute2_instr_pdref)
 {seg_name}_Flute2_pitch_segment = abjad.PitchSegment({seg_name}_Flute2_pd)
 Flute2_music_data = InstrumentMusicData()
 Flute2_music_data.pitches = {seg_name}_Flute2_pitch_segment
 segment_music_data.Flute2 = Flute2_music_data
 
 {seg_name}_Flute3_instr_pdref = {seg_name}_instr_pdref.Flute3
-{seg_name}_Flute3_pd = getattr({seg_name}_pitch_data, segment_A_Flute3_instr_pdref)
+{seg_name}_Flute3_pd = getattr({seg_name}_pitch_data, {seg_name}_Flute3_instr_pdref)
 {seg_name}_Flute3_pitch_segment = abjad.PitchSegment({seg_name}_Flute3_pd)
 Flute3_music_data = InstrumentMusicData()
 Flute3_music_data.pitches = {seg_name}_Flute3_pitch_segment
 segment_music_data.Flute3 = Flute3_music_data
 
 {seg_name}_Flute4_instr_pdref = {seg_name}_instr_pdref.Flute4
-{seg_name}_Flute4_pd = getattr({seg_name}_pitch_data, segment_A_Flute4_instr_pdref)
+{seg_name}_Flute4_pd = getattr({seg_name}_pitch_data, {seg_name}_Flute4_instr_pdref)
 {seg_name}_Flute4_pitch_segment = abjad.PitchSegment({seg_name}_Flute4_pd)
 Flute4_music_data = InstrumentMusicData()
 Flute4_music_data.pitches = {seg_name}_Flute4_pitch_segment
