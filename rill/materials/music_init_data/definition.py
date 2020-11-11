@@ -99,7 +99,7 @@ def make_segment_music_default():
 
 def make_instrument_music_default():
     instrument_music_data = InstrumentMusicData()
-    return instrument_music_data()
+    return instrument_music_data
 
 
 @dataclass
@@ -279,15 +279,8 @@ class SegmentPitchData:
     _tremolo_voice2: str = field(default_factory=make_empty_string)
 
     def _replace_brackets(self, pitch_segment_as_string):
-        if pitch_segment_as_string[0] == '<':
-            pitch_string = pitch_segment_as_string[1:]
-        else:
-            raise TypeError("Cannot replace ", pitch_segment_as_string[0])
-        if pitch_string[-1] == '>':
-            final_pitch_string = pitch_string[:-1]
-        else:
-            raise TypeError("Cannont replace ", pitch_string[-1])
-        return final_pitch_string
+        trimmed_string = pitch_segment_as_string[1:-1]
+        return trimmed_string
 
     @property
     def chord_voice1(self) -> str:
@@ -350,7 +343,7 @@ class SegmentPitchData:
 
     @tremolo_voice2.setter
     def tremolo_voice2(self, v: str) -> None:
-        self._tremolo_voice1 = v
+        self._tremolo_voice2 = v
 
 
 def make_sync_talea():
@@ -399,8 +392,8 @@ class InstrumentPitchData:
     def Flute1(self, ref):
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
-           (ref == 'melody_voice') or (ref == 'melody_voice1') or\
-           (ref == 'melody_voice2'):
+           (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
+           (ref == 'tremolo_voice2'):
             self._Flute1 = ref
         else:
             ValueError(ref, "is not a valid reference for pdata")
@@ -413,8 +406,8 @@ class InstrumentPitchData:
     def Flute2(self, ref):
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
-           (ref == 'melody_voice') or (ref == 'melody_voice1') or\
-           (ref == 'melody_voice2'):
+           (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
+           (ref == 'tremolo_voice2'):
             self._Flute2 = ref
         else:
             ValueError(ref, "is not a valid reference for pdata")
@@ -427,8 +420,8 @@ class InstrumentPitchData:
     def Flute3(self, ref):
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
-           (ref == 'melody_voice') or (ref == 'melody_voice1') or\
-           (ref == 'melody_voice2'):
+           (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
+           (ref == 'tremolo_voice2'):
             self._Flute3 = ref
         else:
             ValueError(ref, "is not a valid reference for pdata")
@@ -441,8 +434,8 @@ class InstrumentPitchData:
     def Flute4(self, ref):
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
-           (ref == 'melody_voice') or (ref == 'melody_voice1') or\
-           (ref == 'melody_voice2'):
+           (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
+           (ref == 'tremolo_voice2'):
             self._Flute4 = ref
         else:
             ValueError(ref, "is not a valid reference for pdata")
@@ -455,8 +448,8 @@ class InstrumentPitchData:
     def Bbclarinet1(self, ref):
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
-           (ref == 'melody_voice') or (ref == 'melody_voice1') or\
-           (ref == 'melody_voice2'):
+           (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
+           (ref == 'tremolo_voice2'):
             self._Bbclarinet1 = ref
         else:
             ValueError(ref, "is not a valid reference for pdata")
@@ -469,8 +462,8 @@ class InstrumentPitchData:
     def Vibraphone(self, ref):
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
-           (ref == 'melody_voice') or (ref == 'melody_voice1') or\
-           (ref == 'melody_voice2'):
+           (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
+           (ref == 'tremolo_voice2'):
             self._Vibraphone = ref
         else:
             ValueError(ref, "is not a valid reference for pdata")
@@ -483,8 +476,8 @@ class InstrumentPitchData:
     def Viola(self, ref):
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
-           (ref == 'melody_voice') or (ref == 'melody_voice1') or\
-           (ref == 'melody_voice2'):
+           (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
+           (ref == 'tremolo_voice2'):
             self._Viola = ref
         else:
             ValueError(ref, "is not a valid reference for pdata")
@@ -497,8 +490,8 @@ class InstrumentPitchData:
     def Violin1(self, ref):
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
-           (ref == 'melody_voice') or (ref == 'melody_voice1') or\
-           (ref == 'melody_voice2'):
+           (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
+           (ref == 'tremolo_voice2'):
             self._Violin1 = ref
         else:
             ValueError(ref, "is not a valid reference for pdata")
@@ -511,8 +504,8 @@ class InstrumentPitchData:
     def Violin2(self, ref):
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
-           (ref == 'melody_voice') or (ref == 'melody_voice1') or\
-           (ref == 'melody_voice2'):
+           (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
+           (ref == 'tremolo_voice2'):
             self._Violin2 = ref
         else:
             ValueError(ref, "is not a valid reference for pdata")
@@ -525,8 +518,8 @@ class InstrumentPitchData:
     def Violin3(self, ref):
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
-           (ref == 'melody_voice') or (ref == 'melody_voice1') or\
-           (ref == 'melody_voice2'):
+           (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
+           (ref == 'tremolo_voice2'):
             self._Violin3 = ref
         else:
             ValueError(ref, "is not a valid reference for pdata")
@@ -539,8 +532,8 @@ class InstrumentPitchData:
     def Violin4(self, ref):
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
-           (ref == 'melody_voice') or (ref == 'melody_voice1') or\
-           (ref == 'melody_voice2'):
+           (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
+           (ref == 'tremolo_voice2'):
             self._Violin4 = ref
         else:
             ValueError(ref, "is not a valid reference for pdata")
@@ -553,8 +546,8 @@ class InstrumentPitchData:
     def Violin5(self, ref):
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
-           (ref == 'melody_voice') or (ref == 'melody_voice1') or\
-           (ref == 'melody_voice2'):
+           (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
+           (ref == 'tremolo_voice2'):
             self._Violin5 = ref
         else:
             ValueError(ref, "is not a valid reference for pdata")
@@ -567,8 +560,8 @@ class InstrumentPitchData:
     def Violin6(self, ref):
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
-           (ref == 'melody_voice') or (ref == 'melody_voice1') or\
-           (ref == 'melody_voice2'):
+           (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
+           (ref == 'tremolo_voice2'):
             self._Violin6 = ref
         else:
             ValueError(ref, "is not a valid reference for pdata")
@@ -581,8 +574,8 @@ class InstrumentPitchData:
     def Violin7(self, ref):
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
-           (ref == 'melody_voice') or (ref == 'melody_voice1') or\
-           (ref == 'melody_voice2'):
+           (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
+           (ref == 'tremolo_voice2'):
             self._Violin7 = ref
         else:
             ValueError(ref, "is not a valid reference for pdata")
@@ -595,8 +588,8 @@ class InstrumentPitchData:
     def Violin8(self, ref):
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
-           (ref == 'melody_voice') or (ref == 'melody_voice1') or\
-           (ref == 'melody_voice2'):
+           (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
+           (ref == 'tremolo_voice2'):
             self._Violin8 = ref
         else:
             ValueError(ref, "is not a valid reference for pdata")
@@ -677,4 +670,5 @@ if __name__ == '__main__':
     print(test_counts)
     segment_A_instrument_pitch_data = InstrumentPitchData()
     segment_A_instrument_pitch_data.Flute1 = 'chord_voice1'
-    print(segment_A_instrument_pitch_data.Flute1)
+    segment_A_instrument_pitch_data.Violin3 = 'tremolo_voice2'
+    print(segment_A_instrument_pitch_data.Violin3)
