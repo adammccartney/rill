@@ -1,4 +1,5 @@
 import sys
+import importlib
 
 import abjad
 import rill
@@ -9,7 +10,10 @@ segment_name = sys.argv[1]
 rehearsal_mark = sys.argv[2]
 
 segment_dir = f"segment_{segment_name}"
-from rill.segments.segment_A.music_data import segment_music_data
+
+module_name = f"rill.segments.{segment_dir}.music_data"
+module = importlib.import_module(module_name)
+segment_music_data = module.__dict__['segment_music_data']
 
 
 def make_music_code_block(instrument_name, instrument_music_data):
@@ -109,17 +113,17 @@ Viola_music_code_block = make_music_code_block(
 
 segment_definition = f"""
 import copy
-import pathlib
 
 import abjad
 import rill
 
+from pathlib import Path
 
 from rill.tools.MusicMaker import MusicMaker
 from rill.tools.AttachmentMaker import AccentAttachmentMaker
 
-this_current_directory =  pathlib.Path.cwd()
-score =rill.ScoreTemplate()
+this_current_directory =  Path.cwd()
+score = rill.ScoreTemplate()
 score_template = score()
 
 segment_maker = rill.SegmentMaker(
