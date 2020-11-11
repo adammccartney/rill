@@ -22,6 +22,8 @@ from rill.materials.music_init_data.definition import SegmentMusicData
 rill_dir = Path.cwd().parents[1] # ../rill/
 db_path = rill_dir / 'materials' / 'music_data' / 'music_data_shelve'
 
+print(f"{seg_name}.music_data.py accessing db at: ", db_path)
+
 db = shelve.open(str(db_path))
 
 {seg_name}_pitch_data = db['{pitch_data_key}']
