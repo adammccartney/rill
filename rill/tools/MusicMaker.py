@@ -39,16 +39,20 @@ class MusicMaker(object):
         """
         for i in range(len(time_signature_pairs)):
             time_signature = time_signature_pairs[i]
-            print("time_signature: ", time_signature)
         shards = abjad.mutate(music[:]).split(time_signature_pairs)
         for i, shard in enumerate(shards):
-            print(shard)
             time_signature = time_signature_pairs[i]
             meter = abjad.Meter(time_signature)
             shard_duration = abjad.inspect(shard).duration()
             time_sig_duration = abjad.Duration(time_signature)
             assert shard_duration == time_sig_duration
+            abjad.mutate(shard).rewrite_meter(meter, boundary_depth=1)
             abjad.mutate(shard).split([meter.duration], cyclic=True)
+            logical_ties = abjad.select(shard).logical_ties()
+            for logical_tie in logical_ties:
+                print("logical tie: ", logical_tie)
+                #abjad.mutate(logical_tie).fuse()
+                print("fused_logical_tie: ", shard)
         return music
 
     def _make_basic_rhythm(self, time_signature_pairs, counts, denominator):
@@ -92,7 +96,6 @@ class MusicMaker(object):
             pitch = pitches[i]
             for note in logical_tie:
                 note.written_pitch = pitch
-        print("music after mutation: ", music)
         return music
 
     def _add_attachments(self, music):
@@ -169,11 +172,11 @@ if __name__ == '__main__':
     from rill.tools.OverrideMaker import NoteHeadOverrideMaker
 
     # THIS IS THE INPUT TO MY MUSICAL IDEA
-    time_signature_pairs = [(3, 4), (5, 16), (3, 8), (4, 4)]
-    counts = [1, 2, -3, 4]
-    denominator = 8
+    time_signature_pairs = [(4, 4), (3, 4), (3, 4), (4, 4), (3, 4), (3, 4)]
+    counts = [3, 4, 3]
+    denominator = 16
 
-    pitches = abjad.CyclicTuple([0, 3, 7, 12, 7, 3])
+    pitches = abjad.CyclicTuple([0, 2, 4, 5, 7, 9])
     clef = "treble"
 
     tenuto_attachment_maker = AccentAttachmentMaker(
@@ -205,3 +208,4 @@ if __name__ == '__main__':
         print(abjad.TimeSignature(time_signature_pairs[i]))
 
     abjad.f(staff)
+    #abjad.show(staff)
