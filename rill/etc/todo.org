@@ -27,7 +27,10 @@
 *** DONE Test build all segments and run make on the score
 
 
-*** IN-PROGRESS Design generator script for creating definition.py files
+*** DONE Design generator script for creating definition.py files
+:LOGBOOK:
+- State "DONE"       from "IN-PROGRESS" [2020-11-11 Wed 12:16]
+:END:
 + 28-30. Oct 20: created new Dev branch and began working on
   defGen_v1.py
 + define new classes that generate a "music code block" as output (use
@@ -50,12 +53,18 @@
  + their members are simple (strings and lists of ints, respectively)
  + they can be pickled and stored in a shelve database, recalled on a per segment basis
  + this will let us script (at least some of) the variable assignment that needs to happen for each segment
-*** IN-PROGRESS write generator script for "music data" files on a per segment basis
+*** DONE write generator script for "music data" files on a per segment basis
+:LOGBOOK:
+- State "DONE"       from "IN-PROGRESS" [2020-11-11 Wed 12:16]
+:END:
  + I'm going to exploit some of python's handy namespace rules and create a one module per segment to store the music initializer data
  + basically, there are two objects essential for this operation: "InstrumentMusicData" and "SegmentMusicData"
  + this means we can call the instance of "SegmentMusicData" that is in the segment scope in a way that supports scripting the definition files (basically the reason for this is to avoid hand-hacking the "definition.py" file
  + ...but there will ultimately be a little hand hacking... basically, I'm going to initialize the pair of objects mentioned above with their default values and then override on a per segment basis
-*** TODO Define materials on a per segment basis and include references in the "music data" scripts
+*** DONE Define materials on a per segment basis and include references in the "music data" scripts :reading:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2020-11-11 Wed 12:16]
+:END:
  +  this amounts to a formal description of the composition itself
 *** DONE Define generator for percussive counts                    :active:
 :LOGBOOK:

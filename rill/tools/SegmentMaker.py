@@ -353,6 +353,7 @@ class SegmentMaker(abjad.SegmentMaker):
         mark_num = self.rehearsal_mark
         voices = self._music_voices
         for voice in voices:
+            print("at voice: ", voice)
             leaf = abjad.inspect(voice).leaf(0)
             print("this is the leaf: ", leaf)
             abjad.attach(abjad.RehearsalMark(number=mark_num), leaf)
