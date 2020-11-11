@@ -6,15 +6,18 @@ import rill
 
 from pathlib import Path
 
+from rill.segments.segment_J.music_data import segment_music_data
+
 segment_name = sys.argv[1]
 rehearsal_mark = sys.argv[2]
 
 segment_dir = f"segment_{segment_name}"
 
-module_name = "rill.segments.{0}.music_data".format(segment_dir)
-print(module_name)
-module = importlib.import_module(module_name)
-segment_music_data = module.__dict__['segment_music_data']
+#module_name = "rill.segments.{0}.music_data".format(segment_dir)
+#print(module_name)
+#module = importlib.import_module(module_name)
+#segment_music_data = module.__dict__['segment_music_data']
+
 
 
 def make_music_code_block(instrument_name, instrument_music_data):
@@ -49,6 +52,12 @@ Flute3_instrument_music_data = segment_music_data.Flute3
 Flute3_music_code_block = make_music_code_block(
     instrument_name="Flute3",
     instrument_music_data=Flute3_instrument_music_data
+)
+
+Flute4_instrument_music_data = segment_music_data.Flute4
+Flute4_music_code_block = make_music_code_block(
+    instrument_name="Flute4",
+    instrument_music_data=Flute4_instrument_music_data
 )
 
 Bbclarinet1_instrument_music_data = segment_music_data.Bbclarinet1
@@ -105,6 +114,12 @@ Violin7_music_code_block = make_music_code_block(
     instrument_music_data=Violin7_instrument_music_data
 )
 
+Violin8_instrument_music_data = segment_music_data.Violin8
+Violin8_music_code_block = make_music_code_block(
+    instrument_name="Violin8",
+    instrument_music_data=Violin8_instrument_music_data
+)
+
 Viola_instrument_music_data = segment_music_data.Viola
 Viola_music_code_block = make_music_code_block(
     instrument_name="Viola",
@@ -146,48 +161,51 @@ time_signatures= [(4, 4)] + [(3, 4)] + [(3, 4)] + [(4, 4)] + [(3, 4)] + [(3,4)]
 segment_maker.time_signatures = time_signatures
 
 
-from rill.segments.music_data import segment_music_data
+from rill.segments.segment_J.music_data import segment_music_data
 
-
-segment_music_dict = segment_music_data.instrument_music_data
-
-Flute1_instrument_music_data = segment_music_dict['Flute1']
+Flute1_instrument_music_data = segment_music_data.Flute1
 {Flute1_music_code_block}
 
-Flute2_instrument_music_data = segment_music_dict['Flute2']
+Flute2_instrument_music_data = segment_music_data.Flute2
 {Flute2_music_code_block}
 
-Flute3_instrument_music_data = segment_music_dict['Flute3']
+Flute3_instrument_music_data = segment_music_data.Flute3
 {Flute3_music_code_block}
 
-Bbclarinet1_instrument_music_data = segment_music_dict['Bbclarinet1']
+Flute4_instrument_music_data = segment_music_data.Flute4
+{Flute4_music_code_block}
+
+Bbclarinet1_instrument_music_data = segment_music_data.Bbclarinet1
 {Bbclarinet1_music_code_block}
 
-Vibraphone_instrument_music_data = segment_music_dict['Vibraphone']
+Vibraphone_instrument_music_data = segment_music_data.Vibraphone
 {Vibraphone_music_code_block}
 
-Violin1_instrument_music_data = segment_music_dict['Violin1']
+Violin1_instrument_music_data = segment_music_data.Violin1
 {Violin1_music_code_block}
 
-Violin2_instrument_music_data = segment_music_dict['Violin2']
+Violin2_instrument_music_data = segment_music_data.Violin2
 {Violin2_music_code_block}
 
-Violin3_instrument_music_data = segment_music_dict['Violin3']
+Violin3_instrument_music_data = segment_music_data.Violin3
 {Violin3_music_code_block}
 
-Violin4_instrument_music_data = segment_music_dict['Violin4']
+Violin4_instrument_music_data = segment_music_data.Violin4
 {Violin4_music_code_block}
 
-Violin5_instrument_music_data = segment_music_dict['Violin5']
+Violin5_instrument_music_data = segment_music_data.Violin5
 {Violin5_music_code_block}
 
-Violin6_instrument_music_data = segment_music_dict['Violin6']
+Violin6_instrument_music_data = segment_music_data.Violin6
 {Violin6_music_code_block}
 
-Violin7_instrument_music_data = segment_music_dict['Violin7']
+Violin7_instrument_music_data = segment_music_data.Violin7
 {Violin7_music_code_block}
 
-Viola_instrument_music_data = segment_music_dict['Viola']
+Violin8_instrument_music_data = segment_music_data.Violin8
+{Violin8_music_code_block}
+
+Viola_instrument_music_data = segment_music_data.Viola
 {Viola_music_code_block}
 
 lilypond_file = segment_maker.run()
@@ -195,7 +213,7 @@ lilypond_file = segment_maker.run()
 
 
 cwd = Path.cwd()
-target = cwd / segment_dir / 'definition.py'
+target = cwd / 'definition.py'
 print(target)
 output_file = open(target, 'w')
 output_file.write(segment_definition)

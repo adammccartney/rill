@@ -112,6 +112,7 @@
 :END:
  +  looks like the better solution is to implement the names by hand via the stylesheet.ily
  + This involved defining custom names for the "lilypond type" variables that were present in the ScoreTemplate file. These names are then referenced in the stylesheet, where the actual instrument names are also defined
+*** TODO Run build process to generate music data for each segment, followed by definitions:
 *** TODO Merge Dev branch into Ensemble
 
 *** TODO Find way to tag score with build time and git branch
