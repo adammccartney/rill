@@ -61,7 +61,7 @@
             \vspace #1.25
             \override #'(font-name . "Palatino Italic")
             \fontsize #5
-            "for violin, monosynth and polysynth"
+            ""
         }
     }
 }

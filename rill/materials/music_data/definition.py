@@ -62,11 +62,9 @@ segment_A_pitch_data.melody_voice = str(segment_A_mv_materials)
 
 segment_A_tv1_materials = tremolo_voice["green"][6]["v1"][:]
 segment_A_pitch_data.tremolo_voice1 = str(segment_A_tv1_materials)
-print("tv1: ", segment_A_pitch_data.tremolo_voice1)
 
 segment_A_tv2_materials = tremolo_voice["black"][5]["v1"][:]
 segment_A_pitch_data.tremolo_voice2 = str(segment_A_tv2_materials)
-print("again as string: ", segment_A_pitch_data.tremolo_voice2)
 
 db['segment_A_pitch_data'] = segment_A_pitch_data
 
@@ -144,10 +142,11 @@ segment_B_instr_pdref.Viola = 'tremolo_voice2'
 
 db['segment_B_instr_pdref'] = segment_B_instr_pdref
 
-
 segment_B_talea_data = SegmentTaleaData()
 segment_B_pulse_sequence = seq.generate_random_pulse_sequence(10)
 segment_B_talea_data.pulse_counts = segment_B_pulse_sequence
+segment_B_talea_data.choral1_counts = [3, 1, 3, 1, 2]
+segment_B_talea_data.choral2_counts = [2, 2, 1, 1, 1, 1, 2]
 
 db['segment_B_talea_data'] = segment_B_talea_data
 
@@ -609,7 +608,6 @@ segment_K_instr_pdref.Viola = 'chord_voice4'
 
 db['segment_K_instr_pdref'] = segment_K_instr_pdref
 
-
 segment_K_talea_data = SegmentTaleaData()
 segment_K_pulse_sequence = seq.generate_random_pulse_sequence(10)
 segment_K_talea_data.pulse_counts = segment_K_pulse_sequence
@@ -689,15 +687,6 @@ if __name__ == '__main__':
     for name in segments:
         lookup = f"segment_{name}"
 
-    print(segment_A_instr_pdref.Flute1)
-    print(segment_A_instr_pdref.Flute2)
-    print(segment_A_instr_pdref.Flute3)
-    print(segment_A_instr_pdref.Flute4)
-    print(segment_A_instr_pdref.Bbclarinet1)
-    print(segment_A_instr_pdref.Vibraphone)
-    print(segment_A_instr_pdref.Violin1)
-    print(segment_A_instr_pdref.Violin2)
-
     segment_A_Violin3_instr_pdref = segment_A_instr_pdref.Violin3
     print("HERE: ", segment_A_Violin3_instr_pdref)
     segment_A_Violin3_pd = segment_A_pitch_data.tremolo_voice2
@@ -709,17 +698,8 @@ if __name__ == '__main__':
         print(i)
     Violin3_music_data = InstrumentMusicData()
     Violin3_music_data.pitches = segment_A_Violin3_pitch_segment
-    print(Violin3_music_data)
-
-
-    print(segment_A_instr_pdref.Violin4)
-    print(segment_A_instr_pdref.Violin5)
-    print(segment_A_instr_pdref.Violin6)
-    print(segment_A_instr_pdref.Violin7)
-    print(segment_A_instr_pdref.Violin8)
-    print(segment_A_instr_pdref.Viola)
-
-    #segment_A_Violin1_instr_pdref = segment_A_instr_pdref.Violin1
-    #segment_A_Violin1_pd = getattr(segment_A_pitch_data, segment_A_Violin1_instr_pdref)
-    #print(segment_A_Violin1_pd)
+    segment_B_talea_data = db['segment_B_talea_data']
+    print(segment_B_talea_data.__dict__)
+    segment_B_choral1_counts = segment_B_talea_data.choral1_counts
+    print(segment_B_choral1_counts)
     db.close()

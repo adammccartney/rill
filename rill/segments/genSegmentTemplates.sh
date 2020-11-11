@@ -6,8 +6,7 @@
 declare -i REHEARSAL_MARK=1
 for SEGMENT_NAME in A B C D E F G H I J K L
 
-do
-    echo $(python ./genMusicData.py "$SEGMENT_NAME" &)
+do  echo "$SEGMENT_NAME $REHEARSAL_MARK"
     cd "segment_$SEGMENT_NAME"
     echo $(python ./genDef_v1.py "$SEGMENT_NAME" "$REHEARSAL_MARK" &)
     cd ..

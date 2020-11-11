@@ -345,22 +345,6 @@ class SegmentPitchData:
     def tremolo_voice2(self, v: str) -> None:
         self._tremolo_voice2 = v
 
-
-def make_sync_talea():
-    return [-2, 2]
-
-
-def make_euclid_talea():
-    return [3, 4, 4]
-
-
-def make_pedal_talea():
-    return [20]
-
-
-def make_pulse_talea():
-    return [-1, 1, -1, -1, 1, 1, -1, -1, 1, 1]
-
 @dataclass
 class InstrumentPitchData:
     """Stores a reference to the type of pitch data used by an instrument
@@ -595,13 +579,52 @@ class InstrumentPitchData:
             ValueError(ref, "is not a valid reference for pdata")
 
 
+def make_choral_talea():
+    return [3, 1, 3, 1, 2]
+
+
+def make_sync_talea():
+    return [-2, 2]
+
+
+def make_euclid_talea():
+    return [3, 4, 3]
+
+
+def make_pedal_talea():
+    return [20]
+
+
+def make_pulse_talea():
+    return [-1, 1, -1, -1, 1, 1, -1, -1, 1, 1]
+
+
 @dataclass
 class SegmentTaleaData:
     "Stores rhythmic data as lists of integers"
+    _choral1_counts: List[int] = field(default_factory=make_choral_talea)
+    _choral2_counts: List[int] = field(default_factory=make_choral_talea)
     _syncopated_counts: List[int] = field(default_factory=make_sync_talea)
     _euclidean_counts: List[int] = field(default_factory=make_euclid_talea)
     _pedal_tone_counts: List[int] = field(default_factory=make_pedal_talea)
     _pulse_counts: List[int] = field(default_factory=make_pulse_talea)
+
+    @property
+    def choral1_counts(self) -> list:
+        return self._choral1_counts
+
+    @choral1_counts.setter
+    def choral1_counts(self, counts: List[int]) -> None:
+        self._choral1_counts = counts
+
+    @property
+    def choral2_counts(self) -> list:
+        return self._choral2_counts
+
+    @choral2_counts.setter
+    def choral2_counts(self, counts: List[int]) -> None:
+        self._choral2_counts = counts
+
 
     @property
     def syncopated_counts(self) -> list:
@@ -672,3 +695,4 @@ if __name__ == '__main__':
     segment_A_instrument_pitch_data.Flute1 = 'chord_voice1'
     segment_A_instrument_pitch_data.Violin3 = 'tremolo_voice2'
     print(segment_A_instrument_pitch_data.Violin3)
+    print(test_segment_talea_data.choral1_counts)

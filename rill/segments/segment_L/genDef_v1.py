@@ -6,7 +6,7 @@ import rill
 
 from pathlib import Path
 
-from rill.segments.segment_A.music_data import segment_music_data
+from rill.segments.segment_L.music_data import segment_music_data
 
 segment_name = sys.argv[1]
 rehearsal_mark = sys.argv[2]
@@ -161,7 +161,7 @@ time_signatures= [(4, 4)] + [(3, 4)] + [(3, 4)] + [(4, 4)] + [(3, 4)] + [(3,4)]
 segment_maker.time_signatures = time_signatures
 
 
-from rill.segments.segment_A.music_data import segment_music_data
+from rill.segments.segment_L.music_data import segment_music_data
 
 Flute1_instrument_music_data = segment_music_data.Flute1
 {Flute1_music_code_block}

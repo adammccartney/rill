@@ -20,7 +20,7 @@ segment_maker = rill.SegmentMaker(
                                 build_path=rill.build_path,
                                 markup_leaves=False,
                                 segment_name='segment_K',
-                                rehearsal_mark=10,
+                                rehearsal_mark=11,
                                 tempo=((1, 4), 50),
                                 )
 
@@ -32,7 +32,7 @@ time_signatures= [(4, 4)] + [(3, 4)] + [(3, 4)] + [(4, 4)] + [(3, 4)] + [(3,4)]
 segment_maker.time_signatures = time_signatures
 
 
-from rill.segments.segment_A.music_data import segment_music_data
+from rill.segments.segment_K.music_data import segment_music_data
 
 Flute1_instrument_music_data = segment_music_data.Flute1
 Flute1_rhythm_definition = segment_maker.define_rhythm()
