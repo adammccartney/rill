@@ -48,7 +48,7 @@ class MusicMaker(object):
             assert shard_duration == time_sig_duration
             abjad.mutate(shard).rewrite_meter(meter, boundary_depth=1)
             abjad.mutate(shard).split([meter.duration], cyclic=True)
-            abjad.mutate(shard).fuse()
+            #abjad.mutate(shard).fuse()
         return music
 
     def _make_basic_rhythm(self, time_signature_pairs, counts, denominator):
