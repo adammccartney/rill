@@ -36,7 +36,7 @@ segment_L_Flute1_pd = getattr(segment_L_pitch_data,
                               segment_L_Flute1_instr_pdref)
 segment_L_Flute1_pitch_segment = abjad.PitchSegment(segment_L_Flute1_pd)
 Flute1_music_data = InstrumentMusicData()
-Flute1_music_data.pitches = segment_L_Flute1_pitch_segment
+Flute1_music_data.pitches = segment_L_Flute1_pitch_segment.transpose(-24)
 Flute1_music_data.talea = segment_L_syncopated_counts
 Flute1_music_data.denominator = 4
 segment_music_data.Flute1 = Flute1_music_data
@@ -46,7 +46,7 @@ segment_L_Flute2_pd = getattr(segment_L_pitch_data,
                               segment_L_Flute2_instr_pdref)
 segment_L_Flute2_pitch_segment = abjad.PitchSegment(segment_L_Flute2_pd)
 Flute2_music_data = InstrumentMusicData()
-Flute2_music_data.pitches = segment_L_Flute2_pitch_segment
+Flute2_music_data.pitches = segment_L_Flute2_pitch_segment.transpose(-24)
 Flute2_music_data.talea = segment_L_syncopated_counts
 Flute2_music_data.denominator = 4
 segment_music_data.Flute2 = Flute2_music_data
@@ -77,7 +77,7 @@ segment_L_Bbclarinet1_pd = getattr(segment_L_pitch_data,
 segment_L_Bbclarinet1_pitch_segment = abjad.PitchSegment(
     segment_L_Bbclarinet1_pd)
 Bbclarinet1_music_data = InstrumentMusicData()
-Bbclarinet1_music_data.pitches = segment_L_Bbclarinet1_pitch_segment
+Bbclarinet1_music_data.pitches = segment_L_Bbclarinet1_pitch_segment.transpose(-12)
 Bbclarinet1_music_data.talea = segment_L_melody_counts
 Bbclarinet1_music_data.denominator = 4
 segment_music_data.Bbclarinet1 = Bbclarinet1_music_data
@@ -88,7 +88,7 @@ segment_L_Vibraphone_pd = getattr(segment_L_pitch_data,
 segment_L_Vibraphone_pitch_segment = abjad.PitchSegment(
     segment_L_Vibraphone_pd)
 Vibraphone_music_data = InstrumentMusicData()
-Vibraphone_music_data.pitches = segment_L_Vibraphone_pitch_segment
+Vibraphone_music_data.pitches = segment_L_Vibraphone_pitch_segment.transpose(12)
 Vibraphone_music_data.talea = segment_L_syncopated_counts
 Vibraphone_music_data.denominator = 8
 segment_music_data.Vibraphone = Vibraphone_music_data
@@ -98,7 +98,7 @@ segment_L_Violin1_pd = getattr(segment_L_pitch_data,
                                segment_L_Violin1_instr_pdref)
 segment_L_Violin1_pitch_segment = abjad.PitchSegment(segment_L_Violin1_pd)
 Violin1_music_data = InstrumentMusicData()
-Violin1_music_data.pitches = segment_L_Violin1_pitch_segment
+Violin1_music_data.pitches = segment_L_Violin1_pitch_segment.transpose(12)
 Violin1_music_data.talea = segment_L_pulse_counts
 Violin1_music_data.denominator = 16
 segment_music_data.Violin1 = Violin1_music_data
@@ -108,7 +108,7 @@ segment_L_Violin2_pd = getattr(segment_L_pitch_data,
                                segment_L_Violin2_instr_pdref)
 segment_L_Violin2_pitch_segment = abjad.PitchSegment(segment_L_Violin2_pd)
 Violin2_music_data = InstrumentMusicData()
-Violin2_music_data.pitches = segment_L_Violin2_pitch_segment
+Violin2_music_data.pitches = segment_L_Violin2_pitch_segment.transpose(12)
 Violin2_music_data.talea = segment_L_pulse_counts
 Violin2_music_data.denominator = 16
 segment_music_data.Violin2 = Violin2_music_data
@@ -118,7 +118,7 @@ segment_L_Violin3_pd = getattr(segment_L_pitch_data,
                                segment_L_Violin3_instr_pdref)
 segment_L_Violin3_pitch_segment = abjad.PitchSegment(segment_L_Violin3_pd)
 Violin3_music_data = InstrumentMusicData()
-Violin3_music_data.pitches = segment_L_Violin3_pitch_segment
+Violin3_music_data.pitches = segment_L_Violin3_pitch_segment.transpose(12)
 Violin3_music_data.talea = segment_L_pulse_counts
 Violin3_music_data.denominator = 16
 segment_music_data.Violin3 = Violin3_music_data
@@ -178,7 +178,7 @@ segment_L_Viola_pd = getattr(segment_L_pitch_data,
                              segment_L_Viola_instr_pdref)
 segment_L_Viola_pitch_segment = abjad.PitchSegment(segment_L_Viola_pd)
 Viola_music_data = InstrumentMusicData()
-Viola_music_data.pitches = segment_L_Viola_pitch_segment
+Viola_music_data.pitches = segment_L_Viola_pitch_segment.transpose(-12)
 Viola_music_data.talea = segment_L_syncopated_counts
 Viola_music_data.denominator = 4
 segment_music_data.Viola = Viola_music_data

@@ -46,7 +46,7 @@ segment_K_Flute2_pd = getattr(segment_K_pitch_data,
                               segment_K_Flute2_instr_pdref)
 segment_K_Flute2_pitch_segment = abjad.PitchSegment(segment_K_Flute2_pd)
 Flute2_music_data = InstrumentMusicData()
-Flute2_music_data.pitches = segment_K_Flute2_pitch_segment
+Flute2_music_data.pitches = segment_K_Flute2_pitch_segment.transpose(-12)
 Flute2_music_data.talea = segment_K_syncopated_counts
 Flute2_music_data.denominator = 4
 segment_music_data.Flute2 = Flute2_music_data
@@ -77,7 +77,7 @@ segment_K_Bbclarinet1_pd = getattr(segment_K_pitch_data,
 segment_K_Bbclarinet1_pitch_segment = abjad.PitchSegment(
     segment_K_Bbclarinet1_pd)
 Bbclarinet1_music_data = InstrumentMusicData()
-Bbclarinet1_music_data.pitches = segment_K_Bbclarinet1_pitch_segment
+Bbclarinet1_music_data.pitches = segment_K_Bbclarinet1_pitch_segment.transpose(-12)
 Bbclarinet1_music_data.talea = segment_K_melody_counts
 Bbclarinet1_music_data.denominator = 4
 segment_music_data.Bbclarinet1 = Bbclarinet1_music_data
@@ -178,7 +178,7 @@ segment_K_Viola_pd = getattr(segment_K_pitch_data,
                              segment_K_Viola_instr_pdref)
 segment_K_Viola_pitch_segment = abjad.PitchSegment(segment_K_Viola_pd)
 Viola_music_data = InstrumentMusicData()
-Viola_music_data.pitches = segment_K_Viola_pitch_segment
+Viola_music_data.pitches = segment_K_Viola_pitch_segment.transpose(-12)
 Viola_music_data.talea = segment_K_syncopated_counts
 Viola_music_data.denominator = 4
 segment_music_data.Viola = Viola_music_data

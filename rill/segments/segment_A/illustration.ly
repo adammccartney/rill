@@ -103,110 +103,62 @@
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #1
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
+                            cs''16
+                            e'8.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute1_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
@@ -309,110 +261,62 @@
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #1
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
+                            cs''16
+                            e'8.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute2_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
@@ -515,110 +419,62 @@
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #1
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
+                            cs''16
+                            e'8.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute3_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
@@ -721,110 +577,62 @@
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #1
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
+                            cs''16
+                            e'8.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute4_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
@@ -927,110 +735,62 @@
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #1
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
+                            cs''16
+                            e'8.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Bbclarinet1_Dynamics_Voice"              %! rill.ScoreTemplate.__call__()
@@ -1144,114 +904,66 @@
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #1
-                            c'''16
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            c''16
+                            as'16
                             ~
-                            \staccato
-                            as''16
+                            as'16
                             r16
                             r8
-                            a''8
-                            - \tenuto
+                            a'8
                             ~
-                            \staccato
-                            a''8
-                            g''16
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
+                            a'8
+                            g'16
+                            cs''16
                             ~
-                            \staccato
-                            cs'''16
+                            cs''16
                             r8.
-                            e''4
-                            - \tenuto
-                            \staccato
-                            c'''16
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            e'4
+                            c''16
+                            as'16
                             ~
-                            \staccato
-                            as''16
+                            as'16
                             r16
                             r8
-                            a''8
-                            - \tenuto
+                            a'8
                             ~
-                            \staccato
-                            a''8
-                            g''16
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
+                            a'8
+                            g'16
+                            cs''16
                             ~
-                            \staccato
-                            cs'''16
+                            cs''16
                             r8.
-                            e''4
-                            - \tenuto
-                            \staccato
-                            c'''16
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            e'4
+                            c''16
+                            as'16
                             ~
-                            \staccato
-                            as''16
+                            as'16
                             r16
                             r8
-                            a''8
-                            - \tenuto
+                            a'8
                             ~
-                            \staccato
-                            a''8
-                            g''16
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
+                            a'8
+                            g'16
+                            cs''16
                             ~
-                            \staccato
-                            cs'''16
+                            cs''16
                             r8.
-                            e''4
-                            - \tenuto
-                            \staccato
-                            c'''16
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            e'4
+                            c''16
+                            as'16
                             ~
-                            \staccato
-                            as''16
+                            as'16
                             r16
                             r8
-                            a''8
-                            - \tenuto
+                            a'8
                             ~
-                            \staccato
-                            a''8
-                            g''16
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
+                            a'8
+                            g'16
+                            cs''16
                             ~
-                            \staccato
-                            cs'''16
+                            cs''16
                             r8.
-                            e''4
-                            - \tenuto
-                            \staccato
+                            e'4
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Vibraphone_Dynamics_Voice"               %! rill.ScoreTemplate.__call__()
@@ -1406,181 +1118,85 @@
                         {
                             \mark #1
                             g''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e''16
-                            - \tenuto
-                            \staccato
-                            r16
                             fs''16
-                            - \tenuto
-                            \staccato
                             as''16
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
-                            \staccato
                             r16
+                            cs'''16
                             a''16
-                            - \tenuto
-                            \staccato
                             r16
                             g''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e''16
-                            - \tenuto
-                            \staccato
-                            r16
                             fs''16
-                            - \tenuto
-                            \staccato
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             a''16
-                            - \tenuto
-                            \staccato
                             r16
                             g''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e''16
-                            - \tenuto
-                            \staccato
                             r16
                             fs''16
-                            - \tenuto
-                            \staccato
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             a''16
-                            - \tenuto
-                            \staccato
+                            g''16
+                            e''16
+                            r16
+                            fs''16
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
+                            g''16
+                            e''16
+                            fs''16
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
                             r16
                             g''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e''16
-                            - \tenuto
-                            \staccato
-                            r16
                             fs''16
-                            - \tenuto
-                            \staccato
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             a''16
-                            - \tenuto
-                            \staccato
                             r16
                             g''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e''16
-                            - \tenuto
-                            \staccato
                             r16
                             fs''16
-                            - \tenuto
-                            \staccato
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             a''16
-                            - \tenuto
-                            \staccato
+                            g''16
+                            e''16
+                            r16
+                            fs''16
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
+                            g''16
+                            e''16
+                            fs''16
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
                             r16
                             g''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e''16
-                            - \tenuto
-                            \staccato
-                            r16
                             fs''16
-                            - \tenuto
-                            \staccato
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             a''16
-                            - \tenuto
-                            \staccato
                             r16
                             g''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e''16
-                            - \tenuto
-                            \staccato
                             r16
                             fs''16
-                            - \tenuto
-                            \staccato
                             as''16
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            a''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            g''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            e''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            fs''16
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            a''16
-                            - \tenuto
-                            \staccato
-                            r16
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin1_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
@@ -1764,181 +1380,85 @@
                         {
                             \mark #1
                             g''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e''16
-                            - \tenuto
-                            \staccato
-                            r16
                             fs''16
-                            - \tenuto
-                            \staccato
                             as''16
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
-                            \staccato
                             r16
+                            cs'''16
                             a''16
-                            - \tenuto
-                            \staccato
                             r16
                             g''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e''16
-                            - \tenuto
-                            \staccato
-                            r16
                             fs''16
-                            - \tenuto
-                            \staccato
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             a''16
-                            - \tenuto
-                            \staccato
                             r16
                             g''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e''16
-                            - \tenuto
-                            \staccato
                             r16
                             fs''16
-                            - \tenuto
-                            \staccato
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             a''16
-                            - \tenuto
-                            \staccato
+                            g''16
+                            e''16
+                            r16
+                            fs''16
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
+                            g''16
+                            e''16
+                            fs''16
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
                             r16
                             g''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e''16
-                            - \tenuto
-                            \staccato
-                            r16
                             fs''16
-                            - \tenuto
-                            \staccato
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             a''16
-                            - \tenuto
-                            \staccato
                             r16
                             g''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e''16
-                            - \tenuto
-                            \staccato
                             r16
                             fs''16
-                            - \tenuto
-                            \staccato
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             a''16
-                            - \tenuto
-                            \staccato
+                            g''16
+                            e''16
+                            r16
+                            fs''16
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
+                            g''16
+                            e''16
+                            fs''16
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
                             r16
                             g''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e''16
-                            - \tenuto
-                            \staccato
-                            r16
                             fs''16
-                            - \tenuto
-                            \staccato
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             a''16
-                            - \tenuto
-                            \staccato
                             r16
                             g''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e''16
-                            - \tenuto
-                            \staccato
                             r16
                             fs''16
-                            - \tenuto
-                            \staccato
                             as''16
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            a''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            g''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            e''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            fs''16
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            a''16
-                            - \tenuto
-                            \staccato
-                            r16
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin2_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
@@ -2122,181 +1642,85 @@
                         {
                             \mark #1
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
-                            a''16
-                            - \tenuto
-                            \staccato
                             r16
+                            a''16
                             cs'''16
-                            - \tenuto
-                            \staccato
                             r16
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
                             a''16
-                            - \tenuto
-                            \staccato
-                            r16
                             cs'''16
-                            - \tenuto
-                            \staccato
                             r16
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
                             r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
                             a''16
-                            - \tenuto
-                            \staccato
-                            r16
                             cs'''16
-                            - \tenuto
-                            \staccato
+                            c'''16
+                            e'''16
+                            r16
+                            as''16
+                            cs'''16
+                            r16
+                            a''16
+                            cs'''16
+                            c'''16
+                            e'''16
+                            as''16
+                            cs'''16
+                            r16
+                            a''16
+                            cs'''16
                             r16
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
                             a''16
-                            - \tenuto
-                            \staccato
-                            r16
                             cs'''16
-                            - \tenuto
-                            \staccato
                             r16
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
                             r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
                             a''16
-                            - \tenuto
-                            \staccato
-                            r16
                             cs'''16
-                            - \tenuto
-                            \staccato
+                            c'''16
+                            e'''16
+                            r16
+                            as''16
+                            cs'''16
+                            r16
+                            a''16
+                            cs'''16
+                            c'''16
+                            e'''16
+                            as''16
+                            cs'''16
+                            r16
+                            a''16
+                            cs'''16
                             r16
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
                             a''16
-                            - \tenuto
-                            \staccato
-                            r16
                             cs'''16
-                            - \tenuto
-                            \staccato
                             r16
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
                             r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
-                            a''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            c'''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            e'''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            as''16
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            a''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin3_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
@@ -2480,181 +1904,85 @@
                         {
                             \mark #1
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
-                            a''16
-                            - \tenuto
-                            \staccato
                             r16
+                            a''16
                             cs'''16
-                            - \tenuto
-                            \staccato
                             r16
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
                             a''16
-                            - \tenuto
-                            \staccato
-                            r16
                             cs'''16
-                            - \tenuto
-                            \staccato
                             r16
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
                             r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
                             a''16
-                            - \tenuto
-                            \staccato
-                            r16
                             cs'''16
-                            - \tenuto
-                            \staccato
+                            c'''16
+                            e'''16
+                            r16
+                            as''16
+                            cs'''16
+                            r16
+                            a''16
+                            cs'''16
+                            c'''16
+                            e'''16
+                            as''16
+                            cs'''16
+                            r16
+                            a''16
+                            cs'''16
                             r16
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
                             a''16
-                            - \tenuto
-                            \staccato
-                            r16
                             cs'''16
-                            - \tenuto
-                            \staccato
                             r16
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
                             r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
                             a''16
-                            - \tenuto
-                            \staccato
-                            r16
                             cs'''16
-                            - \tenuto
-                            \staccato
+                            c'''16
+                            e'''16
+                            r16
+                            as''16
+                            cs'''16
+                            r16
+                            a''16
+                            cs'''16
+                            c'''16
+                            e'''16
+                            as''16
+                            cs'''16
+                            r16
+                            a''16
+                            cs'''16
                             r16
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
                             a''16
-                            - \tenuto
-                            \staccato
-                            r16
                             cs'''16
-                            - \tenuto
-                            \staccato
                             r16
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
                             r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
-                            a''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            c'''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            e'''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            as''16
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            a''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin4_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
@@ -2838,181 +2166,85 @@
                         {
                             \mark #1
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
-                            a''16
-                            - \tenuto
-                            \staccato
                             r16
+                            a''16
                             cs'''16
-                            - \tenuto
-                            \staccato
                             r16
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
                             a''16
-                            - \tenuto
-                            \staccato
-                            r16
                             cs'''16
-                            - \tenuto
-                            \staccato
                             r16
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
                             r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
                             a''16
-                            - \tenuto
-                            \staccato
-                            r16
                             cs'''16
-                            - \tenuto
-                            \staccato
+                            c'''16
+                            e'''16
+                            r16
+                            as''16
+                            cs'''16
+                            r16
+                            a''16
+                            cs'''16
+                            c'''16
+                            e'''16
+                            as''16
+                            cs'''16
+                            r16
+                            a''16
+                            cs'''16
                             r16
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
                             a''16
-                            - \tenuto
-                            \staccato
-                            r16
                             cs'''16
-                            - \tenuto
-                            \staccato
                             r16
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
                             r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
                             a''16
-                            - \tenuto
-                            \staccato
-                            r16
                             cs'''16
-                            - \tenuto
-                            \staccato
+                            c'''16
+                            e'''16
+                            r16
+                            as''16
+                            cs'''16
+                            r16
+                            a''16
+                            cs'''16
+                            c'''16
+                            e'''16
+                            as''16
+                            cs'''16
+                            r16
+                            a''16
+                            cs'''16
                             r16
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
                             a''16
-                            - \tenuto
-                            \staccato
-                            r16
                             cs'''16
-                            - \tenuto
-                            \staccato
                             r16
                             c'''16
-                            - \tenuto
-                            \staccato
-                            r16
                             e'''16
-                            - \tenuto
-                            \staccato
                             r16
                             as''16
-                            - \tenuto
-                            \staccato
                             cs'''16
-                            - \tenuto
-                            \staccato
-                            a''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            c'''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            e'''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            as''16
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            a''16
-                            - \tenuto
-                            \staccato
-                            r16
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            r16
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin5_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
@@ -3155,110 +2387,62 @@
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #1
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
+                            cs''16
+                            e'8.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin6_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
@@ -3361,110 +2545,62 @@
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #1
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
+                            cs''16
+                            e'8.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin7_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
@@ -3567,110 +2703,62 @@
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #1
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs''16
+                            e'8.
+                            c''8.
+                            as'16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as'8.
+                            a'16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a'8
+                            g'8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g'16
+                            cs''8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
+                            cs''16
+                            e'8.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin8_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
@@ -3773,110 +2861,62 @@
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #1
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            c'8.
+                            as16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as8.
+                            a16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a8
+                            g8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g16
+                            cs'8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs'16
+                            e8.
+                            c'8.
+                            as16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as8.
+                            a16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a8
+                            g8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g16
+                            cs'8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs'16
+                            e8.
+                            c'8.
+                            as16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as8.
+                            a16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a8
+                            g8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g16
+                            cs'8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
-                            c'''8.
-                            - \tenuto
-                            \staccato
-                            as''16
-                            - \tenuto
+                            cs'16
+                            e8.
+                            c'8.
+                            as16
                             ~
-                            \staccato
-                            as''8.
-                            a''16
-                            - \tenuto
+                            as8.
+                            a16
                             ~
-                            \staccato
-                            a''8
-                            g''8
-                            - \tenuto
+                            a8
+                            g8
                             ~
-                            \staccato
-                            g''16
-                            cs'''8.
-                            - \tenuto
+                            g16
+                            cs'8.
                             ~
-                            \staccato
-                            cs'''16
-                            e''8.
-                            - \tenuto
-                            \staccato
+                            cs'16
+                            e8.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Viola_Dynamics_Voice"                    %! rill.ScoreTemplate.__call__()

@@ -57,168 +57,152 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute1_Markup_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/16
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute1_Music_Voice"                      %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #5
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            bf''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            cs'''4
-                            - \tenuto
-                            \staccato
+                            cs'''8.
                             bf''16
-                            - \tenuto
-                            \staccato
-                            cs'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            bf''4
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            bf''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            cs'''8
-                            - \tenuto
                             ~
-                            \staccato
-                            cs'''8
-                            bf''16
-                            - \tenuto
-                            \staccato
-                            cs'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            bf''4
-                            - \tenuto
-                            \staccato
+                            bf''8.
                             cs'''16
-                            - \tenuto
-                            \staccato
-                            bf''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            cs'''4
-                            - \tenuto
-                            \staccato
-                            bf''16
-                            - \tenuto
-                            \staccato
-                            cs'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            bf''4
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            bf''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            cs'''8
-                            - \tenuto
                             ~
-                            \staccato
                             cs'''8
+                            bf''8
+                            ~
                             bf''16
-                            - \tenuto
-                            \staccato
+                            cs'''8.
+                            ~
+                            cs'''16
+                            bf''8.
+                            cs'''8.
+                            bf''16
+                            ~
+                            bf''8.
+                            cs'''16
+                            ~
                             cs'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            bf''4
-                            - \tenuto
-                            \staccato
+                            bf''8
+                            ~
+                            bf''16
+                            cs'''8.
+                            ~
+                            cs'''16
+                            bf''8.
+                            cs'''8.
+                            bf''16
+                            ~
+                            bf''8.
+                            cs'''16
+                            ~
+                            cs'''8
+                            bf''8
+                            ~
+                            bf''16
+                            cs'''8.
+                            ~
+                            cs'''16
+                            bf''8.
+                            cs'''8.
+                            bf''16
+                            ~
+                            bf''8.
+                            cs'''16
+                            ~
+                            cs'''8
+                            bf''8
+                            ~
+                            bf''16
+                            cs'''8.
+                            ~
+                            cs'''16
+                            bf''8.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute1_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/16
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -231,168 +215,152 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute2_Markup_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/16
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute2_Music_Voice"                      %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #5
-                            f''16
-                            - \tenuto
-                            \staccato
-                            ef''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f''4
-                            - \tenuto
-                            \staccato
+                            f''8.
                             ef''16
-                            - \tenuto
-                            \staccato
-                            f''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef''4
-                            - \tenuto
-                            \staccato
-                            f''16
-                            - \tenuto
-                            \staccato
-                            ef''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f''8
-                            - \tenuto
                             ~
-                            \staccato
-                            f''8
-                            ef''16
-                            - \tenuto
-                            \staccato
-                            f''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef''4
-                            - \tenuto
-                            \staccato
+                            ef''8.
                             f''16
-                            - \tenuto
-                            \staccato
-                            ef''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f''4
-                            - \tenuto
-                            \staccato
-                            ef''16
-                            - \tenuto
-                            \staccato
-                            f''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef''4
-                            - \tenuto
-                            \staccato
-                            f''16
-                            - \tenuto
-                            \staccato
-                            ef''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f''8
-                            - \tenuto
                             ~
-                            \staccato
                             f''8
+                            ef''8
+                            ~
                             ef''16
-                            - \tenuto
-                            \staccato
+                            f''8.
+                            ~
+                            f''16
+                            ef''8.
+                            f''8.
+                            ef''16
+                            ~
+                            ef''8.
+                            f''16
+                            ~
                             f''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef''4
-                            - \tenuto
-                            \staccato
+                            ef''8
+                            ~
+                            ef''16
+                            f''8.
+                            ~
+                            f''16
+                            ef''8.
+                            f''8.
+                            ef''16
+                            ~
+                            ef''8.
+                            f''16
+                            ~
+                            f''8
+                            ef''8
+                            ~
+                            ef''16
+                            f''8.
+                            ~
+                            f''16
+                            ef''8.
+                            f''8.
+                            ef''16
+                            ~
+                            ef''8.
+                            f''16
+                            ~
+                            f''8
+                            ef''8
+                            ~
+                            ef''16
+                            f''8.
+                            ~
+                            f''16
+                            ef''8.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute2_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/16
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -405,168 +373,47 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute3_Markup_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute3_Music_Voice"                      %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #5
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            a''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            bf''4
-                            - \tenuto
-                            \staccato
-                            c'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'''4
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            a''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            bf''8
-                            - \tenuto
+                            cs'''1
+                            a''2.
                             ~
-                            \staccato
-                            bf''8
-                            c'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'''4
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            a''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            bf''4
-                            - \tenuto
-                            \staccato
-                            c'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'''4
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            a''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            bf''8
-                            - \tenuto
+                            a''4
+                            bf''2
                             ~
-                            \staccato
-                            bf''8
-                            c'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'''4
-                            - \tenuto
-                            \staccato
+                            bf''2
+                            c'''2
+                            ~
+                            c'''2
+                            d'''4
+                            ~
+                            d'''2.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute3_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -579,168 +426,47 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute4_Markup_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute4_Music_Voice"                      %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #5
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            a''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            bf''4
-                            - \tenuto
-                            \staccato
-                            c'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'''4
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            a''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            bf''8
-                            - \tenuto
+                            cs'''1
+                            a''2.
                             ~
-                            \staccato
-                            bf''8
-                            c'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'''4
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            a''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            bf''4
-                            - \tenuto
-                            \staccato
-                            c'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'''4
-                            - \tenuto
-                            \staccato
-                            cs'''16
-                            - \tenuto
-                            \staccato
-                            a''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            bf''8
-                            - \tenuto
+                            a''4
+                            bf''2
                             ~
-                            \staccato
-                            bf''8
-                            c'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'''4
-                            - \tenuto
-                            \staccato
+                            bf''2
+                            c'''2
+                            ~
+                            c'''2
+                            d'''4
+                            ~
+                            d'''2.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute4_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -753,168 +479,47 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Bbclarinet1_Markup_Voice"                %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Bbclarinet1_Music_Voice"                 %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #5
-                            f'16
-                            - \tenuto
-                            \staccato
-                            a'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef'4
-                            - \tenuto
-                            \staccato
-                            g'16
-                            - \tenuto
-                            \staccato
-                            d'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'4
-                            - \tenuto
-                            \staccato
-                            f'16
-                            - \tenuto
-                            \staccato
-                            a'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef'8
-                            - \tenuto
+                            f'1
+                            a'2.
                             ~
-                            \staccato
-                            ef'8
-                            g'16
-                            - \tenuto
-                            \staccato
-                            d'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'4
-                            - \tenuto
-                            \staccato
-                            f'16
-                            - \tenuto
-                            \staccato
-                            a'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef'4
-                            - \tenuto
-                            \staccato
-                            g'16
-                            - \tenuto
-                            \staccato
-                            d'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'4
-                            - \tenuto
-                            \staccato
-                            f'16
-                            - \tenuto
-                            \staccato
-                            a'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef'8
-                            - \tenuto
+                            a'4
+                            ef'2
                             ~
-                            \staccato
-                            ef'8
-                            g'16
-                            - \tenuto
-                            \staccato
-                            d'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'4
-                            - \tenuto
-                            \staccato
+                            ef'2
+                            g'2
+                            ~
+                            g'2
+                            d'4
+                            ~
+                            d'2.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Bbclarinet1_Dynamics_Voice"              %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -930,168 +535,47 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Vibraphone_Markup_Voice"                 %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Vibraphone_Music_Voice"                  %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #5
-                            f'16
-                            - \tenuto
-                            \staccato
-                            a'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef'4
-                            - \tenuto
-                            \staccato
-                            g'16
-                            - \tenuto
-                            \staccato
-                            d'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'4
-                            - \tenuto
-                            \staccato
-                            f'16
-                            - \tenuto
-                            \staccato
-                            a'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef'8
-                            - \tenuto
+                            f'1
+                            a'2.
                             ~
-                            \staccato
-                            ef'8
-                            g'16
-                            - \tenuto
-                            \staccato
-                            d'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'4
-                            - \tenuto
-                            \staccato
-                            f'16
-                            - \tenuto
-                            \staccato
-                            a'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef'4
-                            - \tenuto
-                            \staccato
-                            g'16
-                            - \tenuto
-                            \staccato
-                            d'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'4
-                            - \tenuto
-                            \staccato
-                            f'16
-                            - \tenuto
-                            \staccato
-                            a'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef'8
-                            - \tenuto
+                            a'4
+                            ef'2
                             ~
-                            \staccato
-                            ef'8
-                            g'16
-                            - \tenuto
-                            \staccato
-                            d'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'4
-                            - \tenuto
-                            \staccato
+                            ef'2
+                            g'2
+                            ~
+                            g'2
+                            d'4
+                            ~
+                            d'2.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Vibraphone_Dynamics_Voice"               %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -1107,168 +591,46 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin1_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/2
+                        s1 * 3/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin1_Music_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #5
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''4
-                            - \tenuto
-                            \staccato
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''8
-                            - \tenuto
+                            a'''1
+                            f'''2.
+                            c''''2.
                             ~
-                            \staccato
-                            c''''8
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''4
-                            - \tenuto
-                            \staccato
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''8
-                            - \tenuto
+                            c''''2
+                            ef'''4
                             ~
-                            \staccato
-                            c''''8
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
+                            ef'''4
+                            ~
+                            ef'''4
+                            d'''2
+                            g'''2.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin1_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/2
+                        s1 * 3/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -1281,168 +643,46 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin2_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/2
+                        s1 * 3/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin2_Music_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #5
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''4
-                            - \tenuto
-                            \staccato
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''8
-                            - \tenuto
+                            a'''1
+                            f'''2.
+                            c''''2.
                             ~
-                            \staccato
-                            c''''8
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''4
-                            - \tenuto
-                            \staccato
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''8
-                            - \tenuto
+                            c''''2
+                            ef'''4
                             ~
-                            \staccato
-                            c''''8
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
+                            ef'''4
+                            ~
+                            ef'''4
+                            d'''2
+                            g'''2.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin2_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/2
+                        s1 * 3/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -1455,168 +695,46 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin3_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/2
+                        s1 * 3/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin3_Music_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #5
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''4
-                            - \tenuto
-                            \staccato
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''8
-                            - \tenuto
+                            a'''1
+                            f'''2.
+                            c''''2.
                             ~
-                            \staccato
-                            c''''8
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''4
-                            - \tenuto
-                            \staccato
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''8
-                            - \tenuto
+                            c''''2
+                            ef'''4
                             ~
-                            \staccato
-                            c''''8
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
+                            ef'''4
+                            ~
+                            ef'''4
+                            d'''2
+                            g'''2.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin3_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/2
+                        s1 * 3/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -1629,168 +747,46 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin4_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/2
+                        s1 * 3/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin4_Music_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #5
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''4
-                            - \tenuto
-                            \staccato
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''8
-                            - \tenuto
+                            a'''1
+                            f'''2.
+                            c''''2.
                             ~
-                            \staccato
-                            c''''8
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''4
-                            - \tenuto
-                            \staccato
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''8
-                            - \tenuto
+                            c''''2
+                            ef'''4
                             ~
-                            \staccato
-                            c''''8
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
+                            ef'''4
+                            ~
+                            ef'''4
+                            d'''2
+                            g'''2.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin4_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/2
+                        s1 * 3/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -1803,168 +799,46 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin5_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/2
+                        s1 * 3/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin5_Music_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #5
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''4
-                            - \tenuto
-                            \staccato
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''8
-                            - \tenuto
+                            a'''1
+                            f'''2.
+                            c''''2.
                             ~
-                            \staccato
-                            c''''8
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''4
-                            - \tenuto
-                            \staccato
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            c''''8
-                            - \tenuto
+                            c''''2
+                            ef'''4
                             ~
-                            \staccato
-                            c''''8
-                            ef'''16
-                            - \tenuto
-                            \staccato
-                            d'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
+                            ef'''4
+                            ~
+                            ef'''4
+                            d'''2
+                            g'''2.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin5_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/2
+                        s1 * 3/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -1977,168 +851,152 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin6_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/16
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin6_Music_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #5
-                            f'''16
-                            - \tenuto
-                            \staccato
-                            ef'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            a'''4
-                            - \tenuto
-                            \staccato
-                            g'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            g'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'''8
-                            - \tenuto
-                            ~
-                            \staccato
-                            f'''8
+                            f'''8.
                             ef'''16
-                            - \tenuto
-                            \staccato
-                            a'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
-                            f'''16
-                            - \tenuto
-                            \staccato
-                            ef'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            a'''4
-                            - \tenuto
-                            \staccato
-                            g'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            g'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'''8
-                            - \tenuto
                             ~
-                            \staccato
-                            f'''8
-                            ef'''16
-                            - \tenuto
-                            \staccato
+                            ef'''8.
+                            a'''16
+                            ~
                             a'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
+                            g'''8
+                            ~
+                            g'''16
+                            f'''8.
+                            ~
+                            f'''16
+                            ef'''8.
+                            a'''8.
+                            g'''16
+                            ~
+                            g'''8.
+                            f'''16
+                            ~
+                            f'''8
+                            ef'''8
+                            ~
+                            ef'''16
+                            a'''8.
+                            ~
+                            a'''16
+                            g'''8.
+                            f'''8.
+                            ef'''16
+                            ~
+                            ef'''8.
+                            a'''16
+                            ~
+                            a'''8
+                            g'''8
+                            ~
+                            g'''16
+                            f'''8.
+                            ~
+                            f'''16
+                            ef'''8.
+                            a'''8.
+                            g'''16
+                            ~
+                            g'''8.
+                            f'''16
+                            ~
+                            f'''8
+                            ef'''8
+                            ~
+                            ef'''16
+                            a'''8.
+                            ~
+                            a'''16
+                            g'''8.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin6_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/16
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -2151,168 +1009,152 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin7_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/16
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin7_Music_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #5
-                            f'''16
-                            - \tenuto
-                            \staccato
-                            ef'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            a'''4
-                            - \tenuto
-                            \staccato
-                            g'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            g'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'''8
-                            - \tenuto
-                            ~
-                            \staccato
-                            f'''8
+                            f'''8.
                             ef'''16
-                            - \tenuto
-                            \staccato
-                            a'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
-                            f'''16
-                            - \tenuto
-                            \staccato
-                            ef'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            a'''4
-                            - \tenuto
-                            \staccato
-                            g'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            g'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'''8
-                            - \tenuto
                             ~
-                            \staccato
-                            f'''8
-                            ef'''16
-                            - \tenuto
-                            \staccato
+                            ef'''8.
+                            a'''16
+                            ~
                             a'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
+                            g'''8
+                            ~
+                            g'''16
+                            f'''8.
+                            ~
+                            f'''16
+                            ef'''8.
+                            a'''8.
+                            g'''16
+                            ~
+                            g'''8.
+                            f'''16
+                            ~
+                            f'''8
+                            ef'''8
+                            ~
+                            ef'''16
+                            a'''8.
+                            ~
+                            a'''16
+                            g'''8.
+                            f'''8.
+                            ef'''16
+                            ~
+                            ef'''8.
+                            a'''16
+                            ~
+                            a'''8
+                            g'''8
+                            ~
+                            g'''16
+                            f'''8.
+                            ~
+                            f'''16
+                            ef'''8.
+                            a'''8.
+                            g'''16
+                            ~
+                            g'''8.
+                            f'''16
+                            ~
+                            f'''8
+                            ef'''8
+                            ~
+                            ef'''16
+                            a'''8.
+                            ~
+                            a'''16
+                            g'''8.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin7_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/16
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -2325,168 +1167,152 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin8_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/16
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin8_Music_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #5
-                            f'''16
-                            - \tenuto
-                            \staccato
-                            ef'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            a'''4
-                            - \tenuto
-                            \staccato
-                            g'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            g'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'''8
-                            - \tenuto
-                            ~
-                            \staccato
-                            f'''8
+                            f'''8.
                             ef'''16
-                            - \tenuto
-                            \staccato
-                            a'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
-                            f'''16
-                            - \tenuto
-                            \staccato
-                            ef'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            a'''4
-                            - \tenuto
-                            \staccato
-                            g'''16
-                            - \tenuto
-                            \staccato
-                            f'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef'''4
-                            - \tenuto
-                            \staccato
-                            a'''16
-                            - \tenuto
-                            \staccato
-                            g'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'''8
-                            - \tenuto
                             ~
-                            \staccato
-                            f'''8
-                            ef'''16
-                            - \tenuto
-                            \staccato
+                            ef'''8.
+                            a'''16
+                            ~
                             a'''8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            g'''4
-                            - \tenuto
-                            \staccato
+                            g'''8
+                            ~
+                            g'''16
+                            f'''8.
+                            ~
+                            f'''16
+                            ef'''8.
+                            a'''8.
+                            g'''16
+                            ~
+                            g'''8.
+                            f'''16
+                            ~
+                            f'''8
+                            ef'''8
+                            ~
+                            ef'''16
+                            a'''8.
+                            ~
+                            a'''16
+                            g'''8.
+                            f'''8.
+                            ef'''16
+                            ~
+                            ef'''8.
+                            a'''16
+                            ~
+                            a'''8
+                            g'''8
+                            ~
+                            g'''16
+                            f'''8.
+                            ~
+                            f'''16
+                            ef'''8.
+                            a'''8.
+                            g'''16
+                            ~
+                            g'''8.
+                            f'''16
+                            ~
+                            f'''8
+                            ef'''8
+                            ~
+                            ef'''16
+                            a'''8.
+                            ~
+                            a'''16
+                            g'''8.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin8_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/16
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/8
                         s1 * 1/8
                         s1 * 1/16
-                        s1 * 1/8
                         s1 * 3/16
-                        s1 * 1/4
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 3/16
+                        s1 * 1/16
+                        s1 * 3/16
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -2499,168 +1325,47 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Viola_Markup_Voice"                      %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Viola_Music_Voice"                       %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #5
-                            f'16
-                            - \tenuto
-                            \staccato
-                            a'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef'4
-                            - \tenuto
-                            \staccato
-                            g'16
-                            - \tenuto
-                            \staccato
-                            d'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'4
-                            - \tenuto
-                            \staccato
-                            f'16
-                            - \tenuto
-                            \staccato
-                            a'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef'8
-                            - \tenuto
+                            f1
+                            a2.
                             ~
-                            \staccato
-                            ef'8
-                            g'16
-                            - \tenuto
-                            \staccato
-                            d'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'4
-                            - \tenuto
-                            \staccato
-                            f'16
-                            - \tenuto
-                            \staccato
-                            a'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef'4
-                            - \tenuto
-                            \staccato
-                            g'16
-                            - \tenuto
-                            \staccato
-                            d'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'4
-                            - \tenuto
-                            \staccato
-                            f'16
-                            - \tenuto
-                            \staccato
-                            a'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            ef'8
-                            - \tenuto
+                            a4
+                            ef2
                             ~
-                            \staccato
-                            ef'8
-                            g'16
-                            - \tenuto
-                            \staccato
-                            d'8
-                            - \tenuto
-                            \staccato
-                            r8.
-                            f'4
-                            - \tenuto
-                            \staccato
+                            ef2
+                            g2
+                            ~
+                            g2
+                            d4
+                            ~
+                            d2.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Viola_Dynamics_Voice"                    %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 3/4
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
+                        s1 * 1/2
                         s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/4
+                        s1 * 3/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()

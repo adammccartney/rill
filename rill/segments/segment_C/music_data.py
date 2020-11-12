@@ -19,7 +19,6 @@ segment_C_pitch_data = db['segment_C_pitch_data']
 segment_C_talea_data = db['segment_C_talea_data']
 segment_C_instr_pdref = db['segment_C_instr_pdref']
 
-
 segment_music_data = SegmentMusicData()
 
 segment_C_choral1_counts = segment_C_talea_data.choral1_counts
@@ -35,7 +34,7 @@ segment_C_Flute1_pd = getattr(segment_C_pitch_data,
                               segment_C_Flute1_instr_pdref)
 segment_C_Flute1_pitch_segment = abjad.PitchSegment(segment_C_Flute1_pd)
 Flute1_music_data = InstrumentMusicData()
-Flute1_music_data.pitches = segment_C_Flute1_pitch_segment
+Flute1_music_data.pitches = segment_C_Flute1_pitch_segment.transpose(-12)
 Flute1_music_data.talea = segment_C_choral2_counts
 Flute1_music_data.denominator = 8
 segment_music_data.Flute1 = Flute1_music_data
@@ -45,7 +44,7 @@ segment_C_Flute2_pd = getattr(segment_C_pitch_data,
                               segment_C_Flute2_instr_pdref)
 segment_C_Flute2_pitch_segment = abjad.PitchSegment(segment_C_Flute2_pd)
 Flute2_music_data = InstrumentMusicData()
-Flute2_music_data.pitches = segment_C_Flute2_pitch_segment
+Flute2_music_data.pitches = segment_C_Flute2_pitch_segment.transpose(-12)
 Flute2_music_data.talea = segment_C_choral2_counts
 Flute2_music_data.denominator = 8
 segment_music_data.Flute2 = Flute2_music_data
@@ -54,7 +53,7 @@ segment_C_Flute3_instr_pdref = segment_C_instr_pdref.Flute3
 segment_C_Flute3_pd = getattr(segment_C_pitch_data, segment_C_Flute3_instr_pdref)
 segment_C_Flute3_pitch_segment = abjad.PitchSegment(segment_C_Flute3_pd)
 Flute3_music_data = InstrumentMusicData()
-Flute3_music_data.pitches = segment_C_Flute3_pitch_segment
+Flute3_music_data.pitches = segment_C_Flute3_pitch_segment.transpose(-24)
 Flute2_music_data.talea = segment_C_choral1_counts
 Flute3_music_data.denominator = 8
 segment_music_data.Flute3 = Flute3_music_data
@@ -63,7 +62,7 @@ segment_C_Flute4_instr_pdref = segment_C_instr_pdref.Flute4
 segment_C_Flute4_pd = getattr(segment_C_pitch_data, segment_C_Flute4_instr_pdref)
 segment_C_Flute4_pitch_segment = abjad.PitchSegment(segment_C_Flute4_pd)
 Flute4_music_data = InstrumentMusicData()
-Flute4_music_data.pitches = segment_C_Flute4_pitch_segment
+Flute4_music_data.pitches = segment_C_Flute4_pitch_segment.transpose(-24)
 Flute4_music_data.talea = segment_C_choral1_counts
 Flute4_music_data.denominator = 8
 segment_music_data.Flute4 = Flute4_music_data
@@ -167,7 +166,7 @@ segment_C_Viola_instr_pdref = segment_C_instr_pdref.Viola
 segment_C_Viola_pd = getattr(segment_C_pitch_data, segment_C_Viola_instr_pdref)
 segment_C_Viola_pitch_segment = abjad.PitchSegment(segment_C_Viola_pd)
 Viola_music_data = InstrumentMusicData()
-Viola_music_data.pitches = segment_C_Viola_pitch_segment
+Viola_music_data.pitches = segment_C_Viola_pitch_segment.transpose(-12)
 Viola_music_data.talea = segment_C_choral1_counts
 Viola_music_data.denominator = 8
 segment_music_data.Viola = Viola_music_data
