@@ -48,11 +48,7 @@ class MusicMaker(object):
             assert shard_duration == time_sig_duration
             abjad.mutate(shard).rewrite_meter(meter, boundary_depth=1)
             abjad.mutate(shard).split([meter.duration], cyclic=True)
-            logical_ties = abjad.select(shard).logical_ties()
-            for logical_tie in logical_ties:
-                print("logical tie: ", logical_tie)
-                #abjad.mutate(logical_tie).fuse()
-                print("fused_logical_tie: ", shard)
+            abjad.mutate(shard).fuse()
         return music
 
     def _make_basic_rhythm(self, time_signature_pairs, counts, denominator):
@@ -173,10 +169,10 @@ if __name__ == '__main__':
 
     # THIS IS THE INPUT TO MY MUSICAL IDEA
     time_signature_pairs = [(4, 4), (3, 4), (3, 4), (4, 4), (3, 4), (3, 4)]
-    counts = [3, 4, 3]
-    denominator = 16
+    counts = [4, 3, 5, 3, 2, 3]
+    denominator = 4
 
-    pitches = abjad.CyclicTuple([0, 2, 4, 5, 7, 9])
+    pitches = abjad.CyclicTuple(["e''", "c''", "g''", "bf''", "a''", "d'''"])
     clef = "treble"
 
     tenuto_attachment_maker = AccentAttachmentMaker(
