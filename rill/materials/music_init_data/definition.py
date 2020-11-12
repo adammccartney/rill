@@ -17,17 +17,18 @@ def make_default_pitches():
 
 
 def make_default_attachments():
-    tenuto_attachment_maker = AccentAttachmentMaker(
-        selector=abjad.select().logical_ties(),
-        attachment=abjad.Articulation("tenuto")
-    )
+    #tenuto_attachment_maker = AccentAttachmentMaker(
+    #    selector=abjad.select().logical_ties(),
+    #    attachment=abjad.Articulation("tenuto")
+    #)
 
-    staccato_attachment_maker = AccentAttachmentMaker(
-        selector=abjad.select().logical_ties(),
-        attachment=abjad.Staccato()
-    )
+    #staccato_attachment_maker = AccentAttachmentMaker(
+    #    selector=abjad.select().logical_ties(),
+    #    attachment=abjad.Staccato()
+    #)
 
-    default_attachments = [tenuto_attachment_maker, staccato_attachment_maker]
+    #default_attachments = [tenuto_attachment_maker, staccato_attachment_maker]
+    default_attachments = []
     return default_attachments
 
 
@@ -598,6 +599,8 @@ def make_pedal_talea():
 def make_pulse_talea():
     return [-1, 1, -1, -1, 1, 1, -1, -1, 1, 1]
 
+def make_melody_talea():
+    return [4, 3, 5, 3, 2, 3]
 
 @dataclass
 class SegmentTaleaData:
@@ -608,6 +611,7 @@ class SegmentTaleaData:
     _euclidean_counts: List[int] = field(default_factory=make_euclid_talea)
     _pedal_tone_counts: List[int] = field(default_factory=make_pedal_talea)
     _pulse_counts: List[int] = field(default_factory=make_pulse_talea)
+    _melody_counts: List[int] = field(default_factory=make_melody_talea)
 
     @property
     def choral1_counts(self) -> list:
@@ -652,11 +656,20 @@ class SegmentTaleaData:
 
     @property
     def pulse_counts(self) -> list:
-        return self._short_percussive_counts
+        return self._pulse_counts
 
     @pulse_counts.setter
-    def pulse_counts(self, sync_counts: List[int]) -> None:
-        self._short_percussive_counts = sync_counts
+    def pulse_counts(self, counts: List[int]) -> None:
+        self._pulse_counts = counts
+
+    @property
+    def melody_counts(self) -> list:
+        return self._melody_counts
+
+    @melody_counts.setter
+    def melody_counts(self, counts: List[int]) -> None:
+        self._melody_counts = counts
+
 
 
 if __name__ == '__main__':
@@ -696,3 +709,4 @@ if __name__ == '__main__':
     segment_A_instrument_pitch_data.Violin3 = 'tremolo_voice2'
     print(segment_A_instrument_pitch_data.Violin3)
     print(test_segment_talea_data.choral1_counts)
+    print(test_segment_talea_data.melody_counts)
