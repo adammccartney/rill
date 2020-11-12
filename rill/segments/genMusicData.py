@@ -39,6 +39,7 @@ segment_music_data = SegmentMusicData()
 {seg_name}_euclidean_counts = {seg_name}_talea_data.euclidean_counts
 {seg_name}_pulse_counts = {seg_name}_talea_data.pulse_counts
 {seg_name}_pedal_counts = {seg_name}_talea_data.pedal_tone_counts
+{seg_name}_melody_counts = {seg_name}_talea_data.melody_counts
 
 
 {seg_name}_Flute1_instr_pdref = {seg_name}_instr_pdref.Flute1
