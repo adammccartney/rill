@@ -144,7 +144,7 @@ segment_A_Viola_instr_pdref = segment_A_instr_pdref.Viola
 segment_A_Viola_pd = getattr(segment_A_pitch_data, segment_A_Viola_instr_pdref)
 segment_A_Viola_pitch_segment = abjad.PitchSegment(segment_A_Viola_pd)
 Viola_music_data = InstrumentMusicData()
-Viola_music_data.pitches = segment_A_Viola_pitch_segment
+Viola_music_data.pitches = segment_A_Viola_pitch_segment.transpose(-12)
 Viola_music_data.talea = segment_A_euclidean_talea
 segment_music_data.Viola = Viola_music_data
 
