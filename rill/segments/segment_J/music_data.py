@@ -37,7 +37,7 @@ segment_J_Flute1_pd = getattr(segment_J_pitch_data,
                               segment_J_Flute1_instr_pdref)
 segment_J_Flute1_pitch_segment = abjad.PitchSegment(segment_J_Flute1_pd)
 Flute1_music_data = InstrumentMusicData()
-Flute1_music_data.pitches = segment_J_Flute1_pitch_segment
+Flute1_music_data.pitches = segment_J_Flute1_pitch_segment.transpose(-12)
 Flute1_music_data.talea = segment_J_syncopated_counts
 Flute1_music_data.denominator = 4
 segment_music_data.Flute1 = Flute1_music_data
@@ -47,7 +47,7 @@ segment_J_Flute2_pd = getattr(segment_J_pitch_data,
                               segment_J_Flute2_instr_pdref)
 segment_J_Flute2_pitch_segment = abjad.PitchSegment(segment_J_Flute2_pd)
 Flute2_music_data = InstrumentMusicData()
-Flute2_music_data.pitches = segment_J_Flute2_pitch_segment
+Flute2_music_data.pitches = segment_J_Flute2_pitch_segment.transpose(-12)
 Flute2_music_data.talea = segment_J_syncopated_counts
 Flute2_music_data.denominator = 4
 segment_music_data.Flute2 = Flute2_music_data
@@ -178,7 +178,7 @@ segment_J_Viola_instr_pdref = segment_J_instr_pdref.Viola
 segment_J_Viola_pd = getattr(segment_J_pitch_data, segment_J_Viola_instr_pdref)
 segment_J_Viola_pitch_segment = abjad.PitchSegment(segment_J_Viola_pd)
 Viola_music_data = InstrumentMusicData()
-Viola_music_data.pitches = segment_J_Viola_pitch_segment
+Viola_music_data.pitches = segment_J_Viola_pitch_segment.transpose(-16)
 Viola_music_data.talea = segment_J_melody_counts
 Viola_music_data.denominator = 4
 segment_music_data.Viola = Viola_music_data
