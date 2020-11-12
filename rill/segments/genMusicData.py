@@ -33,6 +33,14 @@ db = shelve.open(str(db_path))
 
 segment_music_data = SegmentMusicData()
 
+{seg_name}_choral1_counts = {seg_name}_talea_data.choral1_counts
+{seg_name}_choral2_counts = {seg_name}_talea_data.choral2_counts
+{seg_name}_syncopated_counts = {seg_name}_talea_data.syncopated_counts
+{seg_name}_euclidean_counts = {seg_name}_talea_data.euclidean_counts
+{seg_name}_pulse_counts = {seg_name}_talea_data.pulse_counts
+{seg_name}_pedal_counts = {seg_name}_talea_data.pedal_tone_counts
+
+
 {seg_name}_Flute1_instr_pdref = {seg_name}_instr_pdref.Flute1
 {seg_name}_Flute1_pd = getattr({seg_name}_pitch_data, {seg_name}_Flute1_instr_pdref)
 {seg_name}_Flute1_pitch_segment = abjad.PitchSegment({seg_name}_Flute1_pd)
