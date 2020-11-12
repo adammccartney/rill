@@ -28,7 +28,9 @@ class MusicMaker(object):
             self.denominator,
         )
         rcleaned_music = self._clean_up_rhythm(music, time_signature_pairs)
-        pitched_music = self._add_pitches(rcleaned_music, self.pitches)
+        fused_music = self._fuse_logical_ties(rcleaned_music,
+                                              time_signature_pairs)
+        pitched_music = self._add_pitches(fused_music, self.pitches)
         articulate_music = self._add_attachments(pitched_music)
         music_with_overrides = self._add_overrides(articulate_music)
         return music_with_overrides
@@ -49,6 +51,14 @@ class MusicMaker(object):
             abjad.mutate(shard).rewrite_meter(meter, boundary_depth=1)
             abjad.mutate(shard).split([meter.duration], cyclic=True)
             #abjad.mutate(shard).fuse()
+        return music
+
+    def _fuse_logical_ties(self, music, time_signature_pairs):
+        shards = abjad.mutate(music[:]).split(time_signature_pairs)
+        for shard in shards:
+            selection = abjad.select(shard).logical_ties()
+            for logical_tie in selection:
+                abjad.mutate(logical_tie).fuse()
         return music
 
     def _make_basic_rhythm(self, time_signature_pairs, counts, denominator):
