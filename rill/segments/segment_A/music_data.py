@@ -31,7 +31,6 @@ segment_A_Flute1_pitch_segment = abjad.PitchSegment(segment_A_Flute1_pd)
 Flute1_music_data = InstrumentMusicData()
 Flute1_music_data.pitches = segment_A_Flute1_pitch_segment
 Flute1_music_data.talea = segment_A_euclidean_talea
-print("Flute1 talea: ", Flute1_music_data.talea)
 segment_music_data.Flute1 = Flute1_music_data
 
 
@@ -49,6 +48,7 @@ segment_A_Flute3_pitch_segment = abjad.PitchSegment(segment_A_Flute3_pd)
 Flute3_music_data = InstrumentMusicData()
 Flute3_music_data.pitches = segment_A_Flute3_pitch_segment
 Flute3_music_data.talea = segment_A_euclidean_talea
+Flute3_music_data.denominator = 8
 segment_music_data.Flute3 = Flute3_music_data
 
 segment_A_Flute4_instr_pdref = segment_A_instr_pdref.Flute4
@@ -57,6 +57,7 @@ segment_A_Flute4_pitch_segment = abjad.PitchSegment(segment_A_Flute4_pd)
 Flute4_music_data = InstrumentMusicData()
 Flute4_music_data.pitches = segment_A_Flute4_pitch_segment
 Flute4_music_data.talea = segment_A_euclidean_talea
+Flute4_music_data.denominator = 8
 segment_music_data.Flute4 = Flute4_music_data
 
 segment_A_Bbclarinet1_instr_pdref = segment_A_instr_pdref.Bbclarinet1
