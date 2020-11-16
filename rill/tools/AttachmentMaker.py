@@ -34,3 +34,18 @@ class AccentAttachmentMaker(AttachmentMaker):
             abjad.attach(attachment, first_leaf)
         elif isinstance(first_leaf, abjad.Rest):
             pass
+
+
+class MarkupFirstAttachmentMaker(AttachmentMaker):
+    "Adds markup to the first note in selection"
+    def __init__(self, attachment, selector):
+        AttachmentMaker.__init__(self, attachment, selector)
+
+    def __call__(self, music):
+        print("music: ", music)
+        for selection in self.selector(music):
+            print("selection: ", selection)
+
+    def _attach_to_first_leaf(self, note):
+        attachment = copy.copy(self.attachment)
+        abjad.attach(attachment, note)
