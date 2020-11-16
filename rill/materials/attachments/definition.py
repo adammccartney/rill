@@ -172,26 +172,58 @@ def make_aeolian_attachment_maker():
     )
     return aeolian_attachment_maker
 
-@dataclass
-class BowPositionData(object):
-    ordinario: MarkupAttachmentMaker = field(
-        default_factory=make_ord_attachment_maker
+
+def make_con_sord_attachment_maker():
+    con_sord_attachment_maker = MarkupAttachmentMaker(
+        selector=abjad.select(),
+        attachment=markup.con_sord()
     )
-    tasto: MarkupAttachmentMaker = field(
-        default_factory=make_tasto_attachment_maker
+    return con_sord_attachment_maker
+
+
+def make_legato_attachment_maker():
+    legato_attachment_maker = MarkupAttachmentMaker(
+        selector=abjad.select(),
+        attachment=markup.legato()
+    )
+    return legato_attachment_maker
+
+def make_via_sord_attachment_maker():
+    via_sord_attachment_maker = MarkupAttachmentMaker(
+        selector=abjad.select(),
+        attachment=markup.via_sord()
+    )
+    return via_sord_attachment_maker
+
+@dataclass
+class MarkupData:
+    aeolian: MarkupAttachmentMaker = field(
+        default_factory=make_aeolian_attachment_maker
+    )
+    con_sord: MarkupAttachmentMaker = field(
+        default_factory=make_con_sord_attachment_maker
     )
     flaut: MarkupAttachmentMaker = field(
         default_factory=make_flaut_attachment_maker
     )
-    pont: MarkupAttachmentMaker = field(
-        default_factory=make_pont_attachment_maker
-    )
     flaut_pont: MarkupAttachmentMaker = field(
         default_factory=make_flaut_pont_attachment_maker
+    )
+    legato: MarkupAttachmentMaker = field(
+        default_factory=make_legato_attachment_maker
+    )
+    ordinario: MarkupAttachmentMaker = field(
+        default_factory=make_ord_attachment_maker
     )
     pizz: MarkupAttachmentMaker = field(
         default_factory=make_pizz_attachment_maker
     )
-    aeolian: MarkupAttachmentMaker = field(
-        default_factory=make_aeolian_attachment_maker
+    pont: MarkupAttachmentMaker = field(
+        default_factory=make_pont_attachment_maker
+    )
+    tasto: MarkupAttachmentMaker = field(
+        default_factory=make_tasto_attachment_maker
+    )
+    via_sord: MarkupAttachmentMaker = field(
+        default_factory=make_via_sord_attachment_maker
     )
