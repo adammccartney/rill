@@ -4,6 +4,11 @@ import abjad
 
 from pathlib import Path
 
+from rill.materials.attachments.definition import (
+    AccentAttachmentMakerData,
+    BowPositionData,
+    DynamicAttachmentMakerData,
+)
 from rill.materials.music_init_data.definition import InstrumentMusicData
 from rill.materials.music_init_data.definition import SegmentMusicData
 
@@ -21,6 +26,10 @@ segment_D_instr_pdref = db['segment_D_instr_pdref']
 
 
 segment_music_data = SegmentMusicData()
+
+dynamics = DynamicAttachmentMakerData()
+accents = AccentAttachmentMakerData()
+bow_position = BowPositionData()
 
 segment_D_choral1_counts = segment_D_talea_data.choral1_counts
 segment_D_choral2_counts = segment_D_talea_data.choral2_counts
