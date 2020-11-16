@@ -10,6 +10,9 @@ class MarkupLibrary(object):
     __slots__ = ()
 
     ### PUBLIC METHODS ###
+    @staticmethod
+    def aeolian():
+        return abjad.Markup("aeolian", direction=abjad.Up).upright()
 
     @staticmethod
     def ordinario():
