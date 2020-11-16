@@ -176,7 +176,7 @@ class mMakerGenerator(object):
 if __name__ == '__main__':
     import abjad
     from rill.tools.AttachmentMaker import (AccentAttachmentMaker,
-                                            MarkupFirstAttachmentMaker)
+                                            MarkupAttachmentMaker)
     from rill.tools.OverrideMaker import NoteHeadOverrideMaker
     from rill.tools.MarkupLibrary import MarkupLibrary as markup
 
@@ -197,7 +197,7 @@ if __name__ == '__main__':
         attachment=abjad.Staccato()
     )
 
-    pont_attachment_maker = MarkupFirstAttachmentMaker(
+    pont_attachment_maker = MarkupAttachmentMaker(
         selector=abjad.select(),
         attachment=markup.pont()
     )
