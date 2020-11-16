@@ -49,7 +49,7 @@ def make_ppp_attachment_maker():
 def make_pp_attachment_maker():
     pp_attachment_maker = DynamicAttachmentMaker(
         selector=abjad.select(),
-        attachment=abjad.Dynamic("ppp")
+        attachment=abjad.Dynamic("pp")
     )
     return pp_attachment_maker
 
@@ -57,7 +57,7 @@ def make_pp_attachment_maker():
 def make_p_attachment_maker():
     p_attachment_maker = DynamicAttachmentMaker(
         selector=abjad.select(),
-        attachment=abjad.Dynamic("ppp")
+        attachment=abjad.Dynamic("p")
     )
     return p_attachment_maker
 
@@ -73,7 +73,7 @@ def make_mp_attachment_maker():
 def make_mf_attachment_maker():
     mf_attachment_maker = DynamicAttachmentMaker(
         selector=abjad.select(),
-        attachment=abjad.Dynamic("ppp")
+        attachment=abjad.Dynamic("mf")
     )
     return mf_attachment_maker
 
@@ -81,7 +81,7 @@ def make_mf_attachment_maker():
 def make_f_attachment_maker():
     f_attachment_maker = DynamicAttachmentMaker(
         selector=abjad.select(),
-        attachment=abjad.Dynamic("ppp")
+        attachment=abjad.Dynamic("f")
     )
     return f_attachment_maker
 
@@ -89,7 +89,7 @@ def make_f_attachment_maker():
 def make_ff_attachment_maker():
     ff_attachment_maker = DynamicAttachmentMaker(
         selector=abjad.select(),
-        attachment=abjad.Dynamic("ppp")
+        attachment=abjad.Dynamic("ff")
     )
     return ff_attachment_maker
 
@@ -115,7 +115,7 @@ class DynamicAttachmentMakerData:
         default_factory=make_f_attachment_maker
     )
     ff: DynamicAttachmentMaker = field(
-        default_factory?make_ff_attachment_maker
+        default_factory=make_ff_attachment_maker
     )
 
 
@@ -158,6 +158,19 @@ def make_pont_attachment_maker():
     )
     return pont_attachment_maker
 
+def make_pizz_attachment_maker():
+    pizz_attachment_maker = MarkupAttachmentMaker(
+        selector=abjad.select(),
+        attachment=markup.pizz()
+    )
+    return pizz_attachment_maker
+
+def make_aeolian_attachment_maker():
+    aeolian_attachment_maker = MarkupAttachmentMaker(
+        selector=abjad.select(),
+        attachment=markup.aeolian()
+    )
+    return aeolian_attachment_maker
 
 @dataclass
 class BowPositionData(object):
@@ -175,4 +188,10 @@ class BowPositionData(object):
     )
     flaut_pont: MarkupAttachmentMaker = field(
         default_factory=make_flaut_pont_attachment_maker
+    )
+    pizz: MarkupAttachmentMaker = field(
+        default_factory=make_pizz_attachment_maker
+    )
+    aeolian: MarkupAttachmentMaker = field(
+        default_factory=make_aeolian_attachment_maker
     )
