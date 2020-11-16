@@ -33,6 +33,7 @@ def make_default_attachments():
     default_attachments = []
     return default_attachments
 
+
 default_denominator = 16
 
 
@@ -94,7 +95,13 @@ class InstrumentMusicData:
     @overrides.setter
     # Checks happen in the music maker class at initialization
     def overrides(self, override_makers) -> None:
-        self._overrides = override_makers
+        if type(override_makers) is list:
+            self._overrides = override_makers
+        elif type(override_makers) is OverrideMaker:
+            l_override_makers = [override_makers]
+            self._overrides = l_override_makers
+        else:
+            TypeError(override_makers, "is not an override maker")
 
     def mute(self):
         for i in range(len(self.talea)):
