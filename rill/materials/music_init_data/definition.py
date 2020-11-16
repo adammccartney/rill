@@ -5,6 +5,8 @@ from typing import List, Sequence
 
 from rill.tools.AttachmentMaker import (AttachmentMaker,
                                         AccentAttachmentMaker)
+from rill.tools.OverrideMaker import (OverrideMaker,
+                                      NoteHeadOverrideMaker)
 from rill.materials.pitch.definition import chord_voice
 from rill.materials.instruments.definition import instruments
 
@@ -31,7 +33,6 @@ def make_default_attachments():
     default_attachments = []
     return default_attachments
 
-
 default_denominator = 16
 
 
@@ -44,6 +45,10 @@ def make_default_talea():
     default_talea = [1, 2, -3, 4]
     return default_talea
 
+
+def make_default_overrides():
+    return []
+
 @dataclass
 class InstrumentMusicData:
     _pitches: abjad.CyclicTuple = field(default_factory=make_default_pitches)
@@ -53,6 +58,8 @@ class InstrumentMusicData:
     time_signature_pairs: Sequence[tuple] = field(
         default_factory=make_default_tsig_pairs)
     _talea: List[int] = field(default_factory=make_default_talea)
+    _overrides: Sequence[OverrideMaker] = field(
+        default_factory=make_default_overrides)
 
     @property
     def pitches(self) -> abjad.CyclicTuple:
@@ -70,6 +77,14 @@ class InstrumentMusicData:
     @talea.setter
     def talea(self, counts) -> None:
         self._talea = counts
+
+    @property
+    def overrides(self) -> Sequence[OverrideMaker]:
+        return self._overrides
+
+    @overrides.setter
+    def overrides(self, override_makers) -> None:
+        self._overrides = override_makers
 
     def mute(self):
         for i in range(len(self.talea)):
