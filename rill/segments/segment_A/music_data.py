@@ -6,7 +6,7 @@ from pathlib import Path
 
 from rill.materials.music_init_data.definition import InstrumentMusicData
 from rill.materials.music_init_data.definition import SegmentMusicData
-
+from rill.materials.overrides.definition import aeolian_override
 
 rill_dir = Path.cwd().parents[1] # ../rill/
 db_path = rill_dir / 'materials' / 'music_data' / 'music_data_shelve'
@@ -40,6 +40,7 @@ segment_A_Flute2_pitch_segment = abjad.PitchSegment(segment_A_Flute2_pd)
 Flute2_music_data = InstrumentMusicData()
 Flute2_music_data.pitches = segment_A_Flute2_pitch_segment
 Flute2_music_data.talea = segment_A_euclidean_talea
+Flute2_music_data.overrides = aeolian_override
 segment_music_data.Flute2 = Flute2_music_data
 
 segment_A_Flute3_instr_pdref = segment_A_instr_pdref.Flute3
