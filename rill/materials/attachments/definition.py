@@ -5,7 +5,8 @@ from dataclasses import dataclass, field
 
 from rill.tools.AttachmentMaker import (AttachmentMaker,
                                         AccentAttachmentMaker,
-                                        MarkupFirstAttachmentMaker)
+                                        DynamicAttachmentMaker,
+                                        MarkupAttachmentMaker)
 from rill.tools.MarkupLibrary import MarkupLibrary as markup
 
 
@@ -37,8 +38,89 @@ class AccentAttachmentMakerData:
         default_factory=make_staccato_attachment_maker)
 
 
+def make_ppp_attachment_maker():
+    ppp_attachment_maker = DynamicAttachmentMaker(
+        selector=abjad.select(),
+        attachment=abjad.Dynamic("ppp")
+    )
+    return ppp_attachment_maker
+
+
+def make_pp_attachment_maker():
+    pp_attachment_maker = DynamicAttachmentMaker(
+        selector=abjad.select(),
+        attachment=abjad.Dynamic("ppp")
+    )
+    return pp_attachment_maker
+
+
+def make_p_attachment_maker():
+    p_attachment_maker = DynamicAttachmentMaker(
+        selector=abjad.select(),
+        attachment=abjad.Dynamic("ppp")
+    )
+    return p_attachment_maker
+
+
+def make_mp_attachment_maker():
+    mp_attachment_maker = DynamicAttachmentMaker(
+        selector=abjad.select(),
+        attachment=abjad.Dynamic("ppp")
+    )
+    return mp_attachment_maker
+
+
+def make_mf_attachment_maker():
+    mf_attachment_maker = DynamicAttachmentMaker(
+        selector=abjad.select(),
+        attachment=abjad.Dynamic("ppp")
+    )
+    return mf_attachment_maker
+
+
+def make_f_attachment_maker():
+    f_attachment_maker = DynamicAttachmentMaker(
+        selector=abjad.select(),
+        attachment=abjad.Dynamic("ppp")
+    )
+    return f_attachment_maker
+
+
+def make_ff_attachment_maker():
+    ff_attachment_maker = DynamicAttachmentMaker(
+        selector=abjad.select(),
+        attachment=abjad.Dynamic("ppp")
+    )
+    return ff_attachment_maker
+
+
+@dataclass
+class DynamicAttachmentMakerData:
+    ppp: DynamicAttachmentMaker = field(
+        default_factory=make_ppp_attachment_maker
+    )
+    pp: DynamicAttachmentMaker = field(
+        default_factory=make_pp_attachment_maker
+    )
+    p: DynamicAttachmentMaker = field(
+        default_factory=make_p_attachment_maker
+    )
+    mp: DynamicAttachmentMaker = field(
+        default_factory=make_mp_attachment_maker
+    )
+    mf: DynamicAttachmentMaker = field(
+        default_factory=make_mf_attachment_maker
+    )
+    f: DynamicAttachmentMaker = field(
+        default_factory=make_f_attachment_maker
+    )
+    ff: DynamicAttachmentMaker = field(
+        default_factory?make_ff_attachment_maker
+    )
+
+
 def make_ord_attachment_maker():
-    ord_attachment_maker = MarkupFirstAttachmentMaker(
+    ord_attachment_maker = MarkupAttachmentMaker(
         selector=abjad.select(),
         attachment=markup.ordinario()
     )
@@ -46,7 +128,7 @@ def make_ord_attachment_maker():
 
 
 def make_tasto_attachment_maker():
-    tasto_attachment_maker = MarkupFirstAttachmentMaker(
+    tasto_attachment_maker = MarkupAttachmentMaker(
         selector=abjad.select(),
         attachment=markup.tasto()
     )
@@ -54,7 +136,7 @@ def make_tasto_attachment_maker():
 
 
 def make_flaut_attachment_maker():
-    flaut_attachment_maker = MarkupFirstAttachmentMaker(
+    flaut_attachment_maker = MarkupAttachmentMaker(
         selector=abjad.select(),
         attachment=markup.flaut()
     )
@@ -62,7 +144,7 @@ def make_flaut_attachment_maker():
 
 
 def make_flaut_pont_attachment_maker():
-    flaut_pont_attachment_maker = MarkupFirstAttachmentMaker(
+    flaut_pont_attachment_maker = MarkupAttachmentMaker(
         selector=abjad.select(),
         attachment=markup.flaut_pont()
     )
@@ -70,7 +152,7 @@ def make_flaut_pont_attachment_maker():
 
 
 def make_pont_attachment_maker():
-    pont_attachment_maker = MarkupFirstAttachmentMaker(
+    pont_attachment_maker = MarkupAttachmentMaker(
         selector=abjad.select(),
         attachment=markup.pont()
     )
@@ -79,18 +161,18 @@ def make_pont_attachment_maker():
 
 @dataclass
 class BowPositionData(object):
-    ordinario: MarkupFirstAttachmentMaker = field(
+    ordinario: MarkupAttachmentMaker = field(
         default_factory=make_ord_attachment_maker
     )
-    tasto: MarkupFirstAttachmentMaker = field(
+    tasto: MarkupAttachmentMaker = field(
         default_factory=make_tasto_attachment_maker
     )
-    flaut: MarkupFirstAttachmentMaker = field(
+    flaut: MarkupAttachmentMaker = field(
         default_factory=make_flaut_attachment_maker
     )
-    pont: MarkupFirstAttachmentMaker = field(
+    pont: MarkupAttachmentMaker = field(
         default_factory=make_pont_attachment_maker
     )
-    flaut_pont: MarkupFirstAttachmentMaker = field(
+    flaut_pont: MarkupAttachmentMaker = field(
         default_factory=make_flaut_pont_attachment_maker
     )
