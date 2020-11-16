@@ -52,7 +52,7 @@ def make_default_overrides():
 @dataclass
 class InstrumentMusicData:
     _pitches: abjad.CyclicTuple = field(default_factory=make_default_pitches)
-    attachments: Sequence[AttachmentMaker] = field(
+    _attachments: Sequence[AttachmentMaker] = field(
         default_factory=make_default_attachments)
     denominator: int = default_denominator
     time_signature_pairs: Sequence[tuple] = field(
@@ -71,6 +71,15 @@ class InstrumentMusicData:
         self._pitches = cyclic_tuple
 
     @property
+    def attachments(self) -> Sequence[AttachmentMaker]:
+        return self._attachments
+
+    @attachments.setter
+    # Checks happen in the music maker class at initialization
+    def attachments(self, attachment_makers) -> None:
+        self._attachments = attachment_makers
+
+    @property
     def talea(self) -> list:
         return self._talea
 
@@ -83,6 +92,7 @@ class InstrumentMusicData:
         return self._overrides
 
     @overrides.setter
+    # Checks happen in the music maker class at initialization
     def overrides(self, override_makers) -> None:
         self._overrides = override_makers
 
