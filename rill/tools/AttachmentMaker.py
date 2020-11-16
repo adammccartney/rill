@@ -36,15 +36,32 @@ class AccentAttachmentMaker(AttachmentMaker):
             pass
 
 
-class MarkupFirstAttachmentMaker(AttachmentMaker):
+class DynamicAttachmentMaker(AttachmentMaker):
+    """Adds dynamic to the first note in selection
+    Warning: need to review the use of overrides in these
+    classes -> the selector is being defined by each instance
+    """
+
+    def __init__(self, attachment, selector):
+        AttachmentMaker.__init__(self, attachment, selector)
+
+    def __call__(self, music):
+        for selection in self.selector(music):
+            self._attach_to_first_leaf(selection[0])
+
+    def _attach_to_first_leaf(self, note):
+        attachment = copy.copy(self.attachment)
+        abjad.attach(attachment, note)
+
+
+class MarkupAttachmentMaker(AttachmentMaker):
     "Adds markup to the first note in selection"
     def __init__(self, attachment, selector):
         AttachmentMaker.__init__(self, attachment, selector)
 
     def __call__(self, music):
-        print("music: ", music)
         for selection in self.selector(music):
-            print("selection: ", selection)
+            self._attach_to_first_leaf(selection[0])
 
     def _attach_to_first_leaf(self, note):
         attachment = copy.copy(self.attachment)
