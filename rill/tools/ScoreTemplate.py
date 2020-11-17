@@ -11,9 +11,9 @@ class ScoreTemplate(abjad.ScoreTemplate):
 
     __documentation_section__ = None
 
-    _always_make_global_rests = True
+    _always_make_global_rests = False
 
-    _global_rests_in_topmost_staff = True
+    _global_rests_in_topmost_staff = False
 
     def __init__(self):
         super(ScoreTemplate, self).__init__()
@@ -54,7 +54,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
         music_voice = abjad.Voice(name="Flute1_Music_Voice", tag=tag)
         dynamics_voice = abjad.Voice(name="Flute1_Dynamics_Voice", tag=tag)
         fluteOne_staff = abjad.Staff(
-            [markup_voice, music_voice, dynamics_voice],
+            [music_voice],
             simultaneous=True,
             name="Flute1",
             lilypond_type="FluteOneStaff",
@@ -77,7 +77,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
         music_voice = abjad.Voice(name="Flute2_Music_Voice", tag=tag)
         dynamics_voice = abjad.Voice(name="Flute2_Dynamics_Voice", tag=tag)
         fluteTwo_staff = abjad.Staff(
-            [markup_voice, music_voice, dynamics_voice],
+            [music_voice],
             simultaneous=True,
             name="Flute2",
             lilypond_type="FluteTwoStaff",
@@ -100,7 +100,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
         music_voice = abjad.Voice(name="Flute3_Music_Voice", tag=tag)
         dynamics_voice = abjad.Voice(name="Flute3_Dynamics_Voice", tag=tag)
         fluteThree_staff = abjad.Staff(
-            [markup_voice, music_voice, dynamics_voice],
+            [music_voice],
             simultaneous=True,
             name="Flute3",
             lilypond_type="FluteThreeStaff",
@@ -123,7 +123,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
         music_voice = abjad.Voice(name="Flute4_Music_Voice", tag=tag)
         dynamics_voice = abjad.Voice(name="Flute4_Dynamics_Voice", tag=tag)
         fluteFour_staff = abjad.Staff(
-            [markup_voice, music_voice, dynamics_voice],
+            [music_voice],
             simultaneous=True,
             name="Flute4",
             lilypond_type="FluteFourStaff",
@@ -147,7 +147,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
         dynamics_voice = abjad.Voice(
             name="Bbclarinet1_Dynamics_Voice", tag=tag)
         Bbclarinet_staff = abjad.Staff(
-            [markup_voice, music_voice, dynamics_voice],
+            [music_voice],
             simultaneous=True,
             name="Bbclarinet1",
             lilypond_type="BbclarinetOneStaff",
@@ -170,7 +170,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
         music_voice = abjad.Voice(name="Vibraphone_Music_Voice", tag=tag)
         dynamics_voice = abjad.Voice(name="Vibraphone_Dynamics_Voice", tag=tag)
         vibraphone_staff = abjad.Staff(
-            [markup_voice, music_voice, dynamics_voice],
+            [music_voice],
             simultaneous=True,
             name="Vibraphone",
             lilypond_type="VibraphoneStaff",
@@ -194,7 +194,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
         music_voice = abjad.Voice(name="Violin1_Music_Voice", tag=tag)
         dynamics_voice = abjad.Voice(name="Violin1_Dynamics_Voice", tag=tag)
         violinOne_staff = abjad.Staff(
-            [markup_voice, music_voice, dynamics_voice],
+            [music_voice],
             simultaneous=True,
             name="Violin1",
             lilypond_type="ViolinOneStaff",
@@ -217,7 +217,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
         music_voice = abjad.Voice(name="Violin2_Music_Voice", tag=tag)
         dynamics_voice = abjad.Voice(name="Violin2_Dynamics_Voice", tag=tag)
         violinTwo_staff = abjad.Staff(
-            [markup_voice, music_voice, dynamics_voice],
+            [music_voice],
             simultaneous=True,
             name="Violin2",
             lilypond_type="ViolinTwoStaff",
@@ -240,7 +240,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
         music_voice = abjad.Voice(name="Violin3_Music_Voice", tag=tag)
         dynamics_voice = abjad.Voice(name="Violin3_Dynamics_Voice", tag=tag)
         violinThree_staff = abjad.Staff(
-            [markup_voice, music_voice, dynamics_voice],
+            [music_voice],
             simultaneous=True,
             name="Violin3",
             lilypond_type="ViolinThreeStaff",
@@ -263,7 +263,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
         music_voice = abjad.Voice(name="Violin4_Music_Voice", tag=tag)
         dynamics_voice = abjad.Voice(name="Violin4_Dynamics_Voice", tag=tag)
         violinFour_staff = abjad.Staff(
-            [markup_voice, music_voice, dynamics_voice],
+            [music_voice],
             simultaneous=True,
             name="Violin4",
             lilypond_type="ViolinFourStaff",
@@ -286,7 +286,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
         music_voice = abjad.Voice(name="Violin5_Music_Voice", tag=tag)
         dynamics_voice = abjad.Voice(name="Violin5_Dynamics_Voice", tag=tag)
         violinFive_staff = abjad.Staff(
-            [markup_voice, music_voice, dynamics_voice],
+            [music_voice],
             simultaneous=True,
             name="Violin5",
             lilypond_type="ViolinFiveStaff",
@@ -309,7 +309,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
         music_voice = abjad.Voice(name="Violin6_Music_Voice", tag=tag)
         dynamics_voice = abjad.Voice(name="Violin6_Dynamics_Voice", tag=tag)
         violinSix_staff = abjad.Staff(
-            [markup_voice, music_voice, dynamics_voice],
+            [music_voice],
             simultaneous=True,
             name="Violin6",
             lilypond_type="ViolinSixStaff",
@@ -332,7 +332,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
         music_voice = abjad.Voice(name="Violin7_Music_Voice", tag=tag)
         dynamics_voice = abjad.Voice(name="Violin7_Dynamics_Voice", tag=tag)
         violinSeven_staff = abjad.Staff(
-            [markup_voice, music_voice, dynamics_voice],
+            [music_voice],
             simultaneous=True,
             name="Violin7",
             lilypond_type="ViolinSevenStaff",
@@ -356,7 +356,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
         music_voice = abjad.Voice(name="Violin8_Music_Voice", tag=tag)
         dynamics_voice = abjad.Voice(name="Violin8_Dynamics_Voice", tag=tag)
         violinEight_staff = abjad.Staff(
-            [markup_voice, music_voice, dynamics_voice],
+            [music_voice],
             simultaneous=True,
             name="Violin8",
             lilypond_type="ViolinEightStaff",
@@ -381,7 +381,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
         music_voice = abjad.Voice(name="Viola_Music_Voice", tag=tag)
         dynamics_voice = abjad.Voice(name="Viola_Dynamics_Voice", tag=tag)
         viola_staff = abjad.Staff(
-            [markup_voice, music_voice, dynamics_voice],
+            [music_voice],
             simultaneous=True,
             name="Viola",
             lilypond_type="ViolaStaff",

@@ -379,7 +379,7 @@ class SegmentMaker(abjad.SegmentMaker):
             leaf = abjad.inspect(voice).leaf(0)
             abjad.attach(abjad.Clef("treble"), leaf)
         leaf = abjad.inspect(alto_voice).leaf(0)
-        abjad.attach.inspect(abjad.Clef("alto"), leaf)
+        abjad.attach(abjad.Clef("alto"), leaf)
         #treble, alto, bass = [], [], []
         #temp = voices[0:11]  # fl x3 , Bbclarinet, vb, vn x7
         #temp = voices[12]

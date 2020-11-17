@@ -55,42 +55,11 @@
                     midiInstrument = #"flute"                                  %! rill.ScoreTemplate.__call__()
                 }                                                              %! rill.ScoreTemplate.__call__()
                 <<                                                             %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Flute1_Markup_Voice"                     %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        \stopTextSpan
-                    }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute1_Music_Voice"                      %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \once \override NoteHead.style = #'cross
+                            \clef "treble"
                             \mark #1
                             c'''4
                             \ppp
@@ -169,38 +138,6 @@
                             \once \override NoteHead.style = #'cross
                             e''4
                         }
-                    }                                                          %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Flute1_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'fluteTwo
@@ -210,54 +147,11 @@
                     midiInstrument = #"flute"                                  %! rill.ScoreTemplate.__call__()
                 }                                                              %! rill.ScoreTemplate.__call__()
                 <<                                                             %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Flute2_Markup_Voice"                     %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        \stopTextSpan
-                    }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute2_Music_Voice"                      %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \once \override NoteHead.style = #'cross
+                            \clef "treble"
                             \mark #1
                             c''8.
                             \ppp
@@ -360,50 +254,6 @@
                             \once \override NoteHead.style = #'cross
                             e'8.
                         }
-                    }                                                          %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Flute2_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'fluteThree
@@ -413,42 +263,11 @@
                     midiInstrument = #"flute"                                  %! rill.ScoreTemplate.__call__()
                 }                                                              %! rill.ScoreTemplate.__call__()
                 <<                                                             %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Flute3_Markup_Voice"                     %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        \stopTextSpan
-                    }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute3_Music_Voice"                      %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \once \override NoteHead.style = #'cross
+                            \clef "treble"
                             \mark #1
                             c''4
                             \ppp
@@ -528,38 +347,6 @@
                             e'4
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Flute3_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        \!
-                    }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'fluteFour
                 \context FluteFourStaff = "Flute4"                             %! rill.ScoreTemplate.__call__()
@@ -568,41 +355,10 @@
                     midiInstrument = #"flute"                                  %! rill.ScoreTemplate.__call__()
                 }                                                              %! rill.ScoreTemplate.__call__()
                 <<                                                             %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Flute4_Markup_Voice"                     %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        \stopTextSpan
-                    }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute4_Music_Voice"                      %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
+                            \clef "treble"
                             \mark #1
                             c''4
                             \p
@@ -650,38 +406,6 @@
                             ~
                             e'4
                         }
-                    }                                                          %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Flute4_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'BbclarinetOne
@@ -691,53 +415,10 @@
                     midiInstrument = #"Bbclarinet"                             %! rill.ScoreTemplate.__call__()
                 }                                                              %! rill.ScoreTemplate.__call__()
                 <<                                                             %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Bbclarinet1_Markup_Voice"                %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        \stopTextSpan
-                    }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Bbclarinet1_Music_Voice"                 %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
+                            \clef "treble"
                             \mark #1
                             c''8.
                             \p
@@ -797,50 +478,6 @@
                             cs''16
                             e'8.
                         }
-                    }                                                          %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Bbclarinet1_Dynamics_Voice"              %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
             >>                                                                 %! rill.ScoreTemplate.__call__()
@@ -853,61 +490,10 @@
                     midiInstrument = #"vibraphone"                             %! rill.ScoreTemplate.__call__()
                 }                                                              %! rill.ScoreTemplate.__call__()
                 <<                                                             %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Vibraphone_Markup_Voice"                 %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/4
-                        \stopTextSpan
-                    }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Vibraphone_Music_Voice"                  %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
+                            \clef "treble"
                             \mark #1
                             c''16
                             \p
@@ -971,58 +557,6 @@
                             r8.
                             e'4
                         }
-                    }                                                          %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Vibraphone_Dynamics_Voice"               %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/4
-                        \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
             >>                                                                 %! rill.ScoreTemplate.__call__()
@@ -1035,93 +569,10 @@
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
                 }                                                              %! rill.ScoreTemplate.__call__()
                 <<                                                             %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Violin1_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        \stopTextSpan
-                    }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin1_Music_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
+                            \clef "treble"
                             \mark #1
                             g''16
                             \p
@@ -1129,170 +580,78 @@
                                 \upright
                                     pizz.
                                 }
-                            r16
                             e''16
-                            fs''16
-                            r16
-                            as''16
-                            r16
-                            cs'''16
-                            r16
-                            a''16
-                            g''16
-                            r16
-                            e''16
-                            r16
+                            r8
                             fs''16
                             r16
                             as''16
                             cs'''16
-                            r16
                             a''16
                             r16
                             g''16
-                            r16
                             e''16
-                            fs''16
-                            r16
-                            as''16
-                            r16
-                            cs'''16
-                            r16
-                            a''16
-                            g''16
-                            r16
-                            e''16
-                            r16
+                            r8
                             fs''16
                             r16
                             as''16
                             cs'''16
-                            r16
                             a''16
                             r16
                             g''16
-                            r16
                             e''16
-                            fs''16
-                            r16
-                            as''16
-                            r16
-                            cs'''16
-                            r16
-                            a''16
-                            g''16
-                            r16
-                            e''16
-                            r16
+                            r8
                             fs''16
                             r16
                             as''16
                             cs'''16
-                            r16
                             a''16
                             r16
                             g''16
-                            r16
                             e''16
+                            r8
                             fs''16
                             r16
                             as''16
-                            r16
                             cs'''16
-                            r16
                             a''16
+                            r16
                             g''16
-                            r16
                             e''16
-                            r16
+                            r8
                             fs''16
                             r16
                             as''16
+                            cs'''16
+                            a''16
+                            r16
+                            g''16
+                            e''16
+                            r8
+                            fs''16
+                            r16
+                            as''16
+                            cs'''16
+                            a''16
+                            r16
+                            g''16
+                            e''16
+                            r8
+                            fs''16
+                            r16
+                            as''16
+                            cs'''16
+                            a''16
+                            r16
+                            g''16
+                            e''16
+                            r8
+                            fs''16
+                            r16
+                            as''16
+                            cs'''16
+                            a''16
+                            r16
                         }
-                    }                                                          %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Violin1_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinTwo
@@ -1302,93 +661,10 @@
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
                 }                                                              %! rill.ScoreTemplate.__call__()
                 <<                                                             %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Violin2_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        \stopTextSpan
-                    }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin2_Music_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
+                            \clef "treble"
                             \mark #1
                             g''16
                             \p
@@ -1396,170 +672,78 @@
                                 \upright
                                     pizz.
                                 }
-                            r16
                             e''16
-                            fs''16
-                            r16
-                            as''16
-                            r16
-                            cs'''16
-                            r16
-                            a''16
-                            g''16
-                            r16
-                            e''16
-                            r16
+                            r8
                             fs''16
                             r16
                             as''16
                             cs'''16
-                            r16
                             a''16
                             r16
                             g''16
-                            r16
                             e''16
-                            fs''16
-                            r16
-                            as''16
-                            r16
-                            cs'''16
-                            r16
-                            a''16
-                            g''16
-                            r16
-                            e''16
-                            r16
+                            r8
                             fs''16
                             r16
                             as''16
                             cs'''16
-                            r16
                             a''16
                             r16
                             g''16
-                            r16
                             e''16
-                            fs''16
-                            r16
-                            as''16
-                            r16
-                            cs'''16
-                            r16
-                            a''16
-                            g''16
-                            r16
-                            e''16
-                            r16
+                            r8
                             fs''16
                             r16
                             as''16
                             cs'''16
-                            r16
                             a''16
                             r16
                             g''16
-                            r16
                             e''16
+                            r8
                             fs''16
                             r16
                             as''16
-                            r16
                             cs'''16
-                            r16
                             a''16
+                            r16
                             g''16
-                            r16
                             e''16
-                            r16
+                            r8
                             fs''16
                             r16
                             as''16
+                            cs'''16
+                            a''16
+                            r16
+                            g''16
+                            e''16
+                            r8
+                            fs''16
+                            r16
+                            as''16
+                            cs'''16
+                            a''16
+                            r16
+                            g''16
+                            e''16
+                            r8
+                            fs''16
+                            r16
+                            as''16
+                            cs'''16
+                            a''16
+                            r16
+                            g''16
+                            e''16
+                            r8
+                            fs''16
+                            r16
+                            as''16
+                            cs'''16
+                            a''16
+                            r16
                         }
-                    }                                                          %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Violin2_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinThree
@@ -1569,93 +753,10 @@
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
                 }                                                              %! rill.ScoreTemplate.__call__()
                 <<                                                             %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Violin3_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        \stopTextSpan
-                    }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin3_Music_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
+                            \clef "treble"
                             \mark #1
                             c'''16
                             \p
@@ -1663,170 +764,78 @@
                                 \upright
                                     pizz.
                                 }
-                            r16
                             e'''16
-                            as''16
-                            r16
-                            cs'''16
-                            r16
-                            a''16
-                            r16
-                            cs'''16
-                            c'''16
-                            r16
-                            e'''16
-                            r16
+                            r8
                             as''16
                             r16
                             cs'''16
                             a''16
-                            r16
                             cs'''16
                             r16
                             c'''16
-                            r16
                             e'''16
-                            as''16
-                            r16
-                            cs'''16
-                            r16
-                            a''16
-                            r16
-                            cs'''16
-                            c'''16
-                            r16
-                            e'''16
-                            r16
+                            r8
                             as''16
                             r16
                             cs'''16
                             a''16
-                            r16
                             cs'''16
                             r16
                             c'''16
-                            r16
                             e'''16
-                            as''16
-                            r16
-                            cs'''16
-                            r16
-                            a''16
-                            r16
-                            cs'''16
-                            c'''16
-                            r16
-                            e'''16
-                            r16
+                            r8
                             as''16
                             r16
                             cs'''16
                             a''16
-                            r16
                             cs'''16
                             r16
                             c'''16
-                            r16
                             e'''16
+                            r8
                             as''16
                             r16
                             cs'''16
-                            r16
                             a''16
-                            r16
                             cs'''16
+                            r16
                             c'''16
-                            r16
                             e'''16
-                            r16
+                            r8
                             as''16
                             r16
                             cs'''16
+                            a''16
+                            cs'''16
+                            r16
+                            c'''16
+                            e'''16
+                            r8
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
+                            cs'''16
+                            r16
+                            c'''16
+                            e'''16
+                            r8
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
+                            cs'''16
+                            r16
+                            c'''16
+                            e'''16
+                            r8
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
+                            cs'''16
+                            r16
                         }
-                    }                                                          %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Violin3_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinFour
@@ -1836,93 +845,10 @@
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
                 }                                                              %! rill.ScoreTemplate.__call__()
                 <<                                                             %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Violin4_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        \stopTextSpan
-                    }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin4_Music_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
+                            \clef "treble"
                             \mark #1
                             c'''16
                             \p
@@ -1930,170 +856,78 @@
                                 \upright
                                     pizz.
                                 }
-                            r16
                             e'''16
-                            as''16
-                            r16
-                            cs'''16
-                            r16
-                            a''16
-                            r16
-                            cs'''16
-                            c'''16
-                            r16
-                            e'''16
-                            r16
+                            r8
                             as''16
                             r16
                             cs'''16
                             a''16
-                            r16
                             cs'''16
                             r16
                             c'''16
-                            r16
                             e'''16
-                            as''16
-                            r16
-                            cs'''16
-                            r16
-                            a''16
-                            r16
-                            cs'''16
-                            c'''16
-                            r16
-                            e'''16
-                            r16
+                            r8
                             as''16
                             r16
                             cs'''16
                             a''16
-                            r16
                             cs'''16
                             r16
                             c'''16
-                            r16
                             e'''16
-                            as''16
-                            r16
-                            cs'''16
-                            r16
-                            a''16
-                            r16
-                            cs'''16
-                            c'''16
-                            r16
-                            e'''16
-                            r16
+                            r8
                             as''16
                             r16
                             cs'''16
                             a''16
-                            r16
                             cs'''16
                             r16
                             c'''16
-                            r16
                             e'''16
+                            r8
                             as''16
                             r16
                             cs'''16
-                            r16
                             a''16
-                            r16
                             cs'''16
+                            r16
                             c'''16
-                            r16
                             e'''16
-                            r16
+                            r8
                             as''16
                             r16
                             cs'''16
+                            a''16
+                            cs'''16
+                            r16
+                            c'''16
+                            e'''16
+                            r8
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
+                            cs'''16
+                            r16
+                            c'''16
+                            e'''16
+                            r8
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
+                            cs'''16
+                            r16
+                            c'''16
+                            e'''16
+                            r8
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
+                            cs'''16
+                            r16
                         }
-                    }                                                          %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Violin4_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinFive
@@ -2103,93 +937,10 @@
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
                 }                                                              %! rill.ScoreTemplate.__call__()
                 <<                                                             %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Violin5_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        \stopTextSpan
-                    }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin5_Music_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
+                            \clef "treble"
                             \mark #1
                             c'''16
                             \p
@@ -2197,170 +948,78 @@
                                 \upright
                                     pizz.
                                 }
-                            r16
                             e'''16
-                            as''16
-                            r16
-                            cs'''16
-                            r16
-                            a''16
-                            r16
-                            cs'''16
-                            c'''16
-                            r16
-                            e'''16
-                            r16
+                            r8
                             as''16
                             r16
                             cs'''16
                             a''16
-                            r16
                             cs'''16
                             r16
                             c'''16
-                            r16
                             e'''16
-                            as''16
-                            r16
-                            cs'''16
-                            r16
-                            a''16
-                            r16
-                            cs'''16
-                            c'''16
-                            r16
-                            e'''16
-                            r16
+                            r8
                             as''16
                             r16
                             cs'''16
                             a''16
-                            r16
                             cs'''16
                             r16
                             c'''16
-                            r16
                             e'''16
-                            as''16
-                            r16
-                            cs'''16
-                            r16
-                            a''16
-                            r16
-                            cs'''16
-                            c'''16
-                            r16
-                            e'''16
-                            r16
+                            r8
                             as''16
                             r16
                             cs'''16
                             a''16
-                            r16
                             cs'''16
                             r16
                             c'''16
-                            r16
                             e'''16
+                            r8
                             as''16
                             r16
                             cs'''16
-                            r16
                             a''16
-                            r16
                             cs'''16
+                            r16
                             c'''16
-                            r16
                             e'''16
-                            r16
+                            r8
                             as''16
                             r16
                             cs'''16
+                            a''16
+                            cs'''16
+                            r16
+                            c'''16
+                            e'''16
+                            r8
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
+                            cs'''16
+                            r16
+                            c'''16
+                            e'''16
+                            r8
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
+                            cs'''16
+                            r16
+                            c'''16
+                            e'''16
+                            r8
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
+                            cs'''16
+                            r16
                         }
-                    }                                                          %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Violin5_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinSix
@@ -2370,53 +1029,10 @@
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
                 }                                                              %! rill.ScoreTemplate.__call__()
                 <<                                                             %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Violin6_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        \stopTextSpan
-                    }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin6_Music_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
+                            \clef "treble"
                             \mark #1
                             c''8.
                             \pp
@@ -2484,50 +1100,6 @@
                             cs''16
                             e'8.
                         }
-                    }                                                          %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Violin6_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinSeven
@@ -2537,41 +1109,10 @@
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
                 }                                                              %! rill.ScoreTemplate.__call__()
                 <<                                                             %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Violin7_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        \stopTextSpan
-                    }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin7_Music_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
+                            \clef "treble"
                             \mark #1
                             c''4
                             \pp
@@ -2628,38 +1169,6 @@
                             e'4
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Violin7_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/4
-                        \!
-                    }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'violinEight
                 \context ViolinEightStaff = "Violin8"                          %! rill.ScoreTemplate.__call__()
@@ -2668,21 +1177,10 @@
                     midiInstrument = #"violin"                                 %! rill.ScoreTemplate.__call__()
                 }                                                              %! rill.ScoreTemplate.__call__()
                 <<                                                             %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Violin8_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/4
-                        s1 * 1/4
-                        s1 * 3/4
-                        s1 * 3/4
-                        s1 * 3/4
-                        s1 * 1/4
-                        s1 * 3/4
-                        s1 * 3/4
-                        \stopTextSpan
-                    }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin8_Music_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
+                            \clef "treble"
                             \mark #1
                             c''2.
                             \pp
@@ -2705,18 +1203,6 @@
                             e'2.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Violin8_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/4
-                        s1 * 1/4
-                        s1 * 3/4
-                        s1 * 3/4
-                        s1 * 3/4
-                        s1 * 1/4
-                        s1 * 3/4
-                        s1 * 3/4
-                        \!
-                    }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
                 \tag #'viola
                 \context ViolaStaff = "Viola"                                  %! rill.ScoreTemplate.__call__()
@@ -2725,20 +1211,10 @@
                     midiInstrument = #"viola"                                  %! rill.ScoreTemplate.__call__()
                 }                                                              %! rill.ScoreTemplate.__call__()
                 <<                                                             %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Viola_Markup_Voice"                      %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/1
-                        s1 * 1/2
-                        s1 * 1/4
-                        s1 * 3/4
-                        s1 * 1/1
-                        s1 * 3/4
-                        s1 * 3/4
-                        \stopTextSpan
-                    }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Viola_Music_Voice"                       %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
+                            \clef "alto"
                             \mark #1
                             c'1
                             \pp
@@ -2761,17 +1237,6 @@
                             ~
                             a2.
                         }
-                    }                                                          %! rill.ScoreTemplate.__call__()
-                    \context Voice = "Viola_Dynamics_Voice"                    %! rill.ScoreTemplate.__call__()
-                    {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 1/1
-                        s1 * 1/2
-                        s1 * 1/4
-                        s1 * 3/4
-                        s1 * 1/1
-                        s1 * 3/4
-                        s1 * 3/4
-                        \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
             >>                                                                 %! rill.ScoreTemplate.__call__()
