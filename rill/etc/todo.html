@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-10-21 Wed 12:50 -->
+<!-- 2020-11-09 Mon 09:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>New branch ensemble v2.0</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="adam" />
 <style type="text/css">
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: auto;
+    overflow: visible;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -161,19 +161,6 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -198,7 +185,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -242,38 +229,14 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org6e77af2">0.1. New branch ensemble v2.0</a>
-<ul>
-<li><a href="#orgfd5f9a2">0.1.1. <span class="todo TODO">TODO</span> Create new score template</a></li>
-<li><a href="#orgd387b59">0.1.2. <span class="todo TODO">TODO</span> Import new segment maker from marana</a></li>
-<li><a href="#org09c151c">0.1.3. <span class="todo TODO">TODO</span> generate new structure for segments</a></li>
-<li><a href="#org20ec1e7">0.1.4. <span class="todo TODO">TODO</span> Test build all segments and run make on the score</a></li>
-<li><a href="#org9dbf634">0.1.5. <span class="todo TODO">TODO</span> Find solution for missing instrument name markups</a></li>
-</ul>
-</li>
-<li><a href="#org5b72dce">0.2. Initial Setup of v1.0</a>
-<ul>
-<li><a href="#org4f42eb1">0.2.1. 8-7-20</a></li>
-<li><a href="#org69a8e30">0.2.2. 16-6-20</a></li>
-<li><a href="#org20eed68">0.2.3. 15-6-20</a></li>
-<li><a href="#org9504ceb">0.2.4. 28-5-20</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org1bb889a">1. <code>~Figure out if there is some way to make a selection based on a PitchSegment~</code></a></div>
+<h1 class="title">New branch ensemble v2.0</h1>
+<div id="outline-container-org1342a77" class="outline-3">
+<h3 id="org1342a77">New branch ensemble v2.0</h3>
+<div class="outline-text-3" id="text-org1342a77">
 </div>
-<div id="outline-container-org6e77af2" class="outline-3">
-<h3 id="org6e77af2"><span class="section-number-3">0.1</span> New branch ensemble v2.0</h3>
-<div class="outline-text-3" id="text-0-1">
-</div>
-<div id="outline-container-orgfd5f9a2" class="outline-4">
-<h4 id="orgfd5f9a2"><span class="section-number-4">0.1.1</span> <span class="todo TODO">TODO</span> Create new score template</h4>
-<div class="outline-text-4" id="text-0-1-1">
+<div id="outline-container-org5ee9397" class="outline-4">
+<h4 id="org5ee9397"><span class="done DONE">DONE</span> Create new score template</h4>
+<div class="outline-text-4" id="text-org5ee9397">
 <ul class="org-ul">
 <li>update materials/instruments/definition.py</li>
 <li>update tools/ScoreTemplate.py</li>
@@ -282,9 +245,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgd387b59" class="outline-4">
-<h4 id="orgd387b59"><span class="section-number-4">0.1.2</span> <span class="todo TODO">TODO</span> Import new segment maker from marana</h4>
-<div class="outline-text-4" id="text-0-1-2">
+<div id="outline-container-org2f43de1" class="outline-4">
+<h4 id="org2f43de1"><span class="done DONE">DONE</span> Import new segment maker from marana</h4>
+<div class="outline-text-4" id="text-org2f43de1">
 <ul class="org-ul">
 <li>replace rill/tools/SegmentMaker.py with marana/tools/SegmentMaker.py</li>
 <li>compare differences, update functions:
@@ -299,9 +262,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org09c151c" class="outline-4">
-<h4 id="org09c151c"><span class="section-number-4">0.1.3</span> <span class="todo TODO">TODO</span> generate new structure for segments</h4>
-<div class="outline-text-4" id="text-0-1-3">
+<div id="outline-container-orgd6ea963" class="outline-4">
+<h4 id="orgd6ea963"><span class="done DONE">DONE</span> generate new structure for segments</h4>
+<div class="outline-text-4" id="text-orgd6ea963">
 <ul class="org-ul">
 <li>recursively delete all existing subdirectories and files in segments</li>
 <li>import generator scripts from marana</li>
@@ -314,32 +277,155 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org20ec1e7" class="outline-4">
-<h4 id="org20ec1e7"><span class="section-number-4">0.1.4</span> <span class="todo TODO">TODO</span> Test build all segments and run make on the score</h4>
+<div id="outline-container-org73967db" class="outline-4">
+<h4 id="org73967db"><span class="done DONE">DONE</span> Test build all segments and run make on the score</h4>
 </div>
 
-<div id="outline-container-org9dbf634" class="outline-4">
-<h4 id="org9dbf634"><span class="section-number-4">0.1.5</span> <span class="todo TODO">TODO</span> Find solution for missing instrument name markups</h4>
-</div>
-</div>
 
-<div id="outline-container-org5b72dce" class="outline-3">
-<h3 id="org5b72dce"><span class="section-number-3">0.2</span> Initial Setup of v1.0</h3>
-<div class="outline-text-3" id="text-0-2">
-</div>
-<div id="outline-container-org4f42eb1" class="outline-4">
-<h4 id="org4f42eb1"><span class="section-number-4">0.2.1</span> 8-7-20</h4>
-<div class="outline-text-4" id="text-0-2-1">
+<div id="outline-container-org06a83e6" class="outline-4">
+<h4 id="org06a83e6"><span class="todo IN_PROGRESS">IN-PROGRESS</span> Design generator script for creating definition.py files</h4>
+<div class="outline-text-4" id="text-org06a83e6">
 <ul class="org-ul">
-<li><code>~Write test for `material_methods.py`~</code></li>
-<li><code>~Create push/pop methods for PhraseStream containers list~</code>
+<li>28-30. Oct 20: created new Dev branch and began working on
+defGen<sub>v1.py</sub></li>
+<li>define new classes that generate a "music code block" as output (use
+factory method design pattern)</li>
+<li>move mMakerGenerator into the MusicMaker module, so it can be
+imported into the `segment_$X/definition.py`</li>
+<li>test that output is building a coherant score
 <ul class="org-ul">
-<li><code>~okay, better way, refactor the code in  PhraseMaker module~</code></li>
-<li><code>~this all worked fine, Phrases are making it to Instrument Voices in
-    Score~</code></li>
-<li><code>~there is a problem to solve with `segment_maker._configure_score()`~</code></li>
+<li>redefine basic structure to reflect that it is possible to import music data initializer objects from database in a systematic way</li>
 </ul></li>
-<li><code>~Clean up segments B-G~</code></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgea45402" class="outline-4">
+<h4 id="orgea45402"><span class="done CANCELED">CANCELED</span> Define workflow for "auditioning" and persisting music data init objects to db</h4>
+<div class="outline-text-4" id="text-orgea45402">
+<ul class="org-ul">
+<li>currently, in order to see how a set of music data objects we're calling up a Segment</li>
+<li>initial solution to persist music data objects on a per segment basis to some sort of a db failed -&gt; there was an issue with using mutable objects in a shelve db. I'm sure there is a way to set this up to work, possibly by using an OOdb. However, I'm going to try and keep things simple for now, see next todo for details</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf5942a5" class="outline-4">
+<h4 id="orgf5942a5"><span class="done DONE">DONE</span> Simplify data storage for segment music data</h4>
+<div class="outline-text-4" id="text-orgf5942a5">
+<ul class="org-ul">
+<li>created two new classes SegmentPitchData and SegmentTaleaData</li>
+<li>their members are simple (strings and lists of ints, respectively)</li>
+<li>they can be pickled and stored in a shelve database, recalled on a per segment basis</li>
+<li>this will let us script (at least some of) the variable assignment that needs to happen for each segment</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdf3a491" class="outline-4">
+<h4 id="orgdf3a491"><span class="todo IN_PROGRESS">IN-PROGRESS</span> write generator script for "music data" files on a per segment basis</h4>
+<div class="outline-text-4" id="text-orgdf3a491">
+<ul class="org-ul">
+<li>I'm going to exploit some of python's handy namespace rules and create a one module per segment to store the music initializer data</li>
+<li>basically, there are two objects essential for this operation: "InstrumentMusicData" and "SegmentMusicData"</li>
+<li>this means we can call the instance of "SegmentMusicData" that is in the segment scope in a way that supports scripting the definition files (basically the reason for this is to avoid hand-hacking the "definition.py" file</li>
+<li>&#x2026;but there will ultimately be a little hand hacking&#x2026; basically, I'm going to initialize the pair of objects mentioned above with their default values and then override on a per segment basis</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdcfe2c4" class="outline-4">
+<h4 id="orgdcfe2c4"><span class="done DONE">DONE</span> Define persistent data structure for material in segments</h4>
+<div class="outline-text-4" id="text-orgdcfe2c4">
+<ul class="org-ul">
+<li>worked through a couple of iterations that tried to use a NamedTuple to manage the data used to initialize the music functions as they are passed into the SegmentMaker member functions before being typeset as notation. Problem is that it is seemingly not so easy to use user defined and complex types in a namedtuple</li>
+
+<li>use of python's DataClass seems to facilitate working with (more) complex datatypes and custom classes
+
+<ul class="org-ul">
+<li>I'm trying to get around having to hand-hack the initialization of the MusicMaker objects: so I want to be able to generate the "definition.py" scripts on a per segment basis, and not have to tweak the output. So ideally, each "definition.py" would refer to an "init segment music" data class on a per instrument basis in each segment. This means that we could write a generator script for all instances of "definition.py" within the subdirectories of segments</li>
+</ul></li>
+</ul>
+
+<div class="figure">
+<p><img src="./segment_DataFlow.png" alt="segment_DataFlow.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org569b5f0" class="outline-4">
+<h4 id="org569b5f0"><span class="done DONE">DONE</span> Write a member function in the MusicMaker class that tidies according to meter</h4>
+<div class="outline-text-4" id="text-org569b5f0">
+<p>
+"clean up rhythm" member function is now taking music as input and re-grouping the rhythms according to the time signatures as passed in by the "time signature pairs" variable
+</p>
+</div>
+</div>
+
+<div id="outline-container-org996af7f" class="outline-4">
+<h4 id="org996af7f"><span class="done DONE">DONE</span> Define a way to persist objects that will be later used to construct MusicMaker objects</h4>
+<div class="outline-text-4" id="text-org996af7f">
+<ul class="org-ul">
+<li>Going to do a couple of experiments with python's shelve object</li>
+
+<li>Test that you can access via Path</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org89c265e" class="outline-4">
+<h4 id="org89c265e"><span class="done DONE">DONE</span> Define an OverrideMaker class to handle the different styles of notehead</h4>
+<div class="outline-text-4" id="text-org89c265e">
+<ul class="org-ul">
+<li>define &amp; unit test class</li>
+<li>integration with MusicMaker and test</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7a55d6d" class="outline-4">
+<h4 id="org7a55d6d"><span class="done DONE">DONE</span> Re-configure ScoreTemplate to reflect final instrumentation</h4>
+<div class="outline-text-4" id="text-org7a55d6d">
+<ul class="org-ul">
+<li>Okay, after plenty of dickin' around with getting the stylesheets to manage instrument names, I finally found a way to get them to display:
+<ul class="org-ul">
+<li>There is a sort of Staff override in lilypond, whereby the a new context staff can be specified with a name like "FluteOneStaff" and refer to another type of staff in the stylesheet block. These can be wrapped in custom StaffGroup staffs in order to make their management a little bit easier</li>
+
+<li>they then have to be referenced in the MusicStaff context block</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge31917b" class="outline-4">
+<h4 id="orge31917b"><span class="todo TODO">TODO</span> Find solution for missing instrument name markups</h4>
+<div class="outline-text-4" id="text-orge31917b">
+<ul class="org-ul">
+<li>looks like the best solution is to implement the names by hand via the stylesheet.ily</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6ecec64" class="outline-4">
+<h4 id="org6ecec64"><span class="todo TODO">TODO</span> Merge Dev branch into Ensemble</h4>
+</div>
+
+<div id="outline-container-org0e181f3" class="outline-4">
+<h4 id="org0e181f3"><span class="todo TODO">TODO</span> Find way to tag score with build time and git branch</h4>
+</div>
+</div>
+
+
+<div id="outline-container-org062d5f8" class="outline-3">
+<h3 id="org062d5f8">Initial Setup of v1.0</h3>
+<div class="outline-text-3" id="text-org062d5f8">
+</div>
+<div id="outline-container-org482a970" class="outline-4">
+<h4 id="org482a970">8-7-20</h4>
+<div class="outline-text-4" id="text-org482a970">
+<ul class="org-ul">
+<li>DONE Write test for `material<sub>methods.py</sub>`</li>
+<li>DONE Create push/pop methods for PhraseStream containers list
+<ul class="org-ul">
+<li>DONE okay, better way, refactor the code in  PhraseMaker module</li>
+<li>DONE this all worked fine, Phrases are making it to Instrument Voices in
+Score</li>
+<li>DONE there is a problem to solve with `segment<sub>maker</sub>.<sub>configure</sub><sub>score</sub>()`</li>
+</ul></li>
+<li>DONE Clean up segments B-G</li>
 
 <li>Test a build with travis
 <ul class="org-ul">
@@ -363,74 +449,74 @@ to produce smoother lines.</li>
 </div>
 </div>
 
-<div id="outline-container-org69a8e30" class="outline-4">
-<h4 id="org69a8e30"><span class="section-number-4">0.2.2</span> 16-6-20</h4>
-<div class="outline-text-4" id="text-0-2-2">
+<div id="outline-container-orge24db37" class="outline-4">
+<h4 id="orge24db37">16-6-20</h4>
+<div class="outline-text-4" id="text-orge24db37">
 <ul class="org-ul">
-<li><code>~Research a way to use RhythmDefinition.py effectively~</code>
+<li>DONE Research a way to use RhythmDefinition.py effectively
 <ul class="org-ul">
-<li><code>~refine the routine used to produce an rmaker~</code></li>
-<li><code>~define a pitches property in FuzzyHarmony~</code></li>
-<li><code>~this can be used in making rmakers~</code></li>
-<li><code>~check viability with Trevor's RhythmDefinition~</code></li>
+<li>DONE refine the routine used to produce an rmaker</li>
+<li>DONE define a pitches property in FuzzyHarmony</li>
+<li>DONE this can be used in making rmakers</li>
+<li>DONE check viability with Trevor's RhythmDefinition</li>
 </ul></li>
 
-<li><code>~Fix linkage to stylesheets~</code> 
+<li>DONE Fix linkage to stylesheets
 <ul class="org-ul">
-<li><code>~run same segment A test and fix errors on build~</code></li>
+<li>DONE run same segment A test and fix errors on build</li>
 </ul></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org20eed68" class="outline-4">
-<h4 id="org20eed68"><span class="section-number-4">0.2.3</span> 15-6-20</h4>
-<div class="outline-text-4" id="text-0-2-3">
+<div id="outline-container-orgb9b2b11" class="outline-4">
+<h4 id="orgb9b2b11">15-6-20</h4>
+<div class="outline-text-4" id="text-orgb9b2b11">
 <ul class="org-ul">
-<li><code>~Clean up tested code~</code></li>
-<li><code>~Make a working segment~</code>
+<li>DONE Clean up tested code</li>
+<li>DONE Make a working segment
 <ul class="org-ul">
-<li><code>~first build a score example using existing code~</code></li>
-<li><code>~figure out how to handle overlapping rmakers~</code></li>
+<li>DONE first build a score example using existing code</li>
+<li>DONE figure out how to handle overlapping rmakers</li>
 </ul></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org9504ceb" class="outline-4">
-<h4 id="org9504ceb"><span class="section-number-4">0.2.4</span> 28-5-20</h4>
-<div class="outline-text-4" id="text-0-2-4">
+<div id="outline-container-org3fda4d7" class="outline-4">
+<h4 id="org3fda4d7">28-5-20</h4>
+<div class="outline-text-4" id="text-org3fda4d7">
 <ul class="org-ul">
-<li><code>~Read abjad.Chord to see if method exists to create invertion~</code></li>
-<li><code>~Create method to invert guitar chords stored in abjad.OrdinaryDict~</code></li>
-<li><code>~Iteratively invert all chords~</code>
+<li>DONE Read abjad.Chord to see if method exists to create invertion</li>
+<li>DONE Create method to invert guitar chords stored in abjad.OrdinaryDict</li>
+<li>DONE Iteratively invert all chords
 <ul class="org-ul">
-<li><code>~Why would you want to build a static resource that holds all~</code>
-<code>~possible inversions?~</code></li>
-<li><code>~Inversions are more commonly found in sequences~</code></li>
-<li><code>~Therefor it makes more sense to write a simple dictionary of used
-    chords~</code>
-<code>~and import a routine for inversion~</code></li>
+<li>DONE Why would you want to build a static resource that holds all
+DONE possible inversions?</li>
+<li>DONE Inversions are more commonly found in sequences</li>
+<li>DONE Therefor it makes more sense to write a simple dictionary of used
+chords
+DONE and import a routine for inversion</li>
 </ul></li>
-<li><code>~Make quick notational sketch of possible guitar figures~</code>
+<li>DONE Make quick notational sketch of possible guitar figures
 <ul class="org-ul">
-<li><code>~pre-requisites:~</code> 
+<li>DONE pre-requisites:
 <ul class="org-ul">
-<li><code>~these should be as general as possible, so they can be ported to other~</code>
-<code>~instruments incase the instrumentation changes by the autumn and so that~</code>  
-<code>~they can be used for the harp parts in the orchestral piece later in the~</code>
-<code>~summer~</code></li>
+<li>DONE these should be as general as possible, so they can be ported to other
+DONE instruments incase the instrumentation changes by the autumn and so that
+DONE they can be used for the harp parts in the orchestral piece later in the
+DONE summer</li>
 </ul></li>
 </ul></li>
 </ul>
 
 <pre class="example">
 
-Data Structure: 
+Data Structure:
  |_ Chord
    |_sub-grouping
-     |_max-voices is restricted by instrument 
-     |_tetrad voicing 
+     |_max-voices is restricted by instrument
+     |_tetrad voicing
      |_triad voicing
      |_min voices = diad voicing
    |_figuration style
@@ -445,16 +531,16 @@ Data Structure:
 </pre>
 
 <ul class="org-ul">
-<li><code>~Clarification of what we want to do with these chords:~</code>
+<li>DONE Clarification of what we want to do with these chords:
 <ul class="org-ul">
-<li><code>~Write a routine that outputs all possible harmonic progressions:~</code>
+<li>DONE Write a routine that outputs all possible harmonic progressions:
 <ul class="org-ul">
 <li>[[ii - v - i], [iib - v - i], [iib, v, ia], [ii - v -i]]</li>
 </ul></li>
-<li><code>~Once these harmonic progressions are formed, it's possible~</code> 
-<code>~to express the harmonic material as chords or pitch segments~</code>
-<code>~and to use these in collaboration with rmakers to create actual~</code>
-<code>~"phrases"~</code></li>
+<li>DONE Once these harmonic progressions are formed, it's possible
+DONE to express the harmonic material as chords or pitch segments
+DONE and to use these in collaboration with rmakers to create actual
+"phrases"</li>
 </ul></li>
 </ul>
 </div>
@@ -462,37 +548,37 @@ Data Structure:
 </div>
 
 
-<div id="outline-container-org1bb889a" class="outline-2">
-<h2 id="org1bb889a"><span class="section-number-2">1</span> <code>~Figure out if there is some way to make a selection based on a PitchSegment~</code></h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orgdbdf298" class="outline-2">
+<h2 id="orgdbdf298"><span class="done DONE">DONE</span> Figure out if there is some way to make a selection based on a PitchSegment</h2>
+<div class="outline-text-2" id="text-orgdbdf298">
 <ul class="org-ul">
-<li><code>~review abjad music maker def by Trevor (abjad users::re:rmakers)~</code></li>
-<li><code>~build verbatim example to see how iterators are making leaves~</code></li>
+<li>DONE review abjad music maker def by Trevor (abjad users::re:rmakers)</li>
+<li>DONE build verbatim example to see how iterators are making leaves</li>
 </ul>
 <ul class="org-ul">
-<li>~~Make do-ability survey (impossible, hard, easy)</li>
-<li><code>~Send notes + survey to guitarists~</code></li>
+<li>DONE Make do-ability survey (impossible, hard, easy)</li>
+<li>DONE Send notes + survey to guitarists</li>
 </ul>
 
 
 <ul class="org-ul">
-<li><code>~re-read Oberholzer diss chpt. 3~</code></li>
-<li><code>~design a few tests to get familiar with timespans &amp; rmakers~</code></li>
-<li><code>~re-read Oberholzer diss chpt. 3~</code></li>
-<li><code>~design a few tests to get familiar with timespans &amp; rmakers~</code></li>
-<li><code>~Customize SegmentMaker definition~</code></li>
+<li>DONE re-read Oberholzer diss chpt. 3</li>
+<li>DONE design a few tests to get familiar with timespans &amp; rmakers</li>
+<li>DONE re-read Oberholzer diss chpt. 3</li>
+<li>DONE design a few tests to get familiar with timespans &amp; rmakers</li>
+<li>DONE Customize SegmentMaker definition</li>
 </ul>
 
 <p>
-<code>~Reading: creating a musik-maker class~</code>
-<a href="https://groups.google.com/forum/?utm_source=digest&amp;utm_medium=email#!searchin/abjad-user/rmakers%7Csort:date/abjad-user/zJOTepHWGlE/pdumspKSAAAJ">https://groups.google.com/forum/?utm_source=digest&amp;utm_medium=email#!searchin/abjad-user/rmakers%7Csort:date/abjad-user/zJOTepHWGlE/pdumspKSAAAJ</a>~~
+DONE Reading: creating a musik-maker class
+<a href="https://groups.google.com/forum/?utm_source=digest&amp;utm_medium=email#!searchin/abjad-user/rmakers%7Csort:date/abjad-user/zJOTepHWGlE/pdumspKSAAAJ">https://groups.google.com/forum/?utm_source=digest&amp;utm_medium=email#!searchin/abjad-user/rmakers|sort:date/abjad-user/zJOTepHWGlE/pdumspKSAAAJ</a>
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: adam</p>
-<p class="date">Created: 2020-10-21 Wed 12:50</p>
+<p class="date">Created: 2020-11-09 Mon 09:42</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

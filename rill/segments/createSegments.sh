@@ -6,6 +6,7 @@
 for SEGMENT_NAME in A B C D E F G H I J K L
 
 do
+    rm -rf "segment_$SEGMENT_NAME"
     mkdir "segment_$SEGMENT_NAME"
     cd "segment_$SEGMENT_NAME"
     touch __init__.py
@@ -14,6 +15,7 @@ do
     touch __layout__.py
     touch definition.py
     touch illustration.ly
+    touch music_data.py
     touch .optimization
     cd ..
 done

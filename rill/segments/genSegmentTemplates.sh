@@ -4,14 +4,13 @@
 #
 
 declare -i REHEARSAL_MARK=1
-for SEGMENT_NAME in A B C D E F G H I K L
+for SEGMENT_NAME in A B C D E F G H I J K L
 
-do
+do  echo "$SEGMENT_NAME $REHEARSAL_MARK"
     cd "segment_$SEGMENT_NAME"
-    echo $(python ../genDef.py "$SEGMENT_NAME" "$REHEARSAL_MARK" &)
+    echo $(python ./genDef_v1.py "$SEGMENT_NAME" "$REHEARSAL_MARK" &)
     cd ..
     REHEARSAL_MARK=$((REHEARSAL_MARK + 1))
 done
 
 exit 0
-    

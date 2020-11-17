@@ -1,0 +1,312 @@
+% Created 2020-11-09 Mon 09:41
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{adam}
+\date{\today}
+\title{New branch ensemble v2.0}
+\hypersetup{
+ pdfauthor={adam},
+ pdftitle={New branch ensemble v2.0},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.1.9)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\subsection*{New branch ensemble v2.0}
+\label{sec:org7539c0c}
+
+\subsubsection*{{\bfseries\sffamily DONE} Create new score template}
+\label{sec:org2f8d4b2}
+\begin{itemize}
+\item update materials/instruments/definition.py
+\item update tools/ScoreTemplate.py
+\item test new Template by running ScoreTemplate.py locally
+\end{itemize}
+
+\subsubsection*{{\bfseries\sffamily DONE} Import new segment maker from marana}
+\label{sec:org9dbada3}
+\begin{itemize}
+\item replace rill/tools/SegmentMaker.py with marana/tools/SegmentMaker.py
+\item compare differences, update functions:
+\begin{itemize}
+\item \_get\(_{\text{music}}\)\(_{\text{voices}}\)(self)
+\item \_get\(_{\text{staves}}\)(self)
+\item \_handle\(_{\text{time}}\)\(_{\text{signatures}}\)(self)
+\item \_sort\(_{\text{instruments}}\)\(_{\text{by}}\)\(_{\text{clef}}\)(self)
+\item run(self)
+\end{itemize}
+\end{itemize}
+
+\subsubsection*{{\bfseries\sffamily DONE} generate new structure for segments}
+\label{sec:org807e2cd}
+\begin{itemize}
+\item recursively delete all existing subdirectories and files in segments
+\item import generator scripts from marana
+\item run `generateSegments.sh` on the empty segments directory
+\item rewrite DefGen.py to reflect structure of new score template
+\item update makefile in builds to reflect new segments
+\item delete all pdfs from builds/letter-portrait
+\item update segments.ily file
+\end{itemize}
+
+\subsubsection*{{\bfseries\sffamily DONE} Test build all segments and run make on the score}
+\label{sec:org90331c6}
+
+
+\subsubsection*{{\bfseries\sffamily IN-PROGRESS} Design generator script for creating definition.py files}
+\label{sec:org1cc9045}
+\begin{itemize}
+\item 28-30. Oct 20: created new Dev branch and began working on
+defGen\(_{\text{v1.py}}\)
+\item define new classes that generate a "music code block" as output (use
+factory method design pattern)
+\item move mMakerGenerator into the MusicMaker module, so it can be
+imported into the `segment\_\$X/definition.py`
+\item test that output is building a coherant score
+\begin{itemize}
+\item redefine basic structure to reflect that it is possible to import music data initializer objects from database in a systematic way
+\end{itemize}
+\end{itemize}
+\subsubsection*{{\bfseries\sffamily CANCELED} Define workflow for "auditioning" and persisting music data init objects to db}
+\label{sec:org5b283b3}
+\begin{itemize}
+\item currently, in order to see how a set of music data objects we're calling up a Segment
+\item initial solution to persist music data objects on a per segment basis to some sort of a db failed -> there was an issue with using mutable objects in a shelve db. I'm sure there is a way to set this up to work, possibly by using an OOdb. However, I'm going to try and keep things simple for now, see next todo for details
+\end{itemize}
+\subsubsection*{{\bfseries\sffamily DONE} Simplify data storage for segment music data}
+\label{sec:org17a074f}
+\begin{itemize}
+\item created two new classes SegmentPitchData and SegmentTaleaData
+\item their members are simple (strings and lists of ints, respectively)
+\item they can be pickled and stored in a shelve database, recalled on a per segment basis
+\item this will let us script (at least some of) the variable assignment that needs to happen for each segment
+\end{itemize}
+\subsubsection*{{\bfseries\sffamily IN-PROGRESS} write generator script for "music data" files on a per segment basis}
+\label{sec:org8f52aaf}
+\begin{itemize}
+\item I'm going to exploit some of python's handy namespace rules and create a one module per segment to store the music initializer data
+\item basically, there are two objects essential for this operation: "InstrumentMusicData" and "SegmentMusicData"
+\item this means we can call the instance of "SegmentMusicData" that is in the segment scope in a way that supports scripting the definition files (basically the reason for this is to avoid hand-hacking the "definition.py" file
+\item \ldots{}but there will ultimately be a little hand hacking\ldots{} basically, I'm going to initialize the pair of objects mentioned above with their default values and then override on a per segment basis
+\end{itemize}
+\subsubsection*{{\bfseries\sffamily DONE} Define persistent data structure for material in segments}
+\label{sec:org82822e6}
+\begin{itemize}
+\item worked through a couple of iterations that tried to use a NamedTuple to manage the data used to initialize the music functions as they are passed into the SegmentMaker member functions before being typeset as notation. Problem is that it is seemingly not so easy to use user defined and complex types in a namedtuple
+
+\item use of python's DataClass seems to facilitate working with (more) complex datatypes and custom classes
+
+\begin{itemize}
+\item I'm trying to get around having to hand-hack the initialization of the MusicMaker objects: so I want to be able to generate the "definition.py" scripts on a per segment basis, and not have to tweak the output. So ideally, each "definition.py" would refer to an "init segment music" data class on a per instrument basis in each segment. This means that we could write a generator script for all instances of "definition.py" within the subdirectories of segments
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./segment_DataFlow.png}
+\end{center}
+\subsubsection*{{\bfseries\sffamily DONE} Write a member function in the MusicMaker class that tidies according to meter}
+\label{sec:org4792e86}
+"clean up rhythm" member function is now taking music as input and re-grouping the rhythms according to the time signatures as passed in by the "time signature pairs" variable
+
+\subsubsection*{{\bfseries\sffamily DONE} Define a way to persist objects that will be later used to construct MusicMaker objects}
+\label{sec:org065bdea}
+\begin{itemize}
+\item Going to do a couple of experiments with python's shelve object
+
+\item Test that you can access via Path
+\end{itemize}
+
+\subsubsection*{{\bfseries\sffamily DONE} Define an OverrideMaker class to handle the different styles of notehead}
+\label{sec:org33a1dba}
+\begin{itemize}
+\item define \& unit test class
+\item integration with MusicMaker and test
+\end{itemize}
+\subsubsection*{{\bfseries\sffamily DONE} Re-configure ScoreTemplate to reflect final instrumentation}
+\label{sec:org5ac0ca6}
+\begin{itemize}
+\item Okay, after plenty of dickin' around with getting the stylesheets to manage instrument names, I finally found a way to get them to display:
+\begin{itemize}
+\item There is a sort of Staff override in lilypond, whereby the a new context staff can be specified with a name like "FluteOneStaff" and refer to another type of staff in the stylesheet block. These can be wrapped in custom StaffGroup staffs in order to make their management a little bit easier
+
+\item they then have to be referenced in the MusicStaff context block
+\end{itemize}
+\end{itemize}
+\subsubsection*{{\bfseries\sffamily TODO} Find solution for missing instrument name markups}
+\label{sec:org025e23d}
+\begin{itemize}
+\item looks like the best solution is to implement the names by hand via the stylesheet.ily
+\end{itemize}
+\subsubsection*{{\bfseries\sffamily TODO} Merge Dev branch into Ensemble}
+\label{sec:org02d3568}
+
+\subsubsection*{{\bfseries\sffamily TODO} Find way to tag score with build time and git branch}
+\label{sec:org0725120}
+
+
+\subsection*{Initial Setup of v1.0}
+\label{sec:org5d0b7ea}
+
+\subsubsection*{8-7-20}
+\label{sec:org24ceabb}
+
+\begin{itemize}
+\item DONE Write test for `material\(_{\text{methods.py}}\)`
+\item DONE Create push/pop methods for PhraseStream containers list
+\begin{itemize}
+\item DONE okay, better way, refactor the code in  PhraseMaker module
+\item DONE this all worked fine, Phrases are making it to Instrument Voices in
+Score
+\item DONE there is a problem to solve with `segment\(_{\text{maker}}\).\(_{\text{configure}}\)\(_{\text{score}}\)()`
+\end{itemize}
+\item DONE Clean up segments B-G
+
+\item Test a build with travis
+\begin{itemize}
+\item Read testing with pytest and figure out how to use it properly;-)!
+\end{itemize}
+
+\item rework material in segments, each segment is 64 bars long
+\begin{itemize}
+\item we could make all the harmonies (one harmony and inversions) for each
+segment and store these in a dictionary with a reference
+\item the `make\(_{\text{diads}}\)` routine is resulting in some pretty jumpy intervals, try
+reducing the complexity of this a bit and see if in doing so, it's possible
+to produce smoother lines.
+\item one arpeggio pattern per harmony (three in total)
+\end{itemize}
+
+\item Write violin part
+
+\item Write methods for attachments (markup + dynamics)
+\end{itemize}
+
+\subsubsection*{16-6-20}
+\label{sec:org06cd583}
+
+\begin{itemize}
+\item DONE Research a way to use RhythmDefinition.py effectively
+\begin{itemize}
+\item DONE refine the routine used to produce an rmaker
+\item DONE define a pitches property in FuzzyHarmony
+\item DONE this can be used in making rmakers
+\item DONE check viability with Trevor's RhythmDefinition
+\end{itemize}
+
+\item DONE Fix linkage to stylesheets
+\begin{itemize}
+\item DONE run same segment A test and fix errors on build
+\end{itemize}
+\end{itemize}
+
+\subsubsection*{15-6-20}
+\label{sec:org771c963}
+
+\begin{itemize}
+\item DONE Clean up tested code
+\item DONE Make a working segment
+\begin{itemize}
+\item DONE first build a score example using existing code
+\item DONE figure out how to handle overlapping rmakers
+\end{itemize}
+\end{itemize}
+
+\subsubsection*{28-5-20}
+\label{sec:org6a12880}
+
+\begin{itemize}
+\item DONE Read abjad.Chord to see if method exists to create invertion
+\item DONE Create method to invert guitar chords stored in abjad.OrdinaryDict
+\item DONE Iteratively invert all chords
+\begin{itemize}
+\item DONE Why would you want to build a static resource that holds all
+DONE possible inversions?
+\item DONE Inversions are more commonly found in sequences
+\item DONE Therefor it makes more sense to write a simple dictionary of used
+chords
+DONE and import a routine for inversion
+\end{itemize}
+\item DONE Make quick notational sketch of possible guitar figures
+\begin{itemize}
+\item DONE pre-requisites:
+\begin{itemize}
+\item DONE these should be as general as possible, so they can be ported to other
+DONE instruments incase the instrumentation changes by the autumn and so that
+DONE they can be used for the harp parts in the orchestral piece later in the
+DONE summer
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\begin{verbatim}
+
+Data Structure:
+ |_ Chord
+   |_sub-grouping
+     |_max-voices is restricted by instrument
+     |_tetrad voicing
+     |_triad voicing
+     |_min voices = diad voicing
+   |_figuration style
+     |_arpeggio
+       |_up
+       |_up-down
+       |_down-up
+       |_down
+       |_random
+     |_chordal
+
+\end{verbatim}
+
+\begin{itemize}
+\item DONE Clarification of what we want to do with these chords:
+\begin{itemize}
+\item DONE Write a routine that outputs all possible harmonic progressions:
+\begin{itemize}
+\item\relax [[ii - v - i], [iib - v - i], [iib, v, ia], [ii - v -i]]
+\end{itemize}
+\item DONE Once these harmonic progressions are formed, it's possible
+DONE to express the harmonic material as chords or pitch segments
+DONE and to use these in collaboration with rmakers to create actual
+"phrases"
+\end{itemize}
+\end{itemize}
+
+
+\section*{{\bfseries\sffamily DONE} Figure out if there is some way to make a selection based on a PitchSegment}
+\label{sec:org51e59c8}
+\begin{itemize}
+\item DONE review abjad music maker def by Trevor (abjad users::re:rmakers)
+\item DONE build verbatim example to see how iterators are making leaves
+\end{itemize}
+\begin{itemize}
+\item DONE Make do-ability survey (impossible, hard, easy)
+\item DONE Send notes + survey to guitarists
+\end{itemize}
+
+
+\begin{itemize}
+\item DONE re-read Oberholzer diss chpt. 3
+\item DONE design a few tests to get familiar with timespans \& rmakers
+\item DONE re-read Oberholzer diss chpt. 3
+\item DONE design a few tests to get familiar with timespans \& rmakers
+\item DONE Customize SegmentMaker definition
+\end{itemize}
+
+DONE Reading: creating a musik-maker class
+\url{https://groups.google.com/forum/?utm\_source=digest\&utm\_medium=email\#!searchin/abjad-user/rmakers\%7Csort:date/abjad-user/zJOTepHWGlE/pdumspKSAAAJ}
+\end{document}

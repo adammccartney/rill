@@ -140,7 +140,7 @@ melody_voice = abjad.OrderedDict([
             (2, abjad.PitchSegment("e' c' fs' as' a' d'")),
             (3, abjad.PitchSegment("b' g' cs'' es'' e'' a'")),
             (4, abjad.PitchSegment("e'' c'' fs'' as'' a'' d''")),
-            (5, abjad.PitchSegment("gs'' e'' as'' css''' cs''' fs''")),
+            (5, abjad.PitchSegment("gs'' e'' as'' d''' cs''' fs''")),
             (6, abjad.PitchSegment("b'' g'' cs''' es''' e''' a''")),
             (8, abjad.PitchSegment("e''' c''' fs''' as''' a''' d'''")),
             (10, abjad.PitchSegment("gs''' e''' as''' css'''' cs'''' fs'''")),
@@ -336,21 +336,21 @@ tremolo_voice = abjad.OrderedDict([
 # ---- Diads based around Violin string properties (open strings & flageolets)
 
 vln_open = abjad.OrderedDict([
-            ('IV', abjad.NamedPitch("g")), 
+            ('IV', abjad.NamedPitch("g")),
             ('III', abjad.NamedPitch("d'")),
             ('II', abjad.NamedPitch("a'")),
             ('I', abjad.NamedPitch("e''")),
         ])
 
 vln_scnd_flgs = abjad.OrderedDict([
-            ('IV', abjad.NamedPitch("g'")), 
+            ('IV', abjad.NamedPitch("g'")),
             ('III', abjad.NamedPitch("d''")),
             ('II', abjad.NamedPitch("a''")),
             ('I', abjad.NamedPitch("e'''")),
         ])
 
 vln_thrd_flgs = abjad.OrderedDict([
-            ('IV', abjad.NamedPitch("d''")), 
+            ('IV', abjad.NamedPitch("d''")),
             ('III', abjad.NamedPitch("a''")),
             ('II', abjad.NamedPitch("e'''")),
             ('I', abjad.NamedPitch("b'''")),
@@ -358,7 +358,7 @@ vln_thrd_flgs = abjad.OrderedDict([
 
 
 vln_frth_flgs = abjad.OrderedDict([
-            ('IV', abjad.NamedPitch("g''")), 
+            ('IV', abjad.NamedPitch("g''")),
             ('III', abjad.NamedPitch("d'''")),
             ('II', abjad.NamedPitch("a'''")),
             ('I', abjad.NamedPitch("e''''")),
@@ -380,7 +380,7 @@ two = make_decimo_diad(vln_open['II'])
 one = make_decimo_diad(vln_open['I'])
 
 vln_str_diads = abjad.OrderedDict([
-            ('IV',  Diad(four)), 
+            ('IV',  Diad(four)),
             ('III', Diad(three)),
             ('II', Diad(two)),
             ('I', Diad(one)),
@@ -409,4 +409,3 @@ pure_maj_third_diads = abjad.OrderedDict([
            ('II', fl_two_P3),
            ('I', fl_one_P3),
            ])
-                

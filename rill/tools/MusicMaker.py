@@ -2,25 +2,12 @@ import copy
 import abjadext.rmakers
 import abjad
 
-
-class AttachmentMaker(object):
+class MusicMaker(object):
     """
-    An abstract attachment-making class
-    """
-
-    def __init__(self, attachment, selector):
-        self.attachment = attachment
-        self.selector = selector
-
-    def __call__(self, music):
-        assert False, "maker must be defined"
-
-
-class AccentAttachmentMaker(AttachmentMaker):
-    """
-    Adds an accent to the first note in a logical tie
+    A music-making machine.
     """
 
+<<<<<<< HEAD
     def __init__(self, attachment, selector):
         AttachmentMaker.__init__(self, attachment, selector)
 
@@ -42,17 +29,21 @@ class MusicMaker(object):
     A music-making machine.
     """
 
+=======
+>>>>>>> dev
     def __init__(
         self,
         counts,
         denominator,
         pitches,
         attachment_makers=None,
+        override_makers=None,
     ):
         self.counts = counts
         self.denominator = denominator
         self.pitches = pitches
         self.attachment_makers = attachment_makers or []
+        self.override_makers = override_makers or []
 
     def __call__(self, time_signature_pairs):
         music = self._make_basic_rhythm(
@@ -60,9 +51,45 @@ class MusicMaker(object):
             self.counts,
             self.denominator,
         )
+<<<<<<< HEAD
         #music = self._clean_up_rhythm(music, time_signature_pairs)
         music = self._add_pitches(music, self.pitches)
         music = self._add_attachments(music)
+=======
+        rcleaned_music = self._clean_up_rhythm(music, time_signature_pairs)
+        #fused_music = self._fuse_logical_ties(rcleaned_music,
+        #                                      time_signature_pairs)
+        pitched_music = self._add_pitches(rcleaned_music, self.pitches)
+        articulate_music = self._add_attachments(pitched_music)
+        music_with_overrides = self._add_overrides(articulate_music)
+        return music_with_overrides
+
+    def _clean_up_rhythm(self, music, time_signature_pairs):
+        """
+        Clean up rhythms in ``music`` via ``time_signature_pairs``.
+        """
+        for i in range(len(time_signature_pairs)):
+            time_signature = time_signature_pairs[i]
+        shards = abjad.mutate(music[:]).split(time_signature_pairs)
+        for i, shard in enumerate(shards):
+            time_signature = time_signature_pairs[i]
+            meter = abjad.Meter(time_signature)
+            shard_duration = abjad.inspect(shard).duration()
+            time_sig_duration = abjad.Duration(time_signature)
+            assert shard_duration == time_sig_duration
+            abjad.mutate(shard).rewrite_meter(meter, boundary_depth=1)
+            abjad.mutate(shard).split([meter.duration], cyclic=True)
+            #abjad.mutate(shard).fuse()
+        return music
+
+    def _fuse_logical_ties(self, music, time_signature_pairs):
+        shards = abjad.mutate(music[:]).split(time_signature_pairs)
+        for i, shard in enumerate(shards):
+            time_signature = time_signature_pairs[i]
+            selection = abjad.select(shard).logical_ties()
+            for logical_tie in selection:
+                abjad.mutate(logical_tie).fuse()
+>>>>>>> dev
         return music
 
     def _make_basic_rhythm(self, time_signature_pairs, counts, denominator):
@@ -95,6 +122,7 @@ class MusicMaker(object):
             talea_index += 1
         music = abjad.Container(all_leaves)
         return music
+<<<<<<< HEAD
 
 #    def _clean_up_rhythm(self, music, time_signature_pairs):
 #        """
@@ -108,6 +136,8 @@ class MusicMaker(object):
 #                time_signature_pair)
 #            abjad.mutate(shard).wrap(measure)
 #        return music
+=======
+>>>>>>> dev
 
     def _add_pitches(self, music, pitches):
         """
@@ -127,28 +157,83 @@ class MusicMaker(object):
         """
 
         if not isinstance(self.attachment_makers, list):
-            print("im here")
             try:
                 attachment_maker = self.attachment_makers
                 attachment_maker(music)
                 return music
             except TypeError:
-                print("Expected a selection as input")
+                print(attachment_maker, " is not an attachment maker")
         elif isinstance(self.attachment_makers, list):
-            print("At least recognized a list")
             for attachment_maker in self.attachment_makers:
                 attachment_maker(music)
             return music
 
+    def _add_overrides(self, music):
+        if not isinstance(self.attachment_makers, list):
+            try:
+                override_maker = self.override_makers
+                override_maker(music)
+                return music
+            except TypeError:
+                print(override_maker, " is not an override maker")
+        elif isinstance(self.attachment_makers, list):
+            for override_maker in self.override_makers:
+                override_maker(music)
+            return music
+
+
+def factory(aClass, *pargs, **kargs):
+    return aClass(*pargs, **kargs)
+
+
+class mMakerGenerator(object):
+    """Generates the code block for a MusicGenerator"""
+
+    def __init__(
+            self,
+            counts,
+            denominator,
+            pitches,
+            attachment_makers,
+            time_signature_pairs,
+    ):
+        self.counts = counts
+        self.denominator = denominator
+        self.pitches = pitches
+        self.attachment_makers = attachment_makers
+        self.time_signature_pairs = time_signature_pairs
+
+    def __call__(self):
+        music_maker_obj = self._make_music_maker_object()
+        music = music_maker_obj(self.time_signature_pairs)
+        return music
+
+    def _make_music_maker_object(self):
+        music_maker_obj = factory(
+            MusicMaker,
+            self.counts,
+            self.denominator,
+            self.pitches,
+            self.attachment_makers,
+        )
+        return music_maker_obj
+
 
 if __name__ == '__main__':
     import abjad
-    # THIS IS THE INPUT TO MY MUSICAL IDEA
-    time_signature_pairs = [(3, 4), (5, 16), (3, 8), (4, 4)]
-    counts = [1, 2, -3, 4]
-    denominator = 16
+    from rill.tools.AttachmentMaker import (AccentAttachmentMaker,
+                                            MarkupAttachmentMaker,
+                                            DynamicAttachmentMaker)
+    from rill.tools.OverrideMaker import NoteHeadOverrideMaker
+    from rill.tools.MarkupLibrary import MarkupLibrary as markup
+    from rill.materials.overrides.definition import cross_note_head_override
 
-    pitches = abjad.CyclicTuple([0, 3, 7, 12, 7, 3])
+    # THIS IS THE INPUT TO MY MUSICAL IDEA
+    time_signature_pairs = [(4, 4), (3, 4), (3, 4), (4, 4), (3, 4), (3, 4)]
+    counts = [4, 3, 5, 3, 2, 3]
+    denominator = 4
+
+    pitches = abjad.CyclicTuple(["e''", "c''", "g''", "bf''", "a''", "d'''"])
     clef = "treble"
 
     tenuto_attachment_maker = AccentAttachmentMaker(
@@ -160,6 +245,17 @@ if __name__ == '__main__':
         attachment=abjad.Staccato()
     )
 
+    pont_attachment_maker = MarkupAttachmentMaker(
+        selector=abjad.select(),
+        attachment=markup.pont()
+    )
+
+    forte_attachment_maker = DynamicAttachmentMaker(
+        selector=abjad.select(),
+        attachment=abjad.Dynamic("f")
+    )
+
+  #  harmonic_override_maker = NoteHeadOverrideMaker('harmonic')
     attachment_makers = [tenuto_attachment_maker, staccato_attachment_maker]
 
     my_musicmaker = MusicMaker(
@@ -169,7 +265,15 @@ if __name__ == '__main__':
         attachment_makers=[
             tenuto_attachment_maker,
             staccato_attachment_maker,
+            pont_attachment_maker,
+            forte_attachment_maker,
         ],
+        override_makers=[cross_note_head_override],
     )
     music = my_musicmaker(time_signature_pairs)
-    abjad.f(music)
+    staff = abjad.Staff([music])
+    for i in range(len(time_signature_pairs)):
+        print(abjad.TimeSignature(time_signature_pairs[i]))
+
+    abjad.f(staff)
+    #abjad.show(staff)
