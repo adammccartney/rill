@@ -54,10 +54,8 @@
     }
     \score {
         \header {piece = "Largo"}
-        \keepWithTag #'(Bbclarinet1)
-        \transpose d e {
-            \include "../segments.ily"
-        }
+        \keepWithTag #'(BbclarinetOne)
+        \include "../segments.ily"
     }
 }
 
