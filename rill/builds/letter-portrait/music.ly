@@ -4,8 +4,8 @@
 #(ly:set-option 'relative-includes #t)
 \include "../../stylesheets/stylesheet.ily"
 
-#(set-default-paper-size "letter" 'portrait)
-#(set-global-staff-size 15)
+#(set-default-paper-size "a3" 'portrait)
+#(set-global-staff-size 21)
 
 \layout {
 }
