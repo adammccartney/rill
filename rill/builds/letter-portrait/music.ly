@@ -5,7 +5,7 @@
 \include "../../stylesheets/stylesheet.ily"
 
 #(set-default-paper-size "letter" 'portrait)
-#(set-global-staff-size 12)
+#(set-global-staff-size 15)
 
 \layout {
 }
