@@ -14,5 +14,6 @@
 }
 
 \score {
+    \header {piece = "Largo"}
     \include "../segments.ily"
 }
