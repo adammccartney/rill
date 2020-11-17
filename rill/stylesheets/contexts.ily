@@ -38,6 +38,7 @@
         \consists Axis_group_engraver
         \consists Bar_number_engraver
         \consists Mark_engraver
+        \RemoveEmptyStaves
 
     }
 
