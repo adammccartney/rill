@@ -373,10 +373,18 @@ class SegmentMaker(abjad.SegmentMaker):
 
     def _configure_score(self):
         voices = self._music_voices  # list of voices
-        treble, alto, bass = [], [], []
-        temp = voices[0:11]  # fl x3 , Bbclarinet, vb, vn x7
-        temp = voices[12]
-        self._sort_instruments_by_clef(temp, alto)  # va
+        treble_voices = voices[:-1]
+        alto_voice = voices[-1]
+        for voice in treble_voices:
+            leaf = abjad.inspect(voice).leaf(0)
+            abjad.attach(abjad.Clef("treble"), leaf)
+        leaf = abjad.inspect(alto_voice).leaf(0)
+        abjad.attach.inspect(abjad.Clef("alto"), leaf)
+
+        #treble, alto, bass = [], [], []
+        #temp = voices[0:11]  # fl x3 , Bbclarinet, vb, vn x7
+        #temp = voices[12]
+        #self._sort_instruments_by_clef(temp, alto)  # va
 
     def _handle_metronome_marks(self):
         if not self.metronome_marks:
