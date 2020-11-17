@@ -5,6 +5,7 @@
         subtitle = "flute 1 part"
     }
     \score {
+        \header {piece = "Largo"}
         \keepWithTag #'(fluteOne)
         \include "../segments.ily"
     }
@@ -16,6 +17,7 @@
         subtitle = "flute 2 part"
     }
     \score {
+        \header {piece = "Largo"}
         \keepWithTag #'(fluteTwo)
         \include "../segments.ily"
     }
@@ -27,6 +29,7 @@
         subtitle = "flute 3 part"
     }
     \score {
+        \header {piece = "Largo"}
         \keepWithTag #'(fluteThree)
         \include "../segments.ily"
     }
@@ -38,6 +41,7 @@
         subtitle = "flute 4 part"
     }
     \score {
+        \header {piece = "Largo"}
         \keepWithTag #'(fluteFour)
         \include "../segments.ily"
     }
@@ -49,6 +53,7 @@
         subtitle = "Bb clarinet part"
     }
     \score {
+        \header {piece = "Largo"}
         \keepWithTag #'(Bbclarinet1)
         \transpose d e {
             \include "../segments.ily"
@@ -73,6 +78,7 @@
         subtitle = "violin 1 part"
     }
     \score {
+        \header {piece = "Largo"}
         \keepWithTag #'(violinOne)
         \include "../segments.ily"
     }
@@ -84,6 +90,7 @@
         subtitle = "violin 2 part"
     }
     \score {
+        \header {piece = "Largo"}
         \keepWithTag #'(violinTwo)
         \include "../segments.ily"
     }
@@ -95,6 +102,7 @@
         subtitle = "violin 3 part"
     }
     \score {
+        \header {piece = "Largo"}
         \keepWithTag #'(violinThree)
         \include "../segments.ily"
     }
@@ -107,6 +115,7 @@
         subtitle = "violin 4 part"
     }
     \score {
+        \header {piece = "Largo"}
         \keepWithTag #'(violinFour)
         \include "../segments.ily"
     }
@@ -119,6 +128,7 @@
         subtitle = "violin 5 part"
     }
     \score {
+        \header {piece = "Largo"}
         \keepWithTag #'(violinFive)
         \include "../segments.ily"
     }
@@ -131,6 +141,7 @@
         subtitle = "violin 6 part"
     }
     \score {
+        \header {piece = "Largo"}
         \keepWithTag #'(violinSix)
         \include "../segments.ily"
     }
@@ -143,6 +154,7 @@
         subtitle = "violin 7 part"
     }
     \score {
+        \header {piece = "Largo"}
         \keepWithTag #'(violinSeven)
         \include "../segments.ily"
     }
@@ -155,6 +167,7 @@
         subtitle = "violin 8 part"
     }
     \score {
+        \header {piece = "Largo"}
         \keepWithTag #'(violinEight)
         \include "../segments.ily"
     }
@@ -168,6 +181,7 @@
         subtitle = "viola part"
     }
     \score {
+        \header {piece = "Largo"}
         \keepWithTag #'(viola)
         \include "../segments.ily"
     }
