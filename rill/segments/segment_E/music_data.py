@@ -37,10 +37,6 @@ middleground_dynamic = dynamics.p
 foreground_dynamic = dynamics.mf
 x_foreground_dynamic = dynamics.f
 
-aeolian_noteheads = note_head_overrides.cross
-
-segment_music_data = SegmentMusicData()
-
 segment_E_choral1_counts = segment_E_talea_data.choral1_counts
 segment_E_choral2_counts = segment_E_talea_data.choral2_counts
 segment_E_syncopated_counts = segment_E_talea_data.syncopated_counts

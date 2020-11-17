@@ -15,6 +15,14 @@ class MarkupLibrary(object):
         return abjad.Markup("aeolian", direction=abjad.Up).upright()
 
     @staticmethod
+    def con_sord():
+        return abjad.Markup("con sord.", direction=abjad.Up).upright()
+
+    @staticmethod
+    def legato():
+        return abjad.Markup("legato", direction=abjad.Up).upright()
+
+    @staticmethod
     def ordinario():
         return abjad.Markup("ord.", direction=abjad.Up).upright()
 
@@ -68,3 +76,7 @@ class MarkupLibrary(object):
         return abjad.Markup(
                 "\\center-column {flaut.-  pont.}",
                 direction=abjad.Up).upright()
+
+    @staticmethod
+    def via_sord():
+        return abjad.Markup("via sord.", direction=abjad.Up).upright()

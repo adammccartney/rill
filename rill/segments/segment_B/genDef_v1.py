@@ -26,7 +26,8 @@ def make_music_code_block(instrument_name, instrument_music_data):
     counts={instrument_name}_instrument_music_data.talea,
     denominator={instrument_name}_instrument_music_data.denominator,
     pitches={instrument_name}_instrument_music_data.pitches,
-    attachment_makers={instrument_name}_instrument_music_data.attachments
+    attachment_makers={instrument_name}_instrument_music_data.attachments,
+    override_makers={instrument_name}_instrument_music_data.overrides
     )
 {instrument_name}_music = {instrument_name}_music_maker(
     time_signature_pairs={instrument_name}_instrument_music_data.time_signature_pairs),
@@ -136,7 +137,6 @@ import rill
 from pathlib import Path
 
 from rill.tools.MusicMaker import MusicMaker
-from rill.tools.AttachmentMaker import AccentAttachmentMaker
 
 this_current_directory =  Path.cwd()
 score = rill.ScoreTemplate()

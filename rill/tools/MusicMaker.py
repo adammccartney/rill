@@ -176,9 +176,11 @@ class mMakerGenerator(object):
 if __name__ == '__main__':
     import abjad
     from rill.tools.AttachmentMaker import (AccentAttachmentMaker,
-                                            MarkupAttachmentMaker)
+                                            MarkupAttachmentMaker,
+                                            DynamicAttachmentMaker)
     from rill.tools.OverrideMaker import NoteHeadOverrideMaker
     from rill.tools.MarkupLibrary import MarkupLibrary as markup
+    from rill.materials.overrides.definition import cross_note_head_override
 
     # THIS IS THE INPUT TO MY MUSICAL IDEA
     time_signature_pairs = [(4, 4), (3, 4), (3, 4), (4, 4), (3, 4), (3, 4)]
@@ -202,8 +204,12 @@ if __name__ == '__main__':
         attachment=markup.pont()
     )
 
+    forte_attachment_maker = DynamicAttachmentMaker(
+        selector=abjad.select(),
+        attachment=abjad.Dynamic("f")
+    )
+
   #  harmonic_override_maker = NoteHeadOverrideMaker('harmonic')
-    neomensural_override_maker = NoteHeadOverrideMaker('neomensural')
     attachment_makers = [tenuto_attachment_maker, staccato_attachment_maker]
 
     my_musicmaker = MusicMaker(
@@ -214,8 +220,9 @@ if __name__ == '__main__':
             tenuto_attachment_maker,
             staccato_attachment_maker,
             pont_attachment_maker,
+            forte_attachment_maker,
         ],
-        override_makers=[neomensural_override_maker],
+        override_makers=[cross_note_head_override],
     )
     music = my_musicmaker(time_signature_pairs)
     staff = abjad.Staff([music])

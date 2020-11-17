@@ -57,152 +57,149 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute1_Markup_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute1_Music_Voice"                      %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
+                            \once \override NoteHead.style = #'cross
                             \mark #1
-                            c''8.
-                            as'16
+                            c'''4
+                            \ppp
+                            ^ \markup {
+                                \upright
+                                    aeolian
+                                }
                             ~
-                            as'8.
-                            a'16
+                            \once \override NoteHead.style = #'cross
+                            c'''8
+                            \once \override NoteHead.style = #'cross
+                            as''8
                             ~
-                            a'8
-                            g'8
+                            \once \override NoteHead.style = #'cross
+                            as''4
                             ~
-                            g'16
-                            cs''8.
+                            \once \override NoteHead.style = #'cross
+                            as''8
+                            \once \override NoteHead.style = #'cross
+                            a''8
                             ~
-                            cs''16
-                            e'8.
-                            c''8.
-                            as'16
+                            \once \override NoteHead.style = #'cross
+                            a''4
+                            \once \override NoteHead.style = #'cross
+                            g''4
                             ~
-                            as'8.
-                            a'16
+                            \once \override NoteHead.style = #'cross
+                            g''8
+                            \once \override NoteHead.style = #'cross
+                            cs'''8
                             ~
-                            a'8
-                            g'8
+                            \once \override NoteHead.style = #'cross
+                            cs'''4
                             ~
-                            g'16
-                            cs''8.
+                            \once \override NoteHead.style = #'cross
+                            cs'''8
+                            \once \override NoteHead.style = #'cross
+                            e''8
                             ~
-                            cs''16
-                            e'8.
-                            c''8.
-                            as'16
+                            \once \override NoteHead.style = #'cross
+                            e''4
+                            \once \override NoteHead.style = #'cross
+                            c'''4
                             ~
-                            as'8.
-                            a'16
+                            \once \override NoteHead.style = #'cross
+                            c'''8
+                            \once \override NoteHead.style = #'cross
+                            as''8
                             ~
-                            a'8
-                            g'8
+                            \once \override NoteHead.style = #'cross
+                            as''4
                             ~
-                            g'16
-                            cs''8.
+                            \once \override NoteHead.style = #'cross
+                            as''8
+                            \once \override NoteHead.style = #'cross
+                            a''8
                             ~
-                            cs''16
-                            e'8.
-                            c''8.
-                            as'16
+                            \once \override NoteHead.style = #'cross
+                            a''4
+                            \once \override NoteHead.style = #'cross
+                            g''4
                             ~
-                            as'8.
-                            a'16
+                            \once \override NoteHead.style = #'cross
+                            g''8
+                            \once \override NoteHead.style = #'cross
+                            cs'''8
                             ~
-                            a'8
-                            g'8
+                            \once \override NoteHead.style = #'cross
+                            cs'''4
                             ~
-                            g'16
-                            cs''8.
+                            \once \override NoteHead.style = #'cross
+                            cs'''8
+                            \once \override NoteHead.style = #'cross
+                            e''8
                             ~
-                            cs''16
-                            e'8.
+                            \once \override NoteHead.style = #'cross
+                            e''4
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute1_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -260,62 +257,107 @@
                     \context Voice = "Flute2_Music_Voice"                      %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
+                            \once \override NoteHead.style = #'cross
                             \mark #1
                             c''8.
+                            \ppp
+                            ^ \markup {
+                                \upright
+                                    aeolian
+                                }
+                            \once \override NoteHead.style = #'cross
                             as'16
                             ~
+                            \once \override NoteHead.style = #'cross
                             as'8.
+                            \once \override NoteHead.style = #'cross
                             a'16
                             ~
+                            \once \override NoteHead.style = #'cross
                             a'8
+                            \once \override NoteHead.style = #'cross
                             g'8
                             ~
+                            \once \override NoteHead.style = #'cross
                             g'16
+                            \once \override NoteHead.style = #'cross
                             cs''8.
                             ~
+                            \once \override NoteHead.style = #'cross
                             cs''16
+                            \once \override NoteHead.style = #'cross
                             e'8.
+                            \once \override NoteHead.style = #'cross
                             c''8.
+                            \once \override NoteHead.style = #'cross
                             as'16
                             ~
+                            \once \override NoteHead.style = #'cross
                             as'8.
+                            \once \override NoteHead.style = #'cross
                             a'16
                             ~
+                            \once \override NoteHead.style = #'cross
                             a'8
+                            \once \override NoteHead.style = #'cross
                             g'8
                             ~
+                            \once \override NoteHead.style = #'cross
                             g'16
+                            \once \override NoteHead.style = #'cross
                             cs''8.
                             ~
+                            \once \override NoteHead.style = #'cross
                             cs''16
+                            \once \override NoteHead.style = #'cross
                             e'8.
+                            \once \override NoteHead.style = #'cross
                             c''8.
+                            \once \override NoteHead.style = #'cross
                             as'16
                             ~
+                            \once \override NoteHead.style = #'cross
                             as'8.
+                            \once \override NoteHead.style = #'cross
                             a'16
                             ~
+                            \once \override NoteHead.style = #'cross
                             a'8
+                            \once \override NoteHead.style = #'cross
                             g'8
                             ~
+                            \once \override NoteHead.style = #'cross
                             g'16
+                            \once \override NoteHead.style = #'cross
                             cs''8.
                             ~
+                            \once \override NoteHead.style = #'cross
                             cs''16
+                            \once \override NoteHead.style = #'cross
                             e'8.
+                            \once \override NoteHead.style = #'cross
                             c''8.
+                            \once \override NoteHead.style = #'cross
                             as'16
                             ~
+                            \once \override NoteHead.style = #'cross
                             as'8.
+                            \once \override NoteHead.style = #'cross
                             a'16
                             ~
+                            \once \override NoteHead.style = #'cross
                             a'8
+                            \once \override NoteHead.style = #'cross
                             g'8
                             ~
+                            \once \override NoteHead.style = #'cross
                             g'16
+                            \once \override NoteHead.style = #'cross
                             cs''8.
                             ~
+                            \once \override NoteHead.style = #'cross
                             cs''16
+                            \once \override NoteHead.style = #'cross
                             e'8.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
@@ -373,152 +415,149 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute3_Markup_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute3_Music_Voice"                      %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
+                            \once \override NoteHead.style = #'cross
                             \mark #1
-                            c''8.
-                            as'16
+                            c''4
+                            \ppp
+                            ^ \markup {
+                                \upright
+                                    aeolian
+                                }
                             ~
-                            as'8.
-                            a'16
+                            \once \override NoteHead.style = #'cross
+                            c''8
+                            \once \override NoteHead.style = #'cross
+                            as'8
                             ~
+                            \once \override NoteHead.style = #'cross
+                            as'4
+                            ~
+                            \once \override NoteHead.style = #'cross
+                            as'8
+                            \once \override NoteHead.style = #'cross
                             a'8
+                            ~
+                            \once \override NoteHead.style = #'cross
+                            a'4
+                            \once \override NoteHead.style = #'cross
+                            g'4
+                            ~
+                            \once \override NoteHead.style = #'cross
                             g'8
+                            \once \override NoteHead.style = #'cross
+                            cs''8
                             ~
-                            g'16
-                            cs''8.
+                            \once \override NoteHead.style = #'cross
+                            cs''4
                             ~
-                            cs''16
-                            e'8.
-                            c''8.
-                            as'16
+                            \once \override NoteHead.style = #'cross
+                            cs''8
+                            \once \override NoteHead.style = #'cross
+                            e'8
                             ~
-                            as'8.
-                            a'16
+                            \once \override NoteHead.style = #'cross
+                            e'4
+                            \once \override NoteHead.style = #'cross
+                            c''4
                             ~
+                            \once \override NoteHead.style = #'cross
+                            c''8
+                            \once \override NoteHead.style = #'cross
+                            as'8
+                            ~
+                            \once \override NoteHead.style = #'cross
+                            as'4
+                            ~
+                            \once \override NoteHead.style = #'cross
+                            as'8
+                            \once \override NoteHead.style = #'cross
                             a'8
+                            ~
+                            \once \override NoteHead.style = #'cross
+                            a'4
+                            \once \override NoteHead.style = #'cross
+                            g'4
+                            ~
+                            \once \override NoteHead.style = #'cross
                             g'8
+                            \once \override NoteHead.style = #'cross
+                            cs''8
                             ~
-                            g'16
-                            cs''8.
+                            \once \override NoteHead.style = #'cross
+                            cs''4
                             ~
-                            cs''16
-                            e'8.
-                            c''8.
-                            as'16
+                            \once \override NoteHead.style = #'cross
+                            cs''8
+                            \once \override NoteHead.style = #'cross
+                            e'8
                             ~
-                            as'8.
-                            a'16
-                            ~
-                            a'8
-                            g'8
-                            ~
-                            g'16
-                            cs''8.
-                            ~
-                            cs''16
-                            e'8.
-                            c''8.
-                            as'16
-                            ~
-                            as'8.
-                            a'16
-                            ~
-                            a'8
-                            g'8
-                            ~
-                            g'16
-                            cs''8.
-                            ~
-                            cs''16
-                            e'8.
+                            \once \override NoteHead.style = #'cross
+                            e'4
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute3_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -531,152 +570,117 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute4_Markup_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute4_Music_Voice"                      %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #1
-                            c''8.
-                            as'16
+                            c''4
+                            \p
                             ~
-                            as'8.
-                            a'16
+                            c''8
+                            as'8
                             ~
+                            as'4
+                            ~
+                            as'8
                             a'8
+                            ~
+                            a'4
+                            g'4
+                            ~
                             g'8
+                            cs''8
                             ~
-                            g'16
-                            cs''8.
+                            cs''4
                             ~
-                            cs''16
-                            e'8.
-                            c''8.
-                            as'16
+                            cs''8
+                            e'8
                             ~
-                            as'8.
-                            a'16
+                            e'4
+                            c''4
                             ~
+                            c''8
+                            as'8
+                            ~
+                            as'4
+                            ~
+                            as'8
                             a'8
+                            ~
+                            a'4
+                            g'4
+                            ~
                             g'8
+                            cs''8
                             ~
-                            g'16
-                            cs''8.
+                            cs''4
                             ~
-                            cs''16
-                            e'8.
-                            c''8.
-                            as'16
+                            cs''8
+                            e'8
                             ~
-                            as'8.
-                            a'16
-                            ~
-                            a'8
-                            g'8
-                            ~
-                            g'16
-                            cs''8.
-                            ~
-                            cs''16
-                            e'8.
-                            c''8.
-                            as'16
-                            ~
-                            as'8.
-                            a'16
-                            ~
-                            a'8
-                            g'8
-                            ~
-                            g'16
-                            cs''8.
-                            ~
-                            cs''16
-                            e'8.
+                            e'4
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Flute4_Dynamics_Voice"                   %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -736,6 +740,7 @@
                         {
                             \mark #1
                             c''8.
+                            \p
                             as'16
                             ~
                             as'8.
@@ -905,6 +910,7 @@
                         {
                             \mark #1
                             c''16
+                            \p
                             as'16
                             ~
                             as'16
@@ -1118,84 +1124,89 @@
                         {
                             \mark #1
                             g''16
+                            \p
+                            ^ \markup {
+                                \upright
+                                    pizz.
+                                }
+                            r16
                             e''16
                             fs''16
+                            r16
                             as''16
                             r16
                             cs'''16
-                            a''16
                             r16
+                            a''16
                             g''16
+                            r16
                             e''16
+                            r16
                             fs''16
+                            r16
                             as''16
                             cs'''16
+                            r16
                             a''16
                             r16
                             g''16
-                            e''16
                             r16
-                            fs''16
-                            as''16
-                            cs'''16
-                            a''16
-                            g''16
                             e''16
-                            r16
                             fs''16
+                            r16
                             as''16
                             r16
                             cs'''16
+                            r16
                             a''16
                             g''16
+                            r16
+                            e''16
+                            r16
+                            fs''16
+                            r16
+                            as''16
+                            cs'''16
+                            r16
+                            a''16
+                            r16
+                            g''16
+                            r16
                             e''16
                             fs''16
+                            r16
                             as''16
                             r16
                             cs'''16
-                            a''16
                             r16
+                            a''16
                             g''16
+                            r16
                             e''16
+                            r16
                             fs''16
+                            r16
                             as''16
                             cs'''16
+                            r16
                             a''16
                             r16
                             g''16
-                            e''16
                             r16
-                            fs''16
-                            as''16
-                            cs'''16
-                            a''16
-                            g''16
                             e''16
-                            r16
                             fs''16
+                            r16
                             as''16
                             r16
                             cs'''16
+                            r16
                             a''16
                             g''16
-                            e''16
-                            fs''16
-                            as''16
                             r16
-                            cs'''16
-                            a''16
-                            r16
-                            g''16
-                            e''16
-                            fs''16
-                            as''16
-                            cs'''16
-                            a''16
-                            r16
-                            g''16
                             e''16
                             r16
                             fs''16
+                            r16
                             as''16
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
@@ -1380,84 +1391,89 @@
                         {
                             \mark #1
                             g''16
+                            \p
+                            ^ \markup {
+                                \upright
+                                    pizz.
+                                }
+                            r16
                             e''16
                             fs''16
+                            r16
                             as''16
                             r16
                             cs'''16
-                            a''16
                             r16
+                            a''16
                             g''16
+                            r16
                             e''16
+                            r16
                             fs''16
+                            r16
                             as''16
                             cs'''16
+                            r16
                             a''16
                             r16
                             g''16
-                            e''16
                             r16
-                            fs''16
-                            as''16
-                            cs'''16
-                            a''16
-                            g''16
                             e''16
-                            r16
                             fs''16
+                            r16
                             as''16
                             r16
                             cs'''16
+                            r16
                             a''16
                             g''16
+                            r16
+                            e''16
+                            r16
+                            fs''16
+                            r16
+                            as''16
+                            cs'''16
+                            r16
+                            a''16
+                            r16
+                            g''16
+                            r16
                             e''16
                             fs''16
+                            r16
                             as''16
                             r16
                             cs'''16
-                            a''16
                             r16
+                            a''16
                             g''16
+                            r16
                             e''16
+                            r16
                             fs''16
+                            r16
                             as''16
                             cs'''16
+                            r16
                             a''16
                             r16
                             g''16
-                            e''16
                             r16
-                            fs''16
-                            as''16
-                            cs'''16
-                            a''16
-                            g''16
                             e''16
-                            r16
                             fs''16
+                            r16
                             as''16
                             r16
                             cs'''16
+                            r16
                             a''16
                             g''16
-                            e''16
-                            fs''16
-                            as''16
                             r16
-                            cs'''16
-                            a''16
-                            r16
-                            g''16
-                            e''16
-                            fs''16
-                            as''16
-                            cs'''16
-                            a''16
-                            r16
-                            g''16
                             e''16
                             r16
                             fs''16
+                            r16
                             as''16
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
@@ -1642,84 +1658,89 @@
                         {
                             \mark #1
                             c'''16
+                            \p
+                            ^ \markup {
+                                \upright
+                                    pizz.
+                                }
+                            r16
                             e'''16
                             as''16
+                            r16
                             cs'''16
                             r16
                             a''16
-                            cs'''16
                             r16
+                            cs'''16
                             c'''16
+                            r16
                             e'''16
+                            r16
                             as''16
+                            r16
                             cs'''16
                             a''16
+                            r16
                             cs'''16
                             r16
                             c'''16
-                            e'''16
                             r16
-                            as''16
-                            cs'''16
-                            a''16
-                            cs'''16
-                            c'''16
                             e'''16
-                            r16
                             as''16
+                            r16
                             cs'''16
                             r16
                             a''16
+                            r16
                             cs'''16
                             c'''16
+                            r16
+                            e'''16
+                            r16
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
+                            r16
+                            cs'''16
+                            r16
+                            c'''16
+                            r16
                             e'''16
                             as''16
+                            r16
                             cs'''16
                             r16
                             a''16
-                            cs'''16
                             r16
+                            cs'''16
                             c'''16
+                            r16
                             e'''16
+                            r16
                             as''16
+                            r16
                             cs'''16
                             a''16
+                            r16
                             cs'''16
                             r16
                             c'''16
-                            e'''16
                             r16
-                            as''16
-                            cs'''16
-                            a''16
-                            cs'''16
-                            c'''16
                             e'''16
-                            r16
                             as''16
+                            r16
                             cs'''16
                             r16
                             a''16
+                            r16
                             cs'''16
                             c'''16
-                            e'''16
-                            as''16
-                            cs'''16
                             r16
-                            a''16
-                            cs'''16
-                            r16
-                            c'''16
-                            e'''16
-                            as''16
-                            cs'''16
-                            a''16
-                            cs'''16
-                            r16
-                            c'''16
                             e'''16
                             r16
                             as''16
+                            r16
                             cs'''16
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
@@ -1904,84 +1925,89 @@
                         {
                             \mark #1
                             c'''16
+                            \p
+                            ^ \markup {
+                                \upright
+                                    pizz.
+                                }
+                            r16
                             e'''16
                             as''16
+                            r16
                             cs'''16
                             r16
                             a''16
-                            cs'''16
                             r16
+                            cs'''16
                             c'''16
+                            r16
                             e'''16
+                            r16
                             as''16
+                            r16
                             cs'''16
                             a''16
+                            r16
                             cs'''16
                             r16
                             c'''16
-                            e'''16
                             r16
-                            as''16
-                            cs'''16
-                            a''16
-                            cs'''16
-                            c'''16
                             e'''16
-                            r16
                             as''16
+                            r16
                             cs'''16
                             r16
                             a''16
+                            r16
                             cs'''16
                             c'''16
+                            r16
+                            e'''16
+                            r16
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
+                            r16
+                            cs'''16
+                            r16
+                            c'''16
+                            r16
                             e'''16
                             as''16
+                            r16
                             cs'''16
                             r16
                             a''16
-                            cs'''16
                             r16
+                            cs'''16
                             c'''16
+                            r16
                             e'''16
+                            r16
                             as''16
+                            r16
                             cs'''16
                             a''16
+                            r16
                             cs'''16
                             r16
                             c'''16
-                            e'''16
                             r16
-                            as''16
-                            cs'''16
-                            a''16
-                            cs'''16
-                            c'''16
                             e'''16
-                            r16
                             as''16
+                            r16
                             cs'''16
                             r16
                             a''16
+                            r16
                             cs'''16
                             c'''16
-                            e'''16
-                            as''16
-                            cs'''16
                             r16
-                            a''16
-                            cs'''16
-                            r16
-                            c'''16
-                            e'''16
-                            as''16
-                            cs'''16
-                            a''16
-                            cs'''16
-                            r16
-                            c'''16
                             e'''16
                             r16
                             as''16
+                            r16
                             cs'''16
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
@@ -2166,84 +2192,89 @@
                         {
                             \mark #1
                             c'''16
+                            \p
+                            ^ \markup {
+                                \upright
+                                    pizz.
+                                }
+                            r16
                             e'''16
                             as''16
+                            r16
                             cs'''16
                             r16
                             a''16
-                            cs'''16
                             r16
+                            cs'''16
                             c'''16
+                            r16
                             e'''16
+                            r16
                             as''16
+                            r16
                             cs'''16
                             a''16
+                            r16
                             cs'''16
                             r16
                             c'''16
-                            e'''16
                             r16
-                            as''16
-                            cs'''16
-                            a''16
-                            cs'''16
-                            c'''16
                             e'''16
-                            r16
                             as''16
+                            r16
                             cs'''16
                             r16
                             a''16
+                            r16
                             cs'''16
                             c'''16
+                            r16
+                            e'''16
+                            r16
+                            as''16
+                            r16
+                            cs'''16
+                            a''16
+                            r16
+                            cs'''16
+                            r16
+                            c'''16
+                            r16
                             e'''16
                             as''16
+                            r16
                             cs'''16
                             r16
                             a''16
-                            cs'''16
                             r16
+                            cs'''16
                             c'''16
+                            r16
                             e'''16
+                            r16
                             as''16
+                            r16
                             cs'''16
                             a''16
+                            r16
                             cs'''16
                             r16
                             c'''16
-                            e'''16
                             r16
-                            as''16
-                            cs'''16
-                            a''16
-                            cs'''16
-                            c'''16
                             e'''16
-                            r16
                             as''16
+                            r16
                             cs'''16
                             r16
                             a''16
+                            r16
                             cs'''16
                             c'''16
-                            e'''16
-                            as''16
-                            cs'''16
                             r16
-                            a''16
-                            cs'''16
-                            r16
-                            c'''16
-                            e'''16
-                            as''16
-                            cs'''16
-                            a''16
-                            cs'''16
-                            r16
-                            c'''16
                             e'''16
                             r16
                             as''16
+                            r16
                             cs'''16
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
@@ -2388,6 +2419,15 @@
                         {
                             \mark #1
                             c''8.
+                            \pp
+                            ^ \markup {
+                                \upright
+                                    legato
+                                }
+                            ^ \markup {
+                                \upright
+                                    "con sord."
+                                }
                             as'16
                             ~
                             as'8.
@@ -2499,152 +2539,125 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin7_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin7_Music_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #1
-                            c''8.
-                            as'16
+                            c''4
+                            \pp
+                            ^ \markup {
+                                \upright
+                                    legato
+                                }
+                            ^ \markup {
+                                \upright
+                                    "con sord."
+                                }
                             ~
-                            as'8.
-                            a'16
+                            c''8
+                            as'8
                             ~
+                            as'4
+                            ~
+                            as'8
                             a'8
+                            ~
+                            a'4
+                            g'4
+                            ~
                             g'8
+                            cs''8
                             ~
-                            g'16
-                            cs''8.
+                            cs''4
                             ~
-                            cs''16
-                            e'8.
-                            c''8.
-                            as'16
+                            cs''8
+                            e'8
                             ~
-                            as'8.
-                            a'16
+                            e'4
+                            c''4
                             ~
+                            c''8
+                            as'8
+                            ~
+                            as'4
+                            ~
+                            as'8
                             a'8
+                            ~
+                            a'4
+                            g'4
+                            ~
                             g'8
+                            cs''8
                             ~
-                            g'16
-                            cs''8.
+                            cs''4
                             ~
-                            cs''16
-                            e'8.
-                            c''8.
-                            as'16
+                            cs''8
+                            e'8
                             ~
-                            as'8.
-                            a'16
-                            ~
-                            a'8
-                            g'8
-                            ~
-                            g'16
-                            cs''8.
-                            ~
-                            cs''16
-                            e'8.
-                            c''8.
-                            as'16
-                            ~
-                            as'8.
-                            a'16
-                            ~
-                            a'8
-                            g'8
-                            ~
-                            g'16
-                            cs''8.
-                            ~
-                            cs''16
-                            e'8.
+                            e'4
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin7_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
+                        s1 * 1/4
                         s1 * 1/8
                         s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
+                        s1 * 1/8
+                        s1 * 1/8
+                        s1 * 1/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -2657,152 +2670,51 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin8_Markup_Voice"                    %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
+                        s1 * 3/4
+                        s1 * 1/4
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/4
+                        s1 * 3/4
+                        s1 * 3/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin8_Music_Voice"                     %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #1
-                            c''8.
-                            as'16
+                            c''2.
+                            \pp
+                            ^ \markup {
+                                \upright
+                                    legato
+                                }
+                            ^ \markup {
+                                \upright
+                                    "con sord."
+                                }
+                            as'4
                             ~
-                            as'8.
-                            a'16
+                            as'2.
+                            a'2.
+                            g'2.
+                            cs''4
                             ~
-                            a'8
-                            g'8
-                            ~
-                            g'16
-                            cs''8.
-                            ~
-                            cs''16
-                            e'8.
-                            c''8.
-                            as'16
-                            ~
-                            as'8.
-                            a'16
-                            ~
-                            a'8
-                            g'8
-                            ~
-                            g'16
-                            cs''8.
-                            ~
-                            cs''16
-                            e'8.
-                            c''8.
-                            as'16
-                            ~
-                            as'8.
-                            a'16
-                            ~
-                            a'8
-                            g'8
-                            ~
-                            g'16
-                            cs''8.
-                            ~
-                            cs''16
-                            e'8.
-                            c''8.
-                            as'16
-                            ~
-                            as'8.
-                            a'16
-                            ~
-                            a'8
-                            g'8
-                            ~
-                            g'16
-                            cs''8.
-                            ~
-                            cs''16
-                            e'8.
+                            cs''2.
+                            e'2.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin8_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
+                        s1 * 3/4
+                        s1 * 1/4
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 3/4
+                        s1 * 1/4
+                        s1 * 3/4
+                        s1 * 3/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -2815,152 +2727,50 @@
                 <<                                                             %! rill.ScoreTemplate.__call__()
                     \context Voice = "Viola_Markup_Voice"                      %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 1/2
+                        s1 * 1/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Viola_Music_Voice"                       %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         {
                             \mark #1
-                            c'8.
-                            as16
+                            c'1
+                            \pp
+                            ^ \markup {
+                                \upright
+                                    legato
+                                }
+                            ^ \markup {
+                                \upright
+                                    "con sord."
+                                }
                             ~
-                            as8.
-                            a16
+                            c'2
+                            as4
                             ~
-                            a8
-                            g8
+                            as2.
                             ~
-                            g16
-                            cs'8.
+                            as1
+                            a2.
                             ~
-                            cs'16
-                            e8.
-                            c'8.
-                            as16
-                            ~
-                            as8.
-                            a16
-                            ~
-                            a8
-                            g8
-                            ~
-                            g16
-                            cs'8.
-                            ~
-                            cs'16
-                            e8.
-                            c'8.
-                            as16
-                            ~
-                            as8.
-                            a16
-                            ~
-                            a8
-                            g8
-                            ~
-                            g16
-                            cs'8.
-                            ~
-                            cs'16
-                            e8.
-                            c'8.
-                            as16
-                            ~
-                            as8.
-                            a16
-                            ~
-                            a8
-                            g8
-                            ~
-                            g16
-                            cs'8.
-                            ~
-                            cs'16
-                            e8.
+                            a2.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Viola_Dynamics_Voice"                    %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/8
-                        s1 * 1/8
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 3/16
+                        s1 * 1/1
+                        s1 * 1/2
+                        s1 * 1/4
+                        s1 * 3/4
+                        s1 * 1/1
+                        s1 * 3/4
+                        s1 * 3/4
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()

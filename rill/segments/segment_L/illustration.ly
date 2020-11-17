@@ -74,17 +74,28 @@
                         {
                             \mark #12
                             r4
+                            \ppp
+                            ^ \markup {
+                                \upright
+                                    aeolian
+                                }
+                            \once \override NoteHead.style = #'cross
                             a'4
                             r2
+                            \once \override NoteHead.style = #'cross
                             c''2.
                             r2.
                             r2
+                            \once \override NoteHead.style = #'cross
                             a'4
                             ~
+                            \once \override NoteHead.style = #'cross
                             a'4
                             ~
+                            \once \override NoteHead.style = #'cross
                             a'2.
                             ~
+                            \once \override NoteHead.style = #'cross
                             a'2.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
@@ -129,17 +140,28 @@
                         {
                             \mark #12
                             r4
+                            \ppp
+                            ^ \markup {
+                                \upright
+                                    aeolian
+                                }
+                            \once \override NoteHead.style = #'cross
                             cs''4
                             r2
+                            \once \override NoteHead.style = #'cross
                             bf'2.
                             r2.
                             r2
+                            \once \override NoteHead.style = #'cross
                             cs''4
                             ~
+                            \once \override NoteHead.style = #'cross
                             cs''4
                             ~
+                            \once \override NoteHead.style = #'cross
                             cs''2.
                             ~
+                            \once \override NoteHead.style = #'cross
                             cs''2.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
@@ -184,17 +206,28 @@
                         {
                             \mark #12
                             r4
+                            \ppp
+                            ^ \markup {
+                                \upright
+                                    aeolian
+                                }
+                            \once \override NoteHead.style = #'cross
                             ef''4
                             r2
+                            \once \override NoteHead.style = #'cross
                             f''2.
                             r2.
                             r2
+                            \once \override NoteHead.style = #'cross
                             g''4
                             ~
+                            \once \override NoteHead.style = #'cross
                             g''4
                             ~
+                            \once \override NoteHead.style = #'cross
                             g''2.
                             ~
+                            \once \override NoteHead.style = #'cross
                             g''2.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
@@ -239,17 +272,28 @@
                         {
                             \mark #12
                             r4
+                            \ppp
+                            ^ \markup {
+                                \upright
+                                    aeolian
+                                }
+                            \once \override NoteHead.style = #'cross
                             f'4
                             r2
+                            \once \override NoteHead.style = #'cross
                             ef'2.
                             r2.
                             r2
+                            \once \override NoteHead.style = #'cross
                             f'4
                             ~
+                            \once \override NoteHead.style = #'cross
                             f'4
                             ~
+                            \once \override NoteHead.style = #'cross
                             f'2.
                             ~
+                            \once \override NoteHead.style = #'cross
                             f'2.
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
@@ -293,6 +337,7 @@
                         {
                             \mark #12
                             d'1
+                            \f
                             a2.
                             d'2.
                             ~
@@ -359,6 +404,7 @@
                         {
                             \mark #12
                             r8
+                            \ppp
                             f''8
                             r4
                             ef''4
@@ -425,59 +471,79 @@
                     {                                                          %! rill.ScoreTemplate.__call__()
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin1_Music_Voice"                     %! rill.ScoreTemplate.__call__()
@@ -485,119 +551,164 @@
                         {
                             \mark #12
                             f''16
+                            \pp
+                            ^ \markup {
+                                \upright
+                                    pizz.
+                                }
                             ef''16
-                            r8
-                            r8.
-                            f''16
-                            r16
-                            ef''16
-                            f''16
-                            r16
-                            r16
-                            r8.
-                            ef''16
-                            r16
-                            f''16
-                            ef''16
-                            r4
-                            r16
                             f''16
                             r16
                             ef''16
                             f''16
-                            r8.
                             r8
                             ef''16
-                            r16
                             f''16
                             ef''16
-                            r8
-                            r8.
                             f''16
                             r16
                             ef''16
                             f''16
                             r16
-                            r4
-                            ef''16
                             r16
+                            ef''16
                             f''16
                             ef''16
-                            r4
-                            r16
                             f''16
                             r16
                             ef''16
                             f''16
-                            r8.
                             r8
                             ef''16
-                            r16
                             f''16
                             ef''16
-                            r8
-                            r8
-                            r16
                             f''16
+                            r16
+                            ef''16
+                            f''16
+                            r16
+                            r16
+                            ef''16
+                            f''16
+                            ef''16
+                            f''16
+                            r16
+                            ef''16
+                            f''16
+                            r8
+                            ef''16
+                            f''16
+                            ef''16
+                            f''16
+                            r16
+                            ef''16
+                            f''16
+                            r16
+                            r16
+                            ef''16
+                            f''16
+                            ef''16
+                            f''16
+                            r16
+                            ef''16
+                            f''16
+                            r8
+                            ef''16
+                            f''16
+                            ef''16
+                            f''16
+                            r16
+                            ef''16
+                            f''16
+                            r16
+                            r16
+                            ef''16
+                            f''16
+                            ef''16
+                            f''16
+                            r16
+                            ef''16
+                            f''16
+                            r8
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin1_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -612,59 +723,79 @@
                     {                                                          %! rill.ScoreTemplate.__call__()
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin2_Music_Voice"                     %! rill.ScoreTemplate.__call__()
@@ -672,119 +803,164 @@
                         {
                             \mark #12
                             f''16
+                            \pp
+                            ^ \markup {
+                                \upright
+                                    pizz.
+                                }
                             ef''16
-                            r8
-                            r8.
-                            f''16
-                            r16
-                            ef''16
-                            f''16
-                            r16
-                            r16
-                            r8.
-                            ef''16
-                            r16
-                            f''16
-                            ef''16
-                            r4
-                            r16
                             f''16
                             r16
                             ef''16
                             f''16
-                            r8.
                             r8
                             ef''16
-                            r16
                             f''16
                             ef''16
-                            r8
-                            r8.
                             f''16
                             r16
                             ef''16
                             f''16
                             r16
-                            r4
-                            ef''16
                             r16
+                            ef''16
                             f''16
                             ef''16
-                            r4
-                            r16
                             f''16
                             r16
                             ef''16
                             f''16
-                            r8.
                             r8
                             ef''16
-                            r16
                             f''16
                             ef''16
-                            r8
-                            r8
-                            r16
                             f''16
+                            r16
+                            ef''16
+                            f''16
+                            r16
+                            r16
+                            ef''16
+                            f''16
+                            ef''16
+                            f''16
+                            r16
+                            ef''16
+                            f''16
+                            r8
+                            ef''16
+                            f''16
+                            ef''16
+                            f''16
+                            r16
+                            ef''16
+                            f''16
+                            r16
+                            r16
+                            ef''16
+                            f''16
+                            ef''16
+                            f''16
+                            r16
+                            ef''16
+                            f''16
+                            r8
+                            ef''16
+                            f''16
+                            ef''16
+                            f''16
+                            r16
+                            ef''16
+                            f''16
+                            r16
+                            r16
+                            ef''16
+                            f''16
+                            ef''16
+                            f''16
+                            r16
+                            ef''16
+                            f''16
+                            r8
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin2_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -799,59 +975,79 @@
                     {                                                          %! rill.ScoreTemplate.__call__()
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin3_Music_Voice"                     %! rill.ScoreTemplate.__call__()
@@ -859,119 +1055,164 @@
                         {
                             \mark #12
                             f''16
+                            \pp
+                            ^ \markup {
+                                \upright
+                                    pizz.
+                                }
                             a''16
+                            ef''16
+                            r16
+                            g''16
+                            d''16
                             r8
-                            r8.
+                            f''16
+                            f''16
+                            a''16
                             ef''16
                             r16
                             g''16
                             d''16
                             r16
                             r16
-                            r8.
                             f''16
-                            r16
                             f''16
                             a''16
-                            r4
-                            r16
                             ef''16
                             r16
                             g''16
                             d''16
-                            r8.
                             r8
                             f''16
-                            r16
                             f''16
                             a''16
-                            r8
-                            r8.
                             ef''16
                             r16
                             g''16
                             d''16
                             r16
-                            r4
-                            f''16
                             r16
+                            f''16
                             f''16
                             a''16
-                            r4
-                            r16
                             ef''16
                             r16
                             g''16
                             d''16
-                            r8.
                             r8
                             f''16
-                            r16
                             f''16
                             a''16
-                            r8
-                            r8
-                            r16
                             ef''16
+                            r16
+                            g''16
+                            d''16
+                            r16
+                            r16
+                            f''16
+                            f''16
+                            a''16
+                            ef''16
+                            r16
+                            g''16
+                            d''16
+                            r8
+                            f''16
+                            f''16
+                            a''16
+                            ef''16
+                            r16
+                            g''16
+                            d''16
+                            r16
+                            r16
+                            f''16
+                            f''16
+                            a''16
+                            ef''16
+                            r16
+                            g''16
+                            d''16
+                            r8
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin3_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -986,59 +1227,79 @@
                     {                                                          %! rill.ScoreTemplate.__call__()
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin4_Music_Voice"                     %! rill.ScoreTemplate.__call__()
@@ -1046,119 +1307,164 @@
                         {
                             \mark #12
                             f'16
+                            \pp
+                            ^ \markup {
+                                \upright
+                                    pizz.
+                                }
                             a'16
+                            ef'16
+                            r16
+                            g'16
+                            d'16
                             r8
-                            r8.
+                            f'16
+                            f'16
+                            a'16
                             ef'16
                             r16
                             g'16
                             d'16
                             r16
                             r16
-                            r8.
                             f'16
-                            r16
                             f'16
                             a'16
-                            r4
-                            r16
                             ef'16
                             r16
                             g'16
                             d'16
-                            r8.
                             r8
                             f'16
-                            r16
                             f'16
                             a'16
-                            r8
-                            r8.
                             ef'16
                             r16
                             g'16
                             d'16
                             r16
-                            r4
-                            f'16
                             r16
+                            f'16
                             f'16
                             a'16
-                            r4
-                            r16
                             ef'16
                             r16
                             g'16
                             d'16
-                            r8.
                             r8
                             f'16
-                            r16
                             f'16
                             a'16
-                            r8
-                            r8
-                            r16
                             ef'16
+                            r16
+                            g'16
+                            d'16
+                            r16
+                            r16
+                            f'16
+                            f'16
+                            a'16
+                            ef'16
+                            r16
+                            g'16
+                            d'16
+                            r8
+                            f'16
+                            f'16
+                            a'16
+                            ef'16
+                            r16
+                            g'16
+                            d'16
+                            r16
+                            r16
+                            f'16
+                            f'16
+                            a'16
+                            ef'16
+                            r16
+                            g'16
+                            d'16
+                            r8
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin4_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -1173,59 +1479,79 @@
                     {                                                          %! rill.ScoreTemplate.__call__()
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
                         \stopTextSpan
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin5_Music_Voice"                     %! rill.ScoreTemplate.__call__()
@@ -1233,119 +1559,164 @@
                         {
                             \mark #12
                             f'16
+                            \pp
+                            ^ \markup {
+                                \upright
+                                    pizz.
+                                }
                             a'16
+                            ef'16
+                            r16
+                            g'16
+                            d'16
                             r8
-                            r8.
+                            f'16
+                            f'16
+                            a'16
                             ef'16
                             r16
                             g'16
                             d'16
                             r16
                             r16
-                            r8.
                             f'16
-                            r16
                             f'16
                             a'16
-                            r4
-                            r16
                             ef'16
                             r16
                             g'16
                             d'16
-                            r8.
                             r8
                             f'16
-                            r16
                             f'16
                             a'16
-                            r8
-                            r8.
                             ef'16
                             r16
                             g'16
                             d'16
                             r16
-                            r4
-                            f'16
                             r16
+                            f'16
                             f'16
                             a'16
-                            r4
-                            r16
                             ef'16
                             r16
                             g'16
                             d'16
-                            r8.
                             r8
                             f'16
-                            r16
                             f'16
                             a'16
-                            r8
-                            r8
-                            r16
                             ef'16
+                            r16
+                            g'16
+                            d'16
+                            r16
+                            r16
+                            f'16
+                            f'16
+                            a'16
+                            ef'16
+                            r16
+                            g'16
+                            d'16
+                            r8
+                            f'16
+                            f'16
+                            a'16
+                            ef'16
+                            r16
+                            g'16
+                            d'16
+                            r16
+                            r16
+                            f'16
+                            f'16
+                            a'16
+                            ef'16
+                            r16
+                            g'16
+                            d'16
+                            r8
                         }
                     }                                                          %! rill.ScoreTemplate.__call__()
                     \context Voice = "Violin5_Dynamics_Voice"                  %! rill.ScoreTemplate.__call__()
                     {                                                          %! rill.ScoreTemplate.__call__()
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/8
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
-                        s1 * 3/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 1/4
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/16
-                        s1 * 1/4
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
-                        s1 * 3/16
-                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/16
                         s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
                         s1 * 1/8
                         s1 * 1/16
                         s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/16
+                        s1 * 1/8
                         \!
                     }                                                          %! rill.ScoreTemplate.__call__()
                 >>                                                             %! rill.ScoreTemplate.__call__()
@@ -1375,6 +1746,11 @@
                         {
                             \mark #12
                             r4
+                            \ppp
+                            ^ \markup {
+                                \upright
+                                    flautando
+                                }
                             a'''4
                             r2
                             c''''2.
@@ -1430,6 +1806,11 @@
                         {
                             \mark #12
                             r4
+                            \ppp
+                            ^ \markup {
+                                \upright
+                                    flautando
+                                }
                             cs''''4
                             r2
                             bf'''2.
@@ -1485,6 +1866,11 @@
                         {
                             \mark #12
                             r4
+                            \ppp
+                            ^ \markup {
+                                \upright
+                                    flautando
+                                }
                             ef''4
                             r2
                             f''2.
@@ -1540,6 +1926,11 @@
                         {
                             \mark #12
                             r4
+                            \ppp
+                            ^ \markup {
+                                \upright
+                                    flautando
+                                }
                             f4
                             r2
                             ef2.

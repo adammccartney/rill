@@ -165,6 +165,7 @@ def make_pizz_attachment_maker():
     )
     return pizz_attachment_maker
 
+
 def make_aeolian_attachment_maker():
     aeolian_attachment_maker = MarkupAttachmentMaker(
         selector=abjad.select(),

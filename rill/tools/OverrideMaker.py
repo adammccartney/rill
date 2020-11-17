@@ -11,8 +11,6 @@ class OverrideMaker(object):
         assert False, "maker must be defined"
 
 
-
-
 class NoteHeadOverrideMaker(OverrideMaker):
     "Changes the style of notehead"
 
@@ -37,13 +35,14 @@ class NoteHeadOverrideMaker(OverrideMaker):
         if self.style in self.notehead_types:
             for leaf in selection:
                 abjad.override(leaf).note_head.style = self.style
-            else:
-                ValueError(self.style, "is not a valid note head style")
+        else:
+            ValueError(self.style, "is not a valid note head style")
+
 
 if __name__ == '__main__':
     staff = abjad.Staff("c'4 d'4 f'2 e'1")
 
-    once_override_maker = NoteHeadOverrideMaker('harmonic')
+    once_override_maker = NoteHeadOverrideMaker('harmos')
     harmonic_override = once_override_maker(staff)
 
     abjad.f(staff)

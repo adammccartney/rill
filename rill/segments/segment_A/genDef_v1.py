@@ -18,15 +18,14 @@ segment_dir = f"segment_{segment_name}"
 #module = importlib.import_module(module_name)
 #segment_music_data = module.__dict__['segment_music_data']
 
-
-
 def make_music_code_block(instrument_name, instrument_music_data):
     music_block = f"""{instrument_name}_rhythm_definition = segment_maker.define_rhythm()
 {instrument_name}_music_maker = MusicMaker(
     counts={instrument_name}_instrument_music_data.talea,
     denominator={instrument_name}_instrument_music_data.denominator,
     pitches={instrument_name}_instrument_music_data.pitches,
-    attachment_makers={instrument_name}_instrument_music_data.attachments
+    attachment_makers={instrument_name}_instrument_music_data.attachments,
+    override_makers={instrument_name}_instrument_music_data.overrides,
     )
 {instrument_name}_music = {instrument_name}_music_maker(
     time_signature_pairs={instrument_name}_instrument_music_data.time_signature_pairs),
@@ -136,7 +135,6 @@ import rill
 from pathlib import Path
 
 from rill.tools.MusicMaker import MusicMaker
-from rill.tools.AttachmentMaker import AccentAttachmentMaker
 
 this_current_directory =  Path.cwd()
 score = rill.ScoreTemplate()
@@ -157,7 +155,7 @@ segment_maker.metronome_marks = [
         (0, rill.metronome_marks['50'], 5),
         ]
 
-time_signatures= [(4, 4)] + [(3, 4)] + [(3, 4)] + [(4, 4)] + [(3, 4)] + [(3,4)]
+time_signatures = [(4, 4)] + [(3, 4)] + [(3, 4)] + [(4, 4)] + [(3, 4)] + [(3,4)]
 segment_maker.time_signatures = time_signatures
 
 

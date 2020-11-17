@@ -7,7 +7,6 @@ import rill
 from pathlib import Path
 
 from rill.tools.MusicMaker import MusicMaker
-from rill.tools.AttachmentMaker import AccentAttachmentMaker
 
 this_current_directory =  Path.cwd()
 score = rill.ScoreTemplate()
@@ -40,7 +39,8 @@ Flute1_music_maker = MusicMaker(
     counts=Flute1_instrument_music_data.talea,
     denominator=Flute1_instrument_music_data.denominator,
     pitches=Flute1_instrument_music_data.pitches,
-    attachment_makers=Flute1_instrument_music_data.attachments
+    attachment_makers=Flute1_instrument_music_data.attachments,
+    override_makers=Flute1_instrument_music_data.overrides
     )
 Flute1_music = Flute1_music_maker(
     time_signature_pairs=Flute1_instrument_music_data.time_signature_pairs),
@@ -54,7 +54,8 @@ Flute2_music_maker = MusicMaker(
     counts=Flute2_instrument_music_data.talea,
     denominator=Flute2_instrument_music_data.denominator,
     pitches=Flute2_instrument_music_data.pitches,
-    attachment_makers=Flute2_instrument_music_data.attachments
+    attachment_makers=Flute2_instrument_music_data.attachments,
+    override_makers=Flute2_instrument_music_data.overrides
     )
 Flute2_music = Flute2_music_maker(
     time_signature_pairs=Flute2_instrument_music_data.time_signature_pairs),
@@ -68,7 +69,8 @@ Flute3_music_maker = MusicMaker(
     counts=Flute3_instrument_music_data.talea,
     denominator=Flute3_instrument_music_data.denominator,
     pitches=Flute3_instrument_music_data.pitches,
-    attachment_makers=Flute3_instrument_music_data.attachments
+    attachment_makers=Flute3_instrument_music_data.attachments,
+    override_makers=Flute3_instrument_music_data.overrides
     )
 Flute3_music = Flute3_music_maker(
     time_signature_pairs=Flute3_instrument_music_data.time_signature_pairs),
@@ -82,7 +84,8 @@ Flute4_music_maker = MusicMaker(
     counts=Flute4_instrument_music_data.talea,
     denominator=Flute4_instrument_music_data.denominator,
     pitches=Flute4_instrument_music_data.pitches,
-    attachment_makers=Flute4_instrument_music_data.attachments
+    attachment_makers=Flute4_instrument_music_data.attachments,
+    override_makers=Flute4_instrument_music_data.overrides
     )
 Flute4_music = Flute4_music_maker(
     time_signature_pairs=Flute4_instrument_music_data.time_signature_pairs),
@@ -96,7 +99,8 @@ Bbclarinet1_music_maker = MusicMaker(
     counts=Bbclarinet1_instrument_music_data.talea,
     denominator=Bbclarinet1_instrument_music_data.denominator,
     pitches=Bbclarinet1_instrument_music_data.pitches,
-    attachment_makers=Bbclarinet1_instrument_music_data.attachments
+    attachment_makers=Bbclarinet1_instrument_music_data.attachments,
+    override_makers=Bbclarinet1_instrument_music_data.overrides
     )
 Bbclarinet1_music = Bbclarinet1_music_maker(
     time_signature_pairs=Bbclarinet1_instrument_music_data.time_signature_pairs),
@@ -110,7 +114,8 @@ Vibraphone_music_maker = MusicMaker(
     counts=Vibraphone_instrument_music_data.talea,
     denominator=Vibraphone_instrument_music_data.denominator,
     pitches=Vibraphone_instrument_music_data.pitches,
-    attachment_makers=Vibraphone_instrument_music_data.attachments
+    attachment_makers=Vibraphone_instrument_music_data.attachments,
+    override_makers=Vibraphone_instrument_music_data.overrides
     )
 Vibraphone_music = Vibraphone_music_maker(
     time_signature_pairs=Vibraphone_instrument_music_data.time_signature_pairs),
@@ -124,7 +129,8 @@ Violin1_music_maker = MusicMaker(
     counts=Violin1_instrument_music_data.talea,
     denominator=Violin1_instrument_music_data.denominator,
     pitches=Violin1_instrument_music_data.pitches,
-    attachment_makers=Violin1_instrument_music_data.attachments
+    attachment_makers=Violin1_instrument_music_data.attachments,
+    override_makers=Violin1_instrument_music_data.overrides
     )
 Violin1_music = Violin1_music_maker(
     time_signature_pairs=Violin1_instrument_music_data.time_signature_pairs),
@@ -138,7 +144,8 @@ Violin2_music_maker = MusicMaker(
     counts=Violin2_instrument_music_data.talea,
     denominator=Violin2_instrument_music_data.denominator,
     pitches=Violin2_instrument_music_data.pitches,
-    attachment_makers=Violin2_instrument_music_data.attachments
+    attachment_makers=Violin2_instrument_music_data.attachments,
+    override_makers=Violin2_instrument_music_data.overrides
     )
 Violin2_music = Violin2_music_maker(
     time_signature_pairs=Violin2_instrument_music_data.time_signature_pairs),
@@ -152,7 +159,8 @@ Violin3_music_maker = MusicMaker(
     counts=Violin3_instrument_music_data.talea,
     denominator=Violin3_instrument_music_data.denominator,
     pitches=Violin3_instrument_music_data.pitches,
-    attachment_makers=Violin3_instrument_music_data.attachments
+    attachment_makers=Violin3_instrument_music_data.attachments,
+    override_makers=Violin3_instrument_music_data.overrides
     )
 Violin3_music = Violin3_music_maker(
     time_signature_pairs=Violin3_instrument_music_data.time_signature_pairs),
@@ -166,7 +174,8 @@ Violin4_music_maker = MusicMaker(
     counts=Violin4_instrument_music_data.talea,
     denominator=Violin4_instrument_music_data.denominator,
     pitches=Violin4_instrument_music_data.pitches,
-    attachment_makers=Violin4_instrument_music_data.attachments
+    attachment_makers=Violin4_instrument_music_data.attachments,
+    override_makers=Violin4_instrument_music_data.overrides
     )
 Violin4_music = Violin4_music_maker(
     time_signature_pairs=Violin4_instrument_music_data.time_signature_pairs),
@@ -180,7 +189,8 @@ Violin5_music_maker = MusicMaker(
     counts=Violin5_instrument_music_data.talea,
     denominator=Violin5_instrument_music_data.denominator,
     pitches=Violin5_instrument_music_data.pitches,
-    attachment_makers=Violin5_instrument_music_data.attachments
+    attachment_makers=Violin5_instrument_music_data.attachments,
+    override_makers=Violin5_instrument_music_data.overrides
     )
 Violin5_music = Violin5_music_maker(
     time_signature_pairs=Violin5_instrument_music_data.time_signature_pairs),
@@ -194,7 +204,8 @@ Violin6_music_maker = MusicMaker(
     counts=Violin6_instrument_music_data.talea,
     denominator=Violin6_instrument_music_data.denominator,
     pitches=Violin6_instrument_music_data.pitches,
-    attachment_makers=Violin6_instrument_music_data.attachments
+    attachment_makers=Violin6_instrument_music_data.attachments,
+    override_makers=Violin6_instrument_music_data.overrides
     )
 Violin6_music = Violin6_music_maker(
     time_signature_pairs=Violin6_instrument_music_data.time_signature_pairs),
@@ -208,7 +219,8 @@ Violin7_music_maker = MusicMaker(
     counts=Violin7_instrument_music_data.talea,
     denominator=Violin7_instrument_music_data.denominator,
     pitches=Violin7_instrument_music_data.pitches,
-    attachment_makers=Violin7_instrument_music_data.attachments
+    attachment_makers=Violin7_instrument_music_data.attachments,
+    override_makers=Violin7_instrument_music_data.overrides
     )
 Violin7_music = Violin7_music_maker(
     time_signature_pairs=Violin7_instrument_music_data.time_signature_pairs),
@@ -222,7 +234,8 @@ Violin8_music_maker = MusicMaker(
     counts=Violin8_instrument_music_data.talea,
     denominator=Violin8_instrument_music_data.denominator,
     pitches=Violin8_instrument_music_data.pitches,
-    attachment_makers=Violin8_instrument_music_data.attachments
+    attachment_makers=Violin8_instrument_music_data.attachments,
+    override_makers=Violin8_instrument_music_data.overrides
     )
 Violin8_music = Violin8_music_maker(
     time_signature_pairs=Violin8_instrument_music_data.time_signature_pairs),
@@ -236,7 +249,8 @@ Viola_music_maker = MusicMaker(
     counts=Viola_instrument_music_data.talea,
     denominator=Viola_instrument_music_data.denominator,
     pitches=Viola_instrument_music_data.pitches,
-    attachment_makers=Viola_instrument_music_data.attachments
+    attachment_makers=Viola_instrument_music_data.attachments,
+    override_makers=Viola_instrument_music_data.overrides
     )
 Viola_music = Viola_music_maker(
     time_signature_pairs=Viola_instrument_music_data.time_signature_pairs),
