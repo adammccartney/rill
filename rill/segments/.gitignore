@@ -1,0 +1,5 @@
+buildSegments.sh
+createSegments.sh
+genMusicData.py
+genSegmentTemplates.sh
+
