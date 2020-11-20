@@ -180,7 +180,7 @@ if __name__ == '__main__':
                                             DynamicAttachmentMaker)
     from rill.tools.OverrideMaker import NoteHeadOverrideMaker
     from rill.tools.MarkupLibrary import MarkupLibrary as markup
-    from rill.materials.overrides.definition import cross_note_head_override
+    #from rill.materials.overrides.definition import cross_note_head_override
 
     # THIS IS THE INPUT TO MY MUSICAL IDEA
     time_signature_pairs = [(4, 4), (3, 4), (3, 4), (4, 4), (3, 4), (3, 4)]
@@ -222,7 +222,7 @@ if __name__ == '__main__':
             pont_attachment_maker,
             forte_attachment_maker,
         ],
-        override_makers=[cross_note_head_override],
+        override_makers=[],
     )
     music = my_musicmaker(time_signature_pairs)
     staff = abjad.Staff([music])
