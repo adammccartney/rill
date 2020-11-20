@@ -1,4 +1,7 @@
 # Byte-compiled / optimized / DLL files
+*.png
+*.dia
+*.pdf
 __pycache__/
 *.DS_Store
 
