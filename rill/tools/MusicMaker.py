@@ -7,6 +7,30 @@ class MusicMaker(object):
     A music-making machine.
     """
 
+<<<<<<< HEAD
+    def __init__(self, attachment, selector):
+        AttachmentMaker.__init__(self, attachment, selector)
+
+    def __call__(self, music):
+        for selection in self.selector(music):
+            self._attach_to_first_leaf(selection)
+
+    def _attach_to_first_leaf(self, logical_tie):
+        first_leaf = logical_tie.head
+        if not isinstance(first_leaf, abjad.Rest):
+            attachment = copy.copy(self.attachment)
+            abjad.attach(attachment, first_leaf)
+        elif isinstance(first_leaf, abjad.Rest):
+            pass
+
+
+class MusicMaker(object):
+    """
+    A music-making machine.
+    """
+
+=======
+>>>>>>> dev
     def __init__(
         self,
         counts,
@@ -27,6 +51,11 @@ class MusicMaker(object):
             self.counts,
             self.denominator,
         )
+<<<<<<< HEAD
+        #music = self._clean_up_rhythm(music, time_signature_pairs)
+        music = self._add_pitches(music, self.pitches)
+        music = self._add_attachments(music)
+=======
         rcleaned_music = self._clean_up_rhythm(music, time_signature_pairs)
         #fused_music = self._fuse_logical_ties(rcleaned_music,
         #                                      time_signature_pairs)
@@ -60,6 +89,7 @@ class MusicMaker(object):
             selection = abjad.select(shard).logical_ties()
             for logical_tie in selection:
                 abjad.mutate(logical_tie).fuse()
+>>>>>>> dev
         return music
 
     def _make_basic_rhythm(self, time_signature_pairs, counts, denominator):
@@ -92,6 +122,22 @@ class MusicMaker(object):
             talea_index += 1
         music = abjad.Container(all_leaves)
         return music
+<<<<<<< HEAD
+
+#    def _clean_up_rhythm(self, music, time_signature_pairs):
+#        """
+#        Clean up rhythms in ``music`` via ``time_signature_pairs``.
+#        """
+#        shards = abjad.mutate(music[:]).split(time_signature_pairs)
+#        for i, shard in enumerate(shards):
+#            time_signature_pair = time_signature_pairs[i]
+#            measure = abjad.Measure(time_signature_pair)
+#            assert abjad.inspect(shard).duration() == abjad.Duration(
+#                time_signature_pair)
+#            abjad.mutate(shard).wrap(measure)
+#        return music
+=======
+>>>>>>> dev
 
     def _add_pitches(self, music, pitches):
         """
