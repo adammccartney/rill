@@ -35,3 +35,6 @@ pip-delete-this-directory.txt
 
 # Generator scripts
 *.sh
+
+# flymake autocomplete tags
+.mypy_cache
