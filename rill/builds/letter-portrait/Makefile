@@ -3,42 +3,50 @@ SCORE_NAME := $(lastword $(subst /, ,$(firstword $(subst build, ,$(MAKEFILE_PATH
 BUILD_TARGET := $(notdir $(patsubst %/,%,$(dir $(MAKEFILE_PATH))))
 BUILD_PREFIX := $(SCORE_NAME)-$(BUILD_TARGET)
 
-all:
-	make front-cover
-	make preface
-	make music
-	make back-cover
-	make score
-	make parts
-	make clean
+PARTS := flute1 flute2 flute3 Bbclarinet1 vibraphone violin1 violin2 violin3 violin4 violin5 violin6 violin7 violin8 viola
 
-front-cover:
-	xelatex front-cover.tex
-	xelatex front-cover.tex
+PARTS_PDF := $(foreach p, $(PARTS), parts-$(p).pdf)
 
-back-cover:
-	xelatex back-cover.tex
-	xelatex back-cover.tex
+.PHONY: parts segments clean dist help
 
-preface:
-	xelatex preface.tex
-	xelatex preface.tex
+# we only need the score.pdf... it is dependent on everything else
+all: score.pdf
 
-music:
-	lilypond music.ly
+parts: $(PARTS_PDF)
 
-parts:
-	lilypond parts.ly
+segments:
+	$(MAKE) -C ../..
 
-score:
-	xelatex score.tex
-	xelatex score.tex
+music.ly: ../segments.ily segments
+	touch $@
+
+parts.ly: ../parts.ily segments
+	touch $@
+
+# specific pdf generation
+
+# all parts are generated from one parts.ly
+$(PARTS_PDF): parts.ly
+	lilypond $<
+	
+# all pdfs are needed for score.pdf
+score.pdf: score.tex front-cover.pdf preface.pdf music.pdf $(PARTS_PDF) back-cover.pdf
+	xelatex $<
+
+# generic pdf generation
+
+%.pdf: %.tex
+	xelatex $<
+
+%.pdf: %.ly
+	lilypond $<
 
 clean:
+	rm -f *.pdf
 	rm -f *.log
 	rm -f *.aux
 
-dist:
+dist: score.pdf
 	mkdir -p ../../distribution/$(BUILD_PREFIX)
 	cp score.pdf ../../distribution/$(BUILD_PREFIX)/$(BUILD_PREFIX)-score.pdf
 	for part in parts-*.pdf; do \
@@ -52,11 +60,11 @@ help:
 	@echo "                       copy score and parts PDFs to distribution/"
 	@echo "                       create ZIP archive of score and parts"
 	@echo "                       clean extraneous LaTeX files"
-	@echo "make front-cover     - compile front-cover PDF"
-	@echo "make preface         - compile preface PDF"
-	@echo "make music           - compile music PDF"
-	@echo "make back-cover      - compile back-cover PDF"
-	@echo "make score           - compile score PDF"
+	@echo "make front-cover.pdf - compile front-cover PDF"
+	@echo "make preface.pdf     - compile preface PDF"
+	@echo "make music.pdf       - compile music PDF"
+	@echo "make back-cover.pdf  - compile back-cover PDF"
+	@echo "make score.pdf       - compile score PDF"
 	@echo "make parts           - compile parts PDFs"
 	@echo "make dist            - copy score and parts PDFs to distribution/"
 	@echo "                       create ZIP archive of score and parts"

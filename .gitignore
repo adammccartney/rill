@@ -44,3 +44,8 @@ pip-delete-this-directory.txt
 
 # flymake autocomplete tags
 .mypy_cache
+
+# Latex aux files
+*.aux
+*.log
+
