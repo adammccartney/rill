@@ -6,6 +6,8 @@ import rill
 
 from pathlib import Path
 
+from rill.tools.MusicMaker import MusicMaker
+
 this_current_directory =  Path.cwd()
 score = rill.ScoreTemplate()
 score_template = score()
@@ -27,6 +29,7 @@ segment_maker.metronome_marks = [
 
 time_signatures = [(4, 4)] + [(3, 4)] + [(3, 4)] + [(4, 4)] + [(3, 4)] + [(3,4)]
 segment_maker.time_signatures = time_signatures
+
 
 from rill.segments.segment_A.music_data import segment_music_data
 
