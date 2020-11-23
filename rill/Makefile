@@ -27,13 +27,12 @@ segments/segment_%/illustration.ly segments/segment_%/illustration.pdf builds/se
 
 
 builds/segments/segment_%.ily: segments/segment_%/illustration.ly
-	echo Build $<
-	mkdir -p $(dir $<)
+	-mkdir -p $(dir $<)
 	sed '/^\\score/,/^\}/!d;/^\\score/d;/^\}/d' $< > $@
 
 
 segments: $(foreach p, $(SEGMENTS), builds/segments/segment_$(p).ily)
-	true
+
 
 clean:
 	for d in `find . -name __pycache__`; do rm -fr $d; done
