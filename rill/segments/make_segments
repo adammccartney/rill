@@ -4,13 +4,13 @@
 # First cleans any existing files out of all subdirectories, then rebuilds
 # using the genDef_v1.py and definition.py scripts
 
-echo  $(find . \( -name "definition.py" -or -name "illustration.pdf" -or -name "illustration.ly" \) -type f -delete)
-
 declare -i REHEARSAL_MARK=1
 for SEGMENT_NAME in A B C D E F G H I J K L
-    
-do  echo "building $SEGMENT_NAME"
-    cd "segment_$SEGMENT_NAME"
+
+do
+    echo "building $SEGMENT_NAME"
+    echo $(pwd)
+    cd "./segment_$SEGMENT_NAME"
     echo $(pwd)
     echo $(python ./genDef_v1.py $SEGMENT_NAME $REHEARSAL_MARK &)
     echo $(python ./definition.py &)
