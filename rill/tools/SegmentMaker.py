@@ -325,7 +325,7 @@ class SegmentMaker(abjad.SegmentMaker):
         file.writelines(score_content[13:-1])
         file.close()
 
-    def _render_illustration(self):
+    def _render_illustration(self, openpdf=False):
         score_file = self._lilypond_file
         directory = self.current_directory
         pdf_path = f"{directory}/illustration.pdf"
@@ -336,7 +336,7 @@ class SegmentMaker(abjad.SegmentMaker):
             path.unlink()
         print(f"Persisting {pdf_path} ...")
         result = abjad.persist(score_file).as_pdf(pdf_path, strict=79)
-        if path.exists():
+        if path.exists() and openpdf:
             print(f"Opening {pdf_path} ...")
             os.system(f"open {pdf_path}")
 
