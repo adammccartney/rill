@@ -39,4 +39,6 @@ clean:
 	rm -f builds/segments/*.ly
 	rm -f builds/segments/*.ily
 	rm -f segments/segment_*/illustration.pdf
-	rm materials/music_data/music_data_shelve.db
+	rm -f segments/segment_*/illustration.ly
+	rm -f segments/segment_*/definition.py
+	rm -f materials/music_data/music_data_shelve.db

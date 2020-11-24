@@ -1,9 +1,0 @@
-#!/bin/bash
-
-#
-# Runs a quick clean on segments directory
-#
-
-echo $(find . \( -name "definition.py" -or -name "illustration.pdf" -or -name "illustration.ly" \) -type f -delete &)
-
-exit 0
