@@ -1,5 +1,5 @@
 #(set-default-paper-size "letter" 'portrait)
-#(set-global-staff-size 17)
+#(set-global-staff-size 14)
 
 \include "./_stylesheets/abjad.ily"
 \include "contexts.ily"
