@@ -4,6 +4,7 @@
 *.pdf
 __pycache__/
 *.DS_Store
+*.db
 
 # include distribution pdf
 !rill/distribution
@@ -37,10 +38,6 @@ MANIFEST
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
-
-
-# Generator scripts
-*.sh
 
 # flymake autocomplete tags
 .mypy_cache
