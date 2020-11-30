@@ -1,13 +1,13 @@
 #!/bin/bash
 
-EROSION=${-"$1":./erosion.py}
+EROSION=${$1:-./erosion.py}
 
 if [ ! -f "${EROSION}" ]; then
     echo "Erosion script must be given as first argument."
     exit -1
 fi
 
-ROOT=${-"$2":.}
+ROOT=${$2:-.}
 
 if [ "${ROOT}" == ""  -o ! -d "${ROOT}" ]; then
     echo ".git project root folder must be given as second argument."
@@ -43,6 +43,8 @@ while true; do
     ok=0
     
     fn="`${EROSION} -v ${FILES}`"
+    echo $fn
+    exit -1
 
     if [ $? -ne 0 ]; then
         echo "Erosion failed"
