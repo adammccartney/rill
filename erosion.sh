@@ -33,9 +33,10 @@ BUILD="make -C ${BUILDDIR} make -l 4"
 
 CHECKS="${BUILDDIR}/score.pdf"
 
-COMMIT="git commit -m 'Automatic erosion'"
-PUSH="git push"
-RESTORE="git restore ${ROOT}"
+GIT_ADD="git add"
+GIT_COMMIT="git commit -m \"Automatic erosion\""
+GIT_PUSH="git push"
+GIT_RESTORE="git restore ${ROOT}"
 
 SLEEP="sleep 5"
 
@@ -86,10 +87,10 @@ while true; do
     if [ ${ok} -eq 1 ]; then
         echo "Erosion successful: $fn"
         # Commit changes by erosion to repository
-        ${COMMIT} ${fn} && ${PUSH}        
+        ${GIT_ADD} ${fn} && ${GIT_COMMIT} ${fn} && ${GIT_PUSH}        
     else
         # Undo changes to repository
-        ${RESTORE}
+        ${GIT_RESTORE}
     fi
     
     # wait a little
