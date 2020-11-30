@@ -350,14 +350,21 @@ class SegmentMaker(abjad.SegmentMaker):
         lilypond_file.header_block.composer = None
 
     def _configure_rehearsal_mark(self):
+        import os
+        stream = os.popen('git rev-parse --short HEAD')
+        commit_id = stream.read()
+        id_string = commit_id[:-1]
         mark_num = self.rehearsal_mark
+        markup = """\\markup {{ \\box {{ \\bold {{ \"{0}\" }} }}
+                              \\small {{ \"{1}\" }} }}""".format(mark_num,
+                                                                 id_string)
         voices = self._music_voices
         for voice in voices:
             leaf = abjad.inspect(voice).leaf(0)
-            abjad.attach(abjad.RehearsalMark(number=mark_num), leaf)
-        scheme = abjad.Scheme('format-mark-box-alphabet')
-        score = self._score
-        abjad.setting(score).markFormatter = scheme
+            abjad.attach(abjad.RehearsalMark(markup=markup), leaf)
+        #scheme = abjad.Scheme('format-mark-box-alphabet')
+        #score = self._score
+        #abjad.setting(score).markFormatter = scheme
 
     def _sort_instruments_by_clef(self, voice_list, target):
         if isinstance(voice_list, list):
@@ -382,19 +389,6 @@ class SegmentMaker(abjad.SegmentMaker):
         #temp = voices[0:11]  # fl x3 , Bbclarinet, vb, vn x7
         #temp = voices[12]
         #self._sort_instruments_by_clef(temp, alto)  # va
-
-    def _configure_git_commit_id(self):
-        import os
-        stream = os.popen('git rev-parse --short HEAD')
-        commit_id = stream.read()
-        voices = self._music_voices
-        for voice in voices:
-            leaf = abjad.inspect(voice).leaf(0)
-            abjad.attach(abjad.Markup("{0}".format(commit_id)), leaf)
-        #scheme = abjad.Scheme('format-mark-box-alphabet')
-        #score = self._score
-        #abjad.setting(score).markFormatter = scheme
-
 
     def _handle_metronome_marks(self):
         if not self.metronome_marks:
@@ -469,7 +463,7 @@ class SegmentMaker(abjad.SegmentMaker):
         self._call_rhythm_definitions()
         self._configure_score()
         self._configure_rehearsal_mark()
-        self._configure_git_commit_id()
+        #self._configure_git_commit_id()
         self._attach_leaf_index_markup()
         self._render_illustration()
         self._build_segment()
