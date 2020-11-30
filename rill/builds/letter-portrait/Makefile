@@ -42,6 +42,7 @@ score.pdf: score.tex front-cover.pdf preface.pdf music.pdf $(PARTS_PDF) back-cov
 	lilypond $<
 
 clean:
+	$(MAKE) -C ../.. clean
 	rm -f *.pdf
 	rm -f *.log
 	rm -f *.aux

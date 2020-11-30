@@ -60,7 +60,7 @@
 }
 
 \book {
-    \bookOutputSuffix "Vibraphone"
+    \bookOutputSuffix "vibraphone"
     \header {
         subtitle = "vibraphone part"
     }
