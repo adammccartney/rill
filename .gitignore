@@ -46,3 +46,5 @@ pip-delete-this-directory.txt
 *.aux
 *.log
 
+# Intermediary files
+rill/segments/segment_*/definition.py
