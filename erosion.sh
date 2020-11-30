@@ -64,8 +64,9 @@ while true; do
     fi
 
     # Execute build process with time limit
-    ${TIMEOUT} ${BUILD}
+#    ${TIMEOUT} ${BUILD} > /dev/null
     
+    CHECKS=
     if [ $? -eq 0 ]; then
         echo "Build successful"
         ok=1
