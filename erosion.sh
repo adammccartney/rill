@@ -1,13 +1,15 @@
 #!/bin/bash
 
-EROSION=${$1:-./erosion.py}
+###############################################################################
+
+EROSION=${1:-./erosion/erosion.py}
 
 if [ ! -f "${EROSION}" ]; then
     echo "Erosion script must be given as first argument."
     exit -1
 fi
 
-ROOT=${$2:-.}
+ROOT=${2:-.}
 
 if [ "${ROOT}" == ""  -o ! -d "${ROOT}" ]; then
     echo ".git project root folder must be given as second argument."
@@ -16,12 +18,18 @@ fi
 
 RILL="$ROOT/rill"
 
-FILES="${RILL}/materials/*.py ${RILL}/materials/*/*.py ${RILL}/materials/*/*.ly ${RILL}/segments/*.py ${RILL}/segments/*/*.py"
+FILES="${RILL}/materials/*.py ${RILL}/materials/*/*.py ${RILL}/segments/*.py ${RILL}/segments/*/*.py"
 
 BUILDDIR="${RILL}/builds/letter-portrait/"
 
-BUILD="timeout 3m make -j8"
-BUILD="make -C ${BUILDDIR} -j8"
+if [ `uname` == Linux ]; then
+    TIMEOUT="timeout 3m"
+else
+    # no timeout on MacOS
+    TIMEOUT=""
+fi
+    
+BUILD="make -C ${BUILDDIR} make -j8"
 
 CHECKS="${BUILDDIR}/score.pdf"
 
@@ -30,6 +38,7 @@ RESTORE="git restore ${ROOT}"
 
 SLEEP="sleep 5"
 
+###############################################################################
 
 # trap ctrl-c and call ctrl_c()
 trap ctrl_c INT
@@ -39,19 +48,22 @@ function ctrl_c() {
     ${RESTORE}
 }
 
+###############################################################################
+
+# infinite loop of erosion
 while true; do
-    ok=0
     
+    # Erode one file of the list, store the filename
     fn="`${EROSION} -v ${FILES}`"
-    echo $fn
-    exit -1
 
     if [ $? -ne 0 ]; then
         echo "Erosion failed"
         exit -2
     fi
 
-    ${BUILD}
+    # Execute build process with time limit
+    ${TIMEOUT} ${BUILD}
+    
     if [ $? -eq 0 ]; then
         echo "Build successful"
         ok=1
@@ -63,8 +75,11 @@ while true; do
                 break;
             fi
         done
+    else
+        ok=0
     fi
     
+    # if build is ok, commit change to git
     if [ ${ok} -eq 1 ]; then
         echo "Erosion successful: $txt"
         ${COMMIT}
