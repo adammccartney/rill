@@ -55,6 +55,11 @@ function ctrl_c() {
 # infinite loop of erosion
 while true; do
 
+    # delete all files in $CHECKS
+    for f in ${CHECKS}; do
+        rm -f "$f"
+    done
+
     # Erode one file of the list, store the filename
     fn="`${EROSION} ${FILES}`"
     echo "Eroded file ${fn}"
