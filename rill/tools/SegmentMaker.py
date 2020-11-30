@@ -89,102 +89,6 @@ class RhythmDefinition(object):
                 self._score["Violin8"],
                 self._score["Viola"],
         )
-
-    #def _handle_dynamics(self):
-    #    voice = self._score[f"{self.instrument_name}_Music_Voice"]
-    #    leaves = abjad.select(voice).leaves()
-    #    if not leaves:
-    #        return
-    #    music_durations = [abjad.inspect(_).duration() for _ in leaves]
-    #    maker = rmakers.multiplied_duration(abjad.Skip)
-    #    dynamics_skips = maker(music_durations)
-    #    dynamics_voice = self._score[f"{self.instrument_name}_Dynamics_Voice"]
-    #    dynamics_voice.extend(dynamics_skips)
-    #    for expression in self.dynamics:
-    #        index = expression[0]
-    #        string = expression[1]
-    #        leaf = dynamics_voice[index]
-    #        if string in ("<", ">"):
-    #            indicator = abjad.LilyPondLiteral("\\" + string, "after")
-    #        elif string == "-|":
-    #            indicator = abjad.LilyPondLiteral(r"\<", "after")
-    #            stencil = abjad.Scheme("constante-hairpin")
-    #            abjad.override(leaf).hairpin.stencil = stencil
-    #        elif string == "<!":
-    #            indicator = abjad.LilyPondLiteral(r"\<", "after")
-    #            stencil = abjad.Scheme("abjad-flared-hairpin")
-    #            abjad.override(leaf).hairpin.stencil = stencil
-    #        elif string == "!>":
-    #            indicator = abjad.LilyPondLiteral(r"\>", "after")
-    #            stencil = abjad.Scheme("abjad-flared-hairpin")
-    #            abjad.override(leaf).hairpin.stencil = stencil
-    #        else:
-    #            indicator = abjad.Dynamic(string)
-    #        abjad.attach(indicator, leaf)
-    #        if len(expression) == 3:
-    #            staff_padding = expression[2]
-    #            string = r"\override DynamicLineSpanner.staff-padding ="
-    #            string += f" {staff_padding}"
-    #            command = abjad.LilyPondLiteral(string)
-    #            abjad.attach(command, leaf)
-    #    last_leaf = dynamics_voice[-1]
-    #    prototype = abjad.LilyPondLiteral
-    #    if not abjad.inspect(last_leaf).has_indicator(prototype):
-    #        if not abjad.inspect(last_leaf).has_indicator(abjad.Dynamic):
-    #            indicator = abjad.LilyPondLiteral(r"\!", "after")
-    #            abjad.attach(indicator, last_leaf)
-
-    #def _handle_markup(self):
-    #    voice = self._score[f"{self.instrument_name}_Music_Voice"]
-    #    leaves = abjad.select(voice).leaves()
-    #    if not leaves:
-    #        return
-    #    music_durations = [abjad.inspect(_).duration() for _ in leaves]
-    #    maker = rmakers.multiplied_duration(abjad.Skip)
-    #    selections = maker(music_durations)
-    #    skips = abjad.select(selections).components(abjad.Skip)
-    #    markup_voice = self._score[f"{self.instrument_name}_Markup_Voice"]
-    #    markup_voice.extend(skips)
-    #    expressions = self.markup
-    #    for i, expression in enumerate(expressions):
-    #        index = expression[0]
-    #        markup = expression[1]
-    #        skip = skips[index]
-    #        if len(expression) == 3 and isinstance(expression[2], tuple):
-    #            abjad.attach(markup, skip)
-    #            extra_offset = expression[2]
-    #            x, y = extra_offset
-    #            string = r"\once \override TextScript.extra-offset"
-    #            string += f" = #'({x} . {y})"
-    #            command = abjad.LilyPondLiteral(string)
-    #            abjad.attach(command, skip)
-    #            continue
-    #        if 0 < i:
-    #            stop_text_span = abjad.StopTextSpan()
-    #            abjad.attach(stop_text_span, skip)
-    #        if isinstance(markup, list):
-    #            markup = markup[0]
-    #            style = "dashed-line-with-arrow"
-    #        else:
-    #            style = "invisible-line"
-    #        start_text_span = abjad.StartTextSpan(
-    #            left_text=markup, style=style
-    #        )
-    #        abjad.attach(start_text_span, skip)
-    #        if len(expression) == 3:
-    #            staff_padding = expression[2]
-    #            string = (
-    #                fr"\override TextScript.staff-padding = {staff_padding}"
-    #            )
-    #            command = abjad.LilyPondLiteral(string)
-    #            abjad.attach(command, skip)
-    #            value = staff_padding + 0.75
-    #            string = fr"\override TextSpanner.staff-padding = {value}"
-    #            command = abjad.LilyPondLiteral(string)
-    #            abjad.attach(command, skip)
-    #    stop_text_span = abjad.StopTextSpan()
-    #    abjad.attach(stop_text_span, skips[-1])
-
     def _handle_notes(self):
         voice = self._score[f"{self.instrument_name}_Music_Voice"]
         print(self.notes)
@@ -362,9 +266,6 @@ class SegmentMaker(abjad.SegmentMaker):
         for voice in voices:
             leaf = abjad.inspect(voice).leaf(0)
             abjad.attach(abjad.RehearsalMark(markup=markup), leaf)
-        #scheme = abjad.Scheme('format-mark-box-alphabet')
-        #score = self._score
-        #abjad.setting(score).markFormatter = scheme
 
     def _sort_instruments_by_clef(self, voice_list, target):
         if isinstance(voice_list, list):
@@ -385,10 +286,6 @@ class SegmentMaker(abjad.SegmentMaker):
             abjad.attach(abjad.Clef("treble"), leaf)
         leaf = abjad.inspect(alto_voice).leaf(0)
         abjad.attach(abjad.Clef("alto"), leaf)
-        #treble, alto, bass = [], [], []
-        #temp = voices[0:11]  # fl x3 , Bbclarinet, vb, vn x7
-        #temp = voices[12]
-        #self._sort_instruments_by_clef(temp, alto)  # va
 
     def _handle_metronome_marks(self):
         if not self.metronome_marks:
@@ -459,11 +356,9 @@ class SegmentMaker(abjad.SegmentMaker):
         self._make_lilypond_file()
         self._configure_lilypond_file()
         self._handle_time_signatures()
-        # self._handle_metronome_marks()
         self._call_rhythm_definitions()
         self._configure_score()
         self._configure_rehearsal_mark()
-        #self._configure_git_commit_id()
         self._attach_leaf_index_markup()
         self._render_illustration()
         self._build_segment()
