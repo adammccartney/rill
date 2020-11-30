@@ -29,6 +29,8 @@ else
     TIMEOUT=""
 fi
 
+CLEAN="find ${ROOT} -name \"*.pyc\" -delete"
+
 BUILD="make -C ${BUILDDIR} -j8"
 
 CHECKS="${BUILDDIR}/score.pdf"
@@ -59,6 +61,8 @@ while true; do
     for f in ${CHECKS}; do
         rm -f "$f"
     done
+    # clean other files
+    ${CLEAN}
 
     # Erode one file of the list, store the filename
     fn="`${EROSION} ${FILES}`"
