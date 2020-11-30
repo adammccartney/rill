@@ -54,7 +54,8 @@ function ctrl_c() {
 while true; do
     
     # Erode one file of the list, store the filename
-    fn="`${EROSION} -v ${FILES}`"
+    fn="`${EROSION} ${FILES}`"
+    echo "Eroded file ${fn}"
 
     if [ $? -ne 0 ]; then
         echo "Erosion failed"
