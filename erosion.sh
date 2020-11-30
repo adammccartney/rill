@@ -29,7 +29,7 @@ else
     TIMEOUT=""
 fi
     
-BUILD="make -C ${BUILDDIR} -l 4"
+BUILD="make -C ${BUILDDIR} -j8"
 
 CHECKS="${BUILDDIR}/score.pdf"
 
