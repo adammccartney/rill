@@ -385,7 +385,7 @@ class SegmentMaker(abjad.SegmentMaker):
 
     def _configure_git_commit_id(self):
         import os
-        stream = os.poper('git rev-parse --short HEAD')
+        stream = os.popen('git rev-parse --short HEAD')
         commit_id = stream.read()
         voices = self._music_voices
         for voice in voices:
