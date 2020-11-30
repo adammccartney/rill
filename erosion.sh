@@ -28,7 +28,7 @@ else
     # no timeout on MacOS
     TIMEOUT=""
 fi
-    
+
 BUILD="make -C ${BUILDDIR} -j8"
 
 CHECKS="${BUILDDIR}/score.pdf"
@@ -36,7 +36,7 @@ CHECKS="${BUILDDIR}/score.pdf"
 GIT_ADD="git add"
 GIT_COMMIT="git commit -m Erosion"
 GIT_PUSH="git push"
-GIT_RESTORE="git restore ${ROOT}"
+GIT_RESTORE="git checkout ${ROOT}"
 
 SLEEP="sleep 5"
 
@@ -54,7 +54,7 @@ function ctrl_c() {
 
 # infinite loop of erosion
 while true; do
-    
+
     # Erode one file of the list, store the filename
     fn="`${EROSION} ${FILES}`"
     echo "Eroded file ${fn}"
@@ -66,11 +66,11 @@ while true; do
 
     # Execute build process with time limit
     ${TIMEOUT} ${BUILD} > /dev/null
-    
+
     if [ $? -eq 0 ]; then
         echo "Build successful"
         ok=1
-        
+
         # check for all files in $CHECKS
         for f in ${CHECKS}; do
             if [ ! -f "$f" ]; then
@@ -81,17 +81,18 @@ while true; do
     else
         ok=0
     fi
-    
+
     # if build is ok, commit change to git
     if [ ${ok} -eq 1 ]; then
         echo "Erosion successful: $fn"
         # Commit changes by erosion to repository
-        ${GIT_ADD} ${fn} && ${GIT_COMMIT} ${fn} && ${GIT_PUSH}        
+        ${GIT_ADD} ${fn} && ${GIT_COMMIT} ${fn} && ${GIT_PUSH}
     else
         # Undo changes to repository
         ${GIT_RESTORE}
     fi
-    
+
     # wait a little
+    echo Waiting...
     ${SLEEP}
 done
