@@ -18,7 +18,7 @@ segments/segment_%/definition.py: segments/segment_%/genDef_v1.py segments/segme
 	cd $(dir $<) && \
 	s=$(subst /,,$(subst segments/segment_,,$(dir $<))) && \
 	ix=`$(PYTHON) -c "import sys; print(sys.argv[2:].index(sys.argv[1]))" $${s} $(SEGMENTS)` && \
-	$(PYTHON) ./genDef_v1.py $${s} $$((ix+1))
+	$(PYTHON) ./genDef_v1.py $${s} $$((ix+1)) > /dev/null
 
 
 segments/segment_%/illustration.ly segments/segment_%/illustration.pdf builds/segments/%.ly builds/segments/%.ily: segments/segment_%/definition.py

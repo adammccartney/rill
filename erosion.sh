@@ -29,11 +29,11 @@ else
     TIMEOUT=""
 fi
     
-BUILD="make -C ${BUILDDIR} make -j8"
+BUILD="make -C ${BUILDDIR} make -l 4"
 
 CHECKS="${BUILDDIR}/score.pdf"
 
-COMMIT="git commit -am 'Automatic erosion'"
+COMMIT="git commit -m 'Automatic erosion'"
 RESTORE="git restore ${ROOT}"
 
 SLEEP="sleep 5"
@@ -81,8 +81,8 @@ while true; do
     
     # if build is ok, commit change to git
     if [ ${ok} -eq 1 ]; then
-        echo "Erosion successful: $txt"
-        ${COMMIT}
+        echo "Erosion successful: $fn"
+        ${COMMIT} ${fn}
         
         ${SLEEP}
     else
