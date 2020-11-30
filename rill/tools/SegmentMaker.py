@@ -353,9 +353,7 @@ class SegmentMaker(abjad.SegmentMaker):
         mark_num = self.rehearsal_mark
         voices = self._music_voices
         for voice in voices:
-            print("at voice: ", voice)
             leaf = abjad.inspect(voice).leaf(0)
-            print("this is the leaf: ", leaf)
             abjad.attach(abjad.RehearsalMark(number=mark_num), leaf)
         scheme = abjad.Scheme('format-mark-box-alphabet')
         score = self._score
@@ -384,6 +382,19 @@ class SegmentMaker(abjad.SegmentMaker):
         #temp = voices[0:11]  # fl x3 , Bbclarinet, vb, vn x7
         #temp = voices[12]
         #self._sort_instruments_by_clef(temp, alto)  # va
+
+    def _configure_git_commit_id(self):
+        import os
+        stream = os.poper('git rev-parse --short HEAD')
+        commit_id = stream.read()
+        voices = self._music_voices
+        for voice in voices:
+            leaf = abjad.inspect(voice).leaf(0)
+            abjad.attach(abjad.Markup("{0}".format(commit_id)), leaf)
+        #scheme = abjad.Scheme('format-mark-box-alphabet')
+        #score = self._score
+        #abjad.setting(score).markFormatter = scheme
+
 
     def _handle_metronome_marks(self):
         if not self.metronome_marks:
@@ -458,6 +469,7 @@ class SegmentMaker(abjad.SegmentMaker):
         self._call_rhythm_definitions()
         self._configure_score()
         self._configure_rehearsal_mark()
+        self._configure_git_commit_id()
         self._attach_leaf_index_markup()
         self._render_illustration()
         self._build_segment()
