@@ -29,12 +29,12 @@ else
     TIMEOUT=""
 fi
     
-BUILD="make -C ${BUILDDIR} make -l 4"
+BUILD="make -C ${BUILDDIR} -l 4"
 
 CHECKS="${BUILDDIR}/score.pdf"
 
 GIT_ADD="git add"
-GIT_COMMIT="git commit -m \"Automatic erosion\""
+GIT_COMMIT="git commit -m Erosion"
 GIT_PUSH="git push"
 GIT_RESTORE="git restore ${ROOT}"
 
@@ -47,7 +47,7 @@ trap ctrl_c INT
 
 function ctrl_c() {
     echo "Ctrl-C - Restoring working folder"
-    ${RESTORE}
+    ${GIT_RESTORE}
 }
 
 ###############################################################################
@@ -65,9 +65,8 @@ while true; do
     fi
 
     # Execute build process with time limit
-#    ${TIMEOUT} ${BUILD} > /dev/null
+    ${TIMEOUT} ${BUILD} > /dev/null
     
-    CHECKS=
     if [ $? -eq 0 ]; then
         echo "Build successful"
         ok=1
