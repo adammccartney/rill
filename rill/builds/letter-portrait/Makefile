@@ -27,16 +27,16 @@ parts.ly: ../parts.ily segments
 
 # all parts are generated from one parts.ly
 $(PARTS_PDF): parts.ly
-	lilypond $< > /dev/null
+	lilypond $<
 	
 # all pdfs are needed for score.pdf
 score.pdf: score.tex front-cover.pdf preface.pdf music.pdf $(PARTS_PDF) back-cover.pdf
-	xelatex $< > /dev/null
+	xelatex $<
 
 # generic pdf generation
 
 %.pdf: %.tex
-	xelatex $< > /dev/null
+	xelatex $<
 
 %.pdf: %.ly
 	lilypond $<
