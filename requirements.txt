@@ -1,3 +1,0 @@
-abjad >= 3.1
-abjad-ext-tonality
-abjad-ext-rmakers
