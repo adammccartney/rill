@@ -2,6 +2,7 @@
 *.png
 *.dia
 *.pdf
+*.ps
 __pycache__/
 *.DS_Store
 *.db
