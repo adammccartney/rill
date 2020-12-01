@@ -35,7 +35,7 @@ segments: $(foreach p, $(SEGMENTS), builds/segments/segment_$(p).ily)
 
 
 clean:
-	for d in `find . -name __pycache__`; do rm -fr $d; done
+	for d in `find . -name __pycache__`; do rm -fr $$d; done
 	rm -f builds/segments/*.ly
 	rm -f builds/segments/*.ily
 	rm -f segments/segment_*/illustration.pdf

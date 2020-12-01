@@ -1,0 +1,3 @@
+[submodule "erosion"]
+	path = erosion
+	url = git@gitlab.grrrr.org:rotting_sounds/projects/erosion.git
