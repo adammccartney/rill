@@ -5,4 +5,4 @@
 
 branch=$(git status -b --porcelain | sed  's/^## \([a-zA-Z_0-9]*\)\.\.\.\(.*\)$/\1/' | head -n 1)
 SHA=$(git rev-parse --short HEAD)
-echo $branch $SHA
+echo "\{${branch} ${SHA}\}"
