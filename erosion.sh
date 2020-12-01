@@ -37,6 +37,7 @@ CHECKS="${BUILDDIR}/score.pdf"
 
 GIT_ADD="git add"
 GIT_COMMIT="git commit -m Erosion"
+GIT_BACK="git reset HEAD^"
 GIT_PUSH="git push"
 GIT_RESTORE="git checkout ${ROOT}"
 
@@ -77,6 +78,9 @@ while true; do
         exit -2
     fi
 
+    # Commit locally (to have commit ID)
+    ${GIT_ADD} ${fn} && ${GIT_COMMIT} ${fn}
+
     # Execute build process with time limit
     ${TIMEOUT} ${BUILD} > /dev/null
 
@@ -95,19 +99,20 @@ while true; do
         ok=0
     fi
 
-    # if build is ok, commit change to git
+    # if build is ok, commit change
     if [ ${ok} -eq 1 ]; then
         echo "Erosion successful: $fn"
-        # Commit changes by erosion to repository
-        ${GIT_ADD} ${fn} && ${GIT_COMMIT} ${fn} && ${GIT_PUSH}
+        # Push local changes to repository
+        ${GIT_PUSH}
 	# Publish product
 	test "${PUBLISH}" != "" && ${PUBLISH}
     else
         # Undo changes to repository
+        ${GIT_BACK}
         ${GIT_RESTORE}
     fi
 
     # wait a little
-    echo Waiting...
+    echo "Waiting... break now if you like"
     ${SLEEP}
 done
