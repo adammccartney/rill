@@ -41,7 +41,7 @@ GIT_BACK="git reset HEAD^"
 GIT_PUSH="git push"
 GIT_RESTORE="git checkout ${ROOT}"
 
-BRANCH="`git status -b --porcelain | sed  's/^## \([a-zA-Z_0-9]*\)\.\.\.\(.*\)$/\1/' | head -n 1`"
+BRANCH="`git branch --show-current`"
 
 PUBLISH="rsync ${BUILDDIR}/score.pdf /mnt/archive/public/rill/score.${BRANCH}.pdf"
 
