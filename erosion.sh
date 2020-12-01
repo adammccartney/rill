@@ -100,12 +100,12 @@ while true; do
         echo "Erosion successful: $fn"
         # Commit changes by erosion to repository
         ${GIT_ADD} ${fn} && ${GIT_COMMIT} ${fn} && ${GIT_PUSH}
+	# Publish product
+	test "${PUBLISH}" != "" && ${PUBLISH}
     else
         # Undo changes to repository
         ${GIT_RESTORE}
     fi
-
-    test "${PUBLISH}" != "" && ${PUBLISH}
 
     # wait a little
     echo Waiting...
