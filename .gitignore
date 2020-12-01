@@ -5,9 +5,6 @@
 __pycache__/
 *.DS_Store
 
-# include distribution pdf
-!rill/distribution
-
 # C extensions
 *.so
 
