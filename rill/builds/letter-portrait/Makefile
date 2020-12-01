@@ -28,7 +28,12 @@ parts.ly: ../parts.ily segments
 # all parts are generated from one parts.ly
 $(PARTS_PDF): parts.ly
 	lilypond $<
-	
+
+# front cover made from tex after call to shell
+front-cover.pdf: front-cover.tex
+	./tag_script.sh
+	xelatex front-cover.tex
+
 # all pdfs are needed for score.pdf
 score.pdf: score.tex front-cover.pdf preface.pdf music.pdf $(PARTS_PDF) back-cover.pdf
 	xelatex $<
@@ -53,7 +58,7 @@ dist: score.pdf
 	for part in parts-*.pdf; do \
 		mv $$part ../../distribution/$(BUILD_PREFIX)/$(BUILD_PREFIX)-$$part; \
 	done;
-	cd ../../distribution && zip -r $(BUILD_PREFIX).zip $(BUILD_PREFIX) 
+	cd ../../distribution && zip -r $(BUILD_PREFIX).zip $(BUILD_PREFIX)
 
 help:
 	@echo ""
