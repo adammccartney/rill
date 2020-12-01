@@ -40,6 +40,10 @@ GIT_COMMIT="git commit -m Erosion"
 GIT_PUSH="git push"
 GIT_RESTORE="git checkout ${ROOT}"
 
+BRANCH="`git status -b --porcelain | sed  's/^## \([a-zA-Z_0-9]*\)\.\.\.\(.*\)$/\1/' | head -n 1`"
+
+PUBLISH="rsync ${BUILDDIR}/score.pdf /mnt/archive/public/rill/score.${BRANCH}.pdf"
+
 SLEEP="sleep 5"
 
 ###############################################################################
@@ -100,6 +104,8 @@ while true; do
         # Undo changes to repository
         ${GIT_RESTORE}
     fi
+
+    test "${PUBLISH}" != "" && ${PUBLISH}
 
     # wait a little
     echo Waiting...
