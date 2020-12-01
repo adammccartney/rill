@@ -2,9 +2,8 @@ import abjad
 
 
 metadata = abjad.OrderedDict([
-    ('catalog_number', 'AWN-010'),
-    ('composer', 'Trevor Bača'),
-    ('forces_tagline', 'for two violas'),
-    ('title', 'Ins Wasser eingeschrieben'),
-    ('year', 2014),
+    ('composer', 'Adam McCartney'),
+    ('forces_tagline', 'for 4 flutes, Bb clarinet, vibraphone, 8 violins and viola'),
+    ('title', 'rill (erosion)'),
+    ('year', 2020),
     ])
