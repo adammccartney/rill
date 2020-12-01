@@ -5,5 +5,6 @@
 
 branch=$(git status -b --porcelain | sed  's/^## \([a-zA-Z_0-9]*\)\.\.\.\(.*\)$/\1/' | head -n 1)
 SHA=$(git rev-parse --short HEAD)
+date=$(date +"%Y-%m-%d~%H:%M:%S")
 # replace _ by \_
-echo ${branch}~${SHA} | sed -r 's/_/\\_/g'
+echo ${branch}~${SHA}'\qquad'${date} | sed -r 's/_/\\_/g'
