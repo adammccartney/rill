@@ -48,6 +48,7 @@ score.pdf: score.tex front-cover.pdf preface.pdf music.pdf $(PARTS_PDF) back-cov
 
 clean:
 	$(MAKE) -C ../.. clean
+	rm -f tag_script_output.tex
 	rm -f *.pdf
 	rm -f *.log
 	rm -f *.aux
