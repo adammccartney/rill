@@ -29,10 +29,12 @@ parts.ly: ../parts.ily segments
 $(PARTS_PDF): parts.ly
 	lilypond $<
 
+tag_script_output.tex:
+	./tag_script.sh > $@
+	
 # front cover made from tex after call to shell
-front-cover.pdf: front-cover.tex
-	./tag_script.sh
-	xelatex front-cover.tex
+front-cover.pdf: front-cover.tex tag_script_output.tex
+	xelatex $<
 
 # all pdfs are needed for score.pdf
 score.pdf: score.tex front-cover.pdf preface.pdf music.pdf $(PARTS_PDF) back-cover.pdf
