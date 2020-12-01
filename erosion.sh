@@ -29,7 +29,7 @@ else
     TIMEOUT=""
 fi
 
-CLEAN="find ${ROOT} -name \"*.pyc\" -delete"
+CLEAN="make -C ${BUILDDIR} clean"
 
 BUILD="make -C ${BUILDDIR} -j8"
 
