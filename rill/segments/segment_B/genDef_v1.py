@@ -211,4 +211,4 @@ Viola_instrument_music_data = segment_music_data.Viola
 lilypond_file = segment_maker.run()
 """
 
-eval(segment_definition)
+exec(segment_definition)
