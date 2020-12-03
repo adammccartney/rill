@@ -20,6 +20,6 @@ Instructions:
 + Erosion process: 
 	- Create and checkout a new branch by running, e.g., `git branch erosion_666 && git checkout erosion_666`.
 	
-	- From the top-level folder, run `erosion.sh`.
+	- From the top-level folder, run `./erosion.sh`.
 	
 	- On each successful build, a new `score.pdf` will be placed in the subfolder `rill/builds/letter-portrait`.
