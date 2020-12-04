@@ -29,7 +29,8 @@ class MusicMaker(object):
         rcleaned_music = self._clean_up_rhythm(music, time_signature_pairs)
         #fused_music = self._fuse_logical_ties(rcleaned_music,
         #                                      time_signature_pairs)
-        pitched_music = self._add_pitches(rcleaned_music, self.pitches)
+        bchecked_music = self._add_bar_number_checks(rcleaned_music)
+        pitched_music = self._add_pitches(bchecked_music, self.pitches)
         articulate_music = self._add_attachments(pitched_music)
         music_with_overrides = self._add_overrides(articulate_music)
         return music_with_overrides
@@ -49,16 +50,6 @@ class MusicMaker(object):
             assert shard_duration == time_sig_duration
             abjad.mutate(shard).rewrite_meter(meter, boundary_depth=1)
             abjad.mutate(shard).split([meter.duration], cyclic=True)
-            #abjad.mutate(shard).fuse()
-        return music
-
-    def _fuse_logical_ties(self, music, time_signature_pairs):
-        shards = abjad.mutate(music[:]).split(time_signature_pairs)
-        for i, shard in enumerate(shards):
-            time_signature = time_signature_pairs[i]
-            selection = abjad.select(shard).logical_ties()
-            for logical_tie in selection:
-                abjad.mutate(logical_tie).fuse()
         return music
 
     def _make_basic_rhythm(self, time_signature_pairs, counts, denominator):
@@ -102,6 +93,15 @@ class MusicMaker(object):
             pitch = pitches[i]
             for note in logical_tie:
                 note.written_pitch = pitch
+        return music
+
+    def _add_bar_number_checks(self, music):
+        abjad.attach(abjad.LilyPondLiteral(
+            r"\barNumberCheck #2"), music[1])
+        abjad.attach(abjad.LilyPondLiteral(
+            r"\barNumberCheck #4"), music[3])
+        abjad.attach(abjad.LilyPondLiteral(
+            r"\barNumberCheck #6"), music[5])
         return music
 
     def _add_attachments(self, music):
