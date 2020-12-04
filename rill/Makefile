@@ -14,17 +14,12 @@ all: segments
 materials/music_data/music_data_shelve.db: materials/music_data/definition.py
 	cd $(dir $<) && $(PYTHON) $(notdir $<)
 
-segments/segment_%/definition.py: segments/segment_%/genDef_v1.py segments/segment_%/music_data.py materials/music_data/music_data_shelve.db
+segments/segment_%/illustration.ly segments/segment_%/illustration.pdf builds/segments/%.ly builds/segments/%.ily: segments/segment_%/genDef_v1.py segments/segment_%/music_data.py materials/music_data/music_data_shelve.db
+	-mkdir -p builds/segments
 	cd $(dir $<) && \
 	s=$(subst /,,$(subst segments/segment_,,$(dir $<))) && \
 	ix=`$(PYTHON) -c "import sys; print(sys.argv[2:].index(sys.argv[1]))" $${s} $(SEGMENTS)` && \
 	$(PYTHON) ./genDef_v1.py $${s} $$((ix+1))
-
-
-segments/segment_%/illustration.ly segments/segment_%/illustration.pdf builds/segments/%.ly builds/segments/%.ily: segments/segment_%/definition.py
-	-mkdir -p builds/segments
-	cd $(dir $<) && $(PYTHON) $(notdir $<)
-
 
 builds/segments/segment_%.ily: segments/segment_%/illustration.ly
 	-mkdir -p $(dir $<)

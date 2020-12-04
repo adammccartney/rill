@@ -211,10 +211,4 @@ Viola_instrument_music_data = segment_music_data.Viola
 lilypond_file = segment_maker.run()
 """
 
-
-cwd = Path.cwd()
-target = cwd / 'definition.py'
-print(target)
-output_file = open(target, 'w')
-output_file.write(segment_definition)
-output_file.close()
+exec(segment_definition)
