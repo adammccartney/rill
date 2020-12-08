@@ -27,7 +27,7 @@ parts.ly: ../parts.ily segments
 
 # all parts are generated from one parts.ly
 $(PARTS_PDF): parts.ly
-	LANG=C lilypond $<
+	./lilypond.sh $<
 
 tag_script_output.tex: tag_script.sh
 	./tag_script.sh > $@
@@ -46,7 +46,7 @@ score.pdf: score.tex front-cover.pdf preface.pdf music.pdf $(PARTS_PDF) back-cov
 	LANG=C xelatex $<
 
 %.pdf: %.ly
-	LANG=C lilypond $<
+	./lilypond.sh $<
 
 clean:
 	$(MAKE) -C ../.. clean
