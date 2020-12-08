@@ -8,7 +8,6 @@ from pathlib import Path
 
 from rill.segments.segment_C.music_data import segment_music_data
 
-bar_nums = checks.get_barNumbers(segment_name)
 
 segment_name = sys.argv[1]
 rehearsal_mark = sys.argv[2]
@@ -137,8 +136,9 @@ from rill.tools.MusicMaker import MusicMaker
 from rill.tools.allocateBarNums import BarNumberChecks
 
 checks = BarNumberChecks()
-this_current_directory =  Path.cwd()
+bar_nums = checks.get_barNumbers(segment_name)
 
+this_current_directory =  Path.cwd()
 score = rill.ScoreTemplate()
 score_template = score()
 
