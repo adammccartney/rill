@@ -27,26 +27,26 @@ parts.ly: ../parts.ily segments
 
 # all parts are generated from one parts.ly
 $(PARTS_PDF): parts.ly
-	lilypond $<
+	LANG=C lilypond $<
 
 tag_script_output.tex: tag_script.sh
 	./tag_script.sh > $@
 
 # front cover made from tex after call to shell
 front-cover.pdf: front-cover.tex tag_script_output.tex
-	xelatex $<
+	LANG=C xelatex $<
 
 # all pdfs are needed for score.pdf
 score.pdf: score.tex front-cover.pdf preface.pdf music.pdf $(PARTS_PDF) back-cover.pdf
-	xelatex $<
+	LANG=C xelatex $<
 
 # generic pdf generation
 
 %.pdf: %.tex
-	xelatex $<
+	LANG=C xelatex $<
 
 %.pdf: %.ly
-	lilypond $<
+	LANG=C lilypond $<
 
 clean:
 	$(MAKE) -C ../.. clean
