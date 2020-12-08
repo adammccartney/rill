@@ -34,16 +34,16 @@ tag_script_output.tex: tag_script.sh
 
 # front cover made from tex after call to shell
 front-cover.pdf: front-cover.tex tag_script_output.tex
-	LANG=C xelatex $<
+	./xelatex.sh $<
 
 # all pdfs are needed for score.pdf
 score.pdf: score.tex front-cover.pdf preface.pdf music.pdf $(PARTS_PDF) back-cover.pdf
-	LANG=C xelatex $<
+	./xelatex.sh $<
 
 # generic pdf generation
 
 %.pdf: %.tex
-	LANG=C xelatex $<
+	./xelatex.sh $<
 
 %.pdf: %.ly
 	./lilypond.sh $<
