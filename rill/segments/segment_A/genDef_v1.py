@@ -7,16 +7,16 @@ import rill
 from pathlib import Path
 
 from rill.segments.segment_A.music_data import segment_music_data
+from rill.tools.allocatBarNums import BarNumberChecks
 
 segment_name = sys.argv[1]
 rehearsal_mark = sys.argv[2]
 
+checks = BarNumberChecks()
+bar_nums = checks.get_barNumbers(segment_name)
+
 segment_dir = f"segment_{segment_name}"
 
-#module_name = "rill.segments.{0}.music_data".format(segment_dir)
-#print(module_name)
-#module = importlib.import_module(module_name)
-#segment_music_data = module.__dict__['segment_music_data']
 
 def make_music_code_block(instrument_name, instrument_music_data):
     music_block = f"""{instrument_name}_rhythm_definition = segment_maker.define_rhythm()
@@ -24,6 +24,7 @@ def make_music_code_block(instrument_name, instrument_music_data):
     counts={instrument_name}_instrument_music_data.talea,
     denominator={instrument_name}_instrument_music_data.denominator,
     pitches={instrument_name}_instrument_music_data.pitches,
+    bar_num_checks=bar_nums,
     attachment_makers={instrument_name}_instrument_music_data.attachments,
     override_makers={instrument_name}_instrument_music_data.overrides,
     )
