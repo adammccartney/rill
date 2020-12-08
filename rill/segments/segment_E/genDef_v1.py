@@ -13,7 +13,6 @@ rehearsal_mark = sys.argv[2]
 
 segment_dir = f"segment_{segment_name}"
 
-
 def make_music_code_block(instrument_name, instrument_music_data):
     music_block = f"""{instrument_name}_rhythm_definition = segment_maker.define_rhythm()
 {instrument_name}_music_maker = MusicMaker(
@@ -146,6 +145,7 @@ segment_maker = rill.SegmentMaker(
                                 current_directory=this_current_directory,
                                 build_path=rill.build_path,
                                 markup_leaves=False,
+                                bar_num_checks=bar_nums,
                                 segment_name='segment_{segment_name}',
                                 rehearsal_mark={rehearsal_mark},
                                 tempo=((1, 4), 50),
