@@ -11,14 +11,12 @@ class MusicMaker(object):
         counts,
         denominator,
         pitches,
-        bar_num_checks,
         attachment_makers=None,
         override_makers=None,
     ):
         self.counts = counts
         self.denominator = denominator
         self.pitches = pitches
-        self.bar_num_checks = bar_num_checks
         self.attachment_makers = attachment_makers or []
         self.override_makers = override_makers or []
 
@@ -29,9 +27,7 @@ class MusicMaker(object):
             self.denominator,
         )
         rcleaned_music = self._clean_up_rhythm(music, time_signature_pairs)
-        bchecked_music = self._add_bar_number_checks(rcleaned_music,
-                                                     self.bar_num_checks)
-        pitched_music = self._add_pitches(bchecked_music, self.pitches)
+        pitched_music = self._add_pitches(rcleaned_music, self.pitches)
         articulate_music = self._add_attachments(pitched_music)
         music_with_overrides = self._add_overrides(articulate_music)
         return music_with_overrides
@@ -94,15 +90,6 @@ class MusicMaker(object):
             pitch = pitches[i]
             for note in logical_tie:
                 note.written_pitch = pitch
-        return music
-
-    def _add_bar_number_checks(self, music, bar_nums):
-        abjad.attach(abjad.LilyPondLiteral(
-            r"\barNumberCheck #{}".format(bar_nums[0])), music[1])
-        abjad.attach(abjad.LilyPondLiteral(
-            r"\barNumberCheck #{}".format(bar_nums[1])), music[3])
-        abjad.attach(abjad.LilyPondLiteral(
-            r"\barNumberCheck #{}".format(bar_nums[2])), music[5])
         return music
 
     def _add_attachments(self, music):
