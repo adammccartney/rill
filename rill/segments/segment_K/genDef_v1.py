@@ -20,7 +20,6 @@ def make_music_code_block(instrument_name, instrument_music_data):
     counts={instrument_name}_instrument_music_data.talea,
     denominator={instrument_name}_instrument_music_data.denominator,
     pitches={instrument_name}_instrument_music_data.pitches,
-    bar_num_checks=bar_nums,
     attachment_makers={instrument_name}_instrument_music_data.attachments,
     override_makers={instrument_name}_instrument_music_data.overrides,
     )
