@@ -7,13 +7,9 @@ import rill
 from pathlib import Path
 
 from rill.segments.segment_K.music_data import segment_music_data
-from rill.tools.allocatBarNums import BarNumberChecks
 
 segment_name = sys.argv[1]
 rehearsal_mark = sys.argv[2]
-
-checks = BarNumberChecks()
-bar_nums = checks.get_barNumbers(segment_name)
 
 segment_dir = f"segment_{segment_name}"
 
@@ -136,6 +132,10 @@ import rill
 from pathlib import Path
 
 from rill.tools.MusicMaker import MusicMaker
+from rill.tools.allocateBarNums import BarNumberChecks
+
+checks = BarNumberChecks()
+bar_nums = checks.get_barNumbers(segment_name)
 
 this_current_directory =  Path.cwd()
 score = rill.ScoreTemplate()
@@ -147,6 +147,7 @@ segment_maker = rill.SegmentMaker(
                                 current_directory=this_current_directory,
                                 build_path=rill.build_path,
                                 markup_leaves=False,
+                                bar_num_checks=bar_nums,
                                 segment_name='segment_{segment_name}',
                                 rehearsal_mark={rehearsal_mark},
                                 tempo=((1, 4), 50),
