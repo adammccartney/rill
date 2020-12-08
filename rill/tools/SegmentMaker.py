@@ -168,6 +168,7 @@ class SegmentMaker(abjad.SegmentMaker):
             build_path=None,
             current_directory=None,
             markup_leaves=None,
+            bar_num_checks=None,
             metronome_marks=None,
             segment_name=None,
             rehearsal_mark=None,
@@ -181,6 +182,7 @@ class SegmentMaker(abjad.SegmentMaker):
         self.build_path = build_path
         self.current_directory = current_directory
         self.markup_leaves = markup_leaves
+        self.bar_num_checks = bar_num_checks
         self.metronome_marks = metronome_marks or []
         self.segment_name = segment_name
         self.rehearsal_mark = rehearsal_mark
@@ -324,6 +326,16 @@ class SegmentMaker(abjad.SegmentMaker):
             rests.append(rest)
         context.extend(rests)
 
+    def _add_bar_number_checks(self):
+        context = self._score["Global_Rests"]
+        bar_nums = self.bar_num_checks
+        abjad.attach(abjad.LilyPondLiteral(
+            r"\barNumberCheck #{}".format(bar_nums[0])), context[1])
+        abjad.attach(abjad.LilyPondLiteral(
+            r"\barNumberCheck #{}".format(bar_nums[1])), context[3])
+        abjad.attach(abjad.LilyPondLiteral(
+            r"\barNumberCheck #{}".format(bar_nums[2])), context[5])
+
     def _make_lilypond_file(self):
         path = "../../stylesheets/stylesheet.ily"
         lilypond_file = abjad.LilyPondFile.new(
@@ -359,6 +371,7 @@ class SegmentMaker(abjad.SegmentMaker):
         self._call_rhythm_definitions()
         self._configure_score()
         self._configure_rehearsal_mark()
+        self._add_bar_number_checks()
         self._attach_leaf_index_markup()
         self._render_illustration()
         self._build_segment()
