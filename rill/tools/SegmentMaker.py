@@ -154,6 +154,7 @@ class SegmentMaker(abjad.SegmentMaker):
             "build_path",
             "current_directory",
             "markup_leaves",
+            "bar_num_checks",
             "metronome_marks",
             "rehearsal_mark",
             "segment_name",
