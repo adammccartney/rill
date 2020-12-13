@@ -1,3 +1,9 @@
 #!/bin/bash
 
-LANG=C timeout 1m xelatex $1
+if [ "`which timeout`" != "" ]; then
+	TIMEOUT="timeout 1m"
+else
+	TIMEOUT=
+fi
+
+LANG=C $TIMEOUT xelatex $1
