@@ -36,4 +36,4 @@ clean:
 	rm -f segments/segment_*/illustration.pdf
 	rm -f segments/segment_*/illustration.ly
 	rm -f segments/segment_*/definition.py
-	rm -f materials/music_data/music_data_shelve.db
+	rm -f materials/music_data/*.db
