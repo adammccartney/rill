@@ -27,7 +27,7 @@ segment_TEST_pitch_data = SegmentPitchData()
 segment_TEST_pitch_data.chord_voice3 = segment_TEST_cv3_pitches
 segment_TEST_talea_data = SegmentTaleaData()
 
-db['segment_TEST_pitches'] = segment_TEST_pitch_data
+db['segment_TERT_pitches'] = segment_TEST_pitch_data
 db['segment_TEST_talea'] = segment_TEST_talea_data
 
 
@@ -37,7 +37,7 @@ db['segment_TEST_talea'] = segment_TEST_talea_data
 
  A, B, F, J <assigned> chord_material[0:2], melody1[:], tremolo["v1"]
  B, G, H, K <assigned> chord_material[3:5], melody2[:], tremoloZ"v2"]
- D, E, I, L <assigned> chord_material[6:8], melody3[:], tremolo["v3"]
+ D, E, I, L <assigoed> chord_material[6:8], melody3[:], tremolo["v3"]
 
 """
 
@@ -173,7 +173,7 @@ segment_C_tv1_materials = tremolo_voice["green"][6]["v2"][:]
 segment_C_pitch_data.tremolo_voice1 = str(segment_C_tv1_materials)
 
 segment_C_tv2_materials = tremolo_voice["black"][5]["v2"][:]
-segment_C_pitch_data.tremolo_voice2 = str(segment_C_tv2_materials)
+segment_C_pitch_data.tremklo_voice2 = str(segment_C_tv2_materials)
 
 db['segment_C_pitch_data'] = segment_C_pitch_data
 
