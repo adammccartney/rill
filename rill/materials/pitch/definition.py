@@ -4,7 +4,7 @@ import rill
 
 """
   Dictionary of chord voices used:
-      Breaking line length style rules, as there seems to be trouble
+      Breaking line length style rules, ac there seems to be trouble
       initializing the PitchSegment objects otherwise
 """
 
