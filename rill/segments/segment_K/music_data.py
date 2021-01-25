@@ -137,7 +137,7 @@ Violin1_music_data = InstrumentMusicData()
 Violin1_music_data.pitches = segment_K_Violin1_pitch_segment
 Violin1_music_data.talea = segment_K_pulse_counts
 Violin1_music_data.denominator = fastest_denom
-Violin1_music_data.attachments = [background_dynamic, markup.pizz]
+Violin1_music_data.attachments = [background_dynamic, markup.pont]
 segment_music_data.Violin1 = Violin1_music_data
 
 segment_K_Violin2_instr_pdref = segment_K_instr_pdref.Violin2
@@ -148,7 +148,7 @@ Violin2_music_data = InstrumentMusicData()
 Violin2_music_data.pitches = segment_K_Violin2_pitch_segment
 Violin2_music_data.talea = segment_K_pulse_counts
 Violin2_music_data.denominator = fastest_denom
-Violin2_music_data.attachments = [background_dynamic, markup.pizz]
+Violin2_music_data.attachments = [background_dynamic, markup.pont]
 segment_music_data.Violin2 = Violin2_music_data
 
 segment_K_Violin3_instr_pdref = segment_K_instr_pdref.Violin3
@@ -159,7 +159,7 @@ Violin3_music_data = InstrumentMusicData()
 Violin3_music_data.pitches = segment_K_Violin3_pitch_segment
 Violin3_music_data.talea = segment_K_pulse_counts
 Violin3_music_data.denominator = slowest_denom
-Violin3_music_data.attachments = [background_dynamic, markup.pizz]
+Violin3_music_data.attachments = [background_dynamic, markup.pont]
 segment_music_data.Violin3 = Violin3_music_data
 
 segment_K_Violin4_instr_pdref = segment_K_instr_pdref.Violin4
@@ -170,7 +170,7 @@ Violin4_music_data = InstrumentMusicData()
 Violin4_music_data.pitches = segment_K_Violin4_pitch_segment
 Violin4_music_data.talea = segment_K_pulse_counts
 Violin4_music_data.denominator = slowest_denom
-Violin4_music_data.attachments = [background_dynamic, markup.pizz]
+Violin4_music_data.attachments = [background_dynamic, markup.pont]
 segment_music_data.Violin4 = Violin4_music_data
 
 segment_K_Violin5_instr_pdref = segment_K_instr_pdref.Violin5
@@ -181,7 +181,7 @@ Violin5_music_data = InstrumentMusicData()
 Violin5_music_data.pitches = segment_K_Violin5_pitch_segment
 Violin5_music_data.talea = segment_K_pulse_counts
 Violin5_music_data.denominator = slowest_denom
-Violin5_music_data.attachments = [background_dynamic, markup.pizz]
+Violin5_music_data.attachments = [background_dynamic, markup.pont]
 segment_music_data.Violin5 = Violin5_music_data
 
 segment_K_Violin6_instr_pdref = segment_K_instr_pdref.Violin6

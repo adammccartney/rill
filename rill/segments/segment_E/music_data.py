@@ -182,7 +182,7 @@ segment_E_Violin6_pitch_segment = abjad.PitchSegment(segment_E_Violin6_pd)
 Violin6_music_data = InstrumentMusicData()
 Violin6_music_data.pitches = segment_E_Violin6_pitch_segment
 Violin6_music_data.talea = segment_E_euclidean_counts
-Violin6_music_data.attachments = [markup.pizz, foreground_dynamic]
+Violin6_music_data.attachments = [markup.pont, foreground_dynamic]
 segment_music_data.Violin6 = Violin6_music_data
 
 segment_E_Violin7_instr_pdref = segment_E_instr_pdref.Violin7
@@ -192,7 +192,7 @@ segment_E_Violin7_pitch_segment = abjad.PitchSegment(segment_E_Violin7_pd)
 Violin7_music_data = InstrumentMusicData()
 Violin7_music_data.pitches = segment_E_Violin7_pitch_segment.transpose(-12)
 Violin7_music_data.talea = segment_E_euclidean_counts
-Violin7_music_data.attachments = [markup.pizz, foreground_dynamic]
+Violin7_music_data.attachments = [markup.pont, foreground_dynamic]
 segment_music_data.Violin7 = Violin7_music_data
 
 segment_E_Violin8_instr_pdref = segment_E_instr_pdref.Violin8
@@ -202,7 +202,7 @@ segment_E_Violin8_pitch_segment = abjad.PitchSegment(segment_E_Violin8_pd)
 Violin8_music_data = InstrumentMusicData()
 Violin8_music_data.pitches = segment_E_Violin8_pitch_segment.transpose(-24)
 Violin8_music_data.talea = segment_E_euclidean_counts
-Violin8_music_data.attachments = [markup.pizz, foreground_dynamic]
+Violin8_music_data.attachments = [markup.pont, foreground_dynamic]
 segment_music_data.Violin8 = Violin8_music_data
 
 segment_E_Viola_instr_pdref = segment_E_instr_pdref.Viola

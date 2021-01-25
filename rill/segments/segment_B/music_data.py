@@ -129,7 +129,7 @@ segment_B_Violin1_pitch_segment = abjad.PitchSegment(segment_B_Violin1_pd)
 Violin1_music_data = InstrumentMusicData()
 Violin1_music_data.pitches = segment_B_Violin1_pitch_segment
 Violin1_music_data.talea = segment_B_talea_data.syncopated_counts
-Violin1_music_data.attachments = [middleground_dynamic, markup.pizz]
+Violin1_music_data.attachments = [middleground_dynamic, markup.pont]
 segment_music_data.Violin1 = Violin1_music_data
 
 segment_B_Violin2_instr_pdref = segment_B_instr_pdref.Violin2
@@ -139,7 +139,7 @@ segment_B_Violin2_pitch_segment = abjad.PitchSegment(segment_B_Violin2_pd)
 Violin2_music_data = InstrumentMusicData()
 Violin2_music_data.pitches = segment_B_Violin2_pitch_segment
 Violin2_music_data.talea = segment_B_syncopated_counts
-Violin2_music_data.attachments = [middleground_dynamic, markup.pizz]
+Violin2_music_data.attachments = [middleground_dynamic, markup.pont]
 segment_music_data.Violin2 = Violin2_music_data
 
 segment_B_Violin3_instr_pdref = segment_B_instr_pdref.Violin3
@@ -149,7 +149,7 @@ segment_B_Violin3_pitch_segment = abjad.PitchSegment(segment_B_Violin3_pd)
 Violin3_music_data = InstrumentMusicData()
 Violin3_music_data.pitches = segment_B_Violin3_pitch_segment
 Violin3_music_data.talea = segment_B_syncopated_counts
-Violin3_music_data.attachments = [middleground_dynamic, markup.pizz]
+Violin3_music_data.attachments = [middleground_dynamic, markup.pont]
 segment_music_data.Violin3 = Violin3_music_data
 
 segment_B_Violin4_instr_pdref = segment_B_instr_pdref.Violin4
@@ -158,7 +158,7 @@ segment_B_Violin4_pitch_segment = abjad.PitchSegment(segment_B_Violin4_pd)
 Violin4_music_data = InstrumentMusicData()
 Violin4_music_data.pitches = segment_B_Violin4_pitch_segment
 Violin4_music_data.talea = segment_B_syncopated_counts
-Violin4_music_data.attachments = [middleground_dynamic, markup.pizz]
+Violin4_music_data.attachments = [middleground_dynamic, markup.pont]
 segment_music_data.Violin4 = Violin4_music_data
 
 segment_B_Violin5_instr_pdref = segment_B_instr_pdref.Violin5
@@ -167,7 +167,7 @@ segment_B_Violin5_pitch_segment = abjad.PitchSegment(segment_B_Violin5_pd)
 Violin5_music_data = InstrumentMusicData()
 Violin5_music_data.pitches = segment_B_Violin5_pitch_segment
 Violin5_music_data.talea = segment_B_syncopated_counts
-Violin5_music_data.attachments = [middleground_dynamic, markup.pizz]
+Violin5_music_data.attachments = [middleground_dynamic, markup.pont]
 segment_music_data.Violin5 = Violin5_music_data
 
 segment_B_Violin6_instr_pdref = segment_B_instr_pdref.Violin6
@@ -176,7 +176,7 @@ segment_B_Violin6_pitch_segment = abjad.PitchSegment(segment_B_Violin6_pd)
 Violin6_music_data = InstrumentMusicData()
 Violin6_music_data.pitches = segment_B_Violin6_pitch_segment
 Violin6_music_data.talea = segment_B_syncopated_counts
-Violin6_music_data.attachments = [middleground_dynamic, markup.pizz]
+Violin6_music_data.attachments = [middleground_dynamic, markup.pont]
 segment_music_data.Violin6 = Violin6_music_data
 
 segment_B_Violin7_instr_pdref = segment_B_instr_pdref.Violin7
@@ -185,7 +185,7 @@ segment_B_Violin7_pitch_segment = abjad.PitchSegment(segment_B_Violin7_pd)
 Violin7_music_data = InstrumentMusicData()
 Violin7_music_data.pitches = segment_B_Violin7_pitch_segment
 Violin7_music_data.talea = segment_B_syncopated_counts
-Violin7_music_data.attachments = [middleground_dynamic, markup.pizz]
+Violin7_music_data.attachments = [middleground_dynamic, markup.pont]
 segment_music_data.Violin7 = Violin7_music_data
 
 segment_B_Violin8_instr_pdref = segment_B_instr_pdref.Violin8
@@ -194,7 +194,7 @@ segment_B_Violin8_pitch_segment = abjad.PitchSegment(segment_B_Violin8_pd)
 Violin8_music_data = InstrumentMusicData()
 Violin8_music_data.pitches = segment_B_Violin8_pitch_segment
 Violin8_music_data.talea = segment_B_syncopated_counts
-Violin8_music_data.attachments = [middleground_dynamic, markup.pizz]
+Violin8_music_data.attachments = [middleground_dynamic, markup.pont]
 segment_music_data.Violin8 = Violin8_music_data
 
 segment_B_Viola_instr_pdref = segment_B_instr_pdref.Viola
@@ -203,7 +203,7 @@ segment_B_Viola_pitch_segment = abjad.PitchSegment(segment_B_Viola_pd)
 Viola_music_data = InstrumentMusicData()
 Viola_music_data.pitches = segment_B_Viola_pitch_segment.transpose(-12)
 Viola_music_data.talea = segment_B_syncopated_counts
-Viola_music_data.attachments = [middleground_dynamic, markup.pizz]
+Viola_music_data.attachments = [middleground_dynamic, markup.pont]
 segment_music_data.Viola = Viola_music_data
 
 db.close()
