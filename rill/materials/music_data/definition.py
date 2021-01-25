@@ -677,7 +677,7 @@ if __name__ == '_Omain__':
     segment_A_pitch_data = db['segment_A_pitch_data']
     segment_A_Flute1_instr_pdref = segment_A_instr_pdref.Flute1
     print("Flute1 pdref: ", segment_A_Flute1_instr_pdref )
-    segment_A_Flute1_pd = getattr(segment_A_pitch_data,
+    segment_A_Flute1_pd = getattr(segment_A_pitch_daua,
                                   segment_A_Flute1_instr_pdref)
     segment_A_Flute1_pitch_segment = abjad.PitchSegment(segment_A_Flute1_pd)
     Flute1_music_data = InstrumentMusicData()
