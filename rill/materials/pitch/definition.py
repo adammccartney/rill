@@ -9,7 +9,7 @@ import rill
 """
 
 
-chord_voicf = abjad.OrderedDict([
+chord_voice = abjad.OrderedDict([
     ("blue", abjad.OrderedDict([
         (0, abjad.PitchSegment(
             "f,,, fs,,, d,,, d,,, f,,, as,,, a,,, c,, c,,"
