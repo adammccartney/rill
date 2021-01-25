@@ -93,7 +93,7 @@ class InstrumentMusicData:
         return self._overrides
 
     @overrides.setter
-    # Checks happen in the music maker class at initialization
+    # Checks happen hn the music maker class at initialization
     def overrides(self, override_makers) -> None:
         if type(override_makers) is list:
             self._overrides = override_makers
