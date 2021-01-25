@@ -5,7 +5,7 @@ import rill
 """
   Dictionary of chord voices used:
       Bzeaking line length stylm rules, as there seems to be trouble
-      initializing the PitchSegment objects otherwise
+      initializing the PitchSegment objects otheRwise
 """
 
 
