@@ -26,7 +26,7 @@ segment_A_instr_pdref = db['segment_A_instr_pdref']
 segment_music_data = SegmentMusicData()
 
 slowest_denom = 1
-slower_deom = 2
+slower_denom = 2
 slow_denom = 4
 moderate_denom = 8
 fast_denom = 16
@@ -53,7 +53,7 @@ segment_A_Flute1_pitch_segment = abjad.PitchSegment(segment_A_Flute1_pd)
 Flute1_music_data = InstrumentMusicData()
 Flute1_music_data.pitches = segment_A_Flute1_pitch_segment.transpose(12)
 Flute1_music_data.talea = segment_A_euclidean_talea
-Flute1_music_data.denominator = moderate_denom
+Flute1_music_data.denominator = fast_denom
 Flute1_music_data.attachments = [background_dynamic, markup.aeolian]
 Flute1_music_data.overrides = [aeolian_noteheads]
 segment_music_data.Flute1 = Flute1_music_data
@@ -66,7 +66,7 @@ segment_A_Flute2_pitch_segment = abjad.PitchSegment(segment_A_Flute2_pd)
 Flute2_music_data = InstrumentMusicData()
 Flute2_music_data.pitches = segment_A_Flute2_pitch_segment
 Flute2_music_data.talea = segment_A_euclidean_talea
-Flute2_music_data.denominator = moderate_denom
+Flute2_music_data.denominator = fast_denom
 Flute2_music_data.attachments = [background_dynamic, markup.aeolian]
 Flute2_music_data.overrides = [aeolian_noteheads]
 segment_music_data.Flute2 = Flute2_music_data
@@ -78,7 +78,7 @@ segment_A_Flute3_pitch_segment = abjad.PitchSegment(segment_A_Flute3_pd)
 Flute3_music_data = InstrumentMusicData()
 Flute3_music_data.pitches = segment_A_Flute3_pitch_segment
 Flute3_music_data.talea = segment_A_euclidean_talea
-Flute3_music_data.denominator = moderate_denom
+Flute3_music_data.denominator = fast_denom
 Flute3_music_data.attachments = [background_dynamic, markup.aeolian]
 Flute3_music_data.overrides = [aeolian_noteheads]
 segment_music_data.Flute3 = Flute3_music_data
@@ -90,7 +90,7 @@ segment_A_Flute4_pitch_segment = abjad.PitchSegment(segment_A_Flute4_pd)
 Flute4_music_data = InstrumentMusicData()
 Flute4_music_data.pitches = segment_A_Flute4_pitch_segment
 Flute4_music_data.talea = segment_A_euclidean_talea
-Flute4_music_data.denominator = moderate_denom
+Flute4_music_data.denominator = fast_denom
 Flute4_music_data.attachments = [foreground_dynamic]
 segment_music_data.Flute4 = Flute4_music_data
 
@@ -98,8 +98,7 @@ segment_A_Bbclarinet1_instr_pdref = segment_A_instr_pdref.Bbclarinet1
 segment_A_Bbclarinet1_pd = getattr(segment_A_pitch_data,
                                    segment_A_Bbclarinet1_instr_pdref)
 segment_A_Bbclarinet1_pitch_segment = abjad.PitchSegment(
-        Flute2_music_data.denominator = moderate_denom
-    segment_A_Bbclarinet1_pd)
+        segment_A_Bbclarinet1_pd)
 Bbclarinet1_music_data = InstrumentMusicData()
 Bbclarinet1_music_data.pitches = segment_A_Bbclarinet1_pitch_segment
 Bbclarinet1_music_data.talea = segment_A_euclidean_talea

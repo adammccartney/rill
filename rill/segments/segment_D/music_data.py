@@ -39,11 +39,11 @@ middleground_dynamic = dynamics.p
 foreground_dynamic = dynamics.mf
 
 slowest_denom = 1
-slower_deom = 2
+slower_denom = 2
 slow_denom = 4
-moderate_denom = 8
+slower_denom = 8
 fast_denom = 16
-fastest_denom = 32
+moderate_denom = 32
 
 aeolian_noteheads = note_head_overrides.cross
 
@@ -62,7 +62,7 @@ segment_D_Flute1_pitch_segment = abjad.PitchSegment(segment_D_Flute1_pd)
 Flute1_music_data = InstrumentMusicData()
 Flute1_music_data.pitches = segment_D_Flute1_pitch_segment.transpose(-12)
 Flute1_music_data.talea = segment_D_choral1_counts
-Flute1_music_data.denominator = moderate_denom
+Flute1_music_data.denominator = slower_denom
 Flute1_music_data.attachments = [middleground_dynamic]
 segment_music_data.Flute1 = Flute1_music_data
 
@@ -85,7 +85,7 @@ segment_D_Flute3_pitch_segment = abjad.PitchSegment(segment_D_Flute3_pd)
 Flute3_music_data = InstrumentMusicData()
 Flute3_music_data.pitches = segment_D_Flute3_pitch_segment.transpose(-24)
 Flute3_music_data.talea = segment_D_choral2_counts
-Flute3_music_data.denominator = moderate_denom
+Flute3_music_data.denominator = slower_denom
 segment_music_data.Flute3 = Flute3_music_data
 
 segment_D_Flute4_instr_pdref = segment_D_instr_pdref.Flute4
@@ -108,7 +108,7 @@ segment_D_Bbclarinet1_pitch_segment = abjad.PitchSegment(
 Bbclarinet1_music_data = InstrumentMusicData()
 Bbclarinet1_music_data.pitches = segment_D_Bbclarinet1_pitch_segment
 Bbclarinet1_music_data.talea = [1, 1, 1, 1, 1]
-Bbclarinet1_music_data.denominator = fastest_denom
+Bbclarinet1_music_data.denominator = moderate_denom
 Bbclarinet1_music_data.attachments = [liminal_dynamic, markup.aeolian]
 Bbclarinet1_music_data.overrides = [aeolian_noteheads]
 segment_music_data.Bbclarinet1 = Bbclarinet1_music_data
@@ -217,7 +217,7 @@ segment_D_Viola_pd = getattr(segment_D_pitch_data, segment_D_Viola_instr_pdref)
 segment_D_Viola_pitch_segment = abjad.PitchSegment(segment_D_Viola_pd)
 Viola_music_data = InstrumentMusicData()
 Viola_music_data.pitches = segment_D_Viola_pitch_segment.transpose(-12)
-Viola_music_data.denominator = fastest_denom
+Viola_music_data.denominator = moderate_denom
 Viola_music_data.talea = [1, 1, 1, 1, 1]
 Viola_music_data.attachments = [liminal_dynamic, markup.legato, markup.tasto]
 Viola_music_data.overrides = [aeolian_noteheads]

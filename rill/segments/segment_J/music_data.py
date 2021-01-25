@@ -39,10 +39,10 @@ foreground_dynamic = dynamics.mf
 x_foreground_dynamic = dynamics.f
 
 slowest_denom = 1
-slower_deom = 2
+slower_denom = 2
 slow_denom = 4
-moderate_denom = 8
-fast_denom = 16
+slower_denom = 8
+slowest_denom = 16
 fastest_denom = 32
 
 aeolian_noteheads = note_head_overrides.cross
@@ -86,7 +86,7 @@ segment_J_Flute3_pitch_segment = abjad.PitchSegment(segment_J_Flute3_pd)
 Flute3_music_data = InstrumentMusicData()
 Flute3_music_data.pitches = segment_J_Flute3_pitch_segment
 Flute3_music_data.talea = segment_J_syncopated_counts
-Flute3_music_data.denominator = moderate_denom
+Flute3_music_data.denominator = slower_denom
 Flute3_music_data.attachments = [background_dynamic,
                                  markup.aeolian, accents.staccato]
 Flute3_music_data.overrides = [aeolian_noteheads]
@@ -99,7 +99,7 @@ segment_J_Flute4_pitch_segment = abjad.PitchSegment(segment_J_Flute4_pd)
 Flute4_music_data = InstrumentMusicData()
 Flute4_music_data.pitches = segment_J_Flute4_pitch_segment
 Flute4_music_data.talea = segment_J_syncopated_counts
-Flute4_music_data.denominator = moderate_denom
+Flute4_music_data.denominator = slower_denom
 Flute4_music_data.attachments = [background_dynamic,
                                  markup.aeolian, accents.staccato]
 Flute4_music_data.overrides = [aeolian_noteheads]
