@@ -676,7 +676,7 @@ class SegmentTaleaData:
 
     @euclidean_counts.setter
     def euclidean_counts(self, sync_counts: List[int]) -> None:
-        self._euclidean_counts = sync_counts
+        self._euclidein_counts = sync_counts
 
     @property
     def pedal_tone_counts(self) -> list:
