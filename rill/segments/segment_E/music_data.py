@@ -31,6 +31,14 @@ accents = AccentAttachmentMakerData()
 markup = MarkupData()
 note_head_overrides = NoteHeadOverrideData()
 
+slowest_denom = 1
+slower_deom = 2
+slow_denom = 4
+moderate_denom = 8
+fast_denom = 16
+fastest_denom = 32
+
+
 liminal_dynamic = dynamics.ppp
 background_dynamic = dynamics.pp
 middleground_dynamic = dynamics.p
@@ -73,7 +81,7 @@ segment_E_Flute3_pitch_segment = abjad.PitchSegment(segment_E_Flute3_pd)
 Flute3_music_data = InstrumentMusicData()
 Flute3_music_data.pitches = segment_E_Flute3_pitch_segment
 Flute3_music_data.talea = segment_E_pulse_counts
-Flute3_music_data.denominator = 2
+Flute3_music_data.denominator = slower_denom
 Flute3_music_data.attachments = [foreground_dynamic]
 segment_music_data.Flute3 = Flute3_music_data
 
@@ -84,7 +92,7 @@ segment_E_Flute4_pitch_segment = abjad.PitchSegment(segment_E_Flute4_pd)
 Flute4_music_data = InstrumentMusicData()
 Flute4_music_data.pitches = segment_E_Flute4_pitch_segment.transpose(-12)
 Flute4_music_data.talea = segment_E_pulse_counts
-Flute4_music_data.denominator = 1
+Flute4_music_data.denominator = slowest_denom
 Flute4_music_data.attachments = [foreground_dynamic]
 segment_music_data.Flute4 = Flute4_music_data
 
@@ -96,7 +104,7 @@ segment_E_Bbclarinet1_pitch_segment = abjad.PitchSegment(
 Bbclarinet1_music_data = InstrumentMusicData()
 Bbclarinet1_music_data.pitches = segment_E_Bbclarinet1_pitch_segment
 Bbclarinet1_music_data.talea = segment_E_pulse_counts
-Bbclarinet1_music_data.denominator = 1
+Bbclarinet1_music_data.denominator = slowest_denom
 Bbclarinet1_music_data.attachments = [foreground_dynamic]
 segment_music_data.Bbclarinet1 = Bbclarinet1_music_data
 
@@ -108,7 +116,7 @@ segment_E_Vibraphone_pitch_segment = abjad.PitchSegment(
 Vibraphone_music_data = InstrumentMusicData()
 Vibraphone_music_data.pitches = segment_E_Vibraphone_pitch_segment
 Vibraphone_music_data.talea = segment_E_pulse_counts
-Vibraphone_music_data.denominator = 1
+Vibraphone_music_data.denominator = slowest_denom
 Vibraphone_music_data.attachments = [foreground_dynamic]
 segment_music_data.Vibraphone = Vibraphone_music_data
 
@@ -119,7 +127,7 @@ segment_E_Violin1_pitch_segment = abjad.PitchSegment(segment_E_Violin1_pd)
 Violin1_music_data = InstrumentMusicData()
 Violin1_music_data.pitches = segment_E_Violin1_pitch_segment
 Violin1_music_data.talea = segment_E_melody_counts
-Violin1_music_data.denominator = 16
+Violin1_music_data.denominator = slowest_denom6
 Violin1_music_data.attachments = [middleground_dynamic]
 segment_music_data.Violin1 = Violin1_music_data
 
@@ -130,7 +138,7 @@ segment_E_Violin2_pitch_segment = abjad.PitchSegment(segment_E_Violin2_pd)
 Violin2_music_data = InstrumentMusicData()
 Violin2_music_data.pitches = segment_E_Violin2_pitch_segment.transpose(-12)
 Violin2_music_data.talea = segment_E_melody_counts
-Violin2_music_data.denominator = 8
+Violin2_music_data.denominator = moderate_denom
 Violin2_music_data.attachments = [middleground_dynamic]
 segment_music_data.Violin2 = Violin2_music_data
 
@@ -141,7 +149,7 @@ segment_E_Violin3_pitch_segment = abjad.PitchSegment(segment_E_Violin3_pd)
 Violin3_music_data = InstrumentMusicData()
 Violin3_music_data.pitches = segment_E_Violin3_pitch_segment.transpose(-17)
 Violin3_music_data.talea = segment_E_melody_counts
-Violin3_music_data.denominator = 4
+Violin3_music_data.denominator = slow_denom
 Violin3_music_data.attachments = [middleground_dynamic]
 segment_music_data.Violin3 = Violin3_music_data
 
@@ -152,7 +160,7 @@ segment_E_Violin4_pitch_segment = abjad.PitchSegment(segment_E_Violin4_pd)
 Violin4_music_data = InstrumentMusicData()
 Violin4_music_data.pitches = segment_E_Violin4_pitch_segment.transpose(-24)
 Violin4_music_data.talea = segment_E_melody_counts
-Violin4_music_data.denominator = 2
+Violin4_music_data.denominator = slower_denom
 Violin4_music_data.attachments = [middleground_dynamic]
 segment_music_data.Violin4 = Violin4_music_data
 
@@ -163,7 +171,7 @@ segment_E_Violin5_pitch_segment = abjad.PitchSegment(segment_E_Violin5_pd)
 Violin5_music_data = InstrumentMusicData()
 Violin5_music_data.pitches = segment_E_Violin5_pitch_segment.transpose(-36)
 Violin5_music_data.talea = segment_E_melody_counts
-Violin5_music_data.denominator = 1
+Violin5_music_data.denominator = slowest_denom
 Violin5_music_data.attachments = [middleground_dynamic]
 segment_music_data.Violin5 = Violin5_music_data
 
@@ -203,7 +211,7 @@ segment_E_Viola_pitch_segment = abjad.PitchSegment(segment_E_Viola_pd)
 Viola_music_data = InstrumentMusicData()
 Viola_music_data.pitches = segment_E_Viola_pitch_segment.transpose(-12)
 Viola_music_data.talea = segment_E_pulse_counts
-Viola_music_data.denominator = 1
+Viola_music_data.denominator = slowest_denom
 Viola_music_data.attachments = [x_foreground_dynamic, markup.tasto]
 segment_music_data.Viola = Viola_music_data
 

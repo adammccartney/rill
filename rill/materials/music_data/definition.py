@@ -88,7 +88,7 @@ segment_A_instr_pdref.Viola = 'chord_voice3'
 db['segment_A_instr_pdref'] = segment_A_instr_pdref
 
 segment_A_talea_data = SegmentTaleaData()
-segment_A_pulse_sequence = seq.generate_random_pulse_sequence(10)
+segment_A_pulse_sequence = seq.generate_random_pulse_sequence(5)
 segment_A_talea_data.pulse_counts = segment_A_pulse_sequence
 db['segment_A_talea_data'] = segment_A_talea_data
 
@@ -143,7 +143,7 @@ segment_B_instr_pdref.Viola = 'tremolo_voice2'
 db['segment_B_instr_pdref'] = segment_B_instr_pdref
 
 segment_B_talea_data = SegmentTaleaData()
-segment_B_pulse_sequence = seq.generate_random_pulse_sequence(10)
+segment_B_pulse_sequence = seq.generate_random_pulse_sequence(8)
 segment_B_talea_data.pulse_counts = segment_B_pulse_sequence
 segment_B_talea_data.choral1_counts = [3, 1, 3, 1, 2]
 segment_B_talea_data.choral2_counts = [2, 2, 1, 1, 1, 1, 2]
@@ -198,7 +198,7 @@ db['segment_C_instr_pdref'] = segment_C_instr_pdref
 
 
 segment_C_talea_data = SegmentTaleaData()
-segment_C_pulse_sequence = seq.generate_random_pulse_sequence(10)
+segment_C_pulse_sequence = seq.generate_random_pulse_sequence(3)
 segment_C_talea_data.pulse_counts = segment_C_pulse_sequence
 db['segment_C_talea_data'] = segment_C_talea_data
 
@@ -249,7 +249,7 @@ db['segment_D_instr_pdref'] = segment_D_instr_pdref
 
 
 segment_D_talea_data = SegmentTaleaData()
-segment_D_pulse_sequence = seq.generate_random_pulse_sequence(10)
+segment_D_pulse_sequence = seq.generate_random_pulse_sequence(5)
 segment_D_talea_data.pulse_counts = segment_D_pulse_sequence
 db['segment_D_talea_data'] = segment_D_talea_data
 
@@ -304,7 +304,7 @@ db['segment_E_instr_pdref'] = segment_E_instr_pdref
 
 
 segment_E_talea_data = SegmentTaleaData()
-segment_E_pulse_sequence = seq.generate_random_pulse_sequence(10)
+segment_E_pulse_sequence = seq.generate_random_pulse_sequence(6)
 segment_E_talea_data.pulse_counts = segment_E_pulse_sequence
 db['segment_E_talea_data'] = segment_E_talea_data
 
@@ -355,7 +355,7 @@ segment_F_instr_pdref.Viola = 'melody_voice'
 db['segment_F_instr_pdref'] = segment_F_instr_pdref
 
 segment_F_talea_data = SegmentTaleaData()
-segment_F_pulse_sequence = seq.generate_random_pulse_sequence(10)
+segment_F_pulse_sequence = seq.generate_random_pulse_sequence(4)
 segment_F_talea_data.pulse_counts = segment_F_pulse_sequence
 db['segment_F_talea_data'] = segment_F_talea_data
 
