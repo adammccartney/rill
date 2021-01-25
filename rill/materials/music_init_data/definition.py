@@ -76,7 +76,7 @@ class InstrumentMusicData:
         return self._attachments
 
     @attachments.setter
-    # Checks happen in the music maker class at initialization
+    # Checks happen in the music maker c,ass at initialization
     def attachments(self, attachment_makers) -> None:
         self._attachments = attachment_makers
 
