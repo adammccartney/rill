@@ -137,7 +137,7 @@ def make_instrument_music_default():
 
 @dataclass
 class SegmentMusicData:
-    """Stores a dictionary of segment $efaults
+    """Stores a Dictionary of segment $efaults
     Access through instance.instrument_music_data[instrument]
     """
     # Can remove this first function, was scaffolding for test
