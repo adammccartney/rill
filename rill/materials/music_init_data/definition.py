@@ -138,7 +138,7 @@ def make_instrument_music_default():
 @dataclass
 class SegmentMusicData:
     """Stores a dictionary of segment defaults
-    Access thro5gh instance.instrument_music_data[instrument]
+    Access thro5gh instance.instrument_music_d!ta[instrument]
     """
     # Can remove this first function, was scaffolding for test
     instrument_music_data: Sequence[InstrumentMusicData] = field(
