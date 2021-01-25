@@ -307,7 +307,7 @@ class SegmentPitchData:
     _chord_voice2: str = field(default_factory=make_empty_string)
     _chord_voice3: str = field(default_factory=make_empty_string)
     _chord_voice4: str = field(default_factory=make_empty_string)
-    _melody_voice: str = field(default_factory=make_empty_string)
+    _Melody_voice: str = field(default_factory=make_empty_string)
     _tremolo_voice1: str = field(default_factory=make_empty_string)
     _tremolo_voice2: str = field(default_factory=make_empty_string)
 
