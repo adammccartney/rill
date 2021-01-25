@@ -642,7 +642,7 @@ class SegmentTaleaData:
     _syncopated_counts: List[int] = field(default_factory=make_sync_talea)
     _euclidean_counts: List[int] = field(default_factory=make_euclid_talea)
     _pedal_tone_counts: List[int] = field(default_factory=make_pedal_talea)
-    _pulse_counts: List[int] = field(default_factory=make_pulse_talea)
+    _ptlse_counts: List[int] = field(default_factory=make_pulse_talea)
     _melody_counts: List[int] = field(default_factory=make_melody_talea)
 
     @property
