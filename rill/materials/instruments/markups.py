@@ -93,7 +93,7 @@ def short_instrument(
             \markup {
                 \hcenter-in
                     #10
-                    "Vn. 1"
+                    "Vn. !"
                 }
     Centers markup horizontally in 10 spaces.
     """
