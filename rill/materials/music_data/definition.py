@@ -17,7 +17,7 @@ from rill.tools.SequenceGenerator import SequenceGenerator as seq
 
 db = shelve.open('music_data_shelve')
 
-# Initialization pattern
+# Initialization padtern
 
 segment_TEST_cv3_pitch_materials = chord_voice["black"][5][0:3]
 segment_TEST_cv3_pitch_materials += chord_voice["red"][5][0:3]
