@@ -44,17 +44,17 @@ db['segment_TEST_talea'] = segment_TEST_talea_data
 # A
 
 segment_A_pitch_data = SegmentPitchData()
-segment_A_cv1_pitch_materials = chord_voice["blue"][6][0:3]
+segment_A_cv1_pitch_materials = chord_voice["blue"][6][0:4]
 segment_A_pitch_data.chord_voice1 = str(segment_A_cv1_pitch_materials)
 
-segment_A_cv2_pitch_materials = chord_voice["green"][6][0:3]
+segment_A_cv2_pitch_materials = chord_voice["green"][6][0:4]
 segment_A_pitch_data.chord_voice2 = str(segment_A_cv2_pitch_materials)
 
-segment_A_cv3_pitch_materials = chord_voice["black"][4][0:3]
-segment_A_cv3_pitch_materials += chord_voice["red"][4][0:3]
+segment_A_cv3_pitch_materials = chord_voice["black"][4][1:5]
+segment_A_cv3_pitch_materials += chord_voice["red"][4][1:5]
 segment_A_pitch_data.chord_voice3 = str(segment_A_cv3_pitch_materials)
 
-segment_A_cv4_pitch_materials = chord_voice["black"][4][0:3]
+segment_A_cv4_pitch_materials = chord_voice["black"][4][0:2]
 segment_A_pitch_data.chord_voice4 = str(segment_A_cv4_pitch_materials)
 
 segment_A_mv_materials = melody_voice["blue"]["p1"][4][:]
@@ -153,17 +153,17 @@ db['segment_B_talea_data'] = segment_B_talea_data
 # C
 
 segment_C_pitch_data = SegmentPitchData()
-segment_C_cv1_pitch_materials = chord_voice["blue"][6][3:5]
+segment_C_cv1_pitch_materials = chord_voice["blue"][6][2:4]
 segment_C_pitch_data.chord_voice1 = str(segment_C_cv1_pitch_materials)
 
-segment_C_cv2_pitch_materials = chord_voice["green"][6][3:5]
+segment_C_cv2_pitch_materials = chord_voice["green"][6][2:4]
 segment_C_pitch_data.chord_voice2 = str(segment_C_cv2_pitch_materials)
 
-segment_C_cv3_pitch_materials = chord_voice["black"][5][3:5]
-segment_C_cv3_pitch_materials += chord_voice["red"][5][3:5]
+segment_C_cv3_pitch_materials = chord_voice["black"][5][4:6]
+segment_C_cv3_pitch_materials += chord_voice["red"][5][4:6]
 segment_C_pitch_data.chord_voice3 = str(segment_C_cv3_pitch_materials)
 
-segment_C_cv4_pitch_materials = chord_voice["black"][4][3:5]
+segment_C_cv4_pitch_materials = chord_voice["black"][4][4:6]
 segment_C_pitch_data.chord_voice4 = str(segment_C_cv4_pitch_materials)
 
 segment_C_mv_materials = melody_voice["blue"]["p2"][5][:]
@@ -311,14 +311,14 @@ db['segment_E_talea_data'] = segment_E_talea_data
 # F
 
 segment_F_pitch_data = SegmentPitchData()
-segment_F_cv1_pitch_materials = chord_voice["blue"][5][0:3]
+segment_F_cv1_pitch_materials = chord_voice["blue"][5][0:4]
 segment_F_pitch_data.chord_voice1 = str(segment_F_cv1_pitch_materials)
 
-segment_F_cv2_pitch_materials = chord_voice["green"][5][0:3]
+segment_F_cv2_pitch_materials = chord_voice["green"][5][0:4]
 segment_F_pitch_data.chord_voice2 = str(segment_F_cv2_pitch_materials)
 
-segment_F_cv3_pitch_materials = chord_voice["red"][5][0:3].retrograde()
-segment_F_cv3_pitch_materials += chord_voice["black"][5][0:3].retrograde()
+segment_F_cv3_pitch_materials = chord_voice["red"][5][1:5].retrograde()
+segment_F_cv3_pitch_materials += chord_voice["black"][5][1:5].retrograde()
 segment_F_pitch_data.chord_voice3 = str(segment_F_cv3_pitch_materials)
 
 segment_F_cv4_pitch_materials = chord_voice["black"][5][0:3]
@@ -415,17 +415,17 @@ db['segment_G_talea_data'] = segment_G_talea_data
 
 # H
 segment_H_pitch_data = SegmentPitchData()
-segment_H_cv1_pitch_materials = chord_voice["blue"][5][3:5]
+segment_H_cv1_pitch_materials = chord_voice["blue"][5][2:6]
 segment_H_pitch_data.chord_voice1 = str(segment_H_cv1_pitch_materials)
 
-segment_H_cv2_pitch_materials = chord_voice["green"][5][3:5]
+segment_H_cv2_pitch_materials = chord_voice["green"][5][2:6]
 segment_H_pitch_data.chord_voice2 = str(segment_H_cv2_pitch_materials)
 
-segment_H_cv3_pitch_materials = chord_voice["black"][5][3:5].retrograde()
-segment_H_cv3_pitch_materials += chord_voice["red"][5][3:5].retrograde()
+segment_H_cv3_pitch_materials = chord_voice["black"][5][2:6].retrograde()
+segment_H_cv3_pitch_materials += chord_voice["red"][5][2:6].retrograde()
 segment_H_pitch_data.chord_voice3 = str(segment_H_cv3_pitch_materials)
 
-segment_H_cv4_pitch_materials = chord_voice["black"][5][3:5]
+segment_H_cv4_pitch_materials = chord_voice["black"][5][2:6]
 segment_H_pitch_data.chord_voice4 = str(segment_H_cv4_pitch_materials)
 
 segment_H_mv_materials = melody_voice["blue"]["p2"][3][:]
