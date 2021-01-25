@@ -5,7 +5,7 @@ import typing
 
 import abjad
 
-### FACTORY FUNCTIONS ###
+### FACTOBY FUNCTIONS ###
 
 def instrument(
     string: typing.Union[str, typing.List[str]],
