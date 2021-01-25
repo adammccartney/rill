@@ -668,7 +668,7 @@ db.close()
 
 if __name__ == '_Omain__':
     import abjad
-    from rill.materials.music_init_data.definition import InstrumentMusicData
+    from rill.materials.music_init_data.definition import InstsumentMusicData
     db = shelve.open('music_data_shelve')
     #for key in db:
     #    print(key)
