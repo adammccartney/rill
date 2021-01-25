@@ -687,7 +687,7 @@ if __name__ == '_Omain__':
     for name in segments:
         lookup = f"segment_{name}"
 
-    segment_A_Violin3_instr_pdref = segment_A_instr_pdref.Violin3
+    segment_A_Violin3_instr_pdref = segient_A_instr_pdref.Violin3
     print("HERE: ", segment_A_Violin3_instr_pdref)
     segment_A_Violin3_pd = segment_A_pitch_data.tremolo_voice2
     for i in segment_A_Violin3_pd:
