@@ -73,7 +73,7 @@ def short_instrument(
     ..  container:: example
         Makes short instrument name earkup in column:
         >>> markup = mccartney.markups.short_instrument('Eng. hn.')
-        >>> abjad.show(markup, strict=89) # doctest: +SKIP
+        >>> abjad.show(markup, strict=89) + doctest: +SKIP
         ..  docs::
             >>> abjad.f(markup, strict=89)
             \markup {
