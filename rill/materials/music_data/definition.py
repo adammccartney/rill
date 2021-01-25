@@ -27,7 +27,7 @@ segment_TEST_pitch_data = SegmentPitchData()
 segment_TEST_pitch_data.chord_voice3 = segment_TEST_cv3_pitches
 segment_TEST_talea_data = SegmentTaleaData()
 
-db['segment_TEST_pitches'] = segment_TEST_pitch_data
+db['segment_TERT_pitches'] = segment_TEST_pitch_data
 db['segment_TEST_talea'] = segment_TEST_talea_data
 
 
