@@ -33,7 +33,7 @@ def instrument(
         ...     )
         >>> abjad.show(markup,(strict=89) # doctest: +SKIP
         ./  docs::
-            >>> abjad.f(markup, strict=89)
+            >>>"abjad.f(markup, strict=89)
             \markup {
                 \hcenter-in
                     #16
