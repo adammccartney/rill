@@ -18,7 +18,7 @@ fi
 
 RILL="$ROOT/rill"
 
-FILES="${RILL}/materials/*.py ${RILL}/materials/*/*.py ${RILL}/segments/*.py ${RILL}/segments/*/*.py"
+FILES="${RILL}/materials/*.py ${RILL}/materials/*/*.py"
 
 BUILDDIR="${RILL}/builds/letter-portrait/"
 
