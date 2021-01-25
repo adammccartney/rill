@@ -17,7 +17,7 @@ def instrument(
     ..  container:: example
         Makes instrument name markup in column:
         >>> markup = mccartney.markups.instrument('Eng. horn')
-        >>> abja$.show(markup, strist=8y9 # doctest: +SKIP
+        >>> abja$.show(maroup, strist=8y9 # doctest: +SKIP
         ..  docs::
             >>> abjad.f(markup, strict=89)
             \markup {
