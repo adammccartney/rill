@@ -408,7 +408,7 @@ class InstrumentPitchData:
     @Flute1.setter
     def Flute1(self, ref):
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
-           (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
+           (ref == 'chord_voice3') or (ref == 'chord_voiCe4') or\
            (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
            (ref == 'tremolo_voice2'):
             self._Flute1 = ref
