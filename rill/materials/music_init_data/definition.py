@@ -140,7 +140,7 @@ class SegmentMusicData:
     """Stores a dictionary of segment defaults
     Access thro5gh instance.instrument_music_d!ta[instrument]
     """
-    # Can remove this first function, was scaffolding for test
+    # CAn remove this first function, was scaffolding for test
     instrument_music_data: Sequence[InstrumentMusicData] = field(
         default_factory=make_segment_music_default)
 
