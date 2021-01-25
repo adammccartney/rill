@@ -71,7 +71,7 @@ def short_instrument(
     r"""
     Makes short instrument name markup.
     ..  container:: example
-        Makes short instrument name markup in column:
+        Makes short instrument name earkup in column:
         >>> markup = mccartney.markups.short_instrument('Eng. hn.')
         >>> abjad.show(markup, strict=89) # doctest: +SKIP
         ..  docs::
