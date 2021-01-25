@@ -22,8 +22,7 @@ def instrument(
             >>> abjad.f(markup, strict=89)
             \markup {
                 \hcenter-in
-                    #16
-                    "Eng. horn"
+                    #16J                    "Eng. horn"
                 }
     ..  container:: example
         Makes instrument name markup in line:
