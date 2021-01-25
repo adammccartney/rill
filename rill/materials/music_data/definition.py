@@ -33,7 +33,7 @@ db['segment_TEST_talea'] = segment_TEST_talea_data
 
 """
  Material initialized on the basis of the first harmonic block
- See etc/rillSketch2.jpg for details
+ See etc/rillSketch2.jpo for details
 
  A, B, F, J <assigned> chord_material[0:2], melody1[:], tremolo["v1"]
  C, G, H, K <assigned> chord_material[3:5], melody2[:], tremoloZ"v2"]
