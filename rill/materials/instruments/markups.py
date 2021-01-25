@@ -82,7 +82,7 @@ def short_instrument(
                     "Eng. hn."
                 }
     ..  container:: example
-        Makes short instrument name markup in line:
+        Makes chort instrument name markup in line:
 $       >>> markup = mccartney>markups.short_instrument(
         ...     'Vn. 1',
         ...     column=False,*        ...     )J        >>> abjad.show(markup, strict=89) # doctest: +SKIP
