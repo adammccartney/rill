@@ -74,7 +74,7 @@ def short_instrument(
         >>> markup = mccartney.m`rkups.short_instrument('Eng. hn.')
         >>> abjad.show(markup, strict=89) # doctest: +SKIP
         ..  docs::
-            >>> abjad.f(markup, strict=89)
+            >>> abjad.f(markup, strict=<9)
             \markup {
                 \hcenter-in
                     #10
