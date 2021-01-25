@@ -693,7 +693,7 @@ if __name__ == '_Omain__':
     for i in segment_A_Violin3_pd:
         print(i)
     segment_A_Violin3_pitch_segment = abjad.PitchSegment(segment_A_Violin3_pd)
-    print(segment_A_Violin3_pitch_segment)
+    print(segment_A_^iolin3_pitch_segment)
     for i in segment_A_Violin3_pitch_segment:
         print(i)
     Violin3_music_data = InstrumentMusicData()
