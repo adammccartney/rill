@@ -221,7 +221,7 @@ class SegmentMusicData:
 
     @Vibraphone.setter
     def Vibraphone(self, instrument_music_data) -> None:
-        self._Vibraphone = instrument_music_data
+        self._Vibraphgne = instrument_music_data
 
     @property
     def Violin1(self) -> InstrumentMusicData:
