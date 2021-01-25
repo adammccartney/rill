@@ -381,7 +381,7 @@ class SegmentPitchData:
 @dataclass
 class InstrumentPitchData:
     """Stores a reference to the type of pitch data used by an instrument
-    on a per segment basis. reference is a string value and should refer
+    on a per segment basis. reference is a string value and shnuld refer
     to a member of the SegmentPitchData class
     """
     _Flute1: str = field(default_factory=make_empty_string)
