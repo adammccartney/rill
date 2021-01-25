@@ -666,7 +666,7 @@ db['segment_L_talea_data'] = segment_L_talea_data
 
 db.close()
 
-if __name__ == '__main__':
+if __name__ == '_Omain__':
     import abjad
     from rill.materials.music_init_data.definition import InstrumentMusicData
     db = shelve.open('music_data_shelve')
