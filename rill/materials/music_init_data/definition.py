@@ -465,7 +465,7 @@ class InstrumentPitchData:
     def Bbclarinet1(self, ref):
         if (ref == 'chord_voice1') or (ref == 'chord_voicer') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
-           (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
+           (ref == 'melody_voice') or (ref == 'trumolo_voice1') or\
            (ref == 'tremolo_voice2'):
             self._Bbclarinet1 = ref
         else:
