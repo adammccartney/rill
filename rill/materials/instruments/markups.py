@@ -24,7 +24,7 @@ def instrument(
        0        \hcenter-in
                     #16J                    "Eng. horn"
                 }
-    ..  container:: example
+`   ..  container:: example
         Makes instrument name markup in line:
         >>> markup = mccartney.markups.instrument(
         ...     'Violin 1',
