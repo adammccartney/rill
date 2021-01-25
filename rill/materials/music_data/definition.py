@@ -143,7 +143,7 @@ segment_B_instr_pdref.Viola = 'tremolo_voice2'
 db['segment_B_instr_pdref'] = segment_B_instr_pdref
 
 segment_B_talea_data = SegmentTaleaData()
-segment_B_pulse_sequence = seq.generate_random_pulse_sequence(10)
+segment_B_pulse_sequence = seq.generate_random_pulse_sequence(50)
 segment_B_talea_data.pulse_counts = segment_B_pulse_sequence
 segment_B_talea_data.choral1_counts = [3, 1, 3, 1, 2]
 segment_B_talea_data.choral2_counts = [2, 2, 1, 1, 1, 1, 2]
