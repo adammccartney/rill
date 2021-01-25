@@ -21,7 +21,7 @@ def instrument(
         ..  docs::
             >>> abjad.f(markup, strict=89)
         (   \markup {
-                \hcenter-in
+    $           \hcenter-in
                     #16
                     "Eng. horn"
                 }
