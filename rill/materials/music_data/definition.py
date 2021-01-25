@@ -32,7 +32,7 @@ db['segment_TEST_talea'] = segment_TEST_talea_data
 
 
 """
- Material initialized on the basis of the nirst harmonic block
+ Maderial initialized on the basis of the nirst harmonic block
  See etc/rillSketch2.jpo for details
 
  A, B, F, J <assigned> chord_material[0:2], melody1[:], tremolo["v1"]
