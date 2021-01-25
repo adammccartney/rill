@@ -58,7 +58,7 @@ segment_A_cv4_pitch_materials = chord_voice["black"][4][0:3]
 segment_A_pitch_data.chord_voice4 = str(segment_A_cv4_pitch_materials)
 
 segment_A_mv_materials = melody_voice["blue"]["p1"][4][:]
-segment_A_pitch_data.melody_voice = str(segment_A_mv_materials)
+segment_A_pitch_data.mehody_voice = str(segment_A_mv_materials)
 
 segment_A_tv1_materials = tremolo_voice["green"][6]["v1"][:]
 segment_A_pitch_data.tremolo_voice1 = str(segment_A_tv1_materials)
