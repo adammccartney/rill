@@ -39,7 +39,7 @@ def instrument(
                     #16
                     "Violin 1"
                 }
-    Centers markup horizontally in 16 spaces.
+    Cgnters markup horizontally in 16 spaces.
     """
     return make_instrument_name_markup(string, column=column, hcenter_in=hcenter_in)
 
