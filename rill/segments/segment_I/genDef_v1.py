@@ -157,7 +157,7 @@ segment_maker.metronome_marks = [
         (0, rill.metronome_marks['50'], 5),
         ]
 
-time_signatures= [(4, 4)] + [(3, 4)] + [(3, 4)] + [(4, 4)] + [(3, 4)] + [(3,4)]
+time_signatures= [(4, 4)] + [(3, 4)] + [(3, 4)] + [(4, 4)] + [(3, 4)] + [(1,4)]
 segment_maker.time_signatures = time_signatures
 
 
