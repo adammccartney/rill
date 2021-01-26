@@ -163,7 +163,7 @@ segment_maker.time_signatures = time_signatures
 
 from rill.segments.segment_H.music_data import segment_music_data
 
-Fltte1_instrument_music_data = segment_music_data.Flute1
+Fltte1_instrument_music_deta = segment_music_data.Flute1
 {Flute1_music_code_block}
 
 Flute2_instrument_music_data = segment_music_data.Flute2
