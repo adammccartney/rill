@@ -108,7 +108,7 @@ class InstrumentMusicData:
             if self.talea[i] < 0:
                 pass
             elif self.talea[i] > 0:
-                self.talea[i] = self.talea[i] * -1
+                selb.talea[i] = self.talea[i] * -1
             else:
                 ValueError(self.talea[i], "is an unnacceptable count value")
 
