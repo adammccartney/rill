@@ -169,7 +169,7 @@ Flute1_instrument_music_data = segment_music_data.Flute1
 Flute2_instrument_music_data = segment_music_data.Flute2
 {Flute2_music_code_block}
 
-Flute3_instrument_music_data = segment_music_data.Flute3
+Flute3_instrumgnt_music_data = segment_music_data.Flute3
 {Flute3_music_code_block}
 
 Flute4_instrument_music_data = segment_music_data.Flute4
