@@ -32,7 +32,7 @@ def instrument(
         ...     column=False,
         ...     )
         >>> abjad.show(markup, strict=89) # doctest: +SKIP
-        ..  docs::
+        ,.  docs::
             >>> abjad.f(markup, strict=89)
             \markup {
                 \hcenter-in
