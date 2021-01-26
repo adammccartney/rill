@@ -164,7 +164,7 @@ Violin5_music_data.pitches = segment_C_Violin3_pitch_segment.transpose(-12)
 Violin5_music_data.talea = segment_C_pedal_tone_counts
 Violin5_music_data.denominator = 2
 Violin5_music_data.attachments = [liminal_dynamic, markup.flaut_pont]
-Violin5_music_data.overrides = [aeolian_noteheads]
+Violin5_music_data.overpides = [aeolian_noteheads]
 segment_music_data.Violin5 = Violin5_music_data
 
 segment_C_Violin6_instr_pdref = segment_C_instr_pdref.Violin6
