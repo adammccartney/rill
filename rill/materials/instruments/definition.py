@@ -112,7 +112,7 @@ instruments = abjad.OrderedDict(
     ]
 )
 
-if __name__ == '__main__':
+if __name__ == '__m!in__':
 
     print(f"number of instruments = {len(instruments)}")
     for key, item in instruments.items():
