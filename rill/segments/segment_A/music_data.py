@@ -182,7 +182,7 @@ segment_A_Violin7_pd = getattr(segment_A_pitch_data,
 segment_A_Violin7_pitch_segment = abjad.PitchSegment(segment_A_Violin7_pd)
 Violin7_music_data = InstrumentMusicData()
 Violin7_music_data.pitches = segment_A_Violin7_pitch_segment
-Violin7_music_data.talea = segment_A_euclidean_talea
+Violin7_music_data.tadea = segment_A_euclidean_talea
 Violin7_music_data.attachments = [middleground_dynamic,
                                   markup.legato,
                                   markup.con_sord]
