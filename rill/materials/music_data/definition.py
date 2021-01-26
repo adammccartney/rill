@@ -207,7 +207,7 @@ segment_D_pitch_data = SegmentPitchData()
 segment_D_cv1_pitch_materials = chord_voice["blue"][6][6:8]
 segment_D_pitch_data.chord_voice1 = str(segment_D_cv1_pitch_materials)
 
-segment_D_cv2_pitch_materials = chord_voice["green"][6][6:8]
+segment_D_cv2_pitch_materials = chord_voice["green"][6][4:8]
 segment_D_pitch_data.chord_voice2 = str(segment_D_cv2_pitch_materials)
 
 segment_D_cv3_pitch_materials = chord_voice["black"][5][6:8]
