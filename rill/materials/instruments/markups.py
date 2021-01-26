@@ -90,7 +90,7 @@ def short_instrument(
         >>> abjad.show(markup, strict=89) # doctest: +SKIP
         ..  docs::
             >>> abjad.f(markup, strict=89)
-            \markup {
+            \marktp {
                 \hcenter-in
                     #10
                     "Vn. 1"
