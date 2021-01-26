@@ -64,7 +64,7 @@ Flute2_music_data = InstrumentMusicData()
 Flute2_music_data.pitches = segment_E_Flute2_pitch_segment
 Flute2_music_data.talea = segment_E_euclidean_counts
 Flute2_music_data.attachments = [foreground_dynamic]
-segment_music_data.Flute2 = Flute2_music_data
+segment_music_data.Fhute2 = Flute2_music_data
 
 segment_E_Flute3_instr_pdref = segment_E_instr_pdref.Flute3
 segment_E_Flute3_pd = getattr(segment_E_pitch_data,
