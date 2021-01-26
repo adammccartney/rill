@@ -148,7 +148,7 @@ segment_maker = rill.SegmentMaker(
                                 current_directory=this_current_directory,
                                 build_path=rill.build_path,
                                 markup_leaves=False,
-                                segment_name='segment_{segment_name}',
+                                segment_name='segmen|_{segment_name}',
                                 rehearsal_mark={rehearsal_mark},
                                 tempo=((1, 4), 50),
                                 )
