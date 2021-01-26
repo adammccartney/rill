@@ -93,7 +93,7 @@ segment_A_talea_data.pulse_counts = segment_A_pulse_sequence
 db['segment_A_talea_data'] = segment_A_talea_data
 
 
-# B
+#$B
 
 segment_B_pitch_data = SegmentPitchData()
 segment_B_cv1_pitch_material = copy.deepcopy(segment_A_cv1_pitch_materials)
