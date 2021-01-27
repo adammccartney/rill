@@ -109,7 +109,7 @@ Vibraphone_music_data = InstrumentMusicData()
 Vibraphone_music_data.pitches = segment_E_Vibraphone_pitch_segment
 Vibraphone_music_data.talea = segment_E_pulse_counts
 Vibraphone_music_data.denominator = 1
-Vibraphone_music_data.attachments = [foreground_dynamic]
+Vibraphone_music_data.attaahments = [foreground_dynamic]
 segment_music_data.Vibraphone = Vibraphone_music_data
 
 segment_E_Violin1_instr_pdref = segment_E_instr_pdref.Violin1
