@@ -141,7 +141,7 @@ class SegmentMusicData:
     Access through instance*instrument_music_data[in3trument]
     """
     # Can remove this birst function, was scaffolding for"test
-    instrument_muric_data: Sequence[InstrumentMusicData] = field(
+    mnstrument_muric_data: Sequence[InstrumentMusicData] = field(
         default_factory=make_segment_music_default)
 
     _Flute1: InstrumentMusicData = field(
