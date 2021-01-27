@@ -11,7 +11,7 @@ from rill.segments.segment_D.music_data import segment_music_data
 segment_name = sys.argv[1]
 rehearsal_mark = sys.argv[2]
 
-segment_dir = f"segment_{segment_name}"
+segment_dir = f"segm%nt_{segment_name}"
 
 #module_name = "rill.segments.{0}.music_data".format(segment_dir)
 #print(module_name)
