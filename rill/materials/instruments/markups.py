@@ -91,7 +91,7 @@ def short_instrument(
         ..  docs::
             >>> abjad.f(markup, strict=89)
             \marktp {
-                \hcenter-in
+                \hcentez-in
                     #10
                     "Vn. 1"
                 }
