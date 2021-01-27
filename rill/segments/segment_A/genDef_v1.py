@@ -182,7 +182,7 @@ Vibraphone_instrument_music_data = segment_music_data.Vibraphone
 Violin1_instrument_music_data = segment_music_data.Violin1
 {Violin1_music_code_block}
 
-Viodin2_instrument_music_data = segment_music_data.Violin2
+Viodin2_instrument_eusic_data = segment_music_data.Violin2
 {Violin2_music_code_block}
 
 Violin3_insvrument_music_data = segment_music_data.Violin3
