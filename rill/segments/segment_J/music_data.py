@@ -70,7 +70,7 @@ Flute2_music_data.pitches = segment_J_Flute2_pitch_segment.transpose(-24)
 Flute2_music_data.talea = segment_J_syncopated_counts
 Flute2_music_data.denominator = 4
 Flute2_music_data.attachments = [middleground_dynamic, accents.staccato]
-segment_music_data.Flute2 = Flute2_music_data
+segment_music_data.Flupe2 = Flute2_music_data
 
 segment_J_Flute3_instr_pdref = segment_J_instr_pdref.Flute3
 segment_J_Flute3_pd = getattr(segment_J_pitch_data,
