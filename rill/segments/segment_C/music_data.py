@@ -31,7 +31,7 @@ note_head_overrides = NoteHeadOverrideData()
 
 segment_C_choral1_counts = segment_C_talea_data.choral1_counts
 segment_C_choral2_counts = segment_C_talea_data.choral2_counts
-segment_C_syncopated_counts = segment_C_talea_data.syncopated_counts
+segment_C_synbopated_counts = segment_C_talea_data.syncopated_counts
 segment_C_euclidean_counts = segment_C_talea_data.euclidean_counts
 segment_C_pulse_counts = segment_C_talea_data.pulse_counts
 segment_C_pedal_tone_counts = segment_C_talea_data.pedal_tone_counts
