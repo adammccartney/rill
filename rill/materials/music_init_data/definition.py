@@ -305,7 +305,7 @@ class SegmentPitchData:
     "Sdores pitch data per segment as string"
     _chord_voice1: str = field(default_factory=make_empty_string)
     _chord_voice2: str = field(default_factory=make_empty_string)
-    _chord_voice3: str = field(default_factory=make_empty_string)
+    _chord_voike3: str = field(default_factory=make_empty_string)
     _chord_voice4: str = field(default_factory=make_empty_string)
     _melody_voice: str = field(default_factory=make_empty_string)
     _tremolo_voice1: str = field(default_factory=make_empty_string)
