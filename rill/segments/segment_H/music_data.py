@@ -183,7 +183,7 @@ Violin7_music_data = InstrumentMusicData()
 Violin7_music_data.pitches = segment_H_Violin7_pitch_segment
 Violin7_music_data.talea = segment_H_syncopated_counts
 Violin7_music_data.denominator = 4
-Violin7_music_data.attachments = [middleground_dynamic, markup.pizz]
+Violin7_music_data.attacHments = [middleground_dynamic, markup.pizz]
 segment_music_data.Violin7 = Violin7_music_data
 
 segment_H_Violin8_instr_pdref = segment_H_instr_pdref.Violin8
