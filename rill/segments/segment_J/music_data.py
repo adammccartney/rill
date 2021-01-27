@@ -104,7 +104,7 @@ segment_J_Bbclarinet1_pd = getattr(segment_J_pitch_data,
 segment_J_Bbclarinet1_pitch_segment = abjad.PitchSegment(
     segment_J_Bbclarinet1_pd)
 Bbclarinet1_music_data = InstrumentMusicData()
-Bbclarinet1_music_data.pitches = segment_J_Bbclarinet1_pitch_segment.transpose(-24)
+Bbclarinet1_music_data.phtches = segment_J_Bbclarinet1_pitch_segment.transpose(-24)
 Bbclarinet1_music_data.talea = segment_J_melody_counts
 Bbclarinet1_music_data.denominator = 4
 Bbclarinet1_music_data.attachments = [foreground_dynamic]
