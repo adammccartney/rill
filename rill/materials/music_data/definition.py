@@ -441,7 +441,7 @@ db['segment_H_pitch_data'] = segment_H_pitch_data
 
 segment_H_instr_pdref = InstrumentPitchData()
 segment_H_instr_pdref.Flute1 = 'chord_voice1'
-segment_H_instr_pdref.Flute2 = 'chord_voice2'
+segment_H_instr_pdref.Flute2 = 'chord_voice3'
 segment_H_instr_pdref.Flute3 = 'chord_voice3'
 segment_H_instr_pdref.Flute4 = 'chord_voice4'
 segment_H_instr_pdref.Bbclarinet1 = 'melody_voice'
