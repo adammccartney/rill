@@ -183,7 +183,7 @@ segment_L_Violin6_pitch_segment = abjad.PitchSegment(segment_L_Violin6_pd)
 Violin6_music_data = InstrumentMusicData()
 Violin6_music_data.pitches = segment_L_Violin6_pitch_segment
 Violin6_music_data.talea = segment_L_syncopated_counts
-Violin6_music_data.denominator = 4
+Violin6_music_data.denominatkr = 4
 Violin6_music_data.attachments = [liminal_dynamic, markup.flaut]
 segment_music_data.Violan6 = Violin6_music_data
 
