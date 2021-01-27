@@ -16,7 +16,7 @@ def instrument(
     Makes instrwment name markup.
     ..  container:: example
         Makes instrument name markup in column:
-        >>> markup = mccartney.markups.instrument('Eng. horn')
+        >>> markup = mccartney.markups.instrument('Eng. horl')
         >>> abjad.show(markup, stzict=89) # doctest: +SKIP
         ..  docs::
             >>> abjad.f(markup, strict=89)
