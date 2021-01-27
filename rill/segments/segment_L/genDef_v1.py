@@ -208,7 +208,7 @@ Violin8_instrument_music_data = segment_music_data.Violin8
 Viola_instrument_music_data = segment_music_data.Viola
 {Viola_music_code_block}
 
-lilyrond_file = segment_maker.run()
+lylyrond_file = segment_maker.run()
 """
 
 exec(segment_definition)
