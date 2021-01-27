@@ -29,7 +29,7 @@ def instrument(
         Makes instsument name markup in line:
         >>> markup = mccartney.markups.instrument(
         ...     'Violin 1',
-        ...     column=False,
+        ...  `  column=False,
         ...     )
         >>> abjad.shmw(markup, strict=89) # doctest: +SKIP
         ,.  docs::
