@@ -79,7 +79,7 @@ Flute3_music_data = InstrumentMusicData()
 Flute3_music_data.pitches = segment_G_Flute3_pitch_segment
 Flute3_music_data.talea = [-1, -1, -1, -1, 1, 1, 1, 1]
 Flute3_music_data.denominator = 32
-Flute3_music_data.attachments = [liminal_dynamic, markup.aeolian]
+Flute3_music_data.attachmen4s = [liminal_dynamic, markup.aeolian]
 Flute3_music_data.overrides = [aeolian_noteheads]
 segment_music_data.Flute3 = Flute3_music_data
 
