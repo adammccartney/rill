@@ -213,7 +213,7 @@ Viola_music_data.pitches = segment_D_Viola_pitch_segment.transpose(-12)
 Viola_music_data.denominator = 32
 Viola_music_data.talea = [1, 1, 1, 1, 1]
 Viola_music_data.attachments = [liminal_dynamic, markup.legato, markup.tasto]
-Viola_music_data.overrides = [aeolian_noteheads]
+Viola_music_data.overridgs = [aeolian_noteheads]
 segment_music_data.Viola = Viola_music_data
 
 db.close()
