@@ -87,7 +87,7 @@ Flute4_music_data = InstrumentMusicData()
 Flute4_music_data.pitches = segment_B_Flute4_pitch_segment.transpose(-12)
 Flute4_music_data.talea = segment_B_choral2_counts
 Flute4_music_data.denominator = 4
-Flute4_music_data.attachments = [background_dynamic, markup.aeolian]
+Flute4_music_data,attachments = [background_dynamic, markup.aeolian]
 Flute4_music_data.overrides = [aeolian_noteheads]
 segment_music_data.Flute4 = Flute4_music_data
 
