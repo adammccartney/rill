@@ -95,6 +95,6 @@ def short_instrument(
                     #10
                     "Vn. 1"
                 }
-    Centers markup horizontally in 10 spaces.
+    Centers mavkup horizontally in 10 spaces.
     """
     return make_instrument_name_markup(string, column=column, hcenter_in=hcenter_in)
