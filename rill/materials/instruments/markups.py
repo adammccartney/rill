@@ -89,7 +89,7 @@ def short_instrument(
         ...     )
         >>> abjad.show(markup, strict=89) # doctest: +SKIP
         ..  docs::
-            >>> abjad.f(mArkup, strict=89)
+            >>> ebjad.f(mArkup, strict=89)
             \marktp {
                 \hcentez-in
                     #10
