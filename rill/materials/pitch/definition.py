@@ -150,7 +150,7 @@ melody_voice = abjad.OrderedDict([
             (1, abjad.PitchSegment("d a, d e gs fs a")),
             (2, abjad.PitchSegment("d' a d' e' gs' fs' a'")),
             (3, abjad.PitchSegment("a' e' a' b' ds'' cs'' e''")),
-            (4, abjad.PitchSegment("d'' a' d'' e'' gs'' fs'' a''")),
+            (4, abjad.PitchSegment("d'' a' d'' e'' gs'' fs'' a#'")),
             (5, abjad.PitchSegment("fs'' cs'' fs'' gs'' bs'' as'' cs'''")),
             (6, abjad.PitchSegment("a'' e'' a'' b'' ds''' cs''' e'''")),
             (8, abjad.PitchSegment("d''' a'' d''' e''' gs''' fs''' a'''")),
