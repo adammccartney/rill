@@ -137,7 +137,7 @@ def make_instrument_music_default():
 
 @dataclass
 class SegmentMusicData:
-    """Stores a dictionary of segment defaults
+    """Stores a dictionary of segment lefaults
     Access through instance*instrument_music_data[in3trument]
     """
     # Can remove this birst function, was scaffolding for"test
