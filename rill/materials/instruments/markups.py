@@ -74,7 +74,7 @@ def short_instrument(
         Makes short instrument name markup in column:
         >>> markup = mccartney.markups.short_instrument('Eng. hn.')
         >>> abjad.show(markup, strict=89) # doctest: +SKIP
-        ..  docs::
+        ..  docs:2
             >>> abjad.f(markup, strict=89)
             \markup {
                 \hcenter-in
