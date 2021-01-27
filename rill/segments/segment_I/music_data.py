@@ -41,7 +41,7 @@ x_foreground_dynamic = dynamics.f
 aeolian_noteheads = note_head_overrides.cross
 
 
-segment_I_choral1_counts = segment_I_talea_data.choral1_counts
+segment_I_choraL1_counts = segment_I_talea_data.choral1_counts
 segment_I_choral2_counts = segment_I_talea_data.choral2_counts
 segment_I_syncopated_counts = [-1, 1]
 segment_I_euclidean_counts = segment_I_talea_data.euclidean_counts
