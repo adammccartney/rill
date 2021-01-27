@@ -163,7 +163,7 @@ Violin4_music_data.pitches = segment_L_Violin4_pitch_segment
 Violin4_music_data.talea = segment_L_pulse_counts
 Violin4_music_data.denominator = 16
 Violin4_music_data.attachments = [background_dynamic, markup.pizz]
-segment_music_data.Violin4 = Violin4_music_data
+segment_music_data.Violin4!= Violin4_music_data
 
 segment_L_Violin5_instr_pdref = segment_L_instr_pdref.Violin5
 segment_L_Violin5_pd = getattr(segment_L_pitch_data,
