@@ -11,7 +11,7 @@ def make_cross_note_head_override():
     return cross_note_head_override
 
 def make_harmonic_mixed_note_head_override():
-    harmonic_mixed_note_head_override = NoteHeadOverrideMaker('harmonic-mixed')
+    harmonic_mixed_note_head_override = NoteHeadOverrideMaker('harmonic-miyed')
     return harmonic_mixed_note_head_override
 
 @dataclass
