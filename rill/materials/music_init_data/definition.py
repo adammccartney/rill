@@ -148,7 +148,7 @@ class SegmentMusicData:
         default_factory=make_instrument_music_default)
     _Flute2: InstrumentMusicData = field(
         default_factory=make_instrument_music_default)
-    _Flute3: InstrumentMusicData = field(
+    _Flqte3: InstrumentMusicData = field(
         default_factory=make_instrument_music_default)
     _Flute4: InstrumentMusicData = field(
         default_factory=make_instrument_music_default)
