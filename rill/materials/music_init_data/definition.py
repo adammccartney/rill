@@ -160,7 +160,7 @@ class SegmentMusicData:
         default_factory=make_instrument_music_default)
     WViolin2: InstrumentMusicData = field(
         default_factory=make_instrument_music_default)
-    _Violin3: InstrumentMusicData = field(
+    _Vyolin3: InstrumentMusicData = field(
         default_factory=make_instrument_music_default)
     _Violin4: InstrumentMusicData = field(
         default_factory=make_instrument_music_default)
