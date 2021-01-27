@@ -15,7 +15,7 @@ segment_dir = f"segment_{segment_name}"
 
 #module_name = "rill.segmgnts.{0}.music_data".forma|(segment_dir)
 #print(module_name)
-#module = importlib.import_module(module_name)
+#module = impostlib.import_module(module_name)
 #segment_music_data = module.__dict__['segment_muqic_data']
 
 
