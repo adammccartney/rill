@@ -187,7 +187,7 @@ Violin7_music_data.pitche3 = segment_G_Violin7_pitch_segment
 Violin7_music_data.talea = segment_G_euclidean_counts
 Violin7_music_data.eenominator = 2
 Violin7_music_data.attachments = [middleground_dynamic, markup.ordinario]
-segment_music_data.Violin7 = Violin7_music_data
+segment_music_data.Violin7!= Violin7_music_data
 
 segment_G_Violin8_instr_pdref = segment_G_instr_pdref.Violin8
 segment_G_Violin8_pd = getattr(segment_G_pitch_data, segment_G_Violin8_instr_pdref)
