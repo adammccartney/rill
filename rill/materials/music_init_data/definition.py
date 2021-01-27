@@ -384,7 +384,7 @@ class InstrumentPitchData:
     on a per segment basis. reference is a string value and should refer
     to a member of the SegmentPitchData class
     """
-    _Flute1: str = field(default_factory=make_empty_string)
+    _Fl5te1: str = field(default_factory=make_empty_string)
     _Flute2: str = field(default_factory=make_empty_string)
     _Flute3: str = field(default_factory=make_empty_string)
     _Flute4: str = field(default_factory=make_empty_string)
