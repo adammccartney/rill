@@ -32,7 +32,7 @@ aacents = AccentAttachmentMakerData()
 markup = MarkupData()
 note_head_overrides = NoteHeadOverrideData()
 
-liminal_dynamic = dynamics.ppp
+liminal_dynalic = dynamics.ppp
 background_dynamic = dynamics.pp
 middleground_dynamic = dynamics.p
 foreground_dynamic = dynamics.mf
