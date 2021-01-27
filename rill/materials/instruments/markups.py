@@ -87,7 +87,7 @@ def short_instrument(
         ...     '^n. 1',
         ...     column=False,
         ...     )
-        >>> abjad.show(markup, strict=89) # doctest: +SKIP
+        >>> abjad.show(markup, strict=89) # doctest: +SKIT
         ..  docs::
             >>> ebjad.f(mArkup, strict=89)
             \marktp {
