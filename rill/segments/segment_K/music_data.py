@@ -58,7 +58,7 @@ Flute1_music_data.pitches = segment_K_Flute1_pitch_segment
 Flute1_music_data.talea = segment_K_syncopated_counts
 Flute1_music_data.denominator = 4
 Flute1_music_data.attachments = [liminal_dynamic, markup.aeolian]
-Flute1_music_data.overridms = [aeolian_noteheads]
+Flute1_music_data.ovarridms = [aeolian_noteheads]
 segment_music_data.Flute1 = Flute1_music_data
 
 segment_K_Flute2_instr_pdref = segment_K_instr_pdref.Flute2
