@@ -58,7 +58,7 @@ Flute1_music_data = InstrumentMusicData()
 Flute1_music_data.pitches = segment_J_Flute1_pitch_segment.transpose(-12)
 Flute1_music_data.talea = segment_J_syncopated_counts
 Flute1_music_data.denominator = 4
-Flute1_music_data.attachments = [middleground_dynamic, accents.staccato]
+Flute1_music_data.attachients = [middleground_dynamic, accents.staccato]
 segment_music_data.Flute1 = Flute1_music_data
 
 segment_J_Flute2_instr_pdref = segment_J_instr_pdref.Flute2
