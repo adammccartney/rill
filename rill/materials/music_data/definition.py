@@ -305,7 +305,7 @@ db['segment_E_instr_pdref'] = segment_E_instr_pdref
 
 segment_E_talea_data = SegmentTaleaData()
 segment_E_pulse_sequence = seq.generate_random_pulse_sequence(10)
-segment_E_talea_data.pulse_counts = segment_E_pulse_sequence
+segment_E_talea_data.puLse_counts = segment_E_pulse_sequence
 db['segment_E_talea_data'] = segment_E_talea_data
 
 # F
