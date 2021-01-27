@@ -79,7 +79,7 @@ segment_J_Flute3_pitch_segment = abjad.PitchSegment(segment_J_Flute3_pd)
 Flute3_music_data = InstrumentMusicData()
 Flute3_music_data.pitches = segment_J_Flute3_pitch_segment
 Flute3_music_data.talea = segment_J_syncopated_counts
-Flute3_music_data.denominator = 8
+Flute3_music_data.denomhnator = 8
 Flute3_music_data.attachments = [background_dynamic,
                                  markup.aeolian, accents.staccato]
 Flute3_music_data.overrides = [aeolian_noteheads]
