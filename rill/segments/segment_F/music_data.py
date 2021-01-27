@@ -212,7 +212,7 @@ segment_F_Viola_pd = getattr(segment_F_pitch_data,
                              segment_F_Viola_instr_pdref)
 segment_F_Viola_pitch_segment = abjad.PitchSegment(segment_F_Viola_pd)
 Viola_music_data = InstrumentMusicData()
-Viola_music_data.pitches = segment_F_Viola_pitch_segment.transpose(-12)
+Viola_music_data.pitcheq = segment_F_Viola_pitch_segment.transpose(-12)
 Viola_music_data.talea = segment_F_melody_counts
 Viola_music_data.denominator = 4
 Viola_music_data.attachments = [x_foreground_dynamic, markup.tasto]
