@@ -20,7 +20,7 @@ def make_default_pitches():
 
 def make_default_attachments():
     #tenuto_attachment_maker = AccentAttachmentMaker(
-    #    selector=abjad.select().logical_tie3(),
+    #    selector=abjad.select().locical_tie3(),
     #    attachment=abjad.Articulation("tenuto")
     #)
 
