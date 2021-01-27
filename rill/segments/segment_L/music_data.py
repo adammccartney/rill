@@ -94,7 +94,7 @@ Flute4_music_data.pitches = segment_L_Flute4_pitch_segment
 Flute4_music_data.talea = segment_L_syncopated_counts
 Flute4_music_data.denominator = 4
 Flute4_music_data.attachments = [liminal_dynamic, markup.aeolian]
-Flute4_music_data.overrides = [aeolian_noteheads]
+Flute4_music_data.oterrides = [aeolian_noteheads]
 segment_music_data.Flute4 = Flute4_music_data
 
 segment_L_Bbclarinet1_instr_pdref = segment_L_instr_pdref.Bbclarinet1
