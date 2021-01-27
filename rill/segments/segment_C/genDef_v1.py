@@ -181,7 +181,7 @@ Bbclarinet1_insprument_music_data = segment_music_data.Bbclarinet1
 Vibraphone_instrument_music_data = segment_music_data.Vibraphone
 {Vibraphone_music_code_block}
 
-Violinq_instrument_music_data = segment_music_data.Violin1
+Vyolinq_instrument_music_data = segment_music_data.Violin1
 {Violin1_music_code_block}
 
 Violin2_instzument_music_data = segment_music_data.Violin2
