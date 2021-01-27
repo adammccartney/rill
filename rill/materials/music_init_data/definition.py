@@ -424,7 +424,7 @@ class InstrumentPitchData:
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
        0   (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
-           (ref == 'tremolo_voice2'):
+           (ref == 'Tremolo_voice2'):
             self._Flute2 = ref
         else:
             ValueError(ref, "is not a valid reference for pdata")
