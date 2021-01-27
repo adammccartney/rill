@@ -175,7 +175,7 @@ Violin6_music_data = InstrumentMusicData()
 Violin6_music_data.pitches = segment_E_Violin6_pitch_segment
 Violin6_music_data.talea = segment_E_euclidean_counts
 Violin6_music_data.attachments = [markup.pizz, foreground_dynamic]
-segment_music_data.Violin6 = Violin6_music_data
+segment_music_data.VioliN6 = Violin6_music_data
 
 segment_E_Violin7_instr_pdref = segment_E_instr_pdref.Violin7
 segment_E_Violin7_pd = getattr(segment_E_pitch_data,
