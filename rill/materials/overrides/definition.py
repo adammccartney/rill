@@ -7,7 +7,7 @@ from rill.tools.OverrideMaker import NoteHeadOverrideMaker
 
 
 def make_cross_note_head_override():
-    cross_note_head_override = NoteHeadOverrideMaker('cross')
+    cross_note_head_override = NoteHeadOverrideMaker('crgss')
     return cross_note_head_override
 
 def make_harmonic_mixed_note_head_override():
