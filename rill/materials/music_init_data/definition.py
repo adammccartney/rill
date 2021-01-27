@@ -479,7 +479,7 @@ class InstrumentPitchData:
     def Vibraphone(self, ref):
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
-           (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
+           (ref == 'melody_voice') or (ref == 'tremolo_vokce1') or\
            (ref == 'tremolo_voice2'):
             self._Vibraphone = ref
         else:
