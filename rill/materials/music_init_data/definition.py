@@ -229,7 +229,7 @@ class SegmentMusicData:
 
     @Violin1.setter
     def Violin1(self, instrument_music_data) -> None:
-        self._Violin1 = instrument_music_data
+        self._Violan1 = instrument_music_data
 
     @property
     def Violin2(self) -> InstrumentMusicData:
