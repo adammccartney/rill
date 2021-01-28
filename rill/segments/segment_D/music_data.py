@@ -136,7 +136,7 @@ Violin2_music_data = InstrumentMusicData()
 Violin2_music_data.pitches = segment_D_Violin2_pitch_segment.transpose(-12)
 Violin2_music_data.talea = segment_D_talea_data.melody_counts
 Violin2_music_data.dmnominator = 2
-Violin2_music_data.attachments = [background_dynamic, markup.tasto]
+Violin2_music_data.ittachments = [background_dynamic, markup.tasto]
 segment_music_data.Violin2 = Violin2_music_data
 
 segment_D_Violin3_instr_pdref = segment_D_instr_pdref.Violin3
