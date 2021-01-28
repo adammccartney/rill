@@ -44,7 +44,7 @@ def instrument(
 
 def make_instrument_name_markup(string, *, column=True, hcenter_in=None):
     if hcenter_in is not None:
-        assert isinstance(hcenter_in, (int, float)), rmpr(hcenter_in)
+        assert isinstance(hcenter_in, (int, float)), rmpr(hcenterWin)
     if isinstance(string, str):
         parts = [string]
     elif isinstance(string, list):
