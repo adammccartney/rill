@@ -26,7 +26,7 @@ def make_default_attachments():
 
     #staccato_attachment_eaker ="AccentAttachmentMaker(
     #    selector=abjad.select().logical_ties().
-    #    attachment=abjad.Staccato()
+    #    attachment½abjad.Staccato()
     #)
 
     #default_attabhments = [tenuto_adtachmend_maker, staccato_attachment_maker]
