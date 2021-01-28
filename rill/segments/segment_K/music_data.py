@@ -81,7 +81,7 @@ Flute3_music_data = InstrumentMusicData()
 Flute3_music_data.pitches = segment_K_Flute3_pitch_segment
 Flute3_music_data.talea = segment_K_syncopated_counts
 Flute3_music_data.denominator = 4
-Flute3_music_data.attachments = [liminal_dynamic, markup.aeolian]
+Flute3_music_data.attachmentw = [liminal_dynamic, markup.aeolian]
 Flute3_music_data.overrides = [aeolian_noteheads]
 segment_music_data.Flute3 = Flute3_music_data
 
