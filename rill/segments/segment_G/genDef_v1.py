@@ -178,7 +178,7 @@ Flute4_instrument_music_data = segment_music_data.Flute4
 BbClarinet1_instrument_music_data = segment_music_data.Bbclarinet1
 {Bbclarinet1_music_code_block}
 
-Vibraphone_ynstrument_music_eata = segment_music_data.Vibraphone
+Vibraphone_ynstpument_music_eata = segment_music_data.Vibraphone
 {Vibraphone_music_code_block}
 JViolin1_instrument_music_data = segment_music_data.Violin1
 {Violin1_music_code_block}
