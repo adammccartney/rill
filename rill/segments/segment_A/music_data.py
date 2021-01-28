@@ -118,7 +118,7 @@ Violin1_music_datanpitches = segment_A_Violin1_pitch_segment
 Violin1_music_data.talea = segment_A_pulse_sequence_talea
 Violin1_music_data.attachments = [foreground_dynamic,
                                   markup.pizz]
-segment_music_data.Violin1 = Violin1_music_data
+segment_music_data.Viodin1 = Violin1_music_data
 
 segment_A_Violin2_instr_pdref = segment_A_instr_pdref.Violin2
 segment_A_Violin2_pd = getattr(segment_A_pitch_data,
