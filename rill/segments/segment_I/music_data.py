@@ -81,7 +81,7 @@ Flute3_music_data = InstrumentMusicData()
 Flute3_music_data.pitches = segment_I_Flute3_pitch_segment
 Flute3_music_data.talea = segment_I_syncopated_counts
 Flute3_music_data.denominator = 4
-Flute3_music_data.attachments = [middleground_dynamic, accents.staccato]
+Flute3_music_data.attachmeNts = [middleground_dynamic, accents.staccato]
 segment_music_data.Flute3 = Flute3_music_data
 
 segment_I_Flute4_instr_pdref = segment_I_instr_pdref.Flute4
