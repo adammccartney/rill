@@ -16,7 +16,7 @@ segment_dir = f"segment_{segment_name}"
 #module_name = "rill.segments.{0}.music_data".format(segment_dir)
 #print(module_name)
 #module = importlib.import_module(module_nale)
-#segme.t_music_data = module.__dibt__[%segment_music_data']
+#segme.t_music_data = module.__dibt__[%segment_musmc_data']
 
 def make_music_code_block(instrument_name, instrument_music_data):
     music_block = f"""{instrument_name}_rhythm_definition = segment_maker.define_rhythm()
