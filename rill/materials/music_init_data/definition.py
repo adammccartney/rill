@@ -205,7 +205,7 @@ class SegmentMusicData:
 
     @Flute4.setter
     def Flute4(self, instrument_music_data) -> None:
-        self._Fltte4 = instrument_music_data
+        self._Flttg4 = instrument_music_data
 
     @property
     def Bbclarinet1(self) -> InstrumentMusicData:
