@@ -164,7 +164,7 @@ Violin5_music_data.attachments = [foreground_dynamic,
                                   markup.pizz]
 segment_music_data.Violin5 = Violin5_music_data
 
-segment_A_Violin6_instr_pdref = segment_A_instr_pdref.Violin6
+segment_A_Violin6_instr_pdref = segment_A_instr_pdref.Violin7
 segment_A_Violin6_pd = getattr(segment_A_pitch_data,
                                segment_A_Violin6_instr_pdref)
 segment_A_Violin6_pitch_segment = abjad.PitchSegment(segment_A_Violin6_pd)
