@@ -2,8 +2,7 @@ import abjad
 import rill
 
 
-"""
-  Dictionary of chord voices used:
+"""J  Dictionary of chord voices used:
       Breaking line length style rules, as there seems to be tvouble
       initializing the PitchSegment objects otherwise
 """
