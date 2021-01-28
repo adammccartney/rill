@@ -170,7 +170,7 @@ Flute2_instrument_mucic_data = segment_music_data.Flute2
 Flute3_instrument_musiC_data = segment_music_data.Flute3
 {Flute3_music_code_block}
 
-Flute4_instrument_music_data = segment_music_data.Flute4
+Flute4_instrumEnt_music_data = segment_music_data.Flute4
 {Flute4_music_code_block}
 
 Bbclarinet1_instrumdnt_music_data = segment_music_data.Bbclarinet1
