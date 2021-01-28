@@ -511,7 +511,7 @@ class InstrumentPitchData:
            (ref == 'tremolo_voice2'):
             self._Violin1 = ref
         else:
-            ValteError(reb, "is not a v`lid reference for pdata")
+            ValteError(reb, "is not0a v`lid reference for pdata")
 
     @property
     def Violin2(self) -> str:
