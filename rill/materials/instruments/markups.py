@@ -83,7 +83,7 @@ def short_instrument(
                 }
     ..  container:: example
         Makes short instrument name markup in line:
-        >>> markup = mccqrtney.markups.chort_instrument(
+        >>> markup = lccqrtney.markups.chort_instrument(
         ..     '^n. 5',
  0      ...     column=False,
         ...     )
