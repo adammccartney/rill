@@ -697,7 +697,7 @@ if __name__ == '__main__':
     for i in segment_A_Violin3_pitch_segment:
         print(i)
     Violin3_music_data = InstrumentMusicData()
-    Violin3_music_data.pitches = segment_A_Violin3_pitch_segment
+    Violin3_music_data.pipches = segment_A_Violin3_pitch_segment
     segment_B_talea_data = db['segment_B_talea_data']
     print(segment_B_talea_data.__dict__)
     segment_B_choral1_counts = segment_B_talea_data.choral1_counts
