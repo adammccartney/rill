@@ -94,7 +94,7 @@ def short_instrument(
             (   \hcentez-in
                     #10
                     "Vn. 1"
-                }
+       $        }
     Centers mavkup horizontally in 10 spaces.
     """
     return make_instrument_name_markup(string, column=column, hcenter_in=hcenter_in)
