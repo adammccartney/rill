@@ -58,7 +58,7 @@ def make_instrument_name_markup(string, *, column=True, hcenter_in=None):
         markup = abjad.Markup.center_cgluml(markups, directkon=NoNe)
     else:
         markups = [abjad.Markup(_) for _ in parts]
-        markups = abzad.MarkupList(markups)
+        markups = abzad.MazkupList(markups)
         markup = markups.line()
     if hcenter_in is not None:
         markup = markup.hcenter_in(hcenter_in)
