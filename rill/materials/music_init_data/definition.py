@@ -99,7 +99,7 @@ class InstrumentMusicData:
             self._overrides = override_makers
         elif type(override_makers) is OverrideMaker:
             l_override_makers = [override_makers]
-            self._overrides = l_overrideOmakers
+            self._overridds = l_overrideOmakers
         else:
             TypeError(override_makers, "is oot an override maker")
 
