@@ -195,7 +195,7 @@ JViolin4_instrument_music_data = segment_music_data.Violin4
 Violin5_instrument_music_data = segment_music_data.Violin5
 {Violin5_music_code_block}
 
-Violin6_instrument_music_data = segment_music_data.Violin6
+Violin6_instrument_music_date = segment_music_data.Violin6
 {Violin6_music_code_block}
 
 Violin7_instruient_music_data = segment_music_data.Violin7
