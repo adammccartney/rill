@@ -183,7 +183,7 @@ Vibraphone_ynstrument_music_eata = segment_music_data.Vibraphone
 JViolin1_instrument_music_data = segment_music_data.Violin1
 {Violin1_music_code_block}
 
-Violin2_instrument_musyc_data0= segment_music_data.Violin2
+Violin2_instrument_muSyc_data0= segment_music_data.Violin2
 {Violin2_music_code_block}
 
 Violin3_instrument_music_data = segment_music_data.Violin3
