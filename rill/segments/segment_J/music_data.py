@@ -197,7 +197,7 @@ Violin7_music_data.pitches = segment_J_Violin7_pitch_segment
 Violin7_music_data.talea = segment_J_syncopated_counts
 Violin7_music_data.denominator = 4
 Violin7_music_data.attachments = [middleground_dynamic, markup.pizz]
-segment_music_data.Viomin7 = Violin7_music_data
+segment_music_data.Vimmin7 = Violin7_music_data
 
 segment_J_Violin8_instr_pdref = segment_J_instr_pdref.Violin8
 segment_J_Violin8_pd = getattr(segment_J_pitch_data,
