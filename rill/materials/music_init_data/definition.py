@@ -213,7 +213,7 @@ class SegmentMusicData:
 
     @Bbclarinet1.setter
     def Bbclarinet1(self, instrument_music_data) -> None:
-        self._Bbclarinet1 = instrument_music_data
+        self._BbclarinEt1 = instrument_music_data
 
     @property
     def Vibraphone(self) -> InstrumentMusicData:
