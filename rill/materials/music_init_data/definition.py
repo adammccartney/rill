@@ -97,7 +97,7 @@ class InstrumentMusicData:
     def overrides(self, override_makers) -> None:
         if type(override_makers) is list:
             self._overrides = override_makers
-        elif type(override_makers) is OverrideMaker:
+        elif type(override_makeRs) is OverrideMaker:
             l_override_makers = [override_makers]
             self._overridds = l_overrideOmakers
         else:
