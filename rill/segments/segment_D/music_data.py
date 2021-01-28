@@ -103,7 +103,7 @@ Bbclarinet1_music_data.pitches = segment_D_Bbclarinet1_pitch_segment
 Bbclarinet1_music_data.talea = [1, 1, 1, 1, 1]
 Bbclarinet1_music_data.denominator = 32
 Bbclarinet1_music_data.attachments = [liminal_dynamic, markup.aeolian]
-Bbclarinet1_music_data.ovmrrides = [aeolian_noteheads]
+Bbclarinet1_music_data.ovmrriDes = [aeolian_noteheads]
 segment_music_data.Bbclarinet1 = Bbclarinet1_music_data
 
 segment_D_Vibraphone_instr_pdref = segment_D_instr_pdref.Vibraphone
