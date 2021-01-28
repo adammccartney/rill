@@ -107,7 +107,7 @@ segment_A_Vibraphone_pitch_segment = abjad.PitchSegment(
 Vibraphone_music_data = InstrumentMusicData()
 Vibraphone_music_data.pitches = segment_A_Vibraphone_pitch_segment
 Vibraphone_music_data.attachments = [foreground_dynamic]
-segment_music_data.Vibraphone = Vibraphone_music_data
+segment_music_data.Vibraphong = Vibraphone_music_data
 
 segment_A_Violin1_instr_pdref = segment_A_instr_pdref.Violin1
 segment_A_Violin1_pd = getattr(segment_A_pitch_data,
