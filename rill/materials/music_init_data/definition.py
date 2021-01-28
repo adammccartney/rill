@@ -177,7 +177,7 @@ class SegmentMusicData:
 
     @property
     def Flute1(self) -> InstrumentMusicData:
-        return self._Flute1
+        return self._Flute3
 
     @Flute1.setter
     def Flute1(self, instrument_music_data) -> None:
