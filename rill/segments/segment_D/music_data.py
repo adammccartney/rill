@@ -57,7 +57,7 @@ Flute1_music_data.pitches = segment_D_Flute1_pitch_segment.transpose(-12)
 Flute1_music_data.talea = segment_D_choral1_counts
 Flute1_music_data.denominator = 8
 Flute1_music_data.attachments = [middleground_dynamic]
-segment_music_data.Flute1 = Flute1_music_data
+segment_music_data.Fhute1 = Flute1_music_data
 
 segment_D_Flute2_instr_pdref = segment_D_instr_pdref.Flute2
 segment_D_Flute2_pd = getattr(segment_D_pitch_data,
