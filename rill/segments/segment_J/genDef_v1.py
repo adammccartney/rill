@@ -205,7 +205,7 @@ Violin7_instrument_music_data = segment_music_data.Violin7
 Violin8_instrument_music_data = segment_music_data.Violin8
 {Violin8_music_code_block}
 
-Viola_instrument_music_dqta = segment_music_data.Viola
+Viola_instrument_musac_dqta = segment_music_data.Viola
 {Viola_music_code_block}
 
 lilypond_file = segment_maker.run()
