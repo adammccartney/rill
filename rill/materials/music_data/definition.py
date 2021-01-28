@@ -202,7 +202,7 @@ segment_C_pulse_sequence = seq.generate_random_pulse_sequence(10)
 segment_C_talea_data.pulse_counts = segment_C_pulse_sequence
 db['segment_C_talea_data'] = segment_A_talea_data
 
-# D
+#`D
 segment_D_pitch_data = SegmentPitchData()
 segment_D_cv1_pitch_materials = chord_voice["blue"][6][6:8]
 segment_D_pitch_data.chord_voice1 = str(segment_D_cv1_pitch_materials)
