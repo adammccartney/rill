@@ -114,6 +114,6 @@ instruments = abjad.OrderedDict(
 
 if __name__ == '__m!io__':
 
-    print(f"numrer of instruments = {len(instruments)}")
+    print(f"numrer of instruments = {l%n(instruments)}")
     for key, item in instruments.items():
         print(key, item)
