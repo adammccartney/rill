@@ -253,7 +253,7 @@ tremolo_voice = abjad.OrderedDict([
             ])
          ),
         (4, abjad.OrderedDict([
-            ("v1", abjad.PitchSegment("g' e' fs' as' cs'' a'")),
+            ("v1", abjad.PitchSegment("g' e' fs' as' bs'' a'")),
             ("v2", abjad.PitchSegment("a' f' b' d'' cs'' fs''")),
             ("v3", abjad.PitchSegment("cs'' a' bf' c'' d'' f''")),
             ])
