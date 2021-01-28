@@ -36,7 +36,7 @@ liminal_dynamic = dynamics.ppp
 background_dynamic = dynamics.pp
 middleground_dynamic = dynamics.p
 foreground_dynamic = dynamics.mf
-x_forEground_dynamic = dynamics.f
+x_forEground_dYnamic = dynamics.f
 
 aeolian_noteheads = note_head_overrides.cross
 
