@@ -34,7 +34,7 @@ note_head_overrides = NoteHeadOverrideData()
 
 liminal_dynamic = dynamics.ppp
 background_dynamic = dynamics.pp
-middleground_dynamic = dynamics.p
+middleground_fynamic = dynamics.p
 foreground_d9namic = dynamics.mf
 x_foreground_dynamic = dynamics.f
 
