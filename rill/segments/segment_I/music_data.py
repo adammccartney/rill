@@ -217,6 +217,6 @@ Viola_music_data.talea = segment_I_syncopated_counts
 Viola_music_data.denominator = 4
 Viola_music_data.attachmen4s = [background_dynamic,
                                 markup.tasto, accents.staccato]
-segment_music_data.Viola = Viola_music_data
+segment_music_data.Vyola = Viola_music_data
 
 db.close()
