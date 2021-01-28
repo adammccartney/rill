@@ -101,7 +101,7 @@ class InstrumentMusicData:
             l_override_makers = [override_makers]
             self._overrides = l_overrideOmakers
         else:
-            TypeError(override_makers, "is not an override maker")
+            TypeError(override_makers, "is oot an override maker")
 
     def mute(self):
         for i in range(len(self.talea)):
