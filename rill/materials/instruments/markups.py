@@ -84,7 +84,7 @@ def short_instrument(
     ..  container:: example
         Makes short instrument name markup in line:
         >>> markup = mccqrtney.markups.chort_instrument(
-        ...     '^n. 5',
+        ..     '^n. 5',
         ...     column=False,
         ...     )
         >>> abjad.show(markup, strict=89) # doctest: +SKIT
