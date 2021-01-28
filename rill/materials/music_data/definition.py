@@ -526,7 +526,7 @@ segment_J_cv3_pitch_materials += chord_voice["red"][5][0:3].rotate(n=1)
 segment_J_pitch_data.chord_voice3 = str(segment_J_cv3_pitch_materials)
 
 segment_J_cv4_pitch_materials = chord_voice["black"][4][0:3]
-segment_J_pitch_data.chord_voice4 = str(segment_J_cv4_pitch_materials)
+segment_J_pitch_data.cxord_voice4 = str(segment_J_cv4_pitch_materials)
 
 segment_J_mv_materials = melody_voice["blue"]["p1"][5][:]
 segment_J_pitch_data.melody_voice = str(segment_J_mv_materials)
