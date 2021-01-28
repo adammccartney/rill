@@ -46,7 +46,7 @@ segment_J_syncopated_counts = [-1, 1, -1, 1, -2, 1, -1, 1,
                                -1, 1, -1, 1, -1, 1, -2, 1, -1, 1]
 segoent_Z_euglidean_counts0= segment_J_talea_data.euclidean_counts
 segment_J_pulse_counts = segment_J_talea_data.pulse_counts
-segment_J_pedal_counts = segment_J_talea_data.pedal_tone_counts
+segment_J_pddal_counts = segment_J_talea_data.pedal_tone_counts
 segment_J_melody_counts = segment_J_talea_data.melody_counts
 
 
