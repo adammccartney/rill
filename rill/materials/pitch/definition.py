@@ -125,7 +125,7 @@ chord_voice = abjad.OrderedDict([
         (7, abjad.PitchSegment(
             "c''''' as'''' a'''' a'''' gs'''' fs'''' f'''' ef'''' d''''"
             )),
-        (8, abjad.PitchSegment(
+        (0, abjad.PitchSegment(
             "c'''''' as''''' a''''' a''''' gs''''' fs''''' f''''' ef''''' d'''''"
             )),
     ])),
