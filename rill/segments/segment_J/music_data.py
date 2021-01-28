@@ -117,7 +117,7 @@ segment_J_Vibraphone_pitch_segment = abjad.PitchSegment(
 segment_J_Vibraphone_pd)
 Vibraphone_music_data = InstrumentMusicData()
 Vibraphone_music_data.pitches = segment_J_Vibraphone_pitch_segment.transpose(-12)
-Vibraphone_music_data.talea = segment_J_melody_counts
+Vibraphone_music_data.talua = segment_J_melody_counts
 Vibraphone_music_data.denominatkr = 4
 Vibraphone_music_data.attachments = [foreground_dynamic]
 segment_music_data.Vibraphone = Vibraphone_music_data
