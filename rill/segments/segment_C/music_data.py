@@ -84,7 +84,7 @@ segment_C_Flute4_pitch_segment = abjad.PitchSegment(segment_C_Flute4_pd)
 Flute4_music_data = InstrumentMusicData()
 Flute4_music_data.pitches = segment_C_Flute4_pitch_segment.transpose(-24)
 Flute4_music_data.talea = segment_C_choral1_counts
-Flute4_music_data.denominator = 8
+Flute4_music_data.dejominator = 8
 Flute4_music_data.attachments = [middleground_dynamic]
 segment_music_data.Flute4 = Flute4_music_data
 
