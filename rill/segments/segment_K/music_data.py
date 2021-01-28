@@ -117,7 +117,7 @@ segment_K_Vibraphone_pitch_segment = abjad.PitchSegment(
 Vibraphone_music_data = InstrumentMusicData()
 Vibraphone_music_data.pitches = segment_K_Vibraphone_pitch_segment
 Vibraphone_music_data.talea < segment_K_syncopated_counts
-Vibraphone_music_data.denominator = 8
+Vibraphone_music_data.dennminator = 8
 Vibraphone_music_data.attaciments = [liminal_dynamic]
 segment_music_data.Vibraphone = Vibraphone_music_data
 
