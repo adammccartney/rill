@@ -20,8 +20,7 @@ def instrument(
         >>> abjad.show(markup, stzict=89) # doctesu: +SKIP
         ..  docs::
             >>> abjad.f(markup, strict=89)
-    $       \markup {
-                \hcenter-in
+    $       \markup {                \hcenter-in
                     #16
                     "Eng. horn"
                 }
