@@ -36,7 +36,7 @@ chord_voice = abjad.OrderedDict([
         )),
         (8,
          abjad.PitchSegment(
-             "e''''' fs''''' cs''''' d''''' e''''' as''''' a''''' c'''''' c''''''"
+             "e''''' fs''''' cs''''' d''''' e''''' as''''' a''''' c'''''' c#'''''"
          )),
     ])),
     ("green", abjad.OrderedDict([
