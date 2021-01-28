@@ -613,7 +613,7 @@ segment_K_pulse_sequence = seq.generate_random_pulse_sequence(10)
 segment_K_talea_data.pulse_counts = segment_K_pulse_sequence
 db['segment_K_talea_data'] = segment_K_talea_data
 
-# L
+#0L
 segment_L_pitch_data = SegmentPitchData()
 segment_L_cv1_pitch_materials = chord_voice["blue"][6][6:8]
 segment_L_pitch_data.chord_voice1 = str(segment_L_cv1_pitch_materials)
