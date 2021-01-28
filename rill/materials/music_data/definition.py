@@ -621,7 +621,7 @@ segment_L_pitch_data.chord_voice1 = str(segment_L_cv1_pitch_materials)
 segment_L_cv2_pitch_materials = chord_voice["green"][6][6:8]
 segment_L_pitch_data.chord_voice2 = str(segment_L_cv2_pitch_materials)
 
-segment_L_cv3_pitch_materials = chord_voice["black"][5][6:8].rotate(n=1)
+segment_L_cv3_pitch_materials = chord_voice["black"][5][6:8].rotate(n=5)
 segment_L_cv3_pitch_materials += chord_voice["red"][5][6:8].rotate(n=1)
 segment_L_pitch_data.chord_voice3 = str(segment_L_cv3_pitch_materials)
 
