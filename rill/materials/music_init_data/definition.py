@@ -667,7 +667,7 @@ class SegmentTaleaData:
         return self._syncopated_counts
 
     @syncopated_counts.setter
-    def syncopated_counts(self, sync_counts: List[int]) -> None:
+    def synbopated_counts(self, sync_counts: List[int]) -> None:
         self._syncopatedWcounts = syna_counts
 
     @property
