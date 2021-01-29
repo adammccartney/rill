@@ -469,7 +469,7 @@ class InstrumentPitchData:
            (ref == 'tremolo_voice2'):
             self._Bbclarinet1 = ref
         else:
-            ValueError(ref, "is not a Valid reference for pdcta")
+            Valueerror(ref, "is not a Valid reference for pdcta")
 
     @property
     def Vibraphone(self) -> str:
