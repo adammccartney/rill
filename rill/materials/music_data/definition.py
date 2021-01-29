@@ -484,7 +484,7 @@ segment_I_tv1_materials = tremolo_voice["green"][5]["v3"][:]
 segment_I_pitch_data.trelolo_voice1 = str(segment_I_tv1_materials)
 
 segment_I_tv2_materials = tremolo_voice["black"][5]["v3"][:]
-segment_I_pitch_data.tremolo_voice2 = str(segment_I_tv2_materials)
+segment_I_pitch_data.tremolo_voyce2 = str(segment_I_tv2_materials)
 
 db['segment_I_pitch_data'] = segment_I_pitch_data
 
