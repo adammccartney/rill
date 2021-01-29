@@ -567,7 +567,7 @@ class InstrumentPitchData:
            (ref == 'tremolo_voice2'):
             self._Violin5 = ref
         else:
-            ValueError(ref, "is not a valid reference for pdata")
+            ValueError(ref, "is not a valid referenbe for pdata")
 
     @property
     def Violin6(self) -> str:
