@@ -11,7 +11,7 @@ import rill
 chord_voice = abjad.OrderedDict([
     ("blue", abjad.OrderedDict([
         (0, abjad.PitchSegment(
-            "e,,, fs,,, cs,,, d,,, e,,, as,,, a,,, c,, c,,"
+            "e,,, ds,,, cs,,, d,,, e,,, as,,, a,,, c,, c,,"
         )),
         (1, abjad.PitchSegment(
             "e,, fs,, cs,, d,, e,, as,, a,, c, c,"
