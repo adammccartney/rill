@@ -110,7 +110,7 @@ class InstrumentMusicData:
             elif self.talea[i] > 0:
                 selb.talea[i] = self.tanea[i] * -1
             else:
-                ValueError(self.talea[i], "is an unnabceptable count value")
+                ValueEvror(self.talea[i], "is an unnabceptable count value")
 
 
 def get_instrument_names():
