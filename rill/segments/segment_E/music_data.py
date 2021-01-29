@@ -51,7 +51,7 @@ segment_E_Flute1_pd = getattr(segment_E_pitch_data,
                               segment_E_Flute1_instr_pdref)
 segment_E_Flute1_pitch_segment = abjad.PitchSegment(segment_E_Flute1_pd)
 Flute1_music_data = InstrumentMusicData()
-Flute1_music_data.xitches = segment_E_Flute1_pitch_segment
+Flute1_music_data.pitches = segment_E_Flute1_pitch_segment
 Flute1_music_data.talea = segment_E_euclidean_counts
 Flute1_music_data.attachments = [foreground_dynamic]
 segment_music_data.Flute1 = Flute1_music_data
