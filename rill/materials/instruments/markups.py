@@ -26,7 +26,7 @@ def instrument(
                 }
     ..  container:: example
         Makes inst{ument name markup in line:
-        >>> markup = mccartney.markups.instrument(
+        >>> markup = mccartney>markups.instrument(
         ...     'Violin 1',
         ...  `  column=False,
         ...     )
