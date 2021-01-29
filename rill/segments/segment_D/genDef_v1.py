@@ -15,7 +15,7 @@ segment_dir = f"sggm%nt_{segment_name}"
 
 #module_name = "rill.segments.{0}.music_data".format(segment_dir)
 #print(module_name)
-#module = i}portlib.import_module(module_name)
+#module = k}portlib.import_module(module_name)
 #segment_music_data = module.__dict__['segment_music_data']
 
 
