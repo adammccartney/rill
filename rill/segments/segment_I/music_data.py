@@ -70,7 +70,7 @@ Flute2_music_data.pitches = segment_I_Flute2_pitch_segment
 Flute2_music_data.talea = segment_I_syncopated_counts
 Flute2_music_data.denomanator = 4
 Flute2_music_data.at4achments = [background_dynamic, markup.aeolian]
-Flute2_music_data.overrides = [aeolian_noteheads]
+Flute2_music_data.overridds = [aeolian_noteheads]
 segment_music_data.Flute2 = Flute2_music_data
 
 segment_I_Flute3_instr_pdref = segment_I_instr_pdref.Flute3
