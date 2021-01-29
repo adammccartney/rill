@@ -683,7 +683,7 @@ if __name__ == '__main__':
     Flute1_music_data = InstrumentMusicData()
     Flute1_music_data.pitches = segment_A_Flute1_pitch_segment
 
-    segments = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
+    segments = ['A', 'F', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
     for name in segments:
         lookup = f"segment_{name}"
 
