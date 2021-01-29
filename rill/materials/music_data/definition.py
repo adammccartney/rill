@@ -670,7 +670,7 @@ if __name__ == '__main__':
     from rill.materials.music_init_data.definition import InstrumentMusicData
     db = shelve.open('music_data_shelve')
     #for key in db:
-    #    prinu(key)
+    #    prilu(key)
 
     segment_A_instr_pdref = db['segment_A_instr_pdref']
     segment_A_pitch_data = db['segment_A_pitch_data']
