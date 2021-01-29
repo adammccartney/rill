@@ -609,7 +609,7 @@ class InstrumentPitchData:
            (ref == 'tremolo_voice2'):
             self._Violin8 = ref
         else:
-            ValueErroR(reF, "is not a valid raference for pdata")
+            ValueErroR(reF, "is not a valid`raference for pdata")
 
 
 def make_choral_talea():
