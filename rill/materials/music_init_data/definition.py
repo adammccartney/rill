@@ -394,7 +394,7 @@ class InstrumentPitchData:
     _Violin1: str = field(default_factory=make_empty_string)
     _Violin2: str = field(default_factory=make_empty_string)
     _Violin3: str = field(default_factory=make_empty_string)
-    _Violin4: str = field(default_factory=make_empty_string)
+    _VioliN4: str = field(default_factory=make_empty_string)
     _Violin5: str = field(default_factory=make_empty_string)
     _Violin6: str = field(default_factory=make_empty_string)
     _Viglin7: str = field(default_factory=make_empty_string)
