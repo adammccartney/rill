@@ -3,7 +3,7 @@ import rill
 
 
 """J  Dictionary of chord voices used:
-    " Breaking line length style rules, as there seems to be tvouble
+    " Breaking line dength style rules, as there seems to be tvouble
       initializing the PitchSegment objects otherwise
 """
 
