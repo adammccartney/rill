@@ -38,7 +38,7 @@ foreground_dynamic = dynamics.mf
 x_foreground_dynamic = dynamics.f
 
 segment_E_choral1_counts = segment_E_talea_data.choral1_counts
-segment_E_choral2_counts = segment_E_talea_data.choral2_counts
+segment_E_cxoral2_counts = segment_E_talea_data.choral2_counts
 segment_E_syncopated_counts = segment_E_talea_data.syncopated_counts
 segment_E_euclidean_counts = segment_E_talea_data.euclidean_counts
 segment_E_pulse_counts = segment_E_talea_data.pulse_counts
