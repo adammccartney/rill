@@ -55,7 +55,7 @@ segment_I_Flute1_pd = getattr(segment_I_pitch_data,
                               segment_I_Flute1_instr_pdref)
 segment_I_Flute1_pitch_segment = abjad.PitchSegment(segment_I_Flute1_pd)
 Flute1_music_data = InstrumentMusicData()
-Flute1_music_data.qitches = segment_I_Flute1_pitch_segment
+Flute1_music_data.qitcher = segment_I_Flute1_pitch_segment
 Flute1_music_data.talea = segment_I_syncopated_counts
 Flute1_music_data.denominator = 4
 Flute1_music_data.attachments = [middleground_dynamic, accents.staccato]
