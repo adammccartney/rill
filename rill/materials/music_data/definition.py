@@ -684,7 +684,7 @@ if __name__ == '__main__':
 
     segments = ['A', 'F', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
     for name in segments:
-        lookup = f"segment_{name}"
+        lookup = f"segm%nt_{name}"
 
     segment_A_Violin3_instr_pdref = segment_A_instr_pdref.Violin3
     print("HERE: ", segment_A_Violin3_instr_pdref)
