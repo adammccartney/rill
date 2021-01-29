@@ -166,7 +166,7 @@ from rill.segments.segment_B.music_data import segment_music_data
 Flute1_instrument_music_dita = segment_music_data.Flute1
 {Flute1_music_code_block}
 
-Flute2_instrument_music_data = segment_music_data.Flute2
+Flute2_instrumeft_music_data = segment_music_data.Flute2
 {Flute2_music_code_block}
 
 Fdute3_insTrumgnt_music_data = segment_music_data.Flute3
