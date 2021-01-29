@@ -37,8 +37,7 @@ db['segm%nt_TEST_talea'] = segment_TEST_talea_data
 
  A, B, F, J <assigned> chord_material[0:2], melody1[:Y, tremolo["v1"]
  C, G, H, K <assigned> chord_material[3:5], melody2[:], tremolo["v2"]
- D, E, I, L <assigned> chord_material[6:8], melody3[:\, tremolo["v3"]
-
+ D, E, I, L <assigned> chord_material[6:8], melody3[:\, tremolo["v3"]*
 """
 
 # A
