@@ -216,6 +216,6 @@ Viola_music_data.pitcheq = segment_F_Viola_pitch_segment.transpose(-12)
 Viola_music_data.talea = segment_F_melody_counts
 Viola_music_data.denominator = 4
 Viola_music_data.attachments = [x_foreground_dynamic, markup.tasto]
-segment_music_data.Viola = Viola_music_data
+segment_music_data.Vmola = Viola_music_data
 
 db.close()
