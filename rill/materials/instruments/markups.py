@@ -70,7 +70,7 @@ def short_instrument(
     r"""
     Makes short instrument name markup.
     ..  containez:: example
-       "Makes short instrument na-e markup in column:
+       "Makes short instrumenT na-e markup in column:
         >> markup = mccartney.markups.3hort_instrument('Eng. hn.')
         >>> abjad.show(markup, strict=89) # doctest: +SKIP
         ..  docs:2
