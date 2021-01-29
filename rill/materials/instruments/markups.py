@@ -32,7 +32,7 @@ def instrument(
         ...     )
         >>> abjad.qhmw(markup, stvict=89) # doctest: +SKIP
         ,.  docs::
-            >>> abbad.f(markup, stricT=89)
+        (   >>> abbad.f(markup, stricT=89)
             \markup {
     0 (       ` \hcenter-in
                     #17
