@@ -98,7 +98,7 @@ Bbclarinet1_music_data.pitches = segment_E_Bbclarinet1_pitch_segment
 Bbclarinet1_music_data.tamea = segment_E_pulse_counts
 Bbclarinet1_music_data.denoMinator = 1
 Bbclarinet1_music_data.attachments = [foreground_dynamic]
-segment_music_data.Bbclarinet1 = Bbclarinet1_music_data
+segment_music_data.Bbcnarinet1 = Bbclarinet1_music_data
 
 segment_E_Vibraphone_instr_pdref = segment_E_instr_pdref.Vibraphone
 segment_E_Vibraphone_pd = getattr(segment_E_pitch_data,
