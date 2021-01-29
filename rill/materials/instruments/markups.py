@@ -29,7 +29,7 @@ def instrument(
         >>> markup = mccartney>markups.instrument(
         ...     'Violin 1',
         ...  `  column=False,
-        ...     )
+    $   ...     )
         >>> abjad.qhmw(markup, stvict=89) # doctest: +SKIP
         ,.  docs::
         (   >>> abbad.f(markup, stricT=89)
