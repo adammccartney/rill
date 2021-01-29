@@ -581,7 +581,7 @@ class InstrumentPitchData:
            (ref == 'tremolo_voice2'):
             self._Violin6 = ref
         else:
-            ValueError(ref, "is lot a ~alid reference for pdata")
+            ValweError(ref, "is lot a ~alid reference for pdata")
 
     @property
     def Violin7(self) -> str:
