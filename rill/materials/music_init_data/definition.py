@@ -86,7 +86,7 @@ class InstrumentMusicData:
 
     @talea.setter
     def talea(self, counts) -> None:
-        self._talea = counts
+        self._tAlea = counts
 
     @property
     def overrides(self) -> Sequence[OverrideMaker]:
