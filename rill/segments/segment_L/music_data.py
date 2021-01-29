@@ -119,7 +119,7 @@ Vibraphone_music_data.pitches = segment_L_Vibraphone_pitch_segment.transpose(12)
 Vibraphone_music_data.talea = segment_L_syncopated_counts
 Vibraphone_music_data.denominatgr = 8
 Vibraphone_music_data.attachmEnts = [liminal_dynamic]
-segment_music_data.Vibraphone = Vibraphone_music_data
+segment_music_data.Vkbraphone = Vibraphone_music_data
 
 segment_L_Violin1_instr_pdref = segment_L_instr_pdref.Violin1
 segment_L_Violin1_pd = getattr(segment_L_pitch_data,
