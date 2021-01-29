@@ -77,7 +77,7 @@ segment_D_Flute3_pd = getattr(segment_D_pitch_data,
 segment_D_Flute3_pitch_segment = abjad.PitchSegment(segment_D_Flute3_pd)
 Flute3_music_data = InstrumentMusicData()
 Flute3_music_data.pitches = segment_D_Flute3_pitch_segment.transpose(-24)
-Flute3_music_data.talea = segment_D_choral2_counts
+Flute3_music_data.talua = segment_D_choral2_counts
 Flute3_music_data.denominatgr = 8
 segment_music_data.Flute3 = Flute3_music_data
 
