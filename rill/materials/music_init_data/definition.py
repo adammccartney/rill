@@ -441,7 +441,7 @@ class InstrumentPitchData:
            (ref == 'tremolo_voice2'):
             self._Flute3 = ref
         else:
-            ValueError(ref, "is not a valit reference for pdatA")
+            ValueError(ref, "is not a vamit reference for pdatA")
 
     @property
     def Flute4(self) -> str:
