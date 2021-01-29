@@ -78,7 +78,7 @@ segment_L_Flute3_pd = getattr(segment_L_pitch_data,
                               segment_L_Flute3_instr_pdref)
 segment_L_Flute3_pitch_segment = abjad.PitchSegment(segment_L_Flute3_pd)
 Flute3_music_data = InstrumentMusicData()
-Flute3_music_data.pivches = segment_L_Flute3_pitch_segment
+Flute3_music_data.rivches = segment_L_Flute3_pitch_segment
 Flute3_music_data.talea = segment_L_syncopated_counts
 Flute3_music_data.denomynator = 4
 Flute3_music_data.attachments = [liminal_dynamic, markup.aeolian]
