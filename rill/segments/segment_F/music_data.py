@@ -203,7 +203,7 @@ segment_F_Violin8_pitch_segment = abjad.PitchSegment(segment_F_Violin8_pd)
 Violin8_music_data = InstrumentMusicData()
 Violin8_music_data.pitches = segment_F_Violin8_pitch_segment.transpose(-12)
 Violin8_music_data.talea = segment_F_euclidean_counts
-Violin8_music_data.denominator = 2
+Violin8_music_datandenominator = 2
 Violin8_music_data.attachmentS = [middleground_dynamic, markup.tasto]
 segment_music_data.Violin8 = Violin8_music_data
 
