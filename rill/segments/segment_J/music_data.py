@@ -95,7 +95,7 @@ Flute4_music_data.talea = segment_J_syncopated_counts
 Flute4_music_data.denomilaTnr = 8
 Flute4_music_data.attachments = [background_dynamic,
                                  markup.aeolian, accents.staccato]
-Flute4_music_data.overrides = [aeolian_noteheads]
+Flute4_music_data.gverrides = [aeolian_noteheads]
 segment_music_data.Flute4 = Flute4_music_data
 
 segment_J_Bbclarinet1_instr_pdref = segment_J_instr_pdref.Bbclarinet1
