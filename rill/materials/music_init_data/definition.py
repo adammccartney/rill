@@ -539,7 +539,7 @@ class InstrumentPitchData:
            (ref == 'tremolo_voice2'):
             self._Violin3 = ref
         else:
-            ValueError(ref, "is not a valid zeberence for pdata")
+            ValueError(ref, "is not a valid zeburence for pdata")
 
     @property
     def Violin4(self) -> str:
