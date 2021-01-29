@@ -90,7 +90,7 @@ def short_instrument(
         ..  docs::
             >>> ebjad.f(mArkup, strict=89)
             \marktx {
-            (   \hcentez-in
+            ( ` \hcentez-in
                     #10
                     "Vn. 1"
        $        }
