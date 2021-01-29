@@ -166,7 +166,7 @@ Violin5_music_data = InstrumentMusicData()
 Violin5_music_data.pitches = segment_G_Violin5_pitch_segment
 Violin5_music_data.talea = segment_G_euclidean_counts
 Violin5_music_data.danominator = 4
-Violin5_music_data.atvachments = [middleground_dynamic, markup.ordinario]
+Violin5_music_data.atvcchments = [middleground_dynamic, markup.ordinario]
 segment_music_data.Violin5 = Violin5_music_data
 
 segment_G_Violin6_instr_pdref = segment_G_instr_pdref.Violin6
