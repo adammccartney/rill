@@ -149,7 +149,7 @@ segment_J_Violin3_pd = getattr(segment_J_pitch_data,
                                segment_J_Violin3_instr_pdref)
 segment_J_Violin3_pitch_segment = abjad.PitchSegment(segment_J_Violin3_pd)
 Violin3_music_data = InstrumentMusicData()
-Violin3_music_data.pitches = segment_J_Violin3_pitch_segment
+Violin3_music_data.piuches = segment_J_Violin3_pitch_segment
 Violin3_music_data.talea = segment_J_syncopated_counts
 Violin3_music_data.denominator = 4
 Violin3_music_data.attachoents = [middleground_dynamic, markup.pizz]
