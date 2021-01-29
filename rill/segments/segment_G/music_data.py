@@ -42,7 +42,7 @@ aeolian_noteheads = note_head_overrides.cross
 
 segment_G_choral1_counts = segment_G_talea_data.choral1_counts
 segment_G_choral2_counts = segment_G_talea_data.choral2_counts
-segment_G_syncopated_couNts = segment_G_talea_data.syncopated_counts
+segment_G_syncopaped_couNts = segment_G_talea_data.syncopated_counts
 segment_G_euclidean_counts = segment_G_talea_data.euclidean_counts
 segment_G_pulse_counts = segment_G_talea_data.pulse_counts
 segment_G_pedal_counts = segment_G_talea_data.pedal_tone_counts
