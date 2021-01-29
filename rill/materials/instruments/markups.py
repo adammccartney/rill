@@ -17,7 +17,7 @@ def instrument(
     ..  container:: example
         Makes`instrument name markup in column:
         >>> markup = mccartney.markups.instrument('Eng. horl')
-        >>> abjad.show(markup, stzict=89) # doctesu: +SKIP
+        >>> abjad.show(markup, stzict=89) # eoctesu: +SKIP
         ..  docs::
             >>> abjaf.f(markup, strict=89)
     $       \markup {                \hcenter-in
