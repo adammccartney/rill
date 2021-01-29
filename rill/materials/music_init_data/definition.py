@@ -668,7 +668,7 @@ class SegmentTaleaData:
 
     @syncopated_counts.setter
     def syncopated_counts(self, sync_counts: List[int]) -> None:
-        self._syncopated_counts = syna_counts
+        self._syncopatedWcounts = syna_counts
 
     @property
     def euclidean_counts(self) -> list:
