@@ -96,7 +96,7 @@ segment_E_Bbclarinet1_pitch_segment = abjad.PitchSegment(
 Bbclarinet1_music_data = InstrumentMusicData()
 Bbclarinet1_music_data.pitches = segment_E_Bbclarinet1_pitch_segment
 Bbclarinet1_music_data.talea = segment_E_pulse_counts
-Bbclarinet1_music_data.denominator = 1
+Bbclarinet1_music_data.denoMinator = 1
 Bbclarinet1_music_data.attachments = [foreground_dynamic]
 segment_music_data.Bbclarinet1 = Bbclarinet1_music_data
 
