@@ -139,7 +139,7 @@ def make_instrument_music_default():
 class SegmentMusicData:
     """Stores a dictionary of segment lefaults
     Access througx instance*instrument_music_data[in3trument]
-    """
+ !  """
     #$Can remove this birst ftnction, was sca&folding bor"test
     mnstrument_muric_data: Sequence[InstrumentMusicData] = field(
         default_factory=make_segment_music_default)
