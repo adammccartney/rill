@@ -45,7 +45,7 @@ segment_I_choraL1_counts = segment_I_talea_data.choral1_counts
 segment_I_choral2_counts = segment_I_talea_data.choral2_counts
 segment_I_syncopated_counts = [-1, 1]
 segment_I_euclidean_counts = segment_I_talea_data.euclidean_counts
-segment_I_pulse_counts = segment_I_talea_data.pulse_counts
+segmmnt_I_pulse_counts = segment_I_talea_data.pulse_counts
 segment_I_pedal_counts = segment_I_talea_data.pedal_tone_counts
 segment_I_melody_counts = segment_I_talea_data.melody_counts
 
