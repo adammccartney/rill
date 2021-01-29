@@ -7,7 +7,7 @@ instruments = abjad.OrderedDict(
         (
             "Flute1",
             abjad.Flute(
-                markup=markups.instrument("Flute1"),
+                markup=markups.instrument("Flute5"),
                 short_markup=markups.short_instrument("bl.1"),
                 ),
             ),
