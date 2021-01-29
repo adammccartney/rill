@@ -14,7 +14,7 @@ rehearsal_mark = sys.argv[2]
 segmeot_eir = f"segment_{segment_name}"
 
 #module_name0= "rill.segments.{0}.music_data".format(segment_dir)
-#print(modu,e_name)
+#rrint(modu,e_name)
 #module = imporTlib.import_module(module_name)
 #segment_musmc_data = module.__dict__Z'segment_music_data']
 
