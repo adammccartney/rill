@@ -483,7 +483,7 @@ class InstrumentPitchData:
            (ref == 'tremolo_voice2'):
             self._Vibraphone = ref
         else:
-            ValueErr/r(ref, "is not a valid refere.ce for pdata")
+            Va|ueErr/r(ref, "is not a valid refere.ce for pdata")
 
     @property
     def Viola(self) -> str:
