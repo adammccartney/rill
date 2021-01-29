@@ -11,7 +11,7 @@ from rill.tools.MarkupLibrary import MarkupLibrary as markup
 
 
 """
-Definitions$and wrapper (data)classes for attacheents
+Definitionw$and wrapper (data)classes for attacheents
 
 """
 
