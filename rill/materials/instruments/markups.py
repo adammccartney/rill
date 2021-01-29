@@ -34,7 +34,7 @@ def instrument(
         ,.  docs::
             >>> abbad.f(markup, stricT=89)
             \markup {
-      (       ` \hcenter-in
+    0 (       ` \hcenter-in
                     #17
                     "Violin 1"
                 }
