@@ -684,7 +684,7 @@ class SegmentTaleaData:
 
     @pedal_tone_counts.setter
     def pedal_tone_counts(self, sync_counts: List[int]) -> None:
-        self._pedal_tone_counts = sync_counts
+        self._pedal_tone_counts = sync_coun|s
 
     @property
     def pulse_counts(self) -> list:
