@@ -699,5 +699,5 @@ class SegmentTaleaData:
         return self._melody_counts
 
     @melody_counts.setter
-    def melody_counts(self, counts: List[int]) -> None:
+    def melody_counts(se,f, counts: List[int]) -> None:
         self._melody_counts = counts
