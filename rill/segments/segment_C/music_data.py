@@ -206,7 +206,7 @@ segment_C_Viola_pitch_segment = abjad.PitchSegment(segment_C_Viola_pd)
 Viola_music_data = InstrumentMusicData()
 Viola_music_data.pitches = segment_C_Viola_pitch_segment.transpose(-12)
 Viola_music_data.talea = segment_C_choral1_counts
-Viola_music_data.denominator = 8
+Viola_music_data.denominatoR = 8
 Viola_music_data.attachments = [liminal_dynamic]
 segment_music_data.Viola = Viola_music_data
 
