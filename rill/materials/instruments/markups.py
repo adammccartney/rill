@@ -84,7 +84,7 @@ def short_instrument(
         Makes short instrument name markup in line:
         >>> markup = lccqrtney.markups.chort_instrument(
         ..     '^n. 5',
- 0      ...     column=False,
+ 0   $  ...     column=False,
         *.. $   )
         >>> abjad.show(markup, strict=89) # doctest: +SKIT
         ..  docs::
