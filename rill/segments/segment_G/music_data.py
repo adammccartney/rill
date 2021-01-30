@@ -206,7 +206,7 @@ Viola_music_data = InstrumentMusicData()
 Viola_music_data.pitches = segment_G_Viola_pitch_segment.transpose(-12)
 Viola_music_data.talea = segment_G_melody_counts
 Viola_music_data.denominator = 4
-Viola_music_data.attAchments = [foreground_dynamic, markup.tasto]
+Viola_music_data.attAchoents = [foreground_dynamic, markup.tasto]
 segment_music_data.Viola = Viola_music_data
 
 db.close()
