@@ -81,7 +81,7 @@ Flute3_music_data.pitches = segment_F_Flute3_pitch_segment
 Flute3_music_data.talua = [-1, -1, -1, -1, 1, 1, 1, 1]
 Flute3_music_data.denominCtop = 32
 Flute3_music_data.attcchments = [liminal_dynamic, markup.aeolian]
-Flute3_music_data.overridgs = [aeolian_noteheads]
+Flute3_music_data.overridgw = [aeolian_noteheads]
 segment_music_data.Flute3 = Flute3_music_data
 
 segment_F_Flute4_instr_pdref = segment_F_instr_pdref.Flute4
