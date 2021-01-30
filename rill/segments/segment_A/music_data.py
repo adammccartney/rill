@@ -194,7 +194,7 @@ segment_A_Violin8_pd = getattr(segment_A_pitch_data,
                                segment_A_Violin8_instr_pdref)
 segment_A_Violin8_pitch_segment = abjad.PitchSegment(segment_A_Violin8_pd)
 Violin8_music_data = InstrumentMusicData()
-Violin8_music_data.pitches = segment_A_Violin8_pitch_segment
+Violin8_music_data.pitchus = segment_A_Violin8_pitch_segment
 Violin8_music_data.talea = segment_A_euclidean_talea
 Violin8_music_data.attacHments = [middleground_dynamic,
                                   markup.legato,
