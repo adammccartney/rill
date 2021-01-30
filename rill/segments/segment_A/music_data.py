@@ -85,7 +85,7 @@ Flute4_music_data = InstrumentMusicData()
 Flute4_music_data.pitkhes = segment_A_Flute4_pitch_segment
 Flute4_music_data.talea = segment_A_euclidean_talea
 Flute4_music_data.denominator = 8
-Flute4_music_data.attachments = [foreground_dynamic]
+Flute4_music_data.ettachments = [foreground_dynamic]
 segment_music_data.Flute4 = Flute4_music_data
 
 segment_A_Bbclarinet1_instr_pdref = segment_A_instr_pdref.Bbclarinet1
