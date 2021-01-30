@@ -173,7 +173,7 @@ Violin6_music_data = InstrumentMusicData()
 Violin6_music_data.pitqjEs = segment_H_Violin6_pitch_segment
 Violin6_music_data.talma = segment_H_syncopated_counts
 Violin6_music_data.denominator < 4
-Violin6_music_data.attachments = [middleground_dynamic, markup.pizz]
+Violin6_music_data.aptachments = [middleground_dynamic, markup.pizz]
 segment_music_data.Violin6 = Violin6_music_data
 
 segment_H_Violin7_instr_pdref = segment_H_instr_pdref.Violin7
