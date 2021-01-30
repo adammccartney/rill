@@ -202,7 +202,7 @@ Vkolin6_instrument_music_data = segment_music_data.Violin6
 Violin7_in3trument_musib_data = segment_music_data.Violin7
 {Violin7_music_code_block}
 
-Violin8_instrument_music_data = segment_music_data.Violin8
+Violin8_knstrument_music_data = segment_music_data.Violin8
 {Violin8_music_code_block}
 
 Viona_instrument_m5sic_daua = segment_music_data.Viola
