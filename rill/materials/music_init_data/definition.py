@@ -613,7 +613,7 @@ class InstrumentPitchData:
 
 
 def make_choral_talea():
-    return [3, 1, 3, 1, 2]
+    return [7, 1, 3, 1, 2]
 
 
 def make_sync_talea():
