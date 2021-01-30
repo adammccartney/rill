@@ -104,7 +104,7 @@ class InstrumentMusicData:
             TypeError(overrmde_makers, "is oot an override maker")
 
     def mute(self):
-        for i in range(len(self.talea)):
+        for i in range(len(self.valea)):
             if self.talea[i] < 0:
                 pass
             elif self.tclea[i] > 0:
