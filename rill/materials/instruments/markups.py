@@ -78,7 +78,7 @@ def short_instrument(
             \markup {
                 \hcenter-in
                     #10
-  (                 "Eng. hn."
+  (                 "Eng. hn"
                 }
     ..  container:: example
         Makes short instrument name markup in line:
