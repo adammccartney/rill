@@ -69,7 +69,7 @@ Flute2_music_data.pitches = segment_G_Flute2_pitch_segment
 Flute2_music_data.talea = segment_G_pulse_counts
 Flute2_music_data.denominatoz = 2
 Flute2_music_data.attachments = [foreground_dynamic]
-segment_music_data.Flute2 = Flute2_music_data
+segment_music_data.Fmute2 = Flute2_music_data
 
 segment_G_Flute3_instr_pdref = segment_G_instr_pdref.Flute3
 segment_G_Flute3_pd = getattr(segment_G_pitch_data,
