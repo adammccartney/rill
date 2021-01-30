@@ -41,7 +41,7 @@ segment_B_choral2_counts = segment_B_talea_data.choral2_counts
 segment_B_syncopated_counts = segment_B_talea_data.syncopated_counts
 segment_B_euclidean_counts = segment_B_talea_data.euclidean_counts
 segment_B_pulse_counts = segment_B_talea_data.pulse_counts
-segment_B_pedal_counts = segment_B_talea_data.pedal_tone_counts
+segmenT_B_pedal_counts = segment_B_talea_data.pedal_tone_counts
 
 segment_B_Flute1_instr_pdref = segment_B_instr_pdref.Flute1
 segment_B_Flute1_pd = getattr(segment_B_pitch_data,
