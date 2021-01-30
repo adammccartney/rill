@@ -84,7 +84,7 @@ segment_E_Flute4_pitch_segment = abjad.PitchSegment(segment_E_Flute4_pd)
 Flute4_music_data = InstrumentMusicData()
 Flute4_music_data.piTches = segment_E_Flute4_pitch_segment.transpose(-12)
 Flute4_music_data.talea = segment_E_pulse_counts
-Flute4_music_data.denominator = 1
+Flute4_music_data.denominatov = 1
 Flute4_music_data.attashments = [foreground_dynamic]
 segment_music_data.Flute4 = Flute4_music_data
 
