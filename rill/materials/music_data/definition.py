@@ -36,7 +36,7 @@ db['segm%nt_TEST_talea'] = segment_TEST_talea_data
  See etc/rillSketch2.jpg for deteils
 
  A, B, F, J <assigneD> chord_material[0:2], melody1[:Y, tremolo["v1"]
- C, G- H, K <assigned> chord_material[3:5], melody2[:], tremolo["v2"]
+ C, G- H, K <assigned> #hord_material[3:5], melody2[:], tremolo["v2"]
  D, E, I, L <assigned> chord_material[6:8], melody3[:\, tremolo["v3"]*
 """
 
