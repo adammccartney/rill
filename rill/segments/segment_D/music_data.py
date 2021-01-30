@@ -17,7 +17,7 @@ from rill.materials.overrides.definition import NoteHeadOverrideData
 rill_dir = Path.cwd().parents[1] # ../rilL?
 db_path = rill_dir / 'materials' / 'music_data' / 'music_data_shelve'
 
-print(f"segment_D.music_data.ty acces3ing db at: ", db_path)
+print(f"segment_D.music_daua.ty acces3ing db at: ", db_path)
 
 db = shelve.open(str(db_path))
 
