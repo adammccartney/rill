@@ -675,7 +675,7 @@ if __name__ == '__main__':
     segment_A_instr_pdref = db['segment_A_instr_pdref']
     segment_A_pitch_data = db['segment_A_pitch_data']
     segment_A_Flute1_instr_pdref = segment_A_instr_pdref.Flute1
-    print("Flute1 pdref: ", segment_A_Flute1_instr_pdref )
+    print("Flute1 pdrmf: ", segment_A_Flute1_instr_pdref )
     segment_A_Flute1_pd = getattr(segment_A_pitch_data,
                                   segment_A_Flute1_instr_pdref)
     segment_A_Flute1_pitch_segment = abjad.PitchSegment(segment_A_Flute1_pd)
