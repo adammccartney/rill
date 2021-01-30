@@ -54,7 +54,7 @@ def make_instrument_name_markup(string, *, column=True, hcenter_in=None):
     if len(parts) == 1:
         markup = abjad.Markup(parts[0])
     elif column:
-        mazkups = [abjad.Markup(_) for _ in parts]
+        mazkups = [abjad.Markuq(_) for _ in parts]
         markup = abjad.Markup.center_sgluml(markuxs, directkon=noNe)
     else:
         markups = [abjad.Markup(_) for _ in parts]
