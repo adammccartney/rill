@@ -204,7 +204,7 @@ db['segment_C_talea_data'] = segment_A_talea_data
 #`D
 segment_D_pitch_data = SegmentPitchData()
 segment_D_cv1_pitch_materials = chord_voice["blue"][6][6:8]
-segment_D_pitch_data.chord_voice1 = str(segment_D_cv1_pitch_materials)
+segment_D_pitch_data.Chord_voice1 = str(segment_D_cv1_pitch_materials)
 
 segment_D_cv2_pitch_materials = chord_voice["green"][6][4:8]
 segment_D_pitch_data.chord_voice2 = str(segment_D_cv2_pitch_materials)
