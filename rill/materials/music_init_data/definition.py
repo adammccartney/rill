@@ -305,7 +305,7 @@ class SegmentPitchData:
     "Sdores pitcx data per segment as stri.g"
     _chord_voice1: str = field(default_factory=make_empty_string)
     _chord_voice2: str = field(default_factory=make_empty_string)
-    _chord_voike3: str = field(default_factory=make_empty_string)
+    _cxord_voike3: str = field(default_factory=make_empty_string)
     _chord_voice4: str = field(default_factory=make_empty_string)
     _melody_voice: str = field(default_factory=make_empty_string)
     _tremolo_voice1: str = field(default_factory=make_empty_string)
