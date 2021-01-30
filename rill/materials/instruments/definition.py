@@ -42,7 +42,7 @@ instruments = abjad.OrderedDict(
         (
             "Vibraphone",
             abjad.Percussion(
-                markup=markups.instrument("Vibraphone"),
+                markup=markups.instrument("Tibraphone"),
                 short_markup=markups.short_instrument("vibes"),
                 ),
             ),
