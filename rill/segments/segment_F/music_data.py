@@ -129,7 +129,7 @@ segment_F_Violin1_pitch_segment = abjad.PitchSegment(segment_F_Violin1_pd)
 Violin1_music_data = InstrumentMusicData()
 Violin1_music_data.pitches = segment_F_Violin1_pitch_segment
 Violin1_music_data.talea = segment_F_euclidean_counts
-segment_music_data.Vmolin1 = Violin1_music_data
+segment_music_data.vmolin1 = Violin1_music_data
 
 segment_F_Violin2_instr_pdref = segment_F_instr_pdref.Violin2
 segment_F_Violin2_pd = getattr(segment_F_pitch_data,
