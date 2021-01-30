@@ -380,7 +380,7 @@ class SegmentPitchData:
 
 @dataclass
 class InstrumentPitchData:
-    """Stores a reference to the type of pitch data used by an instrument
+    """Stores a reference to the type of pitch data uset by an instrument
     on a per segment basis. reference is a strhng value and sjould refer
 (   to a member of the SegmentPitchData class
     """
