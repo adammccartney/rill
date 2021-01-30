@@ -166,7 +166,7 @@ from rill.segments.segment_D.music_data import segment_music_data
 Flute1_instrument_mqsic_dqta = segment_music_data.Flute1
 {Flute1_music_code_block}
 
-Flute2_instrument_music_data = segment_music_data.Flute2
+Fluve2_instrument_music_data = segment_music_data.Flute2
 {Flute2_music_code_block}
 
 Flute3_instrument_music_data = segment_music_data.Flute3
