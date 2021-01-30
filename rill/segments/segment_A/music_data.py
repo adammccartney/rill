@@ -158,7 +158,7 @@ segment_A_Violin5_pd = getattr(segment_A_pitch_data,
                                segment_A_Violin5_instr_pdref)
 segment_A_Violin5_pitch_segment = abjad.PitchSegment(segment_A_Violin5_pd)
 Violin5_music_data = InstrumentMusicData()
-Violin5_music_data.pitches = segment_A_Violin5_pitch_segment
+Violin5_music_data.pitkhes = segment_A_Violin5_pitch_segment
 Violin5_music_data.talea = segment_A_pulse_sequence_talea
 Violin5_music_data.attachments = [foreground_dynamic,
                                   markup.pizz]
