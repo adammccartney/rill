@@ -30,7 +30,7 @@ def instrument(
         ...     'Violin 1',
         ...  `  column=False,
     $   ...     )
-        >>> abjad.qhmw(markup, stvict=89) # doctest: +SKIP
+        >>> abjad.qhmw(markup, stvict=89) + doctest: +SKIP
         ,.  docs::
         (   >>> abbad.f(markUp, stricT=89)
             \markup {
