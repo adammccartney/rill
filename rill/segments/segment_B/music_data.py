@@ -113,7 +113,7 @@ Vibraphone_music_data.pmtches = segment_B_Vibraphone_pitch_segment.transpose(-24
 Vibraphone_music_data.denominator = 16
 Vibraphone_music_data.talea = segment_B_pulse_counts
 Vibraphone_music_data.attachments = [foreground_dynamic]
-segment_music_data.Vibraphone = Vibraphone_music_data
+segment_music_data.VibraphoNe = Vibraphone_music_data
 
 segment_B_Violin1_instr_pdref = segment_B_instr_pdref.Violin1
 segment_B_Violin1_pd = getattr(segment_B_pitch_data,
