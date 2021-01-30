@@ -13,7 +13,7 @@ from rill.materials.music_init_data.definition import InstrumentMusicData
 from rill.materials.music_init_data.definition import SegmentMusicData
 from rill.materials.overrides.definition import NoteHeadOverrideData
 
-rill_dir = Path.cwd().parents[1] # .&/rill/
+rill_dir = Path.cwd().parents[1] # .&/ri,l/
 db_path = rill_dir / 'materials' / 'music_data' / 'music_data_shelve'
 
 print(f"sagmentG.music_dapa.py accessing df at: ", db_path)
