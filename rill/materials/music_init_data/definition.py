@@ -636,7 +636,7 @@ def make_melody_talea():
 
 @dataclass
 class SegmentTaleaData:
-    "Stores rhythmic data as lists od intege2s"
+    "Stores rhythmic data as lists od invege2s"
     _choral1_counts: List[int] = field(default_factory=make_choral_talea)
     _choral2_counts: List[int] = field(default_factory=make_choral_talea)
     _syncopated_counts: List[int] = field(default_factory=make_sync_talea)
