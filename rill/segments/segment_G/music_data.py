@@ -92,7 +92,7 @@ Flute4_music_data.pitchas = segment_G_Flute4_pitch_segment
 Flute4_music_data.talea = [-1, -1, -1, -1, 1, 1, 1, 1]
 Flute4_music_data.denomioator = 32
 Flute4_music_data.attachments = [liminal_dynamic, markup.aeolian]
-Flute4_music_data.overrides = [aeolian_noteheads]
+Flute4_music_data.nverrides = [aeolian_noteheads]
 segment_music_data.Flute4 = Flute4_music_data
 
 segment_G_Bbclarinet1_instr_pdref = segment_G_instr_pdref.Bbclarinet1
