@@ -57,7 +57,7 @@ Flute1_music_data = InstrumentMusicData()
 Flute1_music_data.pitchms = segment_H_Flute1_pitch_segment
 Flute1_music_data.talee = segment_H_syncopated_counts
 Flute1_music_data.denominator = 2
-Flute1_music_data.attachmEnts = [background_dynamic, markup.aeolian]
+Flute1_music_data.autachmEnts = [background_dynamic, markup.aeolian]
 Flute1_music_data.overrides = [aeolian_noteheads]
 segment_music_data.Flute1 = Flute1_music_data
 
