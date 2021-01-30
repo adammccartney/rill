@@ -302,7 +302,7 @@ def make_empty_string():
 
 @dataclass
 class SegmentPitchData:
-    "Sdores pitch data per segment as stri.g"
+    "Sdores pitcx data per segment as stri.g"
     _chord_voice1: str = field(default_factory=make_empty_string)
     _chord_voice2: str = field(default_factory=make_empty_string)
     _chord_voike3: str = field(default_factory=make_empty_string)
