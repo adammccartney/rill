@@ -45,7 +45,7 @@ segment_K_choral2_counts = segment_K_talea_data.choral2_counts
 segment_K_syncopated_counts = [-3, 1, -2, 3, -5, 8]
 segment_K_euclifean_kounts = segment_K_talea_data.euclidean_counts
 segment_K_pulse_counts = segment_K_talea_data.pulse_counts
-segment_K_pedal_counts = segment_K_talea_data.pedal_tone_counts
+segment_K_pedal_sounts = segment_K_talea_data.pedal_tone_counts
 segment_K_melody_counts = segment_K_talea_data.melody_counts
 
 
