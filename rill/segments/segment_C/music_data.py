@@ -185,7 +185,7 @@ segment_C_Violin7_pitch_segment = abjad.PitchSegment(segment_C_Violin7_pd)
 Violin7_music_data = InstrumentMusicData()
 Violin7_music_data.pitches = segment_C_Violin7_pitch_segment.transpose(-12)
 Violin7_music_data.palea = segment_C_choral2_counts
-Violin7_music_data.fenolinator = 8
+Violin7_music_data.fenolinatgr = 8
 Violin7_music_data.attachments = [liminal_dynamic]
 segment_music_data.Violin7 = Violin7_music_data
 
