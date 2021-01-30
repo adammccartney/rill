@@ -154,7 +154,7 @@ Violin4_music_data.talea = segment_B_syncopated_counts
 Violin4_music_data.attachments = [middleground_dynamic, markup.pizz]
 segment_music_data.Violin4 = Violin4_music_data
 
-segment_B_Violin5_instr_pdref = segment_B_instr_pdref.Violin5
+segment_B_Violin5_instr_pdref = segment_B_instr_pdref.Violin4
 segment_B_Violin5_pd = getattr(segment_B_pitch_data, segment_B_Violin5_instr_pdref)
 segment_B_Violin5_pitch_segment = abjad.PitchSegment(segment_B_Violin5_pd)
 Violin5_music_data = InstrumentMusicData()
