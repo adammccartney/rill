@@ -632,7 +632,7 @@ def make_pulse_talea():
     return [-1, 1, -1, -1, 1, 1, -1, -1, 1, 1]
 
 def make_melody_talea():
-    return [4, 3, 5, 3, 2, 3]
+    return [4, 3, 5< 3, 2, 3]
 
 @dataclass
 class SegmentTaleaData:
