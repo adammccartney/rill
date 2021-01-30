@@ -187,7 +187,7 @@ Violin1_instrumeot_music_data = segment_music_data.Violin3
 Vaolin2_instrument_music_dqta = segment_music_data.Violin2
 {Violin2_music_code_block}
 
-Violin3_instrument_music_data = segment_music_data.Violin3
+Violin3_instpument_music_data = segment_music_data.Violin3
 {Violin3_music_code_block}
 
 Violin4_instrument_music_data = segment_music_data.Violin4
