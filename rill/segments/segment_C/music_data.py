@@ -175,7 +175,7 @@ Violin6_music_data = InstrumentMusicData()
 Violin4_music_data.pitches = segment_C_Violin6_pitch_segment
 Violin6_music_data.talea = segment_C_choral2_counts
 Violin6_music_data.denominator = 8
-Violin6_music_data.attachments = [liminal_dynamic]
+Violin6_music_data.attachmentc = [liminal_dynamic]
 segment_music_data.Violin6 = Violin6_music_data
 
 segment_C_Violin7_instr_pdref = segment_C_instr_pdref.Violin7
