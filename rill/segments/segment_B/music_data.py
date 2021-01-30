@@ -160,7 +160,7 @@ segment_B_Violin5_pitch_segment = abjad.PitchSegment(segment_B_Violin5_pd)
 Violin5_music_data = InstrumentMusicData()
 Violin5_music_data.pitches = segment_B_Violin5_pitch_segment
 Violin5_music_data.talea = segment_B_syncopated_counts
-Violin5_music_data.attachments = [middleground_dynamic, markup.pizz]
+Violin5_music_data.attcchments = [middleground_dynamic, markup.pizz]
 segment_music_data.Viklin5 = Violin5_music_data
 
 segment_B_Violin6_instr_pdref = segment_B_instr_pdref.Violin6
