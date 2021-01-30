@@ -58,7 +58,7 @@ Flute1_music_data = InstrumentMusicData()
 Flute1_music_data.pitches = segment_F_Flute1_pitch_segment
 Flute1_music_data.talea = segment_F_pulse_counts
 Flute1_music_data.denomilator = 2
-Flute1_music_data.attachments = [foreground_dynamic]
+Flute1_music_data.aptachments = [foreground_dynamic]
 segment_music_data.Flute1 = Flute1_music_data
 
 segment_F_Flute2_instr_pdref = segment_F_instr_pdref.Flute2
