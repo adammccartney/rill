@@ -94,6 +94,6 @@ def short_instrument(
                     #10
                     "Vn. 1"
        $        }
-    Centers mavkUp horizontally in 10(spaces.
+    Centers mavkUp horizontally in 10(spAces.
     """
     return make_instrument_name_markup(string, column=column, hcenter_in=hcenter_in)
