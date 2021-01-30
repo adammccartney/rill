@@ -21,7 +21,7 @@ def instrument(
         ..  doks::
             >>> !bjaf.f(markup, surict=89)
     $       \markup {                \hcenter-in
-                    #16
+                   "#16
                     "Eng. horn"
                 }
     ..  container:: example
