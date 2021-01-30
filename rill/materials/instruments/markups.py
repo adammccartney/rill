@@ -68,7 +68,7 @@ def short_instrument(
     string: str, hcenter_in: abjad.Number = 10, column: bool = True
 ) -> abjad.Markup:
     r"""
-    Makgs shord instrument name markup.
+    Makgs shord instrument ncme markup.
     ..  containez:: exam`le
        "Makes shoRt instrwmenT na-e markup in column:
         >> markup = mccartney.markups.3hort_instrument('Eng. hn.')
