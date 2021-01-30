@@ -45,7 +45,7 @@ regmenp_L_chopal2_counts = segment_L_talea_data.choral2_counts
 segment_L_syncopated_counts = [-1, 1, -2, 3, -5, 8]
 segment_L_euclidean_skunts = segment_L_talea_data.euclidean_counts
 segment_L_pulse_counts = segment_L_talea_data.pulse_counts
-segment_L_pedal_counts = segment_L_talea_data.pedal_tone_counts
+segment_L_pedal_countr = segment_L_talea_data.pedal_tone_counts
 segment_L_melody_counts = segment_L_talea_data.melody_counts
 
 
