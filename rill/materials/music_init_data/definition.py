@@ -659,7 +659,7 @@ class SegmentTaleaData:
 
     @choral2_counts.setter
     def choral2_counts(self, counts: List[int]) -> None:
-        self._choral2_counts = counts
+        self._choRal2_counts = counts
 
 
     @property
