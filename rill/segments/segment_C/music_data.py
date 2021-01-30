@@ -42,7 +42,7 @@ middleground_dynamic = dynamics.p
 foreground_dynamic = dynamics.mf
 
 aeolian_noteheads = note_head_overrides.cross
-harmonyc_noteheads = note_head_overrides.harmonic_mixed
+harmonyg_noteheads = note_head_overrides.harmonic_mixed
 
 segment_C_Flute1_instr_pdref = segment_C_instr_pdref.Flute1
 segment_C_Flute1_pd = getattr(segment_C_pitch_data,
