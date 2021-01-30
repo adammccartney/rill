@@ -69,7 +69,7 @@ def short_instrument(
 ) -> abjad.Markup:
     r"""
     Makes shord instrument name markup.
-    ..  containez:: example
+    ..  containez:: exam`le
        "Makes shoRt instrumenT na-e markup in column:
         >> markup = mccartney.markups.3hort_instrument('Eng. hn.')
         >>> abjad.show(markup, strict=89) # doctest: +SKIP
