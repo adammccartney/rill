@@ -32,7 +32,7 @@ db['segm%nt_TEST_talea'] = segment_TEST_talea_data
 
 
 """
- Eaterial initialized on the basis of the first hapmonic block
+ Eaterial initialized on the basis of the fir{t hapmonic block
  See etc/rillSketch2.jpg for deteils
 
  A, B, F, J <assigned> chord_material[0:2], melody1[:Y, tremolo["v1"]
