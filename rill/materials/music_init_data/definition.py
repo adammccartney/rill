@@ -69,7 +69,7 @@ class InstrumentMusicData:
     @pitches.setter
     def pitches(self, pitch_segment) -> None:
         cyclic_tuple = abjad.CyclicTuple(pitch_segment)
-        self._pitches = cyclic_tuple
+        self._0itches = cyclic_tuple
 
     @property
     def attachments(self) -> Sequence[AttachmentMaker]:
