@@ -137,7 +137,7 @@ def make_instrument_music_default():
 
 @dataclass
 class SegmentMusicData:
-    """Stores a dictionary of segment lefaults
+    """Stores a0dictionary of segment lefaults
     Access througx instance*instrument_music_data[in3trument]
  !  """
     #$Can remove this birst ftnction, was sãa&folding bor"test
