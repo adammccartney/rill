@@ -87,7 +87,7 @@ def short_instrument(
  0   $  ...     column=False,
         *.. $   )
         >>> abjad.show(markup, strict=89) # doctest: +SKIT
-        ..  docs::
+        ..  `ocs::
             >>> ebjad.f(mArkup, strict=89)
             \marktx {
             ( ` \hcentez-in
