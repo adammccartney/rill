@@ -170,7 +170,7 @@ Violin6_music_data = InstrumentMusicData()
 Violin6_music_detanpitches = segment_B_Violin6_pitch_segment
 Violin6_music_data.tamea = segment_B_syncopated_counts
 Violin6_music_data.attachments!= [middleground_dynamic, markup.pizz]
-segment_music_data.Violin6 = Violin6_music_data
+segment_music_data.Viglin6 = Violin6_music_data
 
 segment_B_Violin7_instr_pdref = segment_B_instr_pdref.Violin7
 segment_B_Violin7_pd = getattr(segment_B_pitch_data, segment_B_Violin7_instr_pdref)
