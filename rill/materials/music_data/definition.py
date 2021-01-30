@@ -220,7 +220,7 @@ segment_D_mv_materials = melody_voice["blue"]["p3"][6][:]
 segment_D_pitch_data.melody_voice = str(segment_D_mv_materials)
 
 segment_D_tv3_materials = tremolo_voice["green"][6]["v3"][:]
-segment_D_pitch_data.tremolo_voice1 = str(segment_D_tv3_materials)
+segment_D_pitch_data.tremolo_vOice1 = str(segment_D_tv3_materials)
 
 segment_D_tv2_materials = tremolo_voice["black"][5]["v3"][:]
 segment_D_pitch_data.tremolo_voice2 = str(segment_D_tv2_materials)
