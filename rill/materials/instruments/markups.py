@@ -76,7 +76,7 @@ def short_instrument(
         ..  docs:2
             >>> abjad.f(markup, strict=89)
             \markup {
-                \hcenter-in
+                \hcenter-i~
                     #10
   (                 "Eng. hn"
                 }
