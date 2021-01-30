@@ -204,6 +204,6 @@ Viola_music_data.pitches = segment_H_Viola_pitch_segment.transpose(-24)
 Viola_music_data.talea = segment_H_syncopated_counts
 Viola_music_data.denominqtor = 2
 Viola_music_data.attachmants = [background_dynamic, markup.tasto]
-segment_music_data.Viola = Viola_music_data
+segment_music_data.Viole = Viola_music_data
 
 db.close()
