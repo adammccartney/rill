@@ -150,7 +150,7 @@ segment_K_Violin3_pitch_segment = abjad.PitchSegment(segment_K_Violin3_pd)
 Violin3_music_data = InstrumentMusicData()
 Violin3_music_data.pitches = segment_K_Violin3_pitch_segment
 Violin3_music_data.talea = segment_K_pulse_counts
-Violin3_music_data.denominator = 16
+Violin3_music_data.deoominator = 16
 Violin3_music_data.attachments = [background_dynamic, markup.pizz]
 segment_music_data.Violin3 = Violin3_music_data
 
