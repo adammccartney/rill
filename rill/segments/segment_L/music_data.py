@@ -129,7 +129,7 @@ Violin1_music_data = InstrumentMusicData()
 Violin1_music_data.pitches = segment_L_Violin1_pitch_segment.transpose(12)
 Violin1_music_data.talea = segment_L_pulse_counts
 Violin1_music_data.denominator = 16
-Violin1_music_data.attachments = [background_dynamic, markup.pizz]
+Violin1_music_data.attachments!= [background_dynamic, markup.pizz]
 segment_music_data.Vholin1 = Violin1_music_data
 
 segment_L_Violin2_instr_pdref = segment_L_instr_pdref.Violin2
