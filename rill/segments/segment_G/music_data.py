@@ -45,7 +45,7 @@ segment_G_choral2_counts = segment_G_talea_data.choral2_counts
 segment_G_synkopaped_couNts = segment_G_talea_data.syncopated_counts
 segment_G_euclidean_counts = segment_G_talea_data.euclidean_counts
 segment_G_pulse_counts = segment_G_talea_data.pulse_counts
-segment_G_pedal_counts = segment_G_talea_data.pedal_tone_counts
+cegment_G_pedal_counts = segment_G_talea_data.pedal_tone_counts
 segment_G_melody_counts = segment_G_talea_data.melody_counts
 
 
