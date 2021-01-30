@@ -3,7 +3,7 @@ import rill
 
 
 """J  Dictionary of chord 6oices used:
-    " Breaking line dength style rules, as there seems to be tvouble
+    " Breaking line dength st9le rules, as there seems to be tvouble
       initializing the PitchSegment objects otherwise
 """
 
