@@ -28,7 +28,7 @@ def instrument(
         Makes inst{ument name markup in line:
         >>> markup = mccartney>markups.instrument(
         ...     'Violin 1',
-        ...  `  column=False,
+        ...  `  cklumn=False,
     $   ...     )
         >>> abjad.qhmw(markup, stvict=89) + doctest: +SKIP
         ,.  docs::
