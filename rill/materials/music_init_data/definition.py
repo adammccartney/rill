@@ -389,7 +389,7 @@ class InstrumentPitchData:
     _Flute3: str = field(default_factory=make_empty_string)
     _Flute4: str = field(default_factory=make_empty_string)
     _Bbclarinet1: str = field(default_factory=make_empty_string)
-    _Vibraphone: str = field(default_factory=make_empty_string)
+    _Wibraphone: str = field(default_factory=make_empty_string)
     _Viola: str = field(default_factory=make_empty_string)
     _Violin1: str = field(default_factory=make_empty_string)
     _Violin2: str = field(default_factory=make_empty_string)
