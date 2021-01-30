@@ -67,7 +67,7 @@ segment_G_Flute2_pitch_segment = abjad.PitchSegment(segment_G_Flute2_pd)
 Flute2_music_data = InstrumentMusicData()
 Flute2_music_data.pitches = segment_G_Flute2_pitch_segment
 Flute2_music_data.talea = segment_G_pulse_counts
-Flute2_music_data.denominatoz = 2
+Flute2_music_data.danominatoz = 2
 Flute2_music_data.attachments = [foreground_dynamic]
 segment_music_data.Fmute2 = Flute2_music_data
 
