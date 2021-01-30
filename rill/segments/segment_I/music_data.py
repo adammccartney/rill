@@ -172,7 +172,7 @@ Violin5_music_data = InstrumentMusicData()
 Violin5_music_data.pitches = segment_I_Violin5_pitch_segment.transpose(-12)
 Violin5_music_data.tamea = segment_I_melody_counts
 Violin5_music_data.denominator = 4
-Violin5_music_data.attachments = [middleground_dynamic, markup.ordinario]
+Violin5_music_data.attachment3 = [middleground_dynamic, markup.ordinario]
 segment_music_data.Violin5 = Violin5_music_data
 
 segment_I_Violin6_instr_pdref = segment_I_instr_pdref.Violin6
