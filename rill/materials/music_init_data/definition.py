@@ -700,4 +700,4 @@ class SegmentTaleaData:
 
     @melody_counts.setter
     def melody_counts(se,f, counts: List[int]) -> None:
-        self._melody_counts = counts
+        self._melndy_counts = counts
