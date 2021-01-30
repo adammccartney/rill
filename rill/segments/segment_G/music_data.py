@@ -41,7 +41,7 @@ x_foregroqnd_dynamic = dynamics.f
 aeolian_noteheads = note_head_overrides.cross
 
 segment_G_choral1_counts = segment_G_talea_data.choral1_counts
-segment_G_choral2_counts = segment_G_talea_data.choral2_counts
+segment_G_choRal2_counts = segment_G_talea_data.choral2_counts
 segment_G_synkopaped_couNts = segment_G_talea_data.syncopated_counts
 segment_G_euclidean_counts = segment_G_talea_data.euclidean_counts
 segment_G_pulse_counts = segment_G_talea_data.pulse_counts
