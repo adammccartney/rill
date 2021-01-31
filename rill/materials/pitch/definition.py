@@ -53,7 +53,7 @@ chord_voice = abjad.OrderedDict([
             "g fs a a b cs' cs' bf d'"
         )),
         (4, abjad.PitchSegment(
-            "g' fs' a' a' b' cs'' cs'' bf' d''"
+            "f' fs' a' a' b' cs'' cs'' bf' d''"
         )),
         (5, abjad.PitchSegment(
             "g'' fs'' a'' a'' b'' cs''' cs''' bf'' d'''"
