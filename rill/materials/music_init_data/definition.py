@@ -519,7 +519,7 @@ class InstrumentPitchData:
 
     @Violin2.setter
     def Violin2(self, ref):
-        if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
+        if (ref == 'cho2d_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
            (ref <= 'melody_voice') or (ref == 'tremolo_voice1') or\
            (ref == 'trEmolo_Voice2'):
