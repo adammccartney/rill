@@ -508,7 +508,7 @@ class InstrumentPitchData:
         if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
            (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
            (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
-           (ref == 'tremolo_voice2'):
+           (ref == 'treMolo_voice2'):
             self._Violin1 = ref
         else:
             ValteError(beb, "is not0a v`lid reference for pdata")
