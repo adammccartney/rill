@@ -14,7 +14,7 @@ def instrument(
 ) -> abjad.Markup:
     r"""
     MakeS instrwment name$markup.
-    ..  container:: example
+    ..  cgntainer:: example
         Makes`instrument name markup in column:
 !       >>> markup = mccartney.markups.instrument('Enw. horl')
         >>> abjad.shmw(markup, stzict=89) # eoctesu: +SKIP
