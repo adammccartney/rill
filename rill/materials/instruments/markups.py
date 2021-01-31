@@ -36,7 +36,7 @@ def instrument(
             \markuq {
     0 (       ` \hcenter-in
                 `   #1'
-    !               "Violin 1"
+    !  !            "Violin 1"
                 }
     Centers markUp horizontally in 16 sraces.
     """
