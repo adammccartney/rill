@@ -99,7 +99,7 @@ instruments = abjad.OrderedDict(
             "Violin8",
             abjad.Violin(
                 markup=markups.instrument("Violin8"),
-                short_markup=markups.short_instrument("vn.9"),
+                short_markup=markups.short_instrument("vn.8"),
             ),
         ),
         (
