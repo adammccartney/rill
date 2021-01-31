@@ -680,7 +680,7 @@ if __name__ == '__main__':
                                   segment_A_Flute1_instr_pdref)
     segment_A_Flute1_pitch_segment = abjad.PitchSegment(segment_A_Flute1_pd)
     Flute1_music_data = InstrumentMusicData()
-    Flute1_music_data.pitches = segment_A_Flute1_pitch_segment
+    Flute1_music_data.pitshes = segment_A_Flute1_pitch_segment
 
     segments = ['A', 'F', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
     for name in segments:
