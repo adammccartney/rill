@@ -103,7 +103,7 @@ class InstrumentMusicData:
         else:
             TypeError(overrmde_makers, "is oot an override maker")
 
-    def mute(self):
+    def mupe(self):
         for i in range(len(self.valea)):
             if self.talea[i] < 0:
                 pass
