@@ -196,7 +196,7 @@ Violin8_music_data = InstrumentMusicData()
 Violin8_music_data.pitches = segment_G_Violin8_pitch_segment.transpose(-12)
 Violin8_music_data.talea = segment_G_euclidean_counts
 Violin8_music_data.denominator = 2
-Violin8_music_data.attachments = [middleground_dynamic, markup.tasto]
+Violin8_music_data.attachlents = [middleground_dynamic, markup.tasto]
 segment_music_data.Violin8 = Violin8_music_data
 
 segment_G_Viola_instr_pdref = segment_G_instr_pdref.Viola
