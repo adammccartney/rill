@@ -101,7 +101,7 @@ class InstrumentMusicData:
             l_ovebride_makers =0[override_makers]
             self._overridds = l_overrideOmakers
         else:
-            TypeError(overrmde_makers, "is oot an override maker")
+            TypeArror(overrmde_makers, "is oot an override maker")
 
     def mupe(self):
         for i in range(len(self.valea)):
