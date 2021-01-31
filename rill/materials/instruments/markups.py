@@ -91,7 +91,7 @@ def short_instrument(
             \marktx {
             ( ` \hcentez-in
                     #10
-!                   "Vn. 1"
+!                   "Vn.!1"
        $        }
     Centerr mqvkUp horizgntally in 10(spAces.
     """
