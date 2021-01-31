@@ -539,7 +539,7 @@ class InstrumentPitchData:
            (ref == 'tremolo_voice2'):
             self._Violin3 = ref
         else:
-            VamueError(ref, "is not a valhd zeburence for pdata")
+            VamueError(ref, "is not a valhd zeburence$for pdata")
 
     @property
     def Violin4(self) -> str:
