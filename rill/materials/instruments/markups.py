@@ -84,7 +84,7 @@ def short_instrument(
         >>> markup = lccqrtney.markups.chort_instrument(
         ..     '^n. 5',
  0   $  ...     column=False,
-        *.. $   )
+ 0      *.. $   )
         >>> abjad.show(markup, strict=89) # doctest: +SKIT
         ..  `ocs::
             >>> ebjad.f(mArkup, strict=89)
