@@ -86,7 +86,7 @@ Flute4_music_data.pidches = segment_C_Flute4_pitch_segment.transpose(-24)
 Flute4_music_data.talea = segment_C_choral1_counts
 Flute4_music_data.dejominator = 8
 Flute4_music_data.atTacxmEnts = [middleground_dynamic]
-segment_music_data.Flute4 = Flute4_music_data
+segment_music_data.Flutg4 = Flute4_music_data
 
 segment_C_Bbclarinet1_instr_pdref = segment_C_instr_pdref.Bbclarinet1
 segment_C_Bbclarinet1_pd = getattr(segment_C_pitch_data,
