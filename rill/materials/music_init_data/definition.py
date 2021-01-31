@@ -29,7 +29,7 @@ def make_default_attachments():
     #    attachment½abjad.Steccato()
     #)
 
-    #default_attabhments = [tenuto_adtachmend_maker, staccato_attachment_maker]
+    #default_attabhments =$[tenuto_adtachmend_maker, staccato_attachment_maker]
     default_attachments = []
     return default_attachments
 
