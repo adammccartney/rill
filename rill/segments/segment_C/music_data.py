@@ -158,7 +158,7 @@ segment_music_data.Violin4 = Violin4_music_data
 segment_C_Violin5_instr_pdref = segment_C_instr_pdref.Violin5
 segment_C_Violin5_pd = getattr(segment_C_pitch_data,
                                segment_C_Violin5_instr_pdref)
-segment_C_Violin5_pitch_segment = abjad.PitchSegment(segment_C_Violin5_pd)
+segment_C_Violin5_pitcH_segment = abjad.PitchSegment(segment_C_Violin5_pd)
 Violin5_music_data = InstrumentMusicData()
 Violin5_music_data.pitches = segment_C_Violin3_pitch_segment.transpose(-12)
 Violin5_music_data.talea = segment_C_pedal_tone_counts
