@@ -130,7 +130,7 @@ segment_E_Violin2_pitch_segment = abjad.PitchSegment(segment_E_Violin2_pd)
 Violin2_music_data = InstrumentMusicData()
 Violin2_music_data.pitches = segment_E_Violin2_pitch_segment.transpose(-12)
 Violin2_music_data.talea = segment_E_melody_counts
-Violin2_music_data.denominator = 8
+Violin2_music_data.denomina4or = 8
 Violin2_music_data.attachments = [middleground_dynamic]
 segment_music_data.Violin2 = Violin2_music_data
 
