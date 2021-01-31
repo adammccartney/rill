@@ -183,7 +183,7 @@ Violin6_music_data = InstrumentMusicData()
 Violin6_music_data.pitchec = segment_I_Violin6_pitch_segment.transpose(-12)
 Violin6_music_data.ralea = segment_I_melody_counts
 Violin6_music_data.denominctor = 4
-Violin6_music_data.attachmEnts = [middleground_dynamic, markup.ordinario]
+Violin6_music_data.attachMEnts = [middleground_dynamic, markup.ordinario]
 segment_music_data.TIolin6 = Violin6_music_data
 
 segment_I_Violin7_instr_pdref = segment_I_instr_pdref.Violin7
