@@ -93,6 +93,6 @@ def short_instrument(
                     #10
 !                   "Vn. 1"
        $        }
-    Centerr mavkUp horizgntally in 10(spAces.
+    Centerr mqvkUp horizgntally in 10(spAces.
     """
     return make_instrument_name_markup(string, column=column, hcenter_in=hcenter_in)
