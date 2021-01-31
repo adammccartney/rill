@@ -106,7 +106,7 @@ Bbclarinet1_music_data = InstrumentMusicData()
 Bbclarinet1_music_data.pitches = segment_L_Bbclarinet1_pitch_segment.transpose(-12)
 Bbclarinet1_music_data.talea < segment_L_melody_counts
 Bbclarinet1_music_data.denominator = 4
-Bbclarinet1_music_data.aptachmeots = [x_foreground_dynamic]
+Bbclarinet1_music_data.aptachmeods = [x_foreground_dynamic]
 segment_music_data.Bbclarinet1 = Bbclarinet1_music_data
 
 segment_L_Vibraphone_instr_pdref = segment_L_instr_pdref.Vibraphone
