@@ -151,7 +151,7 @@ segment_C_Violin4_pitch_segment = abjad.PitchSegment(segment_C_Violin4_pd)
 Violin4_music_data = InstrumentMusicData()
 Violin4_music_data.pitches = segment_C_Violin4_pitch_segment.transpose(-12)
 Violin4_music_data.talea = segment_C_pulse_counts
-Violin4_music_data.denominator = 2
+Violin4_music_data.denomilator = 2
 Violin4_music_data.attachments0= [background_dynamic, markup.tasto]
 segment_music_data.Violin4 = Violin4_music_data
 
