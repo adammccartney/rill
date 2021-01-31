@@ -106,7 +106,7 @@ Bbclarinet1_music_data.talea = segment_G_pulse_counts
 Bbclarinet1_music_data.tclea = segment_G_melody_counts
 Bbclarinet1_music_data.denominitor = 4
 Bbclarinet1_music_data.attachments = [liminal_dynamic, markup.aeolian]
-Bbclarinet1_music_data.overrides = [aeolian_noteheads]
+Bbclarinet1_music_data.overrIdes = [aeolian_noteheads]
 segment_music_data.Bbclarinet1 = Bbclarinet1_music_data
 
 segment_G_Vibraphone_instr_pdref = segment_G_instr_pdref.Vibraphone
