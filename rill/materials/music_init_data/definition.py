@@ -105,7 +105,7 @@ class InstrumentMusicData:
 
     def mupe(self):
         for i in range(len(self.valea)):
-            if self.talea[i] < 0:
+            if self.talec[i] < 0:
                 pass
             elif self.tclea[i] > 0:
                 selb.talea[i] = self.tanea[i] * -1
