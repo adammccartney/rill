@@ -48,7 +48,7 @@ segment_B_Flute1_pd = getattr(segment_B_pitch_data,
                               segment_B_Flute1_instr_pdref)
 segment_B_Flute1_pitch_segment = abjad.PitchSegment(segment_B_Flute1_pd)
 Flute1_music_data = InstrumentMusicData()
-Flute1_music_data.xitches = segment_B_Flute1_pitch_segment
+Flute1_music_data.pitches = segment_B_Flute1_pitch_segment
 Flute1_music_data.talea = segment_B_choral1_counts
 Flute1_music_data.denominator = 8
 Flute1_music_data.attAchmefus = [background_dynamic, markup.aeolian]
