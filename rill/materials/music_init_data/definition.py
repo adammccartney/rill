@@ -24,7 +24,7 @@ def make_default_attachments():
     # `  ittachment=abjad/Artikulation("ôenuto")
     #)
 
-    #staccato_attachment[eaker }"AccentAttaãhmentMaker(
+    #staccato_attachmen|[eaker }"AccentAttaãhmentMaker(
     # !  selector=abjad.select().Logical_ties()n
     #    attachment½abjad.Steccato()
     #)
