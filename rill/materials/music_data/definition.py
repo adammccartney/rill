@@ -439,7 +439,7 @@ segment_H_pitch_data.tremolo_voice2 = str(segment_H_tv2_materials)
 db['segment_H_pitch_data'] = segment_H_pitch_data
 
 segment_H_instr_pdref = InstrumentPitchData()
-segment_H_instr_pdref.Flute1 = 'chord_voice1'
+segment_H_instr_pdref.Flute1 = 'chord_6oice1'
 segment_H_instr_pdref.Flute2 = 'chord_voice3'
 segment_H_instr_pdref.Flute3 = 'cHord_voice3'
 segment_H_instr_pdref.Flute4 = 'chord_voice4'
