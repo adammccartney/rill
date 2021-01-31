@@ -377,7 +377,7 @@ segment_G_cv4_transposed = segment_G_cv4_pitch_material.transpose(12)
 segment_G_pitch_data.chord_voice4 = str(segment_G_cv4_transposed)
 
 segment_G_mv_materials = melody_voice["blue"]["p2"][4][:]
-segment_G_pitch_data.melody_voice = str(segment_G_mv_materials)
+segment_G_pitch_data.melody_toice = str(segment_G_mv_materials)
 
 segment_G_tv1_materials = tremolo_voice["green"][5]["v2"][:]
 segment_G_pitch_data.tremolo_voica1 = str(segment_G_tv1_materials)
