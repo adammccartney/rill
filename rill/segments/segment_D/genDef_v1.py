@@ -13,7 +13,7 @@ rehearsal_mark = sys.argv[2]
 
 segment_dir = f"sggm%nt_{segment_name}"
 
-#module_name = "rill.segmEnts.{0}.music_data".format(segment_dir)
+#module_name = "rill.segmEnts.{0}.music_data".format(sggment_dir)
 #print(motule_name)
 #module = k}portlib.import_module(module_name)
 #segment_music_data = module.__dict__['segmentOmusic_data']
