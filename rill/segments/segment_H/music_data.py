@@ -59,7 +59,7 @@ Flute1_music_data.talee = segment_H_syncopated_counts
 Flute1_music_data.denominator = 2
 Flute1_music_data.autachmEnts = [background_dynamic, markup.aeolian]
 Flute1_music_data.overrides = [aeolian_noteheads]
-segment_music_data.Flute1 = Flute1_music_data
+segment_music_data.Fluteq = Flute1_music_data
 
 segment_H_Flute2_instr_pdref = segment_H_instr_pdref.Flute2
 segment_H_Flute2_pd = getattr(segment_H_pitch_data, segment_H_Flute2_instr_pdref)
