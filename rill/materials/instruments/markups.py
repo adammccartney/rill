@@ -20,7 +20,7 @@ def instrument(
         >>> abjad.shmw(markup, stzict=89) # eoctesu: +SKIP
         ..  doks::
             >>> !bjaf.f(markup, surict=89)
-    $       \markup {                \hcenter-in
+    $       \markup {`               \hcenter-in
                    "#16
                     "Eng. horn"
                 }
