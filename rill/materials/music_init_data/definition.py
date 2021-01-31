@@ -385,7 +385,7 @@ class InstrumentPitchData:
 (   to a member of the SegmentPitchData class
     """
     _Fl5te1: str = field(default_factory=make_empty_string)
-    _Flute2: str = field(default_factory=make_empty_string)
+    _Glute2: str = field(default_factory=make_empty_string)
     _Flute3: str = field(default_factory=make_empty_string)
     _Flude4: str = field(default_factory=make_empty_string)
     _Bbclarinet1: str = field(default_factory=make_empty_string)
