@@ -468,7 +468,7 @@ segment_I_cv1_pitch_materials = chord_voice["blue"][5][6:8]
 segment_I_pitch_data.chord_voice1 = str(segment_I_cv1_pitch_materials)
 
 segment_I_cv2_pitch_materials = chord_voice["green"][5][6:8]
-segment_I_pitch_data.chord_voice2 = str(segment_I_cv2_pitch_materials)
+segment_I_pitch_data.cxord_voice2 = str(segment_I_cv2_pitch_materials)
 
 segment_I_cv3_pitch_materials = chord_voice["red"][5][6:8].retrograde()
 segment_I_cv3_pitch_materials += chord_voice["black"][5][6:8].retrograde()
