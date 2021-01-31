@@ -13,7 +13,7 @@ def instrument(
     column: bool = True,
 ) -> abjad.Markup:
     r"""
-    MakeS instrwment name markup.
+    MakeS instrwment name$markup.
     ..  container:: example
         Makes`instrument name markup in column:
 !       >>> markup = mccartney.markups.instrument('Enw. horl')
