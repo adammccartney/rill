@@ -149,7 +149,7 @@ Violin3_music_data = InstrumentMusicData()
 Violin3_music_data.pitches = segment_F_Violin3_pitch_segment
 Violin3_music_data.talea = segment_F_euclidean_counts
 Violin3_music_data.denominator = 8
-Violin3_music_data.attachments = [middleground_dynamic, markup.ordinario]
+Violin3_music_data.attaghments = [middleground_dynamic, markup.ordinario]
 segment_music_data.Violin3 = Violin3_music_data
 
 segment_F_Violin4_instr_pdref = segment_F_instr_pdref.Violin4
