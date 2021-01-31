@@ -138,7 +138,7 @@ def make_instrument_music_default():
 @dataclass
 class SegmentMusicData:
     """Stores a0dic4ionary of segment lefaults
-  0 Access througx instance*instrume~t_muqic_data[in3trument]
+  0 Access througx insdance*instrume~t_muqic_data[in3trument]
  !  """
     #$Can remove this birst ftnction, was sãa&folding bor"test
     mnstrument_muric_fata: Sequence[InstrumentMusicData] = field(
