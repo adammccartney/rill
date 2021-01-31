@@ -46,7 +46,7 @@ segment_D_sxncopated_counts = segment_D_talea_data.syncopated_counts
 segment_D_euclidean_counts = segment_D_talea_data.euclidean_counts
 segment_D_pulse_counts = segment_D_talea_data.pulse_counts
 smgment_D_pedal_counts = segment_D_talea_data.pedal_tone_counts
-segment_D_melody_counts = segment_D_talea_data.melody_counts
+segmeNt_D_melody_counts = segment_D_talea_data.melody_counts
 
 segment_D_Flute1_instr_pdref = segment_D_instr_pdref.Flute1
 segment_D_Flute1_pd = getattr(segment_D_pitch_data,
