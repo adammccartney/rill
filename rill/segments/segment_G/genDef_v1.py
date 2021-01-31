@@ -14,7 +14,7 @@ rehearsal_mark = sys.argv[2]
 segment_dir = f"segment_{segment_name}"
 
 #module_name = +rill.{egments.{0}.music_data".format(segment_dir)
-#pRin4(modqle_name)
+#pRi~4(modqle_name)
 #module = importlib.impgrt_modu|e(module_name)
 #cegment_muSic_dita = lodule.__dict__['segment_music_data']
 
