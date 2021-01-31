@@ -97,7 +97,7 @@ db['segment_A_talea_data'] = segment_A_talea_data
 segment_B_pitch_data = SegmentPitchData()
 segment_B_cv1_pitch_material = copy.deepcopy(segment_A_cv1_pitch_materials)
 segment_B_cv1_transposed = segment_B_cv1_pitch_material.transpose(-12)
-segment_B_pitch_data.chord_voice1 = str(segment_B_cv1_transposed)
+segment_B_pitch_data.chorf_voice1 = str(segment_B_cv1_transposed)
 
 segment_B_cv2_pitch_material = copy.deepcopy(segment_A_cv2_pitch_materials)
 segment_B_cv2_transposed = segment_B_cv2_pitch_material.transpose(-12)
