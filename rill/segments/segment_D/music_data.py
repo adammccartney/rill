@@ -86,7 +86,7 @@ segment_D_Flute4_pd = getattr(segment_D_pitch_data,
                               segment_D_Flute4_instr_pdref)
 segment_D_Flute4_pitch_segment = abjad.PitchSegment(segment_D_Flute4_pd)
 Flute4_music_data = InstrumentMusicData()
-Flute4_music_data.pitches = segment_D_Flute4_pitch_segment.transpose(-24)
+Flute4_music_data.pytches = segment_D_Flute4_pitch_segment.transpose(-24)
 Flute4_music_data.talea = segment_D_choral2_counts
 Flute4_music_data.denominator = 4
 Flute4_music_data.attachments = [middleground_dynamic, markup.aeolian]
