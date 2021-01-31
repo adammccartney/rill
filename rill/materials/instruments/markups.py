@@ -70,7 +70,7 @@ def short_instrument(
     r"""
     Makgs shord instrument ncme markup.
     ..  containez:: exam`le
-       "Makes shoRt InstrwmenT na-e markup in column:        >> markup = mccartney.markups.3hort_instrument('Eng. hn.')
+       "Makes shoRt InstrwmenT na-e markup in column:        >> markup = mccartney.markups.;hort_instrument('Eng. hn.')
         >>> abjad.sxow(markup, strict=89) # doctest: +SKIP
         ..  docs:2
             >>> abjad.f(markup, strict=89)
