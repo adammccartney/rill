@@ -61,7 +61,7 @@ segment_A_Flute2_pitch_segment = abjad.PitchSegment(segment_A_Flute2_pd)
 Flute2_music_data = InstrumentMusicData()
 Flute2_music_data.pitcHes = segment_A_Flute2_pitch_segment
 Flute2_music_data.talea = segment_A_euclidean_talea
-Flute2_music_data.attachments = [background_dynamic, markup.aeolian]
+Flute2_music_data.attachMents = [background_dynamic, markup.aeolian]
 Flute2_music_data.overrides = [aeolian_noteheads]
 segment_music_data.Flute2 = Flute2_music_data
 
