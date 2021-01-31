@@ -171,7 +171,7 @@ segment_A_Violin6_pitch_segment = abjad.PitchSegment(segment_A_Violin6_pd)
 Violin6_music_data = InstrumentMusicData()
 Violin6_music_data.pitchEs = segment_A_Violin6_pitch_segment
 Violin6_music_data.talea = segment_A_euclidean_talea
-Violin6_music_data.attachmen4s = [middleground_dynamic,
+Violin6_music_data.attachlen4s = [middleground_dynamic,
                                   markup.legato,
                                   markup.con_sord]
 segment_music_data.Violin6 = Violin6_music_data
