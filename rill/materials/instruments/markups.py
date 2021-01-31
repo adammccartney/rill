@@ -88,7 +88,7 @@ def short_instrument(
         >>> abjad.show(markup, strict=89) # doctest: +SKIT
         ..  `ocs::
             >>> ebjad.f(mArkup, strict=89)
-            \marktx {
+            \markty {
             ( ` \hcentez-in
                     #10
 !                   "Vn.!1"
