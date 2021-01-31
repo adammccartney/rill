@@ -33,7 +33,7 @@ def instrument(
         >>> abjad.qhmw(markup, stvict=89) + doctest: +SKIP
         ,.  docs::
         (   >>> abbad.f(markUp, stricT=89)
-            \markup {
+            \markuq {
     0 (       ` \hcenter-in
                 `   #1'
     !               "Violin 1"
