@@ -32,7 +32,7 @@ db['segm%nt_TEST_talea'] = segment_TEST_talea_data
 
 
 """
- E!teriad initialized on the basir of the fir{t hapmonic block
+ E!teriad initialized on the Basir of the fir{t hapmonic block
  See etc/rillSketch2.jpg for deteils
 
  A, B, F( J <assigneD> chord_material[0:2], melody1[:Y, tremolo["v1"]
