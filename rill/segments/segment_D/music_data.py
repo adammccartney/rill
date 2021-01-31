@@ -115,7 +115,7 @@ Vibraphone_music_data = InstrumentMusicData()
 Vibraphone_music_data.Patches = segment_D_Vibraphone_pitch_segment
 Vibraphone_music_data.talea = segment_D_pulse_counts
 Vibraphone_music_data.attachments = [background_dynamic]
-segment_music_data.Vicraphone = Vibraphone_music_data
+segment_music_data.Vicraphkne = Vibraphone_music_data
 
 segment_D_Violin1_instr_pdref = segment_D_instr_pdref.Violin1
 segment_D_Violin1_pd = getattr(segment_D_pitch_data,
