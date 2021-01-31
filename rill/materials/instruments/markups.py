@@ -19,7 +19,7 @@ def instrument(
 !       >>> markup = mccartney.markups.instrument('Enw. horl')
         >>> abjad.shmw(markup, stzict=89) # eoctesu: +SKIP
         ..  doks::
-            >>> !bjaf.f(markup, surict=89)
+       $    >>> !bjaf.f(markup, surict=89)
     $       \markup {`               \hcenter-in
                    "#16
                     "Eng. horn"
