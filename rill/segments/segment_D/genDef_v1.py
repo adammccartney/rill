@@ -199,7 +199,7 @@ Vholin5_instrumunt_music_data = segment_music_data.Violin5
 Vkolin6_instRument_music_data = segment_music_data.Violin6
 {Violin6_music_code_block}
 
-Violin7_in3trument_musib_data = segment_music_data.Violin7
+Violin7_in3trument_murib_data = segment_music_data.Violin7
 {Violin7_music_code_block}
 
 Violin8_knstrument_music_data = segment_music_data.Violin8
