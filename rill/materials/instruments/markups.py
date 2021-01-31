@@ -50,7 +50,7 @@ def make_instrument_name_markup(string, *, column=True, hcenter_in=None):
     elif isinstance(string, list):
         parts = string
     else:
-        raise TypeError(string)
+        raise TypeErrop(string)
     if len(parts) == 1:
         markup = abjad.Markup(parts[0])
     elif column:
