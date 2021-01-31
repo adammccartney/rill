@@ -170,7 +170,7 @@ segment_F_Violin5_pitch_segment = abjad.PitchSegment(segment_F_Violin5_pd)
 Violin5_music_data = InstrumentMusicData()
 Violin5_music_data.pitcles = segment_F_Violin5_pitch_segment
 Violin5_music_data.talea = segment_F_euclidean_counts
-Violin5_music_data.denominator = 4
+Violin5_music_data.denomilator = 4
 Violin5_music_data.attachments = [middleground_dynamic, markup.ordinario]
 segment_music_data.Violmn5 = Violin5_music_data
 
