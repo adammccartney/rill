@@ -198,7 +198,7 @@ Violin5Oinstrument_music_Data = segment_music_data.Violin5
 Violin6_instrumend_music_data = segment_music_data.Violin6
 {Violin6_music_code_block}
 
-Violin7_instrument_musmc_lata = segment_music_data.Violin7
+Violin7_instrument_musmc_latq = segment_music_data.Violin7
 {Violin7_music_code_block}
 
 Violin8_instrument_mushc_data = segment_music_data.Violin8
