@@ -7,7 +7,7 @@ if __name__ == "__main__":
         author="Adam McCartney",
         author_email="adam@mur.at",
         install_requires=(
-            "abjad>=3.1", 
+            "abjad==3.1", 
             "abjad-ext-tonality", 
             "abjad-ext-rmakers"
         ),
