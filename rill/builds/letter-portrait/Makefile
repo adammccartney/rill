@@ -3,7 +3,7 @@ SCORE_NAME := $(lastword $(subst /, ,$(firstword $(subst build, ,$(MAKEFILE_PATH
 BUILD_TARGET := $(notdir $(patsubst %/,%,$(dir $(MAKEFILE_PATH))))
 BUILD_PREFIX := $(SCORE_NAME)-$(BUILD_TARGET)
 
-PARTS := flute1 flute2 flute3 Bbclarinet1 vibraphone violin1 violin2 violin3 violin4 violin5 violin6 violin7 violin8 viola
+PARTS := flute1 flute2 flute3 Bbclarinet1 vibraphone violin1 violin2 violin3 violin4 violin5 violin6 violin7 violin8 viola cello
 
 PARTS_PDF := $(foreach p, $(PARTS), parts-$(p).pdf)
 

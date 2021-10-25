@@ -33,6 +33,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
              "vn7": "Violin7_Music_Voice",
              "vn8": "Violin8_Music_Voice",
              "va": "Viola_Music_Voice",
+             "vlc": "Cello_Music_Voice",
              }
             )
 
@@ -399,6 +400,30 @@ class ScoreTemplate(abjad.ScoreTemplate):
         abjad.setting(viola_staff).midi_instrument = abjad.scheme.Scheme(
                 'viola', force_quotes=True)
 
+        # Cello
+        markup_voice = abjad.Voice(name="Cello_Markup_Voice", tag=tag)
+        music_voice = abjad.Voice(name="Cello_Music_Voice", tag=tag)
+        dynamics_voice = abjad.Voice(name="Cello_Dynamics_Voice", tag=tag)
+        cello_staff = abjad.Staff(
+            [music_voice],
+            simultaneous=True,
+            name="Cello",
+            lilypond_type="CelloStaff",
+            tag=tag,
+        )
+        abjad.annotate(
+            cello_staff,
+            "default_instrument",
+            rill.instruments["Cello"],
+        )
+        abjad.annotate(cello_staff, "default_clef", abjad.Clef("bass"))
+        cello_tag = abjad.LilyPondLiteral(
+            r"\tag #'cello", format_slot='before')
+        abjad.attach(cello_tag, cello_staff)
+        abjad.setting(cello_staff).midi_instrument = abjad.scheme.Scheme(
+                'cello', force_quotes=True)
+
+
         # Define staff groups
         # Woodwind Staff Group
         woodwind_staff_group = abjad.StaffGroup(
@@ -436,6 +461,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
                     violinSeven_staff,
                     violinEight_staff,
                     viola_staff
+                    cello_staff
                 ],
                 simultaneous=True,
                 lilypond_type="StringStaffGroup",
