@@ -216,4 +216,16 @@ Viola_music_data.attachments = [liminal_dynamic, markup.legato, markup.tasto]
 Viola_music_data.overrides = [aeolian_noteheads]
 segment_music_data.Viola = Viola_music_data
 
+segment_D_Cello_instr_pdref = segment_D_instr_pdref.Cello
+segment_D_Cello_pd = getattr(segment_D_pitch_data, segment_D_Cello_instr_pdref)
+segment_D_Cello_pitch_segment = abjad.PitchSegment(segment_D_Cello_pd)
+Cello_music_data = InstrumentMusicData()
+Cello_music_data.pitches = segment_D_Cello_pitch_segment.transpose(-12)
+Cello_music_data.denominator = 32
+Cello_music_data.talea = [1, 1, 1, 1, 1]
+Cello_music_data.attachments = [liminal_dynamic, markup.legato, markup.tasto]
+Cello_music_data.overrides = [aeolian_noteheads]
+segment_music_data.Cello = Cello_music_data
+
+
 db.close()

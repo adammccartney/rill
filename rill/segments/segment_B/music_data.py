@@ -199,4 +199,13 @@ Viola_music_data.talea = segment_B_syncopated_counts
 Viola_music_data.attachments = [middleground_dynamic, markup.pizz]
 segment_music_data.Viola = Viola_music_data
 
+segment_B_Cello_instr_pdref = segment_B_instr_pdref.Cello
+segment_B_Cello_pd = getattr(segment_B_pitch_data, segment_B_Cello_instr_pdref)
+segment_B_Cello_pitch_segment = abjad.PitchSegment(segment_B_Cello_pd)
+Cello_music_data = InstrumentMusicData()
+Cello_music_data.pitches = segment_B_Cello_pitch_segment.transpose(-12)
+Cello_music_data.talea = segment_B_syncopated_counts
+Cello_music_data.attachments = [middleground_dynamic, markup.pizz]
+segment_music_data.Cello = Cello_music_data
+
 db.close()

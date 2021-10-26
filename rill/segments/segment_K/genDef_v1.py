@@ -127,6 +127,13 @@ Viola_music_code_block = make_music_code_block(
     instrument_music_data=Viola_instrument_music_data
 )
 
+Cello_instrument_music_data = segment_music_data.Cello
+Cello_music_code_block = make_music_code_block(
+    instrument_name="Cello",
+    instrument_music_data=Cello_instrument_music_data
+)
+
+
 
 segment_definition = f"""
 import copy
@@ -207,6 +214,9 @@ Violin8_instrument_music_data = segment_music_data.Violin8
 
 Viola_instrument_music_data = segment_music_data.Viola
 {Viola_music_code_block}
+
+Cello_instrument_music_data = segment_music_data.Cello
+{Cello_music_code_block}
 
 lilypond_file = segment_maker.run()
 """

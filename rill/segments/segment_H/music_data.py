@@ -206,4 +206,15 @@ Viola_music_data.denominator = 2
 Viola_music_data.attachments = [background_dynamic, markup.tasto]
 segment_music_data.Viola = Viola_music_data
 
+segment_H_Cello_instr_pdref = segment_H_instr_pdref.Cello
+segment_H_Cello_pd = getattr(segment_H_pitch_data, segment_H_Cello_instr_pdref)
+segment_H_Cello_pitch_segment = abjad.PitchSegment(segment_H_Cello_pd)
+Cello_music_data = InstrumentMusicData()
+Cello_music_data.pitches = segment_H_Cello_pitch_segment.transpose(-36)
+Cello_music_data.talea = segment_H_syncopated_counts
+Cello_music_data.denominator = 2
+Cello_music_data.attachments = [background_dynamic, markup.tasto]
+segment_music_data.Cello = Cello_music_data
+
+
 db.close()

@@ -187,3 +187,14 @@
 }
 
 
+\book {
+    \bookOutputSuffix "cello"
+    \header {
+        subtitle = "cello part"
+    }
+    \score {
+        \header {piece = "Largo"}
+        \keepWithTag #'(cello)
+        \include "../segments.ily"
+    }
+}
