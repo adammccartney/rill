@@ -69,6 +69,7 @@ class RhythmDefinition(object):
                 self._score["Violin7_Music_Voice"],
                 self._score["Violin8_Music_Voice"],
                 self._score["Viola_Music_Voice"],
+                self._score["Cello_Music_Voice"],
         )
 
     def _get_staves(self):
@@ -88,6 +89,7 @@ class RhythmDefinition(object):
                 self._score["Violin7"],
                 self._score["Violin8"],
                 self._score["Viola"],
+                self._score["Cello"],
         )
     def _handle_notes(self):
         voice = self._score[f"{self.instrument_name}_Music_Voice"]
@@ -207,6 +209,7 @@ class SegmentMaker(abjad.SegmentMaker):
                 self._score["Violin7_Music_Voice"],
                 self._score["Violin8_Music_Voice"],
                 self._score["Viola_Music_Voice"],
+                self._score["Cello_Music_Voice"],
                 )
 
     # PRIVATE METHODS #
@@ -279,13 +282,16 @@ class SegmentMaker(abjad.SegmentMaker):
 
     def _configure_score(self):
         voices = self._music_voices  # list of voices
-        treble_voices = voices[:-1]
-        alto_voice = voices[-1]
+        treble_voices = voices[:-2]
+        alto_voice = voices[-2]
+        bass_voice = voices[-1]
         for voice in treble_voices:
             leaf = abjad.inspect(voice).leaf(0)
             abjad.attach(abjad.Clef("treble"), leaf)
         leaf = abjad.inspect(alto_voice).leaf(0)
         abjad.attach(abjad.Clef("alto"), leaf)
+        leaf = abjad.inspect(bass_voice).leaf(0)
+        abjad.attach(abjad.Clef("bass"), leaf)
 
     def _handle_metronome_marks(self):
         if not self.metronome_marks:

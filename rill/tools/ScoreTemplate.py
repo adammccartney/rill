@@ -460,7 +460,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
                     violinSix_staff,
                     violinSeven_staff,
                     violinEight_staff,
-                    viola_staff
+                    viola_staff,
                     cello_staff
                 ],
                 simultaneous=True,
