@@ -193,6 +193,13 @@
       instrumentName = "Viola"
       shortInstrumentName = "va."
     }
+     \context {
+      \Staff
+      \name CelloStaff
+      \alias Staff
+      instrumentName = "Cello"
+      shortInstrumentName = "vc."
+    }
     \context {
       \StaffGroup
       \name StringsStaffGroup
@@ -206,6 +213,7 @@
       \accepts ViolinSevenStaff
       \accepts ViolinEightStaff
       \accepts ViolaStaff
+      \accepts CelloStaff
     }
 }
 

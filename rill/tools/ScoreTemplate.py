@@ -33,7 +33,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
              "vn7": "Violin7_Music_Voice",
              "vn8": "Violin8_Music_Voice",
              "va": "Viola_Music_Voice",
-             "vlc": "Cello_Music_Voice",
+             "vc": "Cello_Music_Voice",
              }
             )
 
