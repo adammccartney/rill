@@ -84,6 +84,7 @@ segment_A_instr_pdref.Violin6 = 'chord_voice3'
 segment_A_instr_pdref.Violin7 = 'chord_voice3'
 segment_A_instr_pdref.Violin8 = 'chord_voice3'
 segment_A_instr_pdref.Viola = 'chord_voice3'
+segment_A_instr_pdref.Cello = 'chord_voice3'
 
 db['segment_A_instr_pdref'] = segment_A_instr_pdref
 
@@ -139,6 +140,7 @@ segment_B_instr_pdref.Violin6 = 'tremolo_voice1'
 segment_B_instr_pdref.Violin7 = 'tremolo_voice1'
 segment_B_instr_pdref.Violin8 = 'tremolo_voice2'
 segment_B_instr_pdref.Viola = 'tremolo_voice2'
+segment_B_instr_pdref.Cello = 'tremolo_voice2'
 
 db['segment_B_instr_pdref'] = segment_B_instr_pdref
 
@@ -193,6 +195,7 @@ segment_C_instr_pdref.Violin6 = 'chord_voice1'
 segment_C_instr_pdref.Violin7 = 'chord_voice2'
 segment_C_instr_pdref.Violin8 = 'chord_voice4'
 segment_C_instr_pdref.Viola = 'chord_voice4'
+segment_C_instr_pdref.Cello = 'chord_voice4'
 
 db['segment_C_instr_pdref'] = segment_C_instr_pdref
 
@@ -244,6 +247,7 @@ segment_D_instr_pdref.Violin6 = 'tremolo_voice1'
 segment_D_instr_pdref.Violin7 = 'tremolo_voice1'
 segment_D_instr_pdref.Violin8 = 'tremolo_voice1'
 segment_D_instr_pdref.Viola = 'chord_voice3'
+segment_D_instr_pdref.Cello = 'chord_voice3'
 
 db['segment_D_instr_pdref'] = segment_D_instr_pdref
 
@@ -299,6 +303,7 @@ segment_E_instr_pdref.Violin6 = 'chord_voice3'
 segment_E_instr_pdref.Violin7 = 'chord_voice3'
 segment_E_instr_pdref.Violin8 = 'chord_voice3'
 segment_E_instr_pdref.Viola = 'tremolo_voice2'
+segment_E_instr_pdref.Cello = 'tremolo_voice2'
 
 db['segment_E_instr_pdref'] = segment_E_instr_pdref
 
@@ -351,6 +356,7 @@ segment_F_instr_pdref.Violin6 = 'chord_voice3'
 segment_F_instr_pdref.Violin7 = 'chord_voice3'
 segment_F_instr_pdref.Violin8 = 'chord_voice3'
 segment_F_instr_pdref.Viola = 'melody_voice'
+segment_F_instr_pdref.Cello = 'melody_voice'
 
 db['segment_F_instr_pdref'] = segment_F_instr_pdref
 
@@ -404,6 +410,7 @@ segment_G_instr_pdref.Violin6 = 'chord_voice3'
 segment_G_instr_pdref.Violin7 = 'chord_voice3'
 segment_G_instr_pdref.Violin8 = 'chord_voice3'
 segment_G_instr_pdref.Viola = 'melody_voice'
+segment_G_instr_pdref.Cello = 'melody_voice'
 
 db['segment_G_instr_pdref'] = segment_G_instr_pdref
 
@@ -455,6 +462,7 @@ segment_H_instr_pdref.Violin6 = 'chord_voice1'
 segment_H_instr_pdref.Violin7 = 'chord_voice2'
 segment_H_instr_pdref.Violin8 = 'chord_voice3'
 segment_H_instr_pdref.Viola = 'chord_voice4'
+segment_H_instr_pdref.Cello = 'chord_voice4'
 
 db['segment_H_instr_pdref'] = segment_H_instr_pdref
 
@@ -505,6 +513,7 @@ segment_I_instr_pdref.Violin6 = 'melody_voice'
 segment_I_instr_pdref.Violin7 = 'melody_voice'
 segment_I_instr_pdref.Violin8 = 'melody_voice'
 segment_I_instr_pdref.Viola = 'chord_voice4'
+segment_I_instr_pdref.Cello = 'chord_voice4'
 
 db['segment_I_instr_pdref'] = segment_I_instr_pdref
 
@@ -555,6 +564,7 @@ segment_J_instr_pdref.Violin6 = 'chord_voice3'
 segment_J_instr_pdref.Violin7 = 'chord_voice3'
 segment_J_instr_pdref.Violin8 = 'chord_voice3'
 segment_J_instr_pdref.Viola = 'melody_voice'
+segment_J_instr_pdref.Cello = 'melody_voice'
 
 db['segment_J_instr_pdref'] = segment_J_instr_pdref
 
@@ -605,6 +615,7 @@ segment_K_instr_pdref.Violin6 = 'chord_voice1'
 segment_K_instr_pdref.Violin7 = 'chord_voice2'
 segment_K_instr_pdref.Violin8 = 'chord_voice3'
 segment_K_instr_pdref.Viola = 'chord_voice4'
+segment_K_instr_pdref.Cello = 'chord_voice4'
 
 db['segment_K_instr_pdref'] = segment_K_instr_pdref
 
@@ -655,6 +666,7 @@ segment_L_instr_pdref.Violin6 = 'chord_voice1'
 segment_L_instr_pdref.Violin7 = 'chord_voice2'
 segment_L_instr_pdref.Violin8 = 'chord_voice3'
 segment_L_instr_pdref.Viola = 'chord_voice4'
+segment_L_instr_pdref.Cello = 'chord_voice4'
 
 db['segment_L_instr_pdref'] = segment_L_instr_pdref
 

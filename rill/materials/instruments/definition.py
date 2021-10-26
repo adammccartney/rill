@@ -109,6 +109,13 @@ instruments = abjad.OrderedDict(
                 short_markup=markups.short_instrument("va"),
             ),
         ),
+        (
+            "Cello",
+            abjad.Viola(
+                markup=markups.instrument("Cello"),
+                short_markup=markups.short_instrument("vc"),
+            ),
+        ),
     ]
 )
 

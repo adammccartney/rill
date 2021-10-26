@@ -141,8 +141,8 @@ class SegmentMusicData:
     Access through instance.instrument_music_data[instrument]
     """
     # Can remove this first function, was scaffolding for test
-    instrument_music_data: Sequence[InstrumentMusicData] = field(
-        default_factory=make_segment_music_default)
+    #instrument_music_data: Sequence[InstrumentMusicData] = field(
+            #    default_factory=make_segment_music_default)
 
     _Flute1: InstrumentMusicData = field(
         default_factory=make_instrument_music_default)
@@ -173,6 +173,8 @@ class SegmentMusicData:
     _Violin8: InstrumentMusicData = field(
         default_factory=make_instrument_music_default)
     _Viola: InstrumentMusicData = field(
+        default_factory=make_instrument_music_default)
+    _Cello: InstrumentMusicData = field(
         default_factory=make_instrument_music_default)
 
     @property
@@ -295,6 +297,15 @@ class SegmentMusicData:
     def Viola(self, instrument_music_data) -> None:
         self._Viola = instrument_music_data
 
+    @property
+    def Cello(self) -> InstrumentMusicData:
+        return self._Cello
+
+    @Cello.setter
+    def Cello(self, instrument_music_data) -> None:
+        self._Cello = instrument_music_data
+
+
 
 def make_empty_string():
     return ""
@@ -390,7 +401,7 @@ class InstrumentPitchData:
     _Flute4: str = field(default_factory=make_empty_string)
     _Bbclarinet1: str = field(default_factory=make_empty_string)
     _Vibraphone: str = field(default_factory=make_empty_string)
-    _Viola: str = field(default_factory=make_empty_string)
+    _Viola: str   = field(default_factory=make_empty_string)
     _Violin1: str = field(default_factory=make_empty_string)
     _Violin2: str = field(default_factory=make_empty_string)
     _Violin3: str = field(default_factory=make_empty_string)
@@ -399,7 +410,7 @@ class InstrumentPitchData:
     _Violin6: str = field(default_factory=make_empty_string)
     _Violin7: str = field(default_factory=make_empty_string)
     _Violin8: str = field(default_factory=make_empty_string)
-
+    _Cello: str   = field(default_factory=make_empty_string)
 
     @property
     def Flute1(self) -> str:
@@ -611,6 +622,19 @@ class InstrumentPitchData:
         else:
             ValueError(ref, "is not a valid reference for pdata")
 
+    @property
+    def Cello(self) -> str:
+        return self._Cello
+
+    @Cello.setter
+    def Cello(self, ref):
+        if (ref == 'chord_voice1') or (ref == 'chord_voice2') or\
+           (ref == 'chord_voice3') or (ref == 'chord_voice4') or\
+           (ref == 'melody_voice') or (ref == 'tremolo_voice1') or\
+           (ref == 'tremolo_voice2'):
+            self._Cello = ref
+        else:
+            ValueError(ref, "is not a valid reference for pdata")
 
 def make_choral_talea():
     return [3, 1, 3, 1, 2]

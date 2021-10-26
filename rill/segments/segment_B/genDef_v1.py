@@ -18,8 +18,6 @@ segment_dir = f"segment_{segment_name}"
 #module = importlib.import_module(module_name)
 #segment_music_data = module.__dict__['segment_music_data']
 
-
-
 def make_music_code_block(instrument_name, instrument_music_data):
     music_block = f"""{instrument_name}_rhythm_definition = segment_maker.define_rhythm()
 {instrument_name}_music_maker = MusicMaker(
@@ -35,7 +33,6 @@ def make_music_code_block(instrument_name, instrument_music_data):
 {instrument_name}_rhythm_definition.instrument_name = '{instrument_name}'
 """
     return music_block
-
 
 Flute1_instrument_music_data = segment_music_data.Flute1
 Flute1_music_code_block = make_music_code_block(
@@ -127,6 +124,11 @@ Viola_music_code_block = make_music_code_block(
     instrument_music_data=Viola_instrument_music_data
 )
 
+Cello_instrument_music_data = segment_music_data.Cello
+Cello_music_code_block = make_music_code_block(
+    instrument_name="Cello",
+    instrument_music_data=Cello_instrument_music_data
+)
 
 segment_definition = f"""
 import copy
@@ -207,6 +209,9 @@ Violin8_instrument_music_data = segment_music_data.Violin8
 
 Viola_instrument_music_data = segment_music_data.Viola
 {Viola_music_code_block}
+
+Cello_instrument_music_data = segment_music_data.Cello
+{Cello_music_code_block}
 
 lilypond_file = segment_maker.run()
 """
