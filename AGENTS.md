@@ -31,3 +31,7 @@ docker-go:
 		docker.io/golang:1.25.10-trixie \
 		bash -c 'set -e; apt-get install -y make; make cvmfs-prometheus-wrapper'
 ```
+
+# TASK: make the docker build reproducible (to some degree)
++ Make sure we are tied to a specific version of the image, ideally with a sha
+  checksum
