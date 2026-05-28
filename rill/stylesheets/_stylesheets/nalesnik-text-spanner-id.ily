@@ -14,7 +14,7 @@
 %    \stopTextSpanTwo
 %    \stopTextSpanThre
 
-\version "2.19"
+\version "2.25.0"
 
 %% Incorporating some code from the rewrite in Scheme of
 %% Text_spanner_engraver in input/regression/scheme-text-spanner.ly

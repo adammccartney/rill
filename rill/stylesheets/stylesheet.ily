@@ -20,7 +20,6 @@
         " "
         \concat {
             \bold \fontsize #3
-            \on-the-fly #print-page-number-check-first
             \fromproperty #'page:page-number-string
             \hspace #15
         }
@@ -32,7 +31,6 @@
         " "
         \concat {
             \bold \fontsize #3
-            \on-the-fly #print-page-number-check-first
             \fromproperty #'page:page-number-string
             \hspace #15
         }

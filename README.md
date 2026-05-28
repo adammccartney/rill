@@ -12,7 +12,26 @@ Funded by the [Austrian Science Fund](http://www.fwf.ac.at), project number AR44
 Instructions:
 -------------
 
-+ Install Python package `rill` and its dependencies, by running `python setup.py install` or `pip install .`. If an erosion process shall be started, install as editable instead: `pip install -e .`
++ This project uses [uv](https://github.com/astral-sh/uv) for Python package management.
+
++ Set up the virtual environment and install dependencies:
+  ```
+  uv sync
+  ```
+
++ For development/editable install:
+  ```
+  uv sync --dev
+  ```
+
++ Alternatively, using pip:
+  ```
+  pip install .
+  ```
+  Or for editable install:
+  ```
+  pip install -e .
+  ```
 
 + Building the score: From the top-level folder, run `make`.
 

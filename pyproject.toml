@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rill"
+version = "0.1"
+description = "rill (erosion) - A musical composition for ensemble"
+authors = [
+    { name = "Adam McCartney", email = "adam@mur.at" }
+]
+readme = "README.md"
+# Note: Original code required Python 3.7+, but Python 3.8+ is recommended
+# for compatibility with abjad==3.1 and modern tooling
+requires-python = ">=3.8"
+dependencies = [
+    "abjad==3.1",
+    "abjad-ext-tonality",
+    "abjad-ext-rmakers",
+    "six",  # Required by abjad==3.1
+]
+
+[project.urls]
+Homepage = "https://github.com/adammccartney/rill"
+
+[tool.setuptools.packages.find]
+include = ["rill", "rill.*"]
+
+[tool.setuptools.package-data]
+rill = ["*"]

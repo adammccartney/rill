@@ -1,4 +1,4 @@
-\version "2.19"
+\version "2.25.0"
 \include "solomon-flared-hairpin.ily"
 
 
