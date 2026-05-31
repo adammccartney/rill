@@ -19,6 +19,8 @@ services:
       - UID=${UID:-1000}
       - GID=${GID:-1000}
       - HOME=/home/erosion
+      - PUSH_REMOTE=${PUSH_REMOTE:-FALSE}
+      - EROSION_BRANCH=${EROSION_BRANCH:-erosion_prima}
     # Run erosion.sh in a loop - the script handles git operations internally
     # Erosion script expects: erosion.sh <erosion_script> <git_root>
     command: >
@@ -46,7 +48,8 @@ services:
         git config --global --add safe.directory /src
         git config --global user.email 'erosion@rill.local'
         git config --global user.name 'Erosion Bot'
-        # Run erosion
-        ./erosion.sh ./erosion/erosion.py .
+        git switch -c "${EROSION_BRANCH:-erosion_prima}"
+        # Run erosion with PUSH_REMOTE setting (3rd argument)
+        ./erosion.sh ./erosion/erosion.py . "${PUSH_REMOTE:-FALSE}"
       "
     restart: unless-stopped

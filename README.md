@@ -12,6 +12,40 @@ Funded by the [Austrian Science Fund](http://www.fwf.ac.at), project number AR44
 Instructions:
 -------------
 
+The recommended way to build the score and generate "erosions" is to use
+the docker environments provided. There are two targets specified in the
+makefile:
+
+## Generate original score
+
+`make docker-score` will run a once-off command inside a container that will result
+in a generated pdf of the original score.
+
+## Start a long running process to generate a series of "eroded" scores
+
+`make docker-erosion` will launch a long running job that performs a
+binary erosion of the source files that are used to create the typeset
+score. The idea of this erosion process is that new editions of the
+score are produced and committed to a dedicated branch in the git
+repository. Note that each successful erosion will flip a single bit.
+
+### Keep changes locally on custom branch
+
+```
+EROSION_BRANCH=erosion_secunda make docker-erosion
+```
+
+### Push changes to remote branch
+
+Assumes push access to remote, this will create and push to a branch
+called "erosion_prima" by default.
+
+```
+PUSH_REMOTE=TRUE make docker-erosion
+```
+
+## Development setup (legacy)
+
 + This project uses [uv](https://github.com/astral-sh/uv) for Python package management.
 
 + Set up the virtual environment and install dependencies:
@@ -36,7 +70,7 @@ Instructions:
 + Building the score: From the top-level folder, run `make`.
 
 + Erosion process: 
-	- Create and checkout a new branch by running, e.g., `git branch erosion_666 && git checkout erosion_666`.
+	- Create and checkout a new branch by running, e.g., `git switch -c erosion_666`.
 	
 	- From the top-level folder, run `./erosion.sh`.
 	

@@ -69,3 +69,37 @@ RUN apt-get update && apt-get install -y curl lilypond make zip python3 python3-
   That is for creating the "original" score ... before any erosion takes place
   It's working for that use case, so do not make any updates to that target.
   It's preferable to create a new target "docker-erosion"
+
+# TASK: add a variable for git branch to the docker-erosion workflow
++ Note that in the dev setup (legacy) section of the readme, there are
+  instructions about switching to a new git branch when working on erosions.
++ The erosion.sh script defines a `GIT_PUSH` variable. Again, this has an
+  implicit dependency on a remote git repository that the user has remote access
+  to. For a user that has cloned the repo from github, this may not be the case.
+  Introduce a positional argument to the erosion.sh script that allows us to
+  make this behaviour explicit. Also it should be backward compatible, so we
+  want to make sure it attempts to push to remote 
+  `PUSH_REMOTE=${3:-TRUE}`
+
++ Note we want to add a branch to the following if statement
+  Test for the state of PUSH_REMOTE, if "TRUE" then push, else
+  just save the commit locally and continue
+```
+    # if build is ok, commit change
+    if [ ${ok} -eq 1 ]; then
+        echo "Erosion successful: $fn"
+        # Push local changes to repository
+        ${GIT_PUSH}
+	# Publish product
+	test "${PUBLISH}" != "" && ${PUBLISH}
+    else
+        # Undo changes to repository
+        ${GIT_BACK}
+        ${GIT_RESTORE}
+    fi
+
+```
++ Note that in particular, we want to make sure that at least the local branch
+  with the changes is retained.
++ Do not touch the README
+

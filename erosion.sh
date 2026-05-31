@@ -16,6 +16,9 @@ if [ "${ROOT}" == ""  -o ! -d "${ROOT}" ]; then
     exit -1
 fi
 
+# Whether to push to remote repository (TRUE/FALSE)
+PUSH_REMOTE=${3:-TRUE}
+
 RILL="$ROOT/rill"
 
 FILES="${RILL}/materials/*.py ${RILL}/materials/*/*.py ${RILL}/segments/*.py ${RILL}/segments/*/*.py"
@@ -40,6 +43,7 @@ GIT_COMMIT="git commit -m Erosion"
 GIT_BACK="git reset HEAD^"
 GIT_PUSH="git push"
 GIT_RESTORE="git checkout ${ROOT}"
+GIT_BRANCH="git rev-parse --abbrev-ref HEAD"
 
 BRANCH="`git status -b --porcelain | sed  's/^## \([a-zA-Z_0-9]*\)\.\.\.\(.*\)$/\1/' | head -n 1`"
 
@@ -102,8 +106,12 @@ while true; do
     # if build is ok, commit change
     if [ ${ok} -eq 1 ]; then
         echo "Erosion successful: $fn"
-        # Push local changes to repository
-        ${GIT_PUSH}
+        # Push local changes to repository if PUSH_REMOTE is TRUE
+        if [ "${PUSH_REMOTE}" = "TRUE" ]; then
+            ${GIT_PUSH}
+        else
+            echo "PUSH_REMOTE is not TRUE, keeping changes locally on branch: $(${GIT_BRANCH})"
+        fi
 	# Publish product
 	test "${PUBLISH}" != "" && ${PUBLISH}
     else
