@@ -20,8 +20,7 @@ db = shelve.open(str(db_path))
 
 segment_B_pitch_data = db['segment_B_pitch_data']
 segment_B_talea_data = db['segment_B_talea_data']
-segment_B_instr_pdref = db['segment_B_instr_pdref']
-
+segment_B_instr_pdref = db['segment_B_instr_pdref']
 
 segment_music_data = SegmentMusicData()
 
