@@ -35,3 +35,37 @@ docker-go:
 # TASK: make the docker build reproducible (to some degree)
 + Make sure we are tied to a specific version of the image, ideally with a sha
   checksum
+
+# TASK: create runtime environment to generate "erosions"
+
+
++ Analyze the "erosion.sh" script to understand the logic of an erosion.
+  Do not take any other action before completing the analysis.
+  Note there are specific details from the erosion.sh script that are relevant
+  for the dockerfile, in particular the working directory should be derived from
+  the logic in the erosion.sh script.
+  Also we need to take care to set up the mount point that holds the eroded
+  scores. Probably it's the easiest thing to just create a "data" directory in
+  the pwd where the docker compose is run. Open to other suggestions here
+  though.
+
++ create a `Dockerfile` that holds some key info about creating the container. 
+  - image: 	docker.io/texlive/texlive@sha256:91f9d3b4bf623022432c4838940e94bf2923e6f655575c412cd3c2df1a543777 
+  - environment setup (note the dependencies LaTeX, LilyPond, Python/uv, git,
+    make)
+```Dockerfile
+RUN apt-get update && apt-get install -y curl lilypond make zip python3 python3-pip python3-venv \
+ && curl -LsSf https://astral.sh/uv/install.sh | sh \
+ && export PATH="$$HOME/.local/bin:$$PATH"; \
+ && rm -rf .venv \
+ && uv venv \
+ && . .venv/bin/activate \
+    uv pip install -e .; \
+```
+
++ Create a `docker-compose.yml` to run "erosions" in a long running container
+
++ Note that the docker-score target was essentially serving it's function.
+  That is for creating the "original" score ... before any erosion takes place
+  It's working for that use case, so do not make any updates to that target.
+  It's preferable to create a new target "docker-erosion"

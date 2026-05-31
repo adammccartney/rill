@@ -1,0 +1,52 @@
+# docker-compose.yml for rill erosion runtime
+# Runs erosion.sh in a long-running container with persistent data storage
+
+services:
+  erosion:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rill-erosion
+    volumes:
+      # Mount current directory as source
+      - .:/src
+      # Mount data directory for eroded scores output
+      - ./data:/src/data
+    working_dir: /src
+    # Pass host UID/GID to match file ownership
+    user: "${UID:-1000}:${GID:-1000}"
+    environment:
+      - UID=${UID:-1000}
+      - GID=${GID:-1000}
+      - HOME=/home/erosion
+    # Run erosion.sh in a loop - the script handles git operations internally
+    # Erosion script expects: erosion.sh <erosion_script> <git_root>
+    command: >
+      bash -c "
+        set -e;
+        # Create user with matching UID/GID if it doesn't exist
+        if ! id -u erosion >/dev/null 2>&1; then
+          groupadd -g $$GID -o erosion 2>/dev/null || true
+          useradd -u $$UID -g $$GID -o -m -d $$HOME -s /bin/bash erosion 2>/dev/null || true
+        fi
+        # Ensure home directory exists and is owned correctly
+        mkdir -p $$HOME
+        chown -R $$UID:$$GID $$HOME 2>/dev/null || true
+        # Install uv if not already installed
+        if [ ! -f $$HOME/.local/bin/uv ]; then
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+        fi
+        export PATH=$$HOME/.local/bin:$$PATH
+        # Set up Python virtual environment
+        rm -rf .venv
+        uv venv
+        . .venv/bin/activate
+        uv pip install -e .
+        # Configure git
+        git config --global --add safe.directory /src
+        git config --global user.email 'erosion@rill.local'
+        git config --global user.name 'Erosion Bot'
+        # Run erosion
+        ./erosion.sh ./erosion/erosion.py .
+      "
+    restart: unless-stopped

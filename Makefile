@@ -1,4 +1,4 @@
-.PHONY: all clean docker-score
+.PHONY: all clean docker-score docker-erosion
 
 all:
 	make -C rill/builds/letter-portrait
@@ -31,3 +31,17 @@ docker-score:
 			make -C rill segments; \
 			make -C rill/builds/letter-portrait music.pdf; \
 			make -C rill/builds/letter-portrait'
+
+# --------------------------------
+# docker-erosion: Run erosion in docker container
+# --------------------------------
+# This target runs the erosion process inside a Docker container.
+# It requires a "data" directory to be created in the current directory
+# for storing eroded scores. The container runs the erosion.sh script
+# in a loop, committing successful builds and reverting failed ones.
+# Usage: make docker-erosion
+# Note: Ensure ./data directory exists before running
+docker-erosion:
+	@echo "Running erosion inside docker container..."
+	@mkdir -p data
+	docker compose up --build
