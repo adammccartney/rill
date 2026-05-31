@@ -8,6 +8,9 @@ Written by [Adam McCartney](https://admccartney.mur.at/), eroded by [Thomas Gril
 A commission of the [Rotting sounds](http://rottingsounds.org) project of artistic research at the mdw – University of Music and Performing Arts Vienna, 2020–2021. 
 Funded by the [Austrian Science Fund](http://www.fwf.ac.at), project number AR445-G24.
 
+For more detailed information on the score and how the "erosion" process works,
+see the paper presented at the ICMC 2022.[^1]
+
 
 Instructions:
 -------------
@@ -75,3 +78,6 @@ PUSH_REMOTE=TRUE make docker-erosion
 	- From the top-level folder, run `./erosion.sh`.
 	
 	- On each successful build, a new `score.pdf` will be placed in the subfolder `rill/builds/letter-portrait`.
+
+
+[^1]: McCartney, Adam; Grill, Thomas: The effects of binary erosion on music composition expressed as a notated score. In: Torre, Giuseppe (Hg.): Proceedings of the ICMC. San Francisco, USA: International Computer Music Association, Inc 2022, S. 200-205 <https://www.fulcrum.org/epubs/8910jx22c?page=212>.
