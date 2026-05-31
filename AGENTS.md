@@ -103,3 +103,9 @@ RUN apt-get update && apt-get install -y curl lilypond make zip python3 python3-
   with the changes is retained.
 + Do not touch the README
 
+
+# TASK: properly set up volumes for docker
+
+Note that we want only 1 volume
+- `data:/mnt/archive/public/rill/`
+This is essential for the "PUBLISH" functionalit
