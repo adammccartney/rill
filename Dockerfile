@@ -16,15 +16,13 @@ RUN apt-get update && apt-get install -y \
     rsync \
     && rm -rf /var/lib/apt/lists/*
 
-# Install uv (Python package manager)
+# Install uv (Python package manager) for the texlive user
+USER texlive
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# Set up working directory
+# Set up working directory and copy source
 WORKDIR /src
-
-# Copy project files
-COPY . /src/
+COPY --chown=texlive:texlive . /src/
 
 # Default command - will be overridden by docker-compose
-# User creation and venv setup happens at runtime to match host UID/GID
 CMD ["bash"]

@@ -46,3 +46,4 @@ pip-delete-this-directory.txt
 
 # Intermediary files
 rill/segments/segment_*/definition.py
+.venv/
